@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsTotalLocalStorageGb {
   // Maximum. May be a decimal number, e.g. `0.5`.
@@ -18,16 +18,16 @@ export function ec2_SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirem
   return [
     new DynamicUIProps(
       InputType.Number,
-      "max",
-      "Maximum. May be a decimal number, e.g. `0.5`.",
+      'max',
+      'Maximum. May be a decimal number, e.g. `0.5`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "min",
-      "Minimum. May be a decimal number, e.g. `0.5`.",
+      'min',
+      'Minimum. May be a decimal number, e.g. `0.5`.',
       () => [],
       false,
       true,

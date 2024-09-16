@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite {
   /*
@@ -41,7 +41,7 @@ export function compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes
   return [
     new DynamicUIProps(
       InputType.String,
-      "pathPrefixRewrite",
+      'pathPrefixRewrite',
       "Prior to forwarding the request to the selected backend service, the matching portion of the\nrequest's path is replaced by pathPrefixRewrite.\nThe value must be between 1 and 1024 characters.",
       () => [],
       false,
@@ -49,7 +49,7 @@ export function compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "pathTemplateRewrite",
+      'pathTemplateRewrite',
       "Prior to forwarding the request to the selected origin, if the\nrequest matched a pathTemplateMatch, the matching portion of the\nrequest's path is replaced re-written using the pattern specified\nby pathTemplateRewrite.\npathTemplateRewrite must be between 1 and 255 characters\n(inclusive), must start with a '/', and must only use variables\ncaptured by the route's pathTemplate matchers.\npathTemplateRewrite may only be used when all of a route's\nMatchRules specify pathTemplate.\nOnly one of pathPrefixRewrite and pathTemplateRewrite may be\nspecified.",
       () => [],
       false,
@@ -57,7 +57,7 @@ export function compute_URLMapPathMatcherRouteRuleRouteActionUrlRewrite_GetTypes
     ),
     new DynamicUIProps(
       InputType.String,
-      "hostRewrite",
+      'hostRewrite',
       "Prior to forwarding the request to the selected service, the request's host header is replaced\nwith contents of hostRewrite.\nThe value must be between 1 and 255 characters.",
       () => [],
       false,

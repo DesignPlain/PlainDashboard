@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig,
   gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig_GetTypes,
-} from "./gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig";
+} from './gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig';
 import {
   gkeonprem_BareMetalAdminClusterStorageLvpShareConfig,
   gkeonprem_BareMetalAdminClusterStorageLvpShareConfig_GetTypes,
-} from "./gkeonprem_BareMetalAdminClusterStorageLvpShareConfig";
+} from './gkeonprem_BareMetalAdminClusterStorageLvpShareConfig';
 
 export interface gkeonprem_BareMetalAdminClusterStorage {
   /*
@@ -36,8 +36,8 @@ export function gkeonprem_BareMetalAdminClusterStorage_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Object,
-      "lvpNodeMountsConfig",
-      "Specifies the config for local PersistentVolumes backed\nby mounted node disks. These disks need to be formatted and mounted by the\nuser, which can be done before or after cluster creation.\nStructure is documented below.",
+      'lvpNodeMountsConfig',
+      'Specifies the config for local PersistentVolumes backed\nby mounted node disks. These disks need to be formatted and mounted by the\nuser, which can be done before or after cluster creation.\nStructure is documented below.',
       () =>
         gkeonprem_BareMetalAdminClusterStorageLvpNodeMountsConfig_GetTypes(),
       true,
@@ -45,8 +45,8 @@ export function gkeonprem_BareMetalAdminClusterStorage_GetTypes(): DynamicUIProp
     ),
     new DynamicUIProps(
       InputType.Object,
-      "lvpShareConfig",
-      "Specifies the config for local PersistentVolumes backed by\nsubdirectories in a shared filesystem. These subdirectores are\nautomatically created during cluster creation.\nStructure is documented below.",
+      'lvpShareConfig',
+      'Specifies the config for local PersistentVolumes backed by\nsubdirectories in a shared filesystem. These subdirectores are\nautomatically created during cluster creation.\nStructure is documented below.',
       () => gkeonprem_BareMetalAdminClusterStorageLvpShareConfig_GetTypes(),
       true,
       false,

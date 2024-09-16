@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkeonprem_BareMetalClusterUpgradePolicy {
   /*
@@ -18,8 +18,8 @@ export function gkeonprem_BareMetalClusterUpgradePolicy_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "policy",
-      "Specifies which upgrade policy to use.\nPossible values are: `SERIAL`, `CONCURRENT`.",
+      'policy',
+      'Specifies which upgrade policy to use.\nPossible values are: `SERIAL`, `CONCURRENT`.',
       () => [],
       false,
       false,

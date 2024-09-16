@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditions,
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditions_GetTypes,
-} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditions";
+} from './dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditions';
 
 export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressions {
   /*
@@ -29,8 +29,8 @@ export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
   return [
     new DynamicUIProps(
       InputType.Object,
-      "conditions",
-      "Conditions to apply to the expression.\nStructure is documented below.",
+      'conditions',
+      'Conditions to apply to the expression.\nStructure is documented below.',
       () =>
         dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditions_GetTypes(),
       false,
@@ -38,8 +38,8 @@ export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.String,
-      "logicalOperator",
-      "The operator to apply to the result of conditions. Default and currently only supported value is AND.\nDefault value is `AND`.\nPossible values are: `AND`.",
+      'logicalOperator',
+      'The operator to apply to the result of conditions. Default and currently only supported value is AND.\nDefault value is `AND`.\nPossible values are: `AND`.',
       () => [],
       false,
       false,

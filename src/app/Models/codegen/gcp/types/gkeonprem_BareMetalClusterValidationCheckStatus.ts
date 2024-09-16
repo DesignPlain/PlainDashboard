@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_BareMetalClusterValidationCheckStatusResult,
   gkeonprem_BareMetalClusterValidationCheckStatusResult_GetTypes,
-} from "./gkeonprem_BareMetalClusterValidationCheckStatusResult";
+} from './gkeonprem_BareMetalClusterValidationCheckStatusResult';
 
 export interface gkeonprem_BareMetalClusterValidationCheckStatus {
   /*
@@ -23,8 +23,8 @@ export function gkeonprem_BareMetalClusterValidationCheckStatus_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Array,
-      "results",
-      "(Output)\nIndividual checks which failed as part of the Preflight check execution.\nStructure is documented below.",
+      'results',
+      '(Output)\nIndividual checks which failed as part of the Preflight check execution.\nStructure is documented below.',
       () => gkeonprem_BareMetalClusterValidationCheckStatusResult_GetTypes(),
       false,
       false,

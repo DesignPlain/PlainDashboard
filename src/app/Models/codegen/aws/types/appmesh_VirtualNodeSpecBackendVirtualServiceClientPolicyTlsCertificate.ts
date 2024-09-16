@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds,
   appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds_GetTypes,
-} from "./appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds";
+} from './appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds';
 import {
   appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile,
   appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile_GetTypes,
-} from "./appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile";
+} from './appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile';
 
 export interface appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificate {
   // Local file certificate.
@@ -26,8 +26,8 @@ export function appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCerti
   return [
     new DynamicUIProps(
       InputType.Object,
-      "file",
-      "Local file certificate.",
+      'file',
+      'Local file certificate.',
       () =>
         appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFile_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCerti
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sds",
-      "A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.",
+      'sds',
+      'A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.',
       () =>
         appmesh_VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSds_GetTypes(),
       false,

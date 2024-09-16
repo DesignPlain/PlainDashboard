@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lakeformation_getPermissionsDatabase {
   // Identifier for the Data Catalog. By default, it is the account ID of the caller.
@@ -22,16 +22,16 @@ export function lakeformation_getPermissionsDatabase_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.String,
-      "catalogId",
-      "Identifier for the Data Catalog. By default, it is the account ID of the caller.",
+      'catalogId',
+      'Identifier for the Data Catalog. By default, it is the account ID of the caller.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the database resource. Unique to the Data Catalog.\n\nThe following argument is optional:",
+      'name',
+      'Name of the database resource. Unique to the Data Catalog.\n\nThe following argument is optional:',
       () => [],
       true,
       false,

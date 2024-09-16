@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   endpoints_ServiceIamBindingCondition,
   endpoints_ServiceIamBindingCondition_GetTypes,
-} from "../types/endpoints_ServiceIamBindingCondition";
+} from '../types/endpoints_ServiceIamBindingCondition';
 
 export interface ServiceIamBindingArgs {
   //
@@ -52,32 +52,32 @@ The role that should be applied. Only one
     return [
       new DynamicUIProps(
         InputType.Array,
-        "members",
-        "",
+        'members',
+        '',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "role",
-        "The role that should be applied. Only one\n`gcp.endpoints.ServiceIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.",
+        'role',
+        'The role that should be applied. Only one\n`gcp.endpoints.ServiceIamBinding` can be used per role. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceName",
-        "",
+        'serviceName',
+        '',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
-        "",
+        'condition',
+        '',
         () => endpoints_ServiceIamBindingCondition_GetTypes(),
         false,
         true,

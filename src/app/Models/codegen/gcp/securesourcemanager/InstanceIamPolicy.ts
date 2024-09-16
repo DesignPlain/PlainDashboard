@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface InstanceIamPolicyArgs {
   //
@@ -40,32 +40,32 @@ export class InstanceIamPolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "",
+        'project',
+        '',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceId",
-        "",
+        'instanceId',
+        '',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "",
+        'location',
+        '',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyData",
-        "",
+        'policyData',
+        '',
         () => [],
         true,
         false,

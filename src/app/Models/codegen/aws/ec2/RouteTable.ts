@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_RouteTableRoute,
   ec2_RouteTableRoute_GetTypes,
-} from "../types/ec2_RouteTableRoute";
+} from '../types/ec2_RouteTableRoute';
 
 export interface RouteTableArgs {
   // The VPC ID.
@@ -56,32 +56,32 @@ This means that omitting this argument is interpreted as ignoring any existing r
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpcId",
-        "The VPC ID.",
+        'vpcId',
+        'The VPC ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "propagatingVgws",
-        "A list of virtual gateways for propagation.",
+        'propagatingVgws',
+        'A list of virtual gateways for propagation.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "routes",
-        "A list of route objects. Their keys are documented below.\nThis means that omitting this argument is interpreted as ignoring any existing routes. To remove all managed routes an empty list should be specified. See the example above.",
+        'routes',
+        'A list of route objects. Their keys are documented below.\nThis means that omitting this argument is interpreted as ignoring any existing routes. To remove all managed routes an empty list should be specified. See the example above.',
         () => ec2_RouteTableRoute_GetTypes(),
         false,
         false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface CostAllocationTagArgs {
   // The status of a cost allocation tag. Valid values are `Active` and `Inactive`.
@@ -28,16 +28,16 @@ export class CostAllocationTag extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "The status of a cost allocation tag. Valid values are `Active` and `Inactive`.",
+        'status',
+        'The status of a cost allocation tag. Valid values are `Active` and `Inactive`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tagKey",
-        "The key for the cost allocation tag.",
+        'tagKey',
+        'The key for the cost allocation tag.',
         () => [],
         true,
         false,

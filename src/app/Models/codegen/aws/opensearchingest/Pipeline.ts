@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opensearchingest_PipelineBufferOptions,
   opensearchingest_PipelineBufferOptions_GetTypes,
-} from "../types/opensearchingest_PipelineBufferOptions";
+} from '../types/opensearchingest_PipelineBufferOptions';
 import {
   opensearchingest_PipelineEncryptionAtRestOptions,
   opensearchingest_PipelineEncryptionAtRestOptions_GetTypes,
-} from "../types/opensearchingest_PipelineEncryptionAtRestOptions";
+} from '../types/opensearchingest_PipelineEncryptionAtRestOptions';
 import {
   opensearchingest_PipelineLogPublishingOptions,
   opensearchingest_PipelineLogPublishingOptions_GetTypes,
-} from "../types/opensearchingest_PipelineLogPublishingOptions";
+} from '../types/opensearchingest_PipelineLogPublishingOptions';
 import {
   opensearchingest_PipelineVpcOptions,
   opensearchingest_PipelineVpcOptions_GetTypes,
-} from "../types/opensearchingest_PipelineVpcOptions";
+} from '../types/opensearchingest_PipelineVpcOptions';
 import {
   opensearchingest_PipelineTimeouts,
   opensearchingest_PipelineTimeouts_GetTypes,
-} from "../types/opensearchingest_PipelineTimeouts";
+} from '../types/opensearchingest_PipelineTimeouts';
 
 export interface PipelineArgs {
   // A map of tags to assign to the pipeline. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -110,79 +110,79 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the pipeline. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the pipeline. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionAtRestOptions",
-        "Key-value pairs to configure encryption for data that is written to a persistent buffer. See `encryption_at_rest_options` below.",
+        'encryptionAtRestOptions',
+        'Key-value pairs to configure encryption for data that is written to a persistent buffer. See `encryption_at_rest_options` below.',
         () => opensearchingest_PipelineEncryptionAtRestOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "logPublishingOptions",
-        "Key-value pairs to configure log publishing. See `log_publishing_options` below.",
+        'logPublishingOptions',
+        'Key-value pairs to configure log publishing. See `log_publishing_options` below.',
         () => opensearchingest_PipelineLogPublishingOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "minUnits",
-        "The minimum pipeline capacity, in Ingestion Compute Units (ICUs).",
+        'minUnits',
+        'The minimum pipeline capacity, in Ingestion Compute Units (ICUs).',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => opensearchingest_PipelineTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bufferOptions",
-        "Key-value pairs to configure persistent buffering for the pipeline. See `buffer_options` below.",
+        'bufferOptions',
+        'Key-value pairs to configure persistent buffering for the pipeline. See `buffer_options` below.',
         () => opensearchingest_PipelineBufferOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "maxUnits",
-        "The maximum pipeline capacity, in Ingestion Compute Units (ICUs).",
+        'maxUnits',
+        'The maximum pipeline capacity, in Ingestion Compute Units (ICUs).',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pipelineConfigurationBody",
-        "The pipeline configuration in YAML format. This argument accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\n.",
+        'pipelineConfigurationBody',
+        'The pipeline configuration in YAML format. This argument accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\n.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pipelineName",
-        "The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an AWS Region.\n\nThe following arguments are optional:",
+        'pipelineName',
+        'The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an AWS Region.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcOptions",
+        'vpcOptions',
         "Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint. See `vpc_options` below.",
         () => opensearchingest_PipelineVpcOptions_GetTypes(),
         false,

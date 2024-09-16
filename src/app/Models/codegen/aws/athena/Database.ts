@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   athena_DatabaseEncryptionConfiguration,
   athena_DatabaseEncryptionConfiguration_GetTypes,
-} from "../types/athena_DatabaseEncryptionConfiguration";
+} from '../types/athena_DatabaseEncryptionConfiguration';
 import {
   athena_DatabaseAclConfiguration,
   athena_DatabaseAclConfiguration_GetTypes,
-} from "../types/athena_DatabaseAclConfiguration";
+} from '../types/athena_DatabaseAclConfiguration';
 
 export interface DatabaseArgs {
   // Name of the database to create.
@@ -69,64 +69,64 @@ export class Database extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "properties",
-        "Key-value map of custom metadata properties for the database definition.",
+        'properties',
+        'Key-value map of custom metadata properties for the database definition.',
         () => InputType_Map_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "aclConfiguration",
-        "That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.",
+        'aclConfiguration',
+        'That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.',
         () => athena_DatabaseAclConfiguration_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bucket",
-        "Name of S3 bucket to save the results of the query execution.",
+        'bucket',
+        'Name of S3 bucket to save the results of the query execution.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "Description of the database.",
+        'comment',
+        'Description of the database.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionConfiguration",
-        "Encryption key block AWS Athena uses to decrypt the data in S3, such as an AWS Key Management Service (AWS KMS) key. See Encryption Configuration below.",
+        'encryptionConfiguration',
+        'Encryption key block AWS Athena uses to decrypt the data in S3, such as an AWS Key Management Service (AWS KMS) key. See Encryption Configuration below.',
         () => athena_DatabaseEncryptionConfiguration_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "expectedBucketOwner",
-        "AWS account ID that you expect to be the owner of the Amazon S3 bucket.",
+        'expectedBucketOwner',
+        'AWS account ID that you expect to be the owner of the Amazon S3 bucket.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDestroy",
-        "Boolean that indicates all tables should be deleted from the database so that the database can be destroyed without error. The tables are *not* recoverable.",
+        'forceDestroy',
+        'Boolean that indicates all tables should be deleted from the database so that the database can be destroyed without error. The tables are *not* recoverable.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the database to create.",
+        'name',
+        'Name of the database to create.',
         () => [],
         false,
         true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxTestCaseLastTestResultConversationTurn,
   diagflow_CxTestCaseLastTestResultConversationTurn_GetTypes,
-} from "./diagflow_CxTestCaseLastTestResultConversationTurn";
+} from './diagflow_CxTestCaseLastTestResultConversationTurn';
 
 export interface diagflow_CxTestCaseLastTestResult {
   /*
@@ -42,40 +42,40 @@ export function diagflow_CxTestCaseLastTestResult_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "testResult",
-      "Whether the test case passed in the agent environment.\n* PASSED: The test passed.\n* FAILED: The test did not pass.\nPossible values are: `PASSED`, `FAILED`.",
+      'testResult',
+      'Whether the test case passed in the agent environment.\n* PASSED: The test passed.\n* FAILED: The test did not pass.\nPossible values are: `PASSED`, `FAILED`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "testTime",
-      "The time that the test was run. A timestamp in RFC3339 text format.",
+      'testTime',
+      'The time that the test was run. A timestamp in RFC3339 text format.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "conversationTurns",
-      "The conversation turns uttered during the test case replay in chronological order.\nStructure is documented below.",
+      'conversationTurns',
+      'The conversation turns uttered during the test case replay in chronological order.\nStructure is documented below.',
       () => diagflow_CxTestCaseLastTestResultConversationTurn_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "environment",
-      "Environment where the test was run. If not set, it indicates the draft environment.",
+      'environment',
+      'Environment where the test was run. If not set, it indicates the draft environment.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The unique identifier of the page.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.",
+      'name',
+      'The unique identifier of the page.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.',
       () => [],
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iot_ProvisioningTemplatePreProvisioningHook {
   // The version of the payload that was sent to the target function. The only valid (and the default) payload version is `"2020-04-01"`.
@@ -18,7 +18,7 @@ export function iot_ProvisioningTemplatePreProvisioningHook_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "payloadVersion",
+      'payloadVersion',
       'The version of the payload that was sent to the target function. The only valid (and the default) payload version is `"2020-04-01"`.',
       () => [],
       false,
@@ -26,8 +26,8 @@ export function iot_ProvisioningTemplatePreProvisioningHook_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "targetArn",
-      "The ARN of the target function.",
+      'targetArn',
+      'The ARN of the target function.',
       () => [],
       true,
       false,

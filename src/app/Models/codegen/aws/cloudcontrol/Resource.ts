@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ResourceArgs {
   // JSON string matching the CloudFormation resource type schema with desired configuration.
@@ -54,40 +54,40 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "desiredState",
-        "JSON string matching the CloudFormation resource type schema with desired configuration.",
+        'desiredState',
+        'JSON string matching the CloudFormation resource type schema with desired configuration.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "Amazon Resource Name (ARN) of the IAM Role to assume for operations.",
+        'roleArn',
+        'Amazon Resource Name (ARN) of the IAM Role to assume for operations.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "schema",
-        "JSON string of the CloudFormation resource type schema which is used for plan time validation where possible. Automatically fetched if not provided. In large scale environments with multiple resources using the same `type_name`, it is recommended to fetch the schema once via the `aws.cloudformation.CloudFormationType` data source and use this argument to reduce `DescribeType` API operation throttling. This value is marked sensitive only to prevent large plan differences from showing.",
+        'schema',
+        'JSON string of the CloudFormation resource type schema which is used for plan time validation where possible. Automatically fetched if not provided. In large scale environments with multiple resources using the same `type_name`, it is recommended to fetch the schema once via the `aws.cloudformation.CloudFormationType` data source and use this argument to reduce `DescribeType` API operation throttling. This value is marked sensitive only to prevent large plan differences from showing.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "typeName",
-        "CloudFormation resource type name. For example, `AWS::EC2::VPC`.\n\nThe following arguments are optional:",
+        'typeName',
+        'CloudFormation resource type name. For example, `AWS::EC2::VPC`.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "typeVersionId",
-        "Identifier of the CloudFormation resource type version.",
+        'typeVersionId',
+        'Identifier of the CloudFormation resource type version.',
         () => [],
         false,
         false,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeName,
   appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeName_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeName";
+} from './appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeName';
 import {
   appmesh_getVirtualNodeSpecListenerTlValidationTrust,
   appmesh_getVirtualNodeSpecListenerTlValidationTrust_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlValidationTrust";
+} from './appmesh_getVirtualNodeSpecListenerTlValidationTrust';
 
 export interface appmesh_getVirtualNodeSpecListenerTlValidation {
   //
@@ -26,8 +26,8 @@ export function appmesh_getVirtualNodeSpecListenerTlValidation_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "subjectAlternativeNames",
-      "",
+      'subjectAlternativeNames',
+      '',
       () =>
         appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeName_GetTypes(),
       true,
@@ -35,8 +35,8 @@ export function appmesh_getVirtualNodeSpecListenerTlValidation_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Array,
-      "trusts",
-      "",
+      'trusts',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTlValidationTrust_GetTypes(),
       true,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionDeidentifyTemplateDeidentifyConfig,
   dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes,
-} from "../types/dataloss_PreventionDeidentifyTemplateDeidentifyConfig";
+} from '../types/dataloss_PreventionDeidentifyTemplateDeidentifyConfig';
 
 export interface PreventionDeidentifyTemplateArgs {
   /*
@@ -82,40 +82,40 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The parent of the template in any of the following formats:\n* `projects/{{project}}`\n* `projects/{{project}}/locations/{{location}}`\n* `organizations/{{organization_id}}`\n* `organizations/{{organization_id}}/locations/{{location}}`",
+        'parent',
+        'The parent of the template in any of the following formats:\n* `projects/{{project}}`\n* `projects/{{project}}/locations/{{location}}`\n* `organizations/{{organization_id}}`\n* `organizations/{{organization_id}}/locations/{{location}}`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "templateId",
-        "The template id can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+. The maximum length is\n100 characters. Can be empty to allow the system to generate one.",
+        'templateId',
+        'The template id can contain uppercase and lowercase letters, numbers, and hyphens;\nthat is, it must match the regular expression: [a-zA-Z\\d-_]+. The maximum length is\n100 characters. Can be empty to allow the system to generate one.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "deidentifyConfig",
-        "Configuration of the deidentify template\nStructure is documented below.",
+        'deidentifyConfig',
+        'Configuration of the deidentify template\nStructure is documented below.',
         () => dataloss_PreventionDeidentifyTemplateDeidentifyConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the template.",
+        'description',
+        'A description of the template.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "User set display name of the template.",
+        'displayName',
+        'User set display name of the template.',
         () => [],
         false,
         false,

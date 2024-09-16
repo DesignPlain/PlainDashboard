@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   projects_IAMAuditConfigAuditLogConfig,
   projects_IAMAuditConfigAuditLogConfig_GetTypes,
-} from "../types/projects_IAMAuditConfigAuditLogConfig";
+} from '../types/projects_IAMAuditConfigAuditLogConfig';
 
 export interface IAMAuditConfigArgs {
   // The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.
@@ -44,24 +44,24 @@ inferred from the provider.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "auditLogConfigs",
-        "The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.",
+        'auditLogConfigs',
+        'The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.',
         () => projects_IAMAuditConfigAuditLogConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project id of the target project. This is not\ninferred from the provider.",
+        'project',
+        'The project id of the target project. This is not\ninferred from the provider.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "service",
-        "Service which will be enabled for audit logging.  The special value `allServices` covers all services.  Note that if there are google\\_project\\_iam\\_audit\\_config resources covering both `allServices` and a specific service then the union of the two AuditConfigs is used for that service: the `log_types` specified in each `audit_log_config` are enabled, and the `exempted_members` in each `audit_log_config` are exempted.",
+        'service',
+        'Service which will be enabled for audit logging.  The special value `allServices` covers all services.  Note that if there are google\\_project\\_iam\\_audit\\_config resources covering both `allServices` and a specific service then the union of the two AuditConfigs is used for that service: the `log_types` specified in each `audit_log_config` are enabled, and the `exempted_members` in each `audit_log_config` are exempted.',
         () => [],
         true,
         false,

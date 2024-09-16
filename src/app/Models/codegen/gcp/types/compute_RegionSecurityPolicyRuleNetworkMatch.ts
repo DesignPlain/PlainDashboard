@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionSecurityPolicyRuleNetworkMatchUserDefinedField,
   compute_RegionSecurityPolicyRuleNetworkMatchUserDefinedField_GetTypes,
-} from "./compute_RegionSecurityPolicyRuleNetworkMatchUserDefinedField";
+} from './compute_RegionSecurityPolicyRuleNetworkMatchUserDefinedField';
 
 export interface compute_RegionSecurityPolicyRuleNetworkMatch {
   // Source IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
@@ -43,7 +43,7 @@ export function compute_RegionSecurityPolicyRuleNetworkMatch_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Array,
-      "destPorts",
+      'destPorts',
       'Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").',
       () => InputType_String_GetTypes(),
       false,
@@ -51,7 +51,7 @@ export function compute_RegionSecurityPolicyRuleNetworkMatch_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ipProtocols",
+      'ipProtocols',
       'IPv4 protocol / IPv6 next header (after extension headers). Each element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g. "253-254"), or one of the following protocol names: "tcp", "udp", "icmp", "esp", "ah", "ipip", or "sctp".',
       () => InputType_String_GetTypes(),
       false,
@@ -59,23 +59,23 @@ export function compute_RegionSecurityPolicyRuleNetworkMatch_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "srcAsns",
-      "BGP Autonomous System Number associated with the source IP address.",
+      'srcAsns',
+      'BGP Autonomous System Number associated with the source IP address.',
       () => InputType_Number_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "srcIpRanges",
-      "Source IPv4/IPv6 addresses or CIDR prefixes, in standard text format.",
+      'srcIpRanges',
+      'Source IPv4/IPv6 addresses or CIDR prefixes, in standard text format.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "srcPorts",
+      'srcPorts',
       'Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").',
       () => InputType_String_GetTypes(),
       false,
@@ -83,16 +83,16 @@ export function compute_RegionSecurityPolicyRuleNetworkMatch_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "srcRegionCodes",
-      "Two-letter ISO 3166-1 alpha-2 country code associated with the source IP address.",
+      'srcRegionCodes',
+      'Two-letter ISO 3166-1 alpha-2 country code associated with the source IP address.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "userDefinedFields",
-      "User-defined fields. Each element names a defined field and lists the matching values for that field.\nStructure is documented below.",
+      'userDefinedFields',
+      'User-defined fields. Each element names a defined field and lists the matching values for that field.\nStructure is documented below.',
       () =>
         compute_RegionSecurityPolicyRuleNetworkMatchUserDefinedField_GetTypes(),
       false,
@@ -100,8 +100,8 @@ export function compute_RegionSecurityPolicyRuleNetworkMatch_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Array,
-      "destIpRanges",
-      "Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text format.",
+      'destIpRanges',
+      'Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text format.',
       () => InputType_String_GetTypes(),
       false,
       false,

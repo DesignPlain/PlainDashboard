@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iot_TopicRuleErrorActionDynamodb {
   // The name of the DynamoDB table.
@@ -42,7 +42,7 @@ export function iot_TopicRuleErrorActionDynamodb_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "hashKeyType",
+      'hashKeyType',
       'The hash key type. Valid values are "STRING" or "NUMBER".',
       () => [],
       false,
@@ -50,31 +50,31 @@ export function iot_TopicRuleErrorActionDynamodb_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "tableName",
-      "The name of the DynamoDB table.",
+      'tableName',
+      'The name of the DynamoDB table.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "payloadField",
-      "The action payload.",
+      'payloadField',
+      'The action payload.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "hashKeyField",
-      "The hash key name.",
+      'hashKeyField',
+      'The hash key name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "rangeKeyType",
+      'rangeKeyType',
       'The range key type. Valid values are "STRING" or "NUMBER".',
       () => [],
       false,
@@ -82,39 +82,39 @@ export function iot_TopicRuleErrorActionDynamodb_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "rangeKeyValue",
-      "The range key value.",
+      'rangeKeyValue',
+      'The range key value.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "The ARN of the IAM role that grants access to the DynamoDB table.",
-      () => [],
-      true,
-      false,
-    ),
-    new DynamicUIProps(
-      InputType.String,
-      "hashKeyValue",
-      "The hash key value.",
+      'roleArn',
+      'The ARN of the IAM role that grants access to the DynamoDB table.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "rangeKeyField",
-      "The range key name.",
+      'hashKeyValue',
+      'The hash key value.',
+      () => [],
+      true,
+      false,
+    ),
+    new DynamicUIProps(
+      InputType.String,
+      'rangeKeyField',
+      'The range key name.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "operation",
+      'operation',
       'The operation. Valid values are "INSERT", "UPDATE", or "DELETE".',
       () => [],
       false,

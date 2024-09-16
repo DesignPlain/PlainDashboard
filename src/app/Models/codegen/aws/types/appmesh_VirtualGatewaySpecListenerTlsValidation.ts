@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames,
   appmesh_VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames_GetTypes,
-} from "./appmesh_VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames";
+} from './appmesh_VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames';
 import {
   appmesh_VirtualGatewaySpecListenerTlsValidationTrust,
   appmesh_VirtualGatewaySpecListenerTlsValidationTrust_GetTypes,
-} from "./appmesh_VirtualGatewaySpecListenerTlsValidationTrust";
+} from './appmesh_VirtualGatewaySpecListenerTlsValidationTrust';
 
 export interface appmesh_VirtualGatewaySpecListenerTlsValidation {
   // SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.
@@ -26,7 +26,7 @@ export function appmesh_VirtualGatewaySpecListenerTlsValidation_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Object,
-      "subjectAlternativeNames",
+      'subjectAlternativeNames',
       "SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.",
       () =>
         appmesh_VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNames_GetTypes(),
@@ -35,8 +35,8 @@ export function appmesh_VirtualGatewaySpecListenerTlsValidation_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Object,
-      "trust",
-      "TLS validation context trust.",
+      'trust',
+      'TLS validation context trust.',
       () => appmesh_VirtualGatewaySpecListenerTlsValidationTrust_GetTypes(),
       true,
       false,

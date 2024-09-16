@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface autoscalingplans_ScalingPlanApplicationSourceTagFilter {
   // Tag key.
@@ -18,16 +18,16 @@ export function autoscalingplans_ScalingPlanApplicationSourceTagFilter_GetTypes(
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "Tag key.",
+      'key',
+      'Tag key.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "values",
-      "Tag values.",
+      'values',
+      'Tag values.',
       () => InputType_String_GetTypes(),
       false,
       false,

@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getGatewayRouteSpecHttp2RouteActionRewriteHostname,
   appmesh_getGatewayRouteSpecHttp2RouteActionRewriteHostname_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttp2RouteActionRewriteHostname";
+} from './appmesh_getGatewayRouteSpecHttp2RouteActionRewriteHostname';
 import {
   appmesh_getGatewayRouteSpecHttp2RouteActionRewritePath,
   appmesh_getGatewayRouteSpecHttp2RouteActionRewritePath_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttp2RouteActionRewritePath";
+} from './appmesh_getGatewayRouteSpecHttp2RouteActionRewritePath';
 import {
   appmesh_getGatewayRouteSpecHttp2RouteActionRewritePrefix,
   appmesh_getGatewayRouteSpecHttp2RouteActionRewritePrefix_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttp2RouteActionRewritePrefix";
+} from './appmesh_getGatewayRouteSpecHttp2RouteActionRewritePrefix';
 
 export interface appmesh_getGatewayRouteSpecHttp2RouteActionRewrite {
   //
@@ -33,8 +33,8 @@ export function appmesh_getGatewayRouteSpecHttp2RouteActionRewrite_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Array,
-      "hostnames",
-      "",
+      'hostnames',
+      '',
       () =>
         appmesh_getGatewayRouteSpecHttp2RouteActionRewriteHostname_GetTypes(),
       true,
@@ -42,16 +42,16 @@ export function appmesh_getGatewayRouteSpecHttp2RouteActionRewrite_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Array,
-      "paths",
-      "",
+      'paths',
+      '',
       () => appmesh_getGatewayRouteSpecHttp2RouteActionRewritePath_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "prefixes",
-      "",
+      'prefixes',
+      '',
       () => appmesh_getGatewayRouteSpecHttp2RouteActionRewritePrefix_GetTypes(),
       true,
       false,

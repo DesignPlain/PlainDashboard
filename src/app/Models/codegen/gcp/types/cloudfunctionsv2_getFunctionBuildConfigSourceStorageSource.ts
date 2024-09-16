@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource {
   // Google Cloud Storage bucket containing the source
@@ -24,24 +24,24 @@ export function cloudfunctionsv2_getFunctionBuildConfigSourceStorageSource_GetTy
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucket",
-      "Google Cloud Storage bucket containing the source",
+      'bucket',
+      'Google Cloud Storage bucket containing the source',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "generation",
-      "Google Cloud Storage generation for the object. If the generation\nis omitted, the latest generation will be used.",
+      'generation',
+      'Google Cloud Storage generation for the object. If the generation\nis omitted, the latest generation will be used.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "object",
-      "Google Cloud Storage object containing the source.",
+      'object',
+      'Google Cloud Storage object containing the source.',
       () => [],
       true,
       false,

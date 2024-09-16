@@ -3,33 +3,33 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   pubsub_SubscriptionBigqueryConfig,
   pubsub_SubscriptionBigqueryConfig_GetTypes,
-} from "../types/pubsub_SubscriptionBigqueryConfig";
+} from '../types/pubsub_SubscriptionBigqueryConfig';
 import {
   pubsub_SubscriptionExpirationPolicy,
   pubsub_SubscriptionExpirationPolicy_GetTypes,
-} from "../types/pubsub_SubscriptionExpirationPolicy";
+} from '../types/pubsub_SubscriptionExpirationPolicy';
 import {
   pubsub_SubscriptionCloudStorageConfig,
   pubsub_SubscriptionCloudStorageConfig_GetTypes,
-} from "../types/pubsub_SubscriptionCloudStorageConfig";
+} from '../types/pubsub_SubscriptionCloudStorageConfig';
 import {
   pubsub_SubscriptionPushConfig,
   pubsub_SubscriptionPushConfig_GetTypes,
-} from "../types/pubsub_SubscriptionPushConfig";
+} from '../types/pubsub_SubscriptionPushConfig';
 import {
   pubsub_SubscriptionDeadLetterPolicy,
   pubsub_SubscriptionDeadLetterPolicy_GetTypes,
-} from "../types/pubsub_SubscriptionDeadLetterPolicy";
+} from '../types/pubsub_SubscriptionDeadLetterPolicy';
 import {
   pubsub_SubscriptionRetryPolicy,
   pubsub_SubscriptionRetryPolicy_GetTypes,
-} from "../types/pubsub_SubscriptionRetryPolicy";
+} from '../types/pubsub_SubscriptionRetryPolicy';
 
 export interface SubscriptionArgs {
   /*
@@ -340,15 +340,15 @@ messageRetentionDuration window.
     return [
       new DynamicUIProps(
         InputType.String,
-        "topic",
-        "A reference to a Topic resource, of the form projects/{project}/topics/{{name}}\n(as in the id property of a google_pubsub_topic), or just a topic name if\nthe topic is in the same project as the subscription.\n\n\n- - -",
+        'topic',
+        'A reference to a Topic resource, of the form projects/{project}/topics/{{name}}\n(as in the id property of a google_pubsub_topic), or just a topic name if\nthe topic is in the same project as the subscription.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "deadLetterPolicy",
+        'deadLetterPolicy',
         "A policy that specifies the conditions for dead lettering messages in\nthis subscription. If dead_letter_policy is not set, dead lettering\nis disabled.\nThe Cloud Pub/Sub service account associated with this subscription's\nparent project (i.e.,\nservice-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have\npermission to Acknowledge() messages on this subscription.\nStructure is documented below.",
         () => pubsub_SubscriptionDeadLetterPolicy_GetTypes(),
         false,
@@ -356,7 +356,7 @@ messageRetentionDuration window.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableExactlyOnceDelivery",
+        'enableExactlyOnceDelivery',
         "If `true`, Pub/Sub provides the following guarantees for the delivery\nof a message with a given value of messageId on this Subscriptions':\n- The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgement deadline expires.\n- An acknowledged message will not be resent to a subscriber.\nNote that subscribers may still receive multiple copies of a message when `enable_exactly_once_delivery`\nis true if the message was published multiple times by a publisher client. These copies are considered distinct by Pub/Sub and have distinct messageId values",
         () => [],
         false,
@@ -364,39 +364,39 @@ messageRetentionDuration window.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "ackDeadlineSeconds",
-        "This value is the maximum time after a subscriber receives a message\nbefore the subscriber should acknowledge the message. After message\ndelivery but before the ack deadline expires and before the message is\nacknowledged, it is an outstanding message and will not be delivered\nagain during that time (on a best-effort basis).\nFor pull subscriptions, this value is used as the initial value for\nthe ack deadline. To override this value for a given message, call\nsubscriptions.modifyAckDeadline with the corresponding ackId if using\npull. The minimum custom deadline you can specify is 10 seconds. The\nmaximum custom deadline you can specify is 600 seconds (10 minutes).\nIf this parameter is 0, a default value of 10 seconds is used.\nFor push delivery, this value is also used to set the request timeout\nfor the call to the push endpoint.\nIf the subscriber never acknowledges the message, the Pub/Sub system\nwill eventually redeliver the message.",
+        'ackDeadlineSeconds',
+        'This value is the maximum time after a subscriber receives a message\nbefore the subscriber should acknowledge the message. After message\ndelivery but before the ack deadline expires and before the message is\nacknowledged, it is an outstanding message and will not be delivered\nagain during that time (on a best-effort basis).\nFor pull subscriptions, this value is used as the initial value for\nthe ack deadline. To override this value for a given message, call\nsubscriptions.modifyAckDeadline with the corresponding ackId if using\npull. The minimum custom deadline you can specify is 10 seconds. The\nmaximum custom deadline you can specify is 600 seconds (10 minutes).\nIf this parameter is 0, a default value of 10 seconds is used.\nFor push delivery, this value is also used to set the request timeout\nfor the call to the push endpoint.\nIf the subscriber never acknowledges the message, the Pub/Sub system\nwill eventually redeliver the message.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "A set of key/value label pairs to assign to this Subscription.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'A set of key/value label pairs to assign to this Subscription.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bigqueryConfig",
-        "If delivery to BigQuery is used with this subscription, this field is used to configure it.\nEither pushConfig, bigQueryConfig or cloudStorageConfig can be set, but not combined.\nIf all three are empty, then the subscriber will pull and ack messages using API methods.\nStructure is documented below.",
+        'bigqueryConfig',
+        'If delivery to BigQuery is used with this subscription, this field is used to configure it.\nEither pushConfig, bigQueryConfig or cloudStorageConfig can be set, but not combined.\nIf all three are empty, then the subscriber will pull and ack messages using API methods.\nStructure is documented below.',
         () => pubsub_SubscriptionBigqueryConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "messageRetentionDuration",
+        'messageRetentionDuration',
         'How long to retain unacknowledged messages in the subscription\'s\nbacklog, from the moment a message is published. If\nretain_acked_messages is true, then this also configures the retention\nof acknowledged messages, and thus configures how far back in time a\nsubscriptions.seek can be done. Defaults to 7 days. Cannot be more\nthan 7 days (`"604800s"`) or less than 10 minutes (`"600s"`).\nA duration in seconds with up to nine fractional digits, terminated\nby \'s\'. Example: `"600.5s"`.',
         () => [],
         false,
@@ -404,15 +404,15 @@ messageRetentionDuration window.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "retryPolicy",
-        "A policy that specifies how Pub/Sub retries message delivery for this subscription.\nIf not set, the default retry policy is applied. This generally implies that messages will be retried as soon as possible for healthy subscribers.\nRetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded events for a given message\nStructure is documented below.",
+        'retryPolicy',
+        'A policy that specifies how Pub/Sub retries message delivery for this subscription.\nIf not set, the default retry policy is applied. This generally implies that messages will be retried as soon as possible for healthy subscribers.\nRetryPolicy will be triggered on NACKs or acknowledgement deadline exceeded events for a given message\nStructure is documented below.',
         () => pubsub_SubscriptionRetryPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "retainAckedMessages",
+        'retainAckedMessages',
         "Indicates whether to retain acknowledged messages. If `true`, then\nmessages are not expunged from the subscription's backlog, even if\nthey are acknowledged, until they fall out of the\nmessageRetentionDuration window.",
         () => [],
         false,
@@ -420,7 +420,7 @@ messageRetentionDuration window.
       ),
       new DynamicUIProps(
         InputType.String,
-        "filter",
+        'filter',
         "The subscription only delivers the messages that match the filter.\nPub/Sub automatically acknowledges the messages that don't match the filter. You can filter messages\nby their attributes. The maximum length of a filter is 256 bytes. After creating the subscription,\nyou can't modify the filter.",
         () => [],
         false,
@@ -428,15 +428,15 @@ messageRetentionDuration window.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableMessageOrdering",
-        "If `true`, messages published with the same orderingKey in PubsubMessage will be delivered to\nthe subscribers in the order in which they are received by the Pub/Sub system. Otherwise, they\nmay be delivered in any order.",
+        'enableMessageOrdering',
+        'If `true`, messages published with the same orderingKey in PubsubMessage will be delivered to\nthe subscribers in the order in which they are received by the Pub/Sub system. Otherwise, they\nmay be delivered in any order.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "expirationPolicy",
+        'expirationPolicy',
         'A policy that specifies the conditions for this subscription\'s expiration.\nA subscription is considered active as long as any connected subscriber\nis successfully consuming messages from the subscription or is issuing\noperations on the subscription. If expirationPolicy is not set, a default\npolicy with ttl of 31 days will be used.  If it is set but ttl is "", the\nresource never expires.  The minimum allowed value for expirationPolicy.ttl\nis 1 day.\nStructure is documented below.',
         () => pubsub_SubscriptionExpirationPolicy_GetTypes(),
         false,
@@ -444,24 +444,24 @@ messageRetentionDuration window.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudStorageConfig",
-        "If delivery to Cloud Storage is used with this subscription, this field is used to configure it.\nEither pushConfig, bigQueryConfig or cloudStorageConfig can be set, but not combined.\nIf all three are empty, then the subscriber will pull and ack messages using API methods.\nStructure is documented below.",
+        'cloudStorageConfig',
+        'If delivery to Cloud Storage is used with this subscription, this field is used to configure it.\nEither pushConfig, bigQueryConfig or cloudStorageConfig can be set, but not combined.\nIf all three are empty, then the subscriber will pull and ack messages using API methods.\nStructure is documented below.',
         () => pubsub_SubscriptionCloudStorageConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the subscription.",
+        'name',
+        'Name of the subscription.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "pushConfig",
-        "If push delivery is used with this subscription, this field is used to\nconfigure it. An empty pushConfig signifies that the subscriber will\npull and ack messages using API methods.\nStructure is documented below.",
+        'pushConfig',
+        'If push delivery is used with this subscription, this field is used to\nconfigure it. An empty pushConfig signifies that the subscriber will\npull and ack messages using API methods.\nStructure is documented below.',
         () => pubsub_SubscriptionPushConfig_GetTypes(),
         false,
         false,

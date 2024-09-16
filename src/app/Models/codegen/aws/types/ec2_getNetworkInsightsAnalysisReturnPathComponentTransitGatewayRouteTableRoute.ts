@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_getNetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute {
   //
@@ -31,51 +31,51 @@ export interface ec2_getNetworkInsightsAnalysisReturnPathComponentTransitGateway
 
 export function ec2_getNetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "state", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'state', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "attachmentId",
-      "",
+      'attachmentId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "destinationCidr",
-      "",
+      'destinationCidr',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "prefixListId",
-      "",
+      'prefixListId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resourceId",
-      "",
+      'resourceId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resourceType",
-      "",
+      'resourceType',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "routeOrigin",
-      "",
+      'routeOrigin',
+      '',
       () => [],
       true,
       false,

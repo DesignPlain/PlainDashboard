@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterNodeConfigEffectiveTaint {
   // The default or custom node affinity label key name.
@@ -21,24 +21,24 @@ export function container_ClusterNodeConfigEffectiveTaint_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "The default or custom node affinity label key name.",
+      'key',
+      'The default or custom node affinity label key name.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "Value for taint.",
+      'value',
+      'Value for taint.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "effect",
-      "Effect for taint. Accepted values are `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, and `NO_EXECUTE`.",
+      'effect',
+      'Effect for taint. Accepted values are `NO_SCHEDULE`, `PREFER_NO_SCHEDULE`, and `NO_EXECUTE`.',
       () => [],
       false,
       false,

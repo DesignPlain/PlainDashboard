@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vmwareengine_SubnetDhcpAddressRange,
   vmwareengine_SubnetDhcpAddressRange_GetTypes,
-} from "../types/vmwareengine_SubnetDhcpAddressRange";
+} from '../types/vmwareengine_SubnetDhcpAddressRange';
 
 export interface SubnetArgs {
   /*
@@ -99,7 +99,7 @@ fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         'The ID of the subnet. For userDefined subnets, this name should be in the format of "service-n",\nwhere n ranges from 1 to 5.\n\n\n- - -',
         () => [],
         false,
@@ -107,16 +107,16 @@ fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The resource name of the private cloud to create a new subnet in.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud",
+        'parent',
+        'The resource name of the private cloud to create a new subnet in.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipCidrRange",
-        "The IP address range of the subnet in CIDR format.",
+        'ipCidrRange',
+        'The IP address range of the subnet in CIDR format.',
         () => [],
         true,
         false,

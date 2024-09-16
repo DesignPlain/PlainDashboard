@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getRouteSpecHttp2RouteTimeoutIdle,
   appmesh_getRouteSpecHttp2RouteTimeoutIdle_GetTypes,
-} from "./appmesh_getRouteSpecHttp2RouteTimeoutIdle";
+} from './appmesh_getRouteSpecHttp2RouteTimeoutIdle';
 import {
   appmesh_getRouteSpecHttp2RouteTimeoutPerRequest,
   appmesh_getRouteSpecHttp2RouteTimeoutPerRequest_GetTypes,
-} from "./appmesh_getRouteSpecHttp2RouteTimeoutPerRequest";
+} from './appmesh_getRouteSpecHttp2RouteTimeoutPerRequest';
 
 export interface appmesh_getRouteSpecHttp2RouteTimeout {
   //
@@ -26,16 +26,16 @@ export function appmesh_getRouteSpecHttp2RouteTimeout_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.Array,
-      "idles",
-      "",
+      'idles',
+      '',
       () => appmesh_getRouteSpecHttp2RouteTimeoutIdle_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "perRequests",
-      "",
+      'perRequests',
+      '',
       () => appmesh_getRouteSpecHttp2RouteTimeoutPerRequest_GetTypes(),
       true,
       false,

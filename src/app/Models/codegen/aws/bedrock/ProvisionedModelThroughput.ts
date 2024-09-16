@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bedrock_ProvisionedModelThroughputTimeouts,
   bedrock_ProvisionedModelThroughputTimeouts_GetTypes,
-} from "../types/bedrock_ProvisionedModelThroughputTimeouts";
+} from '../types/bedrock_ProvisionedModelThroughputTimeouts';
 
 export interface ProvisionedModelThroughputArgs {
   // Unique name for this Provisioned Throughput.
@@ -59,48 +59,48 @@ export class ProvisionedModelThroughput extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "modelArn",
-        "ARN of the model to associate with this Provisioned Throughput.",
+        'modelArn',
+        'ARN of the model to associate with this Provisioned Throughput.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "modelUnits",
-        "Number of model units to allocate. A model unit delivers a specific throughput level for the specified model.",
+        'modelUnits',
+        'Number of model units to allocate. A model unit delivers a specific throughput level for the specified model.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "provisionedModelName",
-        "Unique name for this Provisioned Throughput.",
+        'provisionedModelName',
+        'Unique name for this Provisioned Throughput.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => bedrock_ProvisionedModelThroughputTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "commitmentDuration",
-        "Commitment duration requested for the Provisioned Throughput. For custom models, you can purchase on-demand Provisioned Throughput by omitting this argument. Valid values: `OneMonth`, `SixMonths`.",
+        'commitmentDuration',
+        'Commitment duration requested for the Provisioned Throughput. For custom models, you can purchase on-demand Provisioned Throughput by omitting this argument. Valid values: `OneMonth`, `SixMonths`.',
         () => [],
         false,
         false,

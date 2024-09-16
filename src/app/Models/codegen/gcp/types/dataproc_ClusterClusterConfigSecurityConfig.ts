@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_ClusterClusterConfigSecurityConfigKerberosConfig,
   dataproc_ClusterClusterConfigSecurityConfigKerberosConfig_GetTypes,
-} from "./dataproc_ClusterClusterConfigSecurityConfigKerberosConfig";
+} from './dataproc_ClusterClusterConfigSecurityConfigKerberosConfig';
 
 export interface dataproc_ClusterClusterConfigSecurityConfig {
   // Kerberos Configuration
@@ -19,8 +19,8 @@ export function dataproc_ClusterClusterConfigSecurityConfig_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Object,
-      "kerberosConfig",
-      "Kerberos Configuration",
+      'kerberosConfig',
+      'Kerberos Configuration',
       () =>
         dataproc_ClusterClusterConfigSecurityConfigKerberosConfig_GetTypes(),
       true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_NetworkAttachmentConnectionEndpoint,
   compute_NetworkAttachmentConnectionEndpoint_GetTypes,
-} from "../types/compute_NetworkAttachmentConnectionEndpoint";
+} from '../types/compute_NetworkAttachmentConnectionEndpoint';
 
 export interface NetworkAttachmentArgs {
   // An array of URLs where each entry is the URL of a subnet provided by the service consumer to use for endpoints in the producers that connect to this network attachment.
@@ -117,64 +117,64 @@ URL of the region where the network attachment resides. This field applies only 
     return [
       new DynamicUIProps(
         InputType.Array,
-        "producerAcceptLists",
-        "Projects that are allowed to connect to this network attachment. The project can be specified using its id or number.",
+        'producerAcceptLists',
+        'Projects that are allowed to connect to this network attachment. The project can be specified using its id or number.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "producerRejectLists",
-        "Projects that are not allowed to connect to this network attachment. The project can be specified using its id or number.",
+        'producerRejectLists',
+        'Projects that are not allowed to connect to this network attachment. The project can be specified using its id or number.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "URL of the region where the network attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.\n\n\n- - -",
+        'region',
+        'URL of the region where the network attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnetworks",
-        "An array of URLs where each entry is the URL of a subnet provided by the service consumer to use for endpoints in the producers that connect to this network attachment.",
+        'subnetworks',
+        'An array of URLs where each entry is the URL of a subnet provided by the service consumer to use for endpoints in the producers that connect to this network attachment.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "connectionPreference",
-        "The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.\nPossible values are: `ACCEPT_AUTOMATIC`, `ACCEPT_MANUAL`, `INVALID`.",
+        'connectionPreference',
+        'The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.\nPossible values are: `ACCEPT_AUTOMATIC`, `ACCEPT_MANUAL`, `INVALID`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. Provide this property when you create the resource.",
+        'description',
+        'An optional description of this resource. Provide this property when you create the resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression a-z? which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.",
+        'name',
+        'Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression a-z? which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.',
         () => [],
         false,
         true,

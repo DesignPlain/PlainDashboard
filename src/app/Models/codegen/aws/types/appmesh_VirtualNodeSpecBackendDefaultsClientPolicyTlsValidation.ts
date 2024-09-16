@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames,
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames_GetTypes,
-} from "./appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames";
+} from './appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames';
 import {
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust,
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust_GetTypes,
-} from "./appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust";
+} from './appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust';
 
 export interface appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidation {
   // SANs for a TLS validation context.
@@ -26,8 +26,8 @@ export function appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidation_
   return [
     new DynamicUIProps(
       InputType.Object,
-      "trust",
-      "TLS validation context trust.",
+      'trust',
+      'TLS validation context trust.',
       () =>
         appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrust_GetTypes(),
       true,
@@ -35,8 +35,8 @@ export function appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidation_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "subjectAlternativeNames",
-      "SANs for a TLS validation context.",
+      'subjectAlternativeNames',
+      'SANs for a TLS validation context.',
       () =>
         appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNames_GetTypes(),
       false,

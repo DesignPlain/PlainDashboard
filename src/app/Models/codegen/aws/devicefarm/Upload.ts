@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface UploadArgs {
   // The upload's content type (for example, application/octet-stream).
@@ -49,15 +49,15 @@ export class Upload extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "projectArn",
-        "The ARN of the project for the upload.",
+        'projectArn',
+        'The ARN of the project for the upload.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
+        'type',
         "The upload's upload type. See [AWS Docs](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateUpload.html#API_CreateUpload_RequestSyntax) for valid list of values.",
         () => [],
         true,
@@ -65,7 +65,7 @@ export class Upload extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "contentType",
+        'contentType',
         "The upload's content type (for example, application/octet-stream).",
         () => [],
         false,
@@ -73,7 +73,7 @@ export class Upload extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "The upload's file name. The name should not contain any forward slashes (/). If you are uploading an iOS app, the file name must end with the .ipa extension. If you are uploading an Android app, the file name must end with the .apk extension. For all others, the file name must end with the .zip file extension.",
         () => [],
         false,

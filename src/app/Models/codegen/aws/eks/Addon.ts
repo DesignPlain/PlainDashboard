@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AddonArgs {
   // How to resolve field value conflicts when migrating a self-managed add-on to an Amazon EKS add-on. Valid values are `NONE` and `OVERWRITE`. For more details see the [CreateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAddon.html) API Docs.
@@ -129,7 +129,7 @@ match one of the versions returned by [describe-addon-versions](https://docs.aws
     return [
       new DynamicUIProps(
         InputType.String,
-        "resolveConflictsOnUpdate",
+        'resolveConflictsOnUpdate',
         "How to resolve field value conflicts for an Amazon EKS add-on if you've changed a value from the Amazon EKS default value. Valid values are `NONE`, `OVERWRITE`, and `PRESERVE`. For more details see the [UpdateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html) API Docs.",
         () => [],
         false,
@@ -137,55 +137,55 @@ match one of the versions returned by [describe-addon-versions](https://docs.aws
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "preserve",
-        "Indicates if you want to preserve the created resources when deleting the EKS add-on.",
+        'preserve',
+        'Indicates if you want to preserve the created resources when deleting the EKS add-on.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterName",
-        "Name of the EKS Cluster.\n\nThe following arguments are optional:",
-        () => [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "resolveConflicts",
-        "Define how to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on or when applying version updates to the add-on. Valid values are `NONE`, `OVERWRITE` and `PRESERVE`. Note that `PRESERVE` is only valid on addon update, not for initial addon creation. If you need to set this to `PRESERVE`, use the `resolve_conflicts_on_create` and `resolve_conflicts_on_update` attributes instead. For more details check [UpdateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html) API Docs.",
-        () => [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "addonName",
-        "Name of the EKS add-on. The name must match one of\nthe names returned by [describe-addon-versions](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-versions.html).",
+        'clusterName',
+        'Name of the EKS Cluster.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "configurationValues",
-        "custom configuration values for addons with single JSON string. This JSON string value must match the JSON schema derived from [describe-addon-configuration](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-configuration.html).",
+        'resolveConflicts',
+        'Define how to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on or when applying version updates to the add-on. Valid values are `NONE`, `OVERWRITE` and `PRESERVE`. Note that `PRESERVE` is only valid on addon update, not for initial addon creation. If you need to set this to `PRESERVE`, use the `resolve_conflicts_on_create` and `resolve_conflicts_on_update` attributes instead. For more details check [UpdateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html) API Docs.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceAccountRoleArn",
+        'addonName',
+        'Name of the EKS add-on. The name must match one of\nthe names returned by [describe-addon-versions](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-versions.html).',
+        () => [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'configurationValues',
+        'custom configuration values for addons with single JSON string. This JSON string value must match the JSON schema derived from [describe-addon-configuration](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-configuration.html).',
+        () => [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'serviceAccountRoleArn',
         "The Amazon Resource Name (ARN) of an\nexisting IAM role to bind to the add-on's service account. The role must be\nassigned the IAM permissions required by the add-on. If you don't specify\nan existing IAM role, then the add-on uses the permissions assigned to the node\nIAM role. For more information, see [Amazon EKS node IAM role](https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html)\nin the Amazon EKS User Guide.\n\n> **Note:** To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC)\nprovider created for your cluster. For more information, [see Enabling IAM roles\nfor service accounts on your cluster](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html)\nin the Amazon EKS User Guide.",
         () => [],
         false,
@@ -193,16 +193,16 @@ match one of the versions returned by [describe-addon-versions](https://docs.aws
       ),
       new DynamicUIProps(
         InputType.String,
-        "resolveConflictsOnCreate",
-        "How to resolve field value conflicts when migrating a self-managed add-on to an Amazon EKS add-on. Valid values are `NONE` and `OVERWRITE`. For more details see the [CreateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAddon.html) API Docs.",
+        'resolveConflictsOnCreate',
+        'How to resolve field value conflicts when migrating a self-managed add-on to an Amazon EKS add-on. Valid values are `NONE` and `OVERWRITE`. For more details see the [CreateAddon](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateAddon.html) API Docs.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "addonVersion",
-        "The version of the EKS add-on. The version must\nmatch one of the versions returned by [describe-addon-versions](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-versions.html).",
+        'addonVersion',
+        'The version of the EKS add-on. The version must\nmatch one of the versions returned by [describe-addon-versions](https://docs.aws.amazon.com/cli/latest/reference/eks/describe-addon-versions.html).',
         () => [],
         false,
         false,

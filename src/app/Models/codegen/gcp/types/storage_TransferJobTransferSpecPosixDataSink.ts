@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_TransferJobTransferSpecPosixDataSink {
   // Root directory path to the filesystem.
@@ -15,8 +15,8 @@ export function storage_TransferJobTransferSpecPosixDataSink_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "rootDirectory",
-      "Root directory path to the filesystem.",
+      'rootDirectory',
+      'Root directory path to the filesystem.',
       () => [],
       true,
       false,

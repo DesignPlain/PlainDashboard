@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface redshift_EndpointAccessVpcEndpointNetworkInterface {
   // The subnet identifier.
@@ -24,32 +24,32 @@ export function redshift_EndpointAccessVpcEndpointNetworkInterface_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "subnetId",
-      "The subnet identifier.",
+      'subnetId',
+      'The subnet identifier.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "availabilityZone",
-      "The Availability Zone.",
+      'availabilityZone',
+      'The Availability Zone.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "networkInterfaceId",
-      "The network interface identifier.",
+      'networkInterfaceId',
+      'The network interface identifier.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "privateIpAddress",
-      "The IPv4 address of the network interface within the subnet.",
+      'privateIpAddress',
+      'The IPv4 address of the network interface within the subnet.',
       () => [],
       false,
       false,

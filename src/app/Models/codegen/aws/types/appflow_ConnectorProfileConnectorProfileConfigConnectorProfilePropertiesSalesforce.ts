@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSalesforce {
   //
@@ -18,16 +18,16 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePr
   return [
     new DynamicUIProps(
       InputType.String,
-      "instanceUrl",
-      "",
+      'instanceUrl',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isSandboxEnvironment",
-      "Indicates whether the connector profile applies to a sandbox or production environment.",
+      'isSandboxEnvironment',
+      'Indicates whether the connector profile applies to a sandbox or production environment.',
       () => [],
       false,
       false,

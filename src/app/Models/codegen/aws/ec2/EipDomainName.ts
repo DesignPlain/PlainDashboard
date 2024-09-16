@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_EipDomainNameTimeouts,
   ec2_EipDomainNameTimeouts_GetTypes,
-} from "../types/ec2_EipDomainNameTimeouts";
+} from '../types/ec2_EipDomainNameTimeouts';
 
 export interface EipDomainNameArgs {
   // The allocation ID.
@@ -38,24 +38,24 @@ export class EipDomainName extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "allocationId",
-        "The allocation ID.",
+        'allocationId',
+        'The allocation ID.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "The domain name to modify for the IP address.",
+        'domainName',
+        'The domain name to modify for the IP address.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => ec2_EipDomainNameTimeouts_GetTypes(),
         false,
         false,

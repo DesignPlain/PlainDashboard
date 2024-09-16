@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkeonprem_VMwareClusterVcenter {
   // The name of the vCenter datacenter for the user cluster.
@@ -39,64 +39,64 @@ export function gkeonprem_VMwareClusterVcenter_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "storagePolicyName",
-      "The name of the vCenter storage policy for the user cluster.",
+      'storagePolicyName',
+      'The name of the vCenter storage policy for the user cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "address",
-      "(Output)\nThe vCenter IP address.",
+      'address',
+      '(Output)\nThe vCenter IP address.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "caCertData",
-      "Contains the vCenter CA certificate public key for SSL verification.",
+      'caCertData',
+      'Contains the vCenter CA certificate public key for SSL verification.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "cluster",
-      "The name of the vCenter cluster for the user cluster.",
+      'cluster',
+      'The name of the vCenter cluster for the user cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "datacenter",
-      "The name of the vCenter datacenter for the user cluster.",
+      'datacenter',
+      'The name of the vCenter datacenter for the user cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "datastore",
-      "The name of the vCenter datastore for the user cluster.",
+      'datastore',
+      'The name of the vCenter datastore for the user cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "folder",
-      "The name of the vCenter folder for the user cluster.",
+      'folder',
+      'The name of the vCenter folder for the user cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resourcePool",
-      "The name of the vCenter resource pool for the user cluster.",
+      'resourcePool',
+      'The name of the vCenter resource pool for the user cluster.',
       () => [],
       false,
       false,

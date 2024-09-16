@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dns_RecordSetRoutingPolicy,
   dns_RecordSetRoutingPolicy_GetTypes,
-} from "../types/dns_RecordSetRoutingPolicy";
+} from '../types/dns_RecordSetRoutingPolicy';
 
 export interface RecordSetArgs {
   /*
@@ -97,47 +97,47 @@ string (e.g. "first255characters\"\"morecharacters").
     return [
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The DNS record set type.\n\n- - -",
+        'type',
+        'The DNS record set type.\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "managedZone",
-        "The name of the zone in which this record set will\nreside.",
+        'managedZone',
+        'The name of the zone in which this record set will\nreside.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The DNS name this record set will apply to.",
+        'name',
+        'The DNS name this record set will apply to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "routingPolicy",
-        "The configuration for steering traffic based on query.\nNow you can specify either Weighted Round Robin(WRR) type or Geolocation(GEO) type.\nStructure is documented below.",
+        'routingPolicy',
+        'The configuration for steering traffic based on query.\nNow you can specify either Weighted Round Robin(WRR) type or Geolocation(GEO) type.\nStructure is documented below.',
         () => dns_RecordSetRoutingPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "rrdatas",
+        'rrdatas',
         'The string data for the records in this record set whose meaning depends on the DNS type. For TXT record, if the string\ndata contains spaces, add surrounding \\" if you don\'t want your string to get split on spaces. To specify a single\nrecord value longer than 255 characters such as a TXT record for DKIM, add \\"\\" inside the Terraform configuration\nstring (e.g. "first255characters\\"\\"morecharacters").',
         () => InputType_String_GetTypes(),
         false,
@@ -145,8 +145,8 @@ string (e.g. "first255characters\"\"morecharacters").
       ),
       new DynamicUIProps(
         InputType.Number,
-        "ttl",
-        "The time-to-live of this record set (seconds).",
+        'ttl',
+        'The time-to-live of this record set (seconds).',
         () => [],
         false,
         false,

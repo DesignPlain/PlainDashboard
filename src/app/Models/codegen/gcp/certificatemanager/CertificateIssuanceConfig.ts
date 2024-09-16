@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig,
   certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig_GetTypes,
-} from "../types/certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig";
+} from '../types/certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig';
 
 export interface CertificateIssuanceConfigArgs {
   /*
@@ -146,40 +146,40 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     return [
       new DynamicUIProps(
         InputType.String,
-        "lifetime",
-        "Lifetime of issued certificates. A duration in seconds with up to nine fractional digits, ending with 's'.\nExample: \"1814400s\". Valid values are from 21 days (1814400s) to 30 days (2592000s)",
+        'lifetime',
+        'Lifetime of issued certificates. A duration in seconds with up to nine fractional digits, ending with \'s\'.\nExample: "1814400s". Valid values are from 21 days (1814400s) to 30 days (2592000s)',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A user-defined name of the certificate issuance config.\nCertificateIssuanceConfig names must be unique globally.",
+        'name',
+        'A user-defined name of the certificate issuance config.\nCertificateIssuanceConfig names must be unique globally.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "rotationWindowPercentage",
-        "It specifies the percentage of elapsed time of the certificate lifetime to wait before renewing the certificate.\nMust be a number between 1-99, inclusive.\nYou must set the rotation window percentage in relation to the certificate lifetime so that certificate renewal occurs at least 7 days after\nthe certificate has been issued and at least 7 days before it expires.",
+        'rotationWindowPercentage',
+        'It specifies the percentage of elapsed time of the certificate lifetime to wait before renewing the certificate.\nMust be a number between 1-99, inclusive.\nYou must set the rotation window percentage in relation to the certificate lifetime so that certificate renewal occurs at least 7 days after\nthe certificate has been issued and at least 7 days before it expires.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyAlgorithm",
-        "Key algorithm to use when generating the private key.\nPossible values are: `RSA_2048`, `ECDSA_P256`.",
+        'keyAlgorithm',
+        'Key algorithm to use when generating the private key.\nPossible values are: `RSA_2048`, `ECDSA_P256`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "certificateAuthorityConfig",
-        "The CA that issues the workload certificate. It includes the CA address, type, authentication to CA service, etc.\nStructure is documented below.",
+        'certificateAuthorityConfig',
+        'The CA that issues the workload certificate. It includes the CA address, type, authentication to CA service, etc.\nStructure is documented below.',
         () =>
           certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig_GetTypes(),
         true,
@@ -187,15 +187,15 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "One or more paragraphs of text description of a CertificateIssuanceConfig.",
+        'description',
+        'One or more paragraphs of text description of a CertificateIssuanceConfig.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
+        'location',
         'The Certificate Manager location. If not specified, "global" is used.',
         () => [],
         false,
@@ -203,15 +203,15 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         '\'Set of label tags associated with the CertificateIssuanceConfig resource.\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,

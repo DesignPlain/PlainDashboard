@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dns_ManagedZonePrivateVisibilityConfigGkeCluster,
   dns_ManagedZonePrivateVisibilityConfigGkeCluster_GetTypes,
-} from "./dns_ManagedZonePrivateVisibilityConfigGkeCluster";
+} from './dns_ManagedZonePrivateVisibilityConfigGkeCluster';
 import {
   dns_ManagedZonePrivateVisibilityConfigNetwork,
   dns_ManagedZonePrivateVisibilityConfigNetwork_GetTypes,
-} from "./dns_ManagedZonePrivateVisibilityConfigNetwork";
+} from './dns_ManagedZonePrivateVisibilityConfigNetwork';
 
 export interface dns_ManagedZonePrivateVisibilityConfig {
   /*
@@ -29,16 +29,16 @@ export function dns_ManagedZonePrivateVisibilityConfig_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "gkeClusters",
-      "The list of Google Kubernetes Engine clusters that can see this zone.\nStructure is documented below.",
+      'gkeClusters',
+      'The list of Google Kubernetes Engine clusters that can see this zone.\nStructure is documented below.',
       () => dns_ManagedZonePrivateVisibilityConfigGkeCluster_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "networks",
-      "",
+      'networks',
+      '',
       () => dns_ManagedZonePrivateVisibilityConfigNetwork_GetTypes(),
       false,
       false,

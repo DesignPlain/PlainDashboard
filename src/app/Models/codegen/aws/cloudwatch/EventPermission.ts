@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudwatch_EventPermissionCondition,
   cloudwatch_EventPermissionCondition_GetTypes,
-} from "../types/cloudwatch_EventPermissionCondition";
+} from '../types/cloudwatch_EventPermissionCondition';
 
 export interface EventPermissionArgs {
   // The action that you are enabling the other account to perform. Defaults to `events:PutEvents`.
@@ -53,40 +53,40 @@ If you omit this, the permissions are set on the `default` event bus.
     return [
       new DynamicUIProps(
         InputType.String,
-        "action",
-        "The action that you are enabling the other account to perform. Defaults to `events:PutEvents`.",
+        'action',
+        'The action that you are enabling the other account to perform. Defaults to `events:PutEvents`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
-        "Configuration block to limit the event bus permissions you are granting to only accounts that fulfill the condition. Specified below.",
+        'condition',
+        'Configuration block to limit the event bus permissions you are granting to only accounts that fulfill the condition. Specified below.',
         () => cloudwatch_EventPermissionCondition_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "eventBusName",
-        "The name of the event bus to set the permissions on.\nIf you omit this, the permissions are set on the `default` event bus.",
+        'eventBusName',
+        'The name of the event bus to set the permissions on.\nIf you omit this, the permissions are set on the `default` event bus.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "principal",
-        "The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify `*` to permit any account to put events to your default event bus, optionally limited by `condition`.",
+        'principal',
+        'The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify `*` to permit any account to put events to your default event bus, optionally limited by `condition`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "statementId",
-        "An identifier string for the external account that you are granting permissions to.",
+        'statementId',
+        'An identifier string for the external account that you are granting permissions to.',
         () => [],
         true,
         true,

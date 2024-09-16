@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_PatchDeploymentPatchConfigPostStepLinuxExecStepConfig,
   osconfig_PatchDeploymentPatchConfigPostStepLinuxExecStepConfig_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigPostStepLinuxExecStepConfig";
+} from './osconfig_PatchDeploymentPatchConfigPostStepLinuxExecStepConfig';
 import {
   osconfig_PatchDeploymentPatchConfigPostStepWindowsExecStepConfig,
   osconfig_PatchDeploymentPatchConfigPostStepWindowsExecStepConfig_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigPostStepWindowsExecStepConfig";
+} from './osconfig_PatchDeploymentPatchConfigPostStepWindowsExecStepConfig';
 
 export interface osconfig_PatchDeploymentPatchConfigPostStep {
   /*
@@ -32,8 +32,8 @@ export function osconfig_PatchDeploymentPatchConfigPostStep_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Object,
-      "linuxExecStepConfig",
-      "The ExecStepConfig for all Linux VMs targeted by the PatchJob.\nStructure is documented below.",
+      'linuxExecStepConfig',
+      'The ExecStepConfig for all Linux VMs targeted by the PatchJob.\nStructure is documented below.',
       () =>
         osconfig_PatchDeploymentPatchConfigPostStepLinuxExecStepConfig_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function osconfig_PatchDeploymentPatchConfigPostStep_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Object,
-      "windowsExecStepConfig",
-      "The ExecStepConfig for all Windows VMs targeted by the PatchJob.\nStructure is documented below.",
+      'windowsExecStepConfig',
+      'The ExecStepConfig for all Windows VMs targeted by the PatchJob.\nStructure is documented below.',
       () =>
         osconfig_PatchDeploymentPatchConfigPostStepWindowsExecStepConfig_GetTypes(),
       false,

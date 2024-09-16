@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryGoo {
   // The name of the repository.
@@ -18,16 +18,16 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceReposito
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the repository.",
+      'name',
+      'The name of the repository.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "url",
-      "The url of the repository.",
+      'url',
+      'The url of the repository.',
       () => [],
       true,
       false,

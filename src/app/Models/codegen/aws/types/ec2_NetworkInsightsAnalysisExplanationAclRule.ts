@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_NetworkInsightsAnalysisExplanationAclRulePortRange,
   ec2_NetworkInsightsAnalysisExplanationAclRulePortRange_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisExplanationAclRulePortRange";
+} from './ec2_NetworkInsightsAnalysisExplanationAclRulePortRange';
 
 export interface ec2_NetworkInsightsAnalysisExplanationAclRule {
   //
@@ -34,34 +34,34 @@ export function ec2_NetworkInsightsAnalysisExplanationAclRule_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Number,
-      "ruleNumber",
-      "",
+      'ruleNumber',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "cidr", "", () => [], false, false),
-    new DynamicUIProps(InputType.Bool, "egress", "", () => [], false, false),
+    new DynamicUIProps(InputType.String, 'cidr', '', () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'egress', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Array,
-      "portRanges",
-      "",
+      'portRanges',
+      '',
       () => ec2_NetworkInsightsAnalysisExplanationAclRulePortRange_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "protocol",
-      "",
+      'protocol',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ruleAction",
-      "",
+      'ruleAction',
+      '',
       () => [],
       false,
       false,

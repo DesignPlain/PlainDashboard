@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination,
   integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination_GetTypes,
-} from "./integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination";
+} from './integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination';
 
 export interface integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig {
   /*
@@ -25,8 +25,8 @@ export function integrationconnectors_ConnectionEventingConfigRegistrationDestin
   return [
     new DynamicUIProps(
       InputType.Array,
-      "destinations",
-      "destinations for the connection\nStructure is documented below.",
+      'destinations',
+      'destinations for the connection\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfigDestination_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function integrationconnectors_ConnectionEventingConfigRegistrationDestin
     ),
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "Key for the connection",
+      'key',
+      'Key for the connection',
       () => [],
       false,
       false,

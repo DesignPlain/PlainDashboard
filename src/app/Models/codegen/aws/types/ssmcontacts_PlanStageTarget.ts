@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssmcontacts_PlanStageTargetChannelTargetInfo,
   ssmcontacts_PlanStageTargetChannelTargetInfo_GetTypes,
-} from "./ssmcontacts_PlanStageTargetChannelTargetInfo";
+} from './ssmcontacts_PlanStageTargetChannelTargetInfo';
 import {
   ssmcontacts_PlanStageTargetContactTargetInfo,
   ssmcontacts_PlanStageTargetContactTargetInfo_GetTypes,
-} from "./ssmcontacts_PlanStageTargetContactTargetInfo";
+} from './ssmcontacts_PlanStageTargetContactTargetInfo';
 
 export interface ssmcontacts_PlanStageTarget {
   // A configuration block for specifying information about the contact channel that Incident Manager engages. See Channel Target Info for more details.
@@ -26,16 +26,16 @@ export function ssmcontacts_PlanStageTarget_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "channelTargetInfo",
-      "A configuration block for specifying information about the contact channel that Incident Manager engages. See Channel Target Info for more details.",
+      'channelTargetInfo',
+      'A configuration block for specifying information about the contact channel that Incident Manager engages. See Channel Target Info for more details.',
       () => ssmcontacts_PlanStageTargetChannelTargetInfo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "contactTargetInfo",
-      "A configuration block for specifying information about the contact that Incident Manager engages. See Contact Target Info for more details.",
+      'contactTargetInfo',
+      'A configuration block for specifying information about the contact that Incident Manager engages. See Contact Target Info for more details.',
       () => ssmcontacts_PlanStageTargetContactTargetInfo_GetTypes(),
       false,
       false,

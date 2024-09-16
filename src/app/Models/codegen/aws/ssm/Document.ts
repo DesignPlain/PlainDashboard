@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssm_DocumentAttachmentsSource,
   ssm_DocumentAttachmentsSource_GetTypes,
-} from "../types/ssm_DocumentAttachmentsSource";
+} from '../types/ssm_DocumentAttachmentsSource';
 import {
   ssm_DocumentParameter,
   ssm_DocumentParameter_GetTypes,
-} from "../types/ssm_DocumentParameter";
+} from '../types/ssm_DocumentParameter';
 
 export interface DocumentArgs {
   // The target type which defines the kinds of resources the document can run on. For example, `/AWS::EC2::Instance`. For a list of valid resource types, see [AWS resource and property types reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).
@@ -117,15 +117,15 @@ export class Document extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "targetType",
-        "The target type which defines the kinds of resources the document can run on. For example, `/AWS::EC2::Instance`. For a list of valid resource types, see [AWS resource and property types reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).",
+        'targetType',
+        'The target type which defines the kinds of resources the document can run on. For example, `/AWS::EC2::Instance`. For a list of valid resource types, see [AWS resource and property types reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "versionName",
+        'versionName',
         "The version of the artifact associated with the document. For example, `12.6`. This value is unique across all versions of a document, and can't be changed.",
         () => [],
         false,
@@ -133,56 +133,56 @@ export class Document extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "documentType",
-        "The type of the document. For a list of valid values, see the [API Reference](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html#systemsmanager-CreateDocument-request-DocumentType).",
+        'documentType',
+        'The type of the document. For a list of valid values, see the [API Reference](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html#systemsmanager-CreateDocument-request-DocumentType).',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the document.",
+        'name',
+        'The name of the document.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "attachmentsSources",
-        "One or more configuration blocks describing attachments sources to a version of a document. See `attachments_source` block below for details.",
+        'attachmentsSources',
+        'One or more configuration blocks describing attachments sources to a version of a document. See `attachments_source` block below for details.',
         () => ssm_DocumentAttachmentsSource_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "documentFormat",
-        "The format of the document. Valid values: `JSON`, `TEXT`, `YAML`.",
+        'documentFormat',
+        'The format of the document. Valid values: `JSON`, `TEXT`, `YAML`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "permissions",
-        "Additional permissions to attach to the document. See Permissions below for details.",
+        'permissions',
+        'Additional permissions to attach to the document. See Permissions below for details.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the object. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the object. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "content",
-        "The content for the SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.",
+        'content',
+        'The content for the SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.',
         () => [],
         true,
         false,

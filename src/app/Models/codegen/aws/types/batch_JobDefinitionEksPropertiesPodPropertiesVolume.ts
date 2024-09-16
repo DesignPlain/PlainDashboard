@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   batch_JobDefinitionEksPropertiesPodPropertiesVolumeHostPath,
   batch_JobDefinitionEksPropertiesPodPropertiesVolumeHostPath_GetTypes,
-} from "./batch_JobDefinitionEksPropertiesPodPropertiesVolumeHostPath";
+} from './batch_JobDefinitionEksPropertiesPodPropertiesVolumeHostPath';
 import {
   batch_JobDefinitionEksPropertiesPodPropertiesVolumeSecret,
   batch_JobDefinitionEksPropertiesPodPropertiesVolumeSecret_GetTypes,
-} from "./batch_JobDefinitionEksPropertiesPodPropertiesVolumeSecret";
+} from './batch_JobDefinitionEksPropertiesPodPropertiesVolumeSecret';
 import {
   batch_JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDir,
   batch_JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDir_GetTypes,
-} from "./batch_JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDir";
+} from './batch_JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDir';
 
 export interface batch_JobDefinitionEksPropertiesPodPropertiesVolume {
   //
@@ -36,8 +36,8 @@ export function batch_JobDefinitionEksPropertiesPodPropertiesVolume_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Object,
-      "hostPath",
-      "",
+      'hostPath',
+      '',
       () =>
         batch_JobDefinitionEksPropertiesPodPropertiesVolumeHostPath_GetTypes(),
       false,
@@ -45,16 +45,16 @@ export function batch_JobDefinitionEksPropertiesPodPropertiesVolume_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the job definition.",
+      'name',
+      'Name of the job definition.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "secret",
-      "",
+      'secret',
+      '',
       () =>
         batch_JobDefinitionEksPropertiesPodPropertiesVolumeSecret_GetTypes(),
       false,
@@ -62,8 +62,8 @@ export function batch_JobDefinitionEksPropertiesPodPropertiesVolume_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Object,
-      "emptyDir",
-      "",
+      'emptyDir',
+      '',
       () =>
         batch_JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDir_GetTypes(),
       false,

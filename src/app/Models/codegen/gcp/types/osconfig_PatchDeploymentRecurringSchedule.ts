@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_PatchDeploymentRecurringScheduleTimeOfDay,
   osconfig_PatchDeploymentRecurringScheduleTimeOfDay_GetTypes,
-} from "./osconfig_PatchDeploymentRecurringScheduleTimeOfDay";
+} from './osconfig_PatchDeploymentRecurringScheduleTimeOfDay';
 import {
   osconfig_PatchDeploymentRecurringScheduleTimeZone,
   osconfig_PatchDeploymentRecurringScheduleTimeZone_GetTypes,
-} from "./osconfig_PatchDeploymentRecurringScheduleTimeZone";
+} from './osconfig_PatchDeploymentRecurringScheduleTimeZone';
 import {
   osconfig_PatchDeploymentRecurringScheduleWeekly,
   osconfig_PatchDeploymentRecurringScheduleWeekly_GetTypes,
-} from "./osconfig_PatchDeploymentRecurringScheduleWeekly";
+} from './osconfig_PatchDeploymentRecurringScheduleWeekly';
 import {
   osconfig_PatchDeploymentRecurringScheduleMonthly,
   osconfig_PatchDeploymentRecurringScheduleMonthly_GetTypes,
-} from "./osconfig_PatchDeploymentRecurringScheduleMonthly";
+} from './osconfig_PatchDeploymentRecurringScheduleMonthly';
 
 export interface osconfig_PatchDeploymentRecurringSchedule {
   /*
@@ -79,31 +79,31 @@ export function osconfig_PatchDeploymentRecurringSchedule_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Object,
-      "timeOfDay",
-      "Time of the day to run a recurring deployment.\nStructure is documented below.",
+      'timeOfDay',
+      'Time of the day to run a recurring deployment.\nStructure is documented below.',
       () => osconfig_PatchDeploymentRecurringScheduleTimeOfDay_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "timeZone",
-      "Defines the time zone that timeOfDay is relative to. The rules for daylight saving time are\ndetermined by the chosen time zone.\nStructure is documented below.",
+      'timeZone',
+      'Defines the time zone that timeOfDay is relative to. The rules for daylight saving time are\ndetermined by the chosen time zone.\nStructure is documented below.',
       () => osconfig_PatchDeploymentRecurringScheduleTimeZone_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "weekly",
-      "Schedule with weekly executions.\nStructure is documented below.",
+      'weekly',
+      'Schedule with weekly executions.\nStructure is documented below.',
       () => osconfig_PatchDeploymentRecurringScheduleWeekly_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "endTime",
+      'endTime',
       'The end time at which a recurring patch deployment schedule is no longer active.\nA timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".',
       () => [],
       false,
@@ -111,7 +111,7 @@ export function osconfig_PatchDeploymentRecurringSchedule_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "lastExecuteTime",
+      'lastExecuteTime',
       '(Output)\nThe time the last patch job ran successfully.\nA timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".',
       () => [],
       false,
@@ -119,15 +119,15 @@ export function osconfig_PatchDeploymentRecurringSchedule_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Object,
-      "monthly",
-      "Schedule with monthly executions.\nStructure is documented below.",
+      'monthly',
+      'Schedule with monthly executions.\nStructure is documented below.',
       () => osconfig_PatchDeploymentRecurringScheduleMonthly_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "nextExecuteTime",
+      'nextExecuteTime',
       '(Output)\nThe time the next patch job is scheduled to run.\nA timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".',
       () => [],
       false,
@@ -135,7 +135,7 @@ export function osconfig_PatchDeploymentRecurringSchedule_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "startTime",
+      'startTime',
       'The time that the recurring schedule becomes effective. Defaults to createTime of the patch deployment.\nA timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".',
       () => [],
       false,

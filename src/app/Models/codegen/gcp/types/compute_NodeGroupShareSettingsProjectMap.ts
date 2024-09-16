@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_NodeGroupShareSettingsProjectMap {
   // The identifier for this object. Format specified above.
@@ -18,16 +18,16 @@ export function compute_NodeGroupShareSettingsProjectMap_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "The identifier for this object. Format specified above.",
+      'id',
+      'The identifier for this object. Format specified above.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "projectId",
-      "The project id/number should be the same as the key of this project config in the project map.",
+      'projectId',
+      'The project id/number should be the same as the key of this project config in the project map.',
       () => [],
       true,
       false,

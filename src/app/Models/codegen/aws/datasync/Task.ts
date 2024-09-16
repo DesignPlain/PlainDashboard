@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datasync_TaskExcludes,
   datasync_TaskExcludes_GetTypes,
-} from "../types/datasync_TaskExcludes";
+} from '../types/datasync_TaskExcludes';
 import {
   datasync_TaskOptions,
   datasync_TaskOptions_GetTypes,
-} from "../types/datasync_TaskOptions";
+} from '../types/datasync_TaskOptions';
 import {
   datasync_TaskSchedule,
   datasync_TaskSchedule_GetTypes,
-} from "../types/datasync_TaskSchedule";
+} from '../types/datasync_TaskSchedule';
 import {
   datasync_TaskTaskReportConfig,
   datasync_TaskTaskReportConfig_GetTypes,
-} from "../types/datasync_TaskTaskReportConfig";
+} from '../types/datasync_TaskTaskReportConfig';
 import {
   datasync_TaskIncludes,
   datasync_TaskIncludes_GetTypes,
-} from "../types/datasync_TaskIncludes";
+} from '../types/datasync_TaskIncludes';
 
 export interface TaskArgs {
   // Amazon Resource Name (ARN) of destination DataSync Location.
@@ -99,80 +99,80 @@ export class Task extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "schedule",
-        "Specifies a schedule used to periodically transfer files from a source to a destination location.",
+        'schedule',
+        'Specifies a schedule used to periodically transfer files from a source to a destination location.',
         () => datasync_TaskSchedule_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value pairs of resource tags to assign to the DataSync Task. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value pairs of resource tags to assign to the DataSync Task. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cloudwatchLogGroupArn",
-        "Amazon Resource Name (ARN) of the CloudWatch Log Group that is used to monitor and log events in the sync task.",
+        'cloudwatchLogGroupArn',
+        'Amazon Resource Name (ARN) of the CloudWatch Log Group that is used to monitor and log events in the sync task.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceLocationArn",
-        "Amazon Resource Name (ARN) of source DataSync Location.",
+        'sourceLocationArn',
+        'Amazon Resource Name (ARN) of source DataSync Location.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "includes",
-        "Filter rules that determines which files to include in a task.",
+        'includes',
+        'Filter rules that determines which files to include in a task.',
         () => datasync_TaskIncludes_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "destinationLocationArn",
-        "Amazon Resource Name (ARN) of destination DataSync Location.",
+        'destinationLocationArn',
+        'Amazon Resource Name (ARN) of destination DataSync Location.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the DataSync Task.",
+        'name',
+        'Name of the DataSync Task.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "options",
-        "Configuration block containing option that controls the default behavior when you start an execution of this DataSync Task. For each individual task execution, you can override these options by specifying an overriding configuration in those executions.",
+        'options',
+        'Configuration block containing option that controls the default behavior when you start an execution of this DataSync Task. For each individual task execution, you can override these options by specifying an overriding configuration in those executions.',
         () => datasync_TaskOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "taskReportConfig",
-        "Configuration block containing the configuration of a DataSync Task Report. See `task_report_config` below.",
+        'taskReportConfig',
+        'Configuration block containing the configuration of a DataSync Task Report. See `task_report_config` below.',
         () => datasync_TaskTaskReportConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "excludes",
-        "Filter rules that determines which files to exclude from a task.",
+        'excludes',
+        'Filter rules that determines which files to exclude from a task.',
         () => datasync_TaskExcludes_GetTypes(),
         false,
         false,

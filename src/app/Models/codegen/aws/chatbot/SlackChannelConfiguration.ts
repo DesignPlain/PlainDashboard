@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   chatbot_SlackChannelConfigurationTimeouts,
   chatbot_SlackChannelConfigurationTimeouts_GetTypes,
-} from "../types/chatbot_SlackChannelConfigurationTimeouts";
+} from '../types/chatbot_SlackChannelConfigurationTimeouts';
 
 export interface SlackChannelConfigurationArgs {
   // List of IAM policy ARNs that are applied as channel guardrails. The AWS managed `AdministratorAccess` policy is applied by default if this is not set.
@@ -97,80 +97,80 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "userAuthorizationRequired",
-        "Enables use of a user role requirement in your chat configuration.",
+        'userAuthorizationRequired',
+        'Enables use of a user role requirement in your chat configuration.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "iamRoleArn",
-        "User-defined role that AWS Chatbot assumes. This is not the service-linked role.",
-        () => [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "slackChannelId",
-        "ID of the Slack channel. For example, `C07EZ1ABC23`.",
+        'iamRoleArn',
+        'User-defined role that AWS Chatbot assumes. This is not the service-linked role.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "slackTeamId",
-        "ID of the Slack workspace authorized with AWS Chatbot. For example, `T07EA123LEP`.\n\nThe following arguments are optional:",
+        'slackChannelId',
+        'ID of the Slack channel. For example, `C07EZ1ABC23`.',
+        () => [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'slackTeamId',
+        'ID of the Slack workspace authorized with AWS Chatbot. For example, `T07EA123LEP`.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "guardrailPolicyArns",
-        "List of IAM policy ARNs that are applied as channel guardrails. The AWS managed `AdministratorAccess` policy is applied by default if this is not set.",
+        'guardrailPolicyArns',
+        'List of IAM policy ARNs that are applied as channel guardrails. The AWS managed `AdministratorAccess` policy is applied by default if this is not set.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "loggingLevel",
-        "Logging levels include `ERROR`, `INFO`, or `NONE`.",
+        'loggingLevel',
+        'Logging levels include `ERROR`, `INFO`, or `NONE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "snsTopicArns",
-        "ARNs of the SNS topics that deliver notifications to AWS Chatbot.",
+        'snsTopicArns',
+        'ARNs of the SNS topics that deliver notifications to AWS Chatbot.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags assigned to the resource.",
+        'tags',
+        'Map of tags assigned to the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => chatbot_SlackChannelConfigurationTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "configurationName",
-        "Name of the Slack channel configuration.",
+        'configurationName',
+        'Name of the Slack channel configuration.',
         () => [],
         true,
         false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PublishingDestinationArgs {
   /*
@@ -45,7 +45,7 @@ Currently there is only "S3" available as destination type which is also the def
     return [
       new DynamicUIProps(
         InputType.String,
-        "destinationType",
+        'destinationType',
         'Currently there is only "S3" available as destination type which is also the default value\n\n> **Note:** In case of missing permissions (S3 Bucket Policy _or_ KMS Key permissions) the resource will fail to create. If the permissions are changed after resource creation, this can be asked from the AWS API via the "DescribePublishingDestination" call (https://docs.aws.amazon.com/cli/latest/reference/guardduty/describe-publishing-destination.html).',
         () => [],
         false,
@@ -53,24 +53,24 @@ Currently there is only "S3" available as destination type which is also the def
       ),
       new DynamicUIProps(
         InputType.String,
-        "detectorId",
-        "The detector ID of the GuardDuty.",
+        'detectorId',
+        'The detector ID of the GuardDuty.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyArn",
-        "The ARN of the KMS key used to encrypt GuardDuty findings. GuardDuty enforces this to be encrypted.",
+        'kmsKeyArn',
+        'The ARN of the KMS key used to encrypt GuardDuty findings. GuardDuty enforces this to be encrypted.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "destinationArn",
-        "The bucket arn and prefix under which the findings get exported. Bucket-ARN is required, the prefix is optional and will be `AWSLogs/[Account-ID]/GuardDuty/[Region]/` if not provided",
+        'destinationArn',
+        'The bucket arn and prefix under which the findings get exported. Bucket-ARN is required, the prefix is optional and will be `AWSLogs/[Account-ID]/GuardDuty/[Region]/` if not provided',
         () => [],
         true,
         false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ReleaseArgs {
   // Format: `projects/{project_id}/releases/{release_id}`\Firestore Rules Releases will --always-- have the name 'cloud.firestore'
@@ -52,7 +52,7 @@ Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist fo
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "Format: `projects/{project_id}/releases/{release_id}`\\Firestore Rules Releases will **always** have the name 'cloud.firestore'",
         () => [],
         false,
@@ -60,16 +60,16 @@ Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist fo
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "rulesetName",
-        "Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.\n\n\n\n- - -",
+        'rulesetName',
+        'Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.\n\n\n\n- - -',
         () => [],
         true,
         true,

@@ -3,53 +3,53 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_JobReference,
   dataproc_JobReference_GetTypes,
-} from "../types/dataproc_JobReference";
+} from '../types/dataproc_JobReference';
 import {
   dataproc_JobPlacement,
   dataproc_JobPlacement_GetTypes,
-} from "../types/dataproc_JobPlacement";
+} from '../types/dataproc_JobPlacement';
 import {
   dataproc_JobSparkConfig,
   dataproc_JobSparkConfig_GetTypes,
-} from "../types/dataproc_JobSparkConfig";
+} from '../types/dataproc_JobSparkConfig';
 import {
   dataproc_JobStatus,
   dataproc_JobStatus_GetTypes,
-} from "../types/dataproc_JobStatus";
+} from '../types/dataproc_JobStatus';
 import {
   dataproc_JobSparksqlConfig,
   dataproc_JobSparksqlConfig_GetTypes,
-} from "../types/dataproc_JobSparksqlConfig";
+} from '../types/dataproc_JobSparksqlConfig';
 import {
   dataproc_JobHadoopConfig,
   dataproc_JobHadoopConfig_GetTypes,
-} from "../types/dataproc_JobHadoopConfig";
+} from '../types/dataproc_JobHadoopConfig';
 import {
   dataproc_JobPrestoConfig,
   dataproc_JobPrestoConfig_GetTypes,
-} from "../types/dataproc_JobPrestoConfig";
+} from '../types/dataproc_JobPrestoConfig';
 import {
   dataproc_JobPysparkConfig,
   dataproc_JobPysparkConfig_GetTypes,
-} from "../types/dataproc_JobPysparkConfig";
+} from '../types/dataproc_JobPysparkConfig';
 import {
   dataproc_JobHiveConfig,
   dataproc_JobHiveConfig_GetTypes,
-} from "../types/dataproc_JobHiveConfig";
+} from '../types/dataproc_JobHiveConfig';
 import {
   dataproc_JobPigConfig,
   dataproc_JobPigConfig_GetTypes,
-} from "../types/dataproc_JobPigConfig";
+} from '../types/dataproc_JobPigConfig';
 import {
   dataproc_JobScheduling,
   dataproc_JobScheduling_GetTypes,
-} from "../types/dataproc_JobScheduling";
+} from '../types/dataproc_JobScheduling';
 
 export interface JobArgs {
   /*
@@ -190,79 +190,79 @@ job is first cancelled before issuing the delete.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "prestoConfig",
-        "The config of presto job",
+        'prestoConfig',
+        'The config of presto job',
         () => dataproc_JobPrestoConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "reference",
-        "The reference of the job",
+        'reference',
+        'The reference of the job',
         () => dataproc_JobReference_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "placement",
-        "The config of job placement.",
+        'placement',
+        'The config of job placement.',
         () => dataproc_JobPlacement_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project in which the `cluster` can be found and jobs\nsubsequently run against. If it is not provided, the provider project is used.",
+        'project',
+        'The project in which the `cluster` can be found and jobs\nsubsequently run against. If it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sparkConfig",
-        "The config of the Spark job.",
+        'sparkConfig',
+        'The config of the Spark job.',
         () => dataproc_JobSparkConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDelete",
-        "By default, you can only delete inactive jobs within\nDataproc. Setting this to true, and calling destroy, will ensure that the\njob is first cancelled before issuing the delete.",
+        'forceDelete',
+        'By default, you can only delete inactive jobs within\nDataproc. Setting this to true, and calling destroy, will ensure that the\njob is first cancelled before issuing the delete.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sparksqlConfig",
-        "The config of SparkSql job",
+        'sparksqlConfig',
+        'The config of SparkSql job',
         () => dataproc_JobSparksqlConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "hadoopConfig",
-        "The config of Hadoop job",
+        'hadoopConfig',
+        'The config of Hadoop job',
         () => dataproc_JobHadoopConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The Cloud Dataproc region. This essentially determines which clusters are available\nfor this job to be submitted to. If not specified, defaults to `global`.",
+        'region',
+        'The Cloud Dataproc region. This essentially determines which clusters are available\nfor this job to be submitted to. If not specified, defaults to `global`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         "The list of labels (key/value pairs) to add to the job.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field 'effective_labels' for all of the labels present on the resource.",
         () => InputType_Map_GetTypes(),
         false,
@@ -270,32 +270,32 @@ job is first cancelled before issuing the delete.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "hiveConfig",
-        "The config of hive job",
+        'hiveConfig',
+        'The config of hive job',
         () => dataproc_JobHiveConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "pysparkConfig",
-        "The config of pySpark job.",
+        'pysparkConfig',
+        'The config of pySpark job.',
         () => dataproc_JobPysparkConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "pigConfig",
-        "The config of pag job.",
+        'pigConfig',
+        'The config of pag job.',
         () => dataproc_JobPigConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "scheduling",
-        "Optional. Job scheduling configuration.",
+        'scheduling',
+        'Optional. Job scheduling configuration.',
         () => dataproc_JobScheduling_GetTypes(),
         false,
         true,

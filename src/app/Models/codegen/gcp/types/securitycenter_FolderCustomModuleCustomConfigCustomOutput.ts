@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty,
   securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty_GetTypes,
-} from "./securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty";
+} from './securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty';
 
 export interface securitycenter_FolderCustomModuleCustomConfigCustomOutput {
   /*
@@ -22,8 +22,8 @@ export function securitycenter_FolderCustomModuleCustomConfigCustomOutput_GetTyp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "properties",
-      "A list of custom output properties to add to the finding.\nStructure is documented below.",
+      'properties',
+      'A list of custom output properties to add to the finding.\nStructure is documented below.',
       () =>
         securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty_GetTypes(),
       false,

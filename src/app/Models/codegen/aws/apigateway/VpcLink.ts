@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VpcLinkArgs {
   // Description of the VPC link.
@@ -43,32 +43,32 @@ export class VpcLink extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "targetArn",
-        "List of network load balancer arns in the VPC targeted by the VPC link. Currently AWS only supports 1 target.",
+        'targetArn',
+        'List of network load balancer arns in the VPC targeted by the VPC link. Currently AWS only supports 1 target.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the VPC link.",
+        'description',
+        'Description of the VPC link.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name used to label and identify the VPC link.",
+        'name',
+        'Name used to label and identify the VPC link.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

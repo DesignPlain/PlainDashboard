@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TrustStoreArgs {
   // S3 object key holding the client certificate CA bundle.
@@ -58,48 +58,48 @@ export class TrustStore extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "namePrefix",
-        "Creates a unique name beginning with the specified prefix. Conflicts with `name`. Cannot be longer than 6 characters.",
+        'namePrefix',
+        'Creates a unique name beginning with the specified prefix. Conflicts with `name`. Cannot be longer than 6 characters.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "caCertificatesBundleS3Bucket",
-        "S3 Bucket name holding the client certificate CA bundle.",
+        'caCertificatesBundleS3Bucket',
+        'S3 Bucket name holding the client certificate CA bundle.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "caCertificatesBundleS3Key",
-        "S3 object key holding the client certificate CA bundle.",
+        'caCertificatesBundleS3Key',
+        'S3 object key holding the client certificate CA bundle.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "caCertificatesBundleS3ObjectVersion",
-        "Version Id of CA bundle S3 bucket object, if versioned, defaults to latest if omitted.",
+        'caCertificatesBundleS3ObjectVersion',
+        'Version Id of CA bundle S3 bucket object, if versioned, defaults to latest if omitted.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the Trust Store. If omitted, the provider will assign a random, unique name. This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.",
+        'name',
+        'Name of the Trust Store. If omitted, the provider will assign a random, unique name. This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.',
         () => [],
         false,
         true,

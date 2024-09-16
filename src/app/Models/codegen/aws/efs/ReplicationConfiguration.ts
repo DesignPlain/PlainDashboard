@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   efs_ReplicationConfigurationDestination,
   efs_ReplicationConfigurationDestination_GetTypes,
-} from "../types/efs_ReplicationConfigurationDestination";
+} from '../types/efs_ReplicationConfigurationDestination';
 
 export interface ReplicationConfigurationArgs {
   // A destination configuration block (documented below).
@@ -45,16 +45,16 @@ When the replication configuration was created.
     return [
       new DynamicUIProps(
         InputType.String,
-        "sourceFileSystemId",
-        "The ID of the file system that is to be replicated.",
+        'sourceFileSystemId',
+        'The ID of the file system that is to be replicated.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "destination",
-        "A destination configuration block (documented below).",
+        'destination',
+        'A destination configuration block (documented below).',
         () => efs_ReplicationConfigurationDestination_GetTypes(),
         true,
         true,

@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lightsail_DistributionDefaultCacheBehavior,
   lightsail_DistributionDefaultCacheBehavior_GetTypes,
-} from "../types/lightsail_DistributionDefaultCacheBehavior";
+} from '../types/lightsail_DistributionDefaultCacheBehavior';
 import {
   lightsail_DistributionOrigin,
   lightsail_DistributionOrigin_GetTypes,
-} from "../types/lightsail_DistributionOrigin";
+} from '../types/lightsail_DistributionOrigin';
 import {
   lightsail_DistributionLocation,
   lightsail_DistributionLocation_GetTypes,
-} from "../types/lightsail_DistributionLocation";
+} from '../types/lightsail_DistributionLocation';
 import {
   lightsail_DistributionCacheBehaviorSettings,
   lightsail_DistributionCacheBehaviorSettings_GetTypes,
-} from "../types/lightsail_DistributionCacheBehaviorSettings";
+} from '../types/lightsail_DistributionCacheBehaviorSettings';
 import {
   lightsail_DistributionCacheBehavior,
   lightsail_DistributionCacheBehavior_GetTypes,
-} from "../types/lightsail_DistributionCacheBehavior";
+} from '../types/lightsail_DistributionCacheBehavior';
 
 export interface DistributionArgs {
   // Map of tags for the Lightsail Distribution. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -131,80 +131,80 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "cacheBehaviorSettings",
-        "An object that describes the cache behavior settings of the distribution. Detailed below\n\nThe following arguments are optional:",
+        'cacheBehaviorSettings',
+        'An object that describes the cache behavior settings of the distribution. Detailed below\n\nThe following arguments are optional:',
         () => lightsail_DistributionCacheBehaviorSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "isEnabled",
-        "Indicates whether the distribution is enabled. Default: `true`.",
+        'isEnabled',
+        'Indicates whether the distribution is enabled. Default: `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "defaultCacheBehavior",
-        "Object that describes the default cache behavior of the distribution. Detailed below",
+        'defaultCacheBehavior',
+        'Object that describes the default cache behavior of the distribution. Detailed below',
         () => lightsail_DistributionDefaultCacheBehavior_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "origin",
-        "Object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer. Detailed below",
+        'origin',
+        'Object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer. Detailed below',
         () => lightsail_DistributionOrigin_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bundleId",
-        "Bundle ID to use for the distribution.",
+        'bundleId',
+        'Bundle ID to use for the distribution.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "cacheBehaviors",
-        "A set of configuration blocks that describe the per-path cache behavior of the distribution. Detailed below",
+        'cacheBehaviors',
+        'A set of configuration blocks that describe the per-path cache behavior of the distribution. Detailed below',
         () => lightsail_DistributionCacheBehavior_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipAddressType",
-        "The IP address type of the distribution. Default: `dualstack`.",
+        'ipAddressType',
+        'The IP address type of the distribution. Default: `dualstack`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateName",
-        "The name of the SSL/TLS certificate attached to the distribution, if any.",
+        'certificateName',
+        'The name of the SSL/TLS certificate attached to the distribution, if any.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the distribution.",
+        'name',
+        'Name of the distribution.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags for the Lightsail Distribution. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags for the Lightsail Distribution. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfig,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfig_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfig";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfig';
 
 export interface appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolver {
   //
@@ -25,24 +25,24 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesU
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucketName",
-      "",
+      'bucketName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketPrefix",
-      "",
+      'bucketPrefix',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "s3OutputFormatConfig",
-      "",
+      's3OutputFormatConfig',
+      '',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfig_GetTypes(),
       true,

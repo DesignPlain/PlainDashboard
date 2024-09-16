@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_LaunchTemplateInstanceRequirementsNetworkInterfaceCount {
   // Maximum.
@@ -18,16 +18,16 @@ export function ec2_LaunchTemplateInstanceRequirementsNetworkInterfaceCount_GetT
   return [
     new DynamicUIProps(
       InputType.Number,
-      "max",
-      "Maximum.",
+      'max',
+      'Maximum.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "min",
-      "Minimum.",
+      'min',
+      'Minimum.',
       () => [],
       false,
       false,

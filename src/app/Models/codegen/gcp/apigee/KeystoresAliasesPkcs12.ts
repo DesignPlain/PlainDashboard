@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigee_KeystoresAliasesPkcs12CertsInfo,
   apigee_KeystoresAliasesPkcs12CertsInfo_GetTypes,
-} from "../types/apigee_KeystoresAliasesPkcs12CertsInfo";
+} from '../types/apigee_KeystoresAliasesPkcs12CertsInfo';
 
 export interface KeystoresAliasesPkcs12Args {
   /*
@@ -76,15 +76,15 @@ PKCS12 file content
     return [
       new DynamicUIProps(
         InputType.String,
-        "orgId",
-        "Organization ID associated with the alias, without organization/ prefix",
+        'orgId',
+        'Organization ID associated with the alias, without organization/ prefix',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "password",
+        'password',
         "Password for the PKCS12 file if it's encrypted",
         () => [],
         false,
@@ -92,40 +92,40 @@ PKCS12 file content
       ),
       new DynamicUIProps(
         InputType.String,
-        "alias",
-        "Alias Name",
+        'alias',
+        'Alias Name',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "environment",
-        "Environment associated with the alias",
+        'environment',
+        'Environment associated with the alias',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "file",
-        "PKCS12 file content\n\n- - -",
+        'file',
+        'PKCS12 file content\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "filehash",
-        "Hash of the pkcs file",
+        'filehash',
+        'Hash of the pkcs file',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keystore",
-        "Keystore Name",
+        'keystore',
+        'Keystore Name',
         () => [],
         true,
         true,

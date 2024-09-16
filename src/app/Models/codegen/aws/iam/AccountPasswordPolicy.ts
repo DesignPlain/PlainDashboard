@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AccountPasswordPolicyArgs {
   // Whether to require symbols for user passwords.
@@ -70,72 +70,72 @@ export class AccountPasswordPolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "requireNumbers",
-        "Whether to require numbers for user passwords.",
+        'requireNumbers',
+        'Whether to require numbers for user passwords.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "hardExpiry",
-        "Whether users are prevented from setting a new password after their password has expired (i.e., require administrator reset)",
+        'hardExpiry',
+        'Whether users are prevented from setting a new password after their password has expired (i.e., require administrator reset)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "requireUppercaseCharacters",
-        "Whether to require uppercase characters for user passwords.",
+        'requireUppercaseCharacters',
+        'Whether to require uppercase characters for user passwords.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "maxPasswordAge",
-        "The number of days that an user password is valid.",
+        'maxPasswordAge',
+        'The number of days that an user password is valid.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "minimumPasswordLength",
-        "Minimum length to require for user passwords.",
+        'minimumPasswordLength',
+        'Minimum length to require for user passwords.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "allowUsersToChangePassword",
-        "Whether to allow users to change their own password",
+        'allowUsersToChangePassword',
+        'Whether to allow users to change their own password',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "requireSymbols",
-        "Whether to require symbols for user passwords.",
+        'requireSymbols',
+        'Whether to require symbols for user passwords.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "passwordReusePrevention",
-        "The number of previous passwords that users are prevented from reusing.",
+        'passwordReusePrevention',
+        'The number of previous passwords that users are prevented from reusing.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "requireLowercaseCharacters",
-        "Whether to require lowercase characters for user passwords.",
+        'requireLowercaseCharacters',
+        'Whether to require lowercase characters for user passwords.',
         () => [],
         false,
         false,

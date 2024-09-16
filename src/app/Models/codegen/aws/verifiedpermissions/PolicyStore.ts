@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   verifiedpermissions_PolicyStoreValidationSettings,
   verifiedpermissions_PolicyStoreValidationSettings_GetTypes,
-} from "../types/verifiedpermissions_PolicyStoreValidationSettings";
+} from '../types/verifiedpermissions_PolicyStoreValidationSettings';
 
 export interface PolicyStoreArgs {
   // Validation settings for the policy store.
@@ -35,16 +35,16 @@ export class PolicyStore extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "validationSettings",
-        "Validation settings for the policy store.",
+        'validationSettings',
+        'Validation settings for the policy store.',
         () => verifiedpermissions_PolicyStoreValidationSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the Policy Store.",
+        'description',
+        'A description of the Policy Store.',
         () => [],
         false,
         false,

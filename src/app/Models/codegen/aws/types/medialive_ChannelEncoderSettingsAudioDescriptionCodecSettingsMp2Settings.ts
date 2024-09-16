@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsAudioDescriptionCodecSettingsMp2Settings {
   //
@@ -21,20 +21,20 @@ export function medialive_ChannelEncoderSettingsAudioDescriptionCodecSettingsMp2
   return [
     new DynamicUIProps(
       InputType.String,
-      "codingMode",
-      "",
+      'codingMode',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "sampleRate",
-      "Sample rate in Hz.",
+      'sampleRate',
+      'Sample rate in Hz.',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Number, "bitrate", "", () => [], false, false),
+    new DynamicUIProps(InputType.Number, 'bitrate', '', () => [], false, false),
   ];
 }

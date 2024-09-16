@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PortfolioArgs {
   // Description of the portfolio
@@ -46,32 +46,32 @@ export class Portfolio extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "providerName",
-        "Name of the person or organization who owns the portfolio.",
+        'providerName',
+        'Name of the person or organization who owns the portfolio.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Tags to apply to the connection. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Tags to apply to the connection. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the portfolio",
+        'description',
+        'Description of the portfolio',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the portfolio.",
+        'name',
+        'The name of the portfolio.',
         () => [],
         false,
         false,

@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataform_RepositoryWorkspaceCompilationOverrides,
   dataform_RepositoryWorkspaceCompilationOverrides_GetTypes,
-} from "../types/dataform_RepositoryWorkspaceCompilationOverrides";
+} from '../types/dataform_RepositoryWorkspaceCompilationOverrides';
 import {
   dataform_RepositoryGitRemoteSettings,
   dataform_RepositoryGitRemoteSettings_GetTypes,
-} from "../types/dataform_RepositoryGitRemoteSettings";
+} from '../types/dataform_RepositoryGitRemoteSettings';
 
 export interface RepositoryArgs {
   /*
@@ -124,15 +124,15 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "gitRemoteSettings",
-        "Optional. If set, configures this repository to be linked to a Git remote.\nStructure is documented below.",
+        'gitRemoteSettings',
+        'Optional. If set, configures this repository to be linked to a Git remote.\nStructure is documented below.',
         () => dataform_RepositoryGitRemoteSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Optional. Repository user labels.\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -140,31 +140,31 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "workspaceCompilationOverrides",
-        "If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results.\nStructure is documented below.",
+        'workspaceCompilationOverrides',
+        'If set, fields of workspaceCompilationOverrides override the default compilation settings that are specified in dataform.json when creating workspace-scoped compilation results.\nStructure is documented below.',
         () => dataform_RepositoryWorkspaceCompilationOverrides_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "npmrcEnvironmentVariablesSecretVersion",
-        "Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format projects/*/secrets/*/versions/*. The file itself must be in a JSON format.",
+        'npmrcEnvironmentVariablesSecretVersion',
+        'Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format projects/*/secrets/*/versions/*. The file itself must be in a JSON format.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "A reference to the region",
+        'region',
+        'A reference to the region',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "The repository's name.\n\n\n- - -",
         () => [],
         false,
@@ -172,15 +172,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
+        'displayName',
         "Optional. The repository's user-friendly name.",
         () => [],
         false,
@@ -188,8 +188,8 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceAccount",
-        "The service account to run workflow invocations under.",
+        'serviceAccount',
+        'The service account to run workflow invocations under.',
         () => [],
         false,
         false,

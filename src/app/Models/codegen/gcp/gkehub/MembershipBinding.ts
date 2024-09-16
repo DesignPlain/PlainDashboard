@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_MembershipBindingState,
   gkehub_MembershipBindingState_GetTypes,
-} from "../types/gkehub_MembershipBindingState";
+} from '../types/gkehub_MembershipBindingState';
 
 export interface MembershipBindingArgs {
   /*
@@ -115,48 +115,48 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "scope",
-        "A Workspace resource name in the format\n`projects/*/locations/*/scopes/*`.",
+        'scope',
+        'A Workspace resource name in the format\n`projects/*/locations/*/scopes/*`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels for this Membership binding.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels for this Membership binding.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of the membership\n\n\n- - -",
+        'location',
+        'Location of the membership\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "membershipBindingId",
-        "The client-provided identifier of the membership binding.",
+        'membershipBindingId',
+        'The client-provided identifier of the membership binding.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "membershipId",
-        "Id of the membership",
+        'membershipId',
+        'Id of the membership',
         () => [],
         true,
         true,

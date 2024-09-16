@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EventArchiveArgs {
   // The description of the new event archive.
@@ -46,40 +46,40 @@ export class EventArchive extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "eventSourceArn",
-        "Event bus source ARN from where these events should be archived.",
+        'eventSourceArn',
+        'Event bus source ARN from where these events should be archived.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the new event archive. The archive name cannot exceed 48 characters.",
+        'name',
+        'The name of the new event archive. The archive name cannot exceed 48 characters.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "retentionDays",
-        "The maximum number of days to retain events in the new event archive. By default, it archives indefinitely.",
+        'retentionDays',
+        'The maximum number of days to retain events in the new event archive. By default, it archives indefinitely.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the new event archive.",
+        'description',
+        'The description of the new event archive.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "eventPattern",
-        "Instructs the new event archive to only capture events matched by this pattern. By default, it attempts to archive every event received in the `event_source_arn`.",
+        'eventPattern',
+        'Instructs the new event archive to only capture events matched by this pattern. By default, it attempts to archive every event received in the `event_source_arn`.',
         () => [],
         false,
         false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordColumn {
   // The Mapping reference to the data element.
@@ -21,24 +21,24 @@ export function kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordColu
   return [
     new DynamicUIProps(
       InputType.String,
-      "mapping",
-      "The Mapping reference to the data element.",
+      'mapping',
+      'The Mapping reference to the data element.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the column.",
+      'name',
+      'Name of the column.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sqlType",
-      "The SQL Type of the column.",
+      'sqlType',
+      'The SQL Type of the column.',
       () => [],
       true,
       false,

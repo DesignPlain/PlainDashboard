@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   iot_TopicRuleErrorActionTimestreamDimension,
   iot_TopicRuleErrorActionTimestreamDimension_GetTypes,
-} from "./iot_TopicRuleErrorActionTimestreamDimension";
+} from './iot_TopicRuleErrorActionTimestreamDimension';
 import {
   iot_TopicRuleErrorActionTimestreamTimestamp,
   iot_TopicRuleErrorActionTimestreamTimestamp_GetTypes,
-} from "./iot_TopicRuleErrorActionTimestreamTimestamp";
+} from './iot_TopicRuleErrorActionTimestreamTimestamp';
 
 export interface iot_TopicRuleErrorActionTimestream {
   // The name of an Amazon Timestream database.
@@ -35,31 +35,31 @@ export function iot_TopicRuleErrorActionTimestream_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "dimensions",
-      "Configuration blocks with metadata attributes of the time series that are written in each measure record. Nested arguments below.",
+      'dimensions',
+      'Configuration blocks with metadata attributes of the time series that are written in each measure record. Nested arguments below.',
       () => iot_TopicRuleErrorActionTimestreamDimension_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "The ARN of the role that grants permission to write to the Amazon Timestream database table.",
+      'roleArn',
+      'The ARN of the role that grants permission to write to the Amazon Timestream database table.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tableName",
-      "The name of the database table into which to write the measure records.",
+      'tableName',
+      'The name of the database table into which to write the measure records.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "timestamp",
+      'timestamp',
       "Configuration block specifying an application-defined value to replace the default value assigned to the Timestream record's timestamp in the time column. Nested arguments below.",
       () => iot_TopicRuleErrorActionTimestreamTimestamp_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function iot_TopicRuleErrorActionTimestream_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "databaseName",
-      "The name of an Amazon Timestream database.",
+      'databaseName',
+      'The name of an Amazon Timestream database.',
       () => [],
       true,
       false,

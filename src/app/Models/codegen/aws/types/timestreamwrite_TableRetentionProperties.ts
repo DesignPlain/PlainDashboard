@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface timestreamwrite_TableRetentionProperties {
   // The duration for which data must be stored in the magnetic store. Minimum value of 1. Maximum value of 73000.
@@ -18,16 +18,16 @@ export function timestreamwrite_TableRetentionProperties_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Number,
-      "magneticStoreRetentionPeriodInDays",
-      "The duration for which data must be stored in the magnetic store. Minimum value of 1. Maximum value of 73000.",
+      'magneticStoreRetentionPeriodInDays',
+      'The duration for which data must be stored in the magnetic store. Minimum value of 1. Maximum value of 73000.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "memoryStoreRetentionPeriodInHours",
-      "The duration for which data must be stored in the memory store. Minimum value of 1. Maximum value of 8766.",
+      'memoryStoreRetentionPeriodInHours',
+      'The duration for which data must be stored in the memory store. Minimum value of 1. Maximum value of 8766.',
       () => [],
       true,
       false,

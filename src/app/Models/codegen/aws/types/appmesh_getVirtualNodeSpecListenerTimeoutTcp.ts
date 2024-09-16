@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTimeoutTcpIdle,
   appmesh_getVirtualNodeSpecListenerTimeoutTcpIdle_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTimeoutTcpIdle";
+} from './appmesh_getVirtualNodeSpecListenerTimeoutTcpIdle';
 
 export interface appmesh_getVirtualNodeSpecListenerTimeoutTcp {
   //
@@ -19,8 +19,8 @@ export function appmesh_getVirtualNodeSpecListenerTimeoutTcp_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Array,
-      "idles",
-      "",
+      'idles',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTimeoutTcpIdle_GetTypes(),
       true,
       false,

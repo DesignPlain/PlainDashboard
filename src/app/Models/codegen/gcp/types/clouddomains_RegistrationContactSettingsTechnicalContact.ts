@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   clouddomains_RegistrationContactSettingsTechnicalContactPostalAddress,
   clouddomains_RegistrationContactSettingsTechnicalContactPostalAddress_GetTypes,
-} from "./clouddomains_RegistrationContactSettingsTechnicalContactPostalAddress";
+} from './clouddomains_RegistrationContactSettingsTechnicalContactPostalAddress';
 
 export interface clouddomains_RegistrationContactSettingsTechnicalContact {
   // Required. Email address of the contact.
@@ -31,15 +31,15 @@ export function clouddomains_RegistrationContactSettingsTechnicalContact_GetType
   return [
     new DynamicUIProps(
       InputType.String,
-      "email",
-      "Required. Email address of the contact.",
+      'email',
+      'Required. Email address of the contact.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "faxNumber",
+      'faxNumber',
       'Fax number of the contact in international format. For example, "+1-800-555-0123".',
       () => [],
       false,
@@ -47,7 +47,7 @@ export function clouddomains_RegistrationContactSettingsTechnicalContact_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "phoneNumber",
+      'phoneNumber',
       'Required. Phone number of the contact in international format. For example, "+1-800-555-0123".',
       () => [],
       true,
@@ -55,8 +55,8 @@ export function clouddomains_RegistrationContactSettingsTechnicalContact_GetType
     ),
     new DynamicUIProps(
       InputType.Object,
-      "postalAddress",
-      "Required. Postal address of the contact.\nStructure is documented below.",
+      'postalAddress',
+      'Required. Postal address of the contact.\nStructure is documented below.',
       () =>
         clouddomains_RegistrationContactSettingsTechnicalContactPostalAddress_GetTypes(),
       true,

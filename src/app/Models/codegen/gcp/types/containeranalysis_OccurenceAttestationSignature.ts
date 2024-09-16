@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface containeranalysis_OccurenceAttestationSignature {
   /*
@@ -39,7 +39,7 @@ export function containeranalysis_OccurenceAttestationSignature_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "publicKeyId",
+      'publicKeyId',
       'The identifier for the public key that verifies this\nsignature. MUST be an RFC3986 conformant\nURI. * When possible, the key id should be an\nimmutable reference, such as a cryptographic digest.\nExamples of valid values:\n* OpenPGP V4 public key fingerprint. See https://www.iana.org/assignments/uri-schemes/prov/openpgp4fpr\nfor more details on this scheme.\n* `openpgp4fpr:74FAF3B861BDA0870C7B6DEF607E48D2A663AEEA`\n* RFC6920 digest-named SubjectPublicKeyInfo (digest of the DER serialization):\n* "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"\n\n- - -',
       () => [],
       true,
@@ -47,8 +47,8 @@ export function containeranalysis_OccurenceAttestationSignature_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "signature",
-      "The content of the signature, an opaque bytestring.\nThe payload that this signature verifies MUST be\nunambiguously provided with the Signature during\nverification. A wrapper message might provide the\npayload explicitly. Alternatively, a message might\nhave a canonical serialization that can always be\nunambiguously computed to derive the payload.",
+      'signature',
+      'The content of the signature, an opaque bytestring.\nThe payload that this signature verifies MUST be\nunambiguously provided with the Signature during\nverification. A wrapper message might provide the\npayload explicitly. Alternatively, a message might\nhave a canonical serialization that can always be\nunambiguously computed to derive the payload.',
       () => [],
       false,
       false,

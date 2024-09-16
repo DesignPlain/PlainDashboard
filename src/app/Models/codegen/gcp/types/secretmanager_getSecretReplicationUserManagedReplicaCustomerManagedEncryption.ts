@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface secretmanager_getSecretReplicationUserManagedReplicaCustomerManagedEncryption {
   // Describes the Cloud KMS encryption key that will be used to protect destination secret.
@@ -15,8 +15,8 @@ export function secretmanager_getSecretReplicationUserManagedReplicaCustomerMana
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyName",
-      "Describes the Cloud KMS encryption key that will be used to protect destination secret.",
+      'kmsKeyName',
+      'Describes the Cloud KMS encryption key that will be used to protect destination secret.',
       () => [],
       true,
       false,

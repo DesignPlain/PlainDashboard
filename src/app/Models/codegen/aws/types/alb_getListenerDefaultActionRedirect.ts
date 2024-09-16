@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface alb_getListenerDefaultActionRedirect {
   //
@@ -28,22 +28,22 @@ export interface alb_getListenerDefaultActionRedirect {
 
 export function alb_getListenerDefaultActionRedirect_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "host", "", () => [], true, false),
-    new DynamicUIProps(InputType.String, "path", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'host', '', () => [], true, false),
+    new DynamicUIProps(InputType.String, 'path', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "port",
-      "Port of the listener. Required if `arn` is not set.",
+      'port',
+      'Port of the listener. Required if `arn` is not set.',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "protocol", "", () => [], true, false),
-    new DynamicUIProps(InputType.String, "query", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'protocol', '', () => [], true, false),
+    new DynamicUIProps(InputType.String, 'query', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "statusCode",
-      "",
+      'statusCode',
+      '',
       () => [],
       true,
       false,

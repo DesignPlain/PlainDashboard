@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters,
   kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters_GetTypes,
-} from "./kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters";
+} from './kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters';
 
 export interface kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormat {
   /*
@@ -25,8 +25,8 @@ export function kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordForm
   return [
     new DynamicUIProps(
       InputType.Object,
-      "mappingParameters",
-      "The Mapping Information for the record format.\nSee Mapping Parameters below for more details.",
+      'mappingParameters',
+      'The Mapping Information for the record format.\nSee Mapping Parameters below for more details.',
       () =>
         kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordForm
     ),
     new DynamicUIProps(
       InputType.String,
-      "recordFormatType",
-      "The type of Record Format. Can be `CSV` or `JSON`.",
+      'recordFormatType',
+      'The type of Record Format. Can be `CSV` or `JSON`.',
       () => [],
       false,
       false,

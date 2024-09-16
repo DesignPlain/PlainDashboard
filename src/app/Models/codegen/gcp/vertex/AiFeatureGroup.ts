@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vertex_AiFeatureGroupBigQuery,
   vertex_AiFeatureGroupBigQuery_GetTypes,
-} from "../types/vertex_AiFeatureGroupBigQuery";
+} from '../types/vertex_AiFeatureGroupBigQuery';
 
 export interface AiFeatureGroupArgs {
   /*
@@ -91,48 +91,48 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the FeatureGroup.",
+        'description',
+        'The description of the FeatureGroup.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "The labels with user-defined metadata to organize your FeatureGroup.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'The labels with user-defined metadata to organize your FeatureGroup.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name of the Feature Group.",
+        'name',
+        'The resource name of the Feature Group.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region of feature group. eg us-central1",
+        'region',
+        'The region of feature group. eg us-central1',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bigQuery",
-        "Indicates that features for this group come from BigQuery Table/View. By default treats the source as a sparse time series source, which is required to have an entityId and a feature_timestamp column in the source.\nStructure is documented below.",
+        'bigQuery',
+        'Indicates that features for this group come from BigQuery Table/View. By default treats the source as a sparse time series source, which is required to have an entityId and a feature_timestamp column in the source.\nStructure is documented below.',
         () => vertex_AiFeatureGroupBigQuery_GetTypes(),
         false,
         false,

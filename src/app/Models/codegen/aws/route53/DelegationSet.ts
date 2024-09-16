@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DelegationSetArgs {
   /*
@@ -34,8 +34,8 @@ This is a reference name used in Caller Reference
     return [
       new DynamicUIProps(
         InputType.String,
-        "referenceName",
-        "This is a reference name used in Caller Reference\n(helpful for identifying single delegation set amongst others)",
+        'referenceName',
+        'This is a reference name used in Caller Reference\n(helpful for identifying single delegation set amongst others)',
         () => [],
         false,
         true,

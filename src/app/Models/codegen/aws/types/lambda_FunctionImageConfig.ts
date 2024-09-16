@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lambda_FunctionImageConfig {
   // Parameters that you want to pass in with `entry_point`.
@@ -21,24 +21,24 @@ export function lambda_FunctionImageConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "commands",
-      "Parameters that you want to pass in with `entry_point`.",
+      'commands',
+      'Parameters that you want to pass in with `entry_point`.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "entryPoints",
-      "Entry point to your application, which is typically the location of the runtime executable.",
+      'entryPoints',
+      'Entry point to your application, which is typically the location of the runtime executable.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "workingDirectory",
-      "Working directory.",
+      'workingDirectory',
+      'Working directory.',
       () => [],
       false,
       false,

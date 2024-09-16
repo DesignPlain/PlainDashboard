@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate,
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate_GetTypes,
-} from "./appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate";
+} from './appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate';
 import {
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidation,
   appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidation_GetTypes,
-} from "./appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidation";
+} from './appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidation';
 
 export interface appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTls {
   // Listener's TLS certificate.
@@ -32,23 +32,23 @@ export function appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTls_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enforce",
-      "Whether the policy is enforced. Default is `true`.",
+      'enforce',
+      'Whether the policy is enforced. Default is `true`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ports",
-      "One or more ports that the policy is enforced for.",
+      'ports',
+      'One or more ports that the policy is enforced for.',
       () => InputType_Number_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "validation",
+      'validation',
       "Listener's Transport Layer Security (TLS) validation context.",
       () =>
         appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsValidation_GetTypes(),
@@ -57,7 +57,7 @@ export function appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTls_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Object,
-      "certificate",
+      'certificate',
       "Listener's TLS certificate.",
       () =>
         appmesh_VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificate_GetTypes(),

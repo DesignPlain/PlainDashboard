@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd {
   // The name of the header to add.
@@ -28,24 +28,24 @@ export function networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionR
   return [
     new DynamicUIProps(
       InputType.String,
-      "headerName",
-      "The name of the header to add.",
+      'headerName',
+      'The name of the header to add.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "headerValue",
-      "The value of the header to add.",
+      'headerValue',
+      'The value of the header to add.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "replace",
-      "Whether to replace all existing headers with the same name.\nBy default, added header values are appended\nto the response or request headers with the\nsame field names. The added values are\nseparated by commas.\nTo overwrite existing values, set `replace` to `true`.",
+      'replace',
+      'Whether to replace all existing headers with the same name.\nBy default, added header values are appended\nto the response or request headers with the\nsame field names. The added values are\nseparated by commas.\nTo overwrite existing values, set `replace` to `true`.',
       () => [],
       false,
       false,

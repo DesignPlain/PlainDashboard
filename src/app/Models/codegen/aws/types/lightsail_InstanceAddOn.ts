@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lightsail_InstanceAddOn {
   // The daily time when an automatic snapshot will be created. Must be in HH:00 format, and in an hourly increment and specified in Coordinated Universal Time (UTC). The snapshot will be automatically created between the time specified and up to 45 minutes after.
@@ -21,24 +21,24 @@ export function lightsail_InstanceAddOn_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "snapshotTime",
-      "The daily time when an automatic snapshot will be created. Must be in HH:00 format, and in an hourly increment and specified in Coordinated Universal Time (UTC). The snapshot will be automatically created between the time specified and up to 45 minutes after.",
+      'snapshotTime',
+      'The daily time when an automatic snapshot will be created. Must be in HH:00 format, and in an hourly increment and specified in Coordinated Universal Time (UTC). The snapshot will be automatically created between the time specified and up to 45 minutes after.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "The status of the add on. Valid Values: `Enabled`, `Disabled`.",
+      'status',
+      'The status of the add on. Valid Values: `Enabled`, `Disabled`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The add-on type. There is currently only one valid type `AutoSnapshot`.",
+      'type',
+      'The add-on type. There is currently only one valid type `AutoSnapshot`.',
       () => [],
       true,
       false,

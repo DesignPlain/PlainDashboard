@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dlm_LifecyclePolicyPolicyDetails,
   dlm_LifecyclePolicyPolicyDetails_GetTypes,
-} from "../types/dlm_LifecyclePolicyPolicyDetails";
+} from '../types/dlm_LifecyclePolicyPolicyDetails';
 
 export interface LifecyclePolicyArgs {
   // A description for the DLM lifecycle policy.
@@ -53,40 +53,40 @@ export class LifecyclePolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "state",
-        "Whether the lifecycle policy should be enabled or disabled. `ENABLED` or `DISABLED` are valid values. Defaults to `ENABLED`.",
+        'state',
+        'Whether the lifecycle policy should be enabled or disabled. `ENABLED` or `DISABLED` are valid values. Defaults to `ENABLED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description for the DLM lifecycle policy.",
+        'description',
+        'A description for the DLM lifecycle policy.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "executionRoleArn",
-        "The ARN of an IAM role that is able to be assumed by the DLM service.",
+        'executionRoleArn',
+        'The ARN of an IAM role that is able to be assumed by the DLM service.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "policyDetails",
-        "See the `policy_details` configuration block. Max of 1.",
+        'policyDetails',
+        'See the `policy_details` configuration block. Max of 1.',
         () => dlm_LifecyclePolicyPolicyDetails_GetTypes(),
         true,
         false,

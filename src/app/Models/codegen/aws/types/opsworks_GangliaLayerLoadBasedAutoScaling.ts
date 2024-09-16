@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_GangliaLayerLoadBasedAutoScalingUpscaling,
   opsworks_GangliaLayerLoadBasedAutoScalingUpscaling_GetTypes,
-} from "./opsworks_GangliaLayerLoadBasedAutoScalingUpscaling";
+} from './opsworks_GangliaLayerLoadBasedAutoScalingUpscaling';
 import {
   opsworks_GangliaLayerLoadBasedAutoScalingDownscaling,
   opsworks_GangliaLayerLoadBasedAutoScalingDownscaling_GetTypes,
-} from "./opsworks_GangliaLayerLoadBasedAutoScalingDownscaling";
+} from './opsworks_GangliaLayerLoadBasedAutoScalingDownscaling';
 
 export interface opsworks_GangliaLayerLoadBasedAutoScaling {
   //
@@ -29,17 +29,17 @@ export function opsworks_GangliaLayerLoadBasedAutoScaling_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Object,
-      "downscaling",
-      "",
+      'downscaling',
+      '',
       () => opsworks_GangliaLayerLoadBasedAutoScalingDownscaling_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "enable", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'enable', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Object,
-      "upscaling",
-      "",
+      'upscaling',
+      '',
       () => opsworks_GangliaLayerLoadBasedAutoScalingUpscaling_GetTypes(),
       false,
       false,

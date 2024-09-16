@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface vertex_AiFeatureOnlineStoreBigtableAutoScaling {
   /*
@@ -24,7 +24,7 @@ export function vertex_AiFeatureOnlineStoreBigtableAutoScaling_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Number,
-      "cpuUtilizationTarget",
+      'cpuUtilizationTarget',
       "A percentage of the cluster's CPU capacity. Can be from 10%!t(MISSING)o 80%! (MISSING)When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set will default to 50%!\n(MISSING)",
       () => [],
       false,
@@ -32,7 +32,7 @@ export function vertex_AiFeatureOnlineStoreBigtableAutoScaling_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxNodeCount",
+      'maxNodeCount',
       "The maximum number of nodes to scale up to. Must be greater than or equal to minNodeCount, and less than or equal to 10 times of 'minNodeCount'.",
       () => [],
       true,
@@ -40,8 +40,8 @@ export function vertex_AiFeatureOnlineStoreBigtableAutoScaling_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minNodeCount",
-      "The minimum number of nodes to scale down to. Must be greater than or equal to 1.",
+      'minNodeCount',
+      'The minimum number of nodes to scale down to. Must be greater than or equal to 1.',
       () => [],
       true,
       false,

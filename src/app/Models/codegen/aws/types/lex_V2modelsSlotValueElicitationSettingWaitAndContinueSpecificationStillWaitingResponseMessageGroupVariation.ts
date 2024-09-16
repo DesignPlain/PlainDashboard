@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationSsmlMessage,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationSsmlMessage_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationSsmlMessage";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationSsmlMessage';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationCustomPayload,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationCustomPayload_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationCustomPayload";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationCustomPayload';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCard,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCard_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCard";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCard';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationPlainTextMessage,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationPlainTextMessage_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationPlainTextMessage";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationPlainTextMessage';
 
 export interface lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariation {
   //
@@ -40,8 +40,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
   return [
     new DynamicUIProps(
       InputType.Object,
-      "plainTextMessage",
-      "",
+      'plainTextMessage',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationPlainTextMessage_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ssmlMessage",
-      "",
+      'ssmlMessage',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationSsmlMessage_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
     ),
     new DynamicUIProps(
       InputType.Array,
-      "customPayloads",
-      "",
+      'customPayloads',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationCustomPayload_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
     ),
     new DynamicUIProps(
       InputType.Object,
-      "imageResponseCard",
-      "",
+      'imageResponseCard',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCard_GetTypes(),
       false,

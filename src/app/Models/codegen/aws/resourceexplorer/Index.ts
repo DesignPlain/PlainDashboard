@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   resourceexplorer_IndexTimeouts,
   resourceexplorer_IndexTimeouts_GetTypes,
-} from "../types/resourceexplorer_IndexTimeouts";
+} from '../types/resourceexplorer_IndexTimeouts';
 
 export interface IndexArgs {
   //
@@ -41,24 +41,24 @@ export class Index extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => resourceexplorer_IndexTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of the index. Valid values: `AGGREGATOR`, `LOCAL`. To understand the difference between `LOCAL` and `AGGREGATOR`, see the [_AWS Resource Explorer User Guide_](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html).",
+        'type',
+        'The type of the index. Valid values: `AGGREGATOR`, `LOCAL`. To understand the difference between `LOCAL` and `AGGREGATOR`, see the [_AWS Resource Explorer User Guide_](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html).',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

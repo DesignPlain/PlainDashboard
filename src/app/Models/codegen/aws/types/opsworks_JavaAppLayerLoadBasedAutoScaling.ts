@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_JavaAppLayerLoadBasedAutoScalingDownscaling,
   opsworks_JavaAppLayerLoadBasedAutoScalingDownscaling_GetTypes,
-} from "./opsworks_JavaAppLayerLoadBasedAutoScalingDownscaling";
+} from './opsworks_JavaAppLayerLoadBasedAutoScalingDownscaling';
 import {
   opsworks_JavaAppLayerLoadBasedAutoScalingUpscaling,
   opsworks_JavaAppLayerLoadBasedAutoScalingUpscaling_GetTypes,
-} from "./opsworks_JavaAppLayerLoadBasedAutoScalingUpscaling";
+} from './opsworks_JavaAppLayerLoadBasedAutoScalingUpscaling';
 
 export interface opsworks_JavaAppLayerLoadBasedAutoScaling {
   //
@@ -29,17 +29,17 @@ export function opsworks_JavaAppLayerLoadBasedAutoScaling_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Object,
-      "downscaling",
-      "",
+      'downscaling',
+      '',
       () => opsworks_JavaAppLayerLoadBasedAutoScalingDownscaling_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "enable", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'enable', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Object,
-      "upscaling",
-      "",
+      'upscaling',
+      '',
       () => opsworks_JavaAppLayerLoadBasedAutoScalingUpscaling_GetTypes(),
       false,
       false,

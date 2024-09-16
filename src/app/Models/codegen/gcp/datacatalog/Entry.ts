@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datacatalog_EntryGcsFilesetSpec,
   datacatalog_EntryGcsFilesetSpec_GetTypes,
-} from "../types/datacatalog_EntryGcsFilesetSpec";
+} from '../types/datacatalog_EntryGcsFilesetSpec';
 import {
   datacatalog_EntryBigqueryDateShardedSpec,
   datacatalog_EntryBigqueryDateShardedSpec_GetTypes,
-} from "../types/datacatalog_EntryBigqueryDateShardedSpec";
+} from '../types/datacatalog_EntryBigqueryDateShardedSpec';
 import {
   datacatalog_EntryBigqueryTableSpec,
   datacatalog_EntryBigqueryTableSpec_GetTypes,
-} from "../types/datacatalog_EntryBigqueryTableSpec";
+} from '../types/datacatalog_EntryBigqueryTableSpec';
 
 export interface EntryArgs {
   /*
@@ -182,39 +182,39 @@ The id of the entry to create.
     return [
       new DynamicUIProps(
         InputType.String,
-        "linkedResource",
-        "The resource this metadata entry refers to.\nFor Google Cloud Platform resources, linkedResource is the full name of the resource.\nFor example, the linkedResource for a table resource from BigQuery is:\n//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId\nOutput only when Entry is of type in the EntryType enum. For entries with userSpecifiedType,\nthis field is optional and defaults to an empty string.",
+        'linkedResource',
+        'The resource this metadata entry refers to.\nFor Google Cloud Platform resources, linkedResource is the full name of the resource.\nFor example, the linkedResource for a table resource from BigQuery is:\n//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId\nOutput only when Entry is of type in the EntryType enum. For entries with userSpecifiedType,\nthis field is optional and defaults to an empty string.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "entryGroup",
-        "The name of the entry group this entry is in.",
+        'entryGroup',
+        'The name of the entry group this entry is in.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "gcsFilesetSpec",
-        "Specification that applies to a Cloud Storage fileset. This is only valid on entries of type FILESET.\nStructure is documented below.",
+        'gcsFilesetSpec',
+        'Specification that applies to a Cloud Storage fileset. This is only valid on entries of type FILESET.\nStructure is documented below.',
         () => datacatalog_EntryGcsFilesetSpec_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Entry description, which can consist of several sentences or paragraphs that describe entry contents.",
+        'description',
+        'Entry description, which can consist of several sentences or paragraphs that describe entry contents.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
+        'displayName',
         'Display information such as title and description. A short name to identify the entry,\nfor example, "Analytics Data - Jan 2011".',
         () => [],
         false,
@@ -222,23 +222,23 @@ The id of the entry to create.
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of the entry. Only used for Entries with types in the EntryType enum.\nCurrently, only FILESET enum value is allowed. All other entries created through Data Catalog must use userSpecifiedType.\nPossible values are: `FILESET`.",
+        'type',
+        'The type of the entry. Only used for Entries with types in the EntryType enum.\nCurrently, only FILESET enum value is allowed. All other entries created through Data Catalog must use userSpecifiedType.\nPossible values are: `FILESET`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "schema",
-        "Schema of the entry (e.g. BigQuery, GoogleSQL, Avro schema), as a json string. An entry might not have any schema\nattached to it. See\nhttps://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries#schema\nfor what fields this schema can contain.",
+        'schema',
+        'Schema of the entry (e.g. BigQuery, GoogleSQL, Avro schema), as a json string. An entry might not have any schema\nattached to it. See\nhttps://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries#schema\nfor what fields this schema can contain.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userSpecifiedSystem",
+        'userSpecifiedSystem',
         "This field indicates the entry's source system that Data Catalog does not integrate with.\nuserSpecifiedSystem strings must begin with a letter or underscore and can only contain letters, numbers,\nand underscores; are case insensitive; must be at least 1 character and at most 64 characters long.",
         () => [],
         false,
@@ -246,7 +246,7 @@ The id of the entry to create.
       ),
       new DynamicUIProps(
         InputType.String,
-        "userSpecifiedType",
+        'userSpecifiedType',
         'Entry type if it does not fit any of the input-allowed values listed in EntryType enum above.\nWhen creating an entry, users should check the enum values first, if nothing matches the entry\nto be created, then provide a custom value, for example "my_special_type".\nuserSpecifiedType strings must begin with a letter or underscore and can only contain letters,\nnumbers, and underscores; are case insensitive; must be at least 1 character and at most 64 characters long.',
         () => [],
         false,
@@ -254,8 +254,8 @@ The id of the entry to create.
       ),
       new DynamicUIProps(
         InputType.String,
-        "entryId",
-        "The id of the entry to create.\n\n\n- - -",
+        'entryId',
+        'The id of the entry to create.\n\n\n- - -',
         () => [],
         true,
         true,

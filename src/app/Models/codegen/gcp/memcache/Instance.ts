@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   memcache_InstanceMaintenancePolicy,
   memcache_InstanceMaintenancePolicy_GetTypes,
-} from "../types/memcache_InstanceMaintenancePolicy";
+} from '../types/memcache_InstanceMaintenancePolicy';
 import {
   memcache_InstanceNodeConfig,
   memcache_InstanceNodeConfig_GetTypes,
-} from "../types/memcache_InstanceNodeConfig";
+} from '../types/memcache_InstanceNodeConfig';
 import {
   memcache_InstanceMemcacheNode,
   memcache_InstanceMemcacheNode_GetTypes,
-} from "../types/memcache_InstanceMemcacheNode";
+} from '../types/memcache_InstanceMemcacheNode';
 import {
   memcache_InstanceMaintenanceSchedule,
   memcache_InstanceMaintenanceSchedule_GetTypes,
-} from "../types/memcache_InstanceMaintenanceSchedule";
+} from '../types/memcache_InstanceMaintenanceSchedule';
 import {
   memcache_InstanceMemcacheParameters,
   memcache_InstanceMemcacheParameters_GetTypes,
-} from "../types/memcache_InstanceMemcacheParameters";
+} from '../types/memcache_InstanceMemcacheParameters';
 
 export interface InstanceArgs {
   /*
@@ -212,55 +212,55 @@ Possible values are: `MEMCACHE_1_5`, `MEMCACHE_1_6_15`.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "maintenancePolicy",
-        "Maintenance policy for an instance.\nStructure is documented below.",
+        'maintenancePolicy',
+        'Maintenance policy for an instance.\nStructure is documented below.',
         () => memcache_InstanceMaintenancePolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "A user-visible name for the instance.",
+        'displayName',
+        'A user-visible name for the instance.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Resource labels to represent user-provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Resource labels to represent user-provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "memcacheVersion",
-        "The major version of Memcached software. If not provided, latest supported version will be used.\nCurrently the latest supported major version is MEMCACHE_1_5. The minor version will be automatically\ndetermined by our system based on the latest supported minor version.\nDefault value is `MEMCACHE_1_5`.\nPossible values are: `MEMCACHE_1_5`, `MEMCACHE_1_6_15`.",
+        'memcacheVersion',
+        'The major version of Memcached software. If not provided, latest supported version will be used.\nCurrently the latest supported major version is MEMCACHE_1_5. The minor version will be automatically\ndetermined by our system based on the latest supported minor version.\nDefault value is `MEMCACHE_1_5`.\nPossible values are: `MEMCACHE_1_5`, `MEMCACHE_1_6_15`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodeConfig",
-        "Configuration for memcache nodes.\nStructure is documented below.",
+        'nodeConfig',
+        'Configuration for memcache nodes.\nStructure is documented below.',
         () => memcache_InstanceNodeConfig_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "reservedIpRangeIds",
+        'reservedIpRangeIds',
         'Contains the name of allocated IP address ranges associated with\nthe private service access connection for example, "test-default"\nassociated with IP range 10.0.0.0/29.',
         () => InputType_String_GetTypes(),
         false,
@@ -268,39 +268,39 @@ Possible values are: `MEMCACHE_1_5`, `MEMCACHE_1_6_15`.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "nodeCount",
-        "Number of nodes in the memcache instance.",
+        'nodeCount',
+        'Number of nodes in the memcache instance.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "zones",
-        "Zones where memcache nodes should be provisioned.  If not\nprovided, all zones will be used.",
+        'zones',
+        'Zones where memcache nodes should be provisioned.  If not\nprovided, all zones will be used.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name of the instance.",
+        'name',
+        'The resource name of the instance.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region of the Memcache instance. If it is not provided, the provider region is used.",
+        'region',
+        'The region of the Memcache instance. If it is not provided, the provider region is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorizedNetwork",
+        'authorizedNetwork',
         "The full name of the GCE network to connect the instance to.  If not provided,\n'default' will be used.",
         () => [],
         false,
@@ -308,8 +308,8 @@ Possible values are: `MEMCACHE_1_5`, `MEMCACHE_1_6_15`.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "memcacheParameters",
-        "User-specified parameters for this memcache instance.\nStructure is documented below.",
+        'memcacheParameters',
+        'User-specified parameters for this memcache instance.\nStructure is documented below.',
         () => memcache_InstanceMemcacheParameters_GetTypes(),
         false,
         true,

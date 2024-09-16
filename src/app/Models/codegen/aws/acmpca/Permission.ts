@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PermissionArgs {
   // Actions that the specified AWS service principal can use. These include `IssueCertificate`, `GetCertificate`, and `ListPermissions`. Note that in order for ACM to automatically rotate certificates issued by a PCA, it must be granted permission on all 3 actions, as per the example above.
@@ -40,32 +40,32 @@ export class Permission extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "actions",
-        "Actions that the specified AWS service principal can use. These include `IssueCertificate`, `GetCertificate`, and `ListPermissions`. Note that in order for ACM to automatically rotate certificates issued by a PCA, it must be granted permission on all 3 actions, as per the example above.",
+        'actions',
+        'Actions that the specified AWS service principal can use. These include `IssueCertificate`, `GetCertificate`, and `ListPermissions`. Note that in order for ACM to automatically rotate certificates issued by a PCA, it must be granted permission on all 3 actions, as per the example above.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateAuthorityArn",
-        "ARN of the CA that grants the permissions.",
+        'certificateAuthorityArn',
+        'ARN of the CA that grants the permissions.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "principal",
-        "AWS service or identity that receives the permission. At this time, the only valid principal is `acm.amazonaws.com`.",
+        'principal',
+        'AWS service or identity that receives the permission. At this time, the only valid principal is `acm.amazonaws.com`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceAccount",
-        "ID of the calling account",
+        'sourceAccount',
+        'ID of the calling account',
         () => [],
         false,
         true,

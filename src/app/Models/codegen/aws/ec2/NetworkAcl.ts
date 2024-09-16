@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_NetworkAclEgress,
   ec2_NetworkAclEgress_GetTypes,
-} from "../types/ec2_NetworkAclEgress";
+} from '../types/ec2_NetworkAclEgress';
 import {
   ec2_NetworkAclIngress,
   ec2_NetworkAclIngress_GetTypes,
-} from "../types/ec2_NetworkAclIngress";
+} from '../types/ec2_NetworkAclIngress';
 
 export interface NetworkAclArgs {
   // A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -60,40 +60,40 @@ export class NetworkAcl extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "egress",
-        "Specifies an egress rule. Parameters defined below.",
+        'egress',
+        'Specifies an egress rule. Parameters defined below.',
         () => ec2_NetworkAclEgress_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ingress",
-        "Specifies an ingress rule. Parameters defined below.",
+        'ingress',
+        'Specifies an ingress rule. Parameters defined below.',
         () => ec2_NetworkAclIngress_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnetIds",
-        "A list of Subnet IDs to apply the ACL to",
+        'subnetIds',
+        'A list of Subnet IDs to apply the ACL to',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpcId",
-        "The ID of the associated VPC.",
+        'vpcId',
+        'The ID of the associated VPC.',
         () => [],
         true,
         true,

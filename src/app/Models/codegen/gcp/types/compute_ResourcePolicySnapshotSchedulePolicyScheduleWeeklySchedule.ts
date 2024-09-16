@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek,
   compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek_GetTypes,
-} from "./compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek";
+} from './compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek';
 
 export interface compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule {
   /*
@@ -22,8 +22,8 @@ export function compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedu
   return [
     new DynamicUIProps(
       InputType.Array,
-      "dayOfWeeks",
-      "May contain up to seven (one for each day of the week) snapshot times.\nStructure is documented below.",
+      'dayOfWeeks',
+      'May contain up to seven (one for each day of the week) snapshot times.\nStructure is documented below.',
       () =>
         compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek_GetTypes(),
       true,

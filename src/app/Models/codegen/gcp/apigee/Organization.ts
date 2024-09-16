@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigee_OrganizationProperties,
   apigee_OrganizationProperties_GetTypes,
-} from "../types/apigee_OrganizationProperties";
+} from '../types/apigee_OrganizationProperties';
 
 export interface OrganizationArgs {
   /*
@@ -169,63 +169,63 @@ The project ID associated with the Apigee organization.
     return [
       new DynamicUIProps(
         InputType.String,
-        "runtimeType",
-        "Runtime type of the Apigee organization based on the Apigee subscription purchased.\nDefault value is `CLOUD`.\nPossible values are: `CLOUD`, `HYBRID`.",
+        'runtimeType',
+        'Runtime type of the Apigee organization based on the Apigee subscription purchased.\nDefault value is `CLOUD`.\nPossible values are: `CLOUD`, `HYBRID`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "analyticsRegion",
-        "Primary GCP region for analytics data storage. For valid values, see [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).",
+        'analyticsRegion',
+        'Primary GCP region for analytics data storage. For valid values, see [Create an Apigee organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the Apigee organization.",
+        'description',
+        'Description of the Apigee organization.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disableVpcPeering",
-        "Flag that specifies whether the VPC Peering through Private Google Access should be\ndisabled between the consumer network and Apigee. Required if an `authorizedNetwork`\non the consumer project is not provided, in which case the flag should be set to `true`.\nValid only when `RuntimeType` is set to CLOUD. The value must be set before the creation\nof any Apigee runtime instance and can be updated only when there are no runtime instances.",
+        'disableVpcPeering',
+        'Flag that specifies whether the VPC Peering through Private Google Access should be\ndisabled between the consumer network and Apigee. Required if an `authorizedNetwork`\non the consumer project is not provided, in which case the flag should be set to `true`.\nValid only when `RuntimeType` is set to CLOUD. The value must be set before the creation\nof any Apigee runtime instance and can be updated only when there are no runtime instances.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "properties",
-        "Properties defined in the Apigee organization profile.\nStructure is documented below.",
+        'properties',
+        'Properties defined in the Apigee organization profile.\nStructure is documented below.',
         () => apigee_OrganizationProperties_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "billingType",
-        "Billing type of the Apigee organization. See [Apigee pricing](https://cloud.google.com/apigee/pricing).",
+        'billingType',
+        'Billing type of the Apigee organization. See [Apigee pricing](https://cloud.google.com/apigee/pricing).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "projectId",
-        "The project ID associated with the Apigee organization.\n\n\n- - -",
+        'projectId',
+        'The project ID associated with the Apigee organization.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorizedNetwork",
+        'authorizedNetwork',
         'Compute Engine network used for Service Networking to be peered with Apigee runtime instances.\nSee [Getting started with the Service Networking API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started).\nValid only when `RuntimeType` is set to CLOUD. The value can be updated only when there are no runtime instances. For example: "default".',
         () => [],
         false,
@@ -233,24 +233,24 @@ The project ID associated with the Apigee organization.
       ),
       new DynamicUIProps(
         InputType.String,
-        "runtimeDatabaseEncryptionKeyName",
-        "Cloud KMS key name used for encrypting the data that is stored and replicated across runtime instances.\nUpdate is not allowed after the organization is created.\nIf not specified, a Google-Managed encryption key will be used.\nValid only when `RuntimeType` is CLOUD. For example: `projects/foo/locations/us/keyRings/bar/cryptoKeys/baz`.",
+        'runtimeDatabaseEncryptionKeyName',
+        'Cloud KMS key name used for encrypting the data that is stored and replicated across runtime instances.\nUpdate is not allowed after the organization is created.\nIf not specified, a Google-Managed encryption key will be used.\nValid only when `RuntimeType` is CLOUD. For example: `projects/foo/locations/us/keyRings/bar/cryptoKeys/baz`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name of the Apigee organization.",
+        'displayName',
+        'The display name of the Apigee organization.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "retention",
-        "Optional. This setting is applicable only for organizations that are soft-deleted (i.e., BillingType\nis not EVALUATION). It controls how long Organization data will be retained after the initial delete\noperation completes. During this period, the Organization may be restored to its last known state.\nAfter this period, the Organization will no longer be able to be restored.\nDefault value is `DELETION_RETENTION_UNSPECIFIED`.\nPossible values are: `DELETION_RETENTION_UNSPECIFIED`, `MINIMUM`.",
+        'retention',
+        'Optional. This setting is applicable only for organizations that are soft-deleted (i.e., BillingType\nis not EVALUATION). It controls how long Organization data will be retained after the initial delete\noperation completes. During this period, the Organization may be restored to its last known state.\nAfter this period, the Organization will no longer be able to be restored.\nDefault value is `DELETION_RETENTION_UNSPECIFIED`.\nPossible values are: `DELETION_RETENTION_UNSPECIFIED`, `MINIMUM`.',
         () => [],
         false,
         false,

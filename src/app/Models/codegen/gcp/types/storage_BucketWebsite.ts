@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_BucketWebsite {
   /*
@@ -24,7 +24,7 @@ export function storage_BucketWebsite_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "mainPageSuffix",
+      'mainPageSuffix',
       "Behaves as the bucket's directory index where\nmissing objects are treated as potential directories.",
       () => [],
       false,
@@ -32,8 +32,8 @@ export function storage_BucketWebsite_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "notFoundPage",
-      "The custom object to return when a requested\nresource is not found.",
+      'notFoundPage',
+      'The custom object to return when a requested\nresource is not found.',
       () => [],
       false,
       false,

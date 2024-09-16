@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface mq_getBrokerLdapServerMetadata {
   //
@@ -45,70 +45,70 @@ export function mq_getBrokerLdapServerMetadata_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "userSearchSubtree",
-      "",
+      'userSearchSubtree',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "hosts",
-      "",
+      'hosts',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceAccountPassword",
-      "",
+      'serviceAccountPassword',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "userBase", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'userBase', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "userRoleName",
-      "",
+      'userRoleName',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "roleName", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'roleName', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Bool,
-      "roleSearchSubtree",
-      "",
+      'roleSearchSubtree',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceAccountUsername",
-      "",
+      'serviceAccountUsername',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "userSearchMatching",
-      "",
+      'userSearchMatching',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleSearchMatching",
-      "",
+      'roleSearchMatching',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "roleBase", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'roleBase', '', () => [], true, false),
   ];
 }

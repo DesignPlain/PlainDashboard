@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appconfig_EnvironmentMonitor,
   appconfig_EnvironmentMonitor_GetTypes,
-} from "../types/appconfig_EnvironmentMonitor";
+} from '../types/appconfig_EnvironmentMonitor';
 
 export interface EnvironmentArgs {
   // Set of Amazon CloudWatch alarms to monitor during the deployment process. Maximum of 5. See Monitor below for more details.
@@ -62,40 +62,40 @@ or `ROLLED_BACK`.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "monitors",
-        "Set of Amazon CloudWatch alarms to monitor during the deployment process. Maximum of 5. See Monitor below for more details.",
+        'monitors',
+        'Set of Amazon CloudWatch alarms to monitor during the deployment process. Maximum of 5. See Monitor below for more details.',
         () => appconfig_EnvironmentMonitor_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name for the environment. Must be between 1 and 64 characters in length.",
+        'name',
+        'Name for the environment. Must be between 1 and 64 characters in length.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "applicationId",
-        "AppConfig application ID. Must be between 4 and 7 characters in length.",
+        'applicationId',
+        'AppConfig application ID. Must be between 4 and 7 characters in length.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the environment. Can be at most 1024 characters.",
+        'description',
+        'Description of the environment. Can be at most 1024 characters.',
         () => [],
         false,
         false,

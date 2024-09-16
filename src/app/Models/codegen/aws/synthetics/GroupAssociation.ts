@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface GroupAssociationArgs {
   // ARN of the canary.
@@ -31,16 +31,16 @@ export class GroupAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "canaryArn",
-        "ARN of the canary.",
+        'canaryArn',
+        'ARN of the canary.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "groupName",
-        "Name of the group that the canary will be associated with.",
+        'groupName',
+        'Name of the group that the canary will be associated with.',
         () => [],
         true,
         true,

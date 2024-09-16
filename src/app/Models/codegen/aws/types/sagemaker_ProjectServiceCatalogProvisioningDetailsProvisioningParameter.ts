@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sagemaker_ProjectServiceCatalogProvisioningDetailsProvisioningParameter {
   // The key that identifies a provisioning parameter.
@@ -18,16 +18,16 @@ export function sagemaker_ProjectServiceCatalogProvisioningDetailsProvisioningPa
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "The key that identifies a provisioning parameter.",
+      'key',
+      'The key that identifies a provisioning parameter.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value of the provisioning parameter.",
+      'value',
+      'The value of the provisioning parameter.',
       () => [],
       false,
       false,

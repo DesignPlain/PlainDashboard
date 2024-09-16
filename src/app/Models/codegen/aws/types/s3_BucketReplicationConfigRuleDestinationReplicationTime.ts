@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3_BucketReplicationConfigRuleDestinationReplicationTimeTime,
   s3_BucketReplicationConfigRuleDestinationReplicationTimeTime_GetTypes,
-} from "./s3_BucketReplicationConfigRuleDestinationReplicationTimeTime";
+} from './s3_BucketReplicationConfigRuleDestinationReplicationTimeTime';
 
 export interface s3_BucketReplicationConfigRuleDestinationReplicationTime {
   // Status of the Replication Time Control. Either `"Enabled"` or `"Disabled"`.
@@ -22,7 +22,7 @@ export function s3_BucketReplicationConfigRuleDestinationReplicationTime_GetType
   return [
     new DynamicUIProps(
       InputType.String,
-      "status",
+      'status',
       'Status of the Replication Time Control. Either `"Enabled"` or `"Disabled"`.',
       () => [],
       true,
@@ -30,8 +30,8 @@ export function s3_BucketReplicationConfigRuleDestinationReplicationTime_GetType
     ),
     new DynamicUIProps(
       InputType.Object,
-      "time",
-      "Configuration block specifying the time by which replication should be complete for all objects and operations on objects. See below.",
+      'time',
+      'Configuration block specifying the time by which replication should be complete for all objects and operations on objects. See below.',
       () =>
         s3_BucketReplicationConfigRuleDestinationReplicationTimeTime_GetTypes(),
       true,

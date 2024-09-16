@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_getClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity,
   container_getClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes,
-} from "./container_getClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity";
+} from './container_getClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity';
 
 export interface container_getClusterNodePoolNodeConfigSoleTenantConfig {
   // .
@@ -19,8 +19,8 @@ export function container_getClusterNodePoolNodeConfigSoleTenantConfig_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Array,
-      "nodeAffinities",
-      ".",
+      'nodeAffinities',
+      '.',
       () =>
         container_getClusterNodePoolNodeConfigSoleTenantConfigNodeAffinity_GetTypes(),
       true,

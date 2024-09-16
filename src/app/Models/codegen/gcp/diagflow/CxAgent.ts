@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxAgentGitIntegrationSettings,
   diagflow_CxAgentGitIntegrationSettings_GetTypes,
-} from "../types/diagflow_CxAgentGitIntegrationSettings";
+} from '../types/diagflow_CxAgentGitIntegrationSettings';
 import {
   diagflow_CxAgentSpeechToTextSettings,
   diagflow_CxAgentSpeechToTextSettings_GetTypes,
-} from "../types/diagflow_CxAgentSpeechToTextSettings";
+} from '../types/diagflow_CxAgentSpeechToTextSettings';
 import {
   diagflow_CxAgentTextToSpeechSettings,
   diagflow_CxAgentTextToSpeechSettings_GetTypes,
-} from "../types/diagflow_CxAgentTextToSpeechSettings";
+} from '../types/diagflow_CxAgentTextToSpeechSettings';
 import {
   diagflow_CxAgentAdvancedSettings,
   diagflow_CxAgentAdvancedSettings_GetTypes,
-} from "../types/diagflow_CxAgentAdvancedSettings";
+} from '../types/diagflow_CxAgentAdvancedSettings';
 
 export interface CxAgentArgs {
   // The URI of the agent's avatar. Avatars are used throughout the Dialogflow console and in the self-hosted Web Demo integration.
@@ -185,7 +185,7 @@ for a list of the currently supported language codes. This field cannot be updat
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
+        'location',
         "The name of the location this agent is located in.\n> **Note:** The first time you are deploying an Agent in your project you must configure location settings.\nThis is a one time step but at the moment you can only [configure location settings](https://cloud.google.com/dialogflow/cx/docs/concept/region#location-settings) via the Dialogflow CX console.\nAnother options is to use global location so you don't need to manually configure location settings.",
         () => [],
         true,
@@ -193,7 +193,7 @@ for a list of the currently supported language codes. This field cannot be updat
       ),
       new DynamicUIProps(
         InputType.String,
-        "avatarUri",
+        'avatarUri',
         "The URI of the agent's avatar. Avatars are used throughout the Dialogflow console and in the self-hosted Web Demo integration.",
         () => [],
         false,
@@ -201,104 +201,104 @@ for a list of the currently supported language codes. This field cannot be updat
       ),
       new DynamicUIProps(
         InputType.String,
-        "defaultLanguageCode",
-        "The default language of the agent as a language tag. [See Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)\nfor a list of the currently supported language codes. This field cannot be updated after creation.",
+        'defaultLanguageCode',
+        'The default language of the agent as a language tag. [See Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)\nfor a list of the currently supported language codes. This field cannot be updated after creation.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "speechToTextSettings",
-        "Settings related to speech recognition.\nStructure is documented below.",
+        'speechToTextSettings',
+        'Settings related to speech recognition.\nStructure is documented below.',
         () => diagflow_CxAgentSpeechToTextSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "advancedSettings",
-        "Hierarchical advanced settings for this agent. The settings exposed at the lower level overrides the settings exposed at the higher level.\nHierarchy: Agent->Flow->Page->Fulfillment/Parameter.\nStructure is documented below.",
+        'advancedSettings',
+        'Hierarchical advanced settings for this agent. The settings exposed at the lower level overrides the settings exposed at the higher level.\nHierarchy: Agent->Flow->Page->Fulfillment/Parameter.\nStructure is documented below.',
         () => diagflow_CxAgentAdvancedSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "gitIntegrationSettings",
-        "Git integration settings for this agent.\nStructure is documented below.",
+        'gitIntegrationSettings',
+        'Git integration settings for this agent.\nStructure is documented below.',
         () => diagflow_CxAgentGitIntegrationSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The human-readable name of the agent, unique within the location.",
+        'displayName',
+        'The human-readable name of the agent, unique within the location.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "textToSpeechSettings",
-        "Settings related to speech synthesizing.\nStructure is documented below.",
+        'textToSpeechSettings',
+        'Settings related to speech synthesizing.\nStructure is documented below.',
         () => diagflow_CxAgentTextToSpeechSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securitySettings",
-        "Name of the SecuritySettings reference for the agent. Format: projects/<Project ID>/locations/<Location ID>/securitySettings/<Security Settings ID>.",
+        'securitySettings',
+        'Name of the SecuritySettings reference for the agent. Format: projects/<Project ID>/locations/<Location ID>/securitySettings/<Security Settings ID>.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableSpellCorrection",
-        "Indicates if automatic spell correction is enabled in detect intent requests.",
+        'enableSpellCorrection',
+        'Indicates if automatic spell correction is enabled in detect intent requests.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableStackdriverLogging",
-        "Determines whether this agent should log conversation queries.",
+        'enableStackdriverLogging',
+        'Determines whether this agent should log conversation queries.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "supportedLanguageCodes",
-        "The list of all languages supported by this agent (except for the default_language_code).",
+        'supportedLanguageCodes',
+        'The list of all languages supported by this agent (except for the default_language_code).',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "timeZone",
-        "The time zone of this agent from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York,\nEurope/Paris.\n\n\n- - -",
+        'timeZone',
+        'The time zone of this agent from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York,\nEurope/Paris.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of this agent. The maximum length is 500 characters. If exceeded, the request is rejected.",
+        'description',
+        'The description of this agent. The maximum length is 500 characters. If exceeded, the request is rejected.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

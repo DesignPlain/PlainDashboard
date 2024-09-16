@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterFleet {
   // Full resource name of the registered fleet membership of the cluster.
@@ -30,15 +30,15 @@ export function container_getClusterFleet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "membership",
-      "Full resource name of the registered fleet membership of the cluster.",
+      'membership',
+      'Full resource name of the registered fleet membership of the cluster.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "membershipId",
+      'membershipId',
       'Short name of the fleet membership, for example "member-1".',
       () => [],
       true,
@@ -46,7 +46,7 @@ export function container_getClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "membershipLocation",
+      'membershipLocation',
       'Location of the fleet membership, for example "us-central1".',
       () => [],
       true,
@@ -54,16 +54,16 @@ export function container_getClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "preRegistered",
-      "Whether the cluster has been registered via the fleet API.",
+      'preRegistered',
+      'Whether the cluster has been registered via the fleet API.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "project",
-      "The project in which the resource belongs. If it\nis not provided, the provider project is used.",
+      'project',
+      'The project in which the resource belongs. If it\nis not provided, the provider project is used.',
       () => [],
       true,
       false,

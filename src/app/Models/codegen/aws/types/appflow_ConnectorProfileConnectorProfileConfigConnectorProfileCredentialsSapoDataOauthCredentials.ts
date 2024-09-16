@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsOauthRequest,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsOauthRequest_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsOauthRequest";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsOauthRequest';
 
 export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentials {
   //
@@ -29,19 +29,19 @@ export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfileC
 
 export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentials_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "clientId", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'clientId', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "clientSecret",
-      "",
+      'clientSecret',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oauthRequest",
-      "",
+      'oauthRequest',
+      '',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsOauthRequest_GetTypes(),
       false,
@@ -49,16 +49,16 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.String,
-      "refreshToken",
-      "",
+      'refreshToken',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "accessToken",
-      "",
+      'accessToken',
+      '',
       () => [],
       false,
       false,

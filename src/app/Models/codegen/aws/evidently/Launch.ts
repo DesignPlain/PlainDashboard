@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   evidently_LaunchScheduledSplitsConfig,
   evidently_LaunchScheduledSplitsConfig_GetTypes,
-} from "../types/evidently_LaunchScheduledSplitsConfig";
+} from '../types/evidently_LaunchScheduledSplitsConfig';
 import {
   evidently_LaunchExecution,
   evidently_LaunchExecution_GetTypes,
-} from "../types/evidently_LaunchExecution";
+} from '../types/evidently_LaunchExecution';
 import {
   evidently_LaunchGroup,
   evidently_LaunchGroup_GetTypes,
-} from "../types/evidently_LaunchGroup";
+} from '../types/evidently_LaunchGroup';
 import {
   evidently_LaunchMetricMonitor,
   evidently_LaunchMetricMonitor_GetTypes,
-} from "../types/evidently_LaunchMetricMonitor";
+} from '../types/evidently_LaunchMetricMonitor';
 
 export interface LaunchArgs {
   // Specifies the description of the launch.
@@ -101,64 +101,64 @@ export class Launch extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "scheduledSplitsConfig",
-        "A block that defines the traffic allocation percentages among the feature variations during each step of the launch. Detailed below.",
+        'scheduledSplitsConfig',
+        'A block that defines the traffic allocation percentages among the feature variations during each step of the launch. Detailed below.',
         () => evidently_LaunchScheduledSplitsConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Tags to apply to the launch. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Tags to apply to the launch. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Specifies the description of the launch.",
+        'description',
+        'Specifies the description of the launch.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "groups",
-        "One or up to five blocks that contain the feature and variations that are to be used for the launch. Detailed below.",
+        'groups',
+        'One or up to five blocks that contain the feature and variations that are to be used for the launch. Detailed below.',
         () => evidently_LaunchGroup_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "metricMonitors",
-        "One or up to three blocks that define the metrics that will be used to monitor the launch performance. Detailed below.",
+        'metricMonitors',
+        'One or up to three blocks that define the metrics that will be used to monitor the launch performance. Detailed below.',
         () => evidently_LaunchMetricMonitor_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name for the new launch. Minimum length of `1`. Maximum length of `127`.",
+        'name',
+        'The name for the new launch. Minimum length of `1`. Maximum length of `127`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The name or ARN of the project that is to contain the new launch.",
+        'project',
+        'The name or ARN of the project that is to contain the new launch.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "randomizationSalt",
-        "When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and randomizationSalt. If you omit randomizationSalt, Evidently uses the launch name as the randomizationSalt.",
+        'randomizationSalt',
+        'When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and randomizationSalt. If you omit randomizationSalt, Evidently uses the launch name as the randomizationSalt.',
         () => [],
         false,
         false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   connect_QuickConnectQuickConnectConfig,
   connect_QuickConnectQuickConnectConfig_GetTypes,
-} from "../types/connect_QuickConnectQuickConnectConfig";
+} from '../types/connect_QuickConnectQuickConnectConfig';
 
 export interface QuickConnectArgs {
   // Specifies the description of the Quick Connect.
@@ -56,40 +56,40 @@ export class QuickConnect extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Specifies the description of the Quick Connect.",
+        'description',
+        'Specifies the description of the Quick Connect.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceId",
-        "Specifies the identifier of the hosting Amazon Connect Instance.",
+        'instanceId',
+        'Specifies the identifier of the hosting Amazon Connect Instance.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Specifies the name of the Quick Connect.",
+        'name',
+        'Specifies the name of the Quick Connect.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "quickConnectConfig",
-        "A block that defines the configuration information for the Quick Connect: `quick_connect_type` and one of `phone_config`, `queue_config`, `user_config` . The Quick Connect Config block is documented below.",
+        'quickConnectConfig',
+        'A block that defines the configuration information for the Quick Connect: `quick_connect_type` and one of `phone_config`, `queue_config`, `user_config` . The Quick Connect Config block is documented below.',
         () => connect_QuickConnectQuickConnectConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Tags to apply to the Quick Connect. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Tags to apply to the Quick Connect. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_OrganizationSecurityPolicyRuleMatch,
   compute_OrganizationSecurityPolicyRuleMatch_GetTypes,
-} from "../types/compute_OrganizationSecurityPolicyRuleMatch";
+} from '../types/compute_OrganizationSecurityPolicyRuleMatch';
 
 export interface OrganizationSecurityPolicyRuleArgs {
   /*
@@ -127,7 +127,7 @@ configured export destination in Stackdriver.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "targetResources",
+        'targetResources',
         "A list of network resource URLs to which this rule applies.\nThis field allows you to control which network's VMs get\nthis rule. If this field is left blank, all VMs\nwithin the organization will receive the rule.",
         () => InputType_String_GetTypes(),
         false,
@@ -135,31 +135,31 @@ configured export destination in Stackdriver.
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the rule.",
+        'description',
+        'A description of the rule.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyId",
-        "The ID of the OrganizationSecurityPolicy this rule applies to.",
+        'policyId',
+        'The ID of the OrganizationSecurityPolicy this rule applies to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "preview",
-        "If set to true, the specified action is not enforced.",
+        'preview',
+        'If set to true, the specified action is not enforced.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "action",
+        'action',
         'The Action to perform when the client connection triggers the rule. Can currently be either\n"allow", "deny" or "goto_next".',
         () => [],
         true,
@@ -167,7 +167,7 @@ configured export destination in Stackdriver.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "match",
+        'match',
         "A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.\nStructure is documented below.",
         () => compute_OrganizationSecurityPolicyRuleMatch_GetTypes(),
         true,
@@ -175,32 +175,32 @@ configured export destination in Stackdriver.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableLogging",
-        "Denotes whether to enable logging for a particular rule.\nIf logging is enabled, logs will be exported to the\nconfigured export destination in Stackdriver.",
+        'enableLogging',
+        'Denotes whether to enable logging for a particular rule.\nIf logging is enabled, logs will be exported to the\nconfigured export destination in Stackdriver.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targetServiceAccounts",
-        "A list of service accounts indicating the sets of\ninstances that are applied with this rule.",
+        'targetServiceAccounts',
+        'A list of service accounts indicating the sets of\ninstances that are applied with this rule.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "direction",
-        "The direction in which this rule applies. If unspecified an INGRESS rule is created.\nPossible values are: `INGRESS`, `EGRESS`.",
+        'direction',
+        'The direction in which this rule applies. If unspecified an INGRESS rule is created.\nPossible values are: `INGRESS`, `EGRESS`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "priority",
-        "An integer indicating the priority of a rule in the list. The priority must be a value\nbetween 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the\nhighest priority and 2147483647 is the lowest prority.",
+        'priority',
+        'An integer indicating the priority of a rule in the list. The priority must be a value\nbetween 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the\nhighest priority and 2147483647 is the lowest prority.',
         () => [],
         true,
         true,

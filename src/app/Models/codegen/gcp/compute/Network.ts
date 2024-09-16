@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface NetworkArgs {
   /*
@@ -189,39 +189,39 @@ Possible values are: `BEFORE_CLASSIC_FIREWALL`, `AFTER_CLASSIC_FIREWALL`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -",
+        'name',
+        'Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deleteDefaultRoutesOnCreate",
-        "If set to `true`, default routes (`0.0.0.0/0`) will be deleted\nimmediately after network creation. Defaults to `false`.",
+        'deleteDefaultRoutesOnCreate',
+        'If set to `true`, default routes (`0.0.0.0/0`) will be deleted\nimmediately after network creation. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "mtu",
-        "Maximum Transmission Unit in bytes. The default value is 1460 bytes.\nThe minimum value for this field is 1300 and the maximum value is 8896 bytes (jumbo frames).\nNote that packets larger than 1500 bytes (standard Ethernet) can be subject to TCP-MSS clamping or dropped\nwith an ICMP `Fragmentation-Needed` message if the packets are routed to the Internet or other VPCs\nwith varying MTUs.",
+        'mtu',
+        'Maximum Transmission Unit in bytes. The default value is 1460 bytes.\nThe minimum value for this field is 1300 and the maximum value is 8896 bytes (jumbo frames).\nNote that packets larger than 1500 bytes (standard Ethernet) can be subject to TCP-MSS clamping or dropped\nwith an ICMP `Fragmentation-Needed` message if the packets are routed to the Internet or other VPCs\nwith varying MTUs.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkFirewallPolicyEnforcementOrder",
-        "Set the order that Firewall Rules and Firewall Policies are evaluated.\nDefault value is `AFTER_CLASSIC_FIREWALL`.\nPossible values are: `BEFORE_CLASSIC_FIREWALL`, `AFTER_CLASSIC_FIREWALL`.",
+        'networkFirewallPolicyEnforcementOrder',
+        'Set the order that Firewall Rules and Firewall Policies are evaluated.\nDefault value is `AFTER_CLASSIC_FIREWALL`.\nPossible values are: `BEFORE_CLASSIC_FIREWALL`, `AFTER_CLASSIC_FIREWALL`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoCreateSubnetworks",
+        'autoCreateSubnetworks',
         'When set to `true`, the network is created in "auto subnet mode" and\nit will create a subnet for each region automatically across the\n`10.128.0.0/9` address range.\nWhen set to `false`, the network is created in "custom subnet mode" so\nthe user can explicitly connect subnetwork resources.',
         () => [],
         false,
@@ -229,39 +229,39 @@ Possible values are: `BEFORE_CLASSIC_FIREWALL`, `AFTER_CLASSIC_FIREWALL`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. The resource must be\nrecreated to modify this field.",
+        'description',
+        'An optional description of this resource. The resource must be\nrecreated to modify this field.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "internalIpv6Range",
-        "When enabling ula internal ipv6, caller optionally can specify the /48 range\nthey want from the google defined ULA prefix fd20::/20. The input must be a\nvalid /48 ULA IPv6 address and must be within the fd20::/20. Operation will\nfail if the speficied /48 is already in used by another resource.\nIf the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field.",
+        'internalIpv6Range',
+        'When enabling ula internal ipv6, caller optionally can specify the /48 range\nthey want from the google defined ULA prefix fd20::/20. The input must be a\nvalid /48 ULA IPv6 address and must be within the fd20::/20. Operation will\nfail if the speficied /48 is already in used by another resource.\nIf the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableUlaInternalIpv6",
-        "Enable ULA internal ipv6 on this network. Enabling this feature will assign\na /48 from google defined ULA prefix fd20::/20.",
+        'enableUlaInternalIpv6',
+        'Enable ULA internal ipv6 on this network. Enabling this feature will assign\na /48 from google defined ULA prefix fd20::/20.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "routingMode",
+        'routingMode',
         "The network-wide routing mode to use. If set to `REGIONAL`, this\nnetwork's cloud routers will only advertise routes with subnetworks\nof this network in the same region as the router. If set to `GLOBAL`,\nthis network's cloud routers will advertise routes with all\nsubnetworks of this network, across regions.\nPossible values are: `REGIONAL`, `GLOBAL`.",
         () => [],
         false,

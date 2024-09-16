@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageCustomPayload,
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageCustomPayload_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageCustomPayload";
+} from './lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageCustomPayload';
 import {
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCard,
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCard_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCard";
+} from './lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCard';
 import {
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessagePlainTextMessage,
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessagePlainTextMessage_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessagePlainTextMessage";
+} from './lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessagePlainTextMessage';
 import {
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageSsmlMessage,
   lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageSsmlMessage_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageSsmlMessage";
+} from './lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageSsmlMessage';
 
 export interface lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessage {
   // Configuration block for a message in a custom format defined by the client application. See `custom_payload`.
@@ -40,8 +40,8 @@ export function lex_V2modelsIntentClosingSettingConditionalConditionalBranchResp
   return [
     new DynamicUIProps(
       InputType.Object,
-      "imageResponseCard",
-      "Configuration block for a message that defines a response card that the client application can show to the user. See `image_response_card`.",
+      'imageResponseCard',
+      'Configuration block for a message that defines a response card that the client application can show to the user. See `image_response_card`.',
       () =>
         lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCard_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function lex_V2modelsIntentClosingSettingConditionalConditionalBranchResp
     ),
     new DynamicUIProps(
       InputType.Object,
-      "plainTextMessage",
-      "Configuration block for a message in plain text format. See `plain_text_message`.",
+      'plainTextMessage',
+      'Configuration block for a message in plain text format. See `plain_text_message`.',
       () =>
         lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessagePlainTextMessage_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function lex_V2modelsIntentClosingSettingConditionalConditionalBranchResp
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ssmlMessage",
-      "Configuration block for a message in Speech Synthesis Markup Language (SSML). See `ssml_message`.",
+      'ssmlMessage',
+      'Configuration block for a message in Speech Synthesis Markup Language (SSML). See `ssml_message`.',
       () =>
         lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageSsmlMessage_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function lex_V2modelsIntentClosingSettingConditionalConditionalBranchResp
     ),
     new DynamicUIProps(
       InputType.Object,
-      "customPayload",
-      "Configuration block for a message in a custom format defined by the client application. See `custom_payload`.",
+      'customPayload',
+      'Configuration block for a message in a custom format defined by the client application. See `custom_payload`.',
       () =>
         lex_V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageCustomPayload_GetTypes(),
       false,

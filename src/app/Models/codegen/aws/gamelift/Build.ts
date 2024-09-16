@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gamelift_BuildStorageLocation,
   gamelift_BuildStorageLocation_GetTypes,
-} from "../types/gamelift_BuildStorageLocation";
+} from '../types/gamelift_BuildStorageLocation';
 
 export interface BuildArgs {
   // Version that is associated with this build.
@@ -53,40 +53,40 @@ export class Build extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "version",
-        "Version that is associated with this build.",
+        'version',
+        'Version that is associated with this build.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the build",
+        'name',
+        'Name of the build',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "operatingSystem",
-        "Operating system that the game server binaries are built to run on. Valid values: `WINDOWS_2012`, `AMAZON_LINUX`, `AMAZON_LINUX_2`, `WINDOWS_2016`, `AMAZON_LINUX_2023`.",
+        'operatingSystem',
+        'Operating system that the game server binaries are built to run on. Valid values: `WINDOWS_2012`, `AMAZON_LINUX`, `AMAZON_LINUX_2`, `WINDOWS_2016`, `AMAZON_LINUX_2023`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "storageLocation",
-        "Information indicating where your game build files are stored. See below.",
+        'storageLocation',
+        'Information indicating where your game build files are stored. See below.',
         () => gamelift_BuildStorageLocation_GetTypes(),
         true,
         true,

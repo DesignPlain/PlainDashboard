@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig,
   notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig_GetTypes,
-} from "./notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig";
+} from './notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig';
 import {
   notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig,
   notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig_GetTypes,
-} from "./notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig";
+} from './notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig';
 import {
   notebooks_RuntimeVirtualMachineVirtualMachineConfigContainerImage,
   notebooks_RuntimeVirtualMachineVirtualMachineConfigContainerImage_GetTypes,
-} from "./notebooks_RuntimeVirtualMachineVirtualMachineConfigContainerImage";
+} from './notebooks_RuntimeVirtualMachineVirtualMachineConfigContainerImage';
 import {
   notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDisk,
   notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDisk_GetTypes,
-} from "./notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDisk";
+} from './notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDisk';
 import {
   notebooks_RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig,
   notebooks_RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig_GetTypes,
-} from "./notebooks_RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig";
+} from './notebooks_RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig';
 
 export interface notebooks_RuntimeVirtualMachineVirtualMachineConfig {
   // The Compute Engine machine type used for runtimes.
@@ -155,8 +155,8 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Object,
-      "dataDisk",
-      "Data disk option configuration settings.\nStructure is documented below.",
+      'dataDisk',
+      'Data disk option configuration settings.\nStructure is documented below.',
       () =>
         notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDisk_GetTypes(),
       true,
@@ -164,8 +164,8 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Object,
-      "shieldedInstanceConfig",
-      "Shielded VM Instance configuration settings.\nStructure is documented below.",
+      'shieldedInstanceConfig',
+      'Shielded VM Instance configuration settings.\nStructure is documented below.',
       () =>
         notebooks_RuntimeVirtualMachineVirtualMachineConfigShieldedInstanceConfig_GetTypes(),
       false,
@@ -173,16 +173,16 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Map,
-      "labels",
-      "The labels to associate with this runtime. Label **keys** must\ncontain 1 to 63 characters, and must conform to [RFC 1035]\n(https://www.ietf.org/rfc/rfc1035.txt). Label **values** may be\nempty, but, if present, must contain 1 to 63 characters, and must\nconform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). No\nmore than 32 labels can be associated with a cluster.",
+      'labels',
+      'The labels to associate with this runtime. Label **keys** must\ncontain 1 to 63 characters, and must conform to [RFC 1035]\n(https://www.ietf.org/rfc/rfc1035.txt). Label **values** may be\nempty, but, if present, must contain 1 to 63 characters, and must\nconform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). No\nmore than 32 labels can be associated with a cluster.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "containerImages",
-      "Use a list of container images to start the notebook instance.\nStructure is documented below.",
+      'containerImages',
+      'Use a list of container images to start the notebook instance.\nStructure is documented below.',
       () =>
         notebooks_RuntimeVirtualMachineVirtualMachineConfigContainerImage_GetTypes(),
       false,
@@ -190,24 +190,24 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "zone",
-      "(Output)\nThe zone where the virtual machine is located.",
+      'zone',
+      '(Output)\nThe zone where the virtual machine is located.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tags",
-      "The Compute Engine tags to add to runtime (see [Tagging instances]\n(https://cloud.google.com/compute/docs/\nlabel-or-tag-resources#tags)).",
+      'tags',
+      'The Compute Engine tags to add to runtime (see [Tagging instances]\n(https://cloud.google.com/compute/docs/\nlabel-or-tag-resources#tags)).',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "acceleratorConfig",
-      "The Compute Engine accelerator configuration for this runtime.\nStructure is documented below.",
+      'acceleratorConfig',
+      'The Compute Engine accelerator configuration for this runtime.\nStructure is documented below.',
       () =>
         notebooks_RuntimeVirtualMachineVirtualMachineConfigAcceleratorConfig_GetTypes(),
       false,
@@ -215,31 +215,31 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "nicType",
-      "The type of vNIC to be used on this interface. This may be gVNIC\nor VirtioNet.\nPossible values are: `UNSPECIFIED_NIC_TYPE`, `VIRTIO_NET`, `GVNIC`.",
+      'nicType',
+      'The type of vNIC to be used on this interface. This may be gVNIC\nor VirtioNet.\nPossible values are: `UNSPECIFIED_NIC_TYPE`, `VIRTIO_NET`, `GVNIC`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "metadata",
-      "The Compute Engine metadata entries to add to virtual machine.\n(see [Project and instance metadata](https://cloud.google.com\n/compute/docs/storing-retrieving-metadata#project_and_instance\n_metadata)).",
+      'metadata',
+      'The Compute Engine metadata entries to add to virtual machine.\n(see [Project and instance metadata](https://cloud.google.com\n/compute/docs/storing-retrieving-metadata#project_and_instance\n_metadata)).',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subnet",
-      "The Compute Engine subnetwork to be used for machine\ncommunications. Cannot be specified with network. A full URL or\npartial URI are valid. Examples:\n* `https://www.googleapis.com/compute/v1/projects/[project_id]/\nregions/us-east1/subnetworks/sub0`\n* `projects/[project_id]/regions/us-east1/subnetworks/sub0`",
+      'subnet',
+      'The Compute Engine subnetwork to be used for machine\ncommunications. Cannot be specified with network. A full URL or\npartial URI are valid. Examples:\n* `https://www.googleapis.com/compute/v1/projects/[project_id]/\nregions/us-east1/subnetworks/sub0`\n* `projects/[project_id]/regions/us-east1/subnetworks/sub0`',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "network",
+      'network',
       'The Compute Engine network to be used for machine communications.\nCannot be specified with subnetwork. If neither `network` nor\n`subnet` is specified, the "default" network of the project is\nused, if it exists. A full URL or partial URI. Examples:\n* `https://www.googleapis.com/compute/v1/projects/[project_id]/\nregions/global/default`\n* `projects/[project_id]/regions/global/default`\nRuntimes are managed resources inside Google Infrastructure.\nRuntimes support the following network configurations:\n* Google Managed Network (Network & subnet are empty)\n* Consumer Project VPC (network & subnet are required). Requires\nconfiguring Private Service Access.\n* Shared VPC (network & subnet are required). Requires\nconfiguring Private Service Access.',
       () => [],
       false,
@@ -247,7 +247,7 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.String,
-      "reservedIpRange",
+      'reservedIpRange',
       "Reserved IP Range name is used for VPC Peering. The\nsubnetwork allocation will use the range *name* if it's assigned.",
       () => [],
       false,
@@ -255,24 +255,24 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Map,
-      "guestAttributes",
-      "(Output)\nThe Compute Engine guest attributes. (see [Project and instance\nguest attributes](https://cloud.google.com/compute/docs/\nstoring-retrieving-metadata#guest_attributes)).",
+      'guestAttributes',
+      '(Output)\nThe Compute Engine guest attributes. (see [Project and instance\nguest attributes](https://cloud.google.com/compute/docs/\nstoring-retrieving-metadata#guest_attributes)).',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "machineType",
-      "The Compute Engine machine type used for runtimes.",
+      'machineType',
+      'The Compute Engine machine type used for runtimes.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "encryptionConfig",
-      "Encryption settings for virtual machine data disk.\nStructure is documented below.",
+      'encryptionConfig',
+      'Encryption settings for virtual machine data disk.\nStructure is documented below.',
       () =>
         notebooks_RuntimeVirtualMachineVirtualMachineConfigEncryptionConfig_GetTypes(),
       false,
@@ -280,8 +280,8 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfig_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "internalIpOnly",
-      "If true, runtime will only have internal IP addresses. By default,\nruntimes are not restricted to internal IP addresses, and will\nhave ephemeral external IP addresses assigned to each vm. This\n`internal_ip_only` restriction can only be enabled for subnetwork\nenabled networks, and all dependencies must be configured to be\naccessible without external IP addresses.",
+      'internalIpOnly',
+      'If true, runtime will only have internal IP addresses. By default,\nruntimes are not restricted to internal IP addresses, and will\nhave ephemeral external IP addresses assigned to each vm. This\n`internal_ip_only` restriction can only be enabled for subnetwork\nenabled networks, and all dependencies must be configured to be\naccessible without external IP addresses.',
       () => [],
       false,
       true,

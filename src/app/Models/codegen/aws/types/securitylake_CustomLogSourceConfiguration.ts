@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securitylake_CustomLogSourceConfigurationCrawlerConfiguration,
   securitylake_CustomLogSourceConfigurationCrawlerConfiguration_GetTypes,
-} from "./securitylake_CustomLogSourceConfigurationCrawlerConfiguration";
+} from './securitylake_CustomLogSourceConfigurationCrawlerConfiguration';
 import {
   securitylake_CustomLogSourceConfigurationProviderIdentity,
   securitylake_CustomLogSourceConfigurationProviderIdentity_GetTypes,
-} from "./securitylake_CustomLogSourceConfigurationProviderIdentity";
+} from './securitylake_CustomLogSourceConfigurationProviderIdentity';
 
 export interface securitylake_CustomLogSourceConfiguration {
   // The configuration for the Glue Crawler for the third-party custom source.
@@ -26,8 +26,8 @@ export function securitylake_CustomLogSourceConfiguration_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Object,
-      "crawlerConfiguration",
-      "The configuration for the Glue Crawler for the third-party custom source.",
+      'crawlerConfiguration',
+      'The configuration for the Glue Crawler for the third-party custom source.',
       () =>
         securitylake_CustomLogSourceConfigurationCrawlerConfiguration_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function securitylake_CustomLogSourceConfiguration_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Object,
-      "providerIdentity",
-      "The identity of the log provider for the third-party custom source.",
+      'providerIdentity',
+      'The identity of the log provider for the third-party custom source.',
       () =>
         securitylake_CustomLogSourceConfigurationProviderIdentity_GetTypes(),
       false,

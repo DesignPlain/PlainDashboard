@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressFrom,
   accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressFrom_GetTypes,
-} from "./accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressFrom";
+} from './accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressFrom';
 import {
   accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressTo,
   accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressTo_GetTypes,
-} from "./accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressTo";
+} from './accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressTo';
 
 export interface accesscontextmanager_ServicePerimeterStatusEgressPolicy {
   /*
@@ -33,8 +33,8 @@ export function accesscontextmanager_ServicePerimeterStatusEgressPolicy_GetTypes
   return [
     new DynamicUIProps(
       InputType.Object,
-      "egressFrom",
-      "Defines conditions on the source of a request causing this `EgressPolicy` to apply.\nStructure is documented below.",
+      'egressFrom',
+      'Defines conditions on the source of a request causing this `EgressPolicy` to apply.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressFrom_GetTypes(),
       false,
@@ -42,8 +42,8 @@ export function accesscontextmanager_ServicePerimeterStatusEgressPolicy_GetTypes
     ),
     new DynamicUIProps(
       InputType.Object,
-      "egressTo",
-      "Defines the conditions on the `ApiOperation` and destination resources that\ncause this `EgressPolicy` to apply.\nStructure is documented below.",
+      'egressTo',
+      'Defines the conditions on the `ApiOperation` and destination resources that\ncause this `EgressPolicy` to apply.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimeterStatusEgressPolicyEgressTo_GetTypes(),
       false,

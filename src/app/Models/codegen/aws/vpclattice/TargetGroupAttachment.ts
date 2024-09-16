@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vpclattice_TargetGroupAttachmentTarget,
   vpclattice_TargetGroupAttachmentTarget_GetTypes,
-} from "../types/vpclattice_TargetGroupAttachmentTarget";
+} from '../types/vpclattice_TargetGroupAttachmentTarget';
 
 export interface TargetGroupAttachmentArgs {
   // The target.
@@ -29,16 +29,16 @@ export class TargetGroupAttachment extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "target",
-        "The target.",
+        'target',
+        'The target.',
         () => vpclattice_TargetGroupAttachmentTarget_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetGroupIdentifier",
-        "The ID or Amazon Resource Name (ARN) of the target group.",
+        'targetGroupIdentifier',
+        'The ID or Amazon Resource Name (ARN) of the target group.',
         () => [],
         true,
         true,

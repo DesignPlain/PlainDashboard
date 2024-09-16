@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LicenseGrantAccepterArgs {
   // The ARN of the grant to accept.
@@ -43,8 +43,8 @@ export class LicenseGrantAccepter extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "grantArn",
-        "The ARN of the grant to accept.",
+        'grantArn',
+        'The ARN of the grant to accept.',
         () => [],
         true,
         true,

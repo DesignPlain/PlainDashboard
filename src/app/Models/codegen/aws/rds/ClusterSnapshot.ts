@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ClusterSnapshotArgs {
   // The DB Cluster Identifier from which to take the snapshot.
@@ -79,32 +79,32 @@ export class ClusterSnapshot extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "dbClusterIdentifier",
-        "The DB Cluster Identifier from which to take the snapshot.",
+        'dbClusterIdentifier',
+        'The DB Cluster Identifier from which to take the snapshot.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dbClusterSnapshotIdentifier",
-        "The Identifier for the snapshot.",
+        'dbClusterSnapshotIdentifier',
+        'The Identifier for the snapshot.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "sharedAccounts",
-        "List of AWS Account ids to share snapshot with, use `all` to make snaphot public.",
+        'sharedAccounts',
+        'List of AWS Account ids to share snapshot with, use `all` to make snaphot public.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the DB cluster. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the DB cluster. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_NamespaceTimeouts,
   quicksight_NamespaceTimeouts_GetTypes,
-} from "../types/quicksight_NamespaceTimeouts";
+} from '../types/quicksight_NamespaceTimeouts';
 
 export interface NamespaceArgs {
   // AWS account ID.
@@ -67,40 +67,40 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "awsAccountId",
-        "AWS account ID.",
+        'awsAccountId',
+        'AWS account ID.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identityStore",
-        "User identity directory type. Defaults to `QUICKSIGHT`, the only current valid value.",
+        'identityStore',
+        'User identity directory type. Defaults to `QUICKSIGHT`, the only current valid value.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "namespace",
-        "Name of the namespace.\n\nThe following arguments are optional:",
+        'namespace',
+        'Name of the namespace.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => quicksight_NamespaceTimeouts_GetTypes(),
         false,
         false,

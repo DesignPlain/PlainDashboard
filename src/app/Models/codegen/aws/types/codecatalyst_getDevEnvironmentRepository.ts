@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface codecatalyst_getDevEnvironmentRepository {
   //
@@ -18,16 +18,16 @@ export function codecatalyst_getDevEnvironmentRepository_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "branchName",
-      "",
+      'branchName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "repositoryName",
-      "",
+      'repositoryName',
+      '',
       () => [],
       true,
       false,

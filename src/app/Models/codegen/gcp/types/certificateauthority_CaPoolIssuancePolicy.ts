@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CaPoolIssuancePolicyIdentityConstraints,
   certificateauthority_CaPoolIssuancePolicyIdentityConstraints_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyIdentityConstraints";
+} from './certificateauthority_CaPoolIssuancePolicyIdentityConstraints';
 import {
   certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes,
   certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes";
+} from './certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes';
 import {
   certificateauthority_CaPoolIssuancePolicyAllowedKeyType,
   certificateauthority_CaPoolIssuancePolicyAllowedKeyType_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyAllowedKeyType";
+} from './certificateauthority_CaPoolIssuancePolicyAllowedKeyType';
 import {
   certificateauthority_CaPoolIssuancePolicyBaselineValues,
   certificateauthority_CaPoolIssuancePolicyBaselineValues_GetTypes,
-} from "./certificateauthority_CaPoolIssuancePolicyBaselineValues";
+} from './certificateauthority_CaPoolIssuancePolicyBaselineValues';
 
 export interface certificateauthority_CaPoolIssuancePolicy {
   /*
@@ -63,7 +63,7 @@ export function certificateauthority_CaPoolIssuancePolicy_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Object,
-      "identityConstraints",
+      'identityConstraints',
       "Describes constraints on identities that may appear in Certificates issued through this CaPool.\nIf this is omitted, then this CaPool will not add restrictions on a certificate's identity.\nStructure is documented below.",
       () =>
         certificateauthority_CaPoolIssuancePolicyIdentityConstraints_GetTypes(),
@@ -72,7 +72,7 @@ export function certificateauthority_CaPoolIssuancePolicy_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "maximumLifetime",
+      'maximumLifetime',
       "The maximum lifetime allowed for issued Certificates. Note that if the issuing CertificateAuthority\nexpires before a Certificate's requested maximumLifetime, the effective lifetime will be explicitly truncated to match it.",
       () => [],
       false,
@@ -80,8 +80,8 @@ export function certificateauthority_CaPoolIssuancePolicy_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Object,
-      "allowedIssuanceModes",
-      "IssuanceModes specifies the allowed ways in which Certificates may be requested from this CaPool.\nStructure is documented below.",
+      'allowedIssuanceModes',
+      'IssuanceModes specifies the allowed ways in which Certificates may be requested from this CaPool.\nStructure is documented below.',
       () =>
         certificateauthority_CaPoolIssuancePolicyAllowedIssuanceModes_GetTypes(),
       false,
@@ -89,7 +89,7 @@ export function certificateauthority_CaPoolIssuancePolicy_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowedKeyTypes",
+      'allowedKeyTypes',
       "If any AllowedKeyType is specified, then the certificate request's public key must match one of the key types listed here.\nOtherwise, any key may be used.\nStructure is documented below.",
       () => certificateauthority_CaPoolIssuancePolicyAllowedKeyType_GetTypes(),
       false,
@@ -97,8 +97,8 @@ export function certificateauthority_CaPoolIssuancePolicy_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Object,
-      "baselineValues",
-      "A set of X.509 values that will be applied to all certificates issued through this CaPool. If a certificate request\nincludes conflicting values for the same properties, they will be overwritten by the values defined here. If a certificate\nrequest uses a CertificateTemplate that defines conflicting predefinedValues for the same properties, the certificate\nissuance request will fail.\nStructure is documented below.",
+      'baselineValues',
+      'A set of X.509 values that will be applied to all certificates issued through this CaPool. If a certificate request\nincludes conflicting values for the same properties, they will be overwritten by the values defined here. If a certificate\nrequest uses a CertificateTemplate that defines conflicting predefinedValues for the same properties, the certificate\nissuance request will fail.\nStructure is documented below.',
       () => certificateauthority_CaPoolIssuancePolicyBaselineValues_GetTypes(),
       false,
       false,

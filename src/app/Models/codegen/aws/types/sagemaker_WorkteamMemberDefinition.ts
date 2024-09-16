@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_WorkteamMemberDefinitionCognitoMemberDefinition,
   sagemaker_WorkteamMemberDefinitionCognitoMemberDefinition_GetTypes,
-} from "./sagemaker_WorkteamMemberDefinitionCognitoMemberDefinition";
+} from './sagemaker_WorkteamMemberDefinitionCognitoMemberDefinition';
 import {
   sagemaker_WorkteamMemberDefinitionOidcMemberDefinition,
   sagemaker_WorkteamMemberDefinitionOidcMemberDefinition_GetTypes,
-} from "./sagemaker_WorkteamMemberDefinitionOidcMemberDefinition";
+} from './sagemaker_WorkteamMemberDefinitionOidcMemberDefinition';
 
 export interface sagemaker_WorkteamMemberDefinition {
   // The Amazon Cognito user group that is part of the work team. See Cognito Member Definition details below.
@@ -26,8 +26,8 @@ export function sagemaker_WorkteamMemberDefinition_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Object,
-      "cognitoMemberDefinition",
-      "The Amazon Cognito user group that is part of the work team. See Cognito Member Definition details below.",
+      'cognitoMemberDefinition',
+      'The Amazon Cognito user group that is part of the work team. See Cognito Member Definition details below.',
       () =>
         sagemaker_WorkteamMemberDefinitionCognitoMemberDefinition_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function sagemaker_WorkteamMemberDefinition_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oidcMemberDefinition",
-      "A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. See Cognito Member Definition details below.",
+      'oidcMemberDefinition',
+      'A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. See Cognito Member Definition details below.',
       () => sagemaker_WorkteamMemberDefinitionOidcMemberDefinition_GetTypes(),
       false,
       false,

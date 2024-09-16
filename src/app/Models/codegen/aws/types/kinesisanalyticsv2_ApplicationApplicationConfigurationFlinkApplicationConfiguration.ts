@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration';
 
 export interface kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfiguration {
   // Describes an application's checkpointing configuration.
@@ -33,7 +33,7 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkAppli
   return [
     new DynamicUIProps(
       InputType.Object,
-      "checkpointConfiguration",
+      'checkpointConfiguration',
       "Describes an application's checkpointing configuration.",
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationCheckpointConfiguration_GetTypes(),
@@ -42,8 +42,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkAppli
     ),
     new DynamicUIProps(
       InputType.Object,
-      "monitoringConfiguration",
-      "Describes configuration parameters for CloudWatch logging for an application.",
+      'monitoringConfiguration',
+      'Describes configuration parameters for CloudWatch logging for an application.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationMonitoringConfiguration_GetTypes(),
       false,
@@ -51,8 +51,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkAppli
     ),
     new DynamicUIProps(
       InputType.Object,
-      "parallelismConfiguration",
-      "Describes parameters for how an application executes multiple tasks simultaneously.",
+      'parallelismConfiguration',
+      'Describes parameters for how an application executes multiple tasks simultaneously.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfiguration_GetTypes(),
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface emrserverless_ApplicationInitialCapacityInitialCapacityConfigWorkerConfiguration {
   // The CPU requirements for every worker instance of the worker type.
@@ -21,24 +21,24 @@ export function emrserverless_ApplicationInitialCapacityInitialCapacityConfigWor
   return [
     new DynamicUIProps(
       InputType.String,
-      "cpu",
-      "The CPU requirements for every worker instance of the worker type.",
+      'cpu',
+      'The CPU requirements for every worker instance of the worker type.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "disk",
-      "The disk requirements for every worker instance of the worker type.",
+      'disk',
+      'The disk requirements for every worker instance of the worker type.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "memory",
-      "The memory requirements for every worker instance of the worker type.",
+      'memory',
+      'The memory requirements for every worker instance of the worker type.',
       () => [],
       true,
       false,

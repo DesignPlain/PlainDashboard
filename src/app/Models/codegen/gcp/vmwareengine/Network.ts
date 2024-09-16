@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vmwareengine_NetworkVpcNetwork,
   vmwareengine_NetworkVpcNetwork_GetTypes,
-} from "../types/vmwareengine_NetworkVpcNetwork";
+} from '../types/vmwareengine_NetworkVpcNetwork';
 
 export interface NetworkArgs {
   /*
@@ -82,40 +82,40 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "VMware Engine network type.\nPossible values are: `LEGACY`, `STANDARD`.",
+        'type',
+        'VMware Engine network type.\nPossible values are: `LEGACY`, `STANDARD`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User-provided description for this VMware Engine network.",
+        'description',
+        'User-provided description for this VMware Engine network.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location where the VMwareEngineNetwork should reside.",
+        'location',
+        'The location where the VMwareEngineNetwork should reside.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The ID of the VMwareEngineNetwork.\n\n\n- - -",
+        'name',
+        'The ID of the VMwareEngineNetwork.\n\n\n- - -',
         () => [],
         false,
         true,

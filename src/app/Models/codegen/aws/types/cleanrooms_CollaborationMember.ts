@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cleanrooms_CollaborationMember {
   //
@@ -22,23 +22,23 @@ export interface cleanrooms_CollaborationMember {
 
 export function cleanrooms_CollaborationMember_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "accountId", "", () => [], true, true),
+    new DynamicUIProps(InputType.String, 'accountId', '', () => [], true, true),
     new DynamicUIProps(
       InputType.String,
-      "displayName",
-      "",
+      'displayName',
+      '',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "memberAbilities",
-      "",
+      'memberAbilities',
+      '',
       () => InputType_String_GetTypes(),
       true,
       true,
     ),
-    new DynamicUIProps(InputType.String, "status", "", () => [], false, false),
+    new DynamicUIProps(InputType.String, 'status', '', () => [], false, false),
   ];
 }

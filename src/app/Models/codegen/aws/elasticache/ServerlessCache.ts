@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elasticache_ServerlessCacheReaderEndpoint,
   elasticache_ServerlessCacheReaderEndpoint_GetTypes,
-} from "../types/elasticache_ServerlessCacheReaderEndpoint";
+} from '../types/elasticache_ServerlessCacheReaderEndpoint';
 import {
   elasticache_ServerlessCacheCacheUsageLimits,
   elasticache_ServerlessCacheCacheUsageLimits_GetTypes,
-} from "../types/elasticache_ServerlessCacheCacheUsageLimits";
+} from '../types/elasticache_ServerlessCacheCacheUsageLimits';
 import {
   elasticache_ServerlessCacheTimeouts,
   elasticache_ServerlessCacheTimeouts_GetTypes,
-} from "../types/elasticache_ServerlessCacheTimeouts";
+} from '../types/elasticache_ServerlessCacheTimeouts';
 import {
   elasticache_ServerlessCacheEndpoint,
   elasticache_ServerlessCacheEndpoint_GetTypes,
-} from "../types/elasticache_ServerlessCacheEndpoint";
+} from '../types/elasticache_ServerlessCacheEndpoint';
 
 export interface ServerlessCacheArgs {
   // A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.
@@ -148,39 +148,39 @@ See [Describe Cache Engine Versions](https://docs.aws.amazon.com/cli/latest/refe
     return [
       new DynamicUIProps(
         InputType.Array,
-        "securityGroupIds",
-        "A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.",
+        'securityGroupIds',
+        'A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "snapshotArnsToRestores",
-        "The list of ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.",
+        'snapshotArnsToRestores',
+        'The list of ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
-        "ARN of the customer managed key for encrypting the data at rest. If no KMS key is provided, a default service key is used.",
+        'kmsKeyId',
+        'ARN of the customer managed key for encrypting the data at rest. If no KMS key is provided, a default service key is used.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cacheUsageLimits",
-        "Sets the cache usage limits for storage and ElastiCache Processing Units for the cache. See configuration below.",
+        'cacheUsageLimits',
+        'Sets the cache usage limits for storage and ElastiCache Processing Units for the cache. See configuration below.',
         () => elasticache_ServerlessCacheCacheUsageLimits_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dailySnapshotTime",
+        'dailySnapshotTime',
         'The daily time that snapshots will be created from the new serverless cache. Only supported for engine type `"redis"`. Defaults to `0`.',
         () => [],
         false,
@@ -188,72 +188,72 @@ See [Describe Cache Engine Versions](https://docs.aws.amazon.com/cli/latest/refe
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "snapshotRetentionLimit",
-        "The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.",
+        'snapshotRetentionLimit',
+        'The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "engine",
-        "Name of the cache engine to be used for this cache cluster. Valid values are `memcached` or `redis`.",
+        'engine',
+        'Name of the cache engine to be used for this cache cluster. Valid values are `memcached` or `redis`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User-provided description for the serverless cache. The default is NULL.",
+        'description',
+        'User-provided description for the serverless cache. The default is NULL.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnetIds",
-        "A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.",
+        'subnetIds',
+        'A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => elasticache_ServerlessCacheTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "majorEngineVersion",
-        "The version of the cache engine that will be used to create the serverless cache.\nSee [Describe Cache Engine Versions](https://docs.aws.amazon.com/cli/latest/reference/elasticache/describe-cache-engine-versions.html) in the AWS Documentation for supported versions.",
+        'majorEngineVersion',
+        'The version of the cache engine that will be used to create the serverless cache.\nSee [Describe Cache Engine Versions](https://docs.aws.amazon.com/cli/latest/reference/elasticache/describe-cache-engine-versions.html) in the AWS Documentation for supported versions.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The Cluster name which serves as a unique identifier to the serverless cache\n\nThe following arguments are optional:",
+        'name',
+        'The Cluster name which serves as a unique identifier to the serverless cache\n\nThe following arguments are optional:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userGroupId",
-        "The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.",
+        'userGroupId',
+        'The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.',
         () => [],
         false,
         false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_getBucketCustomPlacementConfig {
   // The list of individual regions that comprise a dual-region bucket. See the docs for a list of acceptable regions. Note: If any of the data_locations changes, it will recreate the bucket.
@@ -15,8 +15,8 @@ export function storage_getBucketCustomPlacementConfig_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "dataLocations",
-      "The list of individual regions that comprise a dual-region bucket. See the docs for a list of acceptable regions. Note: If any of the data_locations changes, it will recreate the bucket.",
+      'dataLocations',
+      'The list of individual regions that comprise a dual-region bucket. See the docs for a list of acceptable regions. Note: If any of the data_locations changes, it will recreate the bucket.',
       () => InputType_String_GetTypes(),
       true,
       false,

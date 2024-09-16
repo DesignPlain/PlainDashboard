@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkeonprem_BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfig {
   /*
@@ -19,8 +19,8 @@ export function gkeonprem_BareMetalClusterNetworkConfigMultipleNetworkInterfaces
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Whether to enable multiple network interfaces for your pods.\nWhen set network_config.advanced_networking is automatically\nset to true.",
+      'enabled',
+      'Whether to enable multiple network interfaces for your pods.\nWhen set network_config.advanced_networking is automatically\nset to true.',
       () => [],
       false,
       false,

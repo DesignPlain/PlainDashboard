@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LogViewArgs {
   // Filter that restricts which log entries in a bucket are visible in this view. Filters are restricted to be a logical AND of ==/!= of any of the following: - originating project/folder/organization/billing account. - resource type - log id For example: SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")
@@ -65,15 +65,15 @@ The bucket of the resource
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Describes this view.",
+        'description',
+        'Describes this view.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "filter",
+        'filter',
         'Filter that restricts which log entries in a bucket are visible in this view. Filters are restricted to be a logical AND of ==/!= of any of the following: - originating project/folder/organization/billing account. - resource type - log id For example: SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")',
         () => [],
         false,
@@ -81,32 +81,32 @@ The bucket of the resource
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource. The supported locations are: global, us-central1, us-east1, us-west1, asia-east1, europe-west1.",
+        'location',
+        'The location of the resource. The supported locations are: global, us-central1, us-east1, us-west1, asia-east1, europe-west1.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name of the view. For example: \\`projects/my-project/locations/global/buckets/my-bucket/views/my-view\\`",
+        'name',
+        'The resource name of the view. For example: \\`projects/my-project/locations/global/buckets/my-bucket/views/my-view\\`',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The parent of the resource.",
+        'parent',
+        'The parent of the resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bucket",
-        "The bucket of the resource\n\n\n- - -",
+        'bucket',
+        'The bucket of the resource\n\n\n- - -',
         () => [],
         true,
         true,

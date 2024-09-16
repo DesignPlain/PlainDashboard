@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   workbench_InstanceIamBindingCondition,
   workbench_InstanceIamBindingCondition_GetTypes,
-} from "../types/workbench_InstanceIamBindingCondition";
+} from '../types/workbench_InstanceIamBindingCondition';
 
 export interface InstanceIamBindingArgs {
   //
@@ -56,34 +56,34 @@ export class InstanceIamBinding extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "",
+        'location',
+        '',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "members",
-        "",
+        'members',
+        '',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
-      new DynamicUIProps(InputType.String, "name", "", () => [], false, true),
+      new DynamicUIProps(InputType.String, 'name', '', () => [], false, true),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "",
+        'project',
+        '',
         () => [],
         false,
         true,
       ),
-      new DynamicUIProps(InputType.String, "role", "", () => [], true, true),
+      new DynamicUIProps(InputType.String, 'role', '', () => [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
-        "",
+        'condition',
+        '',
         () => workbench_InstanceIamBindingCondition_GetTypes(),
         false,
         true,

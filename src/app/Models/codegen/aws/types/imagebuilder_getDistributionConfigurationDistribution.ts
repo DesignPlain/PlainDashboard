@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   imagebuilder_getDistributionConfigurationDistributionLaunchTemplateConfiguration,
   imagebuilder_getDistributionConfigurationDistributionLaunchTemplateConfiguration_GetTypes,
-} from "./imagebuilder_getDistributionConfigurationDistributionLaunchTemplateConfiguration";
+} from './imagebuilder_getDistributionConfigurationDistributionLaunchTemplateConfiguration';
 import {
   imagebuilder_getDistributionConfigurationDistributionAmiDistributionConfiguration,
   imagebuilder_getDistributionConfigurationDistributionAmiDistributionConfiguration_GetTypes,
-} from "./imagebuilder_getDistributionConfigurationDistributionAmiDistributionConfiguration";
+} from './imagebuilder_getDistributionConfigurationDistributionAmiDistributionConfiguration';
 import {
   imagebuilder_getDistributionConfigurationDistributionContainerDistributionConfiguration,
   imagebuilder_getDistributionConfigurationDistributionContainerDistributionConfiguration_GetTypes,
-} from "./imagebuilder_getDistributionConfigurationDistributionContainerDistributionConfiguration";
+} from './imagebuilder_getDistributionConfigurationDistributionContainerDistributionConfiguration';
 import {
   imagebuilder_getDistributionConfigurationDistributionFastLaunchConfiguration,
   imagebuilder_getDistributionConfigurationDistributionFastLaunchConfiguration_GetTypes,
-} from "./imagebuilder_getDistributionConfigurationDistributionFastLaunchConfiguration";
+} from './imagebuilder_getDistributionConfigurationDistributionFastLaunchConfiguration';
 
 export interface imagebuilder_getDistributionConfigurationDistribution {
   // Nested list of AMI distribution configuration.
@@ -46,8 +46,8 @@ export function imagebuilder_getDistributionConfigurationDistribution_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Array,
-      "amiDistributionConfigurations",
-      "Nested list of AMI distribution configuration.",
+      'amiDistributionConfigurations',
+      'Nested list of AMI distribution configuration.',
       () =>
         imagebuilder_getDistributionConfigurationDistributionAmiDistributionConfiguration_GetTypes(),
       true,
@@ -55,8 +55,8 @@ export function imagebuilder_getDistributionConfigurationDistribution_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Array,
-      "containerDistributionConfigurations",
-      "Nested list of container distribution configurations.",
+      'containerDistributionConfigurations',
+      'Nested list of container distribution configurations.',
       () =>
         imagebuilder_getDistributionConfigurationDistributionContainerDistributionConfiguration_GetTypes(),
       true,
@@ -64,8 +64,8 @@ export function imagebuilder_getDistributionConfigurationDistribution_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Array,
-      "fastLaunchConfigurations",
-      "Nested list of Windows faster-launching configurations to use for AMI distribution.",
+      'fastLaunchConfigurations',
+      'Nested list of Windows faster-launching configurations to use for AMI distribution.',
       () =>
         imagebuilder_getDistributionConfigurationDistributionFastLaunchConfiguration_GetTypes(),
       true,
@@ -73,8 +73,8 @@ export function imagebuilder_getDistributionConfigurationDistribution_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Array,
-      "launchTemplateConfigurations",
-      "Nested list of launch template configurations.",
+      'launchTemplateConfigurations',
+      'Nested list of launch template configurations.',
       () =>
         imagebuilder_getDistributionConfigurationDistributionLaunchTemplateConfiguration_GetTypes(),
       true,
@@ -82,16 +82,16 @@ export function imagebuilder_getDistributionConfigurationDistribution_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Array,
-      "licenseConfigurationArns",
-      "Set of Amazon Resource Names (ARNs) of License Manager License Configurations.",
+      'licenseConfigurationArns',
+      'Set of Amazon Resource Names (ARNs) of License Manager License Configurations.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "region",
-      "AWS Region of distribution.",
+      'region',
+      'AWS Region of distribution.',
       () => [],
       true,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition,
   networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition_GetTypes,
-} from "./networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition";
+} from './networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition';
 
 export interface networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomAction {
   //
@@ -22,8 +22,8 @@ export function networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomAc
   return [
     new DynamicUIProps(
       InputType.Array,
-      "actionDefinitions",
-      "",
+      'actionDefinitions',
+      '',
       () =>
         networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomActionActionDefinition_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function networkfirewall_getFirewallPolicyFirewallPolicyStatelessCustomAc
     ),
     new DynamicUIProps(
       InputType.String,
-      "actionName",
-      "",
+      'actionName',
+      '',
       () => [],
       true,
       false,

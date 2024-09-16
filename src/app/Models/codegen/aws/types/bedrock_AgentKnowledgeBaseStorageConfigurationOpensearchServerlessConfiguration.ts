@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bedrock_AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationFieldMapping,
   bedrock_AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationFieldMapping_GetTypes,
-} from "./bedrock_AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationFieldMapping";
+} from './bedrock_AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationFieldMapping';
 
 export interface bedrock_AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfiguration {
   // The names of the fields to which to map information about the vector store. This block supports the following arguments:
@@ -25,24 +25,24 @@ export function bedrock_AgentKnowledgeBaseStorageConfigurationOpensearchServerle
   return [
     new DynamicUIProps(
       InputType.String,
-      "vectorIndexName",
-      "Name of the vector store.",
+      'vectorIndexName',
+      'Name of the vector store.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "collectionArn",
-      "ARN of the OpenSearch Service vector store.",
+      'collectionArn',
+      'ARN of the OpenSearch Service vector store.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "fieldMapping",
-      "The names of the fields to which to map information about the vector store. This block supports the following arguments:",
+      'fieldMapping',
+      'The names of the fields to which to map information about the vector store. This block supports the following arguments:',
       () =>
         bedrock_AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationFieldMapping_GetTypes(),
       false,

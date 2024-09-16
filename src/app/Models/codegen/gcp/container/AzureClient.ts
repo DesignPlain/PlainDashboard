@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AzureClientArgs {
   /*
@@ -64,40 +64,40 @@ The Azure Active Directory Tenant ID.
     return [
       new DynamicUIProps(
         InputType.String,
-        "tenantId",
-        "The Azure Active Directory Tenant ID.\n\n\n\n- - -",
+        'tenantId',
+        'The Azure Active Directory Tenant ID.\n\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "applicationId",
-        "The Azure Active Directory Application ID.",
+        'applicationId',
+        'The Azure Active Directory Application ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of this resource.",
+        'name',
+        'The name of this resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,

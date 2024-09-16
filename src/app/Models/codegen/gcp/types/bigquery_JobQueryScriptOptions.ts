@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigquery_JobQueryScriptOptions {
   /*
@@ -25,7 +25,7 @@ export function bigquery_JobQueryScriptOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "keyResultStatement",
+      'keyResultStatement',
       'Determines which statement in the script represents the "key result",\nused to populate the schema and query results of the script job.\nPossible values are: `LAST`, `FIRST_SELECT`.',
       () => [],
       false,
@@ -33,16 +33,16 @@ export function bigquery_JobQueryScriptOptions_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "statementByteBudget",
-      "Limit on the number of bytes billed per statement. Exceeding this budget results in an error.",
+      'statementByteBudget',
+      'Limit on the number of bytes billed per statement. Exceeding this budget results in an error.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "statementTimeoutMs",
-      "Timeout period for each statement in a script.",
+      'statementTimeoutMs',
+      'Timeout period for each statement in a script.',
       () => [],
       false,
       true,

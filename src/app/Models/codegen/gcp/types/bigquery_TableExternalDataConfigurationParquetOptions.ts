@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigquery_TableExternalDataConfigurationParquetOptions {
   // Indicates whether to use schema inference specifically for Parquet LIST logical type.
@@ -18,16 +18,16 @@ export function bigquery_TableExternalDataConfigurationParquetOptions_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enableListInference",
-      "Indicates whether to use schema inference specifically for Parquet LIST logical type.",
+      'enableListInference',
+      'Indicates whether to use schema inference specifically for Parquet LIST logical type.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enumAsString",
-      "Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.",
+      'enumAsString',
+      'Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.',
       () => [],
       false,
       false,

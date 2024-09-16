@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface StorageBucketArgs {
   // Required. Immutable. The ID of the underlying Google Cloud Storage bucket
@@ -34,16 +34,16 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "bucketId",
-        "Required. Immutable. The ID of the underlying Google Cloud Storage bucket",
+        'bucketId',
+        'Required. Immutable. The ID of the underlying Google Cloud Storage bucket',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

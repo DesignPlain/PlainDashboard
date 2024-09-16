@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroup,
   lex_V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroup_GetTypes,
-} from "./lex_V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroup";
+} from './lex_V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroup';
 
 export interface lex_V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponse {
   //
@@ -28,16 +28,16 @@ export function lex_V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationS
   return [
     new DynamicUIProps(
       InputType.Number,
-      "frequencyInSeconds",
-      "",
+      'frequencyInSeconds',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "messageGroups",
-      "",
+      'messageGroups',
+      '',
       () =>
         lex_V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroup_GetTypes(),
       false,
@@ -45,16 +45,16 @@ export function lex_V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationS
     ),
     new DynamicUIProps(
       InputType.Number,
-      "timeoutInSeconds",
-      "",
+      'timeoutInSeconds',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allowInterrupt",
-      "",
+      'allowInterrupt',
+      '',
       () => [],
       false,
       false,

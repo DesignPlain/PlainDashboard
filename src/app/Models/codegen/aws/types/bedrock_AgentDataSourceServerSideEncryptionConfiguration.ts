@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bedrock_AgentDataSourceServerSideEncryptionConfiguration {
   // ARN of the AWS KMS key used to encrypt the resource.
@@ -15,8 +15,8 @@ export function bedrock_AgentDataSourceServerSideEncryptionConfiguration_GetType
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyArn",
-      "ARN of the AWS KMS key used to encrypt the resource.",
+      'kmsKeyArn',
+      'ARN of the AWS KMS key used to encrypt the resource.',
       () => [],
       false,
       false,

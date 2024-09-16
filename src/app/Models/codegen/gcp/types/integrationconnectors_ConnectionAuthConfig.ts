@@ -3,32 +3,32 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionAuthConfigSshPublicKey,
   integrationconnectors_ConnectionAuthConfigSshPublicKey_GetTypes,
-} from "./integrationconnectors_ConnectionAuthConfigSshPublicKey";
+} from './integrationconnectors_ConnectionAuthConfigSshPublicKey';
 import {
   integrationconnectors_ConnectionAuthConfigUserPassword,
   integrationconnectors_ConnectionAuthConfigUserPassword_GetTypes,
-} from "./integrationconnectors_ConnectionAuthConfigUserPassword";
+} from './integrationconnectors_ConnectionAuthConfigUserPassword';
 import {
   integrationconnectors_ConnectionAuthConfigAdditionalVariable,
   integrationconnectors_ConnectionAuthConfigAdditionalVariable_GetTypes,
-} from "./integrationconnectors_ConnectionAuthConfigAdditionalVariable";
+} from './integrationconnectors_ConnectionAuthConfigAdditionalVariable';
 import {
   integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow,
   integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow_GetTypes,
-} from "./integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow";
+} from './integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow';
 import {
   integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials,
   integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials_GetTypes,
-} from "./integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials";
+} from './integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials';
 import {
   integrationconnectors_ConnectionAuthConfigOauth2JwtBearer,
   integrationconnectors_ConnectionAuthConfigOauth2JwtBearer_GetTypes,
-} from "./integrationconnectors_ConnectionAuthConfigOauth2JwtBearer";
+} from './integrationconnectors_ConnectionAuthConfigOauth2JwtBearer';
 
 export interface integrationconnectors_ConnectionAuthConfig {
   /*
@@ -81,16 +81,16 @@ export function integrationconnectors_ConnectionAuthConfig_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Object,
-      "userPassword",
-      "User password for Authentication.\nStructure is documented below.",
+      'userPassword',
+      'User password for Authentication.\nStructure is documented below.',
       () => integrationconnectors_ConnectionAuthConfigUserPassword_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "additionalVariables",
-      "List containing additional auth configs.\nStructure is documented below.",
+      'additionalVariables',
+      'List containing additional auth configs.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionAuthConfigAdditionalVariable_GetTypes(),
       false,
@@ -98,24 +98,24 @@ export function integrationconnectors_ConnectionAuthConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "authKey",
-      "The type of authentication configured.",
+      'authKey',
+      'The type of authentication configured.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "authType",
-      "authType of the Connection\nPossible values are: `USER_PASSWORD`.",
+      'authType',
+      'authType of the Connection\nPossible values are: `USER_PASSWORD`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oauth2AuthCodeFlow",
-      "Parameters to support Oauth 2.0 Auth Code Grant Authentication.\nStructure is documented below.",
+      'oauth2AuthCodeFlow',
+      'Parameters to support Oauth 2.0 Auth Code Grant Authentication.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow_GetTypes(),
       false,
@@ -123,8 +123,8 @@ export function integrationconnectors_ConnectionAuthConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oauth2ClientCredentials",
-      "OAuth3 Client Credentials for Authentication.\nStructure is documented below.",
+      'oauth2ClientCredentials',
+      'OAuth3 Client Credentials for Authentication.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials_GetTypes(),
       false,
@@ -132,8 +132,8 @@ export function integrationconnectors_ConnectionAuthConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oauth2JwtBearer",
-      "OAuth2 JWT Bearer for Authentication.\nStructure is documented below.",
+      'oauth2JwtBearer',
+      'OAuth2 JWT Bearer for Authentication.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionAuthConfigOauth2JwtBearer_GetTypes(),
       false,
@@ -141,8 +141,8 @@ export function integrationconnectors_ConnectionAuthConfig_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sshPublicKey",
-      "SSH Public Key for Authentication.\nStructure is documented below.",
+      'sshPublicKey',
+      'SSH Public Key for Authentication.\nStructure is documented below.',
       () => integrationconnectors_ConnectionAuthConfigSshPublicKey_GetTypes(),
       false,
       false,

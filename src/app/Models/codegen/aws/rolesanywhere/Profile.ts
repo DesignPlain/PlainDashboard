@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ProfileArgs {
   // The name of the Profile.
@@ -67,64 +67,64 @@ export class Profile extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Profile.",
+        'name',
+        'The name of the Profile.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "requireInstanceProperties",
-        "Specifies whether instance properties are required in [CreateSession](https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html) requests with this profile.",
+        'requireInstanceProperties',
+        'Specifies whether instance properties are required in [CreateSession](https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html) requests with this profile.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "roleArns",
-        "A list of IAM roles that this profile can assume",
+        'roleArns',
+        'A list of IAM roles that this profile can assume',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sessionPolicy",
-        "A session policy that applies to the trust boundary of the vended session credentials.",
+        'sessionPolicy',
+        'A session policy that applies to the trust boundary of the vended session credentials.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "durationSeconds",
-        "The number of seconds the vended session credentials are valid for. Defaults to 3600.",
+        'durationSeconds',
+        'The number of seconds the vended session credentials are valid for. Defaults to 3600.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Whether or not the Profile is enabled.",
+        'enabled',
+        'Whether or not the Profile is enabled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "managedPolicyArns",
-        "A list of managed policy ARNs that apply to the vended session credentials.",
+        'managedPolicyArns',
+        'A list of managed policy ARNs that apply to the vended session credentials.',
         () => InputType_String_GetTypes(),
         false,
         false,

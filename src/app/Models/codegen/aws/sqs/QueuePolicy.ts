@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface QueuePolicyArgs {
   // The JSON policy for the SQS queue.
@@ -25,16 +25,16 @@ export class QueuePolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "queueUrl",
-        "The URL of the SQS Queue to which to attach the policy",
+        'queueUrl',
+        'The URL of the SQS Queue to which to attach the policy',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policy",
-        "The JSON policy for the SQS queue.",
+        'policy',
+        'The JSON policy for the SQS queue.',
         () => [],
         true,
         false,

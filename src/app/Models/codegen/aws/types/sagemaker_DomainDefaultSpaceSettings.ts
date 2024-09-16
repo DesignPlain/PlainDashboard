@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_DomainDefaultSpaceSettingsJupyterServerAppSettings,
   sagemaker_DomainDefaultSpaceSettingsJupyterServerAppSettings_GetTypes,
-} from "./sagemaker_DomainDefaultSpaceSettingsJupyterServerAppSettings";
+} from './sagemaker_DomainDefaultSpaceSettingsJupyterServerAppSettings';
 import {
   sagemaker_DomainDefaultSpaceSettingsKernelGatewayAppSettings,
   sagemaker_DomainDefaultSpaceSettingsKernelGatewayAppSettings_GetTypes,
-} from "./sagemaker_DomainDefaultSpaceSettingsKernelGatewayAppSettings";
+} from './sagemaker_DomainDefaultSpaceSettingsKernelGatewayAppSettings';
 
 export interface sagemaker_DomainDefaultSpaceSettings {
   // The execution role for the space.
@@ -32,15 +32,15 @@ export function sagemaker_DomainDefaultSpaceSettings_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.String,
-      "executionRole",
-      "The execution role for the space.",
+      'executionRole',
+      'The execution role for the space.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "jupyterServerAppSettings",
+      'jupyterServerAppSettings',
       "The Jupyter server's app settings. See `jupyter_server_app_settings` Block below.",
       () =>
         sagemaker_DomainDefaultSpaceSettingsJupyterServerAppSettings_GetTypes(),
@@ -49,8 +49,8 @@ export function sagemaker_DomainDefaultSpaceSettings_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Object,
-      "kernelGatewayAppSettings",
-      "The kernel gateway app settings. See `kernel_gateway_app_settings` Block below.",
+      'kernelGatewayAppSettings',
+      'The kernel gateway app settings. See `kernel_gateway_app_settings` Block below.',
       () =>
         sagemaker_DomainDefaultSpaceSettingsKernelGatewayAppSettings_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function sagemaker_DomainDefaultSpaceSettings_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Array,
-      "securityGroups",
-      "The security groups for the Amazon Virtual Private Cloud that the space uses for communication.",
+      'securityGroups',
+      'The security groups for the Amazon Virtual Private Cloud that the space uses for communication.',
       () => InputType_String_GetTypes(),
       false,
       false,

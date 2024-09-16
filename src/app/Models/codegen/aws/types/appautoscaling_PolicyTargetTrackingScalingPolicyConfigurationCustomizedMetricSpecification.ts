@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationDimension,
   appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationDimension_GetTypes,
-} from "./appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationDimension";
+} from './appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationDimension';
 import {
   appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetric,
   appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetric_GetTypes,
-} from "./appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetric";
+} from './appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetric';
 
 export interface appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecification {
   // Dimensions of the metric.
@@ -38,32 +38,32 @@ export function appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCus
   return [
     new DynamicUIProps(
       InputType.String,
-      "namespace",
-      "Namespace of the metric.",
+      'namespace',
+      'Namespace of the metric.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "statistic",
-      "Statistic of the metric. Valid values: `Average`, `Minimum`, `Maximum`, `SampleCount`, and `Sum`.",
+      'statistic',
+      'Statistic of the metric. Valid values: `Average`, `Minimum`, `Maximum`, `SampleCount`, and `Sum`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "unit",
-      "Unit of the metrics to return.",
+      'unit',
+      'Unit of the metrics to return.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "dimensions",
-      "Dimensions of the metric.",
+      'dimensions',
+      'Dimensions of the metric.',
       () =>
         appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationDimension_GetTypes(),
       false,
@@ -71,16 +71,16 @@ export function appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCus
     ),
     new DynamicUIProps(
       InputType.String,
-      "metricName",
-      "Name of the metric.",
+      'metricName',
+      'Name of the metric.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "metrics",
-      "Metrics to include, as a metric data query.",
+      'metrics',
+      'Metrics to include, as a metric data query.',
       () =>
         appautoscaling_PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetric_GetTypes(),
       false,

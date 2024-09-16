@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codegurureviewer_RepositoryAssociationKmsKeyDetails,
   codegurureviewer_RepositoryAssociationKmsKeyDetails_GetTypes,
-} from "../types/codegurureviewer_RepositoryAssociationKmsKeyDetails";
+} from '../types/codegurureviewer_RepositoryAssociationKmsKeyDetails';
 import {
   codegurureviewer_RepositoryAssociationRepository,
   codegurureviewer_RepositoryAssociationRepository_GetTypes,
-} from "../types/codegurureviewer_RepositoryAssociationRepository";
+} from '../types/codegurureviewer_RepositoryAssociationRepository';
 import {
   codegurureviewer_RepositoryAssociationS3RepositoryDetail,
   codegurureviewer_RepositoryAssociationS3RepositoryDetail_GetTypes,
-} from "../types/codegurureviewer_RepositoryAssociationS3RepositoryDetail";
+} from '../types/codegurureviewer_RepositoryAssociationS3RepositoryDetail';
 
 export interface RepositoryAssociationArgs {
   // An object describing the KMS key to asssociate. Block is documented below.
@@ -81,24 +81,24 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "kmsKeyDetails",
-        "An object describing the KMS key to asssociate. Block is documented below.",
+        'kmsKeyDetails',
+        'An object describing the KMS key to asssociate. Block is documented below.',
         () => codegurureviewer_RepositoryAssociationKmsKeyDetails_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "repository",
-        "An object describing the repository to associate. Valid values: `bitbucket`, `codecommit`, `github_enterprise_server`, or `s3_bucket`. Block is documented below. Note: for repositories that leverage CodeStar connections (ex. `bitbucket`, `github_enterprise_server`) the connection must be in `Available` status prior to creating this resource.\n\nThe following arguments are optional:",
+        'repository',
+        'An object describing the repository to associate. Valid values: `bitbucket`, `codecommit`, `github_enterprise_server`, or `s3_bucket`. Block is documented below. Note: for repositories that leverage CodeStar connections (ex. `bitbucket`, `github_enterprise_server`) the connection must be in `Available` status prior to creating this resource.\n\nThe following arguments are optional:',
         () => codegurureviewer_RepositoryAssociationRepository_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,

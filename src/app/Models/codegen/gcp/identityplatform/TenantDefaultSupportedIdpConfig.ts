@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TenantDefaultSupportedIdpConfigArgs {
   // OAuth client ID
@@ -92,48 +92,48 @@ OAuth client secret
     return [
       new DynamicUIProps(
         InputType.String,
-        "clientSecret",
-        "OAuth client secret\n\n\n- - -",
+        'clientSecret',
+        'OAuth client secret\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "If this IDP allows the user to sign in",
+        'enabled',
+        'If this IDP allows the user to sign in',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "idpId",
-        "ID of the IDP. Possible values include:\n* `apple.com`\n* `facebook.com`\n* `gc.apple.com`\n* `github.com`\n* `google.com`\n* `linkedin.com`\n* `microsoft.com`\n* `playgames.google.com`\n* `twitter.com`\n* `yahoo.com`",
+        'idpId',
+        'ID of the IDP. Possible values include:\n* `apple.com`\n* `facebook.com`\n* `gc.apple.com`\n* `github.com`\n* `google.com`\n* `linkedin.com`\n* `microsoft.com`\n* `playgames.google.com`\n* `twitter.com`\n* `yahoo.com`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tenant",
-        "The name of the tenant where this DefaultSupportedIdpConfig resource exists",
+        'tenant',
+        'The name of the tenant where this DefaultSupportedIdpConfig resource exists',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientId",
-        "OAuth client ID",
+        'clientId',
+        'OAuth client ID',
         () => [],
         true,
         false,

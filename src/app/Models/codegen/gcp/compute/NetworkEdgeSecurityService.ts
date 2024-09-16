@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface NetworkEdgeSecurityServiceArgs {
   /*
@@ -77,40 +77,40 @@ An up-to-date fingerprint must be provided in order to update the NetworkEdgeSec
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Free-text description of the resource.",
+        'description',
+        'Free-text description of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is created.\n\n\n- - -",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'name',
+        'Name of the resource. Provided by the client when the resource is created.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region of the gateway security policy.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securityPolicy",
-        "The resource URL for the network edge security service associated with this network edge security service.",
+        'region',
+        'The region of the gateway security policy.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'securityPolicy',
+        'The resource URL for the network edge security service associated with this network edge security service.',
         () => [],
         false,
         false,

@@ -3,56 +3,56 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString';
 
 export interface wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatch {
   // Inspect a single query argument. See `single_query_argument` below for details.
@@ -96,8 +96,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
   return [
     new DynamicUIProps(
       InputType.Object,
-      "uriPath",
-      "Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.",
+      'uriPath',
+      'Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath_GetTypes(),
       false,
@@ -105,8 +105,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "body",
-      "Inspect the request body, which immediately follows the request headers. See `body` below for details.",
+      'body',
+      'Inspect the request body, which immediately follows the request headers. See `body` below for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody_GetTypes(),
       false,
@@ -114,8 +114,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headers",
-      "Inspect the request headers. See `headers` below for details.",
+      'headers',
+      'Inspect the request headers. See `headers` below for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader_GetTypes(),
       false,
@@ -123,8 +123,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleQueryArgument",
-      "Inspect a single query argument. See `single_query_argument` below for details.",
+      'singleQueryArgument',
+      'Inspect a single query argument. See `single_query_argument` below for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument_GetTypes(),
       false,
@@ -132,8 +132,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cookies",
-      "Inspect the cookies in the web request. See `cookies` below for details.",
+      'cookies',
+      'Inspect the cookies in the web request. See `cookies` below for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies_GetTypes(),
       false,
@@ -141,8 +141,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ja3Fingerprint",
-      "Inspect the JA3 fingerprint. See `ja3_fingerprint` below for details.",
+      'ja3Fingerprint',
+      'Inspect the JA3 fingerprint. See `ja3_fingerprint` below for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint_GetTypes(),
       false,
@@ -150,8 +150,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "queryString",
-      "Inspect the query string. This is the part of a URL that appears after a `?` character, if any.",
+      'queryString',
+      'Inspect the query string. This is the part of a URL that appears after a `?` character, if any.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString_GetTypes(),
       false,
@@ -159,8 +159,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleHeader",
-      "Inspect a single header. See `single_header` below for details.",
+      'singleHeader',
+      'Inspect a single header. See `single_header` below for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader_GetTypes(),
       false,
@@ -168,7 +168,7 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headerOrders",
+      'headerOrders',
       "Inspect a string containing the list of the request's header names, ordered as they appear in the web request that AWS WAF receives for inspection. See `header_order` below for details.",
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder_GetTypes(),
@@ -177,8 +177,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "allQueryArguments",
-      "Inspect all query arguments.",
+      'allQueryArguments',
+      'Inspect all query arguments.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments_GetTypes(),
       false,
@@ -186,8 +186,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "jsonBody",
-      "Inspect the request body as JSON. See `json_body` for details.",
+      'jsonBody',
+      'Inspect the request body as JSON. See `json_body` for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody_GetTypes(),
       false,
@@ -195,8 +195,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownState
     ),
     new DynamicUIProps(
       InputType.Object,
-      "method",
-      "Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.",
+      'method',
+      'Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod_GetTypes(),
       false,

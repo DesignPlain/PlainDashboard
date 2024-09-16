@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigtable_TableColumnFamily,
   bigtable_TableColumnFamily_GetTypes,
-} from "../types/bigtable_TableColumnFamily";
+} from '../types/bigtable_TableColumnFamily';
 
 export interface TableArgs {
   // The name of the table. Must be 1-50 characters and must only contain hyphens, underscores, periods, letters and numbers.
@@ -81,56 +81,56 @@ Duration to retain change stream data for the table. Set to 0 to disable. Must b
     return [
       new DynamicUIProps(
         InputType.Array,
-        "splitKeys",
-        "A list of predefined keys to split the table on.\n!> **Warning:** Modifying the `split_keys` of an existing table will cause the provider\nto delete/recreate the entire `gcp.bigtable.Table` resource.",
+        'splitKeys',
+        'A list of predefined keys to split the table on.\n!> **Warning:** Modifying the `split_keys` of an existing table will cause the provider\nto delete/recreate the entire `gcp.bigtable.Table` resource.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "changeStreamRetention",
-        "Duration to retain change stream data for the table. Set to 0 to disable. Must be between 1 and 7 days.\n\n-----",
+        'changeStreamRetention',
+        'Duration to retain change stream data for the table. Set to 0 to disable. Must be between 1 and 7 days.\n\n-----',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "columnFamilies",
-        "A group of columns within a table which share a common configuration. This can be specified multiple times. Structure is documented below.",
+        'columnFamilies',
+        'A group of columns within a table which share a common configuration. This can be specified multiple times. Structure is documented below.',
         () => bigtable_TableColumnFamily_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deletionProtection",
-        "A field to make the table protected against data loss i.e. when set to PROTECTED, deleting the table, the column families in the table, and the instance containing the table would be prohibited. If not provided, deletion protection will be set to UNPROTECTED.",
+        'deletionProtection',
+        'A field to make the table protected against data loss i.e. when set to PROTECTED, deleting the table, the column families in the table, and the instance containing the table would be prohibited. If not provided, deletion protection will be set to UNPROTECTED.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceName",
-        "The name of the Bigtable instance.",
+        'instanceName',
+        'The name of the Bigtable instance.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the table. Must be 1-50 characters and must only contain hyphens, underscores, periods, letters and numbers.",
+        'name',
+        'The name of the table. Must be 1-50 characters and must only contain hyphens, underscores, periods, letters and numbers.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,

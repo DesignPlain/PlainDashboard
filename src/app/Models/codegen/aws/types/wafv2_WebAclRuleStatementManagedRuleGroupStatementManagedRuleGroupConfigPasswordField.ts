@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigPasswordField {
   // The name of the password field.
@@ -15,8 +15,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
   return [
     new DynamicUIProps(
       InputType.String,
-      "identifier",
-      "The name of the password field.",
+      'identifier',
+      'The name of the password field.',
       () => [],
       true,
       false,

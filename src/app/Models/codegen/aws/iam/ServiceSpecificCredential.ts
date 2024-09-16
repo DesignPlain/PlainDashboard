@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ServiceSpecificCredentialArgs {
   // The name of the AWS service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.
@@ -40,24 +40,24 @@ export class ServiceSpecificCredential extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "serviceName",
-        "The name of the AWS service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.",
+        'serviceName',
+        'The name of the AWS service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "The status to be assigned to the service-specific credential. Valid values are `Active` and `Inactive`. Default value is `Active`.",
+        'status',
+        'The status to be assigned to the service-specific credential. Valid values are `Active` and `Inactive`. Default value is `Active`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userName",
-        "The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.",
+        'userName',
+        'The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.',
         () => [],
         true,
         true,

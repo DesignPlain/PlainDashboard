@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrunv2_getJobTemplateTemplateContainerPort,
   cloudrunv2_getJobTemplateTemplateContainerPort_GetTypes,
-} from "./cloudrunv2_getJobTemplateTemplateContainerPort";
+} from './cloudrunv2_getJobTemplateTemplateContainerPort';
 import {
   cloudrunv2_getJobTemplateTemplateContainerResource,
   cloudrunv2_getJobTemplateTemplateContainerResource_GetTypes,
-} from "./cloudrunv2_getJobTemplateTemplateContainerResource";
+} from './cloudrunv2_getJobTemplateTemplateContainerResource';
 import {
   cloudrunv2_getJobTemplateTemplateContainerEnv,
   cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes,
-} from "./cloudrunv2_getJobTemplateTemplateContainerEnv";
+} from './cloudrunv2_getJobTemplateTemplateContainerEnv';
 import {
   cloudrunv2_getJobTemplateTemplateContainerVolumeMount,
   cloudrunv2_getJobTemplateTemplateContainerVolumeMount_GetTypes,
-} from "./cloudrunv2_getJobTemplateTemplateContainerVolumeMount";
+} from './cloudrunv2_getJobTemplateTemplateContainerVolumeMount';
 
 export interface cloudrunv2_getJobTemplateTemplateContainer {
   // The name of the Cloud Run v2 Job.
@@ -59,7 +59,7 @@ export function cloudrunv2_getJobTemplateTemplateContainer_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "workingDir",
+      'workingDir',
       "Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image.",
       () => [],
       true,
@@ -67,7 +67,7 @@ export function cloudrunv2_getJobTemplateTemplateContainer_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Array,
-      "args",
+      'args',
       "Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell",
       () => InputType_String_GetTypes(),
       true,
@@ -75,15 +75,15 @@ export function cloudrunv2_getJobTemplateTemplateContainer_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Array,
-      "envs",
-      "List of environment variables to set in the container.",
+      'envs',
+      'List of environment variables to set in the container.',
       () => cloudrunv2_getJobTemplateTemplateContainerEnv_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "volumeMounts",
+      'volumeMounts',
       "Volume to mount into the container's filesystem.",
       () => cloudrunv2_getJobTemplateTemplateContainerVolumeMount_GetTypes(),
       true,
@@ -91,7 +91,7 @@ export function cloudrunv2_getJobTemplateTemplateContainer_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Array,
-      "commands",
+      'commands',
       "Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell",
       () => InputType_String_GetTypes(),
       true,
@@ -99,32 +99,32 @@ export function cloudrunv2_getJobTemplateTemplateContainer_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "image",
-      "URL of the Container image in Google Container Registry or Google Artifact Registry. More info: https://kubernetes.io/docs/concepts/containers/images",
+      'image',
+      'URL of the Container image in Google Container Registry or Google Artifact Registry. More info: https://kubernetes.io/docs/concepts/containers/images',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ports",
-      "List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible.\n\nIf omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on",
+      'ports',
+      'List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible.\n\nIf omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on',
       () => cloudrunv2_getJobTemplateTemplateContainerPort_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "resources",
-      "Compute Resource requirements by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources",
+      'resources',
+      'Compute Resource requirements by this container. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources',
       () => cloudrunv2_getJobTemplateTemplateContainerResource_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the Cloud Run v2 Job.",
+      'name',
+      'The name of the Cloud Run v2 Job.',
       () => [],
       true,
       false,

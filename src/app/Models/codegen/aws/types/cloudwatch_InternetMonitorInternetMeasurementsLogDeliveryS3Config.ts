@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudwatch_InternetMonitorInternetMeasurementsLogDeliveryS3Config {
   //
@@ -21,24 +21,24 @@ export function cloudwatch_InternetMonitorInternetMeasurementsLogDeliveryS3Confi
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucketName",
-      "",
+      'bucketName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketPrefix",
-      "",
+      'bucketPrefix',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "logDeliveryStatus",
-      "",
+      'logDeliveryStatus',
+      '',
       () => [],
       false,
       false,

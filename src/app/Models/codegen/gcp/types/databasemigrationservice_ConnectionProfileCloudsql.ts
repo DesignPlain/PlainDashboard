@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   databasemigrationservice_ConnectionProfileCloudsqlSettings,
   databasemigrationservice_ConnectionProfileCloudsqlSettings_GetTypes,
-} from "./databasemigrationservice_ConnectionProfileCloudsqlSettings";
+} from './databasemigrationservice_ConnectionProfileCloudsqlSettings';
 
 export interface databasemigrationservice_ConnectionProfileCloudsql {
   /*
@@ -40,15 +40,15 @@ export function databasemigrationservice_ConnectionProfileCloudsql_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "cloudSqlId",
-      "(Output)\nOutput only. The Cloud SQL instance ID that this connection profile is associated with.",
+      'cloudSqlId',
+      '(Output)\nOutput only. The Cloud SQL instance ID that this connection profile is associated with.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "privateIp",
+      'privateIp',
       "(Output)\nOutput only. The Cloud SQL database instance's private IP.",
       () => [],
       false,
@@ -56,7 +56,7 @@ export function databasemigrationservice_ConnectionProfileCloudsql_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "publicIp",
+      'publicIp',
       "(Output)\nOutput only. The Cloud SQL database instance's public IP.",
       () => [],
       false,
@@ -64,8 +64,8 @@ export function databasemigrationservice_ConnectionProfileCloudsql_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Object,
-      "settings",
-      "Immutable. Metadata used to create the destination Cloud SQL database.\nStructure is documented below.",
+      'settings',
+      'Immutable. Metadata used to create the destination Cloud SQL database.\nStructure is documented below.',
       () =>
         databasemigrationservice_ConnectionProfileCloudsqlSettings_GetTypes(),
       false,

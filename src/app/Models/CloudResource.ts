@@ -3,7 +3,6 @@ import { ResourceType as GCP_ResourceType } from 'src/app/Models/codegen/gcp/Res
 import { ResourceType as AWS_ResourceType } from 'src/app/Models/codegen/aws/ResourceType';
 import { DS_Resource } from 'src/app/Models/codegen/ds_base/Resource';
 
-
 export class CloudResource {
   public id: string = '';
   public name: string = '';

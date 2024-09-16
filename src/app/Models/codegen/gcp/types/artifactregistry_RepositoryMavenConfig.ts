@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface artifactregistry_RepositoryMavenConfig {
   /*
@@ -25,16 +25,16 @@ export function artifactregistry_RepositoryMavenConfig_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "allowSnapshotOverwrites",
-      "The repository with this flag will allow publishing the same\nsnapshot versions.",
+      'allowSnapshotOverwrites',
+      'The repository with this flag will allow publishing the same\nsnapshot versions.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "versionPolicy",
-      "Version policy defines the versions that the registry will accept.\nDefault value is `VERSION_POLICY_UNSPECIFIED`.\nPossible values are: `VERSION_POLICY_UNSPECIFIED`, `RELEASE`, `SNAPSHOT`.",
+      'versionPolicy',
+      'Version policy defines the versions that the registry will accept.\nDefault value is `VERSION_POLICY_UNSPECIFIED`.\nPossible values are: `VERSION_POLICY_UNSPECIFIED`, `RELEASE`, `SNAPSHOT`.',
       () => [],
       false,
       true,

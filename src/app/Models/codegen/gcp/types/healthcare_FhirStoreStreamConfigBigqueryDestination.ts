@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig,
   healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig_GetTypes,
-} from "./healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig";
+} from './healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig';
 
 export interface healthcare_FhirStoreStreamConfigBigqueryDestination {
   // BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId
@@ -25,16 +25,16 @@ export function healthcare_FhirStoreStreamConfigBigqueryDestination_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.String,
-      "datasetUri",
-      "BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId",
+      'datasetUri',
+      'BigQuery URI to a dataset, up to 2000 characters long, in the format bq://projectId.bqDatasetId',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "schemaConfig",
-      "The configuration for the exported BigQuery schema.\nStructure is documented below.",
+      'schemaConfig',
+      'The configuration for the exported BigQuery schema.\nStructure is documented below.',
       () =>
         healthcare_FhirStoreStreamConfigBigqueryDestinationSchemaConfig_GetTypes(),
       true,

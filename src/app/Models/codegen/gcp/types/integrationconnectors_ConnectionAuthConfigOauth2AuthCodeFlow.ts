@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret,
   integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret_GetTypes,
-} from "./integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret";
+} from './integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret';
 
 export interface integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow {
   // Scopes the connection will request when the user performs the auth code flow.
@@ -34,32 +34,32 @@ export function integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow_Get
   return [
     new DynamicUIProps(
       InputType.Array,
-      "scopes",
-      "Scopes the connection will request when the user performs the auth code flow.",
+      'scopes',
+      'Scopes the connection will request when the user performs the auth code flow.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "authUri",
-      "Auth URL for Authorization Code Flow.",
+      'authUri',
+      'Auth URL for Authorization Code Flow.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientId",
-      "Secret version of Password for Authentication.",
+      'clientId',
+      'Secret version of Password for Authentication.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "clientSecret",
-      "Secret version reference containing the client secret.\nStructure is documented below.",
+      'clientSecret',
+      'Secret version reference containing the client secret.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlowClientSecret_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function integrationconnectors_ConnectionAuthConfigOauth2AuthCodeFlow_Get
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enablePkce",
-      "Whether to enable PKCE when the user performs the auth code flow.",
+      'enablePkce',
+      'Whether to enable PKCE when the user performs the auth code flow.',
       () => [],
       false,
       false,

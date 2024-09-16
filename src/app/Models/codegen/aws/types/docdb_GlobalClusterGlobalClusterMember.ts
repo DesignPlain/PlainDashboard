@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface docdb_GlobalClusterGlobalClusterMember {
   // Amazon Resource Name (ARN) of member DB Cluster.
@@ -18,16 +18,16 @@ export function docdb_GlobalClusterGlobalClusterMember_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "dbClusterArn",
-      "Amazon Resource Name (ARN) of member DB Cluster.",
+      'dbClusterArn',
+      'Amazon Resource Name (ARN) of member DB Cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isWriter",
-      "Whether the member is the primary DB Cluster.",
+      'isWriter',
+      'Whether the member is the primary DB Cluster.',
       () => [],
       false,
       false,

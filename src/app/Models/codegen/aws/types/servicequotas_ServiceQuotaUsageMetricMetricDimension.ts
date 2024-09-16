@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface servicequotas_ServiceQuotaUsageMetricMetricDimension {
   //
@@ -24,14 +24,14 @@ export function servicequotas_ServiceQuotaUsageMetricMetricDimension_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "resource",
-      "",
+      'resource',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "service", "", () => [], false, false),
-    new DynamicUIProps(InputType.String, "type", "", () => [], false, false),
-    new DynamicUIProps(InputType.String, "class", "", () => [], false, false),
+    new DynamicUIProps(InputType.String, 'service', '', () => [], false, false),
+    new DynamicUIProps(InputType.String, 'type', '', () => [], false, false),
+    new DynamicUIProps(InputType.String, 'class', '', () => [], false, false),
   ];
 }

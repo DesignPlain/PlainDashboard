@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LayerVersionArgs {
   // License info for your Lambda Layer. See [License Info](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-LicenseInfo).
@@ -111,55 +111,55 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Array,
-        "compatibleArchitectures",
-        "List of [Architectures](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-CompatibleArchitectures) this layer is compatible with. Currently `x86_64` and `arm64` can be specified.",
+        'compatibleArchitectures',
+        'List of [Architectures](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-CompatibleArchitectures) this layer is compatible with. Currently `x86_64` and `arm64` can be specified.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of what your Lambda Layer does.",
+        'description',
+        'Description of what your Lambda Layer does.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "layerName",
-        "Unique name for your Lambda Layer\n\nThe following arguments are optional:",
+        'layerName',
+        'Unique name for your Lambda Layer\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceCodeHash",
-        "Virtual attribute used to trigger replacement when source code changes. Must be set to a base64-encoded SHA256 hash of the package file specified with either `filename` or `s3_key`.",
+        'sourceCodeHash',
+        'Virtual attribute used to trigger replacement when source code changes. Must be set to a base64-encoded SHA256 hash of the package file specified with either `filename` or `s3_key`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "compatibleRuntimes",
-        "List of [Runtimes](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-CompatibleRuntimes) this layer is compatible with. Up to 15 runtimes can be specified.",
+        'compatibleRuntimes',
+        'List of [Runtimes](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-CompatibleRuntimes) this layer is compatible with. Up to 15 runtimes can be specified.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "licenseInfo",
-        "License info for your Lambda Layer. See [License Info](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-LicenseInfo).",
+        'licenseInfo',
+        'License info for your Lambda Layer. See [License Info](https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html#SSS-PublishLayerVersion-request-LicenseInfo).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "s3Key",
+        's3Key',
         "S3 key of an object containing the function's deployment package. Conflicts with `filename`.",
         () => [],
         false,
@@ -167,7 +167,7 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "s3ObjectVersion",
+        's3ObjectVersion',
         "Object version containing the function's deployment package. Conflicts with `filename`.",
         () => [],
         false,
@@ -175,15 +175,15 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "skipDestroy",
-        "Whether to retain the old version of a previously deployed Lambda Layer. Default is `false`. When this is not set to `true`, changing any of `compatible_architectures`, `compatible_runtimes`, `description`, `filename`, `layer_name`, `license_info`, `s3_bucket`, `s3_key`, `s3_object_version`, or `source_code_hash` forces deletion of the existing layer version and creation of a new layer version.",
+        'skipDestroy',
+        'Whether to retain the old version of a previously deployed Lambda Layer. Default is `false`. When this is not set to `true`, changing any of `compatible_architectures`, `compatible_runtimes`, `description`, `filename`, `layer_name`, `license_info`, `s3_bucket`, `s3_key`, `s3_object_version`, or `source_code_hash` forces deletion of the existing layer version and creation of a new layer version.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "s3Bucket",
+        's3Bucket',
         "S3 bucket location containing the function's deployment package. Conflicts with `filename`. This bucket must reside in the same AWS region where you are creating the Lambda function.",
         () => [],
         false,
@@ -191,7 +191,7 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "code",
+        'code',
         "Path to the function's deployment package within the local filesystem. If defined, The `s3_`-prefixed options cannot be used.",
         () => InputType_String_GetTypes(),
         false,

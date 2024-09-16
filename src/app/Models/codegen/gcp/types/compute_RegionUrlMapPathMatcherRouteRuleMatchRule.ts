@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch,
   compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_GetTypes,
-} from "./compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch";
+} from './compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch';
 import {
   compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter,
   compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter_GetTypes,
-} from "./compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter";
+} from './compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter';
 import {
   compute_RegionUrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatch,
   compute_RegionUrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatch_GetTypes,
-} from "./compute_RegionUrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatch";
+} from './compute_RegionUrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatch';
 
 export interface compute_RegionUrlMapPathMatcherRouteRuleMatchRule {
   /*
@@ -86,8 +86,8 @@ export function compute_RegionUrlMapPathMatcherRouteRuleMatchRule_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "metadataFilters",
-      "Opaque filter criteria used by Loadbalancer to restrict routing configuration to\na limited set xDS compliant clients. In their xDS requests to Loadbalancer, xDS\nclients present node metadata. If a match takes place, the relevant routing\nconfiguration is made available to those proxies. For each metadataFilter in\nthis list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the\nfilterLabels must match the corresponding label provided in the metadata. If its\nfilterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match\nwith corresponding labels in the provided metadata. metadataFilters specified\nhere can be overrides those specified in ForwardingRule that refers to this\nUrlMap. metadataFilters only applies to Loadbalancers that have their\nloadBalancingScheme set to INTERNAL_SELF_MANAGED.\nStructure is documented below.",
+      'metadataFilters',
+      'Opaque filter criteria used by Loadbalancer to restrict routing configuration to\na limited set xDS compliant clients. In their xDS requests to Loadbalancer, xDS\nclients present node metadata. If a match takes place, the relevant routing\nconfiguration is made available to those proxies. For each metadataFilter in\nthis list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the\nfilterLabels must match the corresponding label provided in the metadata. If its\nfilterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match\nwith corresponding labels in the provided metadata. metadataFilters specified\nhere can be overrides those specified in ForwardingRule that refers to this\nUrlMap. metadataFilters only applies to Loadbalancers that have their\nloadBalancingScheme set to INTERNAL_SELF_MANAGED.\nStructure is documented below.',
       () =>
         compute_RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilter_GetTypes(),
       false,
@@ -95,7 +95,7 @@ export function compute_RegionUrlMapPathMatcherRouteRuleMatchRule_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "prefixMatch",
+      'prefixMatch',
       "For satisfying the matchRule condition, the request's path must begin with the\nspecified prefixMatch. prefixMatch must begin with a /. The value must be\nbetween 1 and 1024 characters. Only one of prefixMatch, fullPathMatch or\nregexMatch must be specified.",
       () => [],
       false,
@@ -103,8 +103,8 @@ export function compute_RegionUrlMapPathMatcherRouteRuleMatchRule_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "queryParameterMatches",
-      "Specifies a list of query parameter match criteria, all of which must match\ncorresponding query parameters in the request.\nStructure is documented below.",
+      'queryParameterMatches',
+      'Specifies a list of query parameter match criteria, all of which must match\ncorresponding query parameters in the request.\nStructure is documented below.',
       () =>
         compute_RegionUrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatch_GetTypes(),
       false,
@@ -112,24 +112,24 @@ export function compute_RegionUrlMapPathMatcherRouteRuleMatchRule_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "regexMatch",
-      "For satisfying the matchRule condition, the path of the request must satisfy the\nregular expression specified in regexMatch after removing any query parameters\nand anchor supplied with the original URL. For regular expression grammar please\nsee en.cppreference.com/w/cpp/regex/ecmascript  Only one of prefixMatch,\nfullPathMatch or regexMatch must be specified.",
+      'regexMatch',
+      'For satisfying the matchRule condition, the path of the request must satisfy the\nregular expression specified in regexMatch after removing any query parameters\nand anchor supplied with the original URL. For regular expression grammar please\nsee en.cppreference.com/w/cpp/regex/ecmascript  Only one of prefixMatch,\nfullPathMatch or regexMatch must be specified.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "fullPathMatch",
-      "For satisfying the matchRule condition, the path of the request must exactly\nmatch the value specified in fullPathMatch after removing any query parameters\nand anchor that may be part of the original URL. FullPathMatch must be between 1\nand 1024 characters. Only one of prefixMatch, fullPathMatch or regexMatch must\nbe specified.",
+      'fullPathMatch',
+      'For satisfying the matchRule condition, the path of the request must exactly\nmatch the value specified in fullPathMatch after removing any query parameters\nand anchor that may be part of the original URL. FullPathMatch must be between 1\nand 1024 characters. Only one of prefixMatch, fullPathMatch or regexMatch must\nbe specified.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headerMatches",
-      "Specifies a list of header match criteria, all of which must match corresponding\nheaders in the request.\nStructure is documented below.",
+      'headerMatches',
+      'Specifies a list of header match criteria, all of which must match corresponding\nheaders in the request.\nStructure is documented below.',
       () =>
         compute_RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatch_GetTypes(),
       false,
@@ -137,8 +137,8 @@ export function compute_RegionUrlMapPathMatcherRouteRuleMatchRule_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "ignoreCase",
-      "Specifies that prefixMatch and fullPathMatch matches are case sensitive.\nDefaults to false.",
+      'ignoreCase',
+      'Specifies that prefixMatch and fullPathMatch matches are case sensitive.\nDefaults to false.',
       () => [],
       false,
       false,

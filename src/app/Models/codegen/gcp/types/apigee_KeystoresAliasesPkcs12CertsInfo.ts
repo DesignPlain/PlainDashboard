@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigee_KeystoresAliasesPkcs12CertsInfoCertInfo,
   apigee_KeystoresAliasesPkcs12CertsInfoCertInfo_GetTypes,
-} from "./apigee_KeystoresAliasesPkcs12CertsInfoCertInfo";
+} from './apigee_KeystoresAliasesPkcs12CertsInfoCertInfo';
 
 export interface apigee_KeystoresAliasesPkcs12CertsInfo {
   /*
@@ -23,8 +23,8 @@ export function apigee_KeystoresAliasesPkcs12CertsInfo_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "certInfos",
-      "(Output)\nList of all properties in the object.\nStructure is documented below.",
+      'certInfos',
+      '(Output)\nList of all properties in the object.\nStructure is documented below.',
       () => apigee_KeystoresAliasesPkcs12CertsInfoCertInfo_GetTypes(),
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface IAMCustomRoleArgs {
   // A human-readable description for the role.
@@ -63,48 +63,48 @@ List of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1
     return [
       new DynamicUIProps(
         InputType.Array,
-        "permissions",
-        "The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.",
+        'permissions',
+        'The names of the permissions this role grants when bound in an IAM policy. At least one permission must be specified.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleId",
-        "The role id to use for this role.",
+        'roleId',
+        'The role id to use for this role.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "stage",
-        "The current launch stage of the role.\nDefaults to `GA`.\nList of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).",
+        'stage',
+        'The current launch stage of the role.\nDefaults to `GA`.\nList of possible stages is [here](https://cloud.google.com/iam/reference/rest/v1/organizations.roles#Role.RoleLaunchStage).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "title",
-        "A human-readable title for the role.",
+        'title',
+        'A human-readable title for the role.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A human-readable description for the role.",
+        'description',
+        'A human-readable description for the role.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "orgId",
-        "The numeric ID of the organization in which you want to create a custom role.",
+        'orgId',
+        'The numeric ID of the organization in which you want to create a custom role.',
         () => [],
         true,
         true,

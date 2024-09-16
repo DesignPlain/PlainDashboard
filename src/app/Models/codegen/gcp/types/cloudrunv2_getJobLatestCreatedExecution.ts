@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudrunv2_getJobLatestCreatedExecution {
   /*
@@ -29,7 +29,7 @@ export function cloudrunv2_getJobLatestCreatedExecution_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "completionTime",
+      'completionTime',
       'Completion timestamp of the execution.\n\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       () => [],
       true,
@@ -37,7 +37,7 @@ export function cloudrunv2_getJobLatestCreatedExecution_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "createTime",
+      'createTime',
       'Creation timestamp of the execution.\n\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".',
       () => [],
       true,
@@ -45,8 +45,8 @@ export function cloudrunv2_getJobLatestCreatedExecution_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the Cloud Run v2 Job.",
+      'name',
+      'The name of the Cloud Run v2 Job.',
       () => [],
       true,
       false,

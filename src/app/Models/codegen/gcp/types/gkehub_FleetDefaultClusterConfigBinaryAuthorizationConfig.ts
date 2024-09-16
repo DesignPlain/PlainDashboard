@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding,
   gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding_GetTypes,
-} from "./gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding";
+} from './gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding';
 
 export interface gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig {
   /*
@@ -28,16 +28,16 @@ export function gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfig_GetTyp
   return [
     new DynamicUIProps(
       InputType.String,
-      "evaluationMode",
-      "Mode of operation for binauthz policy evaluation.\nPossible values are: `DISABLED`, `POLICY_BINDINGS`.",
+      'evaluationMode',
+      'Mode of operation for binauthz policy evaluation.\nPossible values are: `DISABLED`, `POLICY_BINDINGS`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "policyBindings",
-      "Binauthz policies that apply to this cluster.\nStructure is documented below.",
+      'policyBindings',
+      'Binauthz policies that apply to this cluster.\nStructure is documented below.',
       () =>
         gkehub_FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBinding_GetTypes(),
       false,

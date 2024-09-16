@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFields,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFields_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFields";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFields';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailField,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailField_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailField";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailField';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPasswordField,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPasswordField_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPasswordField";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPasswordField';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFields,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFields_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFields";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFields';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameField,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameField_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameField";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameField';
 
 export interface wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspection {
   // The name of the field in the request payload that contains your customer's email. See `email_field` for more details.
@@ -50,7 +50,7 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "addressFields",
+      'addressFields',
       "The names of the fields in the request payload that contain your customer's primary physical address. See `address_fields` for more details.",
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFields_GetTypes(),
@@ -59,7 +59,7 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "emailField",
+      'emailField',
       "The name of the field in the request payload that contains your customer's email. See `email_field` for more details.",
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailField_GetTypes(),
@@ -68,8 +68,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "passwordField",
-      "Details about your login page password field. See `password_field` for more details.",
+      'passwordField',
+      'Details about your login page password field. See `password_field` for more details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPasswordField_GetTypes(),
       false,
@@ -77,15 +77,15 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.String,
-      "payloadType",
-      "The payload type for your login endpoint, either JSON or form encoded.",
+      'payloadType',
+      'The payload type for your login endpoint, either JSON or form encoded.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "phoneNumberFields",
+      'phoneNumberFields',
       "The names of the fields in the request payload that contain your customer's primary phone number. See `phone_number_fields` for more details.",
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFields_GetTypes(),
@@ -94,8 +94,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "usernameField",
-      "Details about your login page username field. See `username_field` for more details.",
+      'usernameField',
+      'Details about your login page username field. See `username_field` for more details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameField_GetTypes(),
       false,

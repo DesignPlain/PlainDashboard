@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   monitoring_AlertPolicyConditionConditionAbsentAggregation,
   monitoring_AlertPolicyConditionConditionAbsentAggregation_GetTypes,
-} from "./monitoring_AlertPolicyConditionConditionAbsentAggregation";
+} from './monitoring_AlertPolicyConditionConditionAbsentAggregation';
 import {
   monitoring_AlertPolicyConditionConditionAbsentTrigger,
   monitoring_AlertPolicyConditionConditionAbsentTrigger_GetTypes,
-} from "./monitoring_AlertPolicyConditionConditionAbsentTrigger";
+} from './monitoring_AlertPolicyConditionConditionAbsentTrigger';
 
 export interface monitoring_AlertPolicyConditionConditionAbsent {
   /*
@@ -70,8 +70,8 @@ export function monitoring_AlertPolicyConditionConditionAbsent_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "aggregations",
-      "Specifies the alignment of data points in\nindividual time series as well as how to\ncombine the retrieved time series together\n(such as when aggregating multiple streams\non each resource to a single stream for each\nresource or when aggregating streams across\nall members of a group of resources).\nMultiple aggregations are applied in the\norder specified.\nStructure is documented below.",
+      'aggregations',
+      'Specifies the alignment of data points in\nindividual time series as well as how to\ncombine the retrieved time series together\n(such as when aggregating multiple streams\non each resource to a single stream for each\nresource or when aggregating streams across\nall members of a group of resources).\nMultiple aggregations are applied in the\norder specified.\nStructure is documented below.',
       () =>
         monitoring_AlertPolicyConditionConditionAbsentAggregation_GetTypes(),
       false,
@@ -79,24 +79,24 @@ export function monitoring_AlertPolicyConditionConditionAbsent_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "duration",
-      "The amount of time that a time series must\nfail to report new data to be considered\nfailing. Currently, only values that are a\nmultiple of a minute--e.g. 60s, 120s, or 300s\n--are supported.",
+      'duration',
+      'The amount of time that a time series must\nfail to report new data to be considered\nfailing. Currently, only values that are a\nmultiple of a minute--e.g. 60s, 120s, or 300s\n--are supported.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "filter",
-      "A filter that identifies which time series\nshould be compared with the threshold.The\nfilter is similar to the one that is\nspecified in the\nMetricService.ListTimeSeries request (that\ncall is useful to verify the time series\nthat will be retrieved / processed) and must\nspecify the metric type and optionally may\ncontain restrictions on resource type,\nresource labels, and metric labels. This\nfield may not exceed 2048 Unicode characters\nin length.",
+      'filter',
+      'A filter that identifies which time series\nshould be compared with the threshold.The\nfilter is similar to the one that is\nspecified in the\nMetricService.ListTimeSeries request (that\ncall is useful to verify the time series\nthat will be retrieved / processed) and must\nspecify the metric type and optionally may\ncontain restrictions on resource type,\nresource labels, and metric labels. This\nfield may not exceed 2048 Unicode characters\nin length.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "trigger",
-      "The number/percent of time series for which\nthe comparison must hold in order for the\ncondition to trigger. If unspecified, then\nthe condition will trigger if the comparison\nis true for any of the time series that have\nbeen identified by filter and aggregations.\nStructure is documented below.",
+      'trigger',
+      'The number/percent of time series for which\nthe comparison must hold in order for the\ncondition to trigger. If unspecified, then\nthe condition will trigger if the comparison\nis true for any of the time series that have\nbeen identified by filter and aggregations.\nStructure is documented below.',
       () => monitoring_AlertPolicyConditionConditionAbsentTrigger_GetTypes(),
       false,
       false,

@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionEventingConfigAdditionalVariable,
   integrationconnectors_ConnectionEventingConfigAdditionalVariable_GetTypes,
-} from "./integrationconnectors_ConnectionEventingConfigAdditionalVariable";
+} from './integrationconnectors_ConnectionEventingConfigAdditionalVariable';
 import {
   integrationconnectors_ConnectionEventingConfigAuthConfig,
   integrationconnectors_ConnectionEventingConfigAuthConfig_GetTypes,
-} from "./integrationconnectors_ConnectionEventingConfigAuthConfig";
+} from './integrationconnectors_ConnectionEventingConfigAuthConfig';
 import {
   integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig,
   integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig_GetTypes,
-} from "./integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig";
+} from './integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig';
 
 export interface integrationconnectors_ConnectionEventingConfig {
   /*
@@ -45,8 +45,8 @@ export function integrationconnectors_ConnectionEventingConfig_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "additionalVariables",
-      "List containing additional auth configs.\nStructure is documented below.",
+      'additionalVariables',
+      'List containing additional auth configs.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionEventingConfigAdditionalVariable_GetTypes(),
       false,
@@ -54,24 +54,24 @@ export function integrationconnectors_ConnectionEventingConfig_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Object,
-      "authConfig",
-      "authConfig for Eventing Configuration.\nStructure is documented below.",
+      'authConfig',
+      'authConfig for Eventing Configuration.\nStructure is documented below.',
       () => integrationconnectors_ConnectionEventingConfigAuthConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enrichmentEnabled",
-      "Enrichment Enabled.",
+      'enrichmentEnabled',
+      'Enrichment Enabled.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "registrationDestinationConfig",
-      "registrationDestinationConfig\nStructure is documented below.",
+      'registrationDestinationConfig',
+      'registrationDestinationConfig\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionEventingConfigRegistrationDestinationConfig_GetTypes(),
       true,

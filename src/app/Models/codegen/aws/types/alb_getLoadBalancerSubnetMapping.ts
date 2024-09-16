@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface alb_getLoadBalancerSubnetMapping {
   //
@@ -27,33 +27,33 @@ export function alb_getLoadBalancerSubnetMapping_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "outpostId",
-      "",
+      'outpostId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "privateIpv4Address",
-      "",
+      'privateIpv4Address',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "subnetId", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'subnetId', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "allocationId",
-      "",
+      'allocationId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ipv6Address",
-      "",
+      'ipv6Address',
+      '',
       () => [],
       true,
       false,

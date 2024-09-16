@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   imagebuilder_getImagePipelineImageScanningConfigurationEcrConfiguration,
   imagebuilder_getImagePipelineImageScanningConfigurationEcrConfiguration_GetTypes,
-} from "./imagebuilder_getImagePipelineImageScanningConfigurationEcrConfiguration";
+} from './imagebuilder_getImagePipelineImageScanningConfigurationEcrConfiguration';
 
 export interface imagebuilder_getImagePipelineImageScanningConfiguration {
   // List if an object with ecr configuration for image scanning
@@ -22,8 +22,8 @@ export function imagebuilder_getImagePipelineImageScanningConfiguration_GetTypes
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ecrConfigurations",
-      "List if an object with ecr configuration for image scanning",
+      'ecrConfigurations',
+      'List if an object with ecr configuration for image scanning',
       () =>
         imagebuilder_getImagePipelineImageScanningConfigurationEcrConfiguration_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function imagebuilder_getImagePipelineImageScanningConfiguration_GetTypes
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "imageScanningEnabled",
-      "Whether image scanning is enabled.",
+      'imageScanningEnabled',
+      'Whether image scanning is enabled.',
       () => [],
       true,
       false,

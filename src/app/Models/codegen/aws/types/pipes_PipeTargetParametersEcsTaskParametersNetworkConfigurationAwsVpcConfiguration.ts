@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface pipes_PipeTargetParametersEcsTaskParametersNetworkConfigurationAwsVpcConfiguration {
   // Specifies whether the task's elastic network interface receives a public IP address. You can specify ENABLED only when LaunchType in EcsParameters is set to FARGATE. Valid Values: ENABLED, DISABLED.
@@ -21,7 +21,7 @@ export function pipes_PipeTargetParametersEcsTaskParametersNetworkConfigurationA
   return [
     new DynamicUIProps(
       InputType.String,
-      "assignPublicIp",
+      'assignPublicIp',
       "Specifies whether the task's elastic network interface receives a public IP address. You can specify ENABLED only when LaunchType in EcsParameters is set to FARGATE. Valid Values: ENABLED, DISABLED.",
       () => [],
       false,
@@ -29,16 +29,16 @@ export function pipes_PipeTargetParametersEcsTaskParametersNetworkConfigurationA
     ),
     new DynamicUIProps(
       InputType.Array,
-      "securityGroups",
-      "",
+      'securityGroups',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "subnets",
-      "",
+      'subnets',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,

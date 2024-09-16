@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_AccessLevelConditionVpcNetworkSourceVpcSubnetwork,
   accesscontextmanager_AccessLevelConditionVpcNetworkSourceVpcSubnetwork_GetTypes,
-} from "./accesscontextmanager_AccessLevelConditionVpcNetworkSourceVpcSubnetwork";
+} from './accesscontextmanager_AccessLevelConditionVpcNetworkSourceVpcSubnetwork';
 
 export interface accesscontextmanager_AccessLevelConditionVpcNetworkSource {
   /*
@@ -22,8 +22,8 @@ export function accesscontextmanager_AccessLevelConditionVpcNetworkSource_GetTyp
   return [
     new DynamicUIProps(
       InputType.Object,
-      "vpcSubnetwork",
-      "Sub networks within a VPC network.\nStructure is documented below.",
+      'vpcSubnetwork',
+      'Sub networks within a VPC network.\nStructure is documented below.',
       () =>
         accesscontextmanager_AccessLevelConditionVpcNetworkSourceVpcSubnetwork_GetTypes(),
       false,

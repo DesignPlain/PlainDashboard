@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface connect_getInstanceStorageConfigStorageConfigKinesisStreamConfig {
   // The Amazon Resource Name (ARN) of the data stream.
@@ -15,8 +15,8 @@ export function connect_getInstanceStorageConfigStorageConfigKinesisStreamConfig
   return [
     new DynamicUIProps(
       InputType.String,
-      "streamArn",
-      "The Amazon Resource Name (ARN) of the data stream.",
+      'streamArn',
+      'The Amazon Resource Name (ARN) of the data stream.',
       () => [],
       true,
       false,

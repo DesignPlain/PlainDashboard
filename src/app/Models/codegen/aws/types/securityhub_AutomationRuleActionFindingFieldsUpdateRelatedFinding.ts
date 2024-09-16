@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface securityhub_AutomationRuleActionFindingFieldsUpdateRelatedFinding {
   // The product-generated identifier for a related finding.
@@ -18,16 +18,16 @@ export function securityhub_AutomationRuleActionFindingFieldsUpdateRelatedFindin
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "The product-generated identifier for a related finding.",
+      'id',
+      'The product-generated identifier for a related finding.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "productArn",
-      "The ARN of the product that generated a related finding.",
+      'productArn',
+      'The ARN of the product that generated a related finding.',
       () => [],
       true,
       false,

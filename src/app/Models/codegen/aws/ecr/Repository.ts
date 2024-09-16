@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ecr_RepositoryEncryptionConfiguration,
   ecr_RepositoryEncryptionConfiguration_GetTypes,
-} from "../types/ecr_RepositoryEncryptionConfiguration";
+} from '../types/ecr_RepositoryEncryptionConfiguration';
 import {
   ecr_RepositoryImageScanningConfiguration,
   ecr_RepositoryImageScanningConfiguration_GetTypes,
-} from "../types/ecr_RepositoryImageScanningConfiguration";
+} from '../types/ecr_RepositoryImageScanningConfiguration';
 
 export interface RepositoryArgs {
   // The tag mutability setting for the repository. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `MUTABLE`.
@@ -75,48 +75,48 @@ Defaults to `false`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "imageTagMutability",
-        "The tag mutability setting for the repository. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `MUTABLE`.",
+        'imageTagMutability',
+        'The tag mutability setting for the repository. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `MUTABLE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the repository.",
+        'name',
+        'Name of the repository.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "encryptionConfigurations",
-        "Encryption configuration for the repository. See below for schema.",
+        'encryptionConfigurations',
+        'Encryption configuration for the repository. See below for schema.',
         () => ecr_RepositoryEncryptionConfiguration_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDelete",
-        "If `true`, will delete the repository even if it contains images.\nDefaults to `false`.",
+        'forceDelete',
+        'If `true`, will delete the repository even if it contains images.\nDefaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "imageScanningConfiguration",
-        "Configuration block that defines image scanning configuration for the repository. By default, image scanning must be manually triggered. See the [ECR User Guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html) for more information about image scanning.",
+        'imageScanningConfiguration',
+        'Configuration block that defines image scanning configuration for the repository. By default, image scanning must be manually triggered. See the [ECR User Guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html) for more information about image scanning.',
         () => ecr_RepositoryImageScanningConfiguration_GetTypes(),
         false,
         false,

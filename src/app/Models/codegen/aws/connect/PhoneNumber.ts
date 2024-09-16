@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   connect_PhoneNumberStatus,
   connect_PhoneNumberStatus_GetTypes,
-} from "../types/connect_PhoneNumberStatus";
+} from '../types/connect_PhoneNumberStatus';
 
 export interface PhoneNumberArgs {
   // The type of phone number. Valid Values: `TOLL_FREE` | `DID`.
@@ -65,48 +65,48 @@ export class PhoneNumber extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the phone number.",
+        'description',
+        'The description of the phone number.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "prefix",
-        "The prefix of the phone number that is used to filter available phone numbers. If provided, it must contain `+` as part of the country code. Do not specify this argument when importing the resource.",
+        'prefix',
+        'The prefix of the phone number that is used to filter available phone numbers. If provided, it must contain `+` as part of the country code. Do not specify this argument when importing the resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Tags to apply to the Phone Number. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Tags to apply to the Phone Number. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetArn",
-        "The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.",
+        'targetArn',
+        'The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are claimed to.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of phone number. Valid Values: `TOLL_FREE` | `DID`.",
+        'type',
+        'The type of phone number. Valid Values: `TOLL_FREE` | `DID`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "countryCode",
-        "The ISO country code. For a list of Valid values, refer to [PhoneNumberCountryCode](https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html#connect-SearchAvailablePhoneNumbers-request-PhoneNumberCountryCode).",
+        'countryCode',
+        'The ISO country code. For a list of Valid values, refer to [PhoneNumberCountryCode](https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html#connect-SearchAvailablePhoneNumbers-request-PhoneNumberCountryCode).',
         () => [],
         true,
         true,

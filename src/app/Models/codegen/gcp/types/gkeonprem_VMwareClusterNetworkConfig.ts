@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config,
   gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config_GetTypes,
-} from "./gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config";
+} from './gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config';
 import {
   gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig,
   gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig_GetTypes,
-} from "./gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig";
+} from './gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig';
 import {
   gkeonprem_VMwareClusterNetworkConfigHostConfig,
   gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes,
-} from "./gkeonprem_VMwareClusterNetworkConfigHostConfig";
+} from './gkeonprem_VMwareClusterNetworkConfigHostConfig';
 import {
   gkeonprem_VMwareClusterNetworkConfigStaticIpConfig,
   gkeonprem_VMwareClusterNetworkConfigStaticIpConfig_GetTypes,
-} from "./gkeonprem_VMwareClusterNetworkConfigStaticIpConfig";
+} from './gkeonprem_VMwareClusterNetworkConfigStaticIpConfig';
 
 export interface gkeonprem_VMwareClusterNetworkConfig {
   /*
@@ -71,15 +71,15 @@ export function gkeonprem_VMwareClusterNetworkConfig_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.Object,
-      "dhcpIpConfig",
-      "Configuration settings for a DHCP IP configuration.\nStructure is documented below.",
+      'dhcpIpConfig',
+      'Configuration settings for a DHCP IP configuration.\nStructure is documented below.',
       () => gkeonprem_VMwareClusterNetworkConfigDhcpIpConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hostConfig",
+      'hostConfig',
       "Represents common network settings irrespective of the host's IP address.\nStructure is documented below.",
       () => gkeonprem_VMwareClusterNetworkConfigHostConfig_GetTypes(),
       false,
@@ -87,40 +87,40 @@ export function gkeonprem_VMwareClusterNetworkConfig_GetTypes(): DynamicUIProps[
     ),
     new DynamicUIProps(
       InputType.Array,
-      "podAddressCidrBlocks",
-      "All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges.\nOnly a single range is supported. This field cannot be changed after creation.",
+      'podAddressCidrBlocks',
+      'All pods in the cluster are assigned an RFC1918 IPv4 address from these ranges.\nOnly a single range is supported. This field cannot be changed after creation.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "serviceAddressCidrBlocks",
-      "All services in the cluster are assigned an RFC1918 IPv4 address\nfrom these ranges. Only a single range is supported.. This field\ncannot be changed after creation.",
+      'serviceAddressCidrBlocks',
+      'All services in the cluster are assigned an RFC1918 IPv4 address\nfrom these ranges. Only a single range is supported.. This field\ncannot be changed after creation.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "staticIpConfig",
-      "Configuration settings for a static IP configuration.\nStructure is documented below.",
+      'staticIpConfig',
+      'Configuration settings for a static IP configuration.\nStructure is documented below.',
       () => gkeonprem_VMwareClusterNetworkConfigStaticIpConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "vcenterNetwork",
-      "(Output)\nvcenter_network specifies vCenter network name. Inherited from the admin cluster.",
+      'vcenterNetwork',
+      '(Output)\nvcenter_network specifies vCenter network name. Inherited from the admin cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "controlPlaneV2Config",
-      "Configuration for control plane V2 mode.\nStructure is documented below.",
+      'controlPlaneV2Config',
+      'Configuration for control plane V2 mode.\nStructure is documented below.',
       () => gkeonprem_VMwareClusterNetworkConfigControlPlaneV2Config_GetTypes(),
       false,
       false,

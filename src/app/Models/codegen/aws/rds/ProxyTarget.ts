@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ProxyTargetArgs {
   /*
@@ -63,32 +63,32 @@ DB cluster identifier.
     return [
       new DynamicUIProps(
         InputType.String,
-        "targetGroupName",
-        "The name of the target group.",
+        'targetGroupName',
+        'The name of the target group.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dbClusterIdentifier",
-        "DB cluster identifier.\n\n**NOTE:** Either `db_instance_identifier` or `db_cluster_identifier` should be specified and both should not be specified together",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "dbInstanceIdentifier",
-        "DB instance identifier.",
+        'dbClusterIdentifier',
+        'DB cluster identifier.\n\n**NOTE:** Either `db_instance_identifier` or `db_cluster_identifier` should be specified and both should not be specified together',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dbProxyName",
-        "The name of the DB proxy.",
+        'dbInstanceIdentifier',
+        'DB instance identifier.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'dbProxyName',
+        'The name of the DB proxy.',
         () => [],
         true,
         true,

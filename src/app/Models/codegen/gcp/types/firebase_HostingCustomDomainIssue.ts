@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface firebase_HostingCustomDomainIssue {
   // The status code, which should be an enum value of `google.rpc.Code`
@@ -21,24 +21,24 @@ export function firebase_HostingCustomDomainIssue_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "code",
-      "The status code, which should be an enum value of `google.rpc.Code`",
+      'code',
+      'The status code, which should be an enum value of `google.rpc.Code`',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "details",
-      "A list of messages that carry the error details.",
+      'details',
+      'A list of messages that carry the error details.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "message",
-      "Error message",
+      'message',
+      'Error message',
       () => [],
       false,
       false,

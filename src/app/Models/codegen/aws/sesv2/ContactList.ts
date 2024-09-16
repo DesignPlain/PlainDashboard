@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sesv2_ContactListTopic,
   sesv2_ContactListTopic_GetTypes,
-} from "../types/sesv2_ContactListTopic";
+} from '../types/sesv2_ContactListTopic';
 
 export interface ContactListArgs {
   /*
@@ -61,32 +61,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "contactListName",
-        "Name of the contact list.\n\nThe following arguments are optional:",
+        'contactListName',
+        'Name of the contact list.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of what the contact list is about.",
+        'description',
+        'Description of what the contact list is about.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags for the contact list. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags for the contact list. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "topics",
-        "Configuration block(s) with topic for the contact list. Detailed below.",
+        'topics',
+        'Configuration block(s) with topic for the contact list. Detailed below.',
         () => sesv2_ContactListTopic_GetTypes(),
         false,
         false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface osconfig_GuestPoliciesRecipeArtifactRemote {
   /*
@@ -22,7 +22,7 @@ export function osconfig_GuestPoliciesRecipeArtifactRemote_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "checkSum",
+      'checkSum',
       "Must be provided if allowInsecure is false. SHA256 checksum in hex format, to compare to the checksum of the artifact.\nIf the checksum is not empty and it doesn't match the artifact then the recipe installation fails before running any\nof the steps.",
       () => [],
       false,
@@ -30,8 +30,8 @@ export function osconfig_GuestPoliciesRecipeArtifactRemote_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "uri",
-      "URI from which to fetch the object. It should contain both the protocol and path following the format {protocol}://{location}.",
+      'uri',
+      'URI from which to fetch the object. It should contain both the protocol and path following the format {protocol}://{location}.',
       () => [],
       false,
       false,

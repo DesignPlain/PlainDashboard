@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificatemanager_getCertificateMapGclbTargetIpConfig,
   certificatemanager_getCertificateMapGclbTargetIpConfig_GetTypes,
-} from "./certificatemanager_getCertificateMapGclbTargetIpConfig";
+} from './certificatemanager_getCertificateMapGclbTargetIpConfig';
 
 export interface certificatemanager_getCertificateMapGclbTarget {
   // An IP configuration where this Certificate Map is serving
@@ -33,15 +33,15 @@ export function certificatemanager_getCertificateMapGclbTarget_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ipConfigs",
-      "An IP configuration where this Certificate Map is serving",
+      'ipConfigs',
+      'An IP configuration where this Certificate Map is serving',
       () => certificatemanager_getCertificateMapGclbTargetIpConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "targetHttpsProxy",
+      'targetHttpsProxy',
       "Proxy name must be in the format projects/*/locations/*/targetHttpsProxies/*.\nThis field is part of a union field 'target_proxy': Only one of 'targetHttpsProxy' or\n'targetSslProxy' may be set.",
       () => [],
       true,
@@ -49,7 +49,7 @@ export function certificatemanager_getCertificateMapGclbTarget_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "targetSslProxy",
+      'targetSslProxy',
       "Proxy name must be in the format projects/*/locations/*/targetSslProxies/*.\nThis field is part of a union field 'target_proxy': Only one of 'targetHttpsProxy' or\n'targetSslProxy' may be set.",
       () => [],
       true,

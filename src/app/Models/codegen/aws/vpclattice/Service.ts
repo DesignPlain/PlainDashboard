@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vpclattice_ServiceDnsEntry,
   vpclattice_ServiceDnsEntry_GetTypes,
-} from "../types/vpclattice_ServiceDnsEntry";
+} from '../types/vpclattice_ServiceDnsEntry';
 
 export interface ServiceArgs {
   // Type of IAM policy. Either `NONE` or `AWS_IAM`.
@@ -67,31 +67,31 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "authType",
-        "Type of IAM policy. Either `NONE` or `AWS_IAM`.",
+        'authType',
+        'Type of IAM policy. Either `NONE` or `AWS_IAM`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateArn",
-        "Amazon Resource Name (ARN) of the certificate.",
+        'certificateArn',
+        'Amazon Resource Name (ARN) of the certificate.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customDomainName",
-        "Custom domain name of the service.",
+        'customDomainName',
+        'Custom domain name of the service.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "Name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.Must be between 3 and 40 characters in length.\n\nThe following arguments are optional:",
         () => [],
         false,
@@ -99,8 +99,8 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

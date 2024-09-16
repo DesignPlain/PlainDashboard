@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowMetadataCatalogConfig,
   appflow_FlowMetadataCatalogConfig_GetTypes,
-} from "../types/appflow_FlowMetadataCatalogConfig";
+} from '../types/appflow_FlowMetadataCatalogConfig';
 import {
   appflow_FlowSourceFlowConfig,
   appflow_FlowSourceFlowConfig_GetTypes,
-} from "../types/appflow_FlowSourceFlowConfig";
+} from '../types/appflow_FlowSourceFlowConfig';
 import {
   appflow_FlowTask,
   appflow_FlowTask_GetTypes,
-} from "../types/appflow_FlowTask";
+} from '../types/appflow_FlowTask';
 import {
   appflow_FlowTriggerConfig,
   appflow_FlowTriggerConfig_GetTypes,
-} from "../types/appflow_FlowTriggerConfig";
+} from '../types/appflow_FlowTriggerConfig';
 import {
   appflow_FlowDestinationFlowConfig,
   appflow_FlowDestinationFlowConfig_GetTypes,
-} from "../types/appflow_FlowDestinationFlowConfig";
+} from '../types/appflow_FlowDestinationFlowConfig';
 
 export interface FlowArgs {
   // A Catalog that determines the configuration that Amazon AppFlow uses when it catalogs the data that’s transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
@@ -96,47 +96,47 @@ export class Flow extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "metadataCatalogConfig",
-        "A Catalog that determines the configuration that Amazon AppFlow uses when it catalogs the data that’s transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.",
+        'metadataCatalogConfig',
+        'A Catalog that determines the configuration that Amazon AppFlow uses when it catalogs the data that’s transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.',
         () => appflow_FlowMetadataCatalogConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "tasks",
-        "A Task that Amazon AppFlow performs while transferring the data in the flow run.",
+        'tasks',
+        'A Task that Amazon AppFlow performs while transferring the data in the flow run.',
         () => appflow_FlowTask_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "triggerConfig",
-        "A Trigger that determine how and when the flow runs.",
+        'triggerConfig',
+        'A Trigger that determine how and when the flow runs.',
         () => appflow_FlowTriggerConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "destinationFlowConfigs",
-        "A Destination Flow Config that controls how Amazon AppFlow places data in the destination connector.",
+        'destinationFlowConfigs',
+        'A Destination Flow Config that controls how Amazon AppFlow places data in the destination connector.',
         () => appflow_FlowDestinationFlowConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sourceFlowConfig",
-        "The Source Flow Config that controls how Amazon AppFlow retrieves data from the source connector.",
+        'sourceFlowConfig',
+        'The Source Flow Config that controls how Amazon AppFlow retrieves data from the source connector.',
         () => appflow_FlowSourceFlowConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsArn",
+        'kmsArn',
         "ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.",
         () => [],
         false,
@@ -144,24 +144,24 @@ export class Flow extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the flow.",
+        'name',
+        'Name of the flow.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the flow you want to create.",
+        'description',
+        'Description of the flow you want to create.',
         () => [],
         false,
         false,

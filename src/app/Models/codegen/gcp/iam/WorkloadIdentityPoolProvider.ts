@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   iam_WorkloadIdentityPoolProviderAws,
   iam_WorkloadIdentityPoolProviderAws_GetTypes,
-} from "../types/iam_WorkloadIdentityPoolProviderAws";
+} from '../types/iam_WorkloadIdentityPoolProviderAws';
 import {
   iam_WorkloadIdentityPoolProviderOidc,
   iam_WorkloadIdentityPoolProviderOidc_GetTypes,
-} from "../types/iam_WorkloadIdentityPoolProviderOidc";
+} from '../types/iam_WorkloadIdentityPoolProviderOidc';
 import {
   iam_WorkloadIdentityPoolProviderSaml,
   iam_WorkloadIdentityPoolProviderSaml_GetTypes,
-} from "../types/iam_WorkloadIdentityPoolProviderSaml";
+} from '../types/iam_WorkloadIdentityPoolProviderSaml';
 
 export interface WorkloadIdentityPoolProviderArgs {
   /*
@@ -236,88 +236,88 @@ value must be 4-32 characters, and may contain the characters [a-z0-9-]. The pre
     return [
       new DynamicUIProps(
         InputType.String,
-        "workloadIdentityPoolProviderId",
-        "The ID for the provider, which becomes the final component of the resource name. This\nvalue must be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix\n`gcp-` is reserved for use by Google, and may not be specified.\n\n\n- - -",
+        'workloadIdentityPoolProviderId',
+        'The ID for the provider, which becomes the final component of the resource name. This\nvalue must be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix\n`gcp-` is reserved for use by Google, and may not be specified.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "aws",
-        "An Amazon Web Services identity provider. Not compatible with the property oidc or saml.\nStructure is documented below.",
+        'aws',
+        'An Amazon Web Services identity provider. Not compatible with the property oidc or saml.\nStructure is documented below.',
         () => iam_WorkloadIdentityPoolProviderAws_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disabled",
-        "Whether the provider is disabled. You cannot use a disabled provider to exchange tokens.\nHowever, existing tokens still grant access.",
+        'disabled',
+        'Whether the provider is disabled. You cannot use a disabled provider to exchange tokens.\nHowever, existing tokens still grant access.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "A display name for the provider. Cannot exceed 32 characters.",
+        'displayName',
+        'A display name for the provider. Cannot exceed 32 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "attributeMapping",
-        "Maps attributes from authentication credentials issued by an external identity provider\nto Google Cloud attributes, such as `subject` and `segment`.\nEach key must be a string specifying the Google Cloud IAM attribute to map to.\nThe following keys are supported:\n* `google.subject`: The principal IAM is authenticating. You can reference this value\nin IAM bindings. This is also the subject that appears in Cloud Logging logs.\nCannot exceed 127 characters.\n* `google.groups`: Groups the external identity belongs to. You can grant groups\naccess to resources using an IAM `principalSet` binding; access applies to all\nmembers of the group.\nYou can also provide custom attributes by specifying `attribute.{custom_attribute}`,\nwhere `{custom_attribute}` is the name of the custom attribute to be mapped. You can\ndefine a maximum of 50 custom attributes. The maximum length of a mapped attribute key\nis 100 characters, and the key may only contain the characters [a-z0-9_].\nYou can reference these attributes in IAM policies to define fine-grained access for a\nworkload to Google Cloud resources. For example:\n* `google.subject`:\n`principal://iam.googleapis.com/projects/{project}/locations/{location}/workloadIdentityPools/{pool}/subject/{value}`\n* `google.groups`:\n`principalSet://iam.googleapis.com/projects/{project}/locations/{location}/workloadIdentityPools/{pool}/group/{value}`\n* `attribute.{custom_attribute}`:\n`principalSet://iam.googleapis.com/projects/{project}/locations/{location}/workloadIdentityPools/{pool}/attribute.{custom_attribute}/{value}`\nEach value must be a [Common Expression Language](https://opensource.google/projects/cel)\nfunction that maps an identity provider credential to the normalized attribute specified\nby the corresponding map key.\nYou can use the `assertion` keyword in the expression to access a JSON representation of\nthe authentication credential issued by the provider.\nThe maximum length of an attribute mapping expression is 2048 characters. When evaluated,\nthe total size of all mapped attributes must not exceed 8KB.\nFor AWS providers, the following rules apply:\n- If no attribute mapping is defined, the following default mapping applies:",
+        'attributeMapping',
+        'Maps attributes from authentication credentials issued by an external identity provider\nto Google Cloud attributes, such as `subject` and `segment`.\nEach key must be a string specifying the Google Cloud IAM attribute to map to.\nThe following keys are supported:\n* `google.subject`: The principal IAM is authenticating. You can reference this value\nin IAM bindings. This is also the subject that appears in Cloud Logging logs.\nCannot exceed 127 characters.\n* `google.groups`: Groups the external identity belongs to. You can grant groups\naccess to resources using an IAM `principalSet` binding; access applies to all\nmembers of the group.\nYou can also provide custom attributes by specifying `attribute.{custom_attribute}`,\nwhere `{custom_attribute}` is the name of the custom attribute to be mapped. You can\ndefine a maximum of 50 custom attributes. The maximum length of a mapped attribute key\nis 100 characters, and the key may only contain the characters [a-z0-9_].\nYou can reference these attributes in IAM policies to define fine-grained access for a\nworkload to Google Cloud resources. For example:\n* `google.subject`:\n`principal://iam.googleapis.com/projects/{project}/locations/{location}/workloadIdentityPools/{pool}/subject/{value}`\n* `google.groups`:\n`principalSet://iam.googleapis.com/projects/{project}/locations/{location}/workloadIdentityPools/{pool}/group/{value}`\n* `attribute.{custom_attribute}`:\n`principalSet://iam.googleapis.com/projects/{project}/locations/{location}/workloadIdentityPools/{pool}/attribute.{custom_attribute}/{value}`\nEach value must be a [Common Expression Language](https://opensource.google/projects/cel)\nfunction that maps an identity provider credential to the normalized attribute specified\nby the corresponding map key.\nYou can use the `assertion` keyword in the expression to access a JSON representation of\nthe authentication credential issued by the provider.\nThe maximum length of an attribute mapping expression is 2048 characters. When evaluated,\nthe total size of all mapped attributes must not exceed 8KB.\nFor AWS providers, the following rules apply:\n- If no attribute mapping is defined, the following default mapping applies:',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description for the provider. Cannot exceed 256 characters.",
+        'description',
+        'A description for the provider. Cannot exceed 256 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "oidc",
-        "An OpenId Connect 1.0 identity provider. Not compatible with the property aws or saml.\nStructure is documented below.",
+        'oidc',
+        'An OpenId Connect 1.0 identity provider. Not compatible with the property aws or saml.\nStructure is documented below.',
         () => iam_WorkloadIdentityPoolProviderOidc_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workloadIdentityPoolId",
-        "The ID used for the pool, which is the final component of the pool resource name. This\nvalue should be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix\n`gcp-` is reserved for use by Google, and may not be specified.",
+        'workloadIdentityPoolId',
+        'The ID used for the pool, which is the final component of the pool resource name. This\nvalue should be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix\n`gcp-` is reserved for use by Google, and may not be specified.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "attributeCondition",
-        "[A Common Expression Language](https://opensource.google/projects/cel) expression, in\nplain text, to restrict what otherwise valid authentication credentials issued by the\nprovider should not be accepted.\nThe expression must output a boolean representing whether to allow the federation.\nThe following keywords may be referenced in the expressions:",
+        'attributeCondition',
+        '[A Common Expression Language](https://opensource.google/projects/cel) expression, in\nplain text, to restrict what otherwise valid authentication credentials issued by the\nprovider should not be accepted.\nThe expression must output a boolean representing whether to allow the federation.\nThe following keywords may be referenced in the expressions:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "saml",
-        "An SAML 2.0 identity provider. Not compatible with the property oidc or aws.\nStructure is documented below.",
+        'saml',
+        'An SAML 2.0 identity provider. Not compatible with the property oidc or aws.\nStructure is documented below.',
         () => iam_WorkloadIdentityPoolProviderSaml_GetTypes(),
         false,
         false,

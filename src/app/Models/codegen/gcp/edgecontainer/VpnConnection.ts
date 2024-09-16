@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   edgecontainer_VpnConnectionVpcProject,
   edgecontainer_VpnConnectionVpcProject_GetTypes,
-} from "../types/edgecontainer_VpnConnectionVpcProject";
+} from '../types/edgecontainer_VpnConnectionVpcProject';
 import {
   edgecontainer_VpnConnectionDetail,
   edgecontainer_VpnConnectionDetail_GetTypes,
-} from "../types/edgecontainer_VpnConnectionDetail";
+} from '../types/edgecontainer_VpnConnectionDetail';
 
 export interface VpnConnectionArgs {
   // The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.
@@ -138,80 +138,80 @@ This is empty if NAT is not used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Google Cloud Platform location.\n\n\n- - -",
+        'location',
+        'Google Cloud Platform location.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "natGatewayIp",
-        "NAT gateway IP, or WAN IP address. If a customer has multiple NAT IPs, the customer needs to configure NAT such that only one external IP maps to the GMEC Anthos cluster.\nThis is empty if NAT is not used.",
+        'natGatewayIp',
+        'NAT gateway IP, or WAN IP address. If a customer has multiple NAT IPs, the customer needs to configure NAT such that only one external IP maps to the GMEC Anthos cluster.\nThis is empty if NAT is not used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcProject",
-        "Project detail of the VPC network. Required if VPC is in a different project than the cluster project.\nStructure is documented below.",
+        'vpcProject',
+        'Project detail of the VPC network. Required if VPC is in a different project than the cluster project.\nStructure is documented below.',
         () => edgecontainer_VpnConnectionVpcProject_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableHighAvailability",
-        "Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.",
+        'enableHighAvailability',
+        'Whether this VPN connection has HA enabled on cluster side. If enabled, when creating VPN connection we will attempt to use 2 ANG floating IPs.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels associated with this resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels associated with this resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "router",
-        "The VPN connection Cloud Router name.",
+        'router',
+        'The VPN connection Cloud Router name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cluster",
-        "The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.",
+        'cluster',
+        'The canonical Cluster name to connect to. It is in the form of projects/{project}/locations/{location}/clusters/{cluster}.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name of VPN connection",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'name',
+        'The resource name of VPN connection',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpc",
-        "The network ID of VPC to connect to.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'vpc',
+        'The network ID of VPC to connect to.',
         () => [],
         false,
         true,

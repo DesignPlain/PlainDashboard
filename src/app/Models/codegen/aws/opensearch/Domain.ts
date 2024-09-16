@@ -3,61 +3,61 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opensearch_DomainAutoTuneOptions,
   opensearch_DomainAutoTuneOptions_GetTypes,
-} from "../types/opensearch_DomainAutoTuneOptions";
+} from '../types/opensearch_DomainAutoTuneOptions';
 import {
   opensearch_DomainClusterConfig,
   opensearch_DomainClusterConfig_GetTypes,
-} from "../types/opensearch_DomainClusterConfig";
+} from '../types/opensearch_DomainClusterConfig';
 import {
   opensearch_DomainSoftwareUpdateOptions,
   opensearch_DomainSoftwareUpdateOptions_GetTypes,
-} from "../types/opensearch_DomainSoftwareUpdateOptions";
+} from '../types/opensearch_DomainSoftwareUpdateOptions';
 import {
   opensearch_DomainVpcOptions,
   opensearch_DomainVpcOptions_GetTypes,
-} from "../types/opensearch_DomainVpcOptions";
+} from '../types/opensearch_DomainVpcOptions';
 import {
   opensearch_DomainSnapshotOptions,
   opensearch_DomainSnapshotOptions_GetTypes,
-} from "../types/opensearch_DomainSnapshotOptions";
+} from '../types/opensearch_DomainSnapshotOptions';
 import {
   opensearch_DomainEncryptAtRest,
   opensearch_DomainEncryptAtRest_GetTypes,
-} from "../types/opensearch_DomainEncryptAtRest";
+} from '../types/opensearch_DomainEncryptAtRest';
 import {
   opensearch_DomainAdvancedSecurityOptions,
   opensearch_DomainAdvancedSecurityOptions_GetTypes,
-} from "../types/opensearch_DomainAdvancedSecurityOptions";
+} from '../types/opensearch_DomainAdvancedSecurityOptions';
 import {
   opensearch_DomainEbsOptions,
   opensearch_DomainEbsOptions_GetTypes,
-} from "../types/opensearch_DomainEbsOptions";
+} from '../types/opensearch_DomainEbsOptions';
 import {
   opensearch_DomainNodeToNodeEncryption,
   opensearch_DomainNodeToNodeEncryption_GetTypes,
-} from "../types/opensearch_DomainNodeToNodeEncryption";
+} from '../types/opensearch_DomainNodeToNodeEncryption';
 import {
   opensearch_DomainOffPeakWindowOptions,
   opensearch_DomainOffPeakWindowOptions_GetTypes,
-} from "../types/opensearch_DomainOffPeakWindowOptions";
+} from '../types/opensearch_DomainOffPeakWindowOptions';
 import {
   opensearch_DomainCognitoOptions,
   opensearch_DomainCognitoOptions_GetTypes,
-} from "../types/opensearch_DomainCognitoOptions";
+} from '../types/opensearch_DomainCognitoOptions';
 import {
   opensearch_DomainLogPublishingOption,
   opensearch_DomainLogPublishingOption_GetTypes,
-} from "../types/opensearch_DomainLogPublishingOption";
+} from '../types/opensearch_DomainLogPublishingOption';
 import {
   opensearch_DomainDomainEndpointOptions,
   opensearch_DomainDomainEndpointOptions_GetTypes,
-} from "../types/opensearch_DomainDomainEndpointOptions";
+} from '../types/opensearch_DomainDomainEndpointOptions';
 
 export interface DomainArgs {
   // Configuration block for encrypt at rest options. Only available for [certain instance types](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/encryption-at-rest.html). Detailed below.
@@ -222,152 +222,152 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodeToNodeEncryption",
-        "Configuration block for node-to-node encryption options. Detailed below.",
+        'nodeToNodeEncryption',
+        'Configuration block for node-to-node encryption options. Detailed below.',
         () => opensearch_DomainNodeToNodeEncryption_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "engineVersion",
-        "Either `Elasticsearch_X.Y` or `OpenSearch_X.Y` to specify the engine version for the Amazon OpenSearch Service domain. For example, `OpenSearch_1.0` or `Elasticsearch_7.9`.\nSee [Creating and managing Amazon OpenSearch Service domains](http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains).\nDefaults to the lastest version of OpenSearch.",
+        'engineVersion',
+        'Either `Elasticsearch_X.Y` or `OpenSearch_X.Y` to specify the engine version for the Amazon OpenSearch Service domain. For example, `OpenSearch_1.0` or `Elasticsearch_7.9`.\nSee [Creating and managing Amazon OpenSearch Service domains](http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains).\nDefaults to the lastest version of OpenSearch.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "softwareUpdateOptions",
-        "Software update options for the domain. Detailed below.",
+        'softwareUpdateOptions',
+        'Software update options for the domain. Detailed below.',
         () => opensearch_DomainSoftwareUpdateOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ebsOptions",
-        "Configuration block for EBS related options, may be required based on chosen [instance size](https://aws.amazon.com/opensearch-service/pricing/). Detailed below.",
+        'ebsOptions',
+        'Configuration block for EBS related options, may be required based on chosen [instance size](https://aws.amazon.com/opensearch-service/pricing/). Detailed below.',
         () => opensearch_DomainEbsOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accessPolicies",
-        "IAM policy document specifying the access policies for the domain.",
+        'accessPolicies',
+        'IAM policy document specifying the access policies for the domain.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "offPeakWindowOptions",
-        "Configuration to add Off Peak update options. ([documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html)). Detailed below.",
+        'offPeakWindowOptions',
+        'Configuration to add Off Peak update options. ([documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html)). Detailed below.',
         () => opensearch_DomainOffPeakWindowOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clusterConfig",
-        "Configuration block for the cluster of the domain. Detailed below.",
+        'clusterConfig',
+        'Configuration block for the cluster of the domain. Detailed below.',
         () => opensearch_DomainClusterConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptAtRest",
-        "Configuration block for encrypt at rest options. Only available for [certain instance types](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/encryption-at-rest.html). Detailed below.",
+        'encryptAtRest',
+        'Configuration block for encrypt at rest options. Only available for [certain instance types](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/encryption-at-rest.html). Detailed below.',
         () => opensearch_DomainEncryptAtRest_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "advancedOptions",
-        "Key-value string pairs to specify advanced configuration options. Note that the values for these configuration options must be strings (wrapped in quotes) or they may be wrong and cause a perpetual diff, causing the provider to want to recreate your OpenSearch domain on every apply.",
+        'advancedOptions',
+        'Key-value string pairs to specify advanced configuration options. Note that the values for these configuration options must be strings (wrapped in quotes) or they may be wrong and cause a perpetual diff, causing the provider to want to recreate your OpenSearch domain on every apply.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "Name of the domain.\n\nThe following arguments are optional:",
+        'domainName',
+        'Name of the domain.\n\nThe following arguments are optional:',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcOptions",
-        "Configuration block for VPC related options. Adding or removing this configuration forces a new resource ([documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html)). Detailed below.",
+        'vpcOptions',
+        'Configuration block for VPC related options. Adding or removing this configuration forces a new resource ([documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html)). Detailed below.',
         () => opensearch_DomainVpcOptions_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "snapshotOptions",
-        "Configuration block for snapshot related options. Detailed below. DEPRECATED. For domains running OpenSearch 5.3 and later, Amazon OpenSearch takes hourly automated snapshots, making this setting irrelevant. For domains running earlier versions, OpenSearch takes daily automated snapshots.",
+        'snapshotOptions',
+        'Configuration block for snapshot related options. Detailed below. DEPRECATED. For domains running OpenSearch 5.3 and later, Amazon OpenSearch takes hourly automated snapshots, making this setting irrelevant. For domains running earlier versions, OpenSearch takes daily automated snapshots.',
         () => opensearch_DomainSnapshotOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipAddressType",
-        "The IP address type for the endpoint. Valid values are `ipv4` and `dualstack`.",
+        'ipAddressType',
+        'The IP address type for the endpoint. Valid values are `ipv4` and `dualstack`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "logPublishingOptions",
-        "Configuration block for publishing slow and application logs to CloudWatch Logs. This block can be declared multiple times, for each log_type, within the same resource. Detailed below.",
+        'logPublishingOptions',
+        'Configuration block for publishing slow and application logs to CloudWatch Logs. This block can be declared multiple times, for each log_type, within the same resource. Detailed below.',
         () => opensearch_DomainLogPublishingOption_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "advancedSecurityOptions",
-        "Configuration block for [fine-grained access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html). Detailed below.",
+        'advancedSecurityOptions',
+        'Configuration block for [fine-grained access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html). Detailed below.',
         () => opensearch_DomainAdvancedSecurityOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "domainEndpointOptions",
-        "Configuration block for domain endpoint HTTP(S) related options. Detailed below.",
+        'domainEndpointOptions',
+        'Configuration block for domain endpoint HTTP(S) related options. Detailed below.',
         () => opensearch_DomainDomainEndpointOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "autoTuneOptions",
-        "Configuration block for the Auto-Tune options of the domain. Detailed below.",
+        'autoTuneOptions',
+        'Configuration block for the Auto-Tune options of the domain. Detailed below.',
         () => opensearch_DomainAutoTuneOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cognitoOptions",
-        "Configuration block for authenticating dashboard with Cognito. Detailed below.",
+        'cognitoOptions',
+        'Configuration block for authenticating dashboard with Cognito. Detailed below.',
         () => opensearch_DomainCognitoOptions_GetTypes(),
         false,
         false,

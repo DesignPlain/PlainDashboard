@@ -3,49 +3,49 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_DistributionOrderedCacheBehavior,
   cloudfront_DistributionOrderedCacheBehavior_GetTypes,
-} from "../types/cloudfront_DistributionOrderedCacheBehavior";
+} from '../types/cloudfront_DistributionOrderedCacheBehavior';
 import {
   cloudfront_DistributionDefaultCacheBehavior,
   cloudfront_DistributionDefaultCacheBehavior_GetTypes,
-} from "../types/cloudfront_DistributionDefaultCacheBehavior";
+} from '../types/cloudfront_DistributionDefaultCacheBehavior';
 import {
   cloudfront_DistributionLoggingConfig,
   cloudfront_DistributionLoggingConfig_GetTypes,
-} from "../types/cloudfront_DistributionLoggingConfig";
+} from '../types/cloudfront_DistributionLoggingConfig';
 import {
   cloudfront_DistributionTrustedKeyGroup,
   cloudfront_DistributionTrustedKeyGroup_GetTypes,
-} from "../types/cloudfront_DistributionTrustedKeyGroup";
+} from '../types/cloudfront_DistributionTrustedKeyGroup';
 import {
   cloudfront_DistributionRestrictions,
   cloudfront_DistributionRestrictions_GetTypes,
-} from "../types/cloudfront_DistributionRestrictions";
+} from '../types/cloudfront_DistributionRestrictions';
 import {
   cloudfront_DistributionOrigin,
   cloudfront_DistributionOrigin_GetTypes,
-} from "../types/cloudfront_DistributionOrigin";
+} from '../types/cloudfront_DistributionOrigin';
 import {
   cloudfront_DistributionViewerCertificate,
   cloudfront_DistributionViewerCertificate_GetTypes,
-} from "../types/cloudfront_DistributionViewerCertificate";
+} from '../types/cloudfront_DistributionViewerCertificate';
 import {
   cloudfront_DistributionCustomErrorResponse,
   cloudfront_DistributionCustomErrorResponse_GetTypes,
-} from "../types/cloudfront_DistributionCustomErrorResponse";
+} from '../types/cloudfront_DistributionCustomErrorResponse';
 import {
   cloudfront_DistributionTrustedSigner,
   cloudfront_DistributionTrustedSigner_GetTypes,
-} from "../types/cloudfront_DistributionTrustedSigner";
+} from '../types/cloudfront_DistributionTrustedSigner';
 import {
   cloudfront_DistributionOriginGroup,
   cloudfront_DistributionOriginGroup_GetTypes,
-} from "../types/cloudfront_DistributionOriginGroup";
+} from '../types/cloudfront_DistributionOriginGroup';
 
 export interface DistributionArgs {
   // `true` if any of the AWS accounts listed as trusted signers have active CloudFront key pairs
@@ -212,161 +212,161 @@ export class Distribution extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "httpVersion",
-        "",
+        'httpVersion',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "orderedCacheBehaviors",
-        "",
+        'orderedCacheBehaviors',
+        '',
         () => cloudfront_DistributionOrderedCacheBehavior_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "isIpv6Enabled",
-        "",
+        'isIpv6Enabled',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "waitForDeployment",
-        "",
+        'waitForDeployment',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "defaultCacheBehavior",
-        "",
+        'defaultCacheBehavior',
+        '',
         () => cloudfront_DistributionDefaultCacheBehavior_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "loggingConfig",
-        "",
+        'loggingConfig',
+        '',
         () => cloudfront_DistributionLoggingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "`true` if any of the AWS accounts listed as trusted signers have active CloudFront key pairs",
+        'enabled',
+        '`true` if any of the AWS accounts listed as trusted signers have active CloudFront key pairs',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "priceClass",
-        "",
+        'priceClass',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "restrictions",
-        "",
+        'restrictions',
+        '',
         () => cloudfront_DistributionRestrictions_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "continuousDeploymentPolicyId",
-        "",
+        'continuousDeploymentPolicyId',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "originGroups",
-        "",
+        'originGroups',
+        '',
         () => cloudfront_DistributionOriginGroup_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "defaultRootObject",
-        "",
+        'defaultRootObject',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "viewerCertificate",
-        "",
+        'viewerCertificate',
+        '',
         () => cloudfront_DistributionViewerCertificate_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "origins",
-        "",
+        'origins',
+        '',
         () => cloudfront_DistributionOrigin_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customErrorResponses",
-        "",
+        'customErrorResponses',
+        '',
         () => cloudfront_DistributionCustomErrorResponse_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "retainOnDelete",
-        "",
+        'retainOnDelete',
+        '',
         () => [],
         false,
         false,
       ),
-      new DynamicUIProps(InputType.Bool, "staging", "", () => [], false, true),
+      new DynamicUIProps(InputType.Bool, 'staging', '', () => [], false, true),
       new DynamicUIProps(
         InputType.Array,
-        "aliases",
-        "",
+        'aliases',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "",
+        'comment',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "webAclId",
-        "",
+        'webAclId',
+        '',
         () => [],
         false,
         false,

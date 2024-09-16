@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   eks_NodeGroupResourceAutoscalingGroup,
   eks_NodeGroupResourceAutoscalingGroup_GetTypes,
-} from "./eks_NodeGroupResourceAutoscalingGroup";
+} from './eks_NodeGroupResourceAutoscalingGroup';
 
 export interface eks_NodeGroupResource {
   // List of objects containing information about AutoScaling Groups.
@@ -22,16 +22,16 @@ export function eks_NodeGroupResource_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "autoscalingGroups",
-      "List of objects containing information about AutoScaling Groups.",
+      'autoscalingGroups',
+      'List of objects containing information about AutoScaling Groups.',
       () => eks_NodeGroupResourceAutoscalingGroup_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "remoteAccessSecurityGroupId",
-      "Identifier of the remote access EC2 Security Group.",
+      'remoteAccessSecurityGroupId',
+      'Identifier of the remote access EC2 Security Group.',
       () => [],
       false,
       false,

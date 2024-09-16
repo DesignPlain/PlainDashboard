@@ -32,8 +32,13 @@
       #d6d4d4d0 1.4000000000000001px,
       #e5e5f7d0 1.4000000000000001px
     );
-  background-size: 70px 70px, 70px 70px, 14px 14px, 14px 14px;
-  background-position: -2.8000000000000003px -2.8000000000000003px,
+  background-size:
+    70px 70px,
+    70px 70px,
+    14px 14px,
+    14px 14px;
+  background-position:
+    -2.8000000000000003px -2.8000000000000003px,
     -2.8000000000000003px -2.8000000000000003px,
     -1.4000000000000001px -1.4000000000000001px,
     -1.4000000000000001px -1.4000000000000001px;
@@ -120,7 +125,9 @@
   max-height: 75%;
   min-width: 20px;
   max-width: 20px;
-  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1), 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0px 0px 3px 0 rgba(0, 0, 0, 0.1),
+    0px 0px 3px 0 rgba(0, 0, 0, 0.1);
   background: -webkit-linear-gradient(50deg, #d0b0b0dd 50%, #cfabccd4 100%);
   border-radius: 2px;
 
@@ -149,7 +156,9 @@
   max-height: 75%;
   min-width: 20px;
   max-width: 20px;
-  box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.1), 0px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0px 0px 3px 0 rgba(0, 0, 0, 0.1),
+    0px 0px 3px 0 rgba(0, 0, 0, 0.1);
   background: -webkit-linear-gradient(50deg, #d0b0b0dd 50%, #cfabccd4 100%);
   border-radius: 2px;
 

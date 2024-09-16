@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_getDataSetPhysicalTableMapRelationalTableInputColumn,
   quicksight_getDataSetPhysicalTableMapRelationalTableInputColumn_GetTypes,
-} from "./quicksight_getDataSetPhysicalTableMapRelationalTableInputColumn";
+} from './quicksight_getDataSetPhysicalTableMapRelationalTableInputColumn';
 
 export interface quicksight_getDataSetPhysicalTableMapRelationalTable {
   //
@@ -31,20 +31,20 @@ export function quicksight_getDataSetPhysicalTableMapRelationalTable_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Array,
-      "inputColumns",
-      "",
+      'inputColumns',
+      '',
       () =>
         quicksight_getDataSetPhysicalTableMapRelationalTableInputColumn_GetTypes(),
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "name", "", () => [], true, false),
-    new DynamicUIProps(InputType.String, "schema", "", () => [], true, false),
-    new DynamicUIProps(InputType.String, "catalog", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'name', '', () => [], true, false),
+    new DynamicUIProps(InputType.String, 'schema', '', () => [], true, false),
+    new DynamicUIProps(InputType.String, 'catalog', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "dataSourceArn",
-      "",
+      'dataSourceArn',
+      '',
       () => [],
       true,
       false,

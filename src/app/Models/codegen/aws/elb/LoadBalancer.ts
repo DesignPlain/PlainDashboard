@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elb_LoadBalancerHealthCheck,
   elb_LoadBalancerHealthCheck_GetTypes,
-} from "../types/elb_LoadBalancerHealthCheck";
+} from '../types/elb_LoadBalancerHealthCheck';
 import {
   elb_LoadBalancerListener,
   elb_LoadBalancerListener_GetTypes,
-} from "../types/elb_LoadBalancerListener";
+} from '../types/elb_LoadBalancerListener';
 import {
   elb_LoadBalancerAccessLogs,
   elb_LoadBalancerAccessLogs_GetTypes,
-} from "../types/elb_LoadBalancerAccessLogs";
+} from '../types/elb_LoadBalancerAccessLogs';
 
 export interface LoadBalancerArgs {
   // A health_check block. Health Check documented below.
@@ -176,47 +176,47 @@ instances. Only available on ELBs launched in a VPC.
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "internal",
-        "If true, ELB will be an internal ELB.",
+        'internal',
+        'If true, ELB will be an internal ELB.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "namePrefix",
-        "Creates a unique name beginning with the specified\nprefix. Conflicts with `name`.",
+        'namePrefix',
+        'Creates a unique name beginning with the specified\nprefix. Conflicts with `name`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "accessLogs",
-        "An Access Logs block. Access Logs documented below.",
+        'accessLogs',
+        'An Access Logs block. Access Logs documented below.',
         () => elb_LoadBalancerAccessLogs_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "connectionDrainingTimeout",
-        "The time in seconds to allow for connections to drain. Default: `300`",
+        'connectionDrainingTimeout',
+        'The time in seconds to allow for connections to drain. Default: `300`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "healthCheck",
-        "A health_check block. Health Check documented below.",
+        'healthCheck',
+        'A health_check block. Health Check documented below.',
         () => elb_LoadBalancerHealthCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceSecurityGroup",
+        'sourceSecurityGroup',
         "The name of the security group that you can use as\npart of your inbound rules for your load balancer's back-end application\ninstances. Use this for Classic or Default VPC only.",
         () => [],
         false,
@@ -224,71 +224,71 @@ instances. Only available on ELBs launched in a VPC.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "crossZoneLoadBalancing",
-        "Enable cross-zone load balancing. Default: `true`",
+        'crossZoneLoadBalancing',
+        'Enable cross-zone load balancing. Default: `true`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "instances",
-        "A list of instance ids to place in the ELB pool.",
+        'instances',
+        'A list of instance ids to place in the ELB pool.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnets",
-        "A list of subnet IDs to attach to the ELB. When an update to subnets will remove all current subnets, this will force a new resource.",
+        'subnets',
+        'A list of subnet IDs to attach to the ELB. When an update to subnets will remove all current subnets, this will force a new resource.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\nExactly one of `availability_zones` or `subnets` must be specified: this\ndetermines if the ELB exists in a VPC or in EC2-classic.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\nExactly one of `availability_zones` or `subnets` must be specified: this\ndetermines if the ELB exists in a VPC or in EC2-classic.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "securityGroups",
-        "A list of security group IDs to assign to the ELB.\nOnly valid if creating an ELB within a VPC",
+        'securityGroups',
+        'A list of security group IDs to assign to the ELB.\nOnly valid if creating an ELB within a VPC',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "desyncMitigationMode",
-        "Determines how the load balancer handles requests that might pose a security risk to an application due to HTTP desync. Valid values are `monitor`, `defensive` (default), `strictest`.",
+        'desyncMitigationMode',
+        'Determines how the load balancer handles requests that might pose a security risk to an application due to HTTP desync. Valid values are `monitor`, `defensive` (default), `strictest`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "connectionDraining",
-        "Boolean to enable connection draining. Default: `false`",
+        'connectionDraining',
+        'Boolean to enable connection draining. Default: `false`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "idleTimeout",
-        "The time in seconds that the connection is allowed to be idle. Default: `60`",
+        'idleTimeout',
+        'The time in seconds that the connection is allowed to be idle. Default: `60`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "availabilityZones",
+        'availabilityZones',
         "The AZ's to serve traffic in.",
         () => InputType_String_GetTypes(),
         false,
@@ -296,16 +296,16 @@ instances. Only available on ELBs launched in a VPC.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "listeners",
-        "A list of listener blocks. Listeners documented below.",
+        'listeners',
+        'A list of listener blocks. Listeners documented below.',
         () => elb_LoadBalancerListener_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the ELB. By default generated by this provider.",
+        'name',
+        'The name of the ELB. By default generated by this provider.',
         () => [],
         false,
         true,

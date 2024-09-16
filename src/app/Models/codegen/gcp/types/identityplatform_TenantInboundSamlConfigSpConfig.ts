@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   identityplatform_TenantInboundSamlConfigSpConfigSpCertificate,
   identityplatform_TenantInboundSamlConfigSpConfigSpCertificate_GetTypes,
-} from "./identityplatform_TenantInboundSamlConfigSpConfigSpCertificate";
+} from './identityplatform_TenantInboundSamlConfigSpConfigSpCertificate';
 
 export interface identityplatform_TenantInboundSamlConfigSpConfig {
   // Callback URI where responses from IDP are handled. Must start with `https://`.
@@ -32,15 +32,15 @@ export function identityplatform_TenantInboundSamlConfigSpConfig_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "callbackUri",
-      "Callback URI where responses from IDP are handled. Must start with `https://`.",
+      'callbackUri',
+      'Callback URI where responses from IDP are handled. Must start with `https://`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "spCertificates",
+      'spCertificates',
       '(Output)\nThe IDP\'s certificate data to verify the signature in the SAMLResponse issued by the IDP.\nStructure is documented below.\n\n\n<a name="nested_sp_certificates"></a>The `sp_certificates` block contains:',
       () =>
         identityplatform_TenantInboundSamlConfigSpConfigSpCertificate_GetTypes(),
@@ -49,8 +49,8 @@ export function identityplatform_TenantInboundSamlConfigSpConfig_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.String,
-      "spEntityId",
-      "Unique identifier for all SAML entities.",
+      'spEntityId',
+      'Unique identifier for all SAML entities.',
       () => [],
       true,
       false,

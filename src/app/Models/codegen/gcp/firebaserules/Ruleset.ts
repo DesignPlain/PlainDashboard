@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   firebaserules_RulesetSource,
   firebaserules_RulesetSource_GetTypes,
-} from "../types/firebaserules_RulesetSource";
+} from '../types/firebaserules_RulesetSource';
 import {
   firebaserules_RulesetMetadata,
   firebaserules_RulesetMetadata_GetTypes,
-} from "../types/firebaserules_RulesetMetadata";
+} from '../types/firebaserules_RulesetMetadata';
 
 export interface RulesetArgs {
   // The project for the resource
@@ -46,16 +46,16 @@ File name.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "source",
-        "`Source` for the `Ruleset`.",
+        'source',
+        '`Source` for the `Ruleset`.',
         () => firebaserules_RulesetSource_GetTypes(),
         true,
         true,

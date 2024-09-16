@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SchemaArgs {
   // The description of the schema. Maximum of 256 characters.
@@ -64,48 +64,48 @@ export class Schema extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of the schema. Valid values: `OpenApi3` or `JSONSchemaDraft4`.",
+        'type',
+        'The type of the schema. Valid values: `OpenApi3` or `JSONSchemaDraft4`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "content",
-        "The schema specification. Must be a valid Open API 3.0 spec.",
+        'content',
+        'The schema specification. Must be a valid Open API 3.0 spec.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the schema. Maximum of 256 characters.",
+        'description',
+        'The description of the schema. Maximum of 256 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the schema. Maximum of 385 characters consisting of lower case letters, upper case letters, ., -, _, @.",
+        'name',
+        'The name of the schema. Maximum of 385 characters consisting of lower case letters, upper case letters, ., -, _, @.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "registryName",
-        "The name of the registry in which this schema belongs.",
+        'registryName',
+        'The name of the registry in which this schema belongs.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

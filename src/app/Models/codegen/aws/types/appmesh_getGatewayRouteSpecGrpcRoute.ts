@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getGatewayRouteSpecGrpcRouteAction,
   appmesh_getGatewayRouteSpecGrpcRouteAction_GetTypes,
-} from "./appmesh_getGatewayRouteSpecGrpcRouteAction";
+} from './appmesh_getGatewayRouteSpecGrpcRouteAction';
 import {
   appmesh_getGatewayRouteSpecGrpcRouteMatch,
   appmesh_getGatewayRouteSpecGrpcRouteMatch_GetTypes,
-} from "./appmesh_getGatewayRouteSpecGrpcRouteMatch";
+} from './appmesh_getGatewayRouteSpecGrpcRouteMatch';
 
 export interface appmesh_getGatewayRouteSpecGrpcRoute {
   //
@@ -26,16 +26,16 @@ export function appmesh_getGatewayRouteSpecGrpcRoute_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.Array,
-      "actions",
-      "",
+      'actions',
+      '',
       () => appmesh_getGatewayRouteSpecGrpcRouteAction_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "matches",
-      "",
+      'matches',
+      '',
       () => appmesh_getGatewayRouteSpecGrpcRouteMatch_GetTypes(),
       true,
       false,

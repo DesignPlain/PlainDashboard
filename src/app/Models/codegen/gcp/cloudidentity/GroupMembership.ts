@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudidentity_GroupMembershipMemberKey,
   cloudidentity_GroupMembershipMemberKey_GetTypes,
-} from "../types/cloudidentity_GroupMembershipMemberKey";
+} from '../types/cloudidentity_GroupMembershipMemberKey';
 import {
   cloudidentity_GroupMembershipPreferredMemberKey,
   cloudidentity_GroupMembershipPreferredMemberKey_GetTypes,
-} from "../types/cloudidentity_GroupMembershipPreferredMemberKey";
+} from '../types/cloudidentity_GroupMembershipPreferredMemberKey';
 import {
   cloudidentity_GroupMembershipRole,
   cloudidentity_GroupMembershipRole_GetTypes,
-} from "../types/cloudidentity_GroupMembershipRole";
+} from '../types/cloudidentity_GroupMembershipRole';
 
 export interface GroupMembershipArgs {
   // The name of the Group to create this membership in.
@@ -84,32 +84,32 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "roles",
-        "The MembershipRoles that apply to the Membership.\nMust not contain duplicate MembershipRoles with the same name.\nStructure is documented below.",
+        'roles',
+        'The MembershipRoles that apply to the Membership.\nMust not contain duplicate MembershipRoles with the same name.\nStructure is documented below.',
         () => cloudidentity_GroupMembershipRole_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "group",
-        "The name of the Group to create this membership in.",
+        'group',
+        'The name of the Group to create this membership in.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "memberKey",
-        "EntityKey of the member.\nStructure is documented below.",
+        'memberKey',
+        'EntityKey of the member.\nStructure is documented below.',
         () => cloudidentity_GroupMembershipMemberKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "preferredMemberKey",
-        "EntityKey of the member.\nStructure is documented below.",
+        'preferredMemberKey',
+        'EntityKey of the member.\nStructure is documented below.',
         () => cloudidentity_GroupMembershipPreferredMemberKey_GetTypes(),
         false,
         true,

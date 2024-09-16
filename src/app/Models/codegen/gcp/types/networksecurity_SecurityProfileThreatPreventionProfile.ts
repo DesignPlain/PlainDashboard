@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride,
   networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride_GetTypes,
-} from "./networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride";
+} from './networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride';
 import {
   networksecurity_SecurityProfileThreatPreventionProfileThreatOverride,
   networksecurity_SecurityProfileThreatPreventionProfileThreatOverride_GetTypes,
-} from "./networksecurity_SecurityProfileThreatPreventionProfileThreatOverride";
+} from './networksecurity_SecurityProfileThreatPreventionProfileThreatOverride';
 
 export interface networksecurity_SecurityProfileThreatPreventionProfile {
   /*
@@ -34,8 +34,8 @@ export function networksecurity_SecurityProfileThreatPreventionProfile_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Array,
-      "severityOverrides",
-      "The configuration for overriding threats actions by severity match.\nStructure is documented below.",
+      'severityOverrides',
+      'The configuration for overriding threats actions by severity match.\nStructure is documented below.',
       () =>
         networksecurity_SecurityProfileThreatPreventionProfileSeverityOverride_GetTypes(),
       false,
@@ -43,8 +43,8 @@ export function networksecurity_SecurityProfileThreatPreventionProfile_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Array,
-      "threatOverrides",
-      "The configuration for overriding threats actions by threat id match.\nIf a threat is matched both by configuration provided in severity overrides\nand threat overrides, the threat overrides action is applied.\nStructure is documented below.",
+      'threatOverrides',
+      'The configuration for overriding threats actions by threat id match.\nIf a threat is matched both by configuration provided in severity overrides\nand threat overrides, the threat overrides action is applied.\nStructure is documented below.',
       () =>
         networksecurity_SecurityProfileThreatPreventionProfileThreatOverride_GetTypes(),
       false,

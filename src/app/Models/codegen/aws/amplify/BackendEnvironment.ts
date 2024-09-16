@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface BackendEnvironmentArgs {
   // Unique ID for an Amplify app.
@@ -40,32 +40,32 @@ export class BackendEnvironment extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "appId",
-        "Unique ID for an Amplify app.",
+        'appId',
+        'Unique ID for an Amplify app.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deploymentArtifacts",
-        "Name of deployment artifacts.",
+        'deploymentArtifacts',
+        'Name of deployment artifacts.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "environmentName",
-        "Name for the backend environment.",
+        'environmentName',
+        'Name for the backend environment.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "stackName",
-        "AWS CloudFormation stack name of a backend environment.",
+        'stackName',
+        'AWS CloudFormation stack name of a backend environment.',
         () => [],
         false,
         true,

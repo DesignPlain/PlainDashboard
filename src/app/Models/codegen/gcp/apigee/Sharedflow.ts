@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigee_SharedflowMetaData,
   apigee_SharedflowMetaData_GetTypes,
-} from "../types/apigee_SharedflowMetaData";
+} from '../types/apigee_SharedflowMetaData';
 
 export interface SharedflowArgs {
   /*
@@ -70,32 +70,32 @@ will trigger an update.
     return [
       new DynamicUIProps(
         InputType.String,
-        "detectMd5hash",
-        "A hash of local config bundle in string, user needs to use a Terraform Hash function of their choice. A change in hash\nwill trigger an update.",
+        'detectMd5hash',
+        'A hash of local config bundle in string, user needs to use a Terraform Hash function of their choice. A change in hash\nwill trigger an update.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The ID of the shared flow.",
+        'name',
+        'The ID of the shared flow.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "orgId",
-        "The Apigee Organization name associated with the Apigee instance.",
+        'orgId',
+        'The Apigee Organization name associated with the Apigee instance.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "configBundle",
-        "Path to the config zip bundle.\n\n- - -",
+        'configBundle',
+        'Path to the config zip bundle.\n\n- - -',
         () => [],
         true,
         false,

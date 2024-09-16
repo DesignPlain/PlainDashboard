@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatCsv,
   sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatCsv_GetTypes,
-} from "./sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatCsv";
+} from './sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatCsv';
 import {
   sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJson,
   sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJson_GetTypes,
-} from "./sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJson";
+} from './sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJson';
 
 export interface sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormat {
   // The CSV dataset used in the monitoring job. Fields are documented below.
@@ -26,8 +26,8 @@ export function sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransf
   return [
     new DynamicUIProps(
       InputType.Object,
-      "csv",
-      "The CSV dataset used in the monitoring job. Fields are documented below.",
+      'csv',
+      'The CSV dataset used in the monitoring job. Fields are documented below.',
       () =>
         sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatCsv_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransf
     ),
     new DynamicUIProps(
       InputType.Object,
-      "json",
-      "The JSON dataset used in the monitoring job. Fields are documented below.",
+      'json',
+      'The JSON dataset used in the monitoring job. Fields are documented below.',
       () =>
         sagemaker_DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJson_GetTypes(),
       false,

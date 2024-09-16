@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_FirewallPolicyRuleMatch,
   compute_FirewallPolicyRuleMatch_GetTypes,
-} from "../types/compute_FirewallPolicyRuleMatch";
+} from '../types/compute_FirewallPolicyRuleMatch';
 
 export interface FirewallPolicyRuleArgs {
   // The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".
@@ -83,31 +83,31 @@ export class FirewallPolicyRule extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "direction",
-        "The direction in which this rule applies. Possible values: INGRESS, EGRESS",
+        'direction',
+        'The direction in which this rule applies. Possible values: INGRESS, EGRESS',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "firewallPolicy",
-        "The firewall policy of the resource.",
+        'firewallPolicy',
+        'The firewall policy of the resource.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "priority",
-        "An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.",
+        'priority',
+        'An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "action",
+        'action',
         'The Action to perform when the client connection triggers the rule. Valid actions are "allow", "deny" and "goto_next".',
         () => [],
         true,
@@ -115,15 +115,15 @@ export class FirewallPolicyRule extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disabled",
-        "Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.",
+        'disabled',
+        'Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableLogging",
+        'enableLogging',
         'Denotes whether to enable logging for a particular rule. If logging is enabled, logs will be exported to the configured export destination in Stackdriver. Logs may be exported to BigQuery or Pub/Sub. Note: you cannot enable logging on "goto_next" rules.',
         () => [],
         false,
@@ -131,15 +131,15 @@ export class FirewallPolicyRule extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description for this resource.",
+        'description',
+        'An optional description for this resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "match",
+        'match',
         "A match condition that incoming traffic is evaluated against. If it evaluates to true, the corresponding 'action' is enforced.",
         () => compute_FirewallPolicyRuleMatch_GetTypes(),
         true,
@@ -147,7 +147,7 @@ export class FirewallPolicyRule extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targetResources",
+        'targetResources',
         "A list of network resource URLs to which this rule applies. This field allows you to control which network's VMs get this rule. If this field is left blank, all VMs within the organization will receive the rule.",
         () => InputType_String_GetTypes(),
         false,
@@ -155,8 +155,8 @@ export class FirewallPolicyRule extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targetServiceAccounts",
-        "A list of service accounts indicating the sets of instances that are applied with this rule.",
+        'targetServiceAccounts',
+        'A list of service accounts indicating the sets of instances that are applied with this rule.',
         () => InputType_String_GetTypes(),
         false,
         false,

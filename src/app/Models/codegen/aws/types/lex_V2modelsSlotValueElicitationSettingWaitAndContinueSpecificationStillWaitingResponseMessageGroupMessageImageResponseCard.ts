@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButton,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButton_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButton";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButton';
 
 export interface lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCard {
   //
@@ -28,8 +28,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
   return [
     new DynamicUIProps(
       InputType.Array,
-      "buttons",
-      "",
+      'buttons',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButton_GetTypes(),
       false,
@@ -37,20 +37,20 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
     ),
     new DynamicUIProps(
       InputType.String,
-      "imageUrl",
-      "",
+      'imageUrl',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subtitle",
-      "",
+      'subtitle',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "title", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'title', '', () => [], true, false),
   ];
 }

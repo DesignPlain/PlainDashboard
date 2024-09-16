@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkconnectivity_ServiceConnectionPolicyPscConnection,
   networkconnectivity_ServiceConnectionPolicyPscConnection_GetTypes,
-} from "../types/networkconnectivity_ServiceConnectionPolicyPscConnection";
+} from '../types/networkconnectivity_ServiceConnectionPolicyPscConnection';
 import {
   networkconnectivity_ServiceConnectionPolicyPscConfig,
   networkconnectivity_ServiceConnectionPolicyPscConfig_GetTypes,
-} from "../types/networkconnectivity_ServiceConnectionPolicyPscConfig";
+} from '../types/networkconnectivity_ServiceConnectionPolicyPscConfig';
 
 export interface ServiceConnectionPolicyArgs {
   /*
@@ -134,64 +134,64 @@ It is provided by the Service Producer. Google services have a prefix of gcp. Fo
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of a ServiceConnectionPolicy. Format: projects/{project}/locations/{location}/serviceConnectionPolicies/{service_connection_policy} See: https://google.aip.dev/122#fields-representing-resource-names",
+        'name',
+        'The name of a ServiceConnectionPolicy. Format: projects/{project}/locations/{location}/serviceConnectionPolicies/{service_connection_policy} See: https://google.aip.dev/122#fields-representing-resource-names',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
-        "The resource path of the consumer network. Example: - projects/{projectNumOrId}/global/networks/{resourceId}.",
+        'network',
+        'The resource path of the consumer network. Example: - projects/{projectNumOrId}/global/networks/{resourceId}.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "pscConfig",
-        "Configuration used for Private Service Connect connections. Used when Infrastructure is PSC.\nStructure is documented below.",
+        'pscConfig',
+        'Configuration used for Private Service Connect connections. Used when Infrastructure is PSC.\nStructure is documented below.',
         () => networkconnectivity_ServiceConnectionPolicyPscConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceClass",
-        "The service class identifier for which this ServiceConnectionPolicy is for. The service class identifier is a unique, symbolic representation of a ServiceClass.\nIt is provided by the Service Producer. Google services have a prefix of gcp. For example, gcp-cloud-sql. 3rd party services do not. For example, test-service-a3dfcx.",
+        'serviceClass',
+        'The service class identifier for which this ServiceConnectionPolicy is for. The service class identifier is a unique, symbolic representation of a ServiceClass.\nIt is provided by the Service Producer. Google services have a prefix of gcp. For example, gcp-cloud-sql. 3rd party services do not. For example, test-service-a3dfcx.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Free-text description of the resource.",
+        'description',
+        'Free-text description of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-defined labels.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-defined labels.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the ServiceConnectionPolicy.\n\n\n- - -",
+        'location',
+        'The location of the ServiceConnectionPolicy.\n\n\n- - -',
         () => [],
         true,
         true,

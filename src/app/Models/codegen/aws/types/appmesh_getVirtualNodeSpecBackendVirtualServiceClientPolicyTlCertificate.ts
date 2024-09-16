@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateFile,
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateFile_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateFile";
+} from './appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateFile';
 import {
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateSd,
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateSd_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateSd";
+} from './appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateSd';
 
 export interface appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificate {
   //
@@ -26,8 +26,8 @@ export function appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCer
   return [
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateFile_GetTypes(),
       true,
@@ -35,8 +35,8 @@ export function appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCer
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sds",
-      "",
+      'sds',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlCertificateSd_GetTypes(),
       true,

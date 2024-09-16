@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_FirewallFirewallStatusSyncStateAttachment,
   networkfirewall_FirewallFirewallStatusSyncStateAttachment_GetTypes,
-} from "./networkfirewall_FirewallFirewallStatusSyncStateAttachment";
+} from './networkfirewall_FirewallFirewallStatusSyncStateAttachment';
 
 export interface networkfirewall_FirewallFirewallStatusSyncState {
   // Nested list describing the attachment status of the firewall's association with a single VPC subnet.
@@ -22,7 +22,7 @@ export function networkfirewall_FirewallFirewallStatusSyncState_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Array,
-      "attachments",
+      'attachments',
       "Nested list describing the attachment status of the firewall's association with a single VPC subnet.",
       () =>
         networkfirewall_FirewallFirewallStatusSyncStateAttachment_GetTypes(),
@@ -31,8 +31,8 @@ export function networkfirewall_FirewallFirewallStatusSyncState_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "availabilityZone",
-      "The Availability Zone where the subnet is configured.",
+      'availabilityZone',
+      'The Availability Zone where the subnet is configured.',
       () => [],
       false,
       false,

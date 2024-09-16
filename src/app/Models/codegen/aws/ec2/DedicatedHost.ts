@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DedicatedHostArgs {
   // Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the Dedicated Hosts support multiple instance types within that instance family. Exactly one of `instance_family` or `instance_type` must be specified.
@@ -70,64 +70,64 @@ export class DedicatedHost extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "outpostArn",
-        "The Amazon Resource Name (ARN) of the AWS Outpost on which to allocate the Dedicated Host.",
+        'outpostArn',
+        'The Amazon Resource Name (ARN) of the AWS Outpost on which to allocate the Dedicated Host.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "assetId",
-        "The ID of the Outpost hardware asset on which to allocate the Dedicated Hosts. This parameter is supported only if you specify OutpostArn. If you are allocating the Dedicated Hosts in a Region, omit this parameter.",
+        'assetId',
+        'The ID of the Outpost hardware asset on which to allocate the Dedicated Hosts. This parameter is supported only if you specify OutpostArn. If you are allocating the Dedicated Hosts in a Region, omit this parameter.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "autoPlacement",
-        "Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. Valid values: `on`, `off`. Default: `on`.",
+        'autoPlacement',
+        'Indicates whether the host accepts any untargeted instance launches that match its instance type configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. Valid values: `on`, `off`. Default: `on`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "availabilityZone",
-        "The Availability Zone in which to allocate the Dedicated Host.",
+        'availabilityZone',
+        'The Availability Zone in which to allocate the Dedicated Host.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "hostRecovery",
-        "Indicates whether to enable or disable host recovery for the Dedicated Host. Valid values: `on`, `off`. Default: `off`.",
+        'hostRecovery',
+        'Indicates whether to enable or disable host recovery for the Dedicated Host. Valid values: `on`, `off`. Default: `off`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceFamily",
-        "Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the Dedicated Hosts support multiple instance types within that instance family. Exactly one of `instance_family` or `instance_type` must be specified.",
+        'instanceFamily',
+        'Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the Dedicated Hosts support multiple instance types within that instance family. Exactly one of `instance_family` or `instance_type` must be specified.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceType",
-        "Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the Dedicated Hosts support instances of the specified instance type only. Exactly one of `instance_family` or `instance_type` must be specified.",
+        'instanceType',
+        'Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the Dedicated Hosts support instances of the specified instance type only. Exactly one of `instance_family` or `instance_type` must be specified.',
         () => [],
         false,
         false,

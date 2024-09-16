@@ -30,7 +30,7 @@ export class ResourceMenuComponent {
   public items = ResourceMenuComponent.resources;
   public expand: boolean = true;
 
-  constructor(private _addComponentService: AddComponentService) { }
+  constructor(private _addComponentService: AddComponentService) {}
 
   addComponent(resource: VisualResource) {
     //console.log(componentName);
@@ -67,14 +67,14 @@ export class ResourceMenuComponent {
         this.selected,
         ProviderType.GCP,
         res_index,
-        '/assets/GCPIcons/gcp-logo.png'
+        '/assets/GCPIcons/gcp-logo.png',
       );
     } else {
       res = new VisualResource(
         this.selected,
         ProviderType.AWS,
         res_index,
-        '/assets/aws-logo.png'
+        '/assets/aws-logo.png',
       );
     }
 
@@ -97,9 +97,9 @@ export class ResourceMenuComponent {
 
     let result = [
       str.charAt(0).toUpperCase() +
-      str.slice(1, sp_index + 1) +
-      str.charAt(sp_index + 1).toUpperCase() +
-      str.slice(sp_index + 2),
+        str.slice(1, sp_index + 1) +
+        str.charAt(sp_index + 1).toUpperCase() +
+        str.slice(sp_index + 2),
       logo_path,
     ];
 

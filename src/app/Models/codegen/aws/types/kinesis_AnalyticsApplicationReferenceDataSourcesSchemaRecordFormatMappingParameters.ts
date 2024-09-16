@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv,
   kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv_GetTypes,
-} from "./kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv";
+} from './kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv';
 import {
   kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson,
   kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson_GetTypes,
-} from "./kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson";
+} from './kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson';
 
 export interface kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParameters {
   /*
@@ -32,8 +32,8 @@ export function kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordForm
   return [
     new DynamicUIProps(
       InputType.Object,
-      "csv",
-      "Mapping information when the record format uses delimiters.\nSee CSV Mapping Parameters below for more details.",
+      'csv',
+      'Mapping information when the record format uses delimiters.\nSee CSV Mapping Parameters below for more details.',
       () =>
         kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersCsv_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordForm
     ),
     new DynamicUIProps(
       InputType.Object,
-      "json",
-      "Mapping information when JSON is the record format on the streaming source.\nSee JSON Mapping Parameters below for more details.",
+      'json',
+      'Mapping information when JSON is the record format on the streaming source.\nSee JSON Mapping Parameters below for more details.',
       () =>
         kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson_GetTypes(),
       false,

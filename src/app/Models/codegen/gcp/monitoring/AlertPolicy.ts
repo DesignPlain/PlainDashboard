@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   monitoring_AlertPolicyCreationRecord,
   monitoring_AlertPolicyCreationRecord_GetTypes,
-} from "../types/monitoring_AlertPolicyCreationRecord";
+} from '../types/monitoring_AlertPolicyCreationRecord';
 import {
   monitoring_AlertPolicyDocumentation,
   monitoring_AlertPolicyDocumentation_GetTypes,
-} from "../types/monitoring_AlertPolicyDocumentation";
+} from '../types/monitoring_AlertPolicyDocumentation';
 import {
   monitoring_AlertPolicyCondition,
   monitoring_AlertPolicyCondition_GetTypes,
-} from "../types/monitoring_AlertPolicyCondition";
+} from '../types/monitoring_AlertPolicyCondition';
 import {
   monitoring_AlertPolicyAlertStrategy,
   monitoring_AlertPolicyAlertStrategy_GetTypes,
-} from "../types/monitoring_AlertPolicyAlertStrategy";
+} from '../types/monitoring_AlertPolicyAlertStrategy';
 
 export interface AlertPolicyArgs {
   /*
@@ -202,23 +202,23 @@ Possible values are: `CRITICAL`, `ERROR`, `WARNING`.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "notificationChannels",
-        "Identifies the notification channels to which notifications should be\nsent when incidents are opened or closed or when new violations occur\non an already opened incident. Each element of this array corresponds\nto the name field in each of the NotificationChannel objects that are\nreturned from the notificationChannels.list method. The syntax of the\nentries in this field is\n`projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`",
+        'notificationChannels',
+        'Identifies the notification channels to which notifications should be\nsent when incidents are opened or closed or when new violations occur\non an already opened incident. Each element of this array corresponds\nto the name field in each of the NotificationChannel objects that are\nreturned from the notificationChannels.list method. The syntax of the\nentries in this field is\n`projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
+        'displayName',
         "A short name or phrase used to identify the policy in\ndashboards, notifications, and incidents. To avoid confusion, don't use\nthe same display name for multiple policies in the same project. The\nname is limited to 512 Unicode characters.",
         () => [],
         true,
@@ -226,23 +226,23 @@ Possible values are: `CRITICAL`, `ERROR`, `WARNING`.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Whether or not the policy is enabled. The default is true.",
+        'enabled',
+        'Whether or not the policy is enabled. The default is true.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "userLabels",
-        "This field is intended to be used for organizing and identifying the AlertPolicy\nobjects.The field can contain up to 64 entries. Each key and value is limited\nto 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values\ncan contain only lowercase letters, numerals, underscores, and dashes. Keys\nmust begin with a letter.",
+        'userLabels',
+        'This field is intended to be used for organizing and identifying the AlertPolicy\nobjects.The field can contain up to 64 entries. Each key and value is limited\nto 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values\ncan contain only lowercase letters, numerals, underscores, and dashes. Keys\nmust begin with a letter.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "alertStrategy",
+        'alertStrategy',
         "Control over how this alert policy's notification channels are notified.\nStructure is documented below.",
         () => monitoring_AlertPolicyAlertStrategy_GetTypes(),
         false,
@@ -250,32 +250,32 @@ Possible values are: `CRITICAL`, `ERROR`, `WARNING`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "combiner",
-        "How to combine the results of multiple conditions to\ndetermine if an incident should be opened.\nPossible values are: `AND`, `OR`, `AND_WITH_MATCHING_RESOURCE`.",
+        'combiner',
+        'How to combine the results of multiple conditions to\ndetermine if an incident should be opened.\nPossible values are: `AND`, `OR`, `AND_WITH_MATCHING_RESOURCE`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "documentation",
-        "Documentation that is included with notifications and incidents related\nto this policy. Best practice is for the documentation to include information\nto help responders understand, mitigate, escalate, and correct the underlying\nproblems detected by the alerting policy. Notification channels that have\nlimited capacity might not show this documentation.\nStructure is documented below.",
+        'documentation',
+        'Documentation that is included with notifications and incidents related\nto this policy. Best practice is for the documentation to include information\nto help responders understand, mitigate, escalate, and correct the underlying\nproblems detected by the alerting policy. Notification channels that have\nlimited capacity might not show this documentation.\nStructure is documented below.',
         () => monitoring_AlertPolicyDocumentation_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "severity",
-        "The severity of an alert policy indicates how important incidents generated\nby that policy are. The severity level will be displayed on the Incident\ndetail page and in notifications.\nPossible values are: `CRITICAL`, `ERROR`, `WARNING`.",
+        'severity',
+        'The severity of an alert policy indicates how important incidents generated\nby that policy are. The severity level will be displayed on the Incident\ndetail page and in notifications.\nPossible values are: `CRITICAL`, `ERROR`, `WARNING`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "conditions",
-        "A list of conditions for the policy. The conditions are combined by\nAND or OR according to the combiner field. If the combined conditions\nevaluate to true, then an incident is created. A policy can have from\none to six conditions.\nStructure is documented below.",
+        'conditions',
+        'A list of conditions for the policy. The conditions are combined by\nAND or OR according to the combiner field. If the combined conditions\nevaluate to true, then an incident is created. A policy can have from\none to six conditions.\nStructure is documented below.',
         () => monitoring_AlertPolicyCondition_GetTypes(),
         true,
         false,

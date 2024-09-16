@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentClosingSettingConditionalDefaultBranchNextStep,
   lex_V2modelsIntentClosingSettingConditionalDefaultBranchNextStep_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalDefaultBranchNextStep";
+} from './lex_V2modelsIntentClosingSettingConditionalDefaultBranchNextStep';
 import {
   lex_V2modelsIntentClosingSettingConditionalDefaultBranchResponse,
   lex_V2modelsIntentClosingSettingConditionalDefaultBranchResponse_GetTypes,
-} from "./lex_V2modelsIntentClosingSettingConditionalDefaultBranchResponse";
+} from './lex_V2modelsIntentClosingSettingConditionalDefaultBranchResponse';
 
 export interface lex_V2modelsIntentClosingSettingConditionalDefaultBranch {
   // Configuration block for the next step in the conversation. See `next_step`.
@@ -26,8 +26,8 @@ export function lex_V2modelsIntentClosingSettingConditionalDefaultBranch_GetType
   return [
     new DynamicUIProps(
       InputType.Object,
-      "nextStep",
-      "Configuration block for the next step in the conversation. See `next_step`.",
+      'nextStep',
+      'Configuration block for the next step in the conversation. See `next_step`.',
       () =>
         lex_V2modelsIntentClosingSettingConditionalDefaultBranchNextStep_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function lex_V2modelsIntentClosingSettingConditionalDefaultBranch_GetType
     ),
     new DynamicUIProps(
       InputType.Object,
-      "response",
-      "Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.",
+      'response',
+      'Configuration block for a list of message groups that Amazon Lex uses to respond to the user input. See `response`.',
       () =>
         lex_V2modelsIntentClosingSettingConditionalDefaultBranchResponse_GetTypes(),
       false,

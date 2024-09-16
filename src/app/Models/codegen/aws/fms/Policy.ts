@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   fms_PolicyIncludeMap,
   fms_PolicyIncludeMap_GetTypes,
-} from "../types/fms_PolicyIncludeMap";
+} from '../types/fms_PolicyIncludeMap';
 import {
   fms_PolicySecurityServicePolicyData,
   fms_PolicySecurityServicePolicyData_GetTypes,
-} from "../types/fms_PolicySecurityServicePolicyData";
+} from '../types/fms_PolicySecurityServicePolicyData';
 import {
   fms_PolicyExcludeMap,
   fms_PolicyExcludeMap_GetTypes,
-} from "../types/fms_PolicyExcludeMap";
+} from '../types/fms_PolicyExcludeMap';
 
 export interface PolicyArgs {
   // The friendly name of the AWS Firewall Manager Policy.
@@ -118,23 +118,23 @@ export class Policy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "securityServicePolicyData",
-        "The objects to include in Security Service Policy Data. Documented below.",
+        'securityServicePolicyData',
+        'The objects to include in Security Service Policy Data. Documented below.',
         () => fms_PolicySecurityServicePolicyData_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "excludeMap",
+        'excludeMap',
         "A map of lists of accounts and OU's to exclude from the policy.",
         () => fms_PolicyExcludeMap_GetTypes(),
         false,
@@ -142,39 +142,39 @@ export class Policy extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The friendly name of the AWS Firewall Manager Policy.",
+        'name',
+        'The friendly name of the AWS Firewall Manager Policy.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deleteAllPolicyResources",
-        "If true, the request will also perform a clean-up process. Defaults to `true`. More information can be found here [AWS Firewall Manager delete policy](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html)",
+        'deleteAllPolicyResources',
+        'If true, the request will also perform a clean-up process. Defaults to `true`. More information can be found here [AWS Firewall Manager delete policy](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the AWS Network Firewall firewall policy.",
+        'description',
+        'The description of the AWS Network Firewall firewall policy.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "excludeResourceTags",
-        "A boolean value, if true the tags that are specified in the `resource_tags` are not protected by this policy. If set to false and resource_tags are populated, resources that contain tags will be protected by this policy.",
+        'excludeResourceTags',
+        'A boolean value, if true the tags that are specified in the `resource_tags` are not protected by this policy. If set to false and resource_tags are populated, resources that contain tags will be protected by this policy.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "includeMap",
+        'includeMap',
         "A map of lists of accounts and OU's to include in the policy.",
         () => fms_PolicyIncludeMap_GetTypes(),
         false,
@@ -182,48 +182,48 @@ export class Policy extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "resourceTypeLists",
-        "A list of resource types to protect. Conflicts with `resource_type`. See the [FMS API Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html#fms-Type-Policy-ResourceType) for more information about supported values. Lists with only one element are not supported, instead use `resource_type`.",
+        'resourceTypeLists',
+        'A list of resource types to protect. Conflicts with `resource_type`. See the [FMS API Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html#fms-Type-Policy-ResourceType) for more information about supported values. Lists with only one element are not supported, instead use `resource_type`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "resourceTags",
-        "A map of resource tags, that if present will filter protections on resources based on the exclude_resource_tags.",
+        'resourceTags',
+        'A map of resource tags, that if present will filter protections on resources based on the exclude_resource_tags.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deleteUnusedFmManagedResources",
-        "If true, Firewall Manager will automatically remove protections from resources that leave the policy scope. Defaults to `false`. More information can be found here [AWS Firewall Manager policy contents](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html)",
+        'deleteUnusedFmManagedResources',
+        'If true, Firewall Manager will automatically remove protections from resources that leave the policy scope. Defaults to `false`. More information can be found here [AWS Firewall Manager policy contents](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "remediationEnabled",
-        "A boolean value, indicates if the policy should automatically applied to resources that already exist in the account.",
+        'remediationEnabled',
+        'A boolean value, indicates if the policy should automatically applied to resources that already exist in the account.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceType",
-        "A resource type to protect. Conflicts with `resource_type_list`. See the [FMS API Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html#fms-Type-Policy-ResourceType) for more information about supported values.",
+        'resourceType',
+        'A resource type to protect. Conflicts with `resource_type_list`. See the [FMS API Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html#fms-Type-Policy-ResourceType) for more information about supported values.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "resourceSetIds",
-        "",
+        'resourceSetIds',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,

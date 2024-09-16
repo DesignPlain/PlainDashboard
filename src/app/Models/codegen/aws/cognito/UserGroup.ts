@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface UserGroupArgs {
   // The precedence of the user group.
@@ -43,40 +43,40 @@ export class UserGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the user group.",
+        'description',
+        'The description of the user group.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the user group.",
+        'name',
+        'The name of the user group.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "precedence",
-        "The precedence of the user group.",
+        'precedence',
+        'The precedence of the user group.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "The ARN of the IAM role to be associated with the user group.",
+        'roleArn',
+        'The ARN of the IAM role to be associated with the user group.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userPoolId",
-        "The user pool ID.",
+        'userPoolId',
+        'The user pool ID.',
         () => [],
         true,
         true,

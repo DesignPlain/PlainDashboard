@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vertex_AiFeatureOnlineStoreEmbeddingManagement,
   vertex_AiFeatureOnlineStoreEmbeddingManagement_GetTypes,
-} from "../types/vertex_AiFeatureOnlineStoreEmbeddingManagement";
+} from '../types/vertex_AiFeatureOnlineStoreEmbeddingManagement';
 import {
   vertex_AiFeatureOnlineStoreOptimized,
   vertex_AiFeatureOnlineStoreOptimized_GetTypes,
-} from "../types/vertex_AiFeatureOnlineStoreOptimized";
+} from '../types/vertex_AiFeatureOnlineStoreOptimized';
 import {
   vertex_AiFeatureOnlineStoreDedicatedServingEndpoint,
   vertex_AiFeatureOnlineStoreDedicatedServingEndpoint_GetTypes,
-} from "../types/vertex_AiFeatureOnlineStoreDedicatedServingEndpoint";
+} from '../types/vertex_AiFeatureOnlineStoreDedicatedServingEndpoint';
 import {
   vertex_AiFeatureOnlineStoreBigtable,
   vertex_AiFeatureOnlineStoreBigtable_GetTypes,
-} from "../types/vertex_AiFeatureOnlineStoreBigtable";
+} from '../types/vertex_AiFeatureOnlineStoreBigtable';
 
 export interface AiFeatureOnlineStoreArgs {
   /*
@@ -146,72 +146,72 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "forceDestroy",
-        "If set to true, any FeatureViews and Features for this FeatureOnlineStore will also be deleted.",
+        'forceDestroy',
+        'If set to true, any FeatureViews and Features for this FeatureOnlineStore will also be deleted.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name of the Feature Online Store. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.\n\n\n- - -",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'name',
+        'The resource name of the Feature Online Store. This value may be up to 60 characters, and valid characters are [a-z0-9_]. The first character cannot be a number.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region of feature online store. eg us-central1",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'region',
+        'The region of feature online store. eg us-central1',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dedicatedServingEndpoint",
-        "The dedicated serving endpoint for this FeatureOnlineStore, which is different from common vertex service endpoint. Only need to set when you choose Optimized storage type or enable EmbeddingManagement. Will use public endpoint by default.\nStructure is documented below.",
+        'dedicatedServingEndpoint',
+        'The dedicated serving endpoint for this FeatureOnlineStore, which is different from common vertex service endpoint. Only need to set when you choose Optimized storage type or enable EmbeddingManagement. Will use public endpoint by default.\nStructure is documented below.',
         () => vertex_AiFeatureOnlineStoreDedicatedServingEndpoint_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "The labels with user-defined metadata to organize your feature online stores.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'The labels with user-defined metadata to organize your feature online stores.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bigtable",
-        "Settings for Cloud Bigtable instance that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore.\nStructure is documented below.",
+        'bigtable',
+        'Settings for Cloud Bigtable instance that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore.\nStructure is documented below.',
         () => vertex_AiFeatureOnlineStoreBigtable_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "embeddingManagement",
-        "The settings for embedding management in FeatureOnlineStore. Embedding management can only be used with BigTable.\nStructure is documented below.",
+        'embeddingManagement',
+        'The settings for embedding management in FeatureOnlineStore. Embedding management can only be used with BigTable.\nStructure is documented below.',
         () => vertex_AiFeatureOnlineStoreEmbeddingManagement_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "optimized",
-        "Settings for the Optimized store that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore",
+        'optimized',
+        'Settings for the Optimized store that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore',
         () => vertex_AiFeatureOnlineStoreOptimized_GetTypes(),
         false,
         false,

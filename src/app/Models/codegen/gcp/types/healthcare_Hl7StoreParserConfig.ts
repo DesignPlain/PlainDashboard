@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface healthcare_Hl7StoreParserConfig {
   /*
@@ -34,31 +34,31 @@ export function healthcare_Hl7StoreParserConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "The version of the unschematized parser to be used when a custom `schema` is not set.\nDefault value is `V1`.\nPossible values are: `V1`, `V2`, `V3`.",
+      'version',
+      'The version of the unschematized parser to be used when a custom `schema` is not set.\nDefault value is `V1`.\nPossible values are: `V1`, `V2`, `V3`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "allowNullHeader",
-      "Determines whether messages with no header are allowed.",
+      'allowNullHeader',
+      'Determines whether messages with no header are allowed.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "schema",
-      "JSON encoded string for schemas used to parse messages in this\nstore if schematized parsing is desired.",
+      'schema',
+      'JSON encoded string for schemas used to parse messages in this\nstore if schematized parsing is desired.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "segmentTerminator",
+      'segmentTerminator',
       "Byte(s) to be used as the segment terminator. If this is unset, '\\r' will be used as segment terminator.\nA base64-encoded string.",
       () => [],
       false,

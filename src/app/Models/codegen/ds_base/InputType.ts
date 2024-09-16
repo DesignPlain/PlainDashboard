@@ -1,4 +1,4 @@
-import { DynamicUIProps } from "./DynamicUIProps";
+import { DynamicUIProps } from './DynamicUIProps';
 
 export enum InputType {
   String,
@@ -11,15 +11,15 @@ export enum InputType {
 }
 
 export function InputType_String_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.String, "Value", "GenericType")];
+  return [new DynamicUIProps(InputType.String, 'Value', 'GenericType')];
 }
 export function InputType_Number_GetTypes(): DynamicUIProps[] {
-  return [new DynamicUIProps(InputType.Number, "Value", "GenericType")];
+  return [new DynamicUIProps(InputType.Number, 'Value', 'GenericType')];
 }
 
 export function InputType_Map_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "Key", "Key Name"),
-    new DynamicUIProps(InputType.String, "Value", "Value"),
+    new DynamicUIProps(InputType.String, 'Key', 'Key Name'),
+    new DynamicUIProps(InputType.String, 'Value', 'Value'),
   ];
 }

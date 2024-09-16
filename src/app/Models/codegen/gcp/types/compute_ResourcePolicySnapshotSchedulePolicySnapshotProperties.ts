@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_ResourcePolicySnapshotSchedulePolicySnapshotProperties {
   /*
@@ -31,7 +31,7 @@ export function compute_ResourcePolicySnapshotSchedulePolicySnapshotProperties_G
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "guestFlush",
+      'guestFlush',
       "Whether to perform a 'guest aware' snapshot.",
       () => [],
       false,
@@ -39,24 +39,24 @@ export function compute_ResourcePolicySnapshotSchedulePolicySnapshotProperties_G
     ),
     new DynamicUIProps(
       InputType.Map,
-      "labels",
-      "A set of key-value pairs.",
+      'labels',
+      'A set of key-value pairs.',
       () => InputType_Map_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "storageLocations",
-      "Cloud Storage bucket location to store the auto snapshot\n(regional or multi-regional)",
+      'storageLocations',
+      'Cloud Storage bucket location to store the auto snapshot\n(regional or multi-regional)',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "chainName",
-      "Creates the new snapshot in the snapshot chain labeled with the\nspecified name. The chain name must be 1-63 characters long and comply\nwith RFC1035.",
+      'chainName',
+      'Creates the new snapshot in the snapshot chain labeled with the\nspecified name. The chain name must be 1-63 characters long and comply\nwith RFC1035.',
       () => [],
       false,
       true,

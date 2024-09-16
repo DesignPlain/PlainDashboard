@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudfront_ResponseHeadersPolicyCustomHeadersConfigItem {
   //
@@ -19,15 +19,15 @@ export interface cloudfront_ResponseHeadersPolicyCustomHeadersConfigItem {
 
 export function cloudfront_ResponseHeadersPolicyCustomHeadersConfigItem_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Bool, "override", "", () => [], true, false),
+    new DynamicUIProps(InputType.Bool, 'override', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value for the HTTP response header.",
+      'value',
+      'The value for the HTTP response header.',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "header", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'header', '', () => [], true, false),
   ];
 }

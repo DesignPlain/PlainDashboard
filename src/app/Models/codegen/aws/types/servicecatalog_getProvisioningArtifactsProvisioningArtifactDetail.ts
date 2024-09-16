@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface servicecatalog_getProvisioningArtifactsProvisioningArtifactDetail {
   // The description of the provisioning artifact.
@@ -33,56 +33,56 @@ export function servicecatalog_getProvisioningArtifactsProvisioningArtifactDetai
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "active",
-      "Indicates whether the product version is active.",
+      'active',
+      'Indicates whether the product version is active.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "createdTime",
-      "The UTC time stamp of the creation time.",
+      'createdTime',
+      'The UTC time stamp of the creation time.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "The description of the provisioning artifact.",
+      'description',
+      'The description of the provisioning artifact.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "guidance",
-      "Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.",
+      'guidance',
+      'Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "The identifier of the provisioning artifact.",
+      'id',
+      'The identifier of the provisioning artifact.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the provisioning artifact.",
+      'name',
+      'The name of the provisioning artifact.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The type of provisioning artifact.",
+      'type',
+      'The type of provisioning artifact.',
       () => [],
       true,
       false,

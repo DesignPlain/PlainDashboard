@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface alloydb_getLocationsLocation {
   // Resource name for the location, which may vary between implementations. For example: "projects/example-project/locations/us-east1".
@@ -27,7 +27,7 @@ export function alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
+      'name',
       'Resource name for the location, which may vary between implementations. For example: "projects/example-project/locations/us-east1".',
       () => [],
       true,
@@ -35,7 +35,7 @@ export function alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "displayName",
+      'displayName',
       'The friendly name for this location, typically a nearby city name. For example, "Tokyo".',
       () => [],
       true,
@@ -43,7 +43,7 @@ export function alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "labels",
+      'labels',
       'Cross-service attributes for the location. For example `{"cloud.googleapis.com/region": "us-east1"}`.',
       () => InputType_Map_GetTypes(),
       true,
@@ -51,7 +51,7 @@ export function alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "locationId",
+      'locationId',
       'The canonical id for this location. For example: "us-east1"..',
       () => [],
       true,
@@ -59,8 +59,8 @@ export function alloydb_getLocationsLocation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "metadata",
-      "Service-specific metadata. For example the available capacity at the given location.",
+      'metadata',
+      'Service-specific metadata. For example the available capacity at the given location.',
       () => InputType_Map_GetTypes(),
       true,
       false,

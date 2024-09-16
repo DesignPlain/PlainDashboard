@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_RuleGroupRuleGroupRuleVariablesPortSetPortSet,
   networkfirewall_RuleGroupRuleGroupRuleVariablesPortSetPortSet_GetTypes,
-} from "./networkfirewall_RuleGroupRuleGroupRuleVariablesPortSetPortSet";
+} from './networkfirewall_RuleGroupRuleGroupRuleVariablesPortSetPortSet';
 
 export interface networkfirewall_RuleGroupRuleGroupRuleVariablesPortSet {
   // An unique alphanumeric string to identify the `port_set`.
@@ -22,16 +22,16 @@ export function networkfirewall_RuleGroupRuleGroupRuleVariablesPortSet_GetTypes(
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "An unique alphanumeric string to identify the `port_set`.",
+      'key',
+      'An unique alphanumeric string to identify the `port_set`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "portSet",
-      "A configuration block that defines a set of port ranges. See Port Set below for details.",
+      'portSet',
+      'A configuration block that defines a set of port ranges. See Port Set below for details.',
       () =>
         networkfirewall_RuleGroupRuleGroupRuleVariablesPortSetPortSet_GetTypes(),
       true,

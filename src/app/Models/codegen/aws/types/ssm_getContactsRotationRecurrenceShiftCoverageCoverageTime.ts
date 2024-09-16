@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeEnd,
   ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeEnd_GetTypes,
-} from "./ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeEnd";
+} from './ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeEnd';
 import {
   ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeStart,
   ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeStart_GetTypes,
-} from "./ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeStart";
+} from './ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeStart';
 
 export interface ssm_getContactsRotationRecurrenceShiftCoverageCoverageTime {
   //
@@ -26,8 +26,8 @@ export function ssm_getContactsRotationRecurrenceShiftCoverageCoverageTime_GetTy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "ends",
-      "",
+      'ends',
+      '',
       () =>
         ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeEnd_GetTypes(),
       true,
@@ -35,8 +35,8 @@ export function ssm_getContactsRotationRecurrenceShiftCoverageCoverageTime_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "starts",
-      "",
+      'starts',
+      '',
       () =>
         ssm_getContactsRotationRecurrenceShiftCoverageCoverageTimeStart_GetTypes(),
       true,

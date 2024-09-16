@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface CloudFormationStackArgs {
   // A list of capabilities. Valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, or `CAPABILITY_AUTO_EXPAND`
@@ -55,48 +55,48 @@ export class CloudFormationStack extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A list of tags to associate with this stack. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A list of tags to associate with this stack. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "applicationId",
-        "The ARN of the application from the Serverless Application Repository.",
+        'applicationId',
+        'The ARN of the application from the Serverless Application Repository.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "capabilities",
-        "A list of capabilities. Valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, or `CAPABILITY_AUTO_EXPAND`",
+        'capabilities',
+        'A list of capabilities. Valid values are `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_RESOURCE_POLICY`, or `CAPABILITY_AUTO_EXPAND`',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the stack to create. The resource deployed in AWS will be prefixed with `serverlessrepo-`",
+        'name',
+        'The name of the stack to create. The resource deployed in AWS will be prefixed with `serverlessrepo-`',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "parameters",
-        "A map of Parameter structures that specify input parameters for the stack.",
+        'parameters',
+        'A map of Parameter structures that specify input parameters for the stack.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "semanticVersion",
-        "The version of the application to deploy. If not supplied, deploys the latest version.",
+        'semanticVersion',
+        'The version of the application to deploy. If not supplied, deploys the latest version.',
         () => [],
         false,
         false,

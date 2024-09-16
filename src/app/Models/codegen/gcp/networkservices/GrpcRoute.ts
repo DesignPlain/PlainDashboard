@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkservices_GrpcRouteRule,
   networkservices_GrpcRouteRule_GetTypes,
-} from "../types/networkservices_GrpcRouteRule";
+} from '../types/networkservices_GrpcRouteRule';
 
 export interface GrpcRouteArgs {
   /*
@@ -103,64 +103,64 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A free-text description of the resource. Max length 1024 characters.",
+        'description',
+        'A free-text description of the resource. Max length 1024 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "gateways",
-        "List of gateways this GrpcRoute is attached to, as one of the routing rules to route the requests served by the gateway.",
+        'gateways',
+        'List of gateways this GrpcRoute is attached to, as one of the routing rules to route the requests served by the gateway.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "hostnames",
-        "Required. Service hostnames with an optional port for which this route describes traffic.",
+        'hostnames',
+        'Required. Service hostnames with an optional port for which this route describes traffic.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Set of label tags associated with the GrpcRoute resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Set of label tags associated with the GrpcRoute resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "meshes",
-        "List of meshes this GrpcRoute is attached to, as one of the routing rules to route the requests served by the mesh.",
+        'meshes',
+        'List of meshes this GrpcRoute is attached to, as one of the routing rules to route the requests served by the mesh.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the GrpcRoute resource.",
+        'name',
+        'Name of the GrpcRoute resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "rules",
-        "Rules that define how traffic is routed and handled.\nStructure is documented below.",
+        'rules',
+        'Rules that define how traffic is routed and handled.\nStructure is documented below.',
         () => networkservices_GrpcRouteRule_GetTypes(),
         true,
         false,

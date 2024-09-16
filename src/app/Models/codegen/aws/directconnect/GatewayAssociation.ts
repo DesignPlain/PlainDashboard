@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface GatewayAssociationArgs {
   // VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.
@@ -76,48 +76,48 @@ Used for cross-account Direct Connect gateway associations.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "allowedPrefixes",
-        "VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.",
+        'allowedPrefixes',
+        'VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "associatedGatewayId",
-        "The ID of the VGW or transit gateway with which to associate the Direct Connect gateway.\nUsed for single account Direct Connect gateway associations.",
+        'associatedGatewayId',
+        'The ID of the VGW or transit gateway with which to associate the Direct Connect gateway.\nUsed for single account Direct Connect gateway associations.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "associatedGatewayOwnerAccountId",
-        "The ID of the AWS account that owns the VGW or transit gateway with which to associate the Direct Connect gateway.\nUsed for cross-account Direct Connect gateway associations.",
+        'associatedGatewayOwnerAccountId',
+        'The ID of the AWS account that owns the VGW or transit gateway with which to associate the Direct Connect gateway.\nUsed for cross-account Direct Connect gateway associations.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dxGatewayId",
-        "The ID of the Direct Connect gateway.",
+        'dxGatewayId',
+        'The ID of the Direct Connect gateway.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "proposalId",
-        "The ID of the Direct Connect gateway association proposal.\nUsed for cross-account Direct Connect gateway associations.",
+        'proposalId',
+        'The ID of the Direct Connect gateway association proposal.\nUsed for cross-account Direct Connect gateway associations.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpnGatewayId",
-        "",
+        'vpnGatewayId',
+        '',
         () => [],
         false,
         true,

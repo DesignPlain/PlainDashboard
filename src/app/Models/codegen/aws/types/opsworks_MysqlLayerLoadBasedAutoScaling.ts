@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_MysqlLayerLoadBasedAutoScalingDownscaling,
   opsworks_MysqlLayerLoadBasedAutoScalingDownscaling_GetTypes,
-} from "./opsworks_MysqlLayerLoadBasedAutoScalingDownscaling";
+} from './opsworks_MysqlLayerLoadBasedAutoScalingDownscaling';
 import {
   opsworks_MysqlLayerLoadBasedAutoScalingUpscaling,
   opsworks_MysqlLayerLoadBasedAutoScalingUpscaling_GetTypes,
-} from "./opsworks_MysqlLayerLoadBasedAutoScalingUpscaling";
+} from './opsworks_MysqlLayerLoadBasedAutoScalingUpscaling';
 
 export interface opsworks_MysqlLayerLoadBasedAutoScaling {
   //
@@ -29,17 +29,17 @@ export function opsworks_MysqlLayerLoadBasedAutoScaling_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "downscaling",
-      "",
+      'downscaling',
+      '',
       () => opsworks_MysqlLayerLoadBasedAutoScalingDownscaling_GetTypes(),
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "enable", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'enable', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Object,
-      "upscaling",
-      "",
+      'upscaling',
+      '',
       () => opsworks_MysqlLayerLoadBasedAutoScalingUpscaling_GetTypes(),
       false,
       false,

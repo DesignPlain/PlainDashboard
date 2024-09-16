@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_NodePoolNodeConfigGcfsConfig {
   /*
@@ -18,8 +18,8 @@ export function container_NodePoolNodeConfigGcfsConfig_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Enable Confidential GKE Nodes for this cluster, to\nenforce encryption of data in-use.",
+      'enabled',
+      'Enable Confidential GKE Nodes for this cluster, to\nenforce encryption of data in-use.',
       () => [],
       true,
       true,

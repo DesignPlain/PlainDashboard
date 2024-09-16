@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrun_ServiceStatusTraffic,
   cloudrun_ServiceStatusTraffic_GetTypes,
-} from "./cloudrun_ServiceStatusTraffic";
+} from './cloudrun_ServiceStatusTraffic';
 import {
   cloudrun_ServiceStatusCondition,
   cloudrun_ServiceStatusCondition_GetTypes,
-} from "./cloudrun_ServiceStatusCondition";
+} from './cloudrun_ServiceStatusCondition';
 
 export interface cloudrun_ServiceStatus {
   /*
@@ -67,7 +67,7 @@ export function cloudrun_ServiceStatus_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "latestReadyRevisionName",
+      'latestReadyRevisionName',
       '(Output)\nFrom ConfigurationStatus. LatestReadyRevisionName holds the name of the latest Revision\nstamped out from this Service\'s Configuration that has had its "Ready" condition become\n"True".',
       () => [],
       false,
@@ -75,7 +75,7 @@ export function cloudrun_ServiceStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "observedGeneration",
+      'observedGeneration',
       "(Output)\nObservedGeneration is the 'Generation' of the Route that was last processed by the\ncontroller.\nClients polling for completed reconciliation should poll until observedGeneration =\nmetadata.generation and the Ready condition's status is True or False.",
       () => [],
       false,
@@ -83,31 +83,31 @@ export function cloudrun_ServiceStatus_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "traffics",
-      "Traffic specifies how to distribute traffic over a collection of Knative Revisions\nand Configurations\nStructure is documented below.",
+      'traffics',
+      'Traffic specifies how to distribute traffic over a collection of Knative Revisions\nand Configurations\nStructure is documented below.',
       () => cloudrun_ServiceStatusTraffic_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "url",
-      "(Output)\nURL displays the URL for accessing tagged traffic targets. URL is displayed in status,\nand is disallowed on spec. URL must contain a scheme (e.g. http://) and a hostname,\nbut may not contain anything else (e.g. basic auth, url path, etc.)",
+      'url',
+      '(Output)\nURL displays the URL for accessing tagged traffic targets. URL is displayed in status,\nand is disallowed on spec. URL must contain a scheme (e.g. http://) and a hostname,\nbut may not contain anything else (e.g. basic auth, url path, etc.)',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "conditions",
-      "(Output)\nArray of observed Service Conditions, indicating the current ready state of the service.\nStructure is documented below.",
+      'conditions',
+      '(Output)\nArray of observed Service Conditions, indicating the current ready state of the service.\nStructure is documented below.',
       () => cloudrun_ServiceStatusCondition_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "latestCreatedRevisionName",
+      'latestCreatedRevisionName',
       "(Output)\nFrom ConfigurationStatus. LatestCreatedRevisionName is the last revision that was created\nfrom this Service's Configuration. It might not be ready yet, for that use\nLatestReadyRevisionName.",
       () => [],
       false,

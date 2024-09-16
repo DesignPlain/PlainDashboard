@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesRedshift {
   //
@@ -33,15 +33,15 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePr
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucketPrefix",
-      "",
+      'bucketPrefix',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clusterIdentifier",
+      'clusterIdentifier',
       "The unique ID that's assigned to an Amazon Redshift cluster.",
       () => [],
       false,
@@ -49,40 +49,40 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePr
     ),
     new DynamicUIProps(
       InputType.String,
-      "dataApiRoleArn",
-      "ARN of the IAM role that permits AppFlow to access the database through Data API.",
+      'dataApiRoleArn',
+      'ARN of the IAM role that permits AppFlow to access the database through Data API.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "databaseName",
-      "The name of an Amazon Redshift database.",
+      'databaseName',
+      'The name of an Amazon Redshift database.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "databaseUrl",
-      "The JDBC URL of the Amazon Redshift cluster.",
+      'databaseUrl',
+      'The JDBC URL of the Amazon Redshift cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "ARN of the IAM role.",
+      'roleArn',
+      'ARN of the IAM role.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketName",
-      "",
+      'bucketName',
+      '',
       () => [],
       true,
       false,

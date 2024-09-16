@@ -3,56 +3,56 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPath,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPath_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPath";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPath';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3Fingerprint,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3Fingerprint_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3Fingerprint";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3Fingerprint';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBody,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBody_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBody";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBody';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeader,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeader_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeader";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeader';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBody,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBody_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBody";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBody';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookies,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookies_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookies";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookies';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryString,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryString_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryString";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryString';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgument,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgument_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgument";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgument';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArguments,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArguments_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArguments";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArguments';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeader,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeader_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeader";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeader';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrder,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrder_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrder";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrder';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethod,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethod_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethod";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethod';
 
 export interface wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatch {
   // Inspect all query arguments.
@@ -96,8 +96,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
   return [
     new DynamicUIProps(
       InputType.Object,
-      "body",
-      "Inspect the request body, which immediately follows the request headers.",
+      'body',
+      'Inspect the request body, which immediately follows the request headers.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBody_GetTypes(),
       false,
@@ -105,8 +105,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "method",
-      "Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.",
+      'method',
+      'Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethod_GetTypes(),
       false,
@@ -114,8 +114,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleQueryArgument",
-      "Inspect a single query argument. See Single Query Argument below for details.",
+      'singleQueryArgument',
+      'Inspect a single query argument. See Single Query Argument below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgument_GetTypes(),
       false,
@@ -123,8 +123,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "uriPath",
-      "Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.",
+      'uriPath',
+      'Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPath_GetTypes(),
       false,
@@ -132,8 +132,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleHeader",
-      "Inspect a single header. See Single Header below for details.",
+      'singleHeader',
+      'Inspect a single header. See Single Header below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeader_GetTypes(),
       false,
@@ -141,8 +141,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cookies",
-      "Inspect the cookies in the web request. See Cookies below for details.",
+      'cookies',
+      'Inspect the cookies in the web request. See Cookies below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookies_GetTypes(),
       false,
@@ -150,8 +150,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headerOrders",
-      "Inspect the request headers. See Header Order below for details.",
+      'headerOrders',
+      'Inspect the request headers. See Header Order below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrder_GetTypes(),
       false,
@@ -159,8 +159,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "queryString",
-      "Inspect the query string. This is the part of a URL that appears after a `?` character, if any.",
+      'queryString',
+      'Inspect the query string. This is the part of a URL that appears after a `?` character, if any.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryString_GetTypes(),
       false,
@@ -168,8 +168,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "allQueryArguments",
-      "Inspect all query arguments.",
+      'allQueryArguments',
+      'Inspect all query arguments.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArguments_GetTypes(),
       false,
@@ -177,8 +177,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headers",
-      "Inspect the request headers. See Headers below for details.",
+      'headers',
+      'Inspect the request headers. See Headers below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeader_GetTypes(),
       false,
@@ -186,8 +186,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ja3Fingerprint",
-      "",
+      'ja3Fingerprint',
+      '',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3Fingerprint_GetTypes(),
       false,
@@ -195,8 +195,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "jsonBody",
-      "Inspect the request body as JSON. See JSON Body for details.",
+      'jsonBody',
+      'Inspect the request body as JSON. See JSON Body for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBody_GetTypes(),
       false,

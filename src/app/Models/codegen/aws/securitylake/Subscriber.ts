@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securitylake_SubscriberSource,
   securitylake_SubscriberSource_GetTypes,
-} from "../types/securitylake_SubscriberSource";
+} from '../types/securitylake_SubscriberSource';
 import {
   securitylake_SubscriberSubscriberIdentity,
   securitylake_SubscriberSubscriberIdentity_GetTypes,
-} from "../types/securitylake_SubscriberSubscriberIdentity";
+} from '../types/securitylake_SubscriberSubscriberIdentity';
 import {
   securitylake_SubscriberTimeouts,
   securitylake_SubscriberTimeouts_GetTypes,
-} from "../types/securitylake_SubscriberTimeouts";
+} from '../types/securitylake_SubscriberTimeouts';
 
 export interface SubscriberArgs {
   // The supported AWS services from which logs and events are collected. Security Lake supports log and event collection for natively supported AWS services. See `source` Blocks below.
@@ -91,56 +91,56 @@ export class Subscriber extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "source",
-        "The supported AWS services from which logs and events are collected. Security Lake supports log and event collection for natively supported AWS services. See `source` Blocks below.",
+        'source',
+        'The supported AWS services from which logs and events are collected. Security Lake supports log and event collection for natively supported AWS services. See `source` Blocks below.',
         () => securitylake_SubscriberSource_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subscriberDescription",
-        "The description for your subscriber account in Security Lake.",
+        'subscriberDescription',
+        'The description for your subscriber account in Security Lake.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "subscriberIdentity",
-        "The AWS identity used to access your data. See `subscriber_identity` Block below.",
+        'subscriberIdentity',
+        'The AWS identity used to access your data. See `subscriber_identity` Block below.',
         () => securitylake_SubscriberSubscriberIdentity_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subscriberName",
-        "The name of your Security Lake subscriber account.",
+        'subscriberName',
+        'The name of your Security Lake subscriber account.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => securitylake_SubscriberTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accessType",
-        "The Amazon S3 or Lake Formation access type.",
+        'accessType',
+        'The Amazon S3 or Lake Formation access type.',
         () => [],
         false,
         false,

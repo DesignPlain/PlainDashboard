@@ -3,53 +3,53 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codebuild_ProjectSecondarySource,
   codebuild_ProjectSecondarySource_GetTypes,
-} from "../types/codebuild_ProjectSecondarySource";
+} from '../types/codebuild_ProjectSecondarySource';
 import {
   codebuild_ProjectVpcConfig,
   codebuild_ProjectVpcConfig_GetTypes,
-} from "../types/codebuild_ProjectVpcConfig";
+} from '../types/codebuild_ProjectVpcConfig';
 import {
   codebuild_ProjectSource,
   codebuild_ProjectSource_GetTypes,
-} from "../types/codebuild_ProjectSource";
+} from '../types/codebuild_ProjectSource';
 import {
   codebuild_ProjectBuildBatchConfig,
   codebuild_ProjectBuildBatchConfig_GetTypes,
-} from "../types/codebuild_ProjectBuildBatchConfig";
+} from '../types/codebuild_ProjectBuildBatchConfig';
 import {
   codebuild_ProjectCache,
   codebuild_ProjectCache_GetTypes,
-} from "../types/codebuild_ProjectCache";
+} from '../types/codebuild_ProjectCache';
 import {
   codebuild_ProjectEnvironment,
   codebuild_ProjectEnvironment_GetTypes,
-} from "../types/codebuild_ProjectEnvironment";
+} from '../types/codebuild_ProjectEnvironment';
 import {
   codebuild_ProjectFileSystemLocation,
   codebuild_ProjectFileSystemLocation_GetTypes,
-} from "../types/codebuild_ProjectFileSystemLocation";
+} from '../types/codebuild_ProjectFileSystemLocation';
 import {
   codebuild_ProjectSecondaryArtifact,
   codebuild_ProjectSecondaryArtifact_GetTypes,
-} from "../types/codebuild_ProjectSecondaryArtifact";
+} from '../types/codebuild_ProjectSecondaryArtifact';
 import {
   codebuild_ProjectArtifacts,
   codebuild_ProjectArtifacts_GetTypes,
-} from "../types/codebuild_ProjectArtifacts";
+} from '../types/codebuild_ProjectArtifacts';
 import {
   codebuild_ProjectLogsConfig,
   codebuild_ProjectLogsConfig_GetTypes,
-} from "../types/codebuild_ProjectLogsConfig";
+} from '../types/codebuild_ProjectLogsConfig';
 import {
   codebuild_ProjectSecondarySourceVersion,
   codebuild_ProjectSecondarySourceVersion_GetTypes,
-} from "../types/codebuild_ProjectSecondarySourceVersion";
+} from '../types/codebuild_ProjectSecondarySourceVersion';
 
 export interface ProjectArgs {
   // Number of minutes, from 5 to 480 (8 hours), a build is allowed to be queued before it times out. The default is 8 hours. The `queued_timeout` property is not available on the `Lambda` compute type.
@@ -215,47 +215,47 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "badgeEnabled",
-        "Generates a publicly-accessible URL for the projects build badge. Available as `badge_url` attribute when enabled.",
+        'badgeEnabled',
+        'Generates a publicly-accessible URL for the projects build badge. Available as `badge_url` attribute when enabled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "source",
-        "Configuration block. Detailed below.\n\nThe following arguments are optional:",
+        'source',
+        'Configuration block. Detailed below.\n\nThe following arguments are optional:',
         () => codebuild_ProjectSource_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "buildTimeout",
-        "Number of minutes, from 5 to 2160 (36 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes. The `build_timeout` property is not available on the `Lambda` compute type.",
+        'buildTimeout',
+        'Number of minutes, from 5 to 2160 (36 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes. The `build_timeout` property is not available on the `Lambda` compute type.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "buildBatchConfig",
-        "Defines the batch build options for the project.",
+        'buildBatchConfig',
+        'Defines the batch build options for the project.',
         () => codebuild_ProjectBuildBatchConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "projectVisibility",
+        'projectVisibility',
         "Specifies the visibility of the project's builds. Possible values are: `PUBLIC_READ` and `PRIVATE`. Default value is `PRIVATE`.",
         () => [],
         false,
@@ -263,15 +263,15 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Array,
-        "fileSystemLocations",
-        "A set of file system locations to mount inside the build. File system locations are documented below.",
+        'fileSystemLocations',
+        'A set of file system locations to mount inside the build. File system locations are documented below.',
         () => codebuild_ProjectFileSystemLocation_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "Project's name.",
         () => [],
         false,
@@ -279,15 +279,15 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Array,
-        "secondaryArtifacts",
-        "Configuration block. Detailed below.",
+        'secondaryArtifacts',
+        'Configuration block. Detailed below.',
         () => codebuild_ProjectSecondaryArtifact_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceAccessRole",
+        'resourceAccessRole',
         "The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds in order to display them publicly. Only applicable if `project_visibility` is `PUBLIC_READ`.",
         () => [],
         false,
@@ -295,79 +295,79 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Number,
-        "concurrentBuildLimit",
-        "Specify a maximum number of concurrent builds for the project. The value specified must be greater than 0 and less than the account concurrent running builds limit.",
+        'concurrentBuildLimit',
+        'Specify a maximum number of concurrent builds for the project. The value specified must be greater than 0 and less than the account concurrent running builds limit.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceVersion",
-        "Version of the build input to be built for this project. If not specified, the latest version is used.",
+        'sourceVersion',
+        'Version of the build input to be built for this project. If not specified, the latest version is used.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "artifacts",
-        "Configuration block. Detailed below.",
+        'artifacts',
+        'Configuration block. Detailed below.',
         () => codebuild_ProjectArtifacts_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Short description of the project.",
+        'description',
+        'Short description of the project.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "logsConfig",
-        "Configuration block. Detailed below.",
+        'logsConfig',
+        'Configuration block. Detailed below.',
         () => codebuild_ProjectLogsConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "environment",
-        "Configuration block. Detailed below.",
+        'environment',
+        'Configuration block. Detailed below.',
         () => codebuild_ProjectEnvironment_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "secondarySources",
-        "Configuration block. Detailed below.",
+        'secondarySources',
+        'Configuration block. Detailed below.',
         () => codebuild_ProjectSecondarySource_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcConfig",
-        "Configuration block. Detailed below.",
+        'vpcConfig',
+        'Configuration block. Detailed below.',
         () => codebuild_ProjectVpcConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "queuedTimeout",
-        "Number of minutes, from 5 to 480 (8 hours), a build is allowed to be queued before it times out. The default is 8 hours. The `queued_timeout` property is not available on the `Lambda` compute type.",
+        'queuedTimeout',
+        'Number of minutes, from 5 to 480 (8 hours), a build is allowed to be queued before it times out. The default is 8 hours. The `queued_timeout` property is not available on the `Lambda` compute type.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "encryptionKey",
+        'encryptionKey',
         "AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build project's build output artifacts.",
         () => [],
         false,
@@ -375,24 +375,24 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cache",
-        "Configuration block. Detailed below.",
+        'cache',
+        'Configuration block. Detailed below.',
         () => codebuild_ProjectCache_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "secondarySourceVersions",
-        "Configuration block. Detailed below.",
+        'secondarySourceVersions',
+        'Configuration block. Detailed below.',
         () => codebuild_ProjectSecondarySourceVersion_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceRole",
-        "Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.",
+        'serviceRole',
+        'Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.',
         () => [],
         true,
         false,

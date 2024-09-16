@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce,
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce_GetTypes,
-} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce";
+} from './osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce';
 import {
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidate,
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidate_GetTypes,
-} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidate";
+} from './osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidate';
 
 export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExec {
   /*
@@ -37,7 +37,7 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExec_Get
   return [
     new DynamicUIProps(
       InputType.Object,
-      "enforce",
+      'enforce',
       'What to run to bring this resource into the desired\nstate. An exit code of 100 indicates "success", any other exit code\nindicates a failure running enforce. Structure is\ndocumented below.',
       () =>
         osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecEnforce_GetTypes(),
@@ -46,7 +46,7 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExec_Get
     ),
     new DynamicUIProps(
       InputType.Object,
-      "validate",
+      'validate',
       'What to run to validate this resource is in the\ndesired state. An exit code of 100 indicates "in desired state", and exit\ncode of 101 indicates "not in desired state". Any other exit code indicates\na failure running validate. Structure is\ndocumented below.',
       () =>
         osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidate_GetTypes(),

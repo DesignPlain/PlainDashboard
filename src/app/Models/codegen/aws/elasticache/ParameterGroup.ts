@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elasticache_ParameterGroupParameter,
   elasticache_ParameterGroupParameter_GetTypes,
-} from "../types/elasticache_ParameterGroupParameter";
+} from '../types/elasticache_ParameterGroupParameter';
 
 export interface ParameterGroupArgs {
   // The family of the ElastiCache parameter group.
@@ -53,7 +53,7 @@ export class ParameterGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
+        'description',
         'The description of the ElastiCache parameter group. Defaults to "Managed by Pulumi".',
         () => [],
         false,
@@ -61,32 +61,32 @@ export class ParameterGroup extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "family",
-        "The family of the ElastiCache parameter group.",
+        'family',
+        'The family of the ElastiCache parameter group.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the ElastiCache parameter.",
+        'name',
+        'The name of the ElastiCache parameter.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "parameters",
-        "A list of ElastiCache parameters to apply.",
+        'parameters',
+        'A list of ElastiCache parameters to apply.',
         () => elasticache_ParameterGroupParameter_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level',
         () => InputType_Map_GetTypes(),
         false,
         false,

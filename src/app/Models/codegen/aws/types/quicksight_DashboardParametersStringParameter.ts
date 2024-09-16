@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface quicksight_DashboardParametersStringParameter {
   // Display name for the dashboard.
@@ -18,16 +18,16 @@ export function quicksight_DashboardParametersStringParameter_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Display name for the dashboard.",
+      'name',
+      'Display name for the dashboard.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "values",
-      "",
+      'values',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,

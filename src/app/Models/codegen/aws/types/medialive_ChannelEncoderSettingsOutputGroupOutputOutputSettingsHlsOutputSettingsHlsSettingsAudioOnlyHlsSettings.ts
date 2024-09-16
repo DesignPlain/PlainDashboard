@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImage,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImage_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImage";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImage';
 
 export interface medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettings {
   //
@@ -28,16 +28,16 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsH
   return [
     new DynamicUIProps(
       InputType.String,
-      "audioGroupId",
-      "",
+      'audioGroupId',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "audioOnlyImage",
-      "",
+      'audioOnlyImage',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImage_GetTypes(),
       false,
@@ -45,16 +45,16 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsH
     ),
     new DynamicUIProps(
       InputType.String,
-      "audioTrackType",
-      "",
+      'audioTrackType',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "segmentType",
-      "",
+      'segmentType',
+      '',
       () => [],
       false,
       false,

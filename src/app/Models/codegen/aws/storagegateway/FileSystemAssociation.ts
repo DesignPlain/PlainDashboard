@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   storagegateway_FileSystemAssociationCacheAttributes,
   storagegateway_FileSystemAssociationCacheAttributes_GetTypes,
-} from "../types/storagegateway_FileSystemAssociationCacheAttributes";
+} from '../types/storagegateway_FileSystemAssociationCacheAttributes';
 
 export interface FileSystemAssociationArgs {
   // The user name of the user credential that has permission to access the root share of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.
@@ -65,56 +65,56 @@ export class FileSystemAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "password",
-        "The password of the user credential.",
+        'password',
+        'The password of the user credential.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "username",
-        "The user name of the user credential that has permission to access the root share of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.",
+        'username',
+        'The user name of the user credential that has permission to access the root share of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "auditDestinationArn",
-        "The Amazon Resource Name (ARN) of the storage used for the audit logs.",
+        'auditDestinationArn',
+        'The Amazon Resource Name (ARN) of the storage used for the audit logs.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cacheAttributes",
-        "Refresh cache information. see Cache Attributes for more details.",
+        'cacheAttributes',
+        'Refresh cache information. see Cache Attributes for more details.',
         () => storagegateway_FileSystemAssociationCacheAttributes_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "gatewayArn",
-        "The Amazon Resource Name (ARN) of the gateway.",
+        'gatewayArn',
+        'The Amazon Resource Name (ARN) of the gateway.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "locationArn",
-        "The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.",
+        'locationArn',
+        'The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.',
         () => [],
         true,
         true,

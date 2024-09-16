@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bigquery_TableEncryptionConfiguration {
   /*
@@ -24,16 +24,16 @@ export function bigquery_TableEncryptionConfiguration_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyName",
-      "The self link or full name of a key which should be used to\nencrypt this table.  Note that the default bigquery service account will need to have\nencrypt/decrypt permissions on this key - you may want to see the\n`gcp.bigquery.getDefaultServiceAccount` datasource and the\n`gcp.kms.CryptoKeyIAMBinding` resource.",
+      'kmsKeyName',
+      'The self link or full name of a key which should be used to\nencrypt this table.  Note that the default bigquery service account will need to have\nencrypt/decrypt permissions on this key - you may want to see the\n`gcp.bigquery.getDefaultServiceAccount` datasource and the\n`gcp.kms.CryptoKeyIAMBinding` resource.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyVersion",
-      "The self link or full name of the kms key version used to encrypt this table.",
+      'kmsKeyVersion',
+      'The self link or full name of the kms key version used to encrypt this table.',
       () => [],
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_NetworkEndpointListNetworkEndpoint {
   /*
@@ -33,24 +33,24 @@ export function compute_NetworkEndpointListNetworkEndpoint_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "instance",
-      "The name for a specific VM instance that the IP address belongs to.\nThis is required for network endpoints of type GCE_VM_IP_PORT.\nThe instance must be in the same zone as the network endpoint group.",
+      'instance',
+      'The name for a specific VM instance that the IP address belongs to.\nThis is required for network endpoints of type GCE_VM_IP_PORT.\nThe instance must be in the same zone as the network endpoint group.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ipAddress",
-      "IPv4 address of network endpoint. The IP address must belong\nto a VM in GCE (either the primary IP or as part of an aliased IP\nrange).",
+      'ipAddress',
+      'IPv4 address of network endpoint. The IP address must belong\nto a VM in GCE (either the primary IP or as part of an aliased IP\nrange).',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "port",
-      "Port number of network endpoint.\n**Note** `port` is required unless the Network Endpoint Group is created\nwith the type of `GCE_VM_IP`",
+      'port',
+      'Port number of network endpoint.\n**Note** `port` is required unless the Network Endpoint Group is created\nwith the type of `GCE_VM_IP`',
       () => [],
       false,
       false,

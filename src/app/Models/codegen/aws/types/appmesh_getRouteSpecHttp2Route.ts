@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getRouteSpecHttp2RouteRetryPolicy,
   appmesh_getRouteSpecHttp2RouteRetryPolicy_GetTypes,
-} from "./appmesh_getRouteSpecHttp2RouteRetryPolicy";
+} from './appmesh_getRouteSpecHttp2RouteRetryPolicy';
 import {
   appmesh_getRouteSpecHttp2RouteTimeout,
   appmesh_getRouteSpecHttp2RouteTimeout_GetTypes,
-} from "./appmesh_getRouteSpecHttp2RouteTimeout";
+} from './appmesh_getRouteSpecHttp2RouteTimeout';
 import {
   appmesh_getRouteSpecHttp2RouteAction,
   appmesh_getRouteSpecHttp2RouteAction_GetTypes,
-} from "./appmesh_getRouteSpecHttp2RouteAction";
+} from './appmesh_getRouteSpecHttp2RouteAction';
 import {
   appmesh_getRouteSpecHttp2RouteMatch,
   appmesh_getRouteSpecHttp2RouteMatch_GetTypes,
-} from "./appmesh_getRouteSpecHttp2RouteMatch";
+} from './appmesh_getRouteSpecHttp2RouteMatch';
 
 export interface appmesh_getRouteSpecHttp2Route {
   //
@@ -40,32 +40,32 @@ export function appmesh_getRouteSpecHttp2Route_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "matches",
-      "",
+      'matches',
+      '',
       () => appmesh_getRouteSpecHttp2RouteMatch_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "retryPolicies",
-      "",
+      'retryPolicies',
+      '',
       () => appmesh_getRouteSpecHttp2RouteRetryPolicy_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "timeouts",
-      "",
+      'timeouts',
+      '',
       () => appmesh_getRouteSpecHttp2RouteTimeout_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "actions",
-      "",
+      'actions',
+      '',
       () => appmesh_getRouteSpecHttp2RouteAction_GetTypes(),
       true,
       false,

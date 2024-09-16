@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfunctionsv2_getFunctionBuildConfigSource,
   cloudfunctionsv2_getFunctionBuildConfigSource_GetTypes,
-} from "./cloudfunctionsv2_getFunctionBuildConfigSource";
+} from './cloudfunctionsv2_getFunctionBuildConfigSource';
 
 export interface cloudfunctionsv2_getFunctionBuildConfig {
   // User managed repository created in Artifact Registry optionally with a customer managed encryption key.
@@ -49,31 +49,31 @@ export function cloudfunctionsv2_getFunctionBuildConfig_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "workerPool",
-      "Name of the Cloud Build Custom Worker Pool that should be used to build the function.",
+      'workerPool',
+      'Name of the Cloud Build Custom Worker Pool that should be used to build the function.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "build",
-      "The Cloud Build name of the latest successful\ndeployment of the function.",
+      'build',
+      'The Cloud Build name of the latest successful\ndeployment of the function.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dockerRepository",
-      "User managed repository created in Artifact Registry optionally with a customer managed encryption key.",
+      'dockerRepository',
+      'User managed repository created in Artifact Registry optionally with a customer managed encryption key.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "entryPoint",
+      'entryPoint',
       'The name of the function (as defined in source code) that will be executed.\nDefaults to the resource name suffix, if not specified. For backward\ncompatibility, if function with given name is not found, then the system\nwill try to use function named "function". For Node.js this is name of a\nfunction exported by the module specified in source_location.',
       () => [],
       true,
@@ -81,24 +81,24 @@ export function cloudfunctionsv2_getFunctionBuildConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Map,
-      "environmentVariables",
-      "User-provided build-time environment variables for the function.",
+      'environmentVariables',
+      'User-provided build-time environment variables for the function.',
       () => InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "runtime",
-      "The runtime in which to run the function. Required when deploying a new\nfunction, optional when updating an existing function.",
+      'runtime',
+      'The runtime in which to run the function. Required when deploying a new\nfunction, optional when updating an existing function.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sources",
-      "The location of the function source code.",
+      'sources',
+      'The location of the function source code.',
       () => cloudfunctionsv2_getFunctionBuildConfigSource_GetTypes(),
       true,
       false,

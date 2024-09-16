@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface databasemigrationservice_PrivateConnectionVpcPeeringConfig {
   /*
@@ -25,16 +25,16 @@ export function databasemigrationservice_PrivateConnectionVpcPeeringConfig_GetTy
   return [
     new DynamicUIProps(
       InputType.String,
-      "subnet",
-      "A free subnet for peering. (CIDR of /29)\n\n- - -",
+      'subnet',
+      'A free subnet for peering. (CIDR of /29)\n\n- - -',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "vpcName",
-      "Fully qualified name of the VPC that Database Migration Service will peer to.\nFormat: projects/{project}/global/{networks}/{name}",
+      'vpcName',
+      'Fully qualified name of the VPC that Database Migration Service will peer to.\nFormat: projects/{project}/global/{networks}/{name}',
       () => [],
       true,
       true,

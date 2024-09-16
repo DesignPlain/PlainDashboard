@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface s3_InventorySchedule {
   // Specifies how frequently inventory results are produced. Valid values: `Daily`, `Weekly`.
@@ -15,8 +15,8 @@ export function s3_InventorySchedule_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "frequency",
-      "Specifies how frequently inventory results are produced. Valid values: `Daily`, `Weekly`.",
+      'frequency',
+      'Specifies how frequently inventory results are produced. Valid values: `Daily`, `Weekly`.',
       () => [],
       true,
       false,

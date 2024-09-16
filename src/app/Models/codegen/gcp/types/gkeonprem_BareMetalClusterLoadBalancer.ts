@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig,
   gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig_GetTypes,
-} from "./gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig";
+} from './gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig';
 import {
   gkeonprem_BareMetalClusterLoadBalancerPortConfig,
   gkeonprem_BareMetalClusterLoadBalancerPortConfig_GetTypes,
-} from "./gkeonprem_BareMetalClusterLoadBalancerPortConfig";
+} from './gkeonprem_BareMetalClusterLoadBalancerPortConfig';
 import {
   gkeonprem_BareMetalClusterLoadBalancerVipConfig,
   gkeonprem_BareMetalClusterLoadBalancerVipConfig_GetTypes,
-} from "./gkeonprem_BareMetalClusterLoadBalancerVipConfig";
+} from './gkeonprem_BareMetalClusterLoadBalancerVipConfig';
 import {
   gkeonprem_BareMetalClusterLoadBalancerBgpLbConfig,
   gkeonprem_BareMetalClusterLoadBalancerBgpLbConfig_GetTypes,
-} from "./gkeonprem_BareMetalClusterLoadBalancerBgpLbConfig";
+} from './gkeonprem_BareMetalClusterLoadBalancerBgpLbConfig';
 import {
   gkeonprem_BareMetalClusterLoadBalancerManualLbConfig,
   gkeonprem_BareMetalClusterLoadBalancerManualLbConfig_GetTypes,
-} from "./gkeonprem_BareMetalClusterLoadBalancerManualLbConfig";
+} from './gkeonprem_BareMetalClusterLoadBalancerManualLbConfig';
 
 export interface gkeonprem_BareMetalClusterLoadBalancer {
   /*
@@ -62,40 +62,40 @@ export function gkeonprem_BareMetalClusterLoadBalancer_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Object,
-      "portConfig",
-      "Specifies the load balancer ports.\nStructure is documented below.",
+      'portConfig',
+      'Specifies the load balancer ports.\nStructure is documented below.',
       () => gkeonprem_BareMetalClusterLoadBalancerPortConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "vipConfig",
-      "Specified the Bare Metal Load Balancer Config\nStructure is documented below.",
+      'vipConfig',
+      'Specified the Bare Metal Load Balancer Config\nStructure is documented below.',
       () => gkeonprem_BareMetalClusterLoadBalancerVipConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "bgpLbConfig",
-      "Configuration for BGP typed load balancers.\nStructure is documented below.",
+      'bgpLbConfig',
+      'Configuration for BGP typed load balancers.\nStructure is documented below.',
       () => gkeonprem_BareMetalClusterLoadBalancerBgpLbConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "manualLbConfig",
-      "A nested object resource\nStructure is documented below.",
+      'manualLbConfig',
+      'A nested object resource\nStructure is documented below.',
       () => gkeonprem_BareMetalClusterLoadBalancerManualLbConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "metalLbConfig",
-      "A nested object resource\nStructure is documented below.",
+      'metalLbConfig',
+      'A nested object resource\nStructure is documented below.',
       () => gkeonprem_BareMetalClusterLoadBalancerMetalLbConfig_GetTypes(),
       false,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_getClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput,
   msk_getClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput_GetTypes,
-} from "./msk_getClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput";
+} from './msk_getClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput';
 
 export interface msk_getClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo {
   //
@@ -22,8 +22,8 @@ export function msk_getClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo_GetTy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "provisionedThroughputs",
-      "",
+      'provisionedThroughputs',
+      '',
       () =>
         msk_getClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughput_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function msk_getClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfo_GetTy
     ),
     new DynamicUIProps(
       InputType.Number,
-      "volumeSize",
-      "",
+      'volumeSize',
+      '',
       () => [],
       true,
       false,

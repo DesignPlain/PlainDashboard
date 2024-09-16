@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   mskconnect_CustomPluginLocation,
   mskconnect_CustomPluginLocation_GetTypes,
-} from "../types/mskconnect_CustomPluginLocation";
+} from '../types/mskconnect_CustomPluginLocation';
 
 export interface CustomPluginArgs {
   // A summary description of the custom plugin.
@@ -67,40 +67,40 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A summary description of the custom plugin.",
+        'description',
+        'A summary description of the custom plugin.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "location",
-        "Information about the location of a custom plugin. See `location` Block for details.",
+        'location',
+        'Information about the location of a custom plugin. See `location` Block for details.',
         () => mskconnect_CustomPluginLocation_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the custom plugin..",
+        'name',
+        'The name of the custom plugin..',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\nThe following arguments are optional:",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.\n\nThe following arguments are optional:',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "contentType",
-        "The type of the plugin file. Allowed values are `ZIP` and `JAR`.",
+        'contentType',
+        'The type of the plugin file. Allowed values are `ZIP` and `JAR`.',
         () => [],
         true,
         true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties';
 
 export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoData {
   //
@@ -37,32 +37,32 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePr
   return [
     new DynamicUIProps(
       InputType.String,
-      "applicationServicePath",
-      "The application path to catalog service.",
+      'applicationServicePath',
+      'The application path to catalog service.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientNumber",
-      "The client number for the client creating the connection.",
+      'clientNumber',
+      'The client number for the client creating the connection.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "logonLanguage",
-      "The logon language of SAPOData instance.",
+      'logonLanguage',
+      'The logon language of SAPOData instance.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oauthProperties",
-      "The SAPOData OAuth properties required for OAuth type authentication.",
+      'oauthProperties',
+      'The SAPOData OAuth properties required for OAuth type authentication.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthProperties_GetTypes(),
       false,
@@ -70,24 +70,24 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfilePr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "portNumber",
-      "The port number of the SAPOData instance.",
+      'portNumber',
+      'The port number of the SAPOData instance.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "privateLinkServiceName",
-      "",
+      'privateLinkServiceName',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "applicationHostUrl",
-      "The location of the SAPOData resource.",
+      'applicationHostUrl',
+      'The location of the SAPOData resource.',
       () => [],
       true,
       false,

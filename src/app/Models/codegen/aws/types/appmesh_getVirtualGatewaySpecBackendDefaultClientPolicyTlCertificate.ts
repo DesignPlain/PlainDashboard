@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateSd,
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateSd_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateSd";
+} from './appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateSd';
 import {
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateFile,
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateFile_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateFile";
+} from './appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateFile';
 
 export interface appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate {
   //
@@ -26,8 +26,8 @@ export function appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertifi
   return [
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateFile_GetTypes(),
       true,
@@ -35,8 +35,8 @@ export function appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertifi
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sds",
-      "",
+      'sds',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificateSd_GetTypes(),
       true,

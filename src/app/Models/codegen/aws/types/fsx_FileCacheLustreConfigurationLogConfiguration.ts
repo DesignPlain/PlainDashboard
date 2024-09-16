@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface fsx_FileCacheLustreConfigurationLogConfiguration {
   //
@@ -18,12 +18,12 @@ export function fsx_FileCacheLustreConfigurationLogConfiguration_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "destination",
-      "",
+      'destination',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.String, "level", "", () => [], false, false),
+    new DynamicUIProps(InputType.String, 'level', '', () => [], false, false),
   ];
 }

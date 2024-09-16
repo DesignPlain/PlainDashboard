@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface FirewallRuleArgs {
   /*
@@ -73,40 +73,40 @@ Possible values are: `UNSPECIFIED_ACTION`, `ALLOW`, `DENY`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "action",
-        "The action to take if this rule matches.\nPossible values are: `UNSPECIFIED_ACTION`, `ALLOW`, `DENY`.\n\n\n- - -",
+        'action',
+        'The action to take if this rule matches.\nPossible values are: `UNSPECIFIED_ACTION`, `ALLOW`, `DENY`.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional string description of this rule.",
+        'description',
+        'An optional string description of this rule.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "priority",
-        "A positive integer that defines the order of rule evaluation.\nRules with the lowest priority are evaluated first.\nA default rule at priority Int32.MaxValue matches all IPv4 and\nIPv6 traffic when no previous rule matches. Only the action of\nthis rule can be modified by the user.",
+        'priority',
+        'A positive integer that defines the order of rule evaluation.\nRules with the lowest priority are evaluated first.\nA default rule at priority Int32.MaxValue matches all IPv4 and\nIPv6 traffic when no previous rule matches. Only the action of\nthis rule can be modified by the user.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceRange",
-        "IP address or range, defined using CIDR notation, of requests that this rule applies to.",
+        'sourceRange',
+        'IP address or range, defined using CIDR notation, of requests that this rule applies to.',
         () => [],
         true,
         false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EndpointArgs {
   // An optional description of the endpoint.
@@ -89,47 +89,47 @@ Possible values are: `INFORMATIONAL`, `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "severity",
-        "The minimum alert severity level that is reported by the endpoint.\nPossible values are: `INFORMATIONAL`, `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.",
+        'severity',
+        'The minimum alert severity level that is reported by the endpoint.\nPossible values are: `INFORMATIONAL`, `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "threatExceptions",
-        "Configuration for threat IDs excluded from generating alerts. Limit: 99 IDs.",
+        'threatExceptions',
+        'Configuration for threat IDs excluded from generating alerts. Limit: 99 IDs.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of the endpoint.",
+        'description',
+        'An optional description of the endpoint.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the endpoint.\n\n\n- - -",
+        'location',
+        'The location for the endpoint.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the endpoint in the format projects/{project_id}/locations/{locationId}/endpoints/{endpointId}.",
+        'name',
+        'Name of the endpoint in the format projects/{project_id}/locations/{locationId}/endpoints/{endpointId}.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
+        'network',
         'Name of the VPC network that is connected to the IDS endpoint. This can either contain the VPC network name itself (like "src-net") or the full URL to the network (like "projects/{project_id}/global/networks/src-net").',
         () => [],
         true,
@@ -137,8 +137,8 @@ Possible values are: `INFORMATIONAL`, `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

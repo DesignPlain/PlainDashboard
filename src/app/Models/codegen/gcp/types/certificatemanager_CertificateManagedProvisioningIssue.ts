@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface certificatemanager_CertificateManagedProvisioningIssue {
   /*
@@ -26,16 +26,16 @@ export function certificatemanager_CertificateManagedProvisioningIssue_GetTypes(
   return [
     new DynamicUIProps(
       InputType.String,
-      "details",
-      "(Output)\nHuman readable explanation for reaching the state. Provided to help\naddress the configuration issues.\nNot guaranteed to be stable. For programmatic access use `failure_reason` field.",
+      'details',
+      '(Output)\nHuman readable explanation for reaching the state. Provided to help\naddress the configuration issues.\nNot guaranteed to be stable. For programmatic access use `failure_reason` field.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "reason",
-      "(Output)\nReason for provisioning failures.",
+      'reason',
+      '(Output)\nReason for provisioning failures.',
       () => [],
       false,
       false,

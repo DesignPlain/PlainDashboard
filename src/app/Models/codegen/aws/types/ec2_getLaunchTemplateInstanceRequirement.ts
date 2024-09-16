@@ -3,44 +3,44 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_getLaunchTemplateInstanceRequirementAcceleratorTotalMemoryMib,
   ec2_getLaunchTemplateInstanceRequirementAcceleratorTotalMemoryMib_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementAcceleratorTotalMemoryMib";
+} from './ec2_getLaunchTemplateInstanceRequirementAcceleratorTotalMemoryMib';
 import {
   ec2_getLaunchTemplateInstanceRequirementNetworkInterfaceCount,
   ec2_getLaunchTemplateInstanceRequirementNetworkInterfaceCount_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementNetworkInterfaceCount";
+} from './ec2_getLaunchTemplateInstanceRequirementNetworkInterfaceCount';
 import {
   ec2_getLaunchTemplateInstanceRequirementMemoryMib,
   ec2_getLaunchTemplateInstanceRequirementMemoryMib_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementMemoryMib";
+} from './ec2_getLaunchTemplateInstanceRequirementMemoryMib';
 import {
   ec2_getLaunchTemplateInstanceRequirementBaselineEbsBandwidthMbp,
   ec2_getLaunchTemplateInstanceRequirementBaselineEbsBandwidthMbp_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementBaselineEbsBandwidthMbp";
+} from './ec2_getLaunchTemplateInstanceRequirementBaselineEbsBandwidthMbp';
 import {
   ec2_getLaunchTemplateInstanceRequirementMemoryGibPerVcpus,
   ec2_getLaunchTemplateInstanceRequirementMemoryGibPerVcpus_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementMemoryGibPerVcpus";
+} from './ec2_getLaunchTemplateInstanceRequirementMemoryGibPerVcpus';
 import {
   ec2_getLaunchTemplateInstanceRequirementVcpuCount,
   ec2_getLaunchTemplateInstanceRequirementVcpuCount_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementVcpuCount";
+} from './ec2_getLaunchTemplateInstanceRequirementVcpuCount';
 import {
   ec2_getLaunchTemplateInstanceRequirementAcceleratorCount,
   ec2_getLaunchTemplateInstanceRequirementAcceleratorCount_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementAcceleratorCount";
+} from './ec2_getLaunchTemplateInstanceRequirementAcceleratorCount';
 import {
   ec2_getLaunchTemplateInstanceRequirementNetworkBandwidthGbp,
   ec2_getLaunchTemplateInstanceRequirementNetworkBandwidthGbp_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementNetworkBandwidthGbp";
+} from './ec2_getLaunchTemplateInstanceRequirementNetworkBandwidthGbp';
 import {
   ec2_getLaunchTemplateInstanceRequirementTotalLocalStorageGb,
   ec2_getLaunchTemplateInstanceRequirementTotalLocalStorageGb_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceRequirementTotalLocalStorageGb";
+} from './ec2_getLaunchTemplateInstanceRequirementTotalLocalStorageGb';
 
 export interface ec2_getLaunchTemplateInstanceRequirement {
   //
@@ -120,16 +120,16 @@ export function ec2_getLaunchTemplateInstanceRequirement_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Array,
-      "acceleratorCounts",
-      "",
+      'acceleratorCounts',
+      '',
       () => ec2_getLaunchTemplateInstanceRequirementAcceleratorCount_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "acceleratorTotalMemoryMibs",
-      "",
+      'acceleratorTotalMemoryMibs',
+      '',
       () =>
         ec2_getLaunchTemplateInstanceRequirementAcceleratorTotalMemoryMib_GetTypes(),
       true,
@@ -137,8 +137,8 @@ export function ec2_getLaunchTemplateInstanceRequirement_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "networkInterfaceCounts",
-      "",
+      'networkInterfaceCounts',
+      '',
       () =>
         ec2_getLaunchTemplateInstanceRequirementNetworkInterfaceCount_GetTypes(),
       true,
@@ -146,16 +146,16 @@ export function ec2_getLaunchTemplateInstanceRequirement_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "requireHibernateSupport",
-      "",
+      'requireHibernateSupport',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "networkBandwidthGbps",
-      "",
+      'networkBandwidthGbps',
+      '',
       () =>
         ec2_getLaunchTemplateInstanceRequirementNetworkBandwidthGbp_GetTypes(),
       true,
@@ -163,40 +163,40 @@ export function ec2_getLaunchTemplateInstanceRequirement_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "acceleratorManufacturers",
-      "",
+      'acceleratorManufacturers',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxSpotPriceAsPercentageOfOptimalOnDemandPrice",
-      "",
+      'maxSpotPriceAsPercentageOfOptimalOnDemandPrice',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "acceleratorTypes",
-      "",
+      'acceleratorTypes',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "memoryMibs",
-      "",
+      'memoryMibs',
+      '',
       () => ec2_getLaunchTemplateInstanceRequirementMemoryMib_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "baselineEbsBandwidthMbps",
-      "",
+      'baselineEbsBandwidthMbps',
+      '',
       () =>
         ec2_getLaunchTemplateInstanceRequirementBaselineEbsBandwidthMbp_GetTypes(),
       true,
@@ -204,8 +204,8 @@ export function ec2_getLaunchTemplateInstanceRequirement_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Array,
-      "memoryGibPerVcpus",
-      "",
+      'memoryGibPerVcpus',
+      '',
       () =>
         ec2_getLaunchTemplateInstanceRequirementMemoryGibPerVcpus_GetTypes(),
       true,
@@ -213,24 +213,24 @@ export function ec2_getLaunchTemplateInstanceRequirement_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Number,
-      "onDemandMaxPricePercentageOverLowestPrice",
-      "",
+      'onDemandMaxPricePercentageOverLowestPrice',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "localStorageTypes",
-      "",
+      'localStorageTypes',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "totalLocalStorageGbs",
-      "",
+      'totalLocalStorageGbs',
+      '',
       () =>
         ec2_getLaunchTemplateInstanceRequirementTotalLocalStorageGb_GetTypes(),
       true,
@@ -238,80 +238,80 @@ export function ec2_getLaunchTemplateInstanceRequirement_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.String,
-      "burstablePerformance",
-      "",
+      'burstablePerformance',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowedInstanceTypes",
-      "",
+      'allowedInstanceTypes',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "cpuManufacturers",
-      "",
+      'cpuManufacturers',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "vcpuCounts",
-      "",
+      'vcpuCounts',
+      '',
       () => ec2_getLaunchTemplateInstanceRequirementVcpuCount_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "spotMaxPricePercentageOverLowestPrice",
-      "",
+      'spotMaxPricePercentageOverLowestPrice',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "acceleratorNames",
-      "",
+      'acceleratorNames',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bareMetal",
-      "",
+      'bareMetal',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "instanceGenerations",
-      "",
+      'instanceGenerations',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "localStorage",
-      "",
+      'localStorage',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "excludedInstanceTypes",
-      "",
+      'excludedInstanceTypes',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,

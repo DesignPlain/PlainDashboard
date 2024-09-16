@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface osconfig_PatchDeploymentOneTimeSchedule {
   /*
@@ -18,7 +18,7 @@ export function osconfig_PatchDeploymentOneTimeSchedule_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "executeTime",
+      'executeTime',
       'The desired patch job execution time. A timestamp in RFC3339 UTC "Zulu" format,\naccurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".',
       () => [],
       true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vpclattice_ListenerDefaultAction,
   vpclattice_ListenerDefaultAction_GetTypes,
-} from "../types/vpclattice_ListenerDefaultAction";
+} from '../types/vpclattice_ListenerDefaultAction';
 
 export interface ListenerArgs {
   // Name of the listener. A listener name must be unique within a service. Valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
@@ -80,23 +80,23 @@ ID of the VPC Lattice service. You must include either the `service_arn` or `ser
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "defaultAction",
-        "Default action block for the default listener rule. Default action blocks are defined below.",
+        'defaultAction',
+        'Default action block for the default listener rule. Default action blocks are defined below.',
         () => vpclattice_ListenerDefaultAction_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         "Name of the listener. A listener name must be unique within a service. Valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.",
         () => [],
         false,
@@ -104,32 +104,32 @@ ID of the VPC Lattice service. You must include either the `service_arn` or `ser
       ),
       new DynamicUIProps(
         InputType.Number,
-        "port",
-        "Listener port. You can specify a value from 1 to 65535. If `port` is not specified and `protocol` is HTTP, the value will default to 80. If `port` is not specified and `protocol` is HTTPS, the value will default to 443.",
+        'port',
+        'Listener port. You can specify a value from 1 to 65535. If `port` is not specified and `protocol` is HTTP, the value will default to 80. If `port` is not specified and `protocol` is HTTPS, the value will default to 443.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "protocol",
-        "Protocol for the listener. Supported values are `HTTP`, `HTTPS` or `TLS_PASSTHROUGH`",
+        'protocol',
+        'Protocol for the listener. Supported values are `HTTP`, `HTTPS` or `TLS_PASSTHROUGH`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceArn",
-        "Amazon Resource Name (ARN) of the VPC Lattice service. You must include either the `service_arn` or `service_identifier` arguments.",
+        'serviceArn',
+        'Amazon Resource Name (ARN) of the VPC Lattice service. You must include either the `service_arn` or `service_identifier` arguments.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceIdentifier",
-        "ID of the VPC Lattice service. You must include either the `service_arn` or `service_identifier` arguments.\n> **NOTE:** You must specify one of the following arguments: `service_arn` or `service_identifier`.",
+        'serviceIdentifier',
+        'ID of the VPC Lattice service. You must include either the `service_arn` or `service_identifier` arguments.\n> **NOTE:** You must specify one of the following arguments: `service_arn` or `service_identifier`.',
         () => [],
         false,
         false,

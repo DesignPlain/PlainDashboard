@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent,
   diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent_GetTypes,
-} from "./diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent";
+} from './diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent';
 import {
   diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText,
   diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText_GetTypes,
-} from "./diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText";
+} from './diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText';
 import {
   diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf,
   diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf_GetTypes,
-} from "./diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf";
+} from './diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf';
 
 export interface diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput {
   /*
@@ -48,8 +48,8 @@ export function diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput_
   return [
     new DynamicUIProps(
       InputType.Object,
-      "text",
-      "The natural language text to be processed.\nStructure is documented below.",
+      'text',
+      'The natural language text to be processed.\nStructure is documented below.',
       () =>
         diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputText_GetTypes(),
       false,
@@ -57,8 +57,8 @@ export function diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dtmf",
-      "The DTMF event to be handled.\nStructure is documented below.",
+      'dtmf',
+      'The DTMF event to be handled.\nStructure is documented below.',
       () =>
         diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputDtmf_GetTypes(),
       false,
@@ -66,8 +66,8 @@ export function diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "event",
-      "The event to be triggered.\nStructure is documented below.",
+      'event',
+      'The event to be triggered.\nStructure is documented below.',
       () =>
         diagflow_CxTestCaseLastTestResultConversationTurnUserInputInputEvent_GetTypes(),
       false,
@@ -75,8 +75,8 @@ export function diagflow_CxTestCaseLastTestResultConversationTurnUserInputInput_
     ),
     new DynamicUIProps(
       InputType.String,
-      "languageCode",
-      "The language of the input. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes.\nNote that queries in the same session do not necessarily need to specify the same language.",
+      'languageCode',
+      'The language of the input. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes.\nNote that queries in the same session do not necessarily need to specify the same language.',
       () => [],
       false,
       false,

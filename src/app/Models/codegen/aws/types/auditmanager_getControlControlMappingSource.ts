@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   auditmanager_getControlControlMappingSourceSourceKeyword,
   auditmanager_getControlControlMappingSourceSourceKeyword_GetTypes,
-} from "./auditmanager_getControlControlMappingSourceSourceKeyword";
+} from './auditmanager_getControlControlMappingSourceSourceKeyword';
 
 export interface auditmanager_getControlControlMappingSource {
   //
@@ -40,57 +40,57 @@ export function auditmanager_getControlControlMappingSource_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "sourceSetUpOption",
-      "",
+      'sourceSetUpOption',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sourceType",
-      "",
+      'sourceType',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "troubleshootingText",
-      "",
+      'troubleshootingText',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sourceDescription",
-      "",
+      'sourceDescription',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sourceFrequency",
-      "",
+      'sourceFrequency',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "sourceId", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'sourceId', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Object,
-      "sourceKeyword",
-      "",
+      'sourceKeyword',
+      '',
       () => auditmanager_getControlControlMappingSourceSourceKeyword_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sourceName",
-      "",
+      'sourceName',
+      '',
       () => [],
       true,
       false,

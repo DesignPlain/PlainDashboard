@@ -27,7 +27,7 @@ import { faHashnode } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  constructor() { }
+  constructor() {}
 
   cardStyle = {
     outline: '0px',

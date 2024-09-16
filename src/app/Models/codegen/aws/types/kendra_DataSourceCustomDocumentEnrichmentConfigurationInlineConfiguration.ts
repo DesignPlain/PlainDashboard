@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTarget,
   kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTarget_GetTypes,
-} from "./kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTarget";
+} from './kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTarget';
 import {
   kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationCondition,
   kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationCondition_GetTypes,
-} from "./kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationCondition";
+} from './kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationCondition';
 
 export interface kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfiguration {
   // Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value. Detailed below.
@@ -29,8 +29,8 @@ export function kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConf
   return [
     new DynamicUIProps(
       InputType.Object,
-      "target",
-      "Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value. Detailed below.",
+      'target',
+      'Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value. Detailed below.',
       () =>
         kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTarget_GetTypes(),
       false,
@@ -38,8 +38,8 @@ export function kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConf
     ),
     new DynamicUIProps(
       InputType.Object,
-      "condition",
-      "Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra. See condition.",
+      'condition',
+      'Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra. See condition.',
       () =>
         kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationCondition_GetTypes(),
       false,
@@ -47,8 +47,8 @@ export function kendra_DataSourceCustomDocumentEnrichmentConfigurationInlineConf
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "documentContentDeletion",
-      "`TRUE` to delete content if the condition used for the target attribute is met.",
+      'documentContentDeletion',
+      '`TRUE` to delete content if the condition used for the target attribute is met.',
       () => [],
       false,
       false,

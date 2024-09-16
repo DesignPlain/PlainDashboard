@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ExtensionAssociationArgs {
   // The ARN of the extension defined in the association.
@@ -37,24 +37,24 @@ export class ExtensionAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "resourceArn",
-        "The ARN of the application, configuration profile, or environment to associate with the extension.",
+        'resourceArn',
+        'The ARN of the application, configuration profile, or environment to associate with the extension.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "extensionArn",
-        "The ARN of the extension defined in the association.",
+        'extensionArn',
+        'The ARN of the extension defined in the association.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "parameters",
-        "The parameter names and values defined for the association.",
+        'parameters',
+        'The parameter names and values defined for the association.',
         () => InputType_Map_GetTypes(),
         false,
         false,

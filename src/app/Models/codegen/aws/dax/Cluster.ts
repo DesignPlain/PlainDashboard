@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dax_ClusterServerSideEncryption,
   dax_ClusterServerSideEncryption_GetTypes,
-} from "../types/dax_ClusterServerSideEncryption";
+} from '../types/dax_ClusterServerSideEncryption';
 import {
   dax_ClusterNode,
   dax_ClusterNode_GetTypes,
-} from "../types/dax_ClusterNode";
+} from '../types/dax_ClusterNode';
 
 export interface ClusterArgs {
   /*
@@ -208,7 +208,7 @@ cluster
     return [
       new DynamicUIProps(
         InputType.String,
-        "clusterEndpointEncryptionType",
+        'clusterEndpointEncryptionType',
         "The type of encryption the\ncluster's endpoint should support. Valid values are: `NONE` and `TLS`.\nDefault value is `NONE`.",
         () => [],
         false,
@@ -216,31 +216,31 @@ cluster
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterName",
-        "Group identifier. DAX converts this name to\nlowercase",
+        'clusterName',
+        'Group identifier. DAX converts this name to\nlowercase',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "nodeType",
-        "The compute and memory capacity of the nodes. See\n[Nodes](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.cluster.html#DAX.concepts.nodes) for supported node types",
+        'nodeType',
+        'The compute and memory capacity of the nodes. See\n[Nodes](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.cluster.html#DAX.concepts.nodes) for supported node types',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "iamRoleArn",
+        'iamRoleArn',
         "A valid Amazon Resource Name (ARN) that identifies\nan IAM role. At runtime, DAX will assume this role and use the role's\npermissions to access DynamoDB on your behalf",
         () => [],
         true,
@@ -248,72 +248,72 @@ cluster
       ),
       new DynamicUIProps(
         InputType.Array,
-        "availabilityZones",
-        "List of Availability Zones in which the\nnodes will be created",
+        'availabilityZones',
+        'List of Availability Zones in which the\nnodes will be created',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description for the cluster",
+        'description',
+        'Description for the cluster',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "securityGroupIds",
-        "One or more VPC security groups associated\nwith the cluster",
+        'securityGroupIds',
+        'One or more VPC security groups associated\nwith the cluster',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "maintenanceWindow",
-        "Specifies the weekly time range for when\nmaintenance on the cluster is performed. The format is `ddd:hh24:mi-ddd:hh24:mi`\n(24H Clock UTC). The minimum maintenance window is a 60 minute period. Example:\n`sun:05:00-sun:09:00`",
+        'maintenanceWindow',
+        'Specifies the weekly time range for when\nmaintenance on the cluster is performed. The format is `ddd:hh24:mi-ddd:hh24:mi`\n(24H Clock UTC). The minimum maintenance window is a 60 minute period. Example:\n`sun:05:00-sun:09:00`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "notificationTopicArn",
-        "An Amazon Resource Name (ARN) of an\nSNS topic to send DAX notifications to. Example:\n`arn:aws:sns:us-east-1:012345678999:my_sns_topic`",
+        'notificationTopicArn',
+        'An Amazon Resource Name (ARN) of an\nSNS topic to send DAX notifications to. Example:\n`arn:aws:sns:us-east-1:012345678999:my_sns_topic`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parameterGroupName",
-        "Name of the parameter group to associate\nwith this DAX cluster",
+        'parameterGroupName',
+        'Name of the parameter group to associate\nwith this DAX cluster',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serverSideEncryption",
-        "Encrypt at rest options",
+        'serverSideEncryption',
+        'Encrypt at rest options',
         () => dax_ClusterServerSideEncryption_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "replicationFactor",
-        "The number of nodes in the DAX cluster. A\nreplication factor of 1 will create a single-node cluster, without any read\nreplicas",
+        'replicationFactor',
+        'The number of nodes in the DAX cluster. A\nreplication factor of 1 will create a single-node cluster, without any read\nreplicas',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetGroupName",
-        "Name of the subnet group to be used for the\ncluster",
+        'subnetGroupName',
+        'Name of the subnet group to be used for the\ncluster',
         () => [],
         false,
         true,

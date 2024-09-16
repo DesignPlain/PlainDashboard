@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   firebase_HostingCustomDomainCertVerificationDnsDiscoveredRecord,
   firebase_HostingCustomDomainCertVerificationDnsDiscoveredRecord_GetTypes,
-} from "./firebase_HostingCustomDomainCertVerificationDnsDiscoveredRecord";
+} from './firebase_HostingCustomDomainCertVerificationDnsDiscoveredRecord';
 
 export interface firebase_HostingCustomDomainCertVerificationDnsDiscovered {
   // The domain name the record pertains to, e.g. `foo.bar.com.`.
@@ -25,8 +25,8 @@ export function firebase_HostingCustomDomainCertVerificationDnsDiscovered_GetTyp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "records",
-      "Records on the domain\nStructure is documented below.",
+      'records',
+      'Records on the domain\nStructure is documented below.',
       () =>
         firebase_HostingCustomDomainCertVerificationDnsDiscoveredRecord_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function firebase_HostingCustomDomainCertVerificationDnsDiscovered_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "domainName",
-      "The domain name the record pertains to, e.g. `foo.bar.com.`.",
+      'domainName',
+      'The domain name the record pertains to, e.g. `foo.bar.com.`.',
       () => [],
       false,
       false,

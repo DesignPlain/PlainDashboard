@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface StudioLifecycleConfigArgs {
   // The App type that the Lifecycle Configuration is attached to. Valid values are `JupyterServer`, `JupyterLab`, `CodeEditor` and `KernelGateway`.
@@ -43,32 +43,32 @@ export class StudioLifecycleConfig extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "studioLifecycleConfigContent",
-        "The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.",
+        'studioLifecycleConfigContent',
+        'The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "studioLifecycleConfigName",
-        "The name of the Studio Lifecycle Configuration to create.",
+        'studioLifecycleConfigName',
+        'The name of the Studio Lifecycle Configuration to create.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "studioLifecycleConfigAppType",
-        "The App type that the Lifecycle Configuration is attached to. Valid values are `JupyterServer`, `JupyterLab`, `CodeEditor` and `KernelGateway`.",
+        'studioLifecycleConfigAppType',
+        'The App type that the Lifecycle Configuration is attached to. Valid values are `JupyterServer`, `JupyterLab`, `CodeEditor` and `KernelGateway`.',
         () => [],
         true,
         true,

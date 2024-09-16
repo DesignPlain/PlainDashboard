@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3control_BucketLifecycleConfigurationRuleExpiration,
   s3control_BucketLifecycleConfigurationRuleExpiration_GetTypes,
-} from "./s3control_BucketLifecycleConfigurationRuleExpiration";
+} from './s3control_BucketLifecycleConfigurationRuleExpiration';
 import {
   s3control_BucketLifecycleConfigurationRuleFilter,
   s3control_BucketLifecycleConfigurationRuleFilter_GetTypes,
-} from "./s3control_BucketLifecycleConfigurationRuleFilter";
+} from './s3control_BucketLifecycleConfigurationRuleFilter';
 import {
   s3control_BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload,
   s3control_BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload_GetTypes,
-} from "./s3control_BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload";
+} from './s3control_BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload';
 
 export interface s3control_BucketLifecycleConfigurationRule {
   // Configuration block containing settings for abort incomplete multipart upload.
@@ -39,8 +39,8 @@ export function s3control_BucketLifecycleConfigurationRule_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Object,
-      "abortIncompleteMultipartUpload",
-      "Configuration block containing settings for abort incomplete multipart upload.",
+      'abortIncompleteMultipartUpload',
+      'Configuration block containing settings for abort incomplete multipart upload.',
       () =>
         s3control_BucketLifecycleConfigurationRuleAbortIncompleteMultipartUpload_GetTypes(),
       false,
@@ -48,32 +48,32 @@ export function s3control_BucketLifecycleConfigurationRule_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Object,
-      "expiration",
-      "Configuration block containing settings for expiration of objects.",
+      'expiration',
+      'Configuration block containing settings for expiration of objects.',
       () => s3control_BucketLifecycleConfigurationRuleExpiration_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "filter",
-      "Configuration block containing settings for filtering.",
+      'filter',
+      'Configuration block containing settings for filtering.',
       () => s3control_BucketLifecycleConfigurationRuleFilter_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "Unique identifier for the rule.",
+      'id',
+      'Unique identifier for the rule.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "Status of the rule. Valid values: `Enabled` and `Disabled`. Defaults to `Enabled`.",
+      'status',
+      'Status of the rule. Valid values: `Enabled` and `Disabled`. Defaults to `Enabled`.',
       () => [],
       false,
       false,

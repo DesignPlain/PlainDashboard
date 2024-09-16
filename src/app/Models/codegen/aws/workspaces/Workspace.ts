@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   workspaces_WorkspaceWorkspaceProperties,
   workspaces_WorkspaceWorkspaceProperties_GetTypes,
-} from "../types/workspaces_WorkspaceWorkspaceProperties";
+} from '../types/workspaces_WorkspaceWorkspaceProperties';
 
 export interface WorkspaceArgs {
   // Indicates whether the data stored on the user volume is encrypted.
@@ -77,64 +77,64 @@ export class Workspace extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "rootVolumeEncryptionEnabled",
-        "Indicates whether the data stored on the root volume is encrypted.",
+        'rootVolumeEncryptionEnabled',
+        'Indicates whether the data stored on the root volume is encrypted.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "The tags for the WorkSpace. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'The tags for the WorkSpace. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userName",
-        "The user name of the user for the WorkSpace. This user name must exist in the directory for the WorkSpace.",
+        'userName',
+        'The user name of the user for the WorkSpace. This user name must exist in the directory for the WorkSpace.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "userVolumeEncryptionEnabled",
-        "Indicates whether the data stored on the user volume is encrypted.",
+        'userVolumeEncryptionEnabled',
+        'Indicates whether the data stored on the user volume is encrypted.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "volumeEncryptionKey",
-        "The ARN of a symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.",
+        'volumeEncryptionKey',
+        'The ARN of a symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "workspaceProperties",
-        "The WorkSpace properties.",
+        'workspaceProperties',
+        'The WorkSpace properties.',
         () => workspaces_WorkspaceWorkspaceProperties_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "bundleId",
-        "The ID of the bundle for the WorkSpace.",
+        'bundleId',
+        'The ID of the bundle for the WorkSpace.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "directoryId",
-        "The ID of the directory for the WorkSpace.",
+        'directoryId',
+        'The ID of the directory for the WorkSpace.',
         () => [],
         true,
         true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   spanner_InstanceAutoscalingConfig,
   spanner_InstanceAutoscalingConfig_GetTypes,
-} from "../types/spanner_InstanceAutoscalingConfig";
+} from '../types/spanner_InstanceAutoscalingConfig';
 
 export interface InstanceArgs {
   /*
@@ -169,23 +169,23 @@ terraform.
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The descriptive name for this instance as it appears in UIs. Must be\nunique per project and between 4 and 30 characters in length.\n\n\n- - -",
+        'displayName',
+        'The descriptive name for this instance as it appears in UIs. Must be\nunique per project and between 4 and 30 characters in length.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDestroy",
-        "When deleting a spanner instance, this boolean option will delete all backups of this instance.\nThis must be set to true if you created a backup manually in the console.",
+        'forceDestroy',
+        'When deleting a spanner instance, this boolean option will delete all backups of this instance.\nThis must be set to true if you created a backup manually in the console.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'An object containing a list of "key": value pairs.\nExample: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -193,23 +193,23 @@ terraform.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "autoscalingConfig",
-        "The autoscaling configuration. Autoscaling is enabled if this field is set.\nWhen autoscaling is enabled, num_nodes and processing_units are treated as,\nOUTPUT_ONLY fields and reflect the current compute capacity allocated to\nthe instance.\nStructure is documented below.",
+        'autoscalingConfig',
+        'The autoscaling configuration. Autoscaling is enabled if this field is set.\nWhen autoscaling is enabled, num_nodes and processing_units are treated as,\nOUTPUT_ONLY fields and reflect the current compute capacity allocated to\nthe instance.\nStructure is documented below.',
         () => spanner_InstanceAutoscalingConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "config",
+        'config',
         "The name of the instance's configuration (similar but not\nquite the same as a region) which defines the geographic placement and\nreplication of your databases in this instance. It determines where your data\nis stored. Values are typically of the form `regional-europe-west1` , `us-central` etc.\nIn order to obtain a valid list please consult the\n[Configuration section of the docs](https://cloud.google.com/spanner/docs/instances).",
         () => [],
         true,
@@ -217,24 +217,24 @@ terraform.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "processingUnits",
-        "The number of processing units allocated to this instance. Exactly one of processing_units or node_count must be present\nin terraform.",
+        'processingUnits',
+        'The number of processing units allocated to this instance. Exactly one of processing_units or node_count must be present\nin terraform.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A unique identifier for the instance, which cannot be changed after\nthe instance is created. The name must be between 6 and 30 characters\nin length.\n\nIf not provided, a random string starting with `tf-` will be selected.",
+        'name',
+        'A unique identifier for the instance, which cannot be changed after\nthe instance is created. The name must be between 6 and 30 characters\nin length.\n\nIf not provided, a random string starting with `tf-` will be selected.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "numNodes",
-        "The number of nodes allocated to this instance. Exactly one of either node_count or processing_units must be present in\nterraform.",
+        'numNodes',
+        'The number of nodes allocated to this instance. Exactly one of either node_count or processing_units must be present in\nterraform.',
         () => [],
         false,
         false,

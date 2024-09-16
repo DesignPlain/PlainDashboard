@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_RouterNatLogConfig {
   // Indicates whether or not to export logs.
@@ -21,16 +21,16 @@ export function compute_RouterNatLogConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enable",
-      "Indicates whether or not to export logs.",
+      'enable',
+      'Indicates whether or not to export logs.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "filter",
-      "Specifies the desired filtering of logs on this NAT.\nPossible values are: `ERRORS_ONLY`, `TRANSLATIONS_ONLY`, `ALL`.",
+      'filter',
+      'Specifies the desired filtering of logs on this NAT.\nPossible values are: `ERRORS_ONLY`, `TRANSLATIONS_ONLY`, `ALL`.',
       () => [],
       true,
       false,

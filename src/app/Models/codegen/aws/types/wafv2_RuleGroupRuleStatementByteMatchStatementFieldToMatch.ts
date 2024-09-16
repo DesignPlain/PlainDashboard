@@ -3,56 +3,56 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJa3Fingerprint,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJa3Fingerprint_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJa3Fingerprint";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJa3Fingerprint';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleHeader,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleHeader_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleHeader";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleHeader';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleQueryArgument,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleQueryArgument_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleQueryArgument";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleQueryArgument';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPath,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPath_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPath";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPath';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchBody,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchBody_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchBody";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchBody';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchCookies,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchCookies_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchCookies";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchCookies';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBody,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBody_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBody";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBody';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeader,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeader_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeader";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeader';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchMethod,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchMethod_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchMethod";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchMethod';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchQueryString,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchQueryString_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchQueryString";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchQueryString';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderOrder,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderOrder_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderOrder";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderOrder';
 import {
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchAllQueryArguments,
   wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchAllQueryArguments_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchAllQueryArguments";
+} from './wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchAllQueryArguments';
 
 export interface wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch {
   // Inspect all query arguments.
@@ -96,8 +96,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
   return [
     new DynamicUIProps(
       InputType.Object,
-      "singleHeader",
-      "Inspect a single header. See Single Header below for details.",
+      'singleHeader',
+      'Inspect a single header. See Single Header below for details.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleHeader_GetTypes(),
       false,
@@ -105,8 +105,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "body",
-      "Inspect the request body, which immediately follows the request headers.",
+      'body',
+      'Inspect the request body, which immediately follows the request headers.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchBody_GetTypes(),
       false,
@@ -114,8 +114,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cookies",
-      "Inspect the cookies in the web request. See Cookies below for details.",
+      'cookies',
+      'Inspect the cookies in the web request. See Cookies below for details.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchCookies_GetTypes(),
       false,
@@ -123,8 +123,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headerOrders",
-      "Inspect the request headers. See Header Order below for details.",
+      'headerOrders',
+      'Inspect the request headers. See Header Order below for details.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderOrder_GetTypes(),
       false,
@@ -132,8 +132,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "jsonBody",
-      "Inspect the request body as JSON. See JSON Body for details.",
+      'jsonBody',
+      'Inspect the request body as JSON. See JSON Body for details.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBody_GetTypes(),
       false,
@@ -141,8 +141,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "uriPath",
-      "Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.",
+      'uriPath',
+      'Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPath_GetTypes(),
       false,
@@ -150,8 +150,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "method",
-      "Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.",
+      'method',
+      'Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchMethod_GetTypes(),
       false,
@@ -159,8 +159,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "allQueryArguments",
-      "Inspect all query arguments.",
+      'allQueryArguments',
+      'Inspect all query arguments.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchAllQueryArguments_GetTypes(),
       false,
@@ -168,8 +168,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headers",
-      "Inspect the request headers. See Headers below for details.",
+      'headers',
+      'Inspect the request headers. See Headers below for details.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchHeader_GetTypes(),
       false,
@@ -177,8 +177,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ja3Fingerprint",
-      "",
+      'ja3Fingerprint',
+      '',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchJa3Fingerprint_GetTypes(),
       false,
@@ -186,8 +186,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "queryString",
-      "Inspect the query string. This is the part of a URL that appears after a `?` character, if any.",
+      'queryString',
+      'Inspect the query string. This is the part of a URL that appears after a `?` character, if any.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchQueryString_GetTypes(),
       false,
@@ -195,8 +195,8 @@ export function wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatch_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleQueryArgument",
-      "Inspect a single query argument. See Single Query Argument below for details.",
+      'singleQueryArgument',
+      'Inspect a single query argument. See Single Query Argument below for details.',
       () =>
         wafv2_RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleQueryArgument_GetTypes(),
       false,

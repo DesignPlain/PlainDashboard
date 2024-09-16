@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DomainNameArgs {
   // ARN of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate. The certifiacte must reside in us-east-1.
@@ -37,24 +37,24 @@ export class DomainName extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "Domain name.",
+        'domainName',
+        'Domain name.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateArn",
-        "ARN of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate. The certifiacte must reside in us-east-1.",
+        'certificateArn',
+        'ARN of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate. The certifiacte must reside in us-east-1.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the Domain Name.",
+        'description',
+        'A description of the Domain Name.',
         () => [],
         false,
         false,

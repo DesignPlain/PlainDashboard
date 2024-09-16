@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface autoscaling_PolicyTargetTrackingConfigurationPredefinedMetricSpecification {
   // Metric type.
@@ -18,16 +18,16 @@ export function autoscaling_PolicyTargetTrackingConfigurationPredefinedMetricSpe
   return [
     new DynamicUIProps(
       InputType.String,
-      "predefinedMetricType",
-      "Metric type.",
+      'predefinedMetricType',
+      'Metric type.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "resourceLabel",
-      "Identifies the resource associated with the metric type.",
+      'resourceLabel',
+      'Identifies the resource associated with the metric type.',
       () => [],
       false,
       false,

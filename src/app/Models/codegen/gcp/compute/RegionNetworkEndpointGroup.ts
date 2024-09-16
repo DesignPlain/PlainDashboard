@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionNetworkEndpointGroupAppEngine,
   compute_RegionNetworkEndpointGroupAppEngine_GetTypes,
-} from "../types/compute_RegionNetworkEndpointGroupAppEngine";
+} from '../types/compute_RegionNetworkEndpointGroupAppEngine';
 import {
   compute_RegionNetworkEndpointGroupCloudFunction,
   compute_RegionNetworkEndpointGroupCloudFunction_GetTypes,
-} from "../types/compute_RegionNetworkEndpointGroupCloudFunction";
+} from '../types/compute_RegionNetworkEndpointGroupCloudFunction';
 import {
   compute_RegionNetworkEndpointGroupServerlessDeployment,
   compute_RegionNetworkEndpointGroupServerlessDeployment_GetTypes,
-} from "../types/compute_RegionNetworkEndpointGroupServerlessDeployment";
+} from '../types/compute_RegionNetworkEndpointGroupServerlessDeployment';
 import {
   compute_RegionNetworkEndpointGroupCloudRun,
   compute_RegionNetworkEndpointGroupCloudRun_GetTypes,
-} from "../types/compute_RegionNetworkEndpointGroupCloudRun";
+} from '../types/compute_RegionNetworkEndpointGroupCloudRun';
 
 export interface RegionNetworkEndpointGroupArgs {
   /*
@@ -204,79 +204,79 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "appEngine",
-        "This field is only used for SERVERLESS NEGs.\nOnly one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.\nStructure is documented below.",
+        'appEngine',
+        'This field is only used for SERVERLESS NEGs.\nOnly one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.\nStructure is documented below.',
         () => compute_RegionNetworkEndpointGroupAppEngine_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "A reference to the region where the regional NEGs reside.\n\n\n- - -",
+        'region',
+        'A reference to the region where the regional NEGs reside.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serverlessDeployment",
-        "This field is only used for SERVERLESS NEGs.\nOnly one of cloudRun, appEngine, cloudFunction or serverlessDeployment may be set.\nStructure is documented below.",
+        'serverlessDeployment',
+        'This field is only used for SERVERLESS NEGs.\nOnly one of cloudRun, appEngine, cloudFunction or serverlessDeployment may be set.\nStructure is documented below.',
         () => compute_RegionNetworkEndpointGroupServerlessDeployment_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource; provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
+        'name',
+        'Name of the resource; provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pscTargetService",
-        "This field is only used for PSC and INTERNET NEGs.\nThe target service url used to set up private service connection to\na Google API or a PSC Producer Service Attachment.",
+        'pscTargetService',
+        'This field is only used for PSC and INTERNET NEGs.\nThe target service url used to set up private service connection to\na Google API or a PSC Producer Service Attachment.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudRun",
-        "This field is only used for SERVERLESS NEGs.\nOnly one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.\nStructure is documented below.",
+        'cloudRun',
+        'This field is only used for SERVERLESS NEGs.\nOnly one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.\nStructure is documented below.',
         () => compute_RegionNetworkEndpointGroupCloudRun_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cloudFunction",
-        "This field is only used for SERVERLESS NEGs.\nOnly one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.\nStructure is documented below.",
+        'cloudFunction',
+        'This field is only used for SERVERLESS NEGs.\nOnly one of cloud_run, app_engine, cloud_function or serverless_deployment may be set.\nStructure is documented below.',
         () => compute_RegionNetworkEndpointGroupCloudFunction_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. Provide this property when\nyou create the resource.",
+        'description',
+        'An optional description of this resource. Provide this property when\nyou create the resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
+        'network',
         'This field is only used for PSC and INTERNET NEGs.\nThe URL of the network to which all network endpoints in the NEG belong. Uses\n"default" project network if unspecified.',
         () => [],
         false,
@@ -284,16 +284,16 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkEndpointType",
-        "Type of network endpoints in this network endpoint group. Defaults to SERVERLESS.\nDefault value is `SERVERLESS`.\nPossible values are: `SERVERLESS`, `PRIVATE_SERVICE_CONNECT`, `INTERNET_IP_PORT`, `INTERNET_FQDN_PORT`.",
+        'networkEndpointType',
+        'Type of network endpoints in this network endpoint group. Defaults to SERVERLESS.\nDefault value is `SERVERLESS`.\nPossible values are: `SERVERLESS`, `PRIVATE_SERVICE_CONNECT`, `INTERNET_IP_PORT`, `INTERNET_FQDN_PORT`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetwork",
-        "This field is only used for PSC NEGs.\nOptional URL of the subnetwork to which all network endpoints in the NEG belong.",
+        'subnetwork',
+        'This field is only used for PSC NEGs.\nOptional URL of the subnetwork to which all network endpoints in the NEG belong.',
         () => [],
         false,
         true,

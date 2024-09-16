@@ -3,37 +3,37 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_ConnectionProfileForwardSshConnectivity,
   datastream_ConnectionProfileForwardSshConnectivity_GetTypes,
-} from "../types/datastream_ConnectionProfileForwardSshConnectivity";
+} from '../types/datastream_ConnectionProfileForwardSshConnectivity';
 import {
   datastream_ConnectionProfileOracleProfile,
   datastream_ConnectionProfileOracleProfile_GetTypes,
-} from "../types/datastream_ConnectionProfileOracleProfile";
+} from '../types/datastream_ConnectionProfileOracleProfile';
 import {
   datastream_ConnectionProfileGcsProfile,
   datastream_ConnectionProfileGcsProfile_GetTypes,
-} from "../types/datastream_ConnectionProfileGcsProfile";
+} from '../types/datastream_ConnectionProfileGcsProfile';
 import {
   datastream_ConnectionProfileMysqlProfile,
   datastream_ConnectionProfileMysqlProfile_GetTypes,
-} from "../types/datastream_ConnectionProfileMysqlProfile";
+} from '../types/datastream_ConnectionProfileMysqlProfile';
 import {
   datastream_ConnectionProfilePostgresqlProfile,
   datastream_ConnectionProfilePostgresqlProfile_GetTypes,
-} from "../types/datastream_ConnectionProfilePostgresqlProfile";
+} from '../types/datastream_ConnectionProfilePostgresqlProfile';
 import {
   datastream_ConnectionProfilePrivateConnectivity,
   datastream_ConnectionProfilePrivateConnectivity_GetTypes,
-} from "../types/datastream_ConnectionProfilePrivateConnectivity";
+} from '../types/datastream_ConnectionProfilePrivateConnectivity';
 import {
   datastream_ConnectionProfileBigqueryProfile,
   datastream_ConnectionProfileBigqueryProfile_GetTypes,
-} from "../types/datastream_ConnectionProfileBigqueryProfile";
+} from '../types/datastream_ConnectionProfileBigqueryProfile';
 
 export interface ConnectionProfileArgs {
   // Display name.
@@ -185,96 +185,96 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Display name.",
+        'displayName',
+        'Display name.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "gcsProfile",
-        "Cloud Storage bucket profile.\nStructure is documented below.",
+        'gcsProfile',
+        'Cloud Storage bucket profile.\nStructure is documented below.',
         () => datastream_ConnectionProfileGcsProfile_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The name of the location this connection profile is located in.\n\n\n- - -",
+        'location',
+        'The name of the location this connection profile is located in.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "mysqlProfile",
-        "MySQL database profile.\nStructure is documented below.",
+        'mysqlProfile',
+        'MySQL database profile.\nStructure is documented below.',
         () => datastream_ConnectionProfileMysqlProfile_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "forwardSshConnectivity",
-        "Forward SSH tunnel connectivity.\nStructure is documented below.",
+        'forwardSshConnectivity',
+        'Forward SSH tunnel connectivity.\nStructure is documented below.',
         () => datastream_ConnectionProfileForwardSshConnectivity_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "postgresqlProfile",
-        "PostgreSQL database profile.\nStructure is documented below.",
+        'postgresqlProfile',
+        'PostgreSQL database profile.\nStructure is documented below.',
         () => datastream_ConnectionProfilePostgresqlProfile_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "privateConnectivity",
-        "Private connectivity.\nStructure is documented below.",
+        'privateConnectivity',
+        'Private connectivity.\nStructure is documented below.',
         () => datastream_ConnectionProfilePrivateConnectivity_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "bigqueryProfile",
-        "BigQuery warehouse profile.",
+        'bigqueryProfile',
+        'BigQuery warehouse profile.',
         () => datastream_ConnectionProfileBigqueryProfile_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "connectionProfileId",
-        "The connection profile identifier.",
+        'connectionProfileId',
+        'The connection profile identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "oracleProfile",
-        "Oracle database profile.\nStructure is documented below.",
+        'oracleProfile',
+        'Oracle database profile.\nStructure is documented below.',
         () => datastream_ConnectionProfileOracleProfile_GetTypes(),
         false,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecLoggingAccessLogFile,
   appmesh_getVirtualGatewaySpecLoggingAccessLogFile_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecLoggingAccessLogFile";
+} from './appmesh_getVirtualGatewaySpecLoggingAccessLogFile';
 
 export interface appmesh_getVirtualGatewaySpecLoggingAccessLog {
   //
@@ -19,8 +19,8 @@ export function appmesh_getVirtualGatewaySpecLoggingAccessLog_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () => appmesh_getVirtualGatewaySpecLoggingAccessLogFile_GetTypes(),
       true,
       false,

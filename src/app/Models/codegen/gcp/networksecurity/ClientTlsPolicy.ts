@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networksecurity_ClientTlsPolicyClientCertificate,
   networksecurity_ClientTlsPolicyClientCertificate_GetTypes,
-} from "../types/networksecurity_ClientTlsPolicyClientCertificate";
+} from '../types/networksecurity_ClientTlsPolicyClientCertificate';
 import {
   networksecurity_ClientTlsPolicyServerValidationCa,
   networksecurity_ClientTlsPolicyServerValidationCa_GetTypes,
-} from "../types/networksecurity_ClientTlsPolicyServerValidationCa";
+} from '../types/networksecurity_ClientTlsPolicyServerValidationCa';
 
 export interface ClientTlsPolicyArgs {
   /*
@@ -126,31 +126,31 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the ClientTlsPolicy resource.\n\n\n- - -",
+        'name',
+        'Name of the ClientTlsPolicy resource.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "serverValidationCas",
-        "Defines the mechanism to obtain the Certificate Authority certificate to validate the server certificate. If empty, client does not validate the server certificate.\nStructure is documented below.",
+        'serverValidationCas',
+        'Defines the mechanism to obtain the Certificate Authority certificate to validate the server certificate. If empty, client does not validate the server certificate.\nStructure is documented below.',
         () => networksecurity_ClientTlsPolicyServerValidationCa_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sni",
+        'sni',
         'Server Name Indication string to present to the server during TLS handshake. E.g: "secure.example.com".',
         () => [],
         false,
@@ -158,32 +158,32 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clientCertificate",
-        "Defines a mechanism to provision client identity (public and private keys) for peer to peer authentication. The presence of this dictates mTLS.\nStructure is documented below.",
+        'clientCertificate',
+        'Defines a mechanism to provision client identity (public and private keys) for peer to peer authentication. The presence of this dictates mTLS.\nStructure is documented below.',
         () => networksecurity_ClientTlsPolicyClientCertificate_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A free-text description of the resource. Max length 1024 characters.",
+        'description',
+        'A free-text description of the resource. Max length 1024 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Set of label tags associated with the ClientTlsPolicy resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Set of label tags associated with the ClientTlsPolicy resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the client tls policy.\nThe default value is `global`.",
+        'location',
+        'The location of the client tls policy.\nThe default value is `global`.',
         () => [],
         false,
         false,

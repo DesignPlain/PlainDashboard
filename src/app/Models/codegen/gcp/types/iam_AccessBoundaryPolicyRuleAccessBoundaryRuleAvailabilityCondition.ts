@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondition {
   /*
@@ -35,32 +35,32 @@ export function iam_AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityCondit
   return [
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "Description of the expression. This is a longer text which describes the expression,\ne.g. when hovered over it in a UI.",
+      'description',
+      'Description of the expression. This is a longer text which describes the expression,\ne.g. when hovered over it in a UI.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "expression",
-      "Textual representation of an expression in Common Expression Language syntax.",
+      'expression',
+      'Textual representation of an expression in Common Expression Language syntax.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "location",
-      "String indicating the location of the expression for error reporting,\ne.g. a file name and a position in the file.\n\n- - -",
+      'location',
+      'String indicating the location of the expression for error reporting,\ne.g. a file name and a position in the file.\n\n- - -',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "title",
-      "Title for the expression, i.e. a short string describing its purpose.\nThis can be used e.g. in UIs which allow to enter the expression.",
+      'title',
+      'Title for the expression, i.e. a short string describing its purpose.\nThis can be used e.g. in UIs which allow to enter the expression.',
       () => [],
       false,
       false,

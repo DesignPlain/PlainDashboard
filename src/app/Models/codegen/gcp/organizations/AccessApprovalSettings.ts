@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   organizations_AccessApprovalSettingsEnrolledService,
   organizations_AccessApprovalSettingsEnrolledService_GetTypes,
-} from "../types/organizations_AccessApprovalSettingsEnrolledService";
+} from '../types/organizations_AccessApprovalSettingsEnrolledService';
 
 export interface AccessApprovalSettingsArgs {
   // ID of the organization of the access approval settings.
@@ -83,32 +83,32 @@ correct permissions on it, etc.).
     return [
       new DynamicUIProps(
         InputType.String,
-        "organizationId",
-        "ID of the organization of the access approval settings.",
+        'organizationId',
+        'ID of the organization of the access approval settings.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "activeKeyVersion",
-        "The asymmetric crypto key version to use for signing approval requests.\nEmpty active_key_version indicates that a Google-managed key should be used for signing.",
+        'activeKeyVersion',
+        'The asymmetric crypto key version to use for signing approval requests.\nEmpty active_key_version indicates that a Google-managed key should be used for signing.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "enrolledServices",
-        "A list of Google Cloud Services for which the given resource has Access Approval enrolled.\nAccess requests for the resource given by name against any of these services contained here will be required\nto have explicit approval. Enrollment can be done for individual services.\nA maximum of 10 enrolled services will be enforced, to be expanded as the set of supported services is expanded.\nStructure is documented below.",
+        'enrolledServices',
+        'A list of Google Cloud Services for which the given resource has Access Approval enrolled.\nAccess requests for the resource given by name against any of these services contained here will be required\nto have explicit approval. Enrollment can be done for individual services.\nA maximum of 10 enrolled services will be enforced, to be expanded as the set of supported services is expanded.\nStructure is documented below.',
         () => organizations_AccessApprovalSettingsEnrolledService_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "notificationEmails",
-        "A list of email addresses to which notifications relating to approval requests should be sent.\nNotifications relating to a resource will be sent to all emails in the settings of ancestor\nresources of that resource. A maximum of 50 email addresses are allowed.",
+        'notificationEmails',
+        'A list of email addresses to which notifications relating to approval requests should be sent.\nNotifications relating to a resource will be sent to all emails in the settings of ancestor\nresources of that resource. A maximum of 50 email addresses are allowed.',
         () => InputType_String_GetTypes(),
         false,
         false,

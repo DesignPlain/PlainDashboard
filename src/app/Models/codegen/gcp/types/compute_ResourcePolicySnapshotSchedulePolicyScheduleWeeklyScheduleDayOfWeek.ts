@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeek {
   /*
@@ -24,15 +24,15 @@ export function compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedu
   return [
     new DynamicUIProps(
       InputType.String,
-      "day",
-      "The day of the week to create the snapshot. e.g. MONDAY\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
+      'day',
+      'The day of the week to create the snapshot. e.g. MONDAY\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "startTime",
+      'startTime',
       'Time within the window to start the operations.\nIt must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.',
       () => [],
       true,

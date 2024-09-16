@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ContactArgs {
   // A unique and identifiable alias for the contact or escalation plan. Must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), and hyphens (`-`).
@@ -53,32 +53,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "alias",
-        "A unique and identifiable alias for the contact or escalation plan. Must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), and hyphens (`-`).",
+        'alias',
+        'A unique and identifiable alias for the contact or escalation plan. Must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), and hyphens (`-`).',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Full friendly name of the contact or escalation plan. If set, must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), hyphens (`-`), periods (`.`), and spaces.",
+        'displayName',
+        'Full friendly name of the contact or escalation plan. If set, must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), hyphens (`-`), periods (`.`), and spaces.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource.",
+        'tags',
+        'Map of tags to assign to the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of contact engaged. A single contact is type PERSONAL and an escalation\nplan is type ESCALATION.\n\nThe following arguments are optional:",
+        'type',
+        'The type of contact engaged. A single contact is type PERSONAL and an escalation\nplan is type ESCALATION.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elasticsearch_VpcEndpointVpcOptions,
   elasticsearch_VpcEndpointVpcOptions_GetTypes,
-} from "../types/elasticsearch_VpcEndpointVpcOptions";
+} from '../types/elasticsearch_VpcEndpointVpcOptions';
 
 export interface VpcEndpointArgs {
   // Specifies the Amazon Resource Name (ARN) of the domain to create the endpoint for
@@ -32,16 +32,16 @@ export class VpcEndpoint extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainArn",
-        "Specifies the Amazon Resource Name (ARN) of the domain to create the endpoint for",
+        'domainArn',
+        'Specifies the Amazon Resource Name (ARN) of the domain to create the endpoint for',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcOptions",
-        "Options to specify the subnets and security groups for the endpoint.",
+        'vpcOptions',
+        'Options to specify the subnets and security groups for the endpoint.',
         () => elasticsearch_VpcEndpointVpcOptions_GetTypes(),
         true,
         false,

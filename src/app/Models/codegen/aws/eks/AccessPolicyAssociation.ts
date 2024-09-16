@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   eks_AccessPolicyAssociationAccessScope,
   eks_AccessPolicyAssociationAccessScope_GetTypes,
-} from "../types/eks_AccessPolicyAssociationAccessScope";
+} from '../types/eks_AccessPolicyAssociationAccessScope';
 
 export interface AccessPolicyAssociationArgs {
   // The IAM Principal ARN which requires Authentication access to the EKS cluster.
@@ -47,31 +47,31 @@ export class AccessPolicyAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "principalArn",
-        "The IAM Principal ARN which requires Authentication access to the EKS cluster.",
+        'principalArn',
+        'The IAM Principal ARN which requires Authentication access to the EKS cluster.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "accessScope",
-        "The configuration block to determine the scope of the access. See `access_scope` Block below.",
+        'accessScope',
+        'The configuration block to determine the scope of the access. See `access_scope` Block below.',
         () => eks_AccessPolicyAssociationAccessScope_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterName",
-        "Name of the EKS Cluster.",
+        'clusterName',
+        'Name of the EKS Cluster.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policyArn",
+        'policyArn',
         "The ARN of the access policy that you're associating.",
         () => [],
         true,

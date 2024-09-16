@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigateway_DocumentationPartLocation,
   apigateway_DocumentationPartLocation_GetTypes,
-} from "../types/apigateway_DocumentationPartLocation";
+} from '../types/apigateway_DocumentationPartLocation';
 
 export interface DocumentationPartArgs {
   // Location of the targeted API entity of the to-be-created documentation part. See below.
@@ -38,15 +38,15 @@ export class DocumentationPart extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "location",
-        "Location of the targeted API entity of the to-be-created documentation part. See below.",
+        'location',
+        'Location of the targeted API entity of the to-be-created documentation part. See below.',
         () => apigateway_DocumentationPartLocation_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "properties",
+        'properties',
         'Content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., "{ \\"description\\": \\"The API does ...\\" }". Only Swagger-compliant key-value pairs can be exported and, hence, published.',
         () => [],
         true,
@@ -54,8 +54,8 @@ export class DocumentationPart extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "restApiId",
-        "ID of the associated Rest API",
+        'restApiId',
+        'ID of the associated Rest API',
         () => [],
         true,
         true,

@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   firebase_HostingCustomDomainCert,
   firebase_HostingCustomDomainCert_GetTypes,
-} from "../types/firebase_HostingCustomDomainCert";
+} from '../types/firebase_HostingCustomDomainCert';
 import {
   firebase_HostingCustomDomainRequiredDnsUpdate,
   firebase_HostingCustomDomainRequiredDnsUpdate_GetTypes,
-} from "../types/firebase_HostingCustomDomainRequiredDnsUpdate";
+} from '../types/firebase_HostingCustomDomainRequiredDnsUpdate';
 import {
   firebase_HostingCustomDomainIssue,
   firebase_HostingCustomDomainIssue_GetTypes,
-} from "../types/firebase_HostingCustomDomainIssue";
+} from '../types/firebase_HostingCustomDomainIssue';
 
 export interface HostingCustomDomainArgs {
   /*
@@ -225,7 +225,7 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "waitDnsVerification",
+        'waitDnsVerification',
         "If true, Terraform will wait for DNS records to be fully resolved on the 'CustomDomain'. If false, Terraform will not\nwait for DNS records on the 'CustomDomain'. Any issues in the 'CustomDomain' will be returned and stored in the\nTerraform state.",
         () => [],
         false,
@@ -233,15 +233,15 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "certPreference",
-        "A field that lets you specify which SSL certificate type Hosting creates\nfor your domain name. Spark plan `CustomDomain`s only have access to the\n`GROUPED` cert type, while Blaze plan can select any option.\nPossible values are: `GROUPED`, `PROJECT_GROUPED`, `DEDICATED`.",
+        'certPreference',
+        'A field that lets you specify which SSL certificate type Hosting creates\nfor your domain name. Spark plan `CustomDomain`s only have access to the\n`GROUPED` cert type, while Blaze plan can select any option.\nPossible values are: `GROUPED`, `PROJECT_GROUPED`, `DEDICATED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customDomain",
+        'customDomain',
         "The ID of the `CustomDomain`, which is the domain name you'd like to use with Firebase Hosting.\n\n\n- - -",
         () => [],
         true,
@@ -249,24 +249,24 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "redirectTarget",
-        "A domain name that this CustomDomain should direct traffic towards. If\nspecified, Hosting will respond to requests against this CustomDomain\nwith an HTTP 301 code, and route traffic to the specified `redirect_target`\ninstead.",
+        'redirectTarget',
+        'A domain name that this CustomDomain should direct traffic towards. If\nspecified, Hosting will respond to requests against this CustomDomain\nwith an HTTP 301 code, and route traffic to the specified `redirect_target`\ninstead.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "siteId",
-        "The ID of the site in which to create this custom domain association.",
+        'siteId',
+        'The ID of the site in which to create this custom domain association.',
         () => [],
         true,
         true,

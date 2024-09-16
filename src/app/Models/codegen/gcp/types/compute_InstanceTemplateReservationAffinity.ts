@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_InstanceTemplateReservationAffinitySpecificReservation,
   compute_InstanceTemplateReservationAffinitySpecificReservation_GetTypes,
-} from "./compute_InstanceTemplateReservationAffinitySpecificReservation";
+} from './compute_InstanceTemplateReservationAffinitySpecificReservation';
 
 export interface compute_InstanceTemplateReservationAffinity {
   // The type of reservation from which this instance can consume resources.
@@ -25,8 +25,8 @@ export function compute_InstanceTemplateReservationAffinity_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Object,
-      "specificReservation",
-      "Specifies the label selector for the reservation to use..\nStructure is documented below.",
+      'specificReservation',
+      'Specifies the label selector for the reservation to use..\nStructure is documented below.',
       () =>
         compute_InstanceTemplateReservationAffinitySpecificReservation_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function compute_InstanceTemplateReservationAffinity_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "The type of reservation from which this instance can consume resources.",
+      'type',
+      'The type of reservation from which this instance can consume resources.',
       () => [],
       true,
       true,

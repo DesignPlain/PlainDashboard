@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   imagebuilder_DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission,
   imagebuilder_DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission_GetTypes,
-} from "./imagebuilder_DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission";
+} from './imagebuilder_DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission';
 
 export interface imagebuilder_DistributionConfigurationDistributionAmiDistributionConfiguration {
   // Key-value map of tags to apply to the distributed AMI.
@@ -34,16 +34,16 @@ export function imagebuilder_DistributionConfigurationDistributionAmiDistributio
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyId",
-      "Amazon Resource Name (ARN) of the Key Management Service (KMS) Key to encrypt the distributed AMI.",
+      'kmsKeyId',
+      'Amazon Resource Name (ARN) of the Key Management Service (KMS) Key to encrypt the distributed AMI.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "launchPermission",
-      "Configuration block of EC2 launch permissions to apply to the distributed AMI. Detailed below.",
+      'launchPermission',
+      'Configuration block of EC2 launch permissions to apply to the distributed AMI. Detailed below.',
       () =>
         imagebuilder_DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermission_GetTypes(),
       false,
@@ -51,32 +51,32 @@ export function imagebuilder_DistributionConfigurationDistributionAmiDistributio
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name to apply to the distributed AMI.",
+      'name',
+      'Name to apply to the distributed AMI.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "targetAccountIds",
-      "Set of AWS Account identifiers to distribute the AMI.",
+      'targetAccountIds',
+      'Set of AWS Account identifiers to distribute the AMI.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "amiTags",
-      "Key-value map of tags to apply to the distributed AMI.",
+      'amiTags',
+      'Key-value map of tags to apply to the distributed AMI.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "Description to apply to the distributed AMI.",
+      'description',
+      'Description to apply to the distributed AMI.',
       () => [],
       false,
       false,

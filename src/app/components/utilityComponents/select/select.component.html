@@ -1,10 +1,11 @@
 <div class="wrapper">
   <span class="container" (click)="expandOptions()">
-    <div>{{selected}}</div>
+    <div>{{ selected }}</div>
     <fa-icon [icon]="faChevronDown" />
   </span>
   <div *ngIf="expand" class="option-container">
-    <div class="option" *ngFor="let item of items" (click)="selectItem(item)">{{item}}</div>
+    <div class="option" *ngFor="let item of items" (click)="selectItem(item)">
+      {{ item }}
+    </div>
   </div>
 </div>
-

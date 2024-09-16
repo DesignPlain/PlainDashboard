@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   iot_ThingGroupMetadataRootToParentGroup,
   iot_ThingGroupMetadataRootToParentGroup_GetTypes,
-} from "./iot_ThingGroupMetadataRootToParentGroup";
+} from './iot_ThingGroupMetadataRootToParentGroup';
 
 export interface iot_ThingGroupMetadata {
   //
@@ -25,24 +25,24 @@ export function iot_ThingGroupMetadata_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "rootToParentGroups",
-      "",
+      'rootToParentGroups',
+      '',
       () => iot_ThingGroupMetadataRootToParentGroup_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "creationDate",
-      "",
+      'creationDate',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "parentGroupName",
-      "The name of the parent Thing Group.",
+      'parentGroupName',
+      'The name of the parent Thing Group.',
       () => [],
       false,
       false,

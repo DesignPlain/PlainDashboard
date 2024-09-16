@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface wafv2_WebAclLoggingConfigurationRedactedFieldSingleHeader {
   // Name of the query header to redact. This setting must be provided in lowercase characters.
@@ -15,8 +15,8 @@ export function wafv2_WebAclLoggingConfigurationRedactedFieldSingleHeader_GetTyp
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the query header to redact. This setting must be provided in lowercase characters.",
+      'name',
+      'Name of the query header to redact. This setting must be provided in lowercase characters.',
       () => [],
       true,
       false,

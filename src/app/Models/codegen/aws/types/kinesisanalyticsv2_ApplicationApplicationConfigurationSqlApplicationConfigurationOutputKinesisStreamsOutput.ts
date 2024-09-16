@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationOutputKinesisStreamsOutput {
   // The ARN of the destination Kinesis data stream to write to.
@@ -15,8 +15,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
   return [
     new DynamicUIProps(
       InputType.String,
-      "resourceArn",
-      "The ARN of the destination Kinesis data stream to write to.",
+      'resourceArn',
+      'The ARN of the destination Kinesis data stream to write to.',
       () => [],
       true,
       false,

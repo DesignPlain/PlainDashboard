@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface datacatalog_EntryBigqueryTableSpecTableSpec {
   /*
@@ -21,8 +21,8 @@ export function datacatalog_EntryBigqueryTableSpecTableSpec_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "groupedEntry",
-      "(Output)\nIf the table is a dated shard, i.e., with name pattern [prefix]YYYYMMDD, groupedEntry is the\nData Catalog resource name of the date sharded grouped entry, for example,\nprojects/{project_id}/locations/{location}/entrygroups/{entryGroupId}/entries/{entryId}.\nOtherwise, groupedEntry is empty.",
+      'groupedEntry',
+      '(Output)\nIf the table is a dated shard, i.e., with name pattern [prefix]YYYYMMDD, groupedEntry is the\nData Catalog resource name of the date sharded grouped entry, for example,\nprojects/{project_id}/locations/{location}/entrygroups/{entryGroupId}/entries/{entryId}.\nOtherwise, groupedEntry is empty.',
       () => [],
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PlacementGroupArgs {
   // Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -66,40 +66,40 @@ placement group.  Can only be specified when the `strategy` is set to
     return [
       new DynamicUIProps(
         InputType.String,
-        "strategy",
-        "The placement strategy. Can be `cluster`, `partition` or `spread`.",
+        'strategy',
+        'The placement strategy. Can be `cluster`, `partition` or `spread`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the placement group.",
+        'name',
+        'The name of the placement group.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "partitionCount",
-        "The number of partitions to create in the\nplacement group.  Can only be specified when the `strategy` is set to\n`partition`.  Valid values are 1 - 7 (default is `2`).",
+        'partitionCount',
+        'The number of partitions to create in the\nplacement group.  Can only be specified when the `strategy` is set to\n`partition`.  Valid values are 1 - 7 (default is `2`).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "spreadLevel",
-        "Determines how placement groups spread instances. Can only be used\nwhen the `strategy` is set to `spread`. Can be `host` or `rack`. `host` can only be used for Outpost placement groups. Defaults to `rack`.",
+        'spreadLevel',
+        'Determines how placement groups spread instances. Can only be used\nwhen the `strategy` is set to `spread`. Can be `host` or `rack`. `host` can only be used for Outpost placement groups. Defaults to `rack`.',
         () => [],
         false,
         true,

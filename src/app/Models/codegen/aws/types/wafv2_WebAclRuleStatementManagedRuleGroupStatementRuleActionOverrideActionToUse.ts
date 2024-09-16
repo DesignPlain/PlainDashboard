@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptcha,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptcha_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptcha";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptcha';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallenge,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallenge_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallenge";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallenge';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCount,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCount_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCount";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCount';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllow,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllow_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllow";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllow';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlock,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlock_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlock";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlock';
 
 export interface wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUse {
   //
@@ -47,8 +47,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOver
   return [
     new DynamicUIProps(
       InputType.Object,
-      "block",
-      "",
+      'block',
+      '',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlock_GetTypes(),
       false,
@@ -56,8 +56,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOver
     ),
     new DynamicUIProps(
       InputType.Object,
-      "captcha",
-      "Instructs AWS WAF to run a Captcha check against the web request. See `captcha` below for details.",
+      'captcha',
+      'Instructs AWS WAF to run a Captcha check against the web request. See `captcha` below for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptcha_GetTypes(),
       false,
@@ -65,8 +65,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOver
     ),
     new DynamicUIProps(
       InputType.Object,
-      "challenge",
-      "Instructs AWS WAF to run a check against the request to verify that the request is coming from a legitimate client session. See `challenge` below for details.",
+      'challenge',
+      'Instructs AWS WAF to run a check against the request to verify that the request is coming from a legitimate client session. See `challenge` below for details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallenge_GetTypes(),
       false,
@@ -74,8 +74,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOver
     ),
     new DynamicUIProps(
       InputType.Object,
-      "count",
-      "",
+      'count',
+      '',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCount_GetTypes(),
       false,
@@ -83,8 +83,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOver
     ),
     new DynamicUIProps(
       InputType.Object,
-      "allow",
-      "",
+      'allow',
+      '',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllow_GetTypes(),
       false,

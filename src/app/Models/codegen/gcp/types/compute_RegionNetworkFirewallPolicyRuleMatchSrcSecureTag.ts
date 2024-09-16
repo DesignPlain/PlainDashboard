@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag {
   // Name of the secure tag, created with TagManager's TagValue API. @pattern tagValues/[0-9]+
@@ -18,7 +18,7 @@ export function compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag_GetType
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
+      'name',
       "Name of the secure tag, created with TagManager's TagValue API. @pattern tagValues/[0-9]+",
       () => [],
       true,
@@ -26,8 +26,8 @@ export function compute_RegionNetworkFirewallPolicyRuleMatchSrcSecureTag_GetType
     ),
     new DynamicUIProps(
       InputType.String,
-      "state",
-      "[Output Only] State of the secure tag, either `EFFECTIVE` or `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted or its network is deleted.",
+      'state',
+      '[Output Only] State of the secure tag, either `EFFECTIVE` or `INEFFECTIVE`. A secure tag is `INEFFECTIVE` when it is deleted or its network is deleted.',
       () => [],
       false,
       false,

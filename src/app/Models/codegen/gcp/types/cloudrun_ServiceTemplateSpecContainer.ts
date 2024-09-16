@@ -3,36 +3,36 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrun_ServiceTemplateSpecContainerEnv,
   cloudrun_ServiceTemplateSpecContainerEnv_GetTypes,
-} from "./cloudrun_ServiceTemplateSpecContainerEnv";
+} from './cloudrun_ServiceTemplateSpecContainerEnv';
 import {
   cloudrun_ServiceTemplateSpecContainerEnvFrom,
   cloudrun_ServiceTemplateSpecContainerEnvFrom_GetTypes,
-} from "./cloudrun_ServiceTemplateSpecContainerEnvFrom";
+} from './cloudrun_ServiceTemplateSpecContainerEnvFrom';
 import {
   cloudrun_ServiceTemplateSpecContainerPort,
   cloudrun_ServiceTemplateSpecContainerPort_GetTypes,
-} from "./cloudrun_ServiceTemplateSpecContainerPort";
+} from './cloudrun_ServiceTemplateSpecContainerPort';
 import {
   cloudrun_ServiceTemplateSpecContainerResources,
   cloudrun_ServiceTemplateSpecContainerResources_GetTypes,
-} from "./cloudrun_ServiceTemplateSpecContainerResources";
+} from './cloudrun_ServiceTemplateSpecContainerResources';
 import {
   cloudrun_ServiceTemplateSpecContainerStartupProbe,
   cloudrun_ServiceTemplateSpecContainerStartupProbe_GetTypes,
-} from "./cloudrun_ServiceTemplateSpecContainerStartupProbe";
+} from './cloudrun_ServiceTemplateSpecContainerStartupProbe';
 import {
   cloudrun_ServiceTemplateSpecContainerVolumeMount,
   cloudrun_ServiceTemplateSpecContainerVolumeMount_GetTypes,
-} from "./cloudrun_ServiceTemplateSpecContainerVolumeMount";
+} from './cloudrun_ServiceTemplateSpecContainerVolumeMount';
 import {
   cloudrun_ServiceTemplateSpecContainerLivenessProbe,
   cloudrun_ServiceTemplateSpecContainerLivenessProbe_GetTypes,
-} from "./cloudrun_ServiceTemplateSpecContainerLivenessProbe";
+} from './cloudrun_ServiceTemplateSpecContainerLivenessProbe';
 
 export interface cloudrun_ServiceTemplateSpecContainer {
   /*
@@ -124,7 +124,7 @@ export function cloudrun_ServiceTemplateSpecContainer_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.Array,
-      "commands",
+      'commands',
       "Entrypoint array. Not executed within a shell.\nThe docker image's ENTRYPOINT is used if this is not provided.",
       () => InputType_String_GetTypes(),
       false,
@@ -132,15 +132,15 @@ export function cloudrun_ServiceTemplateSpecContainer_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Object,
-      "startupProbe",
-      "Startup probe of application within the container.\nAll other probes are disabled if a startup probe is provided, until it\nsucceeds. Container will not be added to service endpoints if the probe fails.\nStructure is documented below.",
+      'startupProbe',
+      'Startup probe of application within the container.\nAll other probes are disabled if a startup probe is provided, until it\nsucceeds. Container will not be added to service endpoints if the probe fails.\nStructure is documented below.',
       () => cloudrun_ServiceTemplateSpecContainerStartupProbe_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "volumeMounts",
+      'volumeMounts',
       "Volume to mount into the container's filesystem.\nOnly supports SecretVolumeSources.\nStructure is documented below.",
       () => cloudrun_ServiceTemplateSpecContainerVolumeMount_GetTypes(),
       false,
@@ -148,47 +148,47 @@ export function cloudrun_ServiceTemplateSpecContainer_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "image",
-      "Docker image name. This is most often a reference to a container located\nin the container registry, such as gcr.io/cloudrun/hello",
+      'image',
+      'Docker image name. This is most often a reference to a container located\nin the container registry, such as gcr.io/cloudrun/hello',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "envFroms",
-      "(Optional, Deprecated)\nList of sources to populate environment variables in the container.\nAll invalid keys will be reported as an event when the container is starting.\nWhen a key exists in multiple sources, the value associated with the last source will\ntake precedence. Values defined by an Env with a duplicate key will take\nprecedence.\nStructure is documented below.\n\n> **Warning:** `env_from` is deprecated and will be removed in a future major release. This field is not supported by the Cloud Run API.",
+      'envFroms',
+      '(Optional, Deprecated)\nList of sources to populate environment variables in the container.\nAll invalid keys will be reported as an event when the container is starting.\nWhen a key exists in multiple sources, the value associated with the last source will\ntake precedence. Values defined by an Env with a duplicate key will take\nprecedence.\nStructure is documented below.\n\n> **Warning:** `env_from` is deprecated and will be removed in a future major release. This field is not supported by the Cloud Run API.',
       () => cloudrun_ServiceTemplateSpecContainerEnvFrom_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the container",
+      'name',
+      'Name of the container',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ports",
-      "List of open ports in the container.\nStructure is documented below.",
+      'ports',
+      'List of open ports in the container.\nStructure is documented below.',
       () => cloudrun_ServiceTemplateSpecContainerPort_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "resources",
-      "Compute Resources required by this container. Used to set values such as max memory\nStructure is documented below.",
+      'resources',
+      'Compute Resources required by this container. Used to set values such as max memory\nStructure is documented below.',
       () => cloudrun_ServiceTemplateSpecContainerResources_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "workingDir",
+      'workingDir',
       "(Optional, Deprecated)\nContainer's working directory.\nIf not specified, the container runtime's default will be used, which\nmight be configured in the container image.\n\n> **Warning:** `working_dir` is deprecated and will be removed in a future major release. This field is not supported by the Cloud Run API.",
       () => [],
       false,
@@ -196,7 +196,7 @@ export function cloudrun_ServiceTemplateSpecContainer_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Array,
-      "args",
+      'args',
       "Arguments to the entrypoint.\nThe docker image's CMD is used if this is not provided.",
       () => InputType_String_GetTypes(),
       false,
@@ -204,16 +204,16 @@ export function cloudrun_ServiceTemplateSpecContainer_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Object,
-      "livenessProbe",
-      "Periodic probe of container liveness. Container will be restarted if the probe fails. More info:\nhttps://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes\nStructure is documented below.",
+      'livenessProbe',
+      'Periodic probe of container liveness. Container will be restarted if the probe fails. More info:\nhttps://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes\nStructure is documented below.',
       () => cloudrun_ServiceTemplateSpecContainerLivenessProbe_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "envs",
-      "List of environment variables to set in the container.\nStructure is documented below.",
+      'envs',
+      'List of environment variables to set in the container.\nStructure is documented below.',
       () => cloudrun_ServiceTemplateSpecContainerEnv_GetTypes(),
       false,
       false,

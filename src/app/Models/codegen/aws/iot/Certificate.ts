@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface CertificateArgs {
   // Boolean flag to indicate if the certificate should be active
@@ -73,32 +73,32 @@ for more information on generating keys and a certificate.
     return [
       new DynamicUIProps(
         InputType.String,
-        "caPem",
-        "The CA certificate for the certificate to be registered. If this is set, the CA needs to be registered with AWS IoT beforehand.",
+        'caPem',
+        'The CA certificate for the certificate to be registered. If this is set, the CA needs to be registered with AWS IoT beforehand.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificatePem",
-        "The certificate to be registered. If `ca_pem` is unspecified, review\n[RegisterCertificateWithoutCA](https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html).\nIf `ca_pem` is specified, review\n[RegisterCertificate](https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificate.html)\nfor more information on registering a certificate.",
+        'certificatePem',
+        'The certificate to be registered. If `ca_pem` is unspecified, review\n[RegisterCertificateWithoutCA](https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html).\nIf `ca_pem` is specified, review\n[RegisterCertificate](https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificate.html)\nfor more information on registering a certificate.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "csr",
-        "The certificate signing request. Review\n[CreateCertificateFromCsr](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html)\nfor more information on generating a certificate from a certificate signing request (CSR).\nIf none is specified both the certificate and keys will be generated, review [CreateKeysAndCertificate](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateKeysAndCertificate.html)\nfor more information on generating keys and a certificate.",
+        'csr',
+        'The certificate signing request. Review\n[CreateCertificateFromCsr](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html)\nfor more information on generating a certificate from a certificate signing request (CSR).\nIf none is specified both the certificate and keys will be generated, review [CreateKeysAndCertificate](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateKeysAndCertificate.html)\nfor more information on generating keys and a certificate.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "active",
-        "Boolean flag to indicate if the certificate should be active",
+        'active',
+        'Boolean flag to indicate if the certificate should be active',
         () => [],
         true,
         false,

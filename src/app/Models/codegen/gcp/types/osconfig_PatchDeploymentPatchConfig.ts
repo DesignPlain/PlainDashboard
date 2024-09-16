@@ -3,36 +3,36 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_PatchDeploymentPatchConfigApt,
   osconfig_PatchDeploymentPatchConfigApt_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigApt";
+} from './osconfig_PatchDeploymentPatchConfigApt';
 import {
   osconfig_PatchDeploymentPatchConfigGoo,
   osconfig_PatchDeploymentPatchConfigGoo_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigGoo";
+} from './osconfig_PatchDeploymentPatchConfigGoo';
 import {
   osconfig_PatchDeploymentPatchConfigPostStep,
   osconfig_PatchDeploymentPatchConfigPostStep_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigPostStep";
+} from './osconfig_PatchDeploymentPatchConfigPostStep';
 import {
   osconfig_PatchDeploymentPatchConfigPreStep,
   osconfig_PatchDeploymentPatchConfigPreStep_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigPreStep";
+} from './osconfig_PatchDeploymentPatchConfigPreStep';
 import {
   osconfig_PatchDeploymentPatchConfigWindowsUpdate,
   osconfig_PatchDeploymentPatchConfigWindowsUpdate_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigWindowsUpdate";
+} from './osconfig_PatchDeploymentPatchConfigWindowsUpdate';
 import {
   osconfig_PatchDeploymentPatchConfigYum,
   osconfig_PatchDeploymentPatchConfigYum_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigYum";
+} from './osconfig_PatchDeploymentPatchConfigYum';
 import {
   osconfig_PatchDeploymentPatchConfigZypper,
   osconfig_PatchDeploymentPatchConfigZypper_GetTypes,
-} from "./osconfig_PatchDeploymentPatchConfigZypper";
+} from './osconfig_PatchDeploymentPatchConfigZypper';
 
 export interface osconfig_PatchDeploymentPatchConfig {
   // Allows the patch job to run on Managed instance groups (MIGs).
@@ -91,72 +91,72 @@ export function osconfig_PatchDeploymentPatchConfig_GetTypes(): DynamicUIProps[]
   return [
     new DynamicUIProps(
       InputType.Object,
-      "apt",
-      "Apt update settings. Use this setting to override the default apt patch rules.\nStructure is documented below.",
+      'apt',
+      'Apt update settings. Use this setting to override the default apt patch rules.\nStructure is documented below.',
       () => osconfig_PatchDeploymentPatchConfigApt_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "preStep",
-      "The ExecStep to run before the patch update.\nStructure is documented below.",
+      'preStep',
+      'The ExecStep to run before the patch update.\nStructure is documented below.',
       () => osconfig_PatchDeploymentPatchConfigPreStep_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "yum",
-      "Yum update settings. Use this setting to override the default yum patch rules.\nStructure is documented below.",
+      'yum',
+      'Yum update settings. Use this setting to override the default yum patch rules.\nStructure is documented below.',
       () => osconfig_PatchDeploymentPatchConfigYum_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "rebootConfig",
-      "Post-patch reboot settings.\nPossible values are: `DEFAULT`, `ALWAYS`, `NEVER`.",
+      'rebootConfig',
+      'Post-patch reboot settings.\nPossible values are: `DEFAULT`, `ALWAYS`, `NEVER`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "windowsUpdate",
-      "Windows update settings. Use this setting to override the default Windows patch rules.\nStructure is documented below.",
+      'windowsUpdate',
+      'Windows update settings. Use this setting to override the default Windows patch rules.\nStructure is documented below.',
       () => osconfig_PatchDeploymentPatchConfigWindowsUpdate_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "zypper",
-      "zypper update settings. Use this setting to override the default zypper patch rules.\nStructure is documented below.",
+      'zypper',
+      'zypper update settings. Use this setting to override the default zypper patch rules.\nStructure is documented below.',
       () => osconfig_PatchDeploymentPatchConfigZypper_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "goo",
-      "goo update settings. Use this setting to override the default goo patch rules.\nStructure is documented below.",
+      'goo',
+      'goo update settings. Use this setting to override the default goo patch rules.\nStructure is documented below.',
       () => osconfig_PatchDeploymentPatchConfigGoo_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "postStep",
-      "The ExecStep to run after the patch update.\nStructure is documented below.",
+      'postStep',
+      'The ExecStep to run after the patch update.\nStructure is documented below.',
       () => osconfig_PatchDeploymentPatchConfigPostStep_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "migInstancesAllowed",
-      "Allows the patch job to run on Managed instance groups (MIGs).",
+      'migInstancesAllowed',
+      'Allows the patch job to run on Managed instance groups (MIGs).',
       () => [],
       false,
       true,

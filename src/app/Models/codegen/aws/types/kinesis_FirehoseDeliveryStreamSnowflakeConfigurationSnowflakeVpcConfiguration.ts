@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesis_FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeVpcConfiguration {
   // The VPCE ID for Firehose to privately connect with Snowflake.
@@ -15,8 +15,8 @@ export function kinesis_FirehoseDeliveryStreamSnowflakeConfigurationSnowflakeVpc
   return [
     new DynamicUIProps(
       InputType.String,
-      "privateLinkVpceId",
-      "The VPCE ID for Firehose to privately connect with Snowflake.",
+      'privateLinkVpceId',
+      'The VPCE ID for Firehose to privately connect with Snowflake.',
       () => [],
       true,
       false,

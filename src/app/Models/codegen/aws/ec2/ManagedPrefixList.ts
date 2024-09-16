@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_ManagedPrefixListEntry,
   ec2_ManagedPrefixListEntry_GetTypes,
-} from "../types/ec2_ManagedPrefixListEntry";
+} from '../types/ec2_ManagedPrefixListEntry';
 
 export interface ManagedPrefixListArgs {
   // Name of this resource. The name must not start with `com.amazonaws`.
@@ -59,40 +59,40 @@ export class ManagedPrefixList extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of this resource. The name must not start with `com.amazonaws`.",
+        'name',
+        'Name of this resource. The name must not start with `com.amazonaws`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to this resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "addressFamily",
-        "Address family (`IPv4` or `IPv6`) of this prefix list.",
+        'addressFamily',
+        'Address family (`IPv4` or `IPv6`) of this prefix list.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "entries",
-        "Configuration block for prefix list entry. Detailed below. Different entries may have overlapping CIDR blocks, but a particular CIDR should not be duplicated.",
+        'entries',
+        'Configuration block for prefix list entry. Detailed below. Different entries may have overlapping CIDR blocks, but a particular CIDR should not be duplicated.',
         () => ec2_ManagedPrefixListEntry_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "maxEntries",
-        "Maximum number of entries that this prefix list can contain.",
+        'maxEntries',
+        'Maximum number of entries that this prefix list can contain.',
         () => [],
         true,
         false,

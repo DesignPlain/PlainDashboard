@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface emrserverless_ApplicationNetworkConfiguration {
   // The array of security group Ids for customer VPC connectivity.
@@ -18,16 +18,16 @@ export function emrserverless_ApplicationNetworkConfiguration_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Array,
-      "securityGroupIds",
-      "The array of security group Ids for customer VPC connectivity.",
+      'securityGroupIds',
+      'The array of security group Ids for customer VPC connectivity.',
       () => InputType_String_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "subnetIds",
-      "The array of subnet Ids for customer VPC connectivity.",
+      'subnetIds',
+      'The array of subnet Ids for customer VPC connectivity.',
       () => InputType_String_GetTypes(),
       false,
       true,

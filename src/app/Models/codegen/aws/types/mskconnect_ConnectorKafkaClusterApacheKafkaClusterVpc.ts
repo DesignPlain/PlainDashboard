@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface mskconnect_ConnectorKafkaClusterApacheKafkaClusterVpc {
   // The security groups for the connector.
@@ -18,16 +18,16 @@ export function mskconnect_ConnectorKafkaClusterApacheKafkaClusterVpc_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Array,
-      "securityGroups",
-      "The security groups for the connector.",
+      'securityGroups',
+      'The security groups for the connector.',
       () => InputType_String_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "subnets",
-      "The subnets for the connector.",
+      'subnets',
+      'The subnets for the connector.',
       () => InputType_String_GetTypes(),
       true,
       true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxTestCaseTestCaseConversationTurnUserInputInput,
   diagflow_CxTestCaseTestCaseConversationTurnUserInputInput_GetTypes,
-} from "./diagflow_CxTestCaseTestCaseConversationTurnUserInputInput";
+} from './diagflow_CxTestCaseTestCaseConversationTurnUserInputInput';
 
 export interface diagflow_CxTestCaseTestCaseConversationTurnUserInput {
   // Whether sentiment analysis is enabled.
@@ -31,24 +31,24 @@ export function diagflow_CxTestCaseTestCaseConversationTurnUserInput_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enableSentimentAnalysis",
-      "Whether sentiment analysis is enabled.",
+      'enableSentimentAnalysis',
+      'Whether sentiment analysis is enabled.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "injectedParameters",
-      "Parameters that need to be injected into the conversation during intent detection.",
+      'injectedParameters',
+      'Parameters that need to be injected into the conversation during intent detection.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "input",
-      "User input. Supports text input, event input, dtmf input in the test case.\nStructure is documented below.",
+      'input',
+      'User input. Supports text input, event input, dtmf input in the test case.\nStructure is documented below.',
       () =>
         diagflow_CxTestCaseTestCaseConversationTurnUserInputInput_GetTypes(),
       false,
@@ -56,8 +56,8 @@ export function diagflow_CxTestCaseTestCaseConversationTurnUserInput_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isWebhookEnabled",
-      "If webhooks should be allowed to trigger in response to the user utterance. Often if parameters are injected, webhooks should not be enabled.",
+      'isWebhookEnabled',
+      'If webhooks should be allowed to trigger in response to the user utterance. Often if parameters are injected, webhooks should not be enabled.',
       () => [],
       false,
       false,

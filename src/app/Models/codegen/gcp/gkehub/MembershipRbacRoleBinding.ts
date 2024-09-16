@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_MembershipRbacRoleBindingRole,
   gkehub_MembershipRbacRoleBindingRole_GetTypes,
-} from "../types/gkehub_MembershipRbacRoleBindingRole";
+} from '../types/gkehub_MembershipRbacRoleBindingRole';
 import {
   gkehub_MembershipRbacRoleBindingState,
   gkehub_MembershipRbacRoleBindingState_GetTypes,
-} from "../types/gkehub_MembershipRbacRoleBindingState";
+} from '../types/gkehub_MembershipRbacRoleBindingState';
 
 export interface MembershipRbacRoleBindingArgs {
   // The client-provided identifier of the RBAC Role Binding.
@@ -100,15 +100,15 @@ user is the name of the user as seen by the kubernetes cluster, example
     return [
       new DynamicUIProps(
         InputType.Object,
-        "role",
-        "Role to bind to the principal.\nStructure is documented below.",
+        'role',
+        'Role to bind to the principal.\nStructure is documented below.',
         () => gkehub_MembershipRbacRoleBindingRole_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "user",
+        'user',
         'Principal that is be authorized in the cluster (at least of one the oneof\nis required). Updating one will unset the other automatically.\nuser is the name of the user as seen by the kubernetes cluster, example\n"alice" or "alice@domain.tld"',
         () => [],
         true,
@@ -116,32 +116,32 @@ user is the name of the user as seen by the kubernetes cluster, example
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of the Membership",
+        'location',
+        'Location of the Membership',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "membershipId",
-        "Id of the membership",
+        'membershipId',
+        'Id of the membership',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "membershipRbacRoleBindingId",
-        "The client-provided identifier of the RBAC Role Binding.",
+        'membershipRbacRoleBindingId',
+        'The client-provided identifier of the RBAC Role Binding.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

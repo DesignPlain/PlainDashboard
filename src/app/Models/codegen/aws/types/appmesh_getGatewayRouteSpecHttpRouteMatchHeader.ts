@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getGatewayRouteSpecHttpRouteMatchHeaderMatch,
   appmesh_getGatewayRouteSpecHttpRouteMatchHeaderMatch_GetTypes,
-} from "./appmesh_getGatewayRouteSpecHttpRouteMatchHeaderMatch";
+} from './appmesh_getGatewayRouteSpecHttpRouteMatchHeaderMatch';
 
 export interface appmesh_getGatewayRouteSpecHttpRouteMatchHeader {
   //
@@ -23,19 +23,19 @@ export interface appmesh_getGatewayRouteSpecHttpRouteMatchHeader {
 
 export function appmesh_getGatewayRouteSpecHttpRouteMatchHeader_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Bool, "invert", "", () => [], true, false),
+    new DynamicUIProps(InputType.Bool, 'invert', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "matches",
-      "",
+      'matches',
+      '',
       () => appmesh_getGatewayRouteSpecHttpRouteMatchHeaderMatch_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the gateway route.",
+      'name',
+      'Name of the gateway route.',
       () => [],
       true,
       false,

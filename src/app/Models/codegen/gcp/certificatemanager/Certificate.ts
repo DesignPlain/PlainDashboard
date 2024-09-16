@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificatemanager_CertificateSelfManaged,
   certificatemanager_CertificateSelfManaged_GetTypes,
-} from "../types/certificatemanager_CertificateSelfManaged";
+} from '../types/certificatemanager_CertificateSelfManaged';
 import {
   certificatemanager_CertificateManaged,
   certificatemanager_CertificateManaged_GetTypes,
-} from "../types/certificatemanager_CertificateManaged";
+} from '../types/certificatemanager_CertificateManaged';
 
 export interface CertificateArgs {
   /*
@@ -142,23 +142,23 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "scope",
-        "The scope of the certificate.\nDEFAULT: Certificates with default scope are served from core Google data centers.\nIf unsure, choose this option.\nEDGE_CACHE: Certificates with scope EDGE_CACHE are special-purposed certificates, served from Edge Points of Presence.\nSee https://cloud.google.com/vpc/docs/edge-locations.\nALL_REGIONS: Certificates with ALL_REGIONS scope are served from all GCP regions (You can only use ALL_REGIONS with global certs).\nSee https://cloud.google.com/compute/docs/regions-zones",
+        'scope',
+        'The scope of the certificate.\nDEFAULT: Certificates with default scope are served from core Google data centers.\nIf unsure, choose this option.\nEDGE_CACHE: Certificates with scope EDGE_CACHE are special-purposed certificates, served from Edge Points of Presence.\nSee https://cloud.google.com/vpc/docs/edge-locations.\nALL_REGIONS: Certificates with ALL_REGIONS scope are served from all GCP regions (You can only use ALL_REGIONS with global certs).\nSee https://cloud.google.com/compute/docs/regions-zones',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "selfManaged",
+        'selfManaged',
         "Certificate data for a SelfManaged Certificate.\nSelfManaged Certificates are uploaded by the user. Updating such\ncertificates before they expire remains the user's responsibility.\nStructure is documented below.",
         () => certificatemanager_CertificateSelfManaged_GetTypes(),
         false,
@@ -166,23 +166,23 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A human-readable description of the resource.",
+        'description',
+        'A human-readable description of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Set of label tags associated with the Certificate resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Set of label tags associated with the Certificate resource.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
+        'location',
         'The Certificate Manager location. If not specified, "global" is used.',
         () => [],
         false,
@@ -190,7 +190,7 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "managed",
+        'managed',
         "Configuration and state of a Managed Certificate.\nCertificate Manager provisions and renews Managed Certificates\nautomatically, for as long as it's authorized to do so.\nStructure is documented below.",
         () => certificatemanager_CertificateManaged_GetTypes(),
         false,
@@ -198,8 +198,8 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A user-defined name of the certificate. Certificate names must be unique\nThe name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]* which means the first character must be a letter,\nand all following characters must be a dash, underscore, letter or digit.\n\n\n- - -",
+        'name',
+        'A user-defined name of the certificate. Certificate names must be unique\nThe name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]* which means the first character must be a letter,\nand all following characters must be a dash, underscore, letter or digit.\n\n\n- - -',
         () => [],
         false,
         true,

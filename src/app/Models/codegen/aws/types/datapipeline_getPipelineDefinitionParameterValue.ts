@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface datapipeline_getPipelineDefinitionParameterValue {
   // ID of the object.
@@ -18,16 +18,16 @@ export function datapipeline_getPipelineDefinitionParameterValue_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "ID of the object.",
+      'id',
+      'ID of the object.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "stringValue",
-      "Field value, expressed as a String.",
+      'stringValue',
+      'Field value, expressed as a String.',
       () => [],
       true,
       false,

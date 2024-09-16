@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType,
   dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType";
+} from './dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType';
 import {
   dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule,
   dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule";
+} from './dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule';
 
 export interface dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet {
   /*
@@ -32,8 +32,8 @@ export function dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet_GetT
   return [
     new DynamicUIProps(
       InputType.Array,
-      "infoTypes",
-      "List of infoTypes this rule set is applied to.\nStructure is documented below.",
+      'infoTypes',
+      'List of infoTypes this rule set is applied to.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetInfoType_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSet_GetT
     ),
     new DynamicUIProps(
       InputType.Array,
-      "rules",
-      "Set of rules to be applied to infoTypes. The rules are applied in order.\nStructure is documented below.",
+      'rules',
+      'Set of rules to be applied to infoTypes. The rules are applied in order.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobInspectConfigRuleSetRule_GetTypes(),
       true,

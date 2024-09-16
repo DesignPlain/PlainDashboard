@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageCustomPayload,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageCustomPayload_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageCustomPayload";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageCustomPayload';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCard,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCard_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCard";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCard';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessagePlainTextMessage,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessagePlainTextMessage_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessagePlainTextMessage";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessagePlainTextMessage';
 import {
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageSsmlMessage,
   lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageSsmlMessage_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageSsmlMessage";
+} from './lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageSsmlMessage';
 
 export interface lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessage {
   //
@@ -40,8 +40,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
   return [
     new DynamicUIProps(
       InputType.Array,
-      "customPayloads",
-      "",
+      'customPayloads',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageCustomPayload_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
     ),
     new DynamicUIProps(
       InputType.Object,
-      "imageResponseCard",
-      "",
+      'imageResponseCard',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCard_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
     ),
     new DynamicUIProps(
       InputType.Object,
-      "plainTextMessage",
-      "",
+      'plainTextMessage',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessagePlainTextMessage_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificat
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ssmlMessage",
-      "",
+      'ssmlMessage',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageSsmlMessage_GetTypes(),
       false,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule,
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule";
+} from './dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule';
 import {
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule,
   dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule";
+} from './dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule';
 
 export interface dataloss_PreventionInspectTemplateInspectConfigRuleSetRule {
   /*
@@ -32,8 +32,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRule_GetTy
   return [
     new DynamicUIProps(
       InputType.Object,
-      "exclusionRule",
-      "The rule that specifies conditions when findings of infoTypes specified in InspectionRuleSet are removed from results.\nStructure is documented below.",
+      'exclusionRule',
+      'The rule that specifies conditions when findings of infoTypes specified in InspectionRuleSet are removed from results.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRule_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigRuleSetRule_GetTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hotwordRule",
-      "Hotword-based detection rule.\nStructure is documented below.",
+      'hotwordRule',
+      'Hotword-based detection rule.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRule_GetTypes(),
       false,

@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxTestCaseTestCaseConversationTurn,
   diagflow_CxTestCaseTestCaseConversationTurn_GetTypes,
-} from "../types/diagflow_CxTestCaseTestCaseConversationTurn";
+} from '../types/diagflow_CxTestCaseTestCaseConversationTurn';
 import {
   diagflow_CxTestCaseTestConfig,
   diagflow_CxTestCaseTestConfig_GetTypes,
-} from "../types/diagflow_CxTestCaseTestConfig";
+} from '../types/diagflow_CxTestCaseTestConfig';
 import {
   diagflow_CxTestCaseLastTestResult,
   diagflow_CxTestCaseLastTestResult_GetTypes,
-} from "../types/diagflow_CxTestCaseLastTestResult";
+} from '../types/diagflow_CxTestCaseLastTestResult';
 
 export interface CxTestCaseArgs {
   // Additional freeform notes about the test case. Limit of 400 characters.
@@ -110,39 +110,39 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "testConfig",
-        "Config for the test case.\nStructure is documented below.",
+        'testConfig',
+        'Config for the test case.\nStructure is documented below.',
         () => diagflow_CxTestCaseTestConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The human-readable name of the test case, unique within the agent. Limit of 200 characters.\n\n\n- - -",
+        'displayName',
+        'The human-readable name of the test case, unique within the agent. Limit of 200 characters.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "notes",
-        "Additional freeform notes about the test case. Limit of 400 characters.",
+        'notes',
+        'Additional freeform notes about the test case. Limit of 400 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The agent to create the test case for.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.",
+        'parent',
+        'The agent to create the test case for.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "tags",
+        'tags',
         'Tags are short descriptions that users may apply to test cases for organizational and filtering purposes.\nEach tag should start with "#" and has a limit of 30 characters',
         () => InputType_String_GetTypes(),
         false,
@@ -150,8 +150,8 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "testCaseConversationTurns",
-        "The conversation turns uttered when the test case was created, in chronological order. These include the canonical set of agent utterances that should occur when the agent is working properly.\nStructure is documented below.",
+        'testCaseConversationTurns',
+        'The conversation turns uttered when the test case was created, in chronological order. These include the canonical set of agent utterances that should occur when the agent is working properly.\nStructure is documented below.',
         () => diagflow_CxTestCaseTestCaseConversationTurn_GetTypes(),
         false,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3_BucketV2ObjectLockConfigurationRuleDefaultRetention,
   s3_BucketV2ObjectLockConfigurationRuleDefaultRetention_GetTypes,
-} from "./s3_BucketV2ObjectLockConfigurationRuleDefaultRetention";
+} from './s3_BucketV2ObjectLockConfigurationRuleDefaultRetention';
 
 export interface s3_BucketV2ObjectLockConfigurationRule {
   // Default retention period that you want to apply to new objects placed in this bucket (documented below).
@@ -19,8 +19,8 @@ export function s3_BucketV2ObjectLockConfigurationRule_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "defaultRetentions",
-      "Default retention period that you want to apply to new objects placed in this bucket (documented below).",
+      'defaultRetentions',
+      'Default retention period that you want to apply to new objects placed in this bucket (documented below).',
       () => s3_BucketV2ObjectLockConfigurationRuleDefaultRetention_GetTypes(),
       true,
       false,

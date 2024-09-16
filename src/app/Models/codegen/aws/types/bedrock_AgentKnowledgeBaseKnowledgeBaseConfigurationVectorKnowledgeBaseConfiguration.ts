@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface bedrock_AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfiguration {
   // ARN of the model used to create vector embeddings for the knowledge base.
@@ -15,8 +15,8 @@ export function bedrock_AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowle
   return [
     new DynamicUIProps(
       InputType.String,
-      "embeddingModelArn",
-      "ARN of the model used to create vector embeddings for the knowledge base.",
+      'embeddingModelArn',
+      'ARN of the model used to create vector embeddings for the knowledge base.',
       () => [],
       true,
       false,

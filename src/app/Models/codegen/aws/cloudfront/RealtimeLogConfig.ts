@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_RealtimeLogConfigEndpoint,
   cloudfront_RealtimeLogConfigEndpoint_GetTypes,
-} from "../types/cloudfront_RealtimeLogConfigEndpoint";
+} from '../types/cloudfront_RealtimeLogConfigEndpoint';
 
 export interface RealtimeLogConfigArgs {
   // The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. An integer between `1` and `100`, inclusive.
@@ -44,32 +44,32 @@ export class RealtimeLogConfig extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Number,
-        "samplingRate",
-        "The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. An integer between `1` and `100`, inclusive.",
+        'samplingRate',
+        'The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. An integer between `1` and `100`, inclusive.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "endpoint",
-        "The Amazon Kinesis data streams where real-time log data is sent.",
+        'endpoint',
+        'The Amazon Kinesis data streams where real-time log data is sent.',
         () => cloudfront_RealtimeLogConfigEndpoint_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "fields",
-        "The fields that are included in each real-time log record. See the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields) for supported values.",
+        'fields',
+        'The fields that are included in each real-time log record. See the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields) for supported values.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The unique name to identify this real-time log configuration.",
+        'name',
+        'The unique name to identify this real-time log configuration.',
         () => [],
         false,
         true,

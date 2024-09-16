@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentConfirmationSettingDeclinationNextStepIntentSlot,
   lex_V2modelsIntentConfirmationSettingDeclinationNextStepIntentSlot_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingDeclinationNextStepIntentSlot";
+} from './lex_V2modelsIntentConfirmationSettingDeclinationNextStepIntentSlot';
 
 export interface lex_V2modelsIntentConfirmationSettingDeclinationNextStepIntent {
   // Name of the intent.
@@ -22,15 +22,15 @@ export function lex_V2modelsIntentConfirmationSettingDeclinationNextStepIntent_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the intent.",
+      'name',
+      'Name of the intent.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "slots",
+      'slots',
       "Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren't overridden. See `slot`.",
       () =>
         lex_V2modelsIntentConfirmationSettingDeclinationNextStepIntentSlot_GetTypes(),

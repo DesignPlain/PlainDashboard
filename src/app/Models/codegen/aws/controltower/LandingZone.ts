@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   controltower_LandingZoneDriftStatus,
   controltower_LandingZoneDriftStatus_GetTypes,
-} from "../types/controltower_LandingZoneDriftStatus";
+} from '../types/controltower_LandingZoneDriftStatus';
 
 export interface LandingZoneArgs {
   // The landing zone version.
@@ -47,24 +47,24 @@ export class LandingZone extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "version",
-        "The landing zone version.",
+        'version',
+        'The landing zone version.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "manifestJson",
-        "The manifest JSON file is a text file that describes your AWS resources. For examples, review [Launch your landing zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch).",
+        'manifestJson',
+        'The manifest JSON file is a text file that describes your AWS resources. For examples, review [Launch your landing zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch).',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Tags to apply to the landing zone. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Tags to apply to the landing zone. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

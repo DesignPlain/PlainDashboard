@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface NetworkInsightsPathArgs {
   // IP address of the destination resource.
@@ -75,56 +75,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "destinationIp",
-        "IP address of the destination resource.",
+        'destinationIp',
+        'IP address of the destination resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "destinationPort",
-        "Destination port to analyze access to.",
+        'destinationPort',
+        'Destination port to analyze access to.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "protocol",
-        "Protocol to use for analysis. Valid options are `tcp` or `udp`.\n\nThe following arguments are optional:",
+        'protocol',
+        'Protocol to use for analysis. Valid options are `tcp` or `udp`.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "source",
-        "ID or ARN of the resource which is the source of the path. Can be an Instance, Internet Gateway, Network Interface, Transit Gateway, VPC Endpoint, VPC Peering Connection or VPN Gateway. If the resource is in another account, you must specify an ARN.",
+        'source',
+        'ID or ARN of the resource which is the source of the path. Can be an Instance, Internet Gateway, Network Interface, Transit Gateway, VPC Endpoint, VPC Peering Connection or VPN Gateway. If the resource is in another account, you must specify an ARN.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceIp",
-        "IP address of the source resource.",
+        'sourceIp',
+        'IP address of the source resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "destination",
-        "ID or ARN of the resource which is the destination of the path. Can be an Instance, Internet Gateway, Network Interface, Transit Gateway, VPC Endpoint, VPC Peering Connection or VPN Gateway. If the resource is in another account, you must specify an ARN.",
+        'destination',
+        'ID or ARN of the resource which is the destination of the path. Can be an Instance, Internet Gateway, Network Interface, Transit Gateway, VPC Endpoint, VPC Peering Connection or VPN Gateway. If the resource is in another account, you must specify an ARN.',
         () => [],
         false,
         true,

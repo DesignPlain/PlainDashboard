@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   looker_InstanceMaintenanceWindowStartTime,
   looker_InstanceMaintenanceWindowStartTime_GetTypes,
-} from "./looker_InstanceMaintenanceWindowStartTime";
+} from './looker_InstanceMaintenanceWindowStartTime';
 
 export interface looker_InstanceMaintenanceWindow {
   /*
@@ -35,16 +35,16 @@ export function looker_InstanceMaintenanceWindow_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "startTime",
-      "Required. Start time of the window in UTC time.\nStructure is documented below.",
+      'startTime',
+      'Required. Start time of the window in UTC time.\nStructure is documented below.',
       () => looker_InstanceMaintenanceWindowStartTime_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dayOfWeek",
-      "Required. Day of the week for this MaintenanceWindow (in UTC).\n- MONDAY: Monday\n- TUESDAY: Tuesday\n- WEDNESDAY: Wednesday\n- THURSDAY: Thursday\n- FRIDAY: Friday\n- SATURDAY: Saturday\n- SUNDAY: Sunday\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.",
+      'dayOfWeek',
+      'Required. Day of the week for this MaintenanceWindow (in UTC).\n- MONDAY: Monday\n- TUESDAY: Tuesday\n- WEDNESDAY: Wednesday\n- THURSDAY: Thursday\n- FRIDAY: Friday\n- SATURDAY: Saturday\n- SUNDAY: Sunday\nPossible values are: `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, `SUNDAY`.',
       () => [],
       true,
       false,

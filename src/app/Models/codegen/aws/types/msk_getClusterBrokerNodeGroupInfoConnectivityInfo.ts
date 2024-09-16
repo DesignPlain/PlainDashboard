@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_getClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess,
   msk_getClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess_GetTypes,
-} from "./msk_getClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess";
+} from './msk_getClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess';
 import {
   msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity,
   msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity_GetTypes,
-} from "./msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity";
+} from './msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity';
 
 export interface msk_getClusterBrokerNodeGroupInfoConnectivityInfo {
   //
@@ -26,8 +26,8 @@ export function msk_getClusterBrokerNodeGroupInfoConnectivityInfo_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "vpcConnectivities",
-      "",
+      'vpcConnectivities',
+      '',
       () =>
         msk_getClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity_GetTypes(),
       true,
@@ -35,8 +35,8 @@ export function msk_getClusterBrokerNodeGroupInfoConnectivityInfo_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "publicAccesses",
-      "",
+      'publicAccesses',
+      '',
       () =>
         msk_getClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess_GetTypes(),
       true,

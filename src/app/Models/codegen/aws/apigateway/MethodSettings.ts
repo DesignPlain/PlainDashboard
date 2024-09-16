@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigateway_MethodSettingsSettings,
   apigateway_MethodSettingsSettings_GetTypes,
-} from "../types/apigateway_MethodSettingsSettings";
+} from '../types/apigateway_MethodSettingsSettings';
 
 export interface MethodSettingsArgs {
   // Method path defined as `{resource_path}/{http_method}` for an individual method override, or `-/-` for overriding all methods in the stage. Ensure to trim any leading forward slashes in the path (e.g., `trimprefix(aws_api_gateway_resource.example.path, "/")`).
@@ -41,15 +41,15 @@ export class MethodSettings extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "stageName",
-        "Name of the stage",
+        'stageName',
+        'Name of the stage',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "methodPath",
+        'methodPath',
         'Method path defined as `{resource_path}/{http_method}` for an individual method override, or `*/*` for overriding all methods in the stage. Ensure to trim any leading forward slashes in the path (e.g., `trimprefix(aws_api_gateway_resource.example.path, "/")`).',
         () => [],
         true,
@@ -57,16 +57,16 @@ export class MethodSettings extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "restApi",
-        "ID of the REST API",
+        'restApi',
+        'ID of the REST API',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "settings",
-        "Settings block, see below.",
+        'settings',
+        'Settings block, see below.',
         () => apigateway_MethodSettingsSettings_GetTypes(),
         true,
         false,

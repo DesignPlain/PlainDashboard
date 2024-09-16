@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lightsail_DistributionCacheBehaviorSettingsForwardedHeaders,
   lightsail_DistributionCacheBehaviorSettingsForwardedHeaders_GetTypes,
-} from "./lightsail_DistributionCacheBehaviorSettingsForwardedHeaders";
+} from './lightsail_DistributionCacheBehaviorSettingsForwardedHeaders';
 import {
   lightsail_DistributionCacheBehaviorSettingsForwardedQueryStrings,
   lightsail_DistributionCacheBehaviorSettingsForwardedQueryStrings_GetTypes,
-} from "./lightsail_DistributionCacheBehaviorSettingsForwardedQueryStrings";
+} from './lightsail_DistributionCacheBehaviorSettingsForwardedQueryStrings';
 import {
   lightsail_DistributionCacheBehaviorSettingsForwardedCookies,
   lightsail_DistributionCacheBehaviorSettingsForwardedCookies_GetTypes,
-} from "./lightsail_DistributionCacheBehaviorSettingsForwardedCookies";
+} from './lightsail_DistributionCacheBehaviorSettingsForwardedCookies';
 
 export interface lightsail_DistributionCacheBehaviorSettings {
   // The minimum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.
@@ -48,7 +48,7 @@ export function lightsail_DistributionCacheBehaviorSettings_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "allowedHttpMethods",
+      'allowedHttpMethods',
       "The HTTP methods that are processed and forwarded to the distribution's origin.",
       () => [],
       false,
@@ -56,15 +56,15 @@ export function lightsail_DistributionCacheBehaviorSettings_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "cachedHttpMethods",
-      "The HTTP method responses that are cached by your distribution.",
+      'cachedHttpMethods',
+      'The HTTP method responses that are cached by your distribution.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "defaultTtl",
+      'defaultTtl',
       "The default amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the content has been updated.",
       () => [],
       false,
@@ -72,8 +72,8 @@ export function lightsail_DistributionCacheBehaviorSettings_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Object,
-      "forwardedCookies",
-      "An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded. Detailed below",
+      'forwardedCookies',
+      'An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded. Detailed below',
       () =>
         lightsail_DistributionCacheBehaviorSettingsForwardedCookies_GetTypes(),
       false,
@@ -81,8 +81,8 @@ export function lightsail_DistributionCacheBehaviorSettings_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Object,
-      "forwardedHeaders",
-      "An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded. Detailed below",
+      'forwardedHeaders',
+      'An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded. Detailed below',
       () =>
         lightsail_DistributionCacheBehaviorSettingsForwardedHeaders_GetTypes(),
       false,
@@ -90,8 +90,8 @@ export function lightsail_DistributionCacheBehaviorSettings_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Object,
-      "forwardedQueryStrings",
-      "An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded. Detailed below",
+      'forwardedQueryStrings',
+      'An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded. Detailed below',
       () =>
         lightsail_DistributionCacheBehaviorSettingsForwardedQueryStrings_GetTypes(),
       false,
@@ -99,7 +99,7 @@ export function lightsail_DistributionCacheBehaviorSettings_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maximumTtl",
+      'maximumTtl',
       "The maximum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.",
       () => [],
       false,
@@ -107,7 +107,7 @@ export function lightsail_DistributionCacheBehaviorSettings_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minimumTtl",
+      'minimumTtl',
       "The minimum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.",
       () => [],
       false,

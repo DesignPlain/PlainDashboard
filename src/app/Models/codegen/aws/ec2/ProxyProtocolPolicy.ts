@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ProxyProtocolPolicyArgs {
   /*
@@ -37,16 +37,16 @@ should be attached.
     return [
       new DynamicUIProps(
         InputType.String,
-        "loadBalancer",
-        "The load balancer to which the policy\nshould be attached.",
+        'loadBalancer',
+        'The load balancer to which the policy\nshould be attached.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "instancePorts",
-        "List of instance ports to which the policy\nshould be applied. This can be specified if the protocol is SSL or TCP.",
+        'instancePorts',
+        'List of instance ports to which the policy\nshould be applied. This can be specified if the protocol is SSL or TCP.',
         () => InputType_String_GetTypes(),
         true,
         false,

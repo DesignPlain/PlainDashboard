@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DefaultVpcArgs {
   // Whether destroying the resource deletes the default VPC. Default: `false`
@@ -109,80 +109,80 @@ export class DefaultVpc extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ipv6CidrBlock",
-        "",
+        'ipv6CidrBlock',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "ipv6NetmaskLength",
-        "",
+        'ipv6NetmaskLength',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "assignGeneratedIpv6CidrBlock",
-        "",
+        'assignGeneratedIpv6CidrBlock',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipv6CidrBlockNetworkBorderGroup",
-        "",
+        'ipv6CidrBlockNetworkBorderGroup',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDestroy",
-        "Whether destroying the resource deletes the default VPC. Default: `false`",
+        'forceDestroy',
+        'Whether destroying the resource deletes the default VPC. Default: `false`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableNetworkAddressUsageMetrics",
-        "",
+        'enableNetworkAddressUsageMetrics',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableDnsHostnames",
-        "",
+        'enableDnsHostnames',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipv6IpamPoolId",
-        "",
+        'ipv6IpamPoolId',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableDnsSupport",
-        "",
+        'enableDnsSupport',
+        '',
         () => [],
         false,
         false,

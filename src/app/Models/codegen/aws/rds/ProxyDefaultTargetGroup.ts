@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   rds_ProxyDefaultTargetGroupConnectionPoolConfig,
   rds_ProxyDefaultTargetGroupConnectionPoolConfig_GetTypes,
-} from "../types/rds_ProxyDefaultTargetGroupConnectionPoolConfig";
+} from '../types/rds_ProxyDefaultTargetGroupConnectionPoolConfig';
 
 export interface ProxyDefaultTargetGroupArgs {
   // The settings that determine the size and behavior of the connection pool for the target group.
@@ -35,16 +35,16 @@ export class ProxyDefaultTargetGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "connectionPoolConfig",
-        "The settings that determine the size and behavior of the connection pool for the target group.",
+        'connectionPoolConfig',
+        'The settings that determine the size and behavior of the connection pool for the target group.',
         () => rds_ProxyDefaultTargetGroupConnectionPoolConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dbProxyName",
-        "Name of the RDS DB Proxy.",
+        'dbProxyName',
+        'Name of the RDS DB Proxy.',
         () => [],
         true,
         true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_RegionInstanceGroupManagerAllInstancesConfig {
   /*
@@ -22,16 +22,16 @@ export function compute_RegionInstanceGroupManagerAllInstancesConfig_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Map,
-      "labels",
-      ", The label key-value pairs that you want to patch onto the instance.\n\n- - -",
+      'labels',
+      ', The label key-value pairs that you want to patch onto the instance.\n\n- - -',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "metadata",
-      ", The metadata key-value pairs that you want to patch onto the instance. For more information, see [Project and instance metadata](https://cloud.google.com/compute/docs/metadata#project_and_instance_metadata).",
+      'metadata',
+      ', The metadata key-value pairs that you want to patch onto the instance. For more information, see [Project and instance metadata](https://cloud.google.com/compute/docs/metadata#project_and_instance_metadata).',
       () => InputType_Map_GetTypes(),
       false,
       false,

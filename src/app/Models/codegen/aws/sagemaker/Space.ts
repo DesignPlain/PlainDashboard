@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_SpaceSpaceSharingSettings,
   sagemaker_SpaceSpaceSharingSettings_GetTypes,
-} from "../types/sagemaker_SpaceSpaceSharingSettings";
+} from '../types/sagemaker_SpaceSpaceSharingSettings';
 import {
   sagemaker_SpaceOwnershipSettings,
   sagemaker_SpaceOwnershipSettings_GetTypes,
-} from "../types/sagemaker_SpaceOwnershipSettings";
+} from '../types/sagemaker_SpaceOwnershipSettings';
 import {
   sagemaker_SpaceSpaceSettings,
   sagemaker_SpaceSpaceSettings_GetTypes,
-} from "../types/sagemaker_SpaceSpaceSettings";
+} from '../types/sagemaker_SpaceSpaceSettings';
 
 export interface SpaceArgs {
   // A collection of ownership settings. Required if `space_sharing_settings` is set. See `ownership_settings` Block below.
@@ -79,56 +79,56 @@ export class Space extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainId",
-        "The ID of the associated Domain.",
+        'domainId',
+        'The ID of the associated Domain.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ownershipSettings",
-        "A collection of ownership settings. Required if `space_sharing_settings` is set. See `ownership_settings` Block below.",
+        'ownershipSettings',
+        'A collection of ownership settings. Required if `space_sharing_settings` is set. See `ownership_settings` Block below.',
         () => sagemaker_SpaceOwnershipSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "spaceDisplayName",
-        "The name of the space that appears in the SageMaker Studio UI.",
+        'spaceDisplayName',
+        'The name of the space that appears in the SageMaker Studio UI.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "spaceName",
-        "The name of the space.",
+        'spaceName',
+        'The name of the space.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "spaceSettings",
-        "A collection of space settings. See `space_settings` Block below.",
+        'spaceSettings',
+        'A collection of space settings. See `space_settings` Block below.',
         () => sagemaker_SpaceSpaceSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "spaceSharingSettings",
-        "A collection of space sharing settings. Required if `ownership_settings` is set. See `space_sharing_settings` Block below.",
+        'spaceSharingSettings',
+        'A collection of space sharing settings. Required if `ownership_settings` is set. See `space_sharing_settings` Block below.',
         () => sagemaker_SpaceSpaceSharingSettings_GetTypes(),
         false,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret,
   integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret_GetTypes,
-} from "./integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret";
+} from './integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret';
 
 export interface integrationconnectors_ConnectionAuthConfigOauth2ClientCredentials {
   // Secret version of Password for Authentication.
@@ -25,16 +25,16 @@ export function integrationconnectors_ConnectionAuthConfigOauth2ClientCredential
   return [
     new DynamicUIProps(
       InputType.String,
-      "clientId",
-      "Secret version of Password for Authentication.",
+      'clientId',
+      'Secret version of Password for Authentication.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "clientSecret",
-      "Secret version reference containing the client secret.\nStructure is documented below.",
+      'clientSecret',
+      'Secret version reference containing the client secret.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionAuthConfigOauth2ClientCredentialsClientSecret_GetTypes(),
       false,

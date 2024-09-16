@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigee_KeystoresAliasesKeyCertFileCertsInfo,
   apigee_KeystoresAliasesKeyCertFileCertsInfo_GetTypes,
-} from "../types/apigee_KeystoresAliasesKeyCertFileCertsInfo";
+} from '../types/apigee_KeystoresAliasesKeyCertFileCertsInfo';
 
 export interface KeystoresAliasesKeyCertFileArgs {
   // Organization ID associated with the alias, without organization/ prefix
@@ -84,15 +84,15 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "orgId",
-        "Organization ID associated with the alias, without organization/ prefix",
+        'orgId',
+        'Organization ID associated with the alias, without organization/ prefix',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "password",
+        'password',
         "Password for the Private Key if it's encrypted",
         () => [],
         false,
@@ -100,48 +100,48 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "alias",
-        "Alias Name",
+        'alias',
+        'Alias Name',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cert",
-        "Cert content\n\n\n- - -",
+        'cert',
+        'Cert content\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "certsInfo",
-        "Chain of certificates under this alias.\nStructure is documented below.",
+        'certsInfo',
+        'Chain of certificates under this alias.\nStructure is documented below.',
         () => apigee_KeystoresAliasesKeyCertFileCertsInfo_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "environment",
-        "Environment associated with the alias",
+        'environment',
+        'Environment associated with the alias',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "key",
-        "Private Key content, omit if uploading to truststore",
+        'key',
+        'Private Key content, omit if uploading to truststore',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keystore",
-        "Keystore Name",
+        'keystore',
+        'Keystore Name',
         () => [],
         true,
         true,

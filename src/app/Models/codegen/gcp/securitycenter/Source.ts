@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SourceArgs {
   // The description of the source (max of 1024 characters).
@@ -61,15 +61,15 @@ and underscores, and can be no longer than 32 characters.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the source (max of 1024 characters).",
+        'description',
+        'The description of the source (max of 1024 characters).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
+        'displayName',
         "The source’s display name. A source’s display name must be unique\namongst its siblings, for example, two sources with the same parent\ncan't share the same display name. The display name must start and end\nwith a letter or digit, may contain letters, digits, spaces, hyphens,\nand underscores, and can be no longer than 32 characters.",
         () => [],
         true,
@@ -77,8 +77,8 @@ and underscores, and can be no longer than 32 characters.
       ),
       new DynamicUIProps(
         InputType.String,
-        "organization",
-        "The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -",
+        'organization',
+        'The organization whose Cloud Security Command Center the Source\nlives in.\n\n\n- - -',
         () => [],
         true,
         true,

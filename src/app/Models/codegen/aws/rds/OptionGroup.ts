@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   rds_OptionGroupOption,
   rds_OptionGroupOption_GetTypes,
-} from "../types/rds_OptionGroupOption";
+} from '../types/rds_OptionGroupOption';
 
 export interface OptionGroupArgs {
   // The options to apply. See `option` Block below for more details.
@@ -71,64 +71,64 @@ export class OptionGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "namePrefix",
-        "Creates a unique name beginning with the specified prefix. Conflicts with `name`. Must be lowercase, to match as it is stored in AWS.",
+        'namePrefix',
+        'Creates a unique name beginning with the specified prefix. Conflicts with `name`. Must be lowercase, to match as it is stored in AWS.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "optionGroupDescription",
-        "Description of the option group.",
+        'optionGroupDescription',
+        'Description of the option group.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "options",
-        "The options to apply. See `option` Block below for more details.",
+        'options',
+        'The options to apply. See `option` Block below for more details.',
         () => rds_OptionGroupOption_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "skipDestroy",
-        "Set to true if you do not wish the option group to be deleted at destroy time, and instead just remove the option group from the Pulumi state.",
+        'skipDestroy',
+        'Set to true if you do not wish the option group to be deleted at destroy time, and instead just remove the option group from the Pulumi state.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "engineName",
-        "Specifies the name of the engine that this option group should be associated with.",
+        'engineName',
+        'Specifies the name of the engine that this option group should be associated with.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "majorEngineVersion",
-        "Specifies the major version of the engine that this option group should be associated with.",
+        'majorEngineVersion',
+        'Specifies the major version of the engine that this option group should be associated with.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the option group. If omitted, the provider will assign a random, unique name. Must be lowercase, to match as it is stored in AWS.",
+        'name',
+        'Name of the option group. If omitted, the provider will assign a random, unique name. Must be lowercase, to match as it is stored in AWS.',
         () => [],
         false,
         true,

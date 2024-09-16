@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssm_MaintenanceWindowTaskTaskInvocationParameters,
   ssm_MaintenanceWindowTaskTaskInvocationParameters_GetTypes,
-} from "../types/ssm_MaintenanceWindowTaskTaskInvocationParameters";
+} from '../types/ssm_MaintenanceWindowTaskTaskInvocationParameters';
 import {
   ssm_MaintenanceWindowTaskTarget,
   ssm_MaintenanceWindowTaskTarget_GetTypes,
-} from "../types/ssm_MaintenanceWindowTaskTarget";
+} from '../types/ssm_MaintenanceWindowTaskTarget';
 
 export interface MaintenanceWindowTaskArgs {
   // Configuration block with parameters for task execution.
@@ -99,47 +99,47 @@ export class MaintenanceWindowTask extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "taskArn",
-        "The ARN of the task to execute.",
+        'taskArn',
+        'The ARN of the task to execute.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "taskType",
-        "The type of task being registered. Valid values: `AUTOMATION`, `LAMBDA`, `RUN_COMMAND` or `STEP_FUNCTIONS`.",
+        'taskType',
+        'The type of task being registered. Valid values: `AUTOMATION`, `LAMBDA`, `RUN_COMMAND` or `STEP_FUNCTIONS`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the maintenance window task.",
+        'description',
+        'The description of the maintenance window task.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the maintenance window task.",
+        'name',
+        'The name of the maintenance window task.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "priority",
-        "The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.",
+        'priority',
+        'The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceRoleArn",
+        'serviceRoleArn',
         "The role that should be assumed when executing the task. If a role is not provided, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created for you.",
         () => [],
         false,
@@ -147,48 +147,48 @@ export class MaintenanceWindowTask extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targets",
-        "The targets (either instances or window target ids). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target ids are specified using Key=WindowTargetIds,Values=window target id1, window target id2.",
+        'targets',
+        'The targets (either instances or window target ids). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target ids are specified using Key=WindowTargetIds,Values=window target id1, window target id2.',
         () => ssm_MaintenanceWindowTaskTarget_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "maxErrors",
-        "The maximum number of errors allowed before this task stops being scheduled.",
+        'maxErrors',
+        'The maximum number of errors allowed before this task stops being scheduled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "windowId",
-        "The Id of the maintenance window to register the task with.",
+        'windowId',
+        'The Id of the maintenance window to register the task with.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "taskInvocationParameters",
-        "Configuration block with parameters for task execution.",
+        'taskInvocationParameters',
+        'Configuration block with parameters for task execution.',
         () => ssm_MaintenanceWindowTaskTaskInvocationParameters_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cutoffBehavior",
-        "Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. Valid values are `CONTINUE_TASK` and `CANCEL_TASK`.",
+        'cutoffBehavior',
+        'Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. Valid values are `CONTINUE_TASK` and `CANCEL_TASK`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "maxConcurrency",
-        "The maximum number of targets this task can be run for in parallel.",
+        'maxConcurrency',
+        'The maximum number of targets this task can be run for in parallel.',
         () => [],
         false,
         false,

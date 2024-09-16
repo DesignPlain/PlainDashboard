@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opensearch_getDomainAutoTuneOptionMaintenanceScheduleDuration,
   opensearch_getDomainAutoTuneOptionMaintenanceScheduleDuration_GetTypes,
-} from "./opensearch_getDomainAutoTuneOptionMaintenanceScheduleDuration";
+} from './opensearch_getDomainAutoTuneOptionMaintenanceScheduleDuration';
 
 export interface opensearch_getDomainAutoTuneOptionMaintenanceSchedule {
   // Cron expression for an Auto-Tune maintenance schedule.
@@ -25,16 +25,16 @@ export function opensearch_getDomainAutoTuneOptionMaintenanceSchedule_GetTypes()
   return [
     new DynamicUIProps(
       InputType.String,
-      "cronExpressionForRecurrence",
-      "Cron expression for an Auto-Tune maintenance schedule.",
+      'cronExpressionForRecurrence',
+      'Cron expression for an Auto-Tune maintenance schedule.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "durations",
-      "Configuration block for the duration of the Auto-Tune maintenance window.",
+      'durations',
+      'Configuration block for the duration of the Auto-Tune maintenance window.',
       () =>
         opensearch_getDomainAutoTuneOptionMaintenanceScheduleDuration_GetTypes(),
       true,
@@ -42,8 +42,8 @@ export function opensearch_getDomainAutoTuneOptionMaintenanceSchedule_GetTypes()
     ),
     new DynamicUIProps(
       InputType.String,
-      "startAt",
-      "Date and time at which the Auto-Tune maintenance schedule starts in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).",
+      'startAt',
+      'Date and time at which the Auto-Tune maintenance schedule starts in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).',
       () => [],
       true,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SnapshotCopyArgs {
   // A description of what the snapshot is.
@@ -91,72 +91,72 @@ export class SnapshotCopy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "permanentRestore",
-        "Indicates whether to permanently restore an archived snapshot.",
+        'permanentRestore',
+        'Indicates whether to permanently restore an archived snapshot.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "encrypted",
-        "Whether the snapshot is encrypted.",
+        'encrypted',
+        'Whether the snapshot is encrypted.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "storageTier",
-        "The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.",
+        'storageTier',
+        'The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags for the snapshot.",
+        'tags',
+        'A map of tags for the snapshot.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of what the snapshot is.",
+        'description',
+        'A description of what the snapshot is.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceRegion",
-        "The region of the source snapshot.",
+        'sourceRegion',
+        'The region of the source snapshot.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceSnapshotId",
-        "The ARN for the snapshot to be copied.",
+        'sourceSnapshotId',
+        'The ARN for the snapshot to be copied.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "temporaryRestoreDays",
-        "Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.",
+        'temporaryRestoreDays',
+        'Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
-        "The ARN for the KMS encryption key.",
+        'kmsKeyId',
+        'The ARN for the KMS encryption key.',
         () => [],
         false,
         true,

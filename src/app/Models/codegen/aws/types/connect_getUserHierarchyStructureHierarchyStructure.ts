@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   connect_getUserHierarchyStructureHierarchyStructureLevelOne,
   connect_getUserHierarchyStructureHierarchyStructureLevelOne_GetTypes,
-} from "./connect_getUserHierarchyStructureHierarchyStructureLevelOne";
+} from './connect_getUserHierarchyStructureHierarchyStructureLevelOne';
 import {
   connect_getUserHierarchyStructureHierarchyStructureLevelThree,
   connect_getUserHierarchyStructureHierarchyStructureLevelThree_GetTypes,
-} from "./connect_getUserHierarchyStructureHierarchyStructureLevelThree";
+} from './connect_getUserHierarchyStructureHierarchyStructureLevelThree';
 import {
   connect_getUserHierarchyStructureHierarchyStructureLevelTwo,
   connect_getUserHierarchyStructureHierarchyStructureLevelTwo_GetTypes,
-} from "./connect_getUserHierarchyStructureHierarchyStructureLevelTwo";
+} from './connect_getUserHierarchyStructureHierarchyStructureLevelTwo';
 import {
   connect_getUserHierarchyStructureHierarchyStructureLevelFife,
   connect_getUserHierarchyStructureHierarchyStructureLevelFife_GetTypes,
-} from "./connect_getUserHierarchyStructureHierarchyStructureLevelFife";
+} from './connect_getUserHierarchyStructureHierarchyStructureLevelFife';
 import {
   connect_getUserHierarchyStructureHierarchyStructureLevelFour,
   connect_getUserHierarchyStructureHierarchyStructureLevelFour_GetTypes,
-} from "./connect_getUserHierarchyStructureHierarchyStructureLevelFour";
+} from './connect_getUserHierarchyStructureHierarchyStructureLevelFour';
 
 export interface connect_getUserHierarchyStructureHierarchyStructure {
   // Details of level one. See below.
@@ -47,8 +47,8 @@ export function connect_getUserHierarchyStructureHierarchyStructure_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "levelOnes",
-      "Details of level one. See below.",
+      'levelOnes',
+      'Details of level one. See below.',
       () =>
         connect_getUserHierarchyStructureHierarchyStructureLevelOne_GetTypes(),
       true,
@@ -56,8 +56,8 @@ export function connect_getUserHierarchyStructureHierarchyStructure_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "levelThrees",
-      "Details of level three. See below.",
+      'levelThrees',
+      'Details of level three. See below.',
       () =>
         connect_getUserHierarchyStructureHierarchyStructureLevelThree_GetTypes(),
       true,
@@ -65,8 +65,8 @@ export function connect_getUserHierarchyStructureHierarchyStructure_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "levelTwos",
-      "Details of level two. See below.",
+      'levelTwos',
+      'Details of level two. See below.',
       () =>
         connect_getUserHierarchyStructureHierarchyStructureLevelTwo_GetTypes(),
       true,
@@ -74,8 +74,8 @@ export function connect_getUserHierarchyStructureHierarchyStructure_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "levelFives",
-      "Details of level five. See below.",
+      'levelFives',
+      'Details of level five. See below.',
       () =>
         connect_getUserHierarchyStructureHierarchyStructureLevelFife_GetTypes(),
       true,
@@ -83,8 +83,8 @@ export function connect_getUserHierarchyStructureHierarchyStructure_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "levelFours",
-      "Details of level four. See below.",
+      'levelFours',
+      'Details of level four. See below.',
       () =>
         connect_getUserHierarchyStructureHierarchyStructureLevelFour_GetTypes(),
       true,

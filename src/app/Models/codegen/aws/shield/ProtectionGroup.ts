@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ProtectionGroupArgs {
   // The criteria to use to choose the protected resources for inclusion in the group.
@@ -55,48 +55,48 @@ export class ProtectionGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "members",
-        "The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set `pattern` to ARBITRARY and you must not set it for any other `pattern` setting.",
+        'members',
+        'The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set `pattern` to ARBITRARY and you must not set it for any other `pattern` setting.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pattern",
-        "The criteria to use to choose the protected resources for inclusion in the group.",
+        'pattern',
+        'The criteria to use to choose the protected resources for inclusion in the group.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "protectionGroupId",
-        "The name of the protection group.",
+        'protectionGroupId',
+        'The name of the protection group.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceType",
-        "The resource type to include in the protection group. You must set this when you set `pattern` to BY_RESOURCE_TYPE and you must not set it for any other `pattern` setting.",
+        'resourceType',
+        'The resource type to include in the protection group. You must set this when you set `pattern` to BY_RESOURCE_TYPE and you must not set it for any other `pattern` setting.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "aggregation",
-        "Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.",
+        'aggregation',
+        'Defines how AWS Shield combines resource data for the group in order to detect, mitigate, and report events.',
         () => [],
         true,
         false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface UserLoginProfileArgs {
   // The length of the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument. Default value is `20`.
@@ -46,31 +46,31 @@ export class UserLoginProfile extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Number,
-        "passwordLength",
-        "The length of the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument. Default value is `20`.",
+        'passwordLength',
+        'The length of the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument. Default value is `20`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "passwordResetRequired",
-        "Whether the user should be forced to reset the generated password on resource creation. Only applies on resource creation.",
+        'passwordResetRequired',
+        'Whether the user should be forced to reset the generated password on resource creation. Only applies on resource creation.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pgpKey",
-        "Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:username`. Only applies on resource creation. Drift detection is not possible with this argument.",
+        'pgpKey',
+        'Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:username`. Only applies on resource creation. Drift detection is not possible with this argument.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "user",
+        'user',
         "The IAM user's name.",
         () => [],
         true,

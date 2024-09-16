@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsIdentifyingField,
   dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsIdentifyingField_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsIdentifyingField";
+} from './dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsIdentifyingField';
 
 export interface dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptions {
   /*
@@ -24,7 +24,7 @@ export function dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOption
   return [
     new DynamicUIProps(
       InputType.Array,
-      "identifyingFields",
+      'identifyingFields',
       "The columns that are the primary keys for table objects included in ContentItem. A copy of this\ncell's value will stored alongside alongside each finding so that the finding can be traced to\nthe specific row it came from. No more than 3 may be provided.\nStructure is documented below.",
       () =>
         dataloss_PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsIdentifyingField_GetTypes(),

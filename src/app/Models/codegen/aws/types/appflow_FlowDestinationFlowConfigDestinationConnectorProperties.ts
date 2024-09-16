@@ -3,60 +3,60 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesRedshift,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesRedshift_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesRedshift";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesRedshift';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesS3,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesS3_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesS3";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesS3';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforce,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforce_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforce";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforce';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSapoData,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSapoData_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSapoData";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSapoData';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendesk,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendesk_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendesk";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendesk';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesLookoutMetrics,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesLookoutMetrics_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesLookoutMetrics";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesLookoutMetrics';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesMarketo,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesMarketo_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesMarketo";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesMarketo';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolver,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolver_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolver";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolver';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomerProfiles,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomerProfiles_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomerProfiles";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomerProfiles';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridge,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridge_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridge";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridge';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflake,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflake_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflake";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflake';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnector,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnector_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnector";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnector';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycode,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycode_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycode";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycode';
 
 export interface appflow_FlowDestinationFlowConfigDestinationConnectorProperties {
   // Properties that are required to query Upsolver. See Upsolver Destination Properties for more details.
@@ -103,8 +103,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
   return [
     new DynamicUIProps(
       InputType.Object,
-      "upsolver",
-      "Properties that are required to query Upsolver. See Upsolver Destination Properties for more details.",
+      'upsolver',
+      'Properties that are required to query Upsolver. See Upsolver Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolver_GetTypes(),
       false,
@@ -112,8 +112,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "customerProfiles",
-      "Properties that are required to query Amazon Connect Customer Profiles. See Customer Profiles Destination Properties for more details.",
+      'customerProfiles',
+      'Properties that are required to query Amazon Connect Customer Profiles. See Customer Profiles Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomerProfiles_GetTypes(),
       false,
@@ -121,8 +121,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "eventBridge",
-      "Properties that are required to query Amazon EventBridge. See Generic Destination Properties for more details.",
+      'eventBridge',
+      'Properties that are required to query Amazon EventBridge. See Generic Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridge_GetTypes(),
       false,
@@ -130,8 +130,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "honeycode",
-      "Properties that are required to query Amazon Honeycode. See Generic Destination Properties for more details.",
+      'honeycode',
+      'Properties that are required to query Amazon Honeycode. See Generic Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycode_GetTypes(),
       false,
@@ -139,8 +139,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "marketo",
-      "Properties that are required to query Marketo. See Generic Destination Properties for more details.",
+      'marketo',
+      'Properties that are required to query Marketo. See Generic Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesMarketo_GetTypes(),
       false,
@@ -148,8 +148,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "customConnector",
-      "Properties that are required to query the custom Connector. See Custom Connector Destination Properties for more details.",
+      'customConnector',
+      'Properties that are required to query the custom Connector. See Custom Connector Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnector_GetTypes(),
       false,
@@ -157,8 +157,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "lookoutMetrics",
-      "",
+      'lookoutMetrics',
+      '',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesLookoutMetrics_GetTypes(),
       false,
@@ -166,8 +166,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "redshift",
-      "Properties that are required to query Amazon Redshift. See Redshift Destination Properties for more details.",
+      'redshift',
+      'Properties that are required to query Amazon Redshift. See Redshift Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesRedshift_GetTypes(),
       false,
@@ -175,8 +175,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "s3",
-      "Properties that are required to query Amazon S3. See S3 Destination Properties for more details.",
+      's3',
+      'Properties that are required to query Amazon S3. See S3 Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesS3_GetTypes(),
       false,
@@ -184,8 +184,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "salesforce",
-      "Properties that are required to query Salesforce. See Salesforce Destination Properties for more details.",
+      'salesforce',
+      'Properties that are required to query Salesforce. See Salesforce Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforce_GetTypes(),
       false,
@@ -193,8 +193,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sapoData",
-      "Properties that are required to query SAPOData. See SAPOData Destination Properties for more details.",
+      'sapoData',
+      'Properties that are required to query SAPOData. See SAPOData Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSapoData_GetTypes(),
       false,
@@ -202,8 +202,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "snowflake",
-      "Properties that are required to query Snowflake. See Snowflake Destination Properties for more details.",
+      'snowflake',
+      'Properties that are required to query Snowflake. See Snowflake Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflake_GetTypes(),
       false,
@@ -211,8 +211,8 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorProperties_
     ),
     new DynamicUIProps(
       InputType.Object,
-      "zendesk",
-      "Properties that are required to query Zendesk. See Zendesk Destination Properties for more details.",
+      'zendesk',
+      'Properties that are required to query Zendesk. See Zendesk Destination Properties for more details.',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesZendesk_GetTypes(),
       false,

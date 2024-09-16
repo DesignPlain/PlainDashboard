@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_ClusterClusterAutoscalingResourceLimit,
   container_ClusterClusterAutoscalingResourceLimit_GetTypes,
-} from "./container_ClusterClusterAutoscalingResourceLimit";
+} from './container_ClusterClusterAutoscalingResourceLimit';
 import {
   container_ClusterClusterAutoscalingAutoProvisioningDefaults,
   container_ClusterClusterAutoscalingAutoProvisioningDefaults_GetTypes,
-} from "./container_ClusterClusterAutoscalingAutoProvisioningDefaults";
+} from './container_ClusterClusterAutoscalingAutoProvisioningDefaults';
 
 export interface container_ClusterClusterAutoscaling {
   /*
@@ -49,24 +49,24 @@ export function container_ClusterClusterAutoscaling_GetTypes(): DynamicUIProps[]
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Whether node auto-provisioning is enabled. Must be supplied for GKE Standard clusters, `true` is implied\nfor autopilot clusters. Resource limits for `cpu` and `memory` must be defined to enable node auto-provisioning for GKE Standard.",
+      'enabled',
+      'Whether node auto-provisioning is enabled. Must be supplied for GKE Standard clusters, `true` is implied\nfor autopilot clusters. Resource limits for `cpu` and `memory` must be defined to enable node auto-provisioning for GKE Standard.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "resourceLimits",
-      "Global constraints for machine resources in the\ncluster. Configuring the `cpu` and `memory` types is required if node\nauto-provisioning is enabled. These limits will apply to node pool autoscaling\nin addition to node auto-provisioning. Structure is documented below.",
+      'resourceLimits',
+      'Global constraints for machine resources in the\ncluster. Configuring the `cpu` and `memory` types is required if node\nauto-provisioning is enabled. These limits will apply to node pool autoscaling\nin addition to node auto-provisioning. Structure is documented below.',
       () => container_ClusterClusterAutoscalingResourceLimit_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "autoProvisioningDefaults",
-      "Contains defaults for a node pool created by NAP. A subset of fields also apply to\nGKE Autopilot clusters.\nStructure is documented below.",
+      'autoProvisioningDefaults',
+      'Contains defaults for a node pool created by NAP. A subset of fields also apply to\nGKE Autopilot clusters.\nStructure is documented below.',
       () =>
         container_ClusterClusterAutoscalingAutoProvisioningDefaults_GetTypes(),
       false,
@@ -74,8 +74,8 @@ export function container_ClusterClusterAutoscaling_GetTypes(): DynamicUIProps[]
     ),
     new DynamicUIProps(
       InputType.String,
-      "autoscalingProfile",
-      "Configuration\noptions for the [Autoscaling profile](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler#autoscaling_profiles)\nfeature, which lets you choose whether the cluster autoscaler should optimize for resource utilization or resource availability\nwhen deciding to remove nodes from a cluster. Can be `BALANCED` or `OPTIMIZE_UTILIZATION`. Defaults to `BALANCED`.",
+      'autoscalingProfile',
+      'Configuration\noptions for the [Autoscaling profile](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler#autoscaling_profiles)\nfeature, which lets you choose whether the cluster autoscaler should optimize for resource utilization or resource availability\nwhen deciding to remove nodes from a cluster. Can be `BALANCED` or `OPTIMIZE_UTILIZATION`. Defaults to `BALANCED`.',
       () => [],
       false,
       false,

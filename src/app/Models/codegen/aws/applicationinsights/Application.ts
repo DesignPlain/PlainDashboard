@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ApplicationArgs {
   // SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.
@@ -75,64 +75,64 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoConfigEnabled",
-        "Indicates whether Application Insights automatically configures unmonitored resources in the resource group.",
+        'autoConfigEnabled',
+        'Indicates whether Application Insights automatically configures unmonitored resources in the resource group.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoCreate",
-        "Configures all of the resources in the resource group by applying the recommended configurations.",
+        'autoCreate',
+        'Configures all of the resources in the resource group by applying the recommended configurations.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "cweMonitorEnabled",
-        "Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as instance terminated, failed deployment, and others.",
+        'cweMonitorEnabled',
+        'Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as instance terminated, failed deployment, and others.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "groupingType",
-        "Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to `ACCOUNT_BASED`.",
+        'groupingType',
+        'Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to `ACCOUNT_BASED`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "opsCenterEnabled",
-        "When set to `true`, creates opsItems for any problems detected on an application.",
+        'opsCenterEnabled',
+        'When set to `true`, creates opsItems for any problems detected on an application.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "opsItemSnsTopicArn",
-        "SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.",
+        'opsItemSnsTopicArn',
+        'SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceGroupName",
-        "Name of the resource group.\n\nThe following arguments are optional:",
+        'resourceGroupName',
+        'Name of the resource group.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,

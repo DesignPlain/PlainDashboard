@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_VpcIpamOperatingRegion,
   ec2_VpcIpamOperatingRegion_GetTypes,
-} from "../types/ec2_VpcIpamOperatingRegion";
+} from '../types/ec2_VpcIpamOperatingRegion';
 
 export interface VpcIpamArgs {
   // Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes.
@@ -71,23 +71,23 @@ IP space. The public scope is intended for all internet-routable IP space.
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "cascade",
-        "Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes.",
+        'cascade',
+        'Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description for the IPAM.",
+        'description',
+        'A description for the IPAM.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "operatingRegions",
+        'operatingRegions',
         "Determines which locales can be chosen when you create pools. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC's Region. You specify a region using the region_name parameter. You **must** set your provider block region as an operating_region.",
         () => ec2_VpcIpamOperatingRegion_GetTypes(),
         true,
@@ -95,16 +95,16 @@ IP space. The public scope is intended for all internet-routable IP space.
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tier",
-        "specifies the IPAM tier. Valid options include `free` and `advanced`. Default is `advanced`.",
+        'tier',
+        'specifies the IPAM tier. Valid options include `free` and `advanced`. Default is `advanced`.',
         () => [],
         false,
         false,

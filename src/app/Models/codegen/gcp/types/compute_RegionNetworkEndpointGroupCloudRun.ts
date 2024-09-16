@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_RegionNetworkEndpointGroupCloudRun {
   /*
@@ -38,7 +38,7 @@ export function compute_RegionNetworkEndpointGroupCloudRun_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "service",
+      'service',
       'Cloud Run service is the main resource of Cloud Run.\nThe service must be 1-63 characters long, and comply with RFC1035.\nExample value: "run-service".',
       () => [],
       false,
@@ -46,7 +46,7 @@ export function compute_RegionNetworkEndpointGroupCloudRun_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "tag",
+      'tag',
       'Cloud Run tag represents the "named-revision" to provide\nadditional fine-grained traffic routing information.\nThe tag must be 1-63 characters long, and comply with RFC1035.\nExample value: "revision-0010".',
       () => [],
       false,
@@ -54,7 +54,7 @@ export function compute_RegionNetworkEndpointGroupCloudRun_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "urlMask",
+      'urlMask',
       'A template to parse service and tag fields from a request URL.\nURL mask allows for routing to multiple Run services without having\nto create multiple network endpoint groups and backend services.\nFor example, request URLs "foo1.domain.com/bar1" and "foo1.domain.com/bar2"\nan be backed by the same Serverless Network Endpoint Group (NEG) with\nURL mask ".domain.com/". The URL mask will parse them to { service="bar1", tag="foo1" }\nand { service="bar2", tag="foo2" } respectively.',
       () => [],
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface KeyvaluestoreKeyArgs {
   // Key to put.
@@ -34,24 +34,24 @@ export class KeyvaluestoreKey extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "key",
-        "Key to put.",
+        'key',
+        'Key to put.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyValueStoreArn",
-        "Amazon Resource Name (ARN) of the Key Value Store.",
+        'keyValueStoreArn',
+        'Amazon Resource Name (ARN) of the Key Value Store.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "value",
-        "Value to put.",
+        'value',
+        'Value to put.',
         () => [],
         true,
         false,

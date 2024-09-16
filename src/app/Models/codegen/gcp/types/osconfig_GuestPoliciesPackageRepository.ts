@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_GuestPoliciesPackageRepositoryApt,
   osconfig_GuestPoliciesPackageRepositoryApt_GetTypes,
-} from "./osconfig_GuestPoliciesPackageRepositoryApt";
+} from './osconfig_GuestPoliciesPackageRepositoryApt';
 import {
   osconfig_GuestPoliciesPackageRepositoryGoo,
   osconfig_GuestPoliciesPackageRepositoryGoo_GetTypes,
-} from "./osconfig_GuestPoliciesPackageRepositoryGoo";
+} from './osconfig_GuestPoliciesPackageRepositoryGoo';
 import {
   osconfig_GuestPoliciesPackageRepositoryYum,
   osconfig_GuestPoliciesPackageRepositoryYum_GetTypes,
-} from "./osconfig_GuestPoliciesPackageRepositoryYum";
+} from './osconfig_GuestPoliciesPackageRepositoryYum';
 import {
   osconfig_GuestPoliciesPackageRepositoryZypper,
   osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes,
-} from "./osconfig_GuestPoliciesPackageRepositoryZypper";
+} from './osconfig_GuestPoliciesPackageRepositoryZypper';
 
 export interface osconfig_GuestPoliciesPackageRepository {
   /*
@@ -52,32 +52,32 @@ export function osconfig_GuestPoliciesPackageRepository_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "goo",
-      "A Goo Repository.\nStructure is documented below.",
+      'goo',
+      'A Goo Repository.\nStructure is documented below.',
       () => osconfig_GuestPoliciesPackageRepositoryGoo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "yum",
-      "A Yum Repository.\nStructure is documented below.",
+      'yum',
+      'A Yum Repository.\nStructure is documented below.',
       () => osconfig_GuestPoliciesPackageRepositoryYum_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "zypper",
-      "A Zypper Repository.\nStructure is documented below.",
+      'zypper',
+      'A Zypper Repository.\nStructure is documented below.',
       () => osconfig_GuestPoliciesPackageRepositoryZypper_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "apt",
-      "An Apt Repository.\nStructure is documented below.",
+      'apt',
+      'An Apt Repository.\nStructure is documented below.',
       () => osconfig_GuestPoliciesPackageRepositoryApt_GetTypes(),
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterNodeConfigSoleTenantConfigNodeAffinity {
   // List of node affinity label values as strings.
@@ -21,15 +21,15 @@ export function container_ClusterNodeConfigSoleTenantConfigNodeAffinity_GetTypes
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "The default or custom node affinity label key name.",
+      'key',
+      'The default or custom node affinity label key name.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "operator",
+      'operator',
       'Specifies affinity or anti-affinity. Accepted values are `"IN"` or `"NOT_IN"`',
       () => [],
       true,
@@ -37,8 +37,8 @@ export function container_ClusterNodeConfigSoleTenantConfigNodeAffinity_GetTypes
     ),
     new DynamicUIProps(
       InputType.Array,
-      "values",
-      "List of node affinity label values as strings.",
+      'values',
+      'List of node affinity label values as strings.',
       () => InputType_String_GetTypes(),
       true,
       true,

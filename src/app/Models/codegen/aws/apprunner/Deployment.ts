@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apprunner_DeploymentTimeouts,
   apprunner_DeploymentTimeouts_GetTypes,
-} from "../types/apprunner_DeploymentTimeouts";
+} from '../types/apprunner_DeploymentTimeouts';
 
 export interface DeploymentArgs {
   // The Amazon Resource Name (ARN) of the App Runner service to start the deployment for.
@@ -35,16 +35,16 @@ export class Deployment extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "serviceArn",
-        "The Amazon Resource Name (ARN) of the App Runner service to start the deployment for.",
+        'serviceArn',
+        'The Amazon Resource Name (ARN) of the App Runner service to start the deployment for.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => apprunner_DeploymentTimeouts_GetTypes(),
         false,
         false,

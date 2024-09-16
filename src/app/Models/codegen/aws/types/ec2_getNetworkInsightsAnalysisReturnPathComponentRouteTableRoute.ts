@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_getNetworkInsightsAnalysisReturnPathComponentRouteTableRoute {
   //
@@ -40,75 +40,75 @@ export interface ec2_getNetworkInsightsAnalysisReturnPathComponentRouteTableRout
 
 export function ec2_getNetworkInsightsAnalysisReturnPathComponentRouteTableRoute_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "origin", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'origin', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "destinationPrefixListId",
-      "",
+      'destinationPrefixListId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "egressOnlyInternetGatewayId",
-      "",
+      'egressOnlyInternetGatewayId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "transitGatewayId",
-      "",
+      'transitGatewayId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "networkInterfaceId",
-      "",
+      'networkInterfaceId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "gatewayId",
-      "",
+      'gatewayId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "instanceId",
-      "",
+      'instanceId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "natGatewayId",
-      "",
+      'natGatewayId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "destinationCidr",
-      "",
+      'destinationCidr',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "vpcPeeringConnectionId",
-      "",
+      'vpcPeeringConnectionId',
+      '',
       () => [],
       true,
       false,

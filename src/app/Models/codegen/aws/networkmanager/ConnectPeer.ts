@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkmanager_ConnectPeerBgpOptions,
   networkmanager_ConnectPeerBgpOptions_GetTypes,
-} from "../types/networkmanager_ConnectPeerBgpOptions";
+} from '../types/networkmanager_ConnectPeerBgpOptions';
 import {
   networkmanager_ConnectPeerConfiguration,
   networkmanager_ConnectPeerConfiguration_GetTypes,
-} from "../types/networkmanager_ConnectPeerConfiguration";
+} from '../types/networkmanager_ConnectPeerConfiguration';
 
 export interface ConnectPeerArgs {
   // The Connect peer BGP options.
@@ -95,56 +95,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "bgpOptions",
-        "The Connect peer BGP options.",
+        'bgpOptions',
+        'The Connect peer BGP options.',
         () => networkmanager_ConnectPeerBgpOptions_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "connectAttachmentId",
-        "The ID of the connection attachment.",
+        'connectAttachmentId',
+        'The ID of the connection attachment.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "coreNetworkAddress",
-        "A Connect peer core network address.",
+        'coreNetworkAddress',
+        'A Connect peer core network address.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "insideCidrBlocks",
-        "The inside IP addresses used for BGP peering. Required when the Connect attachment protocol is `GRE`. See `aws.networkmanager.ConnectAttachment` for details.",
+        'insideCidrBlocks',
+        'The inside IP addresses used for BGP peering. Required when the Connect attachment protocol is `GRE`. See `aws.networkmanager.ConnectAttachment` for details.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "peerAddress",
-        "The Connect peer address.\n\nThe following arguments are optional:",
+        'peerAddress',
+        'The Connect peer address.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetArn",
-        "The subnet ARN for the Connect peer. Required when the Connect attachment protocol is `NO_ENCAP`. See `aws.networkmanager.ConnectAttachment` for details.",
+        'subnetArn',
+        'The subnet ARN for the Connect peer. Required when the Connect attachment protocol is `NO_ENCAP`. See `aws.networkmanager.ConnectAttachment` for details.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value tags for the attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value tags for the attachment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

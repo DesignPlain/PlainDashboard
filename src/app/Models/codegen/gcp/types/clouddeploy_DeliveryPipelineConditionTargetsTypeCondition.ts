@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface clouddeploy_DeliveryPipelineConditionTargetsTypeCondition {
   // Human readable error message.
@@ -18,16 +18,16 @@ export function clouddeploy_DeliveryPipelineConditionTargetsTypeCondition_GetTyp
   return [
     new DynamicUIProps(
       InputType.String,
-      "errorDetails",
-      "Human readable error message.",
+      'errorDetails',
+      'Human readable error message.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "status",
-      "True if the targets are all a comparable type. For example this is true if all targets are GKE clusters. This is false if some targets are Cloud Run targets and others are GKE clusters.",
+      'status',
+      'True if the targets are all a comparable type. For example this is true if all targets are GKE clusters. This is false if some targets are Cloud Run targets and others are GKE clusters.',
       () => [],
       false,
       false,

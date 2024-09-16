@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_RouteSpecHttp2RouteMatchHeaderMatch,
   appmesh_RouteSpecHttp2RouteMatchHeaderMatch_GetTypes,
-} from "./appmesh_RouteSpecHttp2RouteMatchHeaderMatch";
+} from './appmesh_RouteSpecHttp2RouteMatchHeaderMatch';
 
 export interface appmesh_RouteSpecHttp2RouteMatchHeader {
   // If `true`, the match is on the opposite of the `match` method and value. Default is `false`.
@@ -25,24 +25,24 @@ export function appmesh_RouteSpecHttp2RouteMatchHeader_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name for the HTTP header in the client request that will be matched on.",
+      'name',
+      'Name for the HTTP header in the client request that will be matched on.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "invert",
-      "If `true`, the match is on the opposite of the `match` method and value. Default is `false`.",
+      'invert',
+      'If `true`, the match is on the opposite of the `match` method and value. Default is `false`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "match",
-      "Method and value to match the header value sent with a request. Specify one match method.",
+      'match',
+      'Method and value to match the header value sent with a request. Specify one match method.',
       () => appmesh_RouteSpecHttp2RouteMatchHeaderMatch_GetTypes(),
       false,
       false,

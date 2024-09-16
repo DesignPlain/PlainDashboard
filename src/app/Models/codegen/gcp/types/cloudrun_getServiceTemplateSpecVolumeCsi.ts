@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudrun_getServiceTemplateSpecVolumeCsi {
   /*
@@ -30,15 +30,15 @@ export function cloudrun_getServiceTemplateSpecVolumeCsi_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Map,
-      "volumeAttributes",
-      "Driver-specific attributes. The following options are supported for available drivers:\n  * gcsfuse.run.googleapis.com\n    * bucketName: The name of the Cloud Storage Bucket that backs this volume. The Cloud Run Service identity must have access to this bucket.",
+      'volumeAttributes',
+      'Driver-specific attributes. The following options are supported for available drivers:\n  * gcsfuse.run.googleapis.com\n    * bucketName: The name of the Cloud Storage Bucket that backs this volume. The Cloud Run Service identity must have access to this bucket.',
       () => InputType_Map_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "driver",
+      'driver',
       'Unique name representing the type of file system to be created. Cloud Run supports the following values:\n  * gcsfuse.run.googleapis.com: Mount a Google Cloud Storage bucket using GCSFuse. This driver requires the\n    run.googleapis.com/execution-environment annotation to be set to "gen2" and\n    run.googleapis.com/launch-stage set to "BETA" or "ALPHA".',
       () => [],
       true,
@@ -46,8 +46,8 @@ export function cloudrun_getServiceTemplateSpecVolumeCsi_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "readOnly",
-      "If true, all mounts created from this volume will be read-only.",
+      'readOnly',
+      'If true, all mounts created from this volume will be read-only.',
       () => [],
       true,
       false,

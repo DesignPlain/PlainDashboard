@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface composer_getEnvironmentConfigWorkloadsConfigTriggerer {
   // The number of triggerers.
@@ -21,24 +21,24 @@ export function composer_getEnvironmentConfigWorkloadsConfigTriggerer_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Number,
-      "count",
-      "The number of triggerers.",
+      'count',
+      'The number of triggerers.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "cpu",
-      "CPU request and limit for a single Airflow triggerer replica.",
+      'cpu',
+      'CPU request and limit for a single Airflow triggerer replica.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "memoryGb",
-      "Memory (GB) request and limit for a single Airflow triggerer replica.",
+      'memoryGb',
+      'Memory (GB) request and limit for a single Airflow triggerer replica.',
       () => [],
       true,
       false,

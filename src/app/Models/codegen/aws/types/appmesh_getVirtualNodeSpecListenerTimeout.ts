@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTimeoutGrpc,
   appmesh_getVirtualNodeSpecListenerTimeoutGrpc_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTimeoutGrpc";
+} from './appmesh_getVirtualNodeSpecListenerTimeoutGrpc';
 import {
   appmesh_getVirtualNodeSpecListenerTimeoutHttp2,
   appmesh_getVirtualNodeSpecListenerTimeoutHttp2_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTimeoutHttp2";
+} from './appmesh_getVirtualNodeSpecListenerTimeoutHttp2';
 import {
   appmesh_getVirtualNodeSpecListenerTimeoutHttp,
   appmesh_getVirtualNodeSpecListenerTimeoutHttp_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTimeoutHttp";
+} from './appmesh_getVirtualNodeSpecListenerTimeoutHttp';
 import {
   appmesh_getVirtualNodeSpecListenerTimeoutTcp,
   appmesh_getVirtualNodeSpecListenerTimeoutTcp_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTimeoutTcp";
+} from './appmesh_getVirtualNodeSpecListenerTimeoutTcp';
 
 export interface appmesh_getVirtualNodeSpecListenerTimeout {
   //
@@ -40,32 +40,32 @@ export function appmesh_getVirtualNodeSpecListenerTimeout_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Array,
-      "https",
-      "",
+      'https',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTimeoutHttp_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tcps",
-      "",
+      'tcps',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTimeoutTcp_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "grpcs",
-      "",
+      'grpcs',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTimeoutGrpc_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "http2s",
-      "",
+      'http2s',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTimeoutHttp2_GetTypes(),
       true,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkebackup_BackupPlanBackupConfigSelectedNamespaces {
   // A list of Kubernetes Namespaces.
@@ -15,8 +15,8 @@ export function gkebackup_BackupPlanBackupConfigSelectedNamespaces_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Array,
-      "namespaces",
-      "A list of Kubernetes Namespaces.",
+      'namespaces',
+      'A list of Kubernetes Namespaces.',
       () => InputType_String_GetTypes(),
       true,
       false,

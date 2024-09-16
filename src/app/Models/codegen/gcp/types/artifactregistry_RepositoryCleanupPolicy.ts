@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   artifactregistry_RepositoryCleanupPolicyCondition,
   artifactregistry_RepositoryCleanupPolicyCondition_GetTypes,
-} from "./artifactregistry_RepositoryCleanupPolicyCondition";
+} from './artifactregistry_RepositoryCleanupPolicyCondition';
 import {
   artifactregistry_RepositoryCleanupPolicyMostRecentVersions,
   artifactregistry_RepositoryCleanupPolicyMostRecentVersions_GetTypes,
-} from "./artifactregistry_RepositoryCleanupPolicyMostRecentVersions";
+} from './artifactregistry_RepositoryCleanupPolicyMostRecentVersions';
 
 export interface artifactregistry_RepositoryCleanupPolicy {
   /*
@@ -42,32 +42,32 @@ export function artifactregistry_RepositoryCleanupPolicy_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "action",
-      "Policy action.\nPossible values are: `DELETE`, `KEEP`.",
+      'action',
+      'Policy action.\nPossible values are: `DELETE`, `KEEP`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "condition",
-      "Policy condition for matching versions.\nStructure is documented below.",
+      'condition',
+      'Policy condition for matching versions.\nStructure is documented below.',
       () => artifactregistry_RepositoryCleanupPolicyCondition_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "The identifier for this object. Format specified above.",
+      'id',
+      'The identifier for this object. Format specified above.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "mostRecentVersions",
-      "Policy condition for retaining a minimum number of versions. May only be\nspecified with a Keep action.\nStructure is documented below.",
+      'mostRecentVersions',
+      'Policy condition for retaining a minimum number of versions. May only be\nspecified with a Keep action.\nStructure is documented below.',
       () =>
         artifactregistry_RepositoryCleanupPolicyMostRecentVersions_GetTypes(),
       false,

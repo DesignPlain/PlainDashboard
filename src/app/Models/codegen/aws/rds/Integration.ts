@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   rds_IntegrationTimeouts,
   rds_IntegrationTimeouts_GetTypes,
-} from "../types/rds_IntegrationTimeouts";
+} from '../types/rds_IntegrationTimeouts';
 
 export interface IntegrationArgs {
   // KMS key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default AWS owned key. If you use the default AWS owned key, you should ignore `kms_key_id` parameter by using `lifecycle` parameter to avoid unintended change after the first creation.
@@ -73,31 +73,31 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => rds_IntegrationTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "additionalEncryptionContext",
-        "Set of non-secret key–value pairs that contains additional contextual information about the data. For more information, see the [User Guide](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context). You can only include this parameter if you specify the `kms_key_id` parameter.",
+        'additionalEncryptionContext',
+        'Set of non-secret key–value pairs that contains additional contextual information about the data. For more information, see the [User Guide](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context). You can only include this parameter if you specify the `kms_key_id` parameter.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "integrationName",
-        "Name of the integration.",
+        'integrationName',
+        'Name of the integration.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
+        'kmsKeyId',
         "KMS key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, RDS uses a default AWS owned key. If you use the default AWS owned key, you should ignore `kms_key_id` parameter by using `lifecycle` parameter to avoid unintended change after the first creation.",
         () => [],
         false,
@@ -105,24 +105,24 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceArn",
-        "ARN of the database to use as the source for replication.",
+        'sourceArn',
+        'ARN of the database to use as the source for replication.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetArn",
-        "ARN of the Redshift data warehouse to use as the target for replication.\n\nThe following arguments are optional:",
+        'targetArn',
+        'ARN of the Redshift data warehouse to use as the target for replication.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,

@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FleetDefaultClusterConfig,
   gkehub_FleetDefaultClusterConfig_GetTypes,
-} from "../types/gkehub_FleetDefaultClusterConfig";
+} from '../types/gkehub_FleetDefaultClusterConfig';
 import {
   gkehub_FleetState,
   gkehub_FleetState_GetTypes,
-} from "../types/gkehub_FleetState";
+} from '../types/gkehub_FleetState';
 
 export interface FleetArgs {
   /*
@@ -79,24 +79,24 @@ resource with the same name is created, it gets a different uid.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "defaultClusterConfig",
-        "The default cluster configurations to apply across the fleet.\nStructure is documented below.",
+        'defaultClusterConfig',
+        'The default cluster configurations to apply across the fleet.\nStructure is documented below.',
         () => gkehub_FleetDefaultClusterConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "A user-assigned display name of the Fleet. When present, it must be between 4 to 30 characters.\nAllowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.",
+        'displayName',
+        'A user-assigned display name of the Fleet. When present, it must be between 4 to 30 characters.\nAllowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

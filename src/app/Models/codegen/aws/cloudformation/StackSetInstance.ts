@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudformation_StackSetInstanceOperationPreferences,
   cloudformation_StackSetInstanceOperationPreferences_GetTypes,
-} from "../types/cloudformation_StackSetInstanceOperationPreferences";
+} from '../types/cloudformation_StackSetInstanceOperationPreferences';
 import {
   cloudformation_StackSetInstanceDeploymentTargets,
   cloudformation_StackSetInstanceDeploymentTargets_GetTypes,
-} from "../types/cloudformation_StackSetInstanceDeploymentTargets";
+} from '../types/cloudformation_StackSetInstanceDeploymentTargets';
 import {
   cloudformation_StackSetInstanceStackInstanceSummary,
   cloudformation_StackSetInstanceStackInstanceSummary_GetTypes,
-} from "../types/cloudformation_StackSetInstanceStackInstanceSummary";
+} from '../types/cloudformation_StackSetInstanceStackInstanceSummary';
 
 export interface StackSetInstanceArgs {
   // Preferences for how AWS CloudFormation performs a stack set operation.
@@ -82,7 +82,7 @@ export class StackSetInstance extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "deploymentTargets",
+        'deploymentTargets',
         "AWS Organizations accounts to which StackSets deploys. StackSets doesn't deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization. Drift detection is not possible for this argument. See deployment_targets below.",
         () => cloudformation_StackSetInstanceDeploymentTargets_GetTypes(),
         false,
@@ -90,55 +90,55 @@ export class StackSetInstance extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "operationPreferences",
-        "Preferences for how AWS CloudFormation performs a stack set operation.",
+        'operationPreferences',
+        'Preferences for how AWS CloudFormation performs a stack set operation.',
         () => cloudformation_StackSetInstanceOperationPreferences_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "parameterOverrides",
-        "Key-value map of input parameters to override from the StackSet for this Instance.",
+        'parameterOverrides',
+        'Key-value map of input parameters to override from the StackSet for this Instance.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "Target AWS Region to create a Stack based on the StackSet. Defaults to current region.",
+        'region',
+        'Target AWS Region to create a Stack based on the StackSet. Defaults to current region.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "retainStack",
-        "During resource destroy, remove Instance from StackSet while keeping the Stack and its associated resources. Must be enabled in the state _before_ destroy operation to take effect. You cannot reassociate a retained Stack or add an existing, saved Stack to a new StackSet. Defaults to `false`.",
+        'retainStack',
+        'During resource destroy, remove Instance from StackSet while keeping the Stack and its associated resources. Must be enabled in the state _before_ destroy operation to take effect. You cannot reassociate a retained Stack or add an existing, saved Stack to a new StackSet. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "stackSetName",
-        "Name of the StackSet.",
+        'stackSetName',
+        'Name of the StackSet.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "Target AWS Account ID to create a Stack based on the StackSet. Defaults to current account.",
+        'accountId',
+        'Target AWS Account ID to create a Stack based on the StackSet. Defaults to current account.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "callAs",
+        'callAs',
         "Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account. Valid values: `SELF` (default), `DELEGATED_ADMIN`.",
         () => [],
         false,

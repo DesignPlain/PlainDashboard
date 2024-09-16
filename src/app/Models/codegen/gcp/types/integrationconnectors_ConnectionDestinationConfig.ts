@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionDestinationConfigDestination,
   integrationconnectors_ConnectionDestinationConfigDestination_GetTypes,
-} from "./integrationconnectors_ConnectionDestinationConfigDestination";
+} from './integrationconnectors_ConnectionDestinationConfigDestination';
 
 export interface integrationconnectors_ConnectionDestinationConfig {
   /*
@@ -25,8 +25,8 @@ export function integrationconnectors_ConnectionDestinationConfig_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "destinations",
-      "The destinations for the key.\nStructure is documented below.",
+      'destinations',
+      'The destinations for the key.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionDestinationConfigDestination_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function integrationconnectors_ConnectionDestinationConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "The key is the destination identifier that is supported by the Connector.",
+      'key',
+      'The key is the destination identifier that is supported by the Connector.',
       () => [],
       true,
       false,

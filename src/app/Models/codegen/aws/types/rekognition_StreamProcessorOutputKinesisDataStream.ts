@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface rekognition_StreamProcessorOutputKinesisDataStream {
   // ARN of the output Amazon Kinesis Data Streams stream.
@@ -15,8 +15,8 @@ export function rekognition_StreamProcessorOutputKinesisDataStream_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "arn",
-      "ARN of the output Amazon Kinesis Data Streams stream.",
+      'arn',
+      'ARN of the output Amazon Kinesis Data Streams stream.',
       () => [],
       false,
       false,

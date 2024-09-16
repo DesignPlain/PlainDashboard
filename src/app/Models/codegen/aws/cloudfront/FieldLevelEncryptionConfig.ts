@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfig,
   cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfig_GetTypes,
-} from "../types/cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfig";
+} from '../types/cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfig';
 import {
   cloudfront_FieldLevelEncryptionConfigQueryArgProfileConfig,
   cloudfront_FieldLevelEncryptionConfigQueryArgProfileConfig_GetTypes,
-} from "../types/cloudfront_FieldLevelEncryptionConfigQueryArgProfileConfig";
+} from '../types/cloudfront_FieldLevelEncryptionConfigQueryArgProfileConfig';
 
 export interface FieldLevelEncryptionConfigArgs {
   // An optional comment about the Field Level Encryption Config.
@@ -45,7 +45,7 @@ export class FieldLevelEncryptionConfig extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "contentTypeProfileConfig",
+        'contentTypeProfileConfig',
         "Content Type Profile Config specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.",
         () =>
           cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfig_GetTypes(),
@@ -54,7 +54,7 @@ export class FieldLevelEncryptionConfig extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "queryArgProfileConfig",
+        'queryArgProfileConfig',
         "Query Arg Profile Config that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.",
         () =>
           cloudfront_FieldLevelEncryptionConfigQueryArgProfileConfig_GetTypes(),
@@ -63,8 +63,8 @@ export class FieldLevelEncryptionConfig extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "An optional comment about the Field Level Encryption Config.",
+        'comment',
+        'An optional comment about the Field Level Encryption Config.',
         () => [],
         false,
         false,

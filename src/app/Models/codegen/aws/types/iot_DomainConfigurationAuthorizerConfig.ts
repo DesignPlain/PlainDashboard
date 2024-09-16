@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iot_DomainConfigurationAuthorizerConfig {
   // A Boolean that specifies whether the domain configuration's authorization service can be overridden.
@@ -18,7 +18,7 @@ export function iot_DomainConfigurationAuthorizerConfig_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "allowAuthorizerOverride",
+      'allowAuthorizerOverride',
       "A Boolean that specifies whether the domain configuration's authorization service can be overridden.",
       () => [],
       false,
@@ -26,8 +26,8 @@ export function iot_DomainConfigurationAuthorizerConfig_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "defaultAuthorizerName",
-      "The name of the authorization service for a domain configuration.",
+      'defaultAuthorizerName',
+      'The name of the authorization service for a domain configuration.',
       () => [],
       false,
       false,

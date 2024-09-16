@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_VMwareNodePoolNodePoolAutoscaling,
   gkeonprem_VMwareNodePoolNodePoolAutoscaling_GetTypes,
-} from "../types/gkeonprem_VMwareNodePoolNodePoolAutoscaling";
+} from '../types/gkeonprem_VMwareNodePoolNodePoolAutoscaling';
 import {
   gkeonprem_VMwareNodePoolConfig,
   gkeonprem_VMwareNodePoolConfig_GetTypes,
-} from "../types/gkeonprem_VMwareNodePoolConfig";
+} from '../types/gkeonprem_VMwareNodePoolConfig';
 import {
   gkeonprem_VMwareNodePoolStatus,
   gkeonprem_VMwareNodePoolStatus_GetTypes,
-} from "../types/gkeonprem_VMwareNodePoolStatus";
+} from '../types/gkeonprem_VMwareNodePoolStatus';
 
 export interface VMwareNodePoolArgs {
   /*
@@ -160,64 +160,64 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The vmware node pool name.",
+        'name',
+        'The vmware node pool name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodePoolAutoscaling",
-        "Node Pool autoscaling config for the node pool.\nStructure is documented below.",
+        'nodePoolAutoscaling',
+        'Node Pool autoscaling config for the node pool.\nStructure is documented below.',
         () => gkeonprem_VMwareNodePoolNodePoolAutoscaling_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vmwareCluster",
-        "The cluster this node pool belongs to.",
+        'vmwareCluster',
+        'The cluster this node pool belongs to.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Annotations on the node Pool.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Annotations on the node Pool.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "config",
-        "The node configuration of the node pool.\nStructure is documented below.",
+        'config',
+        'The node configuration of the node pool.\nStructure is documented below.',
         () => gkeonprem_VMwareNodePoolConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name for the node pool.",
+        'displayName',
+        'The display name for the node pool.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource.",
+        'location',
+        'The location of the resource.',
         () => [],
         true,
         true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iam_getAccessKeysAccessKey {
   // Access key ID.
@@ -21,24 +21,24 @@ export function iam_getAccessKeysAccessKey_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "accessKeyId",
-      "Access key ID.",
+      'accessKeyId',
+      'Access key ID.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "createDate",
-      "Date and time in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) that the access key was created.",
+      'createDate',
+      'Date and time in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) that the access key was created.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "Access key status. Possible values are `Active` and `Inactive`.",
+      'status',
+      'Access key status. Possible values are `Active` and `Inactive`.',
       () => [],
       true,
       false,

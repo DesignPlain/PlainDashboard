@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface fsx_getWindowsFileSystemAuditLogConfiguration {
   //
@@ -21,24 +21,24 @@ export function fsx_getWindowsFileSystemAuditLogConfiguration_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "fileAccessAuditLogLevel",
-      "",
+      'fileAccessAuditLogLevel',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "fileShareAccessAuditLogLevel",
-      "",
+      'fileShareAccessAuditLogLevel',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "auditLogDestination",
-      "",
+      'auditLogDestination',
+      '',
       () => [],
       true,
       false,

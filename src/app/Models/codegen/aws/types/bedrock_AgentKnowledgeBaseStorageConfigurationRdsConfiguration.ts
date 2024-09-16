@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bedrock_AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping,
   bedrock_AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping_GetTypes,
-} from "./bedrock_AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping";
+} from './bedrock_AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping';
 
 export interface bedrock_AgentKnowledgeBaseStorageConfigurationRdsConfiguration {
   // ARN of the vector store.
@@ -31,24 +31,24 @@ export function bedrock_AgentKnowledgeBaseStorageConfigurationRdsConfiguration_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "credentialsSecretArn",
-      "ARN of the secret that you created in AWS Secrets Manager that is linked to your Amazon RDS database.",
+      'credentialsSecretArn',
+      'ARN of the secret that you created in AWS Secrets Manager that is linked to your Amazon RDS database.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "databaseName",
-      "Name of your Amazon RDS database.",
+      'databaseName',
+      'Name of your Amazon RDS database.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "fieldMapping",
-      "Names of the fields to which to map information about the vector store. This block supports the following arguments:",
+      'fieldMapping',
+      'Names of the fields to which to map information about the vector store. This block supports the following arguments:',
       () =>
         bedrock_AgentKnowledgeBaseStorageConfigurationRdsConfigurationFieldMapping_GetTypes(),
       false,
@@ -56,16 +56,16 @@ export function bedrock_AgentKnowledgeBaseStorageConfigurationRdsConfiguration_G
     ),
     new DynamicUIProps(
       InputType.String,
-      "resourceArn",
-      "ARN of the vector store.",
+      'resourceArn',
+      'ARN of the vector store.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tableName",
-      "Name of the table in the database.",
+      'tableName',
+      'Name of the table in the database.',
       () => [],
       true,
       false,

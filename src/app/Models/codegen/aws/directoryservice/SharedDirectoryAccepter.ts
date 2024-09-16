@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SharedDirectoryAccepterArgs {
   // Identifier of the directory that is stored in the directory consumer account that corresponds to the shared directory in the owner account.
@@ -31,8 +31,8 @@ export class SharedDirectoryAccepter extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "sharedDirectoryId",
-        "Identifier of the directory that is stored in the directory consumer account that corresponds to the shared directory in the owner account.",
+        'sharedDirectoryId',
+        'Identifier of the directory that is stored in the directory consumer account that corresponds to the shared directory in the owner account.',
         () => [],
         true,
         true,

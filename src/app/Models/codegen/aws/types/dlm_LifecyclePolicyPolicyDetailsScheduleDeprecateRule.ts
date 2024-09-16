@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dlm_LifecyclePolicyPolicyDetailsScheduleDeprecateRule {
   //
@@ -21,20 +21,20 @@ export function dlm_LifecyclePolicyPolicyDetailsScheduleDeprecateRule_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Number,
-      "interval",
-      "",
+      'interval',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "intervalUnit",
-      "",
+      'intervalUnit',
+      '',
       () => [],
       false,
       false,
     ),
-    new DynamicUIProps(InputType.Number, "count", "", () => [], false, false),
+    new DynamicUIProps(InputType.Number, 'count', '', () => [], false, false),
   ];
 }

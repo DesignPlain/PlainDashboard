@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_getDataSetLogicalTableMapSourceJoinInstruction,
   quicksight_getDataSetLogicalTableMapSourceJoinInstruction_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapSourceJoinInstruction";
+} from './quicksight_getDataSetLogicalTableMapSourceJoinInstruction';
 
 export interface quicksight_getDataSetLogicalTableMapSource {
   //
@@ -25,16 +25,16 @@ export function quicksight_getDataSetLogicalTableMapSource_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "dataSetArn",
-      "",
+      'dataSetArn',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "joinInstructions",
-      "",
+      'joinInstructions',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapSourceJoinInstruction_GetTypes(),
       true,
@@ -42,8 +42,8 @@ export function quicksight_getDataSetLogicalTableMapSource_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.String,
-      "physicalTableId",
-      "",
+      'physicalTableId',
+      '',
       () => [],
       true,
       false,

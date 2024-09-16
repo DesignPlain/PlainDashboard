@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterNodeConfigReservationAffinity {
   // The list of label values of reservation resources. For example: the name of the specific reservation when using a key of "compute.googleapis.com/reservation-name"
@@ -29,7 +29,7 @@ export function container_ClusterNodeConfigReservationAffinity_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "values",
+      'values',
       'The list of label values of reservation resources. For example: the name of the specific reservation when using a key of "compute.googleapis.com/reservation-name"',
       () => InputType_String_GetTypes(),
       false,
@@ -37,7 +37,7 @@ export function container_ClusterNodeConfigReservationAffinity_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "consumeReservationType",
+      'consumeReservationType',
       'The type of reservation consumption\nAccepted values are:\n\n* `"UNSPECIFIED"`: Default value. This should not be used.\n* `"NO_RESERVATION"`: Do not consume from any reserved capacity.\n* `"ANY_RESERVATION"`: Consume any reservation available.\n* `"SPECIFIC_RESERVATION"`: Must consume from a specific reservation. Must specify key value fields for specifying the reservations.',
       () => [],
       true,
@@ -45,7 +45,7 @@ export function container_ClusterNodeConfigReservationAffinity_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "key",
+      'key',
       'The label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify "compute.googleapis.com/reservation-name" as the key and specify the name of your reservation as its value.',
       () => [],
       false,

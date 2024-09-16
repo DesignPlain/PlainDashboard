@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_RouterPeerBfd {
   /*
@@ -47,32 +47,32 @@ export function compute_RouterPeerBfd_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "minTransmitInterval",
-      "The minimum interval, in milliseconds, between BFD control packets\ntransmitted to the peer router. The actual value is negotiated\nbetween the two routers and is equal to the greater of this value\nand the corresponding receive interval of the other router. If set,\nthis value must be between 1000 and 30000.",
+      'minTransmitInterval',
+      'The minimum interval, in milliseconds, between BFD control packets\ntransmitted to the peer router. The actual value is negotiated\nbetween the two routers and is equal to the greater of this value\nand the corresponding receive interval of the other router. If set,\nthis value must be between 1000 and 30000.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "multiplier",
-      "The number of consecutive BFD packets that must be missed before\nBFD declares that a peer is unavailable. If set, the value must\nbe a value between 5 and 16.",
+      'multiplier',
+      'The number of consecutive BFD packets that must be missed before\nBFD declares that a peer is unavailable. If set, the value must\nbe a value between 5 and 16.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sessionInitializationMode",
-      "The BFD session initialization mode for this BGP peer.\nIf set to `ACTIVE`, the Cloud Router will initiate the BFD session\nfor this BGP peer. If set to `PASSIVE`, the Cloud Router will wait\nfor the peer router to initiate the BFD session for this BGP peer.\nIf set to `DISABLED`, BFD is disabled for this BGP peer.\nPossible values are: `ACTIVE`, `DISABLED`, `PASSIVE`.",
+      'sessionInitializationMode',
+      'The BFD session initialization mode for this BGP peer.\nIf set to `ACTIVE`, the Cloud Router will initiate the BFD session\nfor this BGP peer. If set to `PASSIVE`, the Cloud Router will wait\nfor the peer router to initiate the BFD session for this BGP peer.\nIf set to `DISABLED`, BFD is disabled for this BGP peer.\nPossible values are: `ACTIVE`, `DISABLED`, `PASSIVE`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minReceiveInterval",
-      "The minimum interval, in milliseconds, between BFD control packets\nreceived from the peer router. The actual value is negotiated\nbetween the two routers and is equal to the greater of this value\nand the transmit interval of the other router. If set, this value\nmust be between 1000 and 30000.",
+      'minReceiveInterval',
+      'The minimum interval, in milliseconds, between BFD control packets\nreceived from the peer router. The actual value is negotiated\nbetween the two routers and is equal to the greater of this value\nand the transmit interval of the other router. If set, this value\nmust be between 1000 and 30000.',
       () => [],
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface redshift_ScheduledActionTargetActionResizeCluster {
   // The new node type for the nodes you are adding.
@@ -27,40 +27,40 @@ export function redshift_ScheduledActionTargetActionResizeCluster_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "nodeType",
-      "The new node type for the nodes you are adding.",
+      'nodeType',
+      'The new node type for the nodes you are adding.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "numberOfNodes",
-      "The new number of nodes for the cluster.",
+      'numberOfNodes',
+      'The new number of nodes for the cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "classic",
-      "A boolean value indicating whether the resize operation is using the classic resize process. Default: `false`.",
+      'classic',
+      'A boolean value indicating whether the resize operation is using the classic resize process. Default: `false`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clusterIdentifier",
-      "The unique identifier for the cluster to resize.",
+      'clusterIdentifier',
+      'The unique identifier for the cluster to resize.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clusterType",
-      "The new cluster type for the specified cluster.",
+      'clusterType',
+      'The new cluster type for the specified cluster.',
       () => [],
       false,
       false,

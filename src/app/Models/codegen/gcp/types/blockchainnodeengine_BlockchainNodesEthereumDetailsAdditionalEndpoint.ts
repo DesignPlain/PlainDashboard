@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEndpoint {
   /*
@@ -30,7 +30,7 @@ export function blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEnd
   return [
     new DynamicUIProps(
       InputType.String,
-      "executionClientPrometheusMetricsApiEndpoint",
+      'executionClientPrometheusMetricsApiEndpoint',
       "(Output)\nThe assigned URL for the node's execution client's Prometheus metrics endpoint.",
       () => [],
       false,
@@ -38,7 +38,7 @@ export function blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEnd
     ),
     new DynamicUIProps(
       InputType.String,
-      "beaconApiEndpoint",
+      'beaconApiEndpoint',
       "(Output)\nThe assigned URL for the node's Beacon API endpoint.",
       () => [],
       false,
@@ -46,7 +46,7 @@ export function blockchainnodeengine_BlockchainNodesEthereumDetailsAdditionalEnd
     ),
     new DynamicUIProps(
       InputType.String,
-      "beaconPrometheusMetricsApiEndpoint",
+      'beaconPrometheusMetricsApiEndpoint',
       "(Output)\nThe assigned URL for the node's Beacon Prometheus metrics endpoint.",
       () => [],
       false,

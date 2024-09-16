@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface quicksight_DataSetRowLevelPermissionDataSet {
   // ARN of the dataset that contains permissions for RLS.
@@ -27,40 +27,40 @@ export function quicksight_DataSetRowLevelPermissionDataSet_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "arn",
-      "ARN of the dataset that contains permissions for RLS.",
+      'arn',
+      'ARN of the dataset that contains permissions for RLS.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "formatVersion",
-      "User or group rules associated with the dataset that contains permissions for RLS.",
+      'formatVersion',
+      'User or group rules associated with the dataset that contains permissions for RLS.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "namespace",
-      "Namespace associated with the dataset that contains permissions for RLS.",
+      'namespace',
+      'Namespace associated with the dataset that contains permissions for RLS.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "permissionPolicy",
-      "Type of permissions to use when interpreting the permissions for RLS. Valid values are `GRANT_ACCESS` and `DENY_ACCESS`.",
+      'permissionPolicy',
+      'Type of permissions to use when interpreting the permissions for RLS. Valid values are `GRANT_ACCESS` and `DENY_ACCESS`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "Status of the row-level security permission dataset. If enabled, the status is `ENABLED`. If disabled, the status is `DISABLED`.",
+      'status',
+      'Status of the row-level security permission dataset. If enabled, the status is `ENABLED`. If disabled, the status is `DISABLED`.',
       () => [],
       false,
       false,

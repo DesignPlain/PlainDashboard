@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_OrganizationSecurityPolicyRuleMatchConfig,
   compute_OrganizationSecurityPolicyRuleMatchConfig_GetTypes,
-} from "./compute_OrganizationSecurityPolicyRuleMatchConfig";
+} from './compute_OrganizationSecurityPolicyRuleMatchConfig';
 
 export interface compute_OrganizationSecurityPolicyRuleMatch {
   /*
@@ -33,23 +33,23 @@ export function compute_OrganizationSecurityPolicyRuleMatch_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Object,
-      "config",
-      "The configuration options for matching the rule.\nStructure is documented below.",
+      'config',
+      'The configuration options for matching the rule.\nStructure is documented below.',
       () => compute_OrganizationSecurityPolicyRuleMatchConfig_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "A description of the rule.",
+      'description',
+      'A description of the rule.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "versionedExpr",
+      'versionedExpr',
       'Preconfigured versioned expression. For organization security policy rules,\nthe only supported type is "FIREWALL".\nDefault value is `FIREWALL`.\nPossible values are: `FIREWALL`.',
       () => [],
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PeeringArgs {
   /*
@@ -81,56 +81,56 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "The current state of this Peering.",
+        'status',
+        'The current state of this Peering.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "statusMessage",
-        "Additional information about the current status of this peering, if available.",
+        'statusMessage',
+        'Additional information about the current status of this peering, if available.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorizedNetwork",
-        "The full names of the Google Compute Engine networks to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.",
+        'authorizedNetwork',
+        'The full names of the Google Compute Engine networks to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainResource",
-        "Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form projects/{projectId}/locations/global/domains/{domainName}",
+        'domainResource',
+        'Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form projects/{projectId}/locations/global/domains/{domainName}',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Resource labels that can contain user-provided metadata\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Resource labels that can contain user-provided metadata\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "peeringId",
-        "- - -",
+        'peeringId',
+        '- - -',
         () => [],
         true,
         true,

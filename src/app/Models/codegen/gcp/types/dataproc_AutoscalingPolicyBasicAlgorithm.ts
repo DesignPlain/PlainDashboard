@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig,
   dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig_GetTypes,
-} from "./dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig";
+} from './dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig';
 
 export interface dataproc_AutoscalingPolicyBasicAlgorithm {
   /*
@@ -29,16 +29,16 @@ export function dataproc_AutoscalingPolicyBasicAlgorithm_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "cooldownPeriod",
-      "Duration between scaling events. A scaling period starts after the\nupdate operation from the previous event has completed.\nBounds: [2m, 1d]. Default: 2m.",
+      'cooldownPeriod',
+      'Duration between scaling events. A scaling period starts after the\nupdate operation from the previous event has completed.\nBounds: [2m, 1d]. Default: 2m.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "yarnConfig",
-      "YARN autoscaling configuration.\nStructure is documented below.",
+      'yarnConfig',
+      'YARN autoscaling configuration.\nStructure is documented below.',
       () => dataproc_AutoscalingPolicyBasicAlgorithmYarnConfig_GetTypes(),
       true,
       false,

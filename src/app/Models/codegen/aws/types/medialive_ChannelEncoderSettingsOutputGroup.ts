@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutput,
   medialive_ChannelEncoderSettingsOutputGroupOutput_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutput";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutput';
 
 export interface medialive_ChannelEncoderSettingsOutputGroup {
   // Custom output group name defined by the user.
@@ -29,16 +29,16 @@ export function medialive_ChannelEncoderSettingsOutputGroup_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Custom output group name defined by the user.",
+      'name',
+      'Custom output group name defined by the user.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "outputGroupSettings",
-      "Settings associated with the output group. See Output Group Settings for more details.",
+      'outputGroupSettings',
+      'Settings associated with the output group. See Output Group Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettings_GetTypes(),
       true,
@@ -46,8 +46,8 @@ export function medialive_ChannelEncoderSettingsOutputGroup_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Array,
-      "outputs",
-      "List of outputs. See Outputs for more details.",
+      'outputs',
+      'List of outputs. See Outputs for more details.',
       () => medialive_ChannelEncoderSettingsOutputGroupOutput_GetTypes(),
       true,
       false,

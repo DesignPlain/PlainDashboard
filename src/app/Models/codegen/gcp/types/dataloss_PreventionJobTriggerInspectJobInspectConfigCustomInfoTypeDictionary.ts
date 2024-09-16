@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryWordList,
   dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryWordList_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryWordList";
+} from './dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryWordList';
 import {
   dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryCloudStoragePath,
   dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryCloudStoragePath_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryCloudStoragePath";
+} from './dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryCloudStoragePath';
 
 export interface dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionary {
   /*
@@ -32,8 +32,8 @@ export function dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTy
   return [
     new DynamicUIProps(
       InputType.Object,
-      "wordList",
-      "List of words or phrases to search for.\nStructure is documented below.",
+      'wordList',
+      'List of words or phrases to search for.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryWordList_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTy
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cloudStoragePath",
-      "Newline-delimited file of words in Cloud Storage. Only a single file is accepted.\nStructure is documented below.",
+      'cloudStoragePath',
+      'Newline-delimited file of words in Cloud Storage. Only a single file is accepted.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryCloudStoragePath_GetTypes(),
       false,

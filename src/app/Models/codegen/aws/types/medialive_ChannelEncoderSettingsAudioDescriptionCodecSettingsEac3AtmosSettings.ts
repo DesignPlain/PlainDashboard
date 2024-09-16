@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsAudioDescriptionCodecSettingsEac3AtmosSettings {
   // Sets the profile for heavy Dolby dynamic range compression.
@@ -33,56 +33,56 @@ export function medialive_ChannelEncoderSettingsAudioDescriptionCodecSettingsEac
   return [
     new DynamicUIProps(
       InputType.Number,
-      "heightTrim",
-      "Height dimensional trim.",
+      'heightTrim',
+      'Height dimensional trim.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "surroundTrim",
-      "Surround dimensional trim.",
+      'surroundTrim',
+      'Surround dimensional trim.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "bitrate",
-      "Average bitrate in bits/second.",
+      'bitrate',
+      'Average bitrate in bits/second.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "codingMode",
-      "Dolby Digital Plus with Dolby Atmos coding mode.",
+      'codingMode',
+      'Dolby Digital Plus with Dolby Atmos coding mode.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "dialnorm",
-      "Sets the dialnorm for the output.",
+      'dialnorm',
+      'Sets the dialnorm for the output.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "drcLine",
-      "Sets the Dolby dynamic range compression profile.",
+      'drcLine',
+      'Sets the Dolby dynamic range compression profile.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "drcRf",
-      "Sets the profile for heavy Dolby dynamic range compression.",
+      'drcRf',
+      'Sets the profile for heavy Dolby dynamic range compression.',
       () => [],
       false,
       false,

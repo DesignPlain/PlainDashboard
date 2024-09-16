@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   docdb_GlobalClusterGlobalClusterMember,
   docdb_GlobalClusterGlobalClusterMember_GetTypes,
-} from "../types/docdb_GlobalClusterGlobalClusterMember";
+} from '../types/docdb_GlobalClusterGlobalClusterMember';
 
 export interface GlobalClusterArgs {
   /*
@@ -77,23 +77,23 @@ Engine version of the global database. Upgrading the engine version will result 
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "storageEncrypted",
-        "Specifies whether the DB cluster is encrypted. The default is `false` unless `source_db_cluster_identifier` is specified and encrypted. The provider will only perform drift detection if a configuration value is provided.",
+        'storageEncrypted',
+        'Specifies whether the DB cluster is encrypted. The default is `false` unless `source_db_cluster_identifier` is specified and encrypted. The provider will only perform drift detection if a configuration value is provided.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "databaseName",
-        "Name for an automatically created database on cluster creation.",
+        'databaseName',
+        'Name for an automatically created database on cluster creation.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deletionProtection",
+        'deletionProtection',
         "If the Global Cluster should have deletion protection enabled. The database can't be deleted when this value is set to `true`. The default is `false`.",
         () => [],
         false,
@@ -101,32 +101,32 @@ Engine version of the global database. Upgrading the engine version will result 
       ),
       new DynamicUIProps(
         InputType.String,
-        "engine",
-        "Name of the database engine to be used for this DB cluster. The provider will only perform drift detection if a configuration value is provided. Current Valid values: `docdb`. Defaults to `docdb`. Conflicts with `source_db_cluster_identifier`.",
+        'engine',
+        'Name of the database engine to be used for this DB cluster. The provider will only perform drift detection if a configuration value is provided. Current Valid values: `docdb`. Defaults to `docdb`. Conflicts with `source_db_cluster_identifier`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "engineVersion",
-        "Engine version of the global database. Upgrading the engine version will result in all cluster members being immediately updated and will.\n* **NOTE:** Upgrading major versions is not supported.",
+        'engineVersion',
+        'Engine version of the global database. Upgrading the engine version will result in all cluster members being immediately updated and will.\n* **NOTE:** Upgrading major versions is not supported.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "globalClusterIdentifier",
-        "The global cluster identifier.",
+        'globalClusterIdentifier',
+        'The global cluster identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceDbClusterIdentifier",
-        "Amazon Resource Name (ARN) to use as the primary DB Cluster of the Global Cluster on creation. The provider cannot perform drift detection of this value.",
+        'sourceDbClusterIdentifier',
+        'Amazon Resource Name (ARN) to use as the primary DB Cluster of the Global Cluster on creation. The provider cannot perform drift detection of this value.',
         () => [],
         false,
         true,

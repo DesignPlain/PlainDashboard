@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VariableArgs {
   /*
@@ -82,32 +82,32 @@ is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The name of the RuntimeConfig resource containing this\nvariable.",
+        'parent',
+        'The name of the RuntimeConfig resource containing this\nvariable.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "text",
-        "or `value` - (Required) The content to associate with the variable.\nExactly one of `text` or `variable` must be specified. If `text` is specified,\nit must be a valid UTF-8 string and less than 4096 bytes in length. If `value`\nis specified, it must be base64 encoded and less than 4096 bytes in length.\n\n- - -",
+        'text',
+        'or `value` - (Required) The content to associate with the variable.\nExactly one of `text` or `variable` must be specified. If `text` is specified,\nit must be a valid UTF-8 string and less than 4096 bytes in length. If `value`\nis specified, it must be base64 encoded and less than 4096 bytes in length.\n\n- - -',
         () => [],
         false,
         false,
       ),
-      new DynamicUIProps(InputType.String, "value", "", () => [], false, false),
+      new DynamicUIProps(InputType.String, 'value', '', () => [], false, false),
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         'The name of the variable to manage. Note that variable\nnames can be hierarchical using slashes (e.g. "prod-variables/hostname").',
         () => [],
         false,

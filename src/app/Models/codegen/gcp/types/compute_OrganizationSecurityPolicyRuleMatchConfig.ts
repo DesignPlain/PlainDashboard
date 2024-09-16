@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_OrganizationSecurityPolicyRuleMatchConfigLayer4Config,
   compute_OrganizationSecurityPolicyRuleMatchConfigLayer4Config_GetTypes,
-} from "./compute_OrganizationSecurityPolicyRuleMatchConfigLayer4Config";
+} from './compute_OrganizationSecurityPolicyRuleMatchConfigLayer4Config';
 
 export interface compute_OrganizationSecurityPolicyRuleMatchConfig {
   /*
@@ -37,15 +37,15 @@ export function compute_OrganizationSecurityPolicyRuleMatchConfig_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "destIpRanges",
-      "Destination IP address range in CIDR format. Required for\nEGRESS rules.",
+      'destIpRanges',
+      'Destination IP address range in CIDR format. Required for\nEGRESS rules.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "layer4Configs",
+      'layer4Configs',
       'Pairs of IP protocols and ports that the rule should match.\nStructure is documented below.\n\n\n<a name="nested_layer4_config"></a>The `layer4_config` block supports:',
       () =>
         compute_OrganizationSecurityPolicyRuleMatchConfigLayer4Config_GetTypes(),
@@ -54,8 +54,8 @@ export function compute_OrganizationSecurityPolicyRuleMatchConfig_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "srcIpRanges",
-      "Source IP address range in CIDR format. Required for\nINGRESS rules.",
+      'srcIpRanges',
+      'Source IP address range in CIDR format. Required for\nINGRESS rules.',
       () => InputType_String_GetTypes(),
       false,
       false,

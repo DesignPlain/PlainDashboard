@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse,
   lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse_GetTypes,
-} from "./lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse";
+} from './lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse';
 import {
   lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse,
   lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse_GetTypes,
-} from "./lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse";
+} from './lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse';
 
 export interface lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecification {
   // Whether fulfillment updates are sent to the user. When this field is true, updates are sent. If the active field is set to true, the `start_response`, `update_response`, and `timeout_in_seconds` fields are required.
@@ -32,8 +32,8 @@ export function lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecifica
   return [
     new DynamicUIProps(
       InputType.Object,
-      "updateResponse",
-      "Configuration block for messages sent periodically to the user while the fulfillment Lambda function is running.",
+      'updateResponse',
+      'Configuration block for messages sent periodically to the user while the fulfillment Lambda function is running.',
       () =>
         lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponse_GetTypes(),
       false,
@@ -41,16 +41,16 @@ export function lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecifica
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "active",
-      "Whether fulfillment updates are sent to the user. When this field is true, updates are sent. If the active field is set to true, the `start_response`, `update_response`, and `timeout_in_seconds` fields are required.",
+      'active',
+      'Whether fulfillment updates are sent to the user. When this field is true, updates are sent. If the active field is set to true, the `start_response`, `update_response`, and `timeout_in_seconds` fields are required.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "startResponse",
-      "Configuration block for the message sent to users when the fulfillment Lambda functions starts running.",
+      'startResponse',
+      'Configuration block for the message sent to users when the fulfillment Lambda functions starts running.',
       () =>
         lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponse_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function lex_V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecifica
     ),
     new DynamicUIProps(
       InputType.Number,
-      "timeoutInSeconds",
-      "Length of time that the fulfillment Lambda function should run before it times out.",
+      'timeoutInSeconds',
+      'Length of time that the fulfillment Lambda function should run before it times out.',
       () => [],
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ThingArgs {
   // Map of attributes of the thing.
@@ -40,24 +40,24 @@ export class Thing extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the thing.",
+        'name',
+        'The name of the thing.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "thingTypeName",
-        "The thing type name.",
+        'thingTypeName',
+        'The thing type name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "attributes",
-        "Map of attributes of the thing.",
+        'attributes',
+        'Map of attributes of the thing.',
         () => InputType_Map_GetTypes(),
         false,
         false,

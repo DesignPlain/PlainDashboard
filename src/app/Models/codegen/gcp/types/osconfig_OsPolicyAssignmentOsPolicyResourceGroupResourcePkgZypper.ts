@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZypper {
   // Package name.
@@ -15,8 +15,8 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgZyppe
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Package name.",
+      'name',
+      'Package name.',
       () => [],
       true,
       false,

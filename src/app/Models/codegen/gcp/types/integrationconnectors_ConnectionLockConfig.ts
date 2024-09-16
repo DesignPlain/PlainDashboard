@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface integrationconnectors_ConnectionLockConfig {
   // Indicates whether or not the connection is locked.
@@ -18,16 +18,16 @@ export function integrationconnectors_ConnectionLockConfig_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "locked",
-      "Indicates whether or not the connection is locked.",
+      'locked',
+      'Indicates whether or not the connection is locked.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "reason",
-      "Describes why a connection is locked.",
+      'reason',
+      'Describes why a connection is locked.',
       () => [],
       false,
       false,

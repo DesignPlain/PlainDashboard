@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkebackup_RestorePlanRestoreConfigSelectedApplications,
   gkebackup_RestorePlanRestoreConfigSelectedApplications_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigSelectedApplications";
+} from './gkebackup_RestorePlanRestoreConfigSelectedApplications';
 import {
   gkebackup_RestorePlanRestoreConfigSelectedNamespaces,
   gkebackup_RestorePlanRestoreConfigSelectedNamespaces_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigSelectedNamespaces";
+} from './gkebackup_RestorePlanRestoreConfigSelectedNamespaces';
 import {
   gkebackup_RestorePlanRestoreConfigExcludedNamespaces,
   gkebackup_RestorePlanRestoreConfigExcludedNamespaces_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigExcludedNamespaces";
+} from './gkebackup_RestorePlanRestoreConfigExcludedNamespaces';
 import {
   gkebackup_RestorePlanRestoreConfigTransformationRule,
   gkebackup_RestorePlanRestoreConfigTransformationRule_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigTransformationRule";
+} from './gkebackup_RestorePlanRestoreConfigTransformationRule';
 import {
   gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScope,
   gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScope_GetTypes,
-} from "./gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScope";
+} from './gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScope';
 
 export interface gkebackup_RestorePlanRestoreConfig {
   /*
@@ -115,23 +115,23 @@ export function gkebackup_RestorePlanRestoreConfig_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "allNamespaces",
-      "If True, restore all namespaced resources in the Backup.\nSetting this field to False will result in an error.",
+      'allNamespaces',
+      'If True, restore all namespaced resources in the Backup.\nSetting this field to False will result in an error.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clusterResourceConflictPolicy",
-      "Defines the behavior for handling the situation where cluster-scoped resources\nbeing restored already exist in the target cluster.\nThis MUST be set to a value other than `CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED`\nif `clusterResourceRestoreScope` is anyting other than `noGroupKinds`.\nSee https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig#clusterresourceconflictpolicy\nfor more information on each policy option.\nPossible values are: `USE_EXISTING_VERSION`, `USE_BACKUP_VERSION`.",
+      'clusterResourceConflictPolicy',
+      'Defines the behavior for handling the situation where cluster-scoped resources\nbeing restored already exist in the target cluster.\nThis MUST be set to a value other than `CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED`\nif `clusterResourceRestoreScope` is anyting other than `noGroupKinds`.\nSee https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig#clusterresourceconflictpolicy\nfor more information on each policy option.\nPossible values are: `USE_EXISTING_VERSION`, `USE_BACKUP_VERSION`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "noNamespaces",
+      'noNamespaces',
       'Do not restore any namespaced resources if set to "True".\nSpecifying this field to "False" is not allowed.',
       () => [],
       false,
@@ -139,24 +139,24 @@ export function gkebackup_RestorePlanRestoreConfig_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Array,
-      "transformationRules",
-      "A list of transformation rules to be applied against Kubernetes\nresources as they are selected for restoration from a Backup.\nRules are executed in order defined - this order matters,\nas changes made by a rule may impact the filtering logic of subsequent\nrules. An empty list means no transformation will occur.\nStructure is documented below.",
+      'transformationRules',
+      'A list of transformation rules to be applied against Kubernetes\nresources as they are selected for restoration from a Backup.\nRules are executed in order defined - this order matters,\nas changes made by a rule may impact the filtering logic of subsequent\nrules. An empty list means no transformation will occur.\nStructure is documented below.',
       () => gkebackup_RestorePlanRestoreConfigTransformationRule_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "volumeDataRestorePolicy",
-      "Specifies the mechanism to be used to restore volume data.\nThis should be set to a value other than `NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED`\nif the `namespacedResourceRestoreScope` is anything other than `noNamespaces`.\nIf not specified, it will be treated as `NO_VOLUME_DATA_RESTORATION`.\nSee https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig#VolumeDataRestorePolicy\nfor more information on each policy option.\nPossible values are: `RESTORE_VOLUME_DATA_FROM_BACKUP`, `REUSE_VOLUME_HANDLE_FROM_BACKUP`, `NO_VOLUME_DATA_RESTORATION`.",
+      'volumeDataRestorePolicy',
+      'Specifies the mechanism to be used to restore volume data.\nThis should be set to a value other than `NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED`\nif the `namespacedResourceRestoreScope` is anything other than `noNamespaces`.\nIf not specified, it will be treated as `NO_VOLUME_DATA_RESTORATION`.\nSee https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig#VolumeDataRestorePolicy\nfor more information on each policy option.\nPossible values are: `RESTORE_VOLUME_DATA_FROM_BACKUP`, `REUSE_VOLUME_HANDLE_FROM_BACKUP`, `NO_VOLUME_DATA_RESTORATION`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "clusterResourceRestoreScope",
-      "Identifies the cluster-scoped resources to restore from the Backup.\nStructure is documented below.",
+      'clusterResourceRestoreScope',
+      'Identifies the cluster-scoped resources to restore from the Backup.\nStructure is documented below.',
       () =>
         gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScope_GetTypes(),
       false,
@@ -164,32 +164,32 @@ export function gkebackup_RestorePlanRestoreConfig_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Object,
-      "selectedApplications",
-      "A list of selected ProtectedApplications to restore.\nThe listed ProtectedApplications and all the resources\nto which they refer will be restored.\nStructure is documented below.",
+      'selectedApplications',
+      'A list of selected ProtectedApplications to restore.\nThe listed ProtectedApplications and all the resources\nto which they refer will be restored.\nStructure is documented below.',
       () => gkebackup_RestorePlanRestoreConfigSelectedApplications_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "selectedNamespaces",
-      "A list of selected namespaces to restore from the Backup.\nThe listed Namespaces and all resources contained in them will be restored.\nStructure is documented below.",
+      'selectedNamespaces',
+      'A list of selected namespaces to restore from the Backup.\nThe listed Namespaces and all resources contained in them will be restored.\nStructure is documented below.',
       () => gkebackup_RestorePlanRestoreConfigSelectedNamespaces_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "excludedNamespaces",
-      "A list of selected namespaces excluded from restoration.\nAll namespaces except those in this list will be restored.\nStructure is documented below.",
+      'excludedNamespaces',
+      'A list of selected namespaces excluded from restoration.\nAll namespaces except those in this list will be restored.\nStructure is documented below.',
       () => gkebackup_RestorePlanRestoreConfigExcludedNamespaces_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "namespacedResourceRestoreMode",
-      "Defines the behavior for handling the situation where sets of namespaced resources\nbeing restored already exist in the target cluster.\nThis MUST be set to a value other than `NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED`\nif the `namespacedResourceRestoreScope` is anything other than `noNamespaces`.\nSee https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig#namespacedresourcerestoremode\nfor more information on each mode.\nPossible values are: `DELETE_AND_RESTORE`, `FAIL_ON_CONFLICT`.",
+      'namespacedResourceRestoreMode',
+      'Defines the behavior for handling the situation where sets of namespaced resources\nbeing restored already exist in the target cluster.\nThis MUST be set to a value other than `NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED`\nif the `namespacedResourceRestoreScope` is anything other than `noNamespaces`.\nSee https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig#namespacedresourcerestoremode\nfor more information on each mode.\nPossible values are: `DELETE_AND_RESTORE`, `FAIL_ON_CONFLICT`.',
       () => [],
       false,
       false,

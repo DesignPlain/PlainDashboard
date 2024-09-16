@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationSubjectAlternativeName,
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationSubjectAlternativeName_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationSubjectAlternativeName";
+} from './appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationSubjectAlternativeName';
 import {
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrust,
   appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrust_GetTypes,
-} from "./appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrust";
+} from './appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrust';
 
 export interface appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidation {
   //
@@ -26,8 +26,8 @@ export function appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlVal
   return [
     new DynamicUIProps(
       InputType.Array,
-      "subjectAlternativeNames",
-      "",
+      'subjectAlternativeNames',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationSubjectAlternativeName_GetTypes(),
       true,
@@ -35,8 +35,8 @@ export function appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlVal
     ),
     new DynamicUIProps(
       InputType.Array,
-      "trusts",
-      "",
+      'trusts',
+      '',
       () =>
         appmesh_getVirtualNodeSpecBackendVirtualServiceClientPolicyTlValidationTrust_GetTypes(),
       true,

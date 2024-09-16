@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer,
   dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer_GetTypes,
-} from "./dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer";
+} from './dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer';
 
 export interface dns_RecordSetRoutingPolicyGeoHealthCheckedTargets {
   /*
@@ -22,8 +22,8 @@ export function dns_RecordSetRoutingPolicyGeoHealthCheckedTargets_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "internalLoadBalancers",
-      "The list of internal load balancers to health check.\nStructure is document below.",
+      'internalLoadBalancers',
+      'The list of internal load balancers to health check.\nStructure is document below.',
       () =>
         dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer_GetTypes(),
       true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   autoscaling_getGroupWarmPoolInstanceReusePolicy,
   autoscaling_getGroupWarmPoolInstanceReusePolicy_GetTypes,
-} from "./autoscaling_getGroupWarmPoolInstanceReusePolicy";
+} from './autoscaling_getGroupWarmPoolInstanceReusePolicy';
 
 export interface autoscaling_getGroupWarmPool {
   // List of instance reuse policy objects.
@@ -28,32 +28,32 @@ export function autoscaling_getGroupWarmPool_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "maxGroupPreparedCapacity",
-      "",
+      'maxGroupPreparedCapacity',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minSize",
-      "Minimum number of instances to maintain in the warm pool.",
+      'minSize',
+      'Minimum number of instances to maintain in the warm pool.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "poolState",
-      "Instance state to transition to after the lifecycle actions are complete.",
+      'poolState',
+      'Instance state to transition to after the lifecycle actions are complete.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "instanceReusePolicies",
-      "List of instance reuse policy objects.",
+      'instanceReusePolicies',
+      'List of instance reuse policy objects.',
       () => autoscaling_getGroupWarmPoolInstanceReusePolicy_GetTypes(),
       true,
       false,

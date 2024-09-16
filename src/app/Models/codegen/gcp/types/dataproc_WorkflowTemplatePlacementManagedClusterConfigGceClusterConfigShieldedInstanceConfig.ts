@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataproc_WorkflowTemplatePlacementManagedClusterConfigGceClusterConfigShieldedInstanceConfig {
   // Defines whether instances have [Integrity Monitoring](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#integrity-monitoring) enabled.
@@ -21,24 +21,24 @@ export function dataproc_WorkflowTemplatePlacementManagedClusterConfigGceCluster
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enableIntegrityMonitoring",
-      "Defines whether instances have [Integrity Monitoring](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#integrity-monitoring) enabled.",
+      'enableIntegrityMonitoring',
+      'Defines whether instances have [Integrity Monitoring](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#integrity-monitoring) enabled.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableSecureBoot",
-      "Defines whether instances have [Secure Boot](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#secure-boot) enabled.",
+      'enableSecureBoot',
+      'Defines whether instances have [Secure Boot](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#secure-boot) enabled.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableVtpm",
-      "Defines whether instances have the [vTPM](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#vtpm) enabled.",
+      'enableVtpm',
+      'Defines whether instances have the [vTPM](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#vtpm) enabled.',
       () => [],
       false,
       true,

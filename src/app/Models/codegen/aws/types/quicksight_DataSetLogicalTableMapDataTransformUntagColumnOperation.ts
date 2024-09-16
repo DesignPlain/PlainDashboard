@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface quicksight_DataSetLogicalTableMapDataTransformUntagColumnOperation {
   // Column name.
@@ -18,16 +18,16 @@ export function quicksight_DataSetLogicalTableMapDataTransformUntagColumnOperati
   return [
     new DynamicUIProps(
       InputType.String,
-      "columnName",
-      "Column name.",
+      'columnName',
+      'Column name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tagNames",
-      "The column tags to remove from this column.",
+      'tagNames',
+      'The column tags to remove from this column.',
       () => InputType_String_GetTypes(),
       true,
       false,

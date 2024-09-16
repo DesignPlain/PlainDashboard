@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   m2_ApplicationDefinition,
   m2_ApplicationDefinition_GetTypes,
-} from "../types/m2_ApplicationDefinition";
+} from '../types/m2_ApplicationDefinition';
 import {
   m2_ApplicationTimeouts,
   m2_ApplicationTimeouts_GetTypes,
-} from "../types/m2_ApplicationTimeouts";
+} from '../types/m2_ApplicationTimeouts';
 
 export interface ApplicationArgs {
   // ARN of role for application to use to access AWS resources.
@@ -89,64 +89,64 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
-        "KMS Key to use for the Application.",
+        'kmsKeyId',
+        'KMS Key to use for the Application.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique identifier of the application.\n\nThe following arguments are optional:",
+        'name',
+        'Unique identifier of the application.\n\nThe following arguments are optional:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "ARN of role for application to use to access AWS resources.",
+        'roleArn',
+        'ARN of role for application to use to access AWS resources.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags assigned to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => m2_ApplicationTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "definition",
-        "The application definition for this application. You can specify either inline JSON or an S3 bucket location.",
+        'definition',
+        'The application definition for this application. You can specify either inline JSON or an S3 bucket location.',
         () => m2_ApplicationDefinition_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the application.",
+        'description',
+        'Description of the application.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "engineType",
-        "Engine type must be `microfocus | bluage`.",
+        'engineType',
+        'Engine type must be `microfocus | bluage`.',
         () => [],
         true,
         false,

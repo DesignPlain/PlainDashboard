@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VpcIpamResourceDiscoveryAssociationArgs {
   // The ID of the IPAM to associate.
@@ -52,24 +52,24 @@ export class VpcIpamResourceDiscoveryAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "ipamResourceDiscoveryId",
-        "The ID of the Resource Discovery to associate.",
+        'ipamResourceDiscoveryId',
+        'The ID of the Resource Discovery to associate.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to add to the IPAM resource discovery association resource.",
+        'tags',
+        'A map of tags to add to the IPAM resource discovery association resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipamId",
-        "The ID of the IPAM to associate.",
+        'ipamId',
+        'The ID of the IPAM to associate.',
         () => [],
         true,
         false,

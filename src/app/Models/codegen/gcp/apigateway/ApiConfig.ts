@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigateway_ApiConfigGrpcService,
   apigateway_ApiConfigGrpcService_GetTypes,
-} from "../types/apigateway_ApiConfigGrpcService";
+} from '../types/apigateway_ApiConfigGrpcService';
 import {
   apigateway_ApiConfigManagedServiceConfig,
   apigateway_ApiConfigManagedServiceConfig_GetTypes,
-} from "../types/apigateway_ApiConfigManagedServiceConfig";
+} from '../types/apigateway_ApiConfigManagedServiceConfig';
 import {
   apigateway_ApiConfigOpenapiDocument,
   apigateway_ApiConfigOpenapiDocument_GetTypes,
-} from "../types/apigateway_ApiConfigOpenapiDocument";
+} from '../types/apigateway_ApiConfigOpenapiDocument';
 import {
   apigateway_ApiConfigGatewayConfig,
   apigateway_ApiConfigGatewayConfig_GetTypes,
-} from "../types/apigateway_ApiConfigGatewayConfig";
+} from '../types/apigateway_ApiConfigGatewayConfig';
 
 export interface ApiConfigArgs {
   /*
@@ -164,79 +164,79 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "api",
-        "The API to attach the config to.\n\n\n- - -",
+        'api',
+        'The API to attach the config to.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "apiConfigId",
-        "Identifier to assign to the API Config. Must be unique within scope of the parent resource(api).",
+        'apiConfigId',
+        'Identifier to assign to the API Config. Must be unique within scope of the parent resource(api).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "grpcServices",
-        "gRPC service definition files. If specified, openapiDocuments must not be included.\nStructure is documented below.",
+        'grpcServices',
+        'gRPC service definition files. If specified, openapiDocuments must not be included.\nStructure is documented below.',
         () => apigateway_ApiConfigGrpcService_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "A user-visible name for the API.",
+        'displayName',
+        'A user-visible name for the API.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "openapiDocuments",
-        "OpenAPI specification documents. If specified, grpcServices and managedServiceConfigs must not be included.\nStructure is documented below.",
+        'openapiDocuments',
+        'OpenAPI specification documents. If specified, grpcServices and managedServiceConfigs must not be included.\nStructure is documented below.',
         () => apigateway_ApiConfigOpenapiDocument_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "gatewayConfig",
-        "Immutable. Gateway specific configuration.\nIf not specified, backend authentication will be set to use OIDC authentication using the default compute service account\nStructure is documented below.",
+        'gatewayConfig',
+        'Immutable. Gateway specific configuration.\nIf not specified, backend authentication will be set to use OIDC authentication using the default compute service account\nStructure is documented below.',
         () => apigateway_ApiConfigGatewayConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "apiConfigIdPrefix",
-        "Creates a unique name beginning with the\nspecified prefix. If this and api_config_id are unspecified, a random value is chosen for the name.",
+        'apiConfigIdPrefix',
+        'Creates a unique name beginning with the\nspecified prefix. If this and api_config_id are unspecified, a random value is chosen for the name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Resource labels to represent user-provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Resource labels to represent user-provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "managedServiceConfigs",
+        'managedServiceConfigs',
         'Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents.\nIf multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using "last one wins" semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields.\nStructure is documented below.',
         () => apigateway_ApiConfigManagedServiceConfig_GetTypes(),
         false,

@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_InstanceTemplateSchedulingLocalSsdRecoveryTimeout,
   compute_InstanceTemplateSchedulingLocalSsdRecoveryTimeout_GetTypes,
-} from "./compute_InstanceTemplateSchedulingLocalSsdRecoveryTimeout";
+} from './compute_InstanceTemplateSchedulingLocalSsdRecoveryTimeout';
 import {
   compute_InstanceTemplateSchedulingMaxRunDuration,
   compute_InstanceTemplateSchedulingMaxRunDuration_GetTypes,
-} from "./compute_InstanceTemplateSchedulingMaxRunDuration";
+} from './compute_InstanceTemplateSchedulingMaxRunDuration';
 import {
   compute_InstanceTemplateSchedulingNodeAffinity,
   compute_InstanceTemplateSchedulingNodeAffinity_GetTypes,
-} from "./compute_InstanceTemplateSchedulingNodeAffinity";
+} from './compute_InstanceTemplateSchedulingNodeAffinity';
 
 export interface compute_InstanceTemplateScheduling {
   /*
@@ -84,31 +84,31 @@ export function compute_InstanceTemplateScheduling_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.String,
-      "provisioningModel",
-      "Describe the type of preemptible VM. This field accepts the value `STANDARD` or `SPOT`. If the value is `STANDARD`, there will be no discount. If this   is set to `SPOT`,\n`preemptible` should be `true` and `automatic_restart` should be\n`false`. For more info about\n`SPOT`, read [here](https://cloud.google.com/compute/docs/instances/spot)",
+      'provisioningModel',
+      'Describe the type of preemptible VM. This field accepts the value `STANDARD` or `SPOT`. If the value is `STANDARD`, there will be no discount. If this   is set to `SPOT`,\n`preemptible` should be `true` and `automatic_restart` should be\n`false`. For more info about\n`SPOT`, read [here](https://cloud.google.com/compute/docs/instances/spot)',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "instanceTerminationAction",
-      "Describe the type of termination action for `SPOT` VM. Can be `STOP` or `DELETE`.  Read more on [here](https://cloud.google.com/compute/docs/instances/create-use-spot)",
+      'instanceTerminationAction',
+      'Describe the type of termination action for `SPOT` VM. Can be `STOP` or `DELETE`.  Read more on [here](https://cloud.google.com/compute/docs/instances/create-use-spot)',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "maintenanceInterval",
-      "Specifies the frequency of planned maintenance events. The accepted values are: `PERIODIC`.",
+      'maintenanceInterval',
+      'Specifies the frequency of planned maintenance events. The accepted values are: `PERIODIC`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "maxRunDuration",
+      'maxRunDuration',
       'The duration of the instance. Instance will run and be terminated after then, the termination action could be defined in `instance_termination_action`. Only support `DELETE` `instance_termination_action` at this point. Structure is documented below.\n<a name="nested_max_run_duration"></a>The `max_run_duration` block supports:',
       () => compute_InstanceTemplateSchedulingMaxRunDuration_GetTypes(),
       false,
@@ -116,24 +116,24 @@ export function compute_InstanceTemplateScheduling_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minNodeCpus",
-      "Minimum number of cpus for the instance.",
+      'minNodeCpus',
+      'Minimum number of cpus for the instance.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "automaticRestart",
-      "Specifies whether the instance should be\nautomatically restarted if it is terminated by Compute Engine (not\nterminated by a user). This defaults to true.",
+      'automaticRestart',
+      'Specifies whether the instance should be\nautomatically restarted if it is terminated by Compute Engine (not\nterminated by a user). This defaults to true.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "localSsdRecoveryTimeouts",
-      "Specifies the maximum amount of time a Local Ssd Vm should wait while\n  recovery of the Local Ssd state is attempted. Its value should be in\n  between 0 and 168 hours with hour granularity and the default value being 1\n  hour.",
+      'localSsdRecoveryTimeouts',
+      'Specifies the maximum amount of time a Local Ssd Vm should wait while\n  recovery of the Local Ssd state is attempted. Its value should be in\n  between 0 and 168 hours with hour granularity and the default value being 1\n  hour.',
       () =>
         compute_InstanceTemplateSchedulingLocalSsdRecoveryTimeout_GetTypes(),
       false,
@@ -141,24 +141,24 @@ export function compute_InstanceTemplateScheduling_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "preemptible",
-      "Allows instance to be preempted. This defaults to\nfalse. Read more on this\n[here](https://cloud.google.com/compute/docs/instances/preemptible).",
+      'preemptible',
+      'Allows instance to be preempted. This defaults to\nfalse. Read more on this\n[here](https://cloud.google.com/compute/docs/instances/preemptible).',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "nodeAffinities",
-      "Specifies node affinities or anti-affinities\nto determine which sole-tenant nodes your instances and managed instance\ngroups will use as host systems. Read more on sole-tenant node creation\n[here](https://cloud.google.com/compute/docs/nodes/create-nodes).\nStructure documented below.",
+      'nodeAffinities',
+      'Specifies node affinities or anti-affinities\nto determine which sole-tenant nodes your instances and managed instance\ngroups will use as host systems. Read more on sole-tenant node creation\n[here](https://cloud.google.com/compute/docs/nodes/create-nodes).\nStructure documented below.',
       () => compute_InstanceTemplateSchedulingNodeAffinity_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "onHostMaintenance",
-      "Defines the maintenance behavior for this\ninstance.",
+      'onHostMaintenance',
+      'Defines the maintenance behavior for this\ninstance.',
       () => [],
       false,
       true,

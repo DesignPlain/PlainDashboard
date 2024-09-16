@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apprunner_CustomDomainAssociationCertificateValidationRecord,
   apprunner_CustomDomainAssociationCertificateValidationRecord_GetTypes,
-} from "../types/apprunner_CustomDomainAssociationCertificateValidationRecord";
+} from '../types/apprunner_CustomDomainAssociationCertificateValidationRecord';
 
 export interface CustomDomainAssociationArgs {
   // Custom domain endpoint to association. Specify a base domain e.g., `example.com` or a subdomain e.g., `subdomain.example.com`.
@@ -44,24 +44,24 @@ export class CustomDomainAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "Custom domain endpoint to association. Specify a base domain e.g., `example.com` or a subdomain e.g., `subdomain.example.com`.",
+        'domainName',
+        'Custom domain endpoint to association. Specify a base domain e.g., `example.com` or a subdomain e.g., `subdomain.example.com`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableWwwSubdomain",
-        "Whether to associate the subdomain with the App Runner service in addition to the base domain. Defaults to `true`.",
+        'enableWwwSubdomain',
+        'Whether to associate the subdomain with the App Runner service in addition to the base domain. Defaults to `true`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceArn",
-        "ARN of the App Runner service.",
+        'serviceArn',
+        'ARN of the App Runner service.',
         () => [],
         true,
         true,

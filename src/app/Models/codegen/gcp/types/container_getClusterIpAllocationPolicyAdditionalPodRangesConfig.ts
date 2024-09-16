@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterIpAllocationPolicyAdditionalPodRangesConfig {
   // Name for pod secondary ipv4 range which has the actual range defined ahead.
@@ -15,8 +15,8 @@ export function container_getClusterIpAllocationPolicyAdditionalPodRangesConfig_
   return [
     new DynamicUIProps(
       InputType.Array,
-      "podRangeNames",
-      "Name for pod secondary ipv4 range which has the actual range defined ahead.",
+      'podRangeNames',
+      'Name for pod secondary ipv4 range which has the actual range defined ahead.',
       () => InputType_String_GetTypes(),
       true,
       false,

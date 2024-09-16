@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsDestination,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsDestination_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsDestination";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsDestination';
 
 export interface medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettings {
   //
@@ -36,16 +36,16 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsU
   return [
     new DynamicUIProps(
       InputType.Number,
-      "bufferMsec",
-      "UDP output buffering in milliseconds.",
+      'bufferMsec',
+      'UDP output buffering in milliseconds.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "containerSettings",
-      "UDP container settings. See Container Settings for more details.",
+      'containerSettings',
+      'UDP container settings. See Container Settings for more details.',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettings_GetTypes(),
       true,
@@ -53,8 +53,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsU
     ),
     new DynamicUIProps(
       InputType.Object,
-      "destination",
-      "Destination address and port number for RTP or UDP packets. See Destination for more details.",
+      'destination',
+      'Destination address and port number for RTP or UDP packets. See Destination for more details.',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsDestination_GetTypes(),
       true,
@@ -62,8 +62,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsU
     ),
     new DynamicUIProps(
       InputType.Object,
-      "fecOutputSettings",
-      "",
+      'fecOutputSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettings_GetTypes(),
       false,

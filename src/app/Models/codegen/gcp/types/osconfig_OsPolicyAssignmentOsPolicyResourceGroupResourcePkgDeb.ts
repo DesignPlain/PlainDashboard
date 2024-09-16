@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource,
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource_GetTypes,
-} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource";
+} from './osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource';
 
 export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb {
   /*
@@ -29,8 +29,8 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_G
   return [
     new DynamicUIProps(
       InputType.Object,
-      "source",
-      "A deb package. Structure is\ndocumented below.",
+      'source',
+      'A deb package. Structure is\ndocumented below.',
       () =>
         osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDebSource_GetTypes(),
       true,
@@ -38,8 +38,8 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourcePkgDeb_G
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "pullDeps",
-      "Whether dependencies should also be installed. -\ninstall when false: `dpkg -i package` - install when true: `apt-get update\n&& apt-get -y install package.deb`",
+      'pullDeps',
+      'Whether dependencies should also be installed. -\ninstall when false: `dpkg -i package` - install when true: `apt-get update\n&& apt-get -y install package.deb`',
       () => [],
       false,
       false,

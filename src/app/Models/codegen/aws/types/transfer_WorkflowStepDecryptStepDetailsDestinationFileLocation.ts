@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocation,
   transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocation_GetTypes,
-} from "./transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocation";
+} from './transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocation';
 import {
   transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocation,
   transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocation_GetTypes,
-} from "./transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocation";
+} from './transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocation';
 
 export interface transfer_WorkflowStepDecryptStepDetailsDestinationFileLocation {
   // Specifies the details for the EFS file being copied.
@@ -26,8 +26,8 @@ export function transfer_WorkflowStepDecryptStepDetailsDestinationFileLocation_G
   return [
     new DynamicUIProps(
       InputType.Object,
-      "s3FileLocation",
-      "Specifies the details for the S3 file being copied.",
+      's3FileLocation',
+      'Specifies the details for the S3 file being copied.',
       () =>
         transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocation_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function transfer_WorkflowStepDecryptStepDetailsDestinationFileLocation_G
     ),
     new DynamicUIProps(
       InputType.Object,
-      "efsFileLocation",
-      "Specifies the details for the EFS file being copied.",
+      'efsFileLocation',
+      'Specifies the details for the EFS file being copied.',
       () =>
         transfer_WorkflowStepDecryptStepDetailsDestinationFileLocationEfsFileLocation_GetTypes(),
       false,

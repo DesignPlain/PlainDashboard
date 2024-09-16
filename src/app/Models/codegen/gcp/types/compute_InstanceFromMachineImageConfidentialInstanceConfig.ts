@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_InstanceFromMachineImageConfidentialInstanceConfig {
   // Defines whether the instance should have confidential compute enabled. Field will be deprecated in a future release
@@ -22,7 +22,7 @@ export function compute_InstanceFromMachineImageConfidentialInstanceConfig_GetTy
   return [
     new DynamicUIProps(
       InputType.String,
-      "confidentialInstanceType",
+      'confidentialInstanceType',
       'Specifies which confidential computing technology to use.\n\t\t\t\t\t\t\t\tThis could be one of the following values: SEV, SEV_SNP.\n\t\t\t\t\t\t\t\tIf SEV_SNP, min_cpu_platform = "AMD Milan" is currently required.',
       () => [],
       false,
@@ -30,8 +30,8 @@ export function compute_InstanceFromMachineImageConfidentialInstanceConfig_GetTy
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableConfidentialCompute",
-      "Defines whether the instance should have confidential compute enabled. Field will be deprecated in a future release",
+      'enableConfidentialCompute',
+      'Defines whether the instance should have confidential compute enabled. Field will be deprecated in a future release',
       () => [],
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface MethodArgs {
   // API resource ID
@@ -93,47 +93,47 @@ For example: `request_parameters = {"method.request.header.X-Some-Header" = true
     return [
       new DynamicUIProps(
         InputType.String,
-        "resourceId",
-        "API resource ID",
+        'resourceId',
+        'API resource ID',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "apiKeyRequired",
-        "Specify if the method requires an API key",
+        'apiKeyRequired',
+        'Specify if the method requires an API key',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "restApi",
-        "ID of the associated REST API",
+        'restApi',
+        'ID of the associated REST API',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "authorizationScopes",
-        "Authorization scopes used when the authorization is `COGNITO_USER_POOLS`",
+        'authorizationScopes',
+        'Authorization scopes used when the authorization is `COGNITO_USER_POOLS`',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorizerId",
-        "Authorizer id to be used when the authorization is `CUSTOM` or `COGNITO_USER_POOLS`",
+        'authorizerId',
+        'Authorizer id to be used when the authorization is `CUSTOM` or `COGNITO_USER_POOLS`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "requestParameters",
+        'requestParameters',
         'Map of request parameters (from the path, query string and headers) that should be passed to the integration. The boolean value indicates whether the parameter is required (`true`) or optional (`false`).\nFor example: `request_parameters = {"method.request.header.X-Some-Header" = true "method.request.querystring.some-query-param" = true}` would define that the header `X-Some-Header` and the query string `some-query-param` must be provided in the request.',
         () => InputType_Map_GetTypes(),
         false,
@@ -141,23 +141,23 @@ For example: `request_parameters = {"method.request.header.X-Some-Header" = true
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorization",
-        "Type of authorization used for the method (`NONE`, `CUSTOM`, `AWS_IAM`, `COGNITO_USER_POOLS`)",
+        'authorization',
+        'Type of authorization used for the method (`NONE`, `CUSTOM`, `AWS_IAM`, `COGNITO_USER_POOLS`)',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "httpMethod",
-        "HTTP Method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`)",
+        'httpMethod',
+        'HTTP Method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`)',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "requestModels",
+        'requestModels',
         "Map of the API models used for the request's content type\nwhere key is the content type (e.g., `application/json`)\nand value is either `Error`, `Empty` (built-in models) or `aws.apigateway.Model`'s `name`.",
         () => InputType_Map_GetTypes(),
         false,
@@ -165,16 +165,16 @@ For example: `request_parameters = {"method.request.header.X-Some-Header" = true
       ),
       new DynamicUIProps(
         InputType.String,
-        "requestValidatorId",
-        "ID of a `aws.apigateway.RequestValidator`",
+        'requestValidatorId',
+        'ID of a `aws.apigateway.RequestValidator`',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "operationName",
-        "Function name that will be given to the method when generating an SDK through API Gateway. If omitted, API Gateway will generate a function name based on the resource path and HTTP verb.",
+        'operationName',
+        'Function name that will be given to the method when generating an SDK through API Gateway. If omitted, API Gateway will generate a function name based on the resource path and HTTP verb.',
         () => [],
         false,
         false,

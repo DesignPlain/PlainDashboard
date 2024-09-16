@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSettingsTtmlDestinationSettings {
   // This field is not currently supported and will not affect the output styling. Leave the default value.
@@ -15,8 +15,8 @@ export function medialive_ChannelEncoderSettingsCaptionDescriptionDestinationSet
   return [
     new DynamicUIProps(
       InputType.String,
-      "styleControl",
-      "This field is not currently supported and will not affect the output styling. Leave the default value.",
+      'styleControl',
+      'This field is not currently supported and will not affect the output styling. Leave the default value.',
       () => [],
       true,
       false,

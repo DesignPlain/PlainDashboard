@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface workbench_InstanceGceSetupBootDisk {
   /*
@@ -39,7 +39,7 @@ export function workbench_InstanceGceSetupBootDisk_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKey",
+      'kmsKey',
       "'Optional. The KMS key used to encrypt the disks, only\napplicable if disk_encryption is CMEK. Format: `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`\nLearn more about using your own encryption keys.'",
       () => [],
       false,
@@ -47,24 +47,24 @@ export function workbench_InstanceGceSetupBootDisk_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "diskEncryption",
-      "Optional. Input only. Disk encryption method used on the boot and\ndata disks, defaults to GMEK.\nPossible values are: `GMEK`, `CMEK`.",
+      'diskEncryption',
+      'Optional. Input only. Disk encryption method used on the boot and\ndata disks, defaults to GMEK.\nPossible values are: `GMEK`, `CMEK`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "diskSizeGb",
-      "Optional. The size of the boot disk in GB attached to this instance,\nup to a maximum of 64000 GB (64 TB). If not specified, this defaults to the\nrecommended value of 150GB.",
+      'diskSizeGb',
+      'Optional. The size of the boot disk in GB attached to this instance,\nup to a maximum of 64000 GB (64 TB). If not specified, this defaults to the\nrecommended value of 150GB.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "diskType",
-      "Optional. Indicates the type of the disk.\nPossible values are: `PD_STANDARD`, `PD_SSD`, `PD_BALANCED`, `PD_EXTREME`.",
+      'diskType',
+      'Optional. Indicates the type of the disk.\nPossible values are: `PD_STANDARD`, `PD_SSD`, `PD_BALANCED`, `PD_EXTREME`.',
       () => [],
       false,
       true,

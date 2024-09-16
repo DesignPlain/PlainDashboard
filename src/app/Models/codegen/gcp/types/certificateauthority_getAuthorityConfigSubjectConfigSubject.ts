@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface certificateauthority_getAuthorityConfigSubjectConfigSubject {
   // The locality or city of the subject.
@@ -36,64 +36,64 @@ export function certificateauthority_getAuthorityConfigSubjectConfigSubject_GetT
   return [
     new DynamicUIProps(
       InputType.String,
-      "locality",
-      "The locality or city of the subject.",
+      'locality',
+      'The locality or city of the subject.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "organization",
-      "The organization of the subject.",
+      'organization',
+      'The organization of the subject.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "organizationalUnit",
-      "The organizational unit of the subject.",
+      'organizationalUnit',
+      'The organizational unit of the subject.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "postalCode",
-      "The postal code of the subject.",
+      'postalCode',
+      'The postal code of the subject.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "province",
-      "The province, territory, or regional state of the subject.",
+      'province',
+      'The province, territory, or regional state of the subject.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "streetAddress",
-      "The street address of the subject.",
+      'streetAddress',
+      'The street address of the subject.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "commonName",
-      "The common name of the distinguished name.",
+      'commonName',
+      'The common name of the distinguished name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "countryCode",
-      "The country code of the subject.",
+      'countryCode',
+      'The country code of the subject.',
       () => [],
       true,
       false,

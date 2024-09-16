@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface CertificateArgs {
   /*
@@ -51,32 +51,32 @@ The certificate identifier.
     return [
       new DynamicUIProps(
         InputType.String,
-        "certificateId",
-        "The certificate identifier.\n\n- Must contain from 1 to 255 alphanumeric characters and hyphens.",
+        'certificateId',
+        'The certificate identifier.\n\n- Must contain from 1 to 255 alphanumeric characters and hyphens.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificatePem",
-        "The contents of the .pem X.509 certificate file for the certificate. Either `certificate_pem` or `certificate_wallet` must be set.",
+        'certificatePem',
+        'The contents of the .pem X.509 certificate file for the certificate. Either `certificate_pem` or `certificate_wallet` must be set.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateWallet",
-        "The contents of the Oracle Wallet certificate for use with SSL, provided as a base64-encoded String. Either `certificate_pem` or `certificate_wallet` must be set.",
+        'certificateWallet',
+        'The contents of the Oracle Wallet certificate for use with SSL, provided as a base64-encoded String. Either `certificate_pem` or `certificate_wallet` must be set.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

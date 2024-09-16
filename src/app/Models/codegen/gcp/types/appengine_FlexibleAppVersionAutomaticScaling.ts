@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appengine_FlexibleAppVersionAutomaticScalingCpuUtilization,
   appengine_FlexibleAppVersionAutomaticScalingCpuUtilization_GetTypes,
-} from "./appengine_FlexibleAppVersionAutomaticScalingCpuUtilization";
+} from './appengine_FlexibleAppVersionAutomaticScalingCpuUtilization';
 import {
   appengine_FlexibleAppVersionAutomaticScalingDiskUtilization,
   appengine_FlexibleAppVersionAutomaticScalingDiskUtilization_GetTypes,
-} from "./appengine_FlexibleAppVersionAutomaticScalingDiskUtilization";
+} from './appengine_FlexibleAppVersionAutomaticScalingDiskUtilization';
 import {
   appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization,
   appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization_GetTypes,
-} from "./appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization";
+} from './appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization';
 import {
   appengine_FlexibleAppVersionAutomaticScalingRequestUtilization,
   appengine_FlexibleAppVersionAutomaticScalingRequestUtilization_GetTypes,
-} from "./appengine_FlexibleAppVersionAutomaticScalingRequestUtilization";
+} from './appengine_FlexibleAppVersionAutomaticScalingRequestUtilization';
 
 export interface appengine_FlexibleAppVersionAutomaticScaling {
   // Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service.
@@ -83,8 +83,8 @@ export function appengine_FlexibleAppVersionAutomaticScaling_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Object,
-      "networkUtilization",
-      "Target scaling by network usage.\nStructure is documented below.",
+      'networkUtilization',
+      'Target scaling by network usage.\nStructure is documented below.',
       () =>
         appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization_GetTypes(),
       false,
@@ -92,24 +92,24 @@ export function appengine_FlexibleAppVersionAutomaticScaling_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.String,
-      "maxPendingLatency",
-      "Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it.",
+      'maxPendingLatency',
+      'Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minIdleInstances",
-      "Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service.",
+      'minIdleInstances',
+      'Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "diskUtilization",
-      "Target scaling by disk usage.\nStructure is documented below.",
+      'diskUtilization',
+      'Target scaling by disk usage.\nStructure is documented below.',
       () =>
         appengine_FlexibleAppVersionAutomaticScalingDiskUtilization_GetTypes(),
       false,
@@ -117,56 +117,56 @@ export function appengine_FlexibleAppVersionAutomaticScaling_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxTotalInstances",
-      "Maximum number of instances that should be started to handle requests for this version. Default: 20",
+      'maxTotalInstances',
+      'Maximum number of instances that should be started to handle requests for this version. Default: 20',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxIdleInstances",
-      "Maximum number of idle instances that should be maintained for this version.",
+      'maxIdleInstances',
+      'Maximum number of idle instances that should be maintained for this version.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "coolDownPeriod",
-      "The time period that the Autoscaler should wait before it starts collecting information from a new instance.\nThis prevents the autoscaler from collecting information when the instance is initializing,\nduring which the collected usage would not be reliable. Default: 120s",
+      'coolDownPeriod',
+      'The time period that the Autoscaler should wait before it starts collecting information from a new instance.\nThis prevents the autoscaler from collecting information when the instance is initializing,\nduring which the collected usage would not be reliable. Default: 120s',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxConcurrentRequests",
-      "Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.\nDefaults to a runtime-specific value.",
+      'maxConcurrentRequests',
+      'Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.\nDefaults to a runtime-specific value.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minTotalInstances",
-      "Minimum number of running instances that should be maintained for this version. Default: 2",
+      'minTotalInstances',
+      'Minimum number of running instances that should be maintained for this version. Default: 2',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "minPendingLatency",
-      "Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it.",
+      'minPendingLatency',
+      'Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "requestUtilization",
-      "Target scaling by request utilization.\nStructure is documented below.",
+      'requestUtilization',
+      'Target scaling by request utilization.\nStructure is documented below.',
       () =>
         appengine_FlexibleAppVersionAutomaticScalingRequestUtilization_GetTypes(),
       false,
@@ -174,8 +174,8 @@ export function appengine_FlexibleAppVersionAutomaticScaling_GetTypes(): Dynamic
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cpuUtilization",
-      "Target scaling by CPU usage.\nStructure is documented below.",
+      'cpuUtilization',
+      'Target scaling by CPU usage.\nStructure is documented below.',
       () =>
         appengine_FlexibleAppVersionAutomaticScalingCpuUtilization_GetTypes(),
       true,

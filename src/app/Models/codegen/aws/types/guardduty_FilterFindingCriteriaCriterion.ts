@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface guardduty_FilterFindingCriteriaCriterion {
   // A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).
@@ -33,56 +33,56 @@ export function guardduty_FilterFindingCriteriaCriterion_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Array,
-      "equals",
-      "List of string values to be evaluated.",
+      'equals',
+      'List of string values to be evaluated.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "field",
-      "The name of the field to be evaluated. The full list of field names can be found in [AWS documentation](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_filter-findings.html#filter_criteria).",
+      'field',
+      'The name of the field to be evaluated. The full list of field names can be found in [AWS documentation](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_filter-findings.html#filter_criteria).',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "greaterThan",
-      "A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).",
+      'greaterThan',
+      'A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "greaterThanOrEqual",
-      "A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).",
+      'greaterThanOrEqual',
+      'A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "lessThan",
-      "A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).",
+      'lessThan',
+      'A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "lessThanOrEqual",
-      "A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).",
+      'lessThanOrEqual',
+      'A value to be evaluated. Accepts either an integer or a date in [RFC 3339 format](https://tools.ietf.org/html/rfc3339#section-5.8).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "notEquals",
-      "List of string values to be evaluated.",
+      'notEquals',
+      'List of string values to be evaluated.',
       () => InputType_String_GetTypes(),
       false,
       false,

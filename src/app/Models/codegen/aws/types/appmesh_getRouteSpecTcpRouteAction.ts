@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getRouteSpecTcpRouteActionWeightedTarget,
   appmesh_getRouteSpecTcpRouteActionWeightedTarget_GetTypes,
-} from "./appmesh_getRouteSpecTcpRouteActionWeightedTarget";
+} from './appmesh_getRouteSpecTcpRouteActionWeightedTarget';
 
 export interface appmesh_getRouteSpecTcpRouteAction {
   //
@@ -19,8 +19,8 @@ export function appmesh_getRouteSpecTcpRouteAction_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "weightedTargets",
-      "",
+      'weightedTargets',
+      '',
       () => appmesh_getRouteSpecTcpRouteActionWeightedTarget_GetTypes(),
       true,
       false,

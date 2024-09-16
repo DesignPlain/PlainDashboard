@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate,
   appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate_GetTypes,
-} from "./appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate";
+} from './appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate';
 import {
   appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation,
   appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation_GetTypes,
-} from "./appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation";
+} from './appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation';
 
 export interface appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTls {
   // Listener's TLS certificate.
@@ -32,7 +32,7 @@ export function appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTls_GetType
   return [
     new DynamicUIProps(
       InputType.Object,
-      "certificate",
+      'certificate',
       "Listener's TLS certificate.",
       () =>
         appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificate_GetTypes(),
@@ -41,23 +41,23 @@ export function appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTls_GetType
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enforce",
-      "Whether the policy is enforced. Default is `true`.",
+      'enforce',
+      'Whether the policy is enforced. Default is `true`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ports",
-      "One or more ports that the policy is enforced for.",
+      'ports',
+      'One or more ports that the policy is enforced for.',
       () => InputType_Number_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "validation",
+      'validation',
       "Listener's Transport Layer Security (TLS) validation context.",
       () =>
         appmesh_VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidation_GetTypes(),

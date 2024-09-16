@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualGatewaySpecListenerTlsCertificate,
   appmesh_VirtualGatewaySpecListenerTlsCertificate_GetTypes,
-} from "./appmesh_VirtualGatewaySpecListenerTlsCertificate";
+} from './appmesh_VirtualGatewaySpecListenerTlsCertificate';
 import {
   appmesh_VirtualGatewaySpecListenerTlsValidation,
   appmesh_VirtualGatewaySpecListenerTlsValidation_GetTypes,
-} from "./appmesh_VirtualGatewaySpecListenerTlsValidation";
+} from './appmesh_VirtualGatewaySpecListenerTlsValidation';
 
 export interface appmesh_VirtualGatewaySpecListenerTls {
   // Listener's TLS certificate.
@@ -29,7 +29,7 @@ export function appmesh_VirtualGatewaySpecListenerTls_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.Object,
-      "certificate",
+      'certificate',
       "Listener's TLS certificate.",
       () => appmesh_VirtualGatewaySpecListenerTlsCertificate_GetTypes(),
       true,
@@ -37,7 +37,7 @@ export function appmesh_VirtualGatewaySpecListenerTls_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "mode",
+      'mode',
       "Listener's TLS mode. Valid values: `DISABLED`, `PERMISSIVE`, `STRICT`.",
       () => [],
       true,
@@ -45,7 +45,7 @@ export function appmesh_VirtualGatewaySpecListenerTls_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Object,
-      "validation",
+      'validation',
       "Listener's Transport Layer Security (TLS) validation context.",
       () => appmesh_VirtualGatewaySpecListenerTlsValidation_GetTypes(),
       false,

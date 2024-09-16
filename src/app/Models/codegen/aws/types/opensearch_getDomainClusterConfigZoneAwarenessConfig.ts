@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface opensearch_getDomainClusterConfigZoneAwarenessConfig {
   // Number of availability zones used.
@@ -15,8 +15,8 @@ export function opensearch_getDomainClusterConfigZoneAwarenessConfig_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Number,
-      "availabilityZoneCount",
-      "Number of availability zones used.",
+      'availabilityZoneCount',
+      'Number of availability zones used.',
       () => [],
       true,
       false,

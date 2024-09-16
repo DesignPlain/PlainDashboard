@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface glue_ConnectionPhysicalConnectionRequirements {
   // The availability zone of the connection. This field is redundant and implied by `subnet_id`, but is currently an api requirement.
@@ -21,24 +21,24 @@ export function glue_ConnectionPhysicalConnectionRequirements_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "availabilityZone",
-      "The availability zone of the connection. This field is redundant and implied by `subnet_id`, but is currently an api requirement.",
+      'availabilityZone',
+      'The availability zone of the connection. This field is redundant and implied by `subnet_id`, but is currently an api requirement.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "securityGroupIdLists",
-      "The security group ID list used by the connection.",
+      'securityGroupIdLists',
+      'The security group ID list used by the connection.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "subnetId",
-      "The subnet ID used by the connection.",
+      'subnetId',
+      'The subnet ID used by the connection.',
       () => [],
       false,
       false,

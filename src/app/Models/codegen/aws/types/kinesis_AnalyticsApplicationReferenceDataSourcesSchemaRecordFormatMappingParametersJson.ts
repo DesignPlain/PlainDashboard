@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordFormatMappingParametersJson {
   // Path to the top-level parent that contains the records.
@@ -15,8 +15,8 @@ export function kinesis_AnalyticsApplicationReferenceDataSourcesSchemaRecordForm
   return [
     new DynamicUIProps(
       InputType.String,
-      "recordRowPath",
-      "Path to the top-level parent that contains the records.",
+      'recordRowPath',
+      'Path to the top-level parent that contains the records.',
       () => [],
       true,
       false,

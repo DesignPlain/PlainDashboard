@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_EntityTypeEntity,
   diagflow_EntityTypeEntity_GetTypes,
-} from "../types/diagflow_EntityTypeEntity";
+} from '../types/diagflow_EntityTypeEntity';
 
 export interface EntityTypeArgs {
   // The name of this entity type to be displayed on the console.
@@ -85,40 +85,40 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The name of this entity type to be displayed on the console.",
+        'displayName',
+        'The name of this entity type to be displayed on the console.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableFuzzyExtraction",
-        "Enables fuzzy entity extraction during classification.",
+        'enableFuzzyExtraction',
+        'Enables fuzzy entity extraction during classification.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "entities",
-        "The collection of entity entries associated with the entity type.\nStructure is documented below.",
+        'entities',
+        'The collection of entity entries associated with the entity type.\nStructure is documented below.',
         () => diagflow_EntityTypeEntity_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kind",
-        "Indicates the kind of entity type.\n* KIND_MAP: Map entity types allow mapping of a group of synonyms to a reference value.\n* KIND_LIST: List entity types contain a set of entries that do not map to reference values. However, list entity\ntypes can contain references to other entity types (with or without aliases).\n* KIND_REGEXP: Regexp entity types allow to specify regular expressions in entries values.\nPossible values are: `KIND_MAP`, `KIND_LIST`, `KIND_REGEXP`.\n\n\n- - -",
+        'kind',
+        'Indicates the kind of entity type.\n* KIND_MAP: Map entity types allow mapping of a group of synonyms to a reference value.\n* KIND_LIST: List entity types contain a set of entries that do not map to reference values. However, list entity\ntypes can contain references to other entity types (with or without aliases).\n* KIND_REGEXP: Regexp entity types allow to specify regular expressions in entries values.\nPossible values are: `KIND_MAP`, `KIND_LIST`, `KIND_REGEXP`.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

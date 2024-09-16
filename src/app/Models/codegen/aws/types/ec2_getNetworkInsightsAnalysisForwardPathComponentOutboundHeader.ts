@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderDestinationPortRange,
   ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderDestinationPortRange_GetTypes,
-} from "./ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderDestinationPortRange";
+} from './ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderDestinationPortRange';
 import {
   ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderSourcePortRange,
   ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderSourcePortRange_GetTypes,
-} from "./ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderSourcePortRange";
+} from './ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderSourcePortRange';
 
 export interface ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeader {
   //
@@ -35,26 +35,26 @@ export function ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeader
   return [
     new DynamicUIProps(
       InputType.Array,
-      "destinationPortRanges",
-      "",
+      'destinationPortRanges',
+      '',
       () =>
         ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderDestinationPortRange_GetTypes(),
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "protocol", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'protocol', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "sourceAddresses",
-      "",
+      'sourceAddresses',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sourcePortRanges",
-      "",
+      'sourcePortRanges',
+      '',
       () =>
         ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeaderSourcePortRange_GetTypes(),
       true,
@@ -62,8 +62,8 @@ export function ec2_getNetworkInsightsAnalysisForwardPathComponentOutboundHeader
     ),
     new DynamicUIProps(
       InputType.Array,
-      "destinationAddresses",
-      "",
+      'destinationAddresses',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,

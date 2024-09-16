@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface UserPoolDomainArgs {
   // The ARN of an ISSUED ACM certificate in us-east-1 for a custom domain.
@@ -49,24 +49,24 @@ export class UserPoolDomain extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "domain",
-        "For custom domains, this is the fully-qualified domain name, such as auth.example.com. For Amazon Cognito prefix domains, this is the prefix alone, such as auth.",
+        'domain',
+        'For custom domains, this is the fully-qualified domain name, such as auth.example.com. For Amazon Cognito prefix domains, this is the prefix alone, such as auth.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "userPoolId",
-        "The user pool ID.",
+        'userPoolId',
+        'The user pool ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateArn",
-        "The ARN of an ISSUED ACM certificate in us-east-1 for a custom domain.",
+        'certificateArn',
+        'The ARN of an ISSUED ACM certificate in us-east-1 for a custom domain.',
         () => [],
         false,
         false,

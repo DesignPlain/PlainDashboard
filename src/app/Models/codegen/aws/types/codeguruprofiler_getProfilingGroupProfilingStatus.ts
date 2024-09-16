@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codeguruprofiler_getProfilingGroupProfilingStatusLatestAggregatedProfile,
   codeguruprofiler_getProfilingGroupProfilingStatusLatestAggregatedProfile_GetTypes,
-} from "./codeguruprofiler_getProfilingGroupProfilingStatusLatestAggregatedProfile";
+} from './codeguruprofiler_getProfilingGroupProfilingStatusLatestAggregatedProfile';
 
 export interface codeguruprofiler_getProfilingGroupProfilingStatus {
   //
@@ -25,24 +25,24 @@ export function codeguruprofiler_getProfilingGroupProfilingStatus_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "latestAgentOrchestratedAt",
-      "",
+      'latestAgentOrchestratedAt',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "latestAgentProfileReportedAt",
-      "",
+      'latestAgentProfileReportedAt',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "latestAggregatedProfiles",
-      "",
+      'latestAggregatedProfiles',
+      '',
       () =>
         codeguruprofiler_getProfilingGroupProfilingStatusLatestAggregatedProfile_GetTypes(),
       true,

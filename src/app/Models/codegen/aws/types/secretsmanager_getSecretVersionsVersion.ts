@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface secretsmanager_getSecretVersionsVersion {
   //
@@ -24,32 +24,32 @@ export function secretsmanager_getSecretVersionsVersion_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Array,
-      "versionStages",
-      "",
+      'versionStages',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "createdTime",
-      "",
+      'createdTime',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "lastAccessedDate",
-      "Date that this version of the secret was last accessed.",
+      'lastAccessedDate',
+      'Date that this version of the secret was last accessed.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "versionId",
-      "Unique version identifier of this version of the secret.",
+      'versionId',
+      'Unique version identifier of this version of the secret.',
       () => [],
       true,
       false,

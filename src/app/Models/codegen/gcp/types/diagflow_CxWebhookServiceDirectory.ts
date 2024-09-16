@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_CxWebhookServiceDirectoryGenericWebService,
   diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes,
-} from "./diagflow_CxWebhookServiceDirectoryGenericWebService";
+} from './diagflow_CxWebhookServiceDirectoryGenericWebService';
 
 export interface diagflow_CxWebhookServiceDirectory {
   /*
@@ -25,16 +25,16 @@ export function diagflow_CxWebhookServiceDirectory_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Object,
-      "genericWebService",
-      "The name of Service Directory service.\nStructure is documented below.",
+      'genericWebService',
+      'The name of Service Directory service.\nStructure is documented below.',
       () => diagflow_CxWebhookServiceDirectoryGenericWebService_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "service",
-      "The name of Service Directory service.",
+      'service',
+      'The name of Service Directory service.',
       () => [],
       true,
       false,

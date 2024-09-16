@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordField,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordField_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordField";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordField';
 import {
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameField,
   wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameField_GetTypes,
-} from "./wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameField";
+} from './wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameField';
 
 export interface wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspection {
   // Details about your login page password field. See `password_field` for more details.
@@ -29,8 +29,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
   return [
     new DynamicUIProps(
       InputType.Object,
-      "usernameField",
-      "Details about your login page username field. See `username_field` for more details.",
+      'usernameField',
+      'Details about your login page username field. See `username_field` for more details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameField_GetTypes(),
       true,
@@ -38,8 +38,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.Object,
-      "passwordField",
-      "Details about your login page password field. See `password_field` for more details.",
+      'passwordField',
+      'Details about your login page password field. See `password_field` for more details.',
       () =>
         wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordField_GetTypes(),
       true,
@@ -47,8 +47,8 @@ export function wafv2_WebAclRuleStatementManagedRuleGroupStatementManagedRuleGro
     ),
     new DynamicUIProps(
       InputType.String,
-      "payloadType",
-      "The payload type for your login endpoint, either JSON or form encoded.",
+      'payloadType',
+      'The payload type for your login endpoint, either JSON or form encoded.',
       () => [],
       true,
       false,

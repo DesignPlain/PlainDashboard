@@ -3,61 +3,61 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_VMwareClusterUpgradePolicy,
   gkeonprem_VMwareClusterUpgradePolicy_GetTypes,
-} from "../types/gkeonprem_VMwareClusterUpgradePolicy";
+} from '../types/gkeonprem_VMwareClusterUpgradePolicy';
 import {
   gkeonprem_VMwareClusterAutoRepairConfig,
   gkeonprem_VMwareClusterAutoRepairConfig_GetTypes,
-} from "../types/gkeonprem_VMwareClusterAutoRepairConfig";
+} from '../types/gkeonprem_VMwareClusterAutoRepairConfig';
 import {
   gkeonprem_VMwareClusterNetworkConfig,
   gkeonprem_VMwareClusterNetworkConfig_GetTypes,
-} from "../types/gkeonprem_VMwareClusterNetworkConfig";
+} from '../types/gkeonprem_VMwareClusterNetworkConfig';
 import {
   gkeonprem_VMwareClusterDataplaneV2,
   gkeonprem_VMwareClusterDataplaneV2_GetTypes,
-} from "../types/gkeonprem_VMwareClusterDataplaneV2";
+} from '../types/gkeonprem_VMwareClusterDataplaneV2';
 import {
   gkeonprem_VMwareClusterLoadBalancer,
   gkeonprem_VMwareClusterLoadBalancer_GetTypes,
-} from "../types/gkeonprem_VMwareClusterLoadBalancer";
+} from '../types/gkeonprem_VMwareClusterLoadBalancer';
 import {
   gkeonprem_VMwareClusterStatus,
   gkeonprem_VMwareClusterStatus_GetTypes,
-} from "../types/gkeonprem_VMwareClusterStatus";
+} from '../types/gkeonprem_VMwareClusterStatus';
 import {
   gkeonprem_VMwareClusterVcenter,
   gkeonprem_VMwareClusterVcenter_GetTypes,
-} from "../types/gkeonprem_VMwareClusterVcenter";
+} from '../types/gkeonprem_VMwareClusterVcenter';
 import {
   gkeonprem_VMwareClusterAuthorization,
   gkeonprem_VMwareClusterAuthorization_GetTypes,
-} from "../types/gkeonprem_VMwareClusterAuthorization";
+} from '../types/gkeonprem_VMwareClusterAuthorization';
 import {
   gkeonprem_VMwareClusterStorage,
   gkeonprem_VMwareClusterStorage_GetTypes,
-} from "../types/gkeonprem_VMwareClusterStorage";
+} from '../types/gkeonprem_VMwareClusterStorage';
 import {
   gkeonprem_VMwareClusterFleet,
   gkeonprem_VMwareClusterFleet_GetTypes,
-} from "../types/gkeonprem_VMwareClusterFleet";
+} from '../types/gkeonprem_VMwareClusterFleet';
 import {
   gkeonprem_VMwareClusterValidationCheck,
   gkeonprem_VMwareClusterValidationCheck_GetTypes,
-} from "../types/gkeonprem_VMwareClusterValidationCheck";
+} from '../types/gkeonprem_VMwareClusterValidationCheck';
 import {
   gkeonprem_VMwareClusterAntiAffinityGroups,
   gkeonprem_VMwareClusterAntiAffinityGroups_GetTypes,
-} from "../types/gkeonprem_VMwareClusterAntiAffinityGroups";
+} from '../types/gkeonprem_VMwareClusterAntiAffinityGroups';
 import {
   gkeonprem_VMwareClusterControlPlaneNode,
   gkeonprem_VMwareClusterControlPlaneNode_GetTypes,
-} from "../types/gkeonprem_VMwareClusterControlPlaneNode";
+} from '../types/gkeonprem_VMwareClusterControlPlaneNode';
 
 export interface VMwareClusterArgs {
   // Enable control plane V2. Default to false.
@@ -355,31 +355,31 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "loadBalancer",
-        "Load Balancer configuration.\nStructure is documented below.",
+        'loadBalancer',
+        'Load Balancer configuration.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterLoadBalancer_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "antiAffinityGroups",
-        "AAGConfig specifies whether to spread VMware User Cluster nodes across at\nleast three physical hosts in the datacenter.\nStructure is documented below.",
+        'antiAffinityGroups',
+        'AAGConfig specifies whether to spread VMware User Cluster nodes across at\nleast three physical hosts in the datacenter.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterAntiAffinityGroups_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "networkConfig",
-        "The VMware User Cluster network configuration.\nStructure is documented below.",
+        'networkConfig',
+        'The VMware User Cluster network configuration.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterNetworkConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "adminClusterMembership",
+        'adminClusterMembership',
         "The admin cluster this VMware User Cluster belongs to.\nThis is the full resource name of the admin cluster's hub membership.\nIn the future, references to other resource types might be allowed if\nadmin clusters are modeled as their own resources.",
         () => [],
         true,
@@ -387,120 +387,120 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A human readable description of this VMware User Cluster.",
+        'description',
+        'A human readable description of this VMware User Cluster.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "controlPlaneNode",
-        "VMware User Cluster control plane nodes must have either 1 or 3 replicas.\nStructure is documented below.",
+        'controlPlaneNode',
+        'VMware User Cluster control plane nodes must have either 1 or 3 replicas.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterControlPlaneNode_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "vmTrackingEnabled",
-        "Enable VM tracking.",
+        'vmTrackingEnabled',
+        'Enable VM tracking.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "storage",
-        "Storage configuration.\nStructure is documented below.",
+        'storage',
+        'Storage configuration.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterStorage_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "vcenters",
-        "VmwareVCenterConfig specifies vCenter config for the user cluster.\nInherited from the admin cluster.\nStructure is documented below.",
+        'vcenters',
+        'VmwareVCenterConfig specifies vCenter config for the user cluster.\nInherited from the admin cluster.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterVcenter_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "authorization",
-        "RBAC policy that will be applied and managed by GKE On-Prem.\nStructure is documented below.",
+        'authorization',
+        'RBAC policy that will be applied and managed by GKE On-Prem.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterAuthorization_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "upgradePolicy",
-        "Specifies upgrade policy for the cluster.\nStructure is documented below.",
+        'upgradePolicy',
+        'Specifies upgrade policy for the cluster.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterUpgradePolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Annotations on the VMware User Cluster.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Annotations on the VMware User Cluster.\nThis field has the same restrictions as Kubernetes annotations.\nThe total size of all keys and values combined is limited to 256k.\nKey can have 2 segments: prefix (optional) and name (required),\nseparated by a slash (/).\nPrefix must be a DNS subdomain.\nName must be 63 characters or less, begin and end with alphanumerics,\nwith dashes (-), underscores (_), dots (.), and alphanumerics between.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "onPremVersion",
-        "The Anthos clusters on the VMware version for your user cluster.",
+        'onPremVersion',
+        'The Anthos clusters on the VMware version for your user cluster.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dataplaneV2",
-        "VmwareDataplaneV2Config specifies configuration for Dataplane V2.\nStructure is documented below.",
+        'dataplaneV2',
+        'VmwareDataplaneV2Config specifies configuration for Dataplane V2.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterDataplaneV2_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableControlPlaneV2",
-        "Enable control plane V2. Default to false.",
+        'enableControlPlaneV2',
+        'Enable control plane V2. Default to false.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the resource.",
+        'location',
+        'The location of the resource.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The VMware cluster name.",
+        'name',
+        'The VMware cluster name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "autoRepairConfig",
-        "Configuration for auto repairing.\nStructure is documented below.",
+        'autoRepairConfig',
+        'Configuration for auto repairing.\nStructure is documented below.',
         () => gkeonprem_VMwareClusterAutoRepairConfig_GetTypes(),
         false,
         false,

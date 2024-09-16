@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getRouteSpecGrpcRouteRetryPolicyPerRetryTimeout,
   appmesh_getRouteSpecGrpcRouteRetryPolicyPerRetryTimeout_GetTypes,
-} from "./appmesh_getRouteSpecGrpcRouteRetryPolicyPerRetryTimeout";
+} from './appmesh_getRouteSpecGrpcRouteRetryPolicyPerRetryTimeout';
 
 export interface appmesh_getRouteSpecGrpcRouteRetryPolicy {
   //
@@ -31,40 +31,40 @@ export function appmesh_getRouteSpecGrpcRouteRetryPolicy_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Array,
-      "grpcRetryEvents",
-      "",
+      'grpcRetryEvents',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "httpRetryEvents",
-      "",
+      'httpRetryEvents',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxRetries",
-      "",
+      'maxRetries',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "perRetryTimeouts",
-      "",
+      'perRetryTimeouts',
+      '',
       () => appmesh_getRouteSpecGrpcRouteRetryPolicyPerRetryTimeout_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tcpRetryEvents",
-      "",
+      'tcpRetryEvents',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,

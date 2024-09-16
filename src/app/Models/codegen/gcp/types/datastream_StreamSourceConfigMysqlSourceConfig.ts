@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects,
   datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects_GetTypes,
-} from "./datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects";
+} from './datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects';
 import {
   datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects,
   datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects_GetTypes,
-} from "./datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects";
+} from './datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects';
 
 export interface datastream_StreamSourceConfigMysqlSourceConfig {
   /*
@@ -44,8 +44,8 @@ export function datastream_StreamSourceConfigMysqlSourceConfig_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Object,
-      "excludeObjects",
-      "MySQL objects to exclude from the stream.\nStructure is documented below.",
+      'excludeObjects',
+      'MySQL objects to exclude from the stream.\nStructure is documented below.',
       () =>
         datastream_StreamSourceConfigMysqlSourceConfigExcludeObjects_GetTypes(),
       false,
@@ -53,8 +53,8 @@ export function datastream_StreamSourceConfigMysqlSourceConfig_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Object,
-      "includeObjects",
-      "MySQL objects to retrieve from the source.\nStructure is documented below.",
+      'includeObjects',
+      'MySQL objects to retrieve from the source.\nStructure is documented below.',
       () =>
         datastream_StreamSourceConfigMysqlSourceConfigIncludeObjects_GetTypes(),
       false,
@@ -62,7 +62,7 @@ export function datastream_StreamSourceConfigMysqlSourceConfig_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxConcurrentBackfillTasks",
+      'maxConcurrentBackfillTasks',
       "Maximum number of concurrent backfill tasks. The number should be non negative.\nIf not set (or set to 0), the system's default value will be used.",
       () => [],
       false,
@@ -70,7 +70,7 @@ export function datastream_StreamSourceConfigMysqlSourceConfig_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxConcurrentCdcTasks",
+      'maxConcurrentCdcTasks',
       "Maximum number of concurrent CDC tasks. The number should be non negative.\nIf not set (or set to 0), the system's default value will be used.",
       () => [],
       false,

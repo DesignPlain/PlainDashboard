@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PrincipalPortfolioAssociationArgs {
   // Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
@@ -45,31 +45,31 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "acceptLanguage",
-        "Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.",
+        'acceptLanguage',
+        'Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "portfolioId",
-        "Portfolio identifier.",
+        'portfolioId',
+        'Portfolio identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "principalArn",
-        "Principal ARN.\n\nThe following arguments are optional:",
+        'principalArn',
+        'Principal ARN.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "principalType",
+        'principalType',
         'Principal type. Setting this argument empty (e.g., `principal_type = ""`) will result in an error. Valid values are `IAM` and `IAM_PATTERN`. Default is `IAM`.',
         () => [],
         false,

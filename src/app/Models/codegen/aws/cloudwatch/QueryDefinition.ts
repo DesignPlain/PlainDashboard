@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface QueryDefinitionArgs {
   // Specific log groups to use with the query.
@@ -34,24 +34,24 @@ export class QueryDefinition extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "logGroupNames",
-        "Specific log groups to use with the query.",
+        'logGroupNames',
+        'Specific log groups to use with the query.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the query.",
+        'name',
+        'The name of the query.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "queryString",
-        "The query to save. You can read more about CloudWatch Logs Query Syntax in the [documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).",
+        'queryString',
+        'The query to save. You can read more about CloudWatch Logs Query Syntax in the [documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).',
         () => [],
         true,
         false,

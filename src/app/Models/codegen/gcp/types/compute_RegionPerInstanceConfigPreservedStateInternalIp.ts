@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress,
   compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress_GetTypes,
-} from "./compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress";
+} from './compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress';
 
 export interface compute_RegionPerInstanceConfigPreservedStateInternalIp {
   /*
@@ -32,24 +32,24 @@ export function compute_RegionPerInstanceConfigPreservedStateInternalIp_GetTypes
   return [
     new DynamicUIProps(
       InputType.String,
-      "autoDelete",
-      "These stateful IPs will never be released during autohealing, update or VM instance recreate operations. This flag is used to configure if the IP reservation should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted.\nDefault value is `NEVER`.\nPossible values are: `NEVER`, `ON_PERMANENT_INSTANCE_DELETION`.",
+      'autoDelete',
+      'These stateful IPs will never be released during autohealing, update or VM instance recreate operations. This flag is used to configure if the IP reservation should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted.\nDefault value is `NEVER`.\nPossible values are: `NEVER`, `ON_PERMANENT_INSTANCE_DELETION`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "interfaceName",
-      "The identifier for this object. Format specified above.",
+      'interfaceName',
+      'The identifier for this object. Format specified above.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ipAddress",
-      "Ip address representation\nStructure is documented below.",
+      'ipAddress',
+      'Ip address representation\nStructure is documented below.',
       () =>
         compute_RegionPerInstanceConfigPreservedStateInternalIpIpAddress_GetTypes(),
       false,

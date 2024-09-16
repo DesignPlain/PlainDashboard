@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_VirtualGatewaySpecListenerHealthCheck,
   appmesh_VirtualGatewaySpecListenerHealthCheck_GetTypes,
-} from "./appmesh_VirtualGatewaySpecListenerHealthCheck";
+} from './appmesh_VirtualGatewaySpecListenerHealthCheck';
 import {
   appmesh_VirtualGatewaySpecListenerPortMapping,
   appmesh_VirtualGatewaySpecListenerPortMapping_GetTypes,
-} from "./appmesh_VirtualGatewaySpecListenerPortMapping";
+} from './appmesh_VirtualGatewaySpecListenerPortMapping';
 import {
   appmesh_VirtualGatewaySpecListenerTls,
   appmesh_VirtualGatewaySpecListenerTls_GetTypes,
-} from "./appmesh_VirtualGatewaySpecListenerTls";
+} from './appmesh_VirtualGatewaySpecListenerTls';
 import {
   appmesh_VirtualGatewaySpecListenerConnectionPool,
   appmesh_VirtualGatewaySpecListenerConnectionPool_GetTypes,
-} from "./appmesh_VirtualGatewaySpecListenerConnectionPool";
+} from './appmesh_VirtualGatewaySpecListenerConnectionPool';
 
 export interface appmesh_VirtualGatewaySpecListener {
   // Health check information for the listener.
@@ -40,32 +40,32 @@ export function appmesh_VirtualGatewaySpecListener_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Object,
-      "connectionPool",
-      "Connection pool information for the listener.",
+      'connectionPool',
+      'Connection pool information for the listener.',
       () => appmesh_VirtualGatewaySpecListenerConnectionPool_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "healthCheck",
-      "Health check information for the listener.",
+      'healthCheck',
+      'Health check information for the listener.',
       () => appmesh_VirtualGatewaySpecListenerHealthCheck_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "portMapping",
-      "Port mapping information for the listener.",
+      'portMapping',
+      'Port mapping information for the listener.',
       () => appmesh_VirtualGatewaySpecListenerPortMapping_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "tls",
-      "Transport Layer Security (TLS) properties for the listener",
+      'tls',
+      'Transport Layer Security (TLS) properties for the listener',
       () => appmesh_VirtualGatewaySpecListenerTls_GetTypes(),
       false,
       false,

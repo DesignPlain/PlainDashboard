@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_ClusterEncryptionInfoEncryptionInTransit,
   msk_ClusterEncryptionInfoEncryptionInTransit_GetTypes,
-} from "./msk_ClusterEncryptionInfoEncryptionInTransit";
+} from './msk_ClusterEncryptionInfoEncryptionInTransit';
 
 export interface msk_ClusterEncryptionInfo {
   // You may specify a KMS key short ID or ARN (it will always output an ARN) to use for encrypting your data at rest.  If no key is specified, an AWS managed KMS ('aws/msk' managed service) key will be used for encrypting the data at rest.
@@ -22,7 +22,7 @@ export function msk_ClusterEncryptionInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "encryptionAtRestKmsKeyArn",
+      'encryptionAtRestKmsKeyArn',
       "You may specify a KMS key short ID or ARN (it will always output an ARN) to use for encrypting your data at rest.  If no key is specified, an AWS managed KMS ('aws/msk' managed service) key will be used for encrypting the data at rest.",
       () => [],
       false,
@@ -30,8 +30,8 @@ export function msk_ClusterEncryptionInfo_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Object,
-      "encryptionInTransit",
-      "Configuration block to specify encryption in transit. See below.",
+      'encryptionInTransit',
+      'Configuration block to specify encryption in transit. See below.',
       () => msk_ClusterEncryptionInfoEncryptionInTransit_GetTypes(),
       false,
       false,

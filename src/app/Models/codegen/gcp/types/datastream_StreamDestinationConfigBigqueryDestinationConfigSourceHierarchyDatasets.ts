@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate,
   datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate_GetTypes,
-} from "./datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate";
+} from './datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate';
 
 export interface datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasets {
   /*
@@ -22,8 +22,8 @@ export function datastream_StreamDestinationConfigBigqueryDestinationConfigSourc
   return [
     new DynamicUIProps(
       InputType.Object,
-      "datasetTemplate",
-      "Dataset template used for dynamic dataset creation.\nStructure is documented below.",
+      'datasetTemplate',
+      'Dataset template used for dynamic dataset creation.\nStructure is documented below.',
       () =>
         datastream_StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplate_GetTypes(),
       true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface pipes_PipeTargetParametersBatchJobParametersRetryStrategy {
   // The number of times to move a job to the RUNNABLE status. If the value of attempts is greater than one, the job is retried on failure the same number of attempts as the value. Maximum value of 10.
@@ -15,8 +15,8 @@ export function pipes_PipeTargetParametersBatchJobParametersRetryStrategy_GetTyp
   return [
     new DynamicUIProps(
       InputType.Number,
-      "attempts",
-      "The number of times to move a job to the RUNNABLE status. If the value of attempts is greater than one, the job is retried on failure the same number of attempts as the value. Maximum value of 10.",
+      'attempts',
+      'The number of times to move a job to the RUNNABLE status. If the value of attempts is greater than one, the job is retried on failure the same number of attempts as the value. Maximum value of 10.',
       () => [],
       false,
       false,

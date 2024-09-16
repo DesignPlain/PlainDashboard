@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification';
 
 export interface lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecification {
   //
@@ -29,8 +29,8 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationPrompt
   return [
     new DynamicUIProps(
       InputType.Object,
-      "audioSpecification",
-      "",
+      'audioSpecification',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecification_GetTypes(),
       false,
@@ -38,8 +38,8 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationPrompt
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dtmfSpecification",
-      "",
+      'dtmfSpecification',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification_GetTypes(),
       false,
@@ -47,8 +47,8 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationPrompt
     ),
     new DynamicUIProps(
       InputType.Number,
-      "startTimeoutMs",
-      "",
+      'startTimeoutMs',
+      '',
       () => [],
       true,
       false,

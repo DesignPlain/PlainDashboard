@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   route53recoverycontrol_ClusterClusterEndpoint,
   route53recoverycontrol_ClusterClusterEndpoint_GetTypes,
-} from "../types/route53recoverycontrol_ClusterClusterEndpoint";
+} from '../types/route53recoverycontrol_ClusterClusterEndpoint';
 
 export interface ClusterArgs {
   // Unique name describing the cluster.
@@ -32,8 +32,8 @@ export class Cluster extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique name describing the cluster.",
+        'name',
+        'Unique name describing the cluster.',
         () => [],
         false,
         true,

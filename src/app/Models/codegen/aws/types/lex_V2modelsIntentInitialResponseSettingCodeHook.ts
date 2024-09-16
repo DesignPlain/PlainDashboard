@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecification,
   lex_V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecification_GetTypes,
-} from "./lex_V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecification";
+} from './lex_V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecification';
 
 export interface lex_V2modelsIntentInitialResponseSettingCodeHook {
   // Whether a dialog code hook is used when the intent is activated.
@@ -28,8 +28,8 @@ export function lex_V2modelsIntentInitialResponseSettingCodeHook_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Object,
-      "postCodeHookSpecification",
-      "Configuration block that contains the responses and actions that Amazon Lex takes after the Lambda function is complete. See `post_code_hook_specification`.",
+      'postCodeHookSpecification',
+      'Configuration block that contains the responses and actions that Amazon Lex takes after the Lambda function is complete. See `post_code_hook_specification`.',
       () =>
         lex_V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecification_GetTypes(),
       true,
@@ -37,24 +37,24 @@ export function lex_V2modelsIntentInitialResponseSettingCodeHook_GetTypes(): Dyn
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "active",
-      "Whether a dialog code hook is used when the intent is activated.",
+      'active',
+      'Whether a dialog code hook is used when the intent is activated.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableCodeHookInvocation",
-      "Whether a Lambda function should be invoked for the dialog.",
+      'enableCodeHookInvocation',
+      'Whether a Lambda function should be invoked for the dialog.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "invocationLabel",
-      "Label that indicates the dialog step from which the dialog code hook is happening.",
+      'invocationLabel',
+      'Label that indicates the dialog step from which the dialog code hook is happening.',
       () => [],
       false,
       false,

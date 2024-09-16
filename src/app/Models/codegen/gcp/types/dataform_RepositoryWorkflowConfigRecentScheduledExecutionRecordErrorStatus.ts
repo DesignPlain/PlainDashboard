@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatus {
   /*
@@ -24,16 +24,16 @@ export function dataform_RepositoryWorkflowConfigRecentScheduledExecutionRecordE
   return [
     new DynamicUIProps(
       InputType.Number,
-      "code",
-      "(Output)\nThe status code, which should be an enum value of google.rpc.Code.",
+      'code',
+      '(Output)\nThe status code, which should be an enum value of google.rpc.Code.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "message",
-      "(Output)\nA developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.",
+      'message',
+      '(Output)\nA developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.',
       () => [],
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface MemberArgs {
   // AWS account ID for the account.
@@ -61,40 +61,40 @@ export class Member extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "message",
-        "A custom message to include in the invitation. Amazon Detective adds this message to the standard content that it sends for an invitation.",
+        'message',
+        'A custom message to include in the invitation. Amazon Detective adds this message to the standard content that it sends for an invitation.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "AWS account ID for the account.",
+        'accountId',
+        'AWS account ID for the account.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disableEmailNotification",
-        "If set to true, then the root user of the invited account will _not_ receive an email notification. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. By default, this is set to `false`.",
+        'disableEmailNotification',
+        'If set to true, then the root user of the invited account will _not_ receive an email notification. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. By default, this is set to `false`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "emailAddress",
-        "Email address for the account.",
+        'emailAddress',
+        'Email address for the account.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "graphArn",
-        "ARN of the behavior graph to invite the member accounts to contribute their data to.",
+        'graphArn',
+        'ARN of the behavior graph to invite the member accounts to contribute their data to.',
         () => [],
         true,
         true,

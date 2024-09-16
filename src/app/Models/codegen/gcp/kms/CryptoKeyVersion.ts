@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kms_CryptoKeyVersionAttestation,
   kms_CryptoKeyVersionAttestation_GetTypes,
-} from "../types/kms_CryptoKeyVersionAttestation";
+} from '../types/kms_CryptoKeyVersionAttestation';
 
 export interface CryptoKeyVersionArgs {
   /*
@@ -66,15 +66,15 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "state",
-        "The current state of the CryptoKeyVersion.\nPossible values are: `PENDING_GENERATION`, `ENABLED`, `DISABLED`, `DESTROYED`, `DESTROY_SCHEDULED`, `PENDING_IMPORT`, `IMPORT_FAILED`.",
+        'state',
+        'The current state of the CryptoKeyVersion.\nPossible values are: `PENDING_GENERATION`, `ENABLED`, `DISABLED`, `DESTROYED`, `DESTROY_SCHEDULED`, `PENDING_IMPORT`, `IMPORT_FAILED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cryptoKey",
+        'cryptoKey',
         "The name of the cryptoKey associated with the CryptoKeyVersions.\nFormat: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyring}}/cryptoKeys/{{cryptoKey}}'`\n\n\n- - -",
         () => [],
         true,

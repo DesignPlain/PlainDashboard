@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings,
   medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings";
+} from './medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings';
 
 export interface medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettings {
   // Html Motion Graphics Settings.
@@ -19,8 +19,8 @@ export function medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotio
   return [
     new DynamicUIProps(
       InputType.Object,
-      "htmlMotionGraphicsSettings",
-      "Html Motion Graphics Settings.",
+      'htmlMotionGraphicsSettings',
+      'Html Motion Graphics Settings.',
       () =>
         medialive_ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettings_GetTypes(),
       false,

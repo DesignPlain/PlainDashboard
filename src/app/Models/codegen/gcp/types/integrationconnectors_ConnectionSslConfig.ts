@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionSslConfigAdditionalVariable,
   integrationconnectors_ConnectionSslConfigAdditionalVariable_GetTypes,
-} from "./integrationconnectors_ConnectionSslConfigAdditionalVariable";
+} from './integrationconnectors_ConnectionSslConfigAdditionalVariable';
 import {
   integrationconnectors_ConnectionSslConfigClientPrivateKey,
   integrationconnectors_ConnectionSslConfigClientPrivateKey_GetTypes,
-} from "./integrationconnectors_ConnectionSslConfigClientPrivateKey";
+} from './integrationconnectors_ConnectionSslConfigClientPrivateKey';
 import {
   integrationconnectors_ConnectionSslConfigClientPrivateKeyPass,
   integrationconnectors_ConnectionSslConfigClientPrivateKeyPass_GetTypes,
-} from "./integrationconnectors_ConnectionSslConfigClientPrivateKeyPass";
+} from './integrationconnectors_ConnectionSslConfigClientPrivateKeyPass';
 import {
   integrationconnectors_ConnectionSslConfigClientCertificate,
   integrationconnectors_ConnectionSslConfigClientCertificate_GetTypes,
-} from "./integrationconnectors_ConnectionSslConfigClientCertificate";
+} from './integrationconnectors_ConnectionSslConfigClientCertificate';
 import {
   integrationconnectors_ConnectionSslConfigPrivateServerCertificate,
   integrationconnectors_ConnectionSslConfigPrivateServerCertificate_GetTypes,
-} from "./integrationconnectors_ConnectionSslConfigPrivateServerCertificate";
+} from './integrationconnectors_ConnectionSslConfigPrivateServerCertificate';
 
 export interface integrationconnectors_ConnectionSslConfig {
   /*
@@ -89,24 +89,24 @@ export function integrationconnectors_ConnectionSslConfig_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "useSsl",
-      "Bool for enabling SSL",
+      'useSsl',
+      'Bool for enabling SSL',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientCertType",
-      "Type of Client Cert (PEM/JKS/.. etc.)\nPossible values are: `PEM`.",
+      'clientCertType',
+      'Type of Client Cert (PEM/JKS/.. etc.)\nPossible values are: `PEM`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "clientCertificate",
-      "Client Certificate\nStructure is documented below.",
+      'clientCertificate',
+      'Client Certificate\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionSslConfigClientCertificate_GetTypes(),
       false,
@@ -114,8 +114,8 @@ export function integrationconnectors_ConnectionSslConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Array,
-      "additionalVariables",
-      "Additional SSL related field values.\nStructure is documented below.",
+      'additionalVariables',
+      'Additional SSL related field values.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionSslConfigAdditionalVariable_GetTypes(),
       false,
@@ -123,16 +123,16 @@ export function integrationconnectors_ConnectionSslConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "trustModel",
-      "Enum for Trust Model\nPossible values are: `PUBLIC`, `PRIVATE`, `INSECURE`.",
+      'trustModel',
+      'Enum for Trust Model\nPossible values are: `PUBLIC`, `PRIVATE`, `INSECURE`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "clientPrivateKey",
-      "Client Private Key\nStructure is documented below.",
+      'clientPrivateKey',
+      'Client Private Key\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionSslConfigClientPrivateKey_GetTypes(),
       false,
@@ -140,8 +140,8 @@ export function integrationconnectors_ConnectionSslConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.Object,
-      "clientPrivateKeyPass",
-      "Secret containing the passphrase protecting the Client Private Key\nStructure is documented below.",
+      'clientPrivateKeyPass',
+      'Secret containing the passphrase protecting the Client Private Key\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionSslConfigClientPrivateKeyPass_GetTypes(),
       false,
@@ -149,16 +149,16 @@ export function integrationconnectors_ConnectionSslConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "serverCertType",
-      "Type of Server Cert (PEM/JKS/.. etc.)\nPossible values are: `PEM`.",
+      'serverCertType',
+      'Type of Server Cert (PEM/JKS/.. etc.)\nPossible values are: `PEM`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "privateServerCertificate",
-      "Private Server Certificate. Needs to be specified if trust model is PRIVATE.\nStructure is documented below.",
+      'privateServerCertificate',
+      'Private Server Certificate. Needs to be specified if trust model is PRIVATE.\nStructure is documented below.',
       () =>
         integrationconnectors_ConnectionSslConfigPrivateServerCertificate_GetTypes(),
       false,
@@ -166,8 +166,8 @@ export function integrationconnectors_ConnectionSslConfig_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Enum for controlling the SSL Type (TLS/MTLS)\nPossible values are: `TLS`, `MTLS`.",
+      'type',
+      'Enum for controlling the SSL Type (TLS/MTLS)\nPossible values are: `TLS`, `MTLS`.',
       () => [],
       true,
       false,

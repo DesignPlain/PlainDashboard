@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   connect_UserHierarchyStructureHierarchyStructure,
   connect_UserHierarchyStructureHierarchyStructure_GetTypes,
-} from "../types/connect_UserHierarchyStructureHierarchyStructure";
+} from '../types/connect_UserHierarchyStructureHierarchyStructure';
 
 export interface UserHierarchyStructureArgs {
   // A block that defines the hierarchy structure's levels. The `hierarchy_structure` block is documented below.
@@ -29,7 +29,7 @@ export class UserHierarchyStructure extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "hierarchyStructure",
+        'hierarchyStructure',
         "A block that defines the hierarchy structure's levels. The `hierarchy_structure` block is documented below.",
         () => connect_UserHierarchyStructureHierarchyStructure_GetTypes(),
         true,
@@ -37,8 +37,8 @@ export class UserHierarchyStructure extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceId",
-        "Specifies the identifier of the hosting Amazon Connect Instance.",
+        'instanceId',
+        'Specifies the identifier of the hosting Amazon Connect Instance.',
         () => [],
         true,
         false,

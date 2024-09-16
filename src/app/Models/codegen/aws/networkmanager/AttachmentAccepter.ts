@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AttachmentAccepterArgs {
   // The ID of the attachment.
@@ -49,16 +49,16 @@ export class AttachmentAccepter extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "attachmentId",
-        "The ID of the attachment.",
+        'attachmentId',
+        'The ID of the attachment.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "attachmentType",
-        "The type of attachment. Valid values can be found in the [AWS Documentation](https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachments.html#API_ListAttachments_RequestSyntax)",
+        'attachmentType',
+        'The type of attachment. Valid values can be found in the [AWS Documentation](https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListAttachments.html#API_ListAttachments_RequestSyntax)',
         () => [],
         true,
         true,

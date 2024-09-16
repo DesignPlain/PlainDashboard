@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appflow_FlowSourceFlowConfigIncrementalPullConfig {
   // Field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.
@@ -15,8 +15,8 @@ export function appflow_FlowSourceFlowConfigIncrementalPullConfig_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.String,
-      "datetimeTypeFieldName",
-      "Field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.",
+      'datetimeTypeFieldName',
+      'Field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.',
       () => [],
       false,
       false,

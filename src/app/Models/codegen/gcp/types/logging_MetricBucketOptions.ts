@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   logging_MetricBucketOptionsExplicitBuckets,
   logging_MetricBucketOptionsExplicitBuckets_GetTypes,
-} from "./logging_MetricBucketOptionsExplicitBuckets";
+} from './logging_MetricBucketOptionsExplicitBuckets';
 import {
   logging_MetricBucketOptionsExponentialBuckets,
   logging_MetricBucketOptionsExponentialBuckets_GetTypes,
-} from "./logging_MetricBucketOptionsExponentialBuckets";
+} from './logging_MetricBucketOptionsExponentialBuckets';
 import {
   logging_MetricBucketOptionsLinearBuckets,
   logging_MetricBucketOptionsLinearBuckets_GetTypes,
-} from "./logging_MetricBucketOptionsLinearBuckets";
+} from './logging_MetricBucketOptionsLinearBuckets';
 
 export interface logging_MetricBucketOptions {
   /*
@@ -44,24 +44,24 @@ export function logging_MetricBucketOptions_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "explicitBuckets",
-      "Specifies a set of buckets with arbitrary widths.\nStructure is documented below.",
+      'explicitBuckets',
+      'Specifies a set of buckets with arbitrary widths.\nStructure is documented below.',
       () => logging_MetricBucketOptionsExplicitBuckets_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "exponentialBuckets",
-      "Specifies an exponential sequence of buckets that have a width that is proportional to the value of\nthe lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.\nStructure is documented below.",
+      'exponentialBuckets',
+      'Specifies an exponential sequence of buckets that have a width that is proportional to the value of\nthe lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.\nStructure is documented below.',
       () => logging_MetricBucketOptionsExponentialBuckets_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "linearBuckets",
-      "Specifies a linear sequence of buckets that all have the same width (except overflow and underflow).\nEach bucket represents a constant absolute uncertainty on the specific value in the bucket.\nStructure is documented below.",
+      'linearBuckets',
+      'Specifies a linear sequence of buckets that all have the same width (except overflow and underflow).\nEach bucket represents a constant absolute uncertainty on the specific value in the bucket.\nStructure is documented below.',
       () => logging_MetricBucketOptionsLinearBuckets_GetTypes(),
       false,
       false,

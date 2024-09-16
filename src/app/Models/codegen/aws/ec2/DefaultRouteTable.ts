@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_DefaultRouteTableRoute,
   ec2_DefaultRouteTableRoute_GetTypes,
-} from "../types/ec2_DefaultRouteTableRoute";
+} from '../types/ec2_DefaultRouteTableRoute';
 
 export interface DefaultRouteTableArgs {
   /*
@@ -61,32 +61,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "defaultRouteTableId",
-        "ID of the default route table.\n\nThe following arguments are optional:",
+        'defaultRouteTableId',
+        'ID of the default route table.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "propagatingVgws",
-        "List of virtual gateways for propagation.",
+        'propagatingVgws',
+        'List of virtual gateways for propagation.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "routes",
-        "Set of objects. Detailed below",
+        'routes',
+        'Set of objects. Detailed below',
         () => ec2_DefaultRouteTableRoute_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

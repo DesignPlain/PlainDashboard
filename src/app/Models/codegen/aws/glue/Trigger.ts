@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   glue_TriggerPredicate,
   glue_TriggerPredicate_GetTypes,
-} from "../types/glue_TriggerPredicate";
+} from '../types/glue_TriggerPredicate';
 import {
   glue_TriggerAction,
   glue_TriggerAction_GetTypes,
-} from "../types/glue_TriggerAction";
+} from '../types/glue_TriggerAction';
 import {
   glue_TriggerEventBatchingCondition,
   glue_TriggerEventBatchingCondition_GetTypes,
-} from "../types/glue_TriggerEventBatchingCondition";
+} from '../types/glue_TriggerEventBatchingCondition';
 
 export interface TriggerArgs {
   // The name of the trigger.
@@ -100,88 +100,88 @@ export class Trigger extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "startOnCreation",
-        "Set to true to start `SCHEDULED` and `CONDITIONAL` triggers when created. True is not supported for `ON_DEMAND` triggers.",
+        'startOnCreation',
+        'Set to true to start `SCHEDULED` and `CONDITIONAL` triggers when created. True is not supported for `ON_DEMAND` triggers.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workflowName",
-        "A workflow to which the trigger should be associated to. Every workflow graph (DAG) needs a starting trigger (`ON_DEMAND` or `SCHEDULED` type) and can contain multiple additional `CONDITIONAL` triggers.",
+        'workflowName',
+        'A workflow to which the trigger should be associated to. Every workflow graph (DAG) needs a starting trigger (`ON_DEMAND` or `SCHEDULED` type) and can contain multiple additional `CONDITIONAL` triggers.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "actions",
-        "List of actions initiated by this trigger when it fires. See Actions Below.",
+        'actions',
+        'List of actions initiated by this trigger when it fires. See Actions Below.',
         () => glue_TriggerAction_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the new trigger.",
+        'description',
+        'A description of the new trigger.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "eventBatchingConditions",
-        "Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. See Event Batching Condition.",
+        'eventBatchingConditions',
+        'Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires. See Event Batching Condition.',
         () => glue_TriggerEventBatchingCondition_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "schedule",
-        "A cron expression used to specify the schedule. [Time-Based Schedules for Jobs and Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html)",
+        'schedule',
+        'A cron expression used to specify the schedule. [Time-Based Schedules for Jobs and Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the trigger.",
+        'name',
+        'The name of the trigger.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "predicate",
-        "A predicate to specify when the new trigger should fire. Required when trigger type is `CONDITIONAL`. See Predicate Below.",
+        'predicate',
+        'A predicate to specify when the new trigger should fire. Required when trigger type is `CONDITIONAL`. See Predicate Below.',
         () => glue_TriggerPredicate_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of trigger. Valid values are `CONDITIONAL`, `EVENT`, `ON_DEMAND`, and `SCHEDULED`.",
+        'type',
+        'The type of trigger. Valid values are `CONDITIONAL`, `EVENT`, `ON_DEMAND`, and `SCHEDULED`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Start the trigger. Defaults to `true`.",
+        'enabled',
+        'Start the trigger. Defaults to `true`.',
         () => [],
         false,
         false,

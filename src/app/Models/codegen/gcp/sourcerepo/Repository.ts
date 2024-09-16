@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sourcerepo_RepositoryPubsubConfig,
   sourcerepo_RepositoryPubsubConfig_GetTypes,
-} from "../types/sourcerepo_RepositoryPubsubConfig";
+} from '../types/sourcerepo_RepositoryPubsubConfig';
 
 export interface RepositoryArgs {
   /*
@@ -67,24 +67,24 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Resource name of the repository, of the form `{{repo}}`.\nThe repo name may contain slashes. eg, `name/with/slash`\n\n\n- - -",
+        'name',
+        'Resource name of the repository, of the form `{{repo}}`.\nThe repo name may contain slashes. eg, `name/with/slash`\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "pubsubConfigs",
-        "How this repository publishes a change in the repository through Cloud Pub/Sub.\nKeyed by the topic names.\nStructure is documented below.",
+        'pubsubConfigs',
+        'How this repository publishes a change in the repository through Cloud Pub/Sub.\nKeyed by the topic names.\nStructure is documented below.',
         () => sourcerepo_RepositoryPubsubConfig_GetTypes(),
         false,
         false,

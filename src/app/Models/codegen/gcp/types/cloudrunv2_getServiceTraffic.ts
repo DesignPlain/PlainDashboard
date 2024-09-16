@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudrunv2_getServiceTraffic {
   // Specifies percent of the traffic to this Revision. This defaults to zero if unspecified.
@@ -24,23 +24,23 @@ export function cloudrunv2_getServiceTraffic_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "revision",
-      "Revision to which to send this portion of traffic, if traffic allocation is by revision.",
+      'revision',
+      'Revision to which to send this portion of traffic, if traffic allocation is by revision.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tag",
-      "Indicates a string to be part of the URI to exclusively reference this target.",
+      'tag',
+      'Indicates a string to be part of the URI to exclusively reference this target.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
+      'type',
       'The allocation type for this traffic target. Possible values: ["TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST", "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION"]',
       () => [],
       true,
@@ -48,8 +48,8 @@ export function cloudrunv2_getServiceTraffic_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "percent",
-      "Specifies percent of the traffic to this Revision. This defaults to zero if unspecified.",
+      'percent',
+      'Specifies percent of the traffic to this Revision. This defaults to zero if unspecified.',
       () => [],
       true,
       false,

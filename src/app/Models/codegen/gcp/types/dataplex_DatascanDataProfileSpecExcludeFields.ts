@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataplex_DatascanDataProfileSpecExcludeFields {
   /*
@@ -19,7 +19,7 @@ export function dataplex_DatascanDataProfileSpecExcludeFields_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Array,
-      "fieldNames",
+      'fieldNames',
       "Expected input is a list of fully qualified names of fields as in the schema.\nOnly top-level field names for nested fields are supported.\nFor instance, if 'x' is of nested field type, listing 'x' is supported but 'x.y.z' is not supported. Here 'y' and 'y.z' are nested fields of 'x'.",
       () => InputType_String_GetTypes(),
       false,

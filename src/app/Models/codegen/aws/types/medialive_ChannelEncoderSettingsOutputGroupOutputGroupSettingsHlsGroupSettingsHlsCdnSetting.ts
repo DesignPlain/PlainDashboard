@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsS3Settings,
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsS3Settings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsS3Settings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsS3Settings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsWebdavSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsWebdavSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsWebdavSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsWebdavSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsAkamaiSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsAkamaiSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsAkamaiSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsAkamaiSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsBasicPutSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsBasicPutSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsBasicPutSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsBasicPutSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsMediaStoreSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsMediaStoreSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsMediaStoreSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsMediaStoreSettings';
 
 export interface medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSetting {
   //
@@ -47,8 +47,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHl
   return [
     new DynamicUIProps(
       InputType.Object,
-      "hlsS3Settings",
-      "",
+      'hlsS3Settings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsS3Settings_GetTypes(),
       false,
@@ -56,8 +56,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHl
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hlsWebdavSettings",
-      "",
+      'hlsWebdavSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsWebdavSettings_GetTypes(),
       false,
@@ -65,8 +65,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHl
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hlsAkamaiSettings",
-      "",
+      'hlsAkamaiSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsAkamaiSettings_GetTypes(),
       false,
@@ -74,8 +74,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHl
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hlsBasicPutSettings",
-      "",
+      'hlsBasicPutSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsBasicPutSettings_GetTypes(),
       false,
@@ -83,8 +83,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHl
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hlsMediaStoreSettings",
-      "",
+      'hlsMediaStoreSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsMediaStoreSettings_GetTypes(),
       false,

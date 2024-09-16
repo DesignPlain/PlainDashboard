@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface GcmChannelArgs {
   //
@@ -43,40 +43,40 @@ export class GcmChannel extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "serviceJson",
-        "",
+        'serviceJson',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "apiKey",
-        "Platform credential API key from Google.",
+        'apiKey',
+        'Platform credential API key from Google.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "applicationId",
-        "The application ID.",
+        'applicationId',
+        'The application ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "defaultAuthenticationMethod",
-        "",
+        'defaultAuthenticationMethod',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Whether the channel is enabled or disabled. Defaults to `true`.",
+        'enabled',
+        'Whether the channel is enabled or disabled. Defaults to `true`.',
         () => [],
         false,
         false,

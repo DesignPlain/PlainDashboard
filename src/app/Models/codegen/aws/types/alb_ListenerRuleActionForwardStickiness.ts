@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface alb_ListenerRuleActionForwardStickiness {
   // The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).
@@ -18,16 +18,16 @@ export function alb_ListenerRuleActionForwardStickiness_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Number,
-      "duration",
-      "The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).",
+      'duration',
+      'The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Indicates whether target group stickiness is enabled.",
+      'enabled',
+      'Indicates whether target group stickiness is enabled.',
       () => [],
       false,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   iam_WorkforcePoolAccessRestrictions,
   iam_WorkforcePoolAccessRestrictions_GetTypes,
-} from "../types/iam_WorkforcePoolAccessRestrictions";
+} from '../types/iam_WorkforcePoolAccessRestrictions';
 
 export interface WorkforcePoolArgs {
   /*
@@ -129,64 +129,64 @@ The prefix `gcp-` is reserved for use by Google, and may not be specified.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A user-specified description of the pool. Cannot exceed 256 characters.",
+        'description',
+        'A user-specified description of the pool. Cannot exceed 256 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disabled",
-        "Whether the pool is disabled. You cannot use a disabled pool to exchange tokens,\nor use existing tokens to access resources. If the pool is re-enabled, existing tokens grant access again.",
+        'disabled',
+        'Whether the pool is disabled. You cannot use a disabled pool to exchange tokens,\nor use existing tokens to access resources. If the pool is re-enabled, existing tokens grant access again.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "A user-specified display name of the pool in Google Cloud Console. Cannot exceed 32 characters.",
+        'displayName',
+        'A user-specified display name of the pool in Google Cloud Console. Cannot exceed 32 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource.",
-        () => [],
-        true,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "parent",
-        "Immutable. The resource name of the parent. Format: `organizations/{org-id}`.\n\n\n- - -",
+        'location',
+        'The location for the resource.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sessionDuration",
-        "Duration that the Google Cloud access tokens, console sign-in sessions,\nand `gcloud` sign-in sessions from this pool are valid.\nMust be greater than 15 minutes (900s) and less than 12 hours (43200s).\nIf `sessionDuration` is not configured, minted credentials have a default duration of one hour (3600s).\nA duration in seconds with up to nine fractional digits, ending with '`s`'. Example: \"`3.5s`\".",
+        'parent',
+        'Immutable. The resource name of the parent. Format: `organizations/{org-id}`.\n\n\n- - -',
+        () => [],
+        true,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'sessionDuration',
+        'Duration that the Google Cloud access tokens, console sign-in sessions,\nand `gcloud` sign-in sessions from this pool are valid.\nMust be greater than 15 minutes (900s) and less than 12 hours (43200s).\nIf `sessionDuration` is not configured, minted credentials have a default duration of one hour (3600s).\nA duration in seconds with up to nine fractional digits, ending with \'`s`\'. Example: "`3.5s`".',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workforcePoolId",
-        "The name of the pool. The ID must be a globally unique string of 6 to 63 lowercase letters,\ndigits, or hyphens. It must start with a letter, and cannot have a trailing hyphen.\nThe prefix `gcp-` is reserved for use by Google, and may not be specified.",
+        'workforcePoolId',
+        'The name of the pool. The ID must be a globally unique string of 6 to 63 lowercase letters,\ndigits, or hyphens. It must start with a letter, and cannot have a trailing hyphen.\nThe prefix `gcp-` is reserved for use by Google, and may not be specified.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "accessRestrictions",
-        "Configure access restrictions on the workforce pool users. This is an optional field. If specified web\nsign-in can be restricted to given set of services or programmatic sign-in can be disabled for pool users.\nStructure is documented below.",
+        'accessRestrictions',
+        'Configure access restrictions on the workforce pool users. This is an optional field. If specified web\nsign-in can be restricted to given set of services or programmatic sign-in can be disabled for pool users.\nStructure is documented below.',
         () => iam_WorkforcePoolAccessRestrictions_GetTypes(),
         false,
         true,

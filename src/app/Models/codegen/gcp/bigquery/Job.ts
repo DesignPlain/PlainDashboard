@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquery_JobCopy,
   bigquery_JobCopy_GetTypes,
-} from "../types/bigquery_JobCopy";
+} from '../types/bigquery_JobCopy';
 import {
   bigquery_JobLoad,
   bigquery_JobLoad_GetTypes,
-} from "../types/bigquery_JobLoad";
+} from '../types/bigquery_JobLoad';
 import {
   bigquery_JobQuery,
   bigquery_JobQuery_GetTypes,
-} from "../types/bigquery_JobQuery";
+} from '../types/bigquery_JobQuery';
 import {
   bigquery_JobExtract,
   bigquery_JobExtract_GetTypes,
-} from "../types/bigquery_JobExtract";
+} from '../types/bigquery_JobExtract';
 import {
   bigquery_JobStatus,
   bigquery_JobStatus_GetTypes,
-} from "../types/bigquery_JobStatus";
+} from '../types/bigquery_JobStatus';
 
 export interface JobArgs {
   /*
@@ -157,47 +157,47 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Object,
-        "load",
-        "Configures a load job.\nStructure is documented below.",
+        'load',
+        'Configures a load job.\nStructure is documented below.',
         () => bigquery_JobLoad_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The geographic location of the job. The default value is US.",
+        'location',
+        'The geographic location of the job. The default value is US.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "The labels associated with this job. You can use these to organize and group your jobs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'The labels associated with this job. You can use these to organize and group your jobs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "copy",
-        "Copies a table.\nStructure is documented below.",
+        'copy',
+        'Copies a table.\nStructure is documented below.',
         () => bigquery_JobCopy_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "query",
+        'query',
         'SQL query text to execute. The useLegacySql field can be used to indicate whether the query uses legacy SQL or standard SQL.\n*NOTE*: queries containing [DML language](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language)\n(`DELETE`, `UPDATE`, `MERGE`, `INSERT`) must specify `create_disposition = ""` and `write_disposition = ""`.',
         () => bigquery_JobQuery_GetTypes(),
         false,
@@ -205,24 +205,24 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.Object,
-        "extract",
-        "Configures an extract job.\nStructure is documented below.",
+        'extract',
+        'Configures an extract job.\nStructure is documented below.',
         () => bigquery_JobExtract_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "jobId",
-        "The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters.",
+        'jobId',
+        'The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "jobTimeoutMs",
-        "Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt to terminate the job.",
+        'jobTimeoutMs',
+        'Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt to terminate the job.',
         () => [],
         false,
         true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType,
   migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType_GetTypes,
-} from "./migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType";
+} from './migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType';
 
 export interface migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferences {
   // CPU overcommit ratio. Acceptable values are between 1.0 and 2.0 inclusive.
@@ -45,24 +45,24 @@ export function migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenanc
   return [
     new DynamicUIProps(
       InputType.Number,
-      "cpuOvercommitRatio",
-      "CPU overcommit ratio. Acceptable values are between 1.0 and 2.0 inclusive.",
+      'cpuOvercommitRatio',
+      'CPU overcommit ratio. Acceptable values are between 1.0 and 2.0 inclusive.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "hostMaintenancePolicy",
-      "Sole Tenancy nodes maintenance policy.\nPossible values:\nHOST_MAINTENANCE_POLICY_UNSPECIFIED\nHOST_MAINTENANCE_POLICY_DEFAULT\nHOST_MAINTENANCE_POLICY_RESTART_IN_PLACE\nHOST_MAINTENANCE_POLICY_MIGRATE_WITHIN_NODE_GROUP",
+      'hostMaintenancePolicy',
+      'Sole Tenancy nodes maintenance policy.\nPossible values:\nHOST_MAINTENANCE_POLICY_UNSPECIFIED\nHOST_MAINTENANCE_POLICY_DEFAULT\nHOST_MAINTENANCE_POLICY_RESTART_IN_PLACE\nHOST_MAINTENANCE_POLICY_MIGRATE_WITHIN_NODE_GROUP',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "nodeTypes",
-      "A list of sole tenant node types. An empty list means that all possible node types will be considered.\nStructure is documented below.",
+      'nodeTypes',
+      'A list of sole tenant node types. An empty list means that all possible node types will be considered.\nStructure is documented below.',
       () =>
         migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeType_GetTypes(),
       false,
@@ -70,8 +70,8 @@ export function migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenanc
     ),
     new DynamicUIProps(
       InputType.String,
-      "commitmentPlan",
-      "Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with.\nPossible values:\nCOMMITMENT_PLAN_UNSPECIFIED\nON_DEMAND\nCOMMITMENT_1_YEAR\nCOMMITMENT_3_YEAR",
+      'commitmentPlan',
+      'Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with.\nPossible values:\nCOMMITMENT_PLAN_UNSPECIFIED\nON_DEMAND\nCOMMITMENT_1_YEAR\nCOMMITMENT_3_YEAR',
       () => [],
       false,
       false,

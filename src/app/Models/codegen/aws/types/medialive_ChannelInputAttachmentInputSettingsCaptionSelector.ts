@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettings,
   medialive_ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettings_GetTypes,
-} from "./medialive_ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettings";
+} from './medialive_ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettings';
 
 export interface medialive_ChannelInputAttachmentInputSettingsCaptionSelector {
   //
@@ -29,24 +29,24 @@ export function medialive_ChannelInputAttachmentInputSettingsCaptionSelector_Get
   return [
     new DynamicUIProps(
       InputType.String,
-      "languageCode",
-      "",
+      'languageCode',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the Channel.\n\nThe following arguments are optional:",
+      'name',
+      'Name of the Channel.\n\nThe following arguments are optional:',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "selectorSettings",
-      "",
+      'selectorSettings',
+      '',
       () =>
         medialive_ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettings_GetTypes(),
       false,

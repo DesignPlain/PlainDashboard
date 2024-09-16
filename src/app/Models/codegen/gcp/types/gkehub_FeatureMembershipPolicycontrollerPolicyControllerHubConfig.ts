@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring,
   gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring_GetTypes,
-} from "./gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring";
+} from './gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring';
 import {
   gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent,
   gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent_GetTypes,
-} from "./gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent";
+} from './gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent';
 
 export interface gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfig {
   // Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated.
@@ -47,16 +47,16 @@ export function gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfi
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "logDeniesEnabled",
-      "Logs all denies and dry run failures.",
+      'logDeniesEnabled',
+      'Logs all denies and dry run failures.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "monitoring",
-      "Specifies the backends Policy Controller should export metrics to. Structure is documented below.",
+      'monitoring',
+      'Specifies the backends Policy Controller should export metrics to. Structure is documented below.',
       () =>
         gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoring_GetTypes(),
       false,
@@ -64,56 +64,56 @@ export function gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfi
     ),
     new DynamicUIProps(
       InputType.Number,
-      "auditIntervalSeconds",
-      "Sets the interval for Policy Controller Audit Scans (in seconds). When set to 0, this disables audit functionality altogether.",
+      'auditIntervalSeconds',
+      'Sets the interval for Policy Controller Audit Scans (in seconds). When set to 0, this disables audit functionality altogether.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "constraintViolationLimit",
-      "The maximum number of audit violations to be stored in a constraint. If not set, the  default of 20 will be used.",
+      'constraintViolationLimit',
+      'The maximum number of audit violations to be stored in a constraint. If not set, the  default of 20 will be used.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "exemptableNamespaces",
-      "The set of namespaces that are excluded from Policy Controller checks. Namespaces do not need to currently exist on the cluster.",
+      'exemptableNamespaces',
+      'The set of namespaces that are excluded from Policy Controller checks. Namespaces do not need to currently exist on the cluster.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "referentialRulesEnabled",
-      "Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated.",
+      'referentialRulesEnabled',
+      'Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "installSpec",
-      "Configures the mode of the Policy Controller installation. Must be one of `INSTALL_SPEC_NOT_INSTALLED`, `INSTALL_SPEC_ENABLED`, `INSTALL_SPEC_SUSPENDED` or `INSTALL_SPEC_DETACHED`.",
+      'installSpec',
+      'Configures the mode of the Policy Controller installation. Must be one of `INSTALL_SPEC_NOT_INSTALLED`, `INSTALL_SPEC_ENABLED`, `INSTALL_SPEC_SUSPENDED` or `INSTALL_SPEC_DETACHED`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "mutationEnabled",
-      "Enables mutation in policy controller. If true, mutation CRDs, webhook, and controller deployment will be deployed to the cluster.",
+      'mutationEnabled',
+      'Enables mutation in policy controller. If true, mutation CRDs, webhook, and controller deployment will be deployed to the cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "policyContent",
-      "Specifies the desired policy content on the cluster. Structure is documented below.",
+      'policyContent',
+      'Specifies the desired policy content on the cluster. Structure is documented below.',
       () =>
         gkehub_FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContent_GetTypes(),
       false,

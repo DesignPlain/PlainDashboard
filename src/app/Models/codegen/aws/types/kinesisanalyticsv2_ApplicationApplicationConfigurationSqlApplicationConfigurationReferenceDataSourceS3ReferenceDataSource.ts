@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSource {
   // The ARN of the S3 bucket.
@@ -18,16 +18,16 @@ export function kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplica
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucketArn",
-      "The ARN of the S3 bucket.",
+      'bucketArn',
+      'The ARN of the S3 bucket.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "fileKey",
-      "The object key name containing the reference data.",
+      'fileKey',
+      'The object key name containing the reference data.',
       () => [],
       true,
       false,

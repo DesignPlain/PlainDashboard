@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression,
   securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes,
-} from "./securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression";
+} from './securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression';
 
 export interface securitycenter_FolderCustomModuleCustomConfigCustomOutputProperty {
   // Name of the property for the custom output.
@@ -26,16 +26,16 @@ export function securitycenter_FolderCustomModuleCustomConfigCustomOutputPropert
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the property for the custom output.",
+      'name',
+      'Name of the property for the custom output.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "valueExpression",
-      "The CEL expression for the custom output. A resource property can be specified\nto return the value of the property or a text string enclosed in quotation marks.\nStructure is documented below.",
+      'valueExpression',
+      'The CEL expression for the custom output. A resource property can be specified\nto return the value of the property or a text string enclosed in quotation marks.\nStructure is documented below.',
       () =>
         securitycenter_FolderCustomModuleCustomConfigCustomOutputPropertyValueExpression_GetTypes(),
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   databasemigrationservice_ConnectionProfileAlloydbSettings,
   databasemigrationservice_ConnectionProfileAlloydbSettings_GetTypes,
-} from "./databasemigrationservice_ConnectionProfileAlloydbSettings";
+} from './databasemigrationservice_ConnectionProfileAlloydbSettings';
 
 export interface databasemigrationservice_ConnectionProfileAlloydb {
   /*
@@ -25,8 +25,8 @@ export function databasemigrationservice_ConnectionProfileAlloydb_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Object,
-      "settings",
-      "Immutable. Metadata used to create the destination AlloyDB cluster.\nStructure is documented below.",
+      'settings',
+      'Immutable. Metadata used to create the destination AlloyDB cluster.\nStructure is documented below.',
       () =>
         databasemigrationservice_ConnectionProfileAlloydbSettings_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function databasemigrationservice_ConnectionProfileAlloydb_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "clusterId",
-      "Required. The AlloyDB cluster ID that this connection profile is associated with.",
+      'clusterId',
+      'Required. The AlloyDB cluster ID that this connection profile is associated with.',
       () => [],
       true,
       false,

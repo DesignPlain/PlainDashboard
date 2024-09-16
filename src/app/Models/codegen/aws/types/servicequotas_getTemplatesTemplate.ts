@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface servicequotas_getTemplatesTemplate {
   // Indicates whether the quota is global.
@@ -36,64 +36,64 @@ export function servicequotas_getTemplatesTemplate_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.String,
-      "quotaName",
-      "Quota name.",
+      'quotaName',
+      'Quota name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "region",
-      "AWS Region to which the quota increases apply.",
+      'region',
+      'AWS Region to which the quota increases apply.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceCode",
-      "(Required) Service identifier.",
+      'serviceCode',
+      '(Required) Service identifier.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceName",
-      "Service name.",
+      'serviceName',
+      'Service name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "unit",
-      "Unit of measurement.",
+      'unit',
+      'Unit of measurement.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "value",
-      "(Required) The new, increased value for the quota.",
+      'value',
+      '(Required) The new, increased value for the quota.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "globalQuota",
-      "Indicates whether the quota is global.",
+      'globalQuota',
+      'Indicates whether the quota is global.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "quotaCode",
-      "Quota identifier.",
+      'quotaCode',
+      'Quota identifier.',
       () => [],
       true,
       false,

@@ -3,33 +3,33 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sql_DatabaseInstanceServerCaCert,
   sql_DatabaseInstanceServerCaCert_GetTypes,
-} from "../types/sql_DatabaseInstanceServerCaCert";
+} from '../types/sql_DatabaseInstanceServerCaCert';
 import {
   sql_DatabaseInstanceClone,
   sql_DatabaseInstanceClone_GetTypes,
-} from "../types/sql_DatabaseInstanceClone";
+} from '../types/sql_DatabaseInstanceClone';
 import {
   sql_DatabaseInstanceReplicaConfiguration,
   sql_DatabaseInstanceReplicaConfiguration_GetTypes,
-} from "../types/sql_DatabaseInstanceReplicaConfiguration";
+} from '../types/sql_DatabaseInstanceReplicaConfiguration';
 import {
   sql_DatabaseInstanceRestoreBackupContext,
   sql_DatabaseInstanceRestoreBackupContext_GetTypes,
-} from "../types/sql_DatabaseInstanceRestoreBackupContext";
+} from '../types/sql_DatabaseInstanceRestoreBackupContext';
 import {
   sql_DatabaseInstanceSettings,
   sql_DatabaseInstanceSettings_GetTypes,
-} from "../types/sql_DatabaseInstanceSettings";
+} from '../types/sql_DatabaseInstanceSettings';
 import {
   sql_DatabaseInstanceIpAddress,
   sql_DatabaseInstanceIpAddress_GetTypes,
-} from "../types/sql_DatabaseInstanceIpAddress";
+} from '../types/sql_DatabaseInstanceIpAddress';
 
 export interface DatabaseInstanceArgs {
   /*
@@ -268,112 +268,112 @@ configuration is detailed below.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "clone",
-        "The context needed to create this instance as a clone of another instance. When this field is set during\nresource creation, this provider will attempt to clone another instance as indicated in the context. The\nconfiguration is detailed below.",
+        'clone',
+        'The context needed to create this instance as a clone of another instance. When this field is set during\nresource creation, this provider will attempt to clone another instance as indicated in the context. The\nconfiguration is detailed below.',
         () => sql_DatabaseInstanceClone_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "settings",
-        "The settings to use for the database. The\nconfiguration is detailed below. Required if `clone` is not set.",
+        'settings',
+        'The settings to use for the database. The\nconfiguration is detailed below. Required if `clone` is not set.',
         () => sql_DatabaseInstanceSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the instance. If the name is left\nblank, the provider will randomly generate one when the instance is first\ncreated. This is done because after a name is used, it cannot be reused for\nup to [one week](https://cloud.google.com/sql/docs/delete-instance).",
+        'name',
+        'The name of the instance. If the name is left\nblank, the provider will randomly generate one when the instance is first\ncreated. This is done because after a name is used, it cannot be reused for\nup to [one week](https://cloud.google.com/sql/docs/delete-instance).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region the instance will sit in. If a region is not provided in the resource definition,\nthe provider region will be used instead.\n\n- - -",
+        'region',
+        'The region the instance will sit in. If a region is not provided in the resource definition,\nthe provider region will be used instead.\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "restoreBackupContext",
-        "The context needed to restore the database to a backup run. This field will\ncause the provider to trigger the database to restore from the backup run indicated. The configuration is detailed below.\n**NOTE:** Restoring from a backup is an imperative action and not recommended via this provider. Adding or modifying this\nblock during resource creation/update will trigger the restore action after the resource is created/updated.",
+        'restoreBackupContext',
+        'The context needed to restore the database to a backup run. This field will\ncause the provider to trigger the database to restore from the backup run indicated. The configuration is detailed below.\n**NOTE:** Restoring from a backup is an imperative action and not recommended via this provider. Adding or modifying this\nblock during resource creation/update will trigger the restore action after the resource is created/updated.',
         () => sql_DatabaseInstanceRestoreBackupContext_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "masterInstanceName",
-        "The name of the existing instance that will\nact as the master in the replication setup. Note, this requires the master to\nhave `binary_log_enabled` set, as well as existing backups.",
+        'masterInstanceName',
+        'The name of the existing instance that will\nact as the master in the replication setup. Note, this requires the master to\nhave `binary_log_enabled` set, as well as existing backups.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "databaseVersion",
-        "The MySQL, PostgreSQL or\nSQL Server version to use. Supported values include `MYSQL_5_6`,\n`MYSQL_5_7`, `MYSQL_8_0`, `POSTGRES_9_6`,`POSTGRES_10`, `POSTGRES_11`,\n`POSTGRES_12`, `POSTGRES_13`, `POSTGRES_14`, `POSTGRES_15`, `SQLSERVER_2017_STANDARD`,\n`SQLSERVER_2017_ENTERPRISE`, `SQLSERVER_2017_EXPRESS`, `SQLSERVER_2017_WEB`.\n`SQLSERVER_2019_STANDARD`, `SQLSERVER_2019_ENTERPRISE`, `SQLSERVER_2019_EXPRESS`,\n`SQLSERVER_2019_WEB`.\n[Database Version Policies](https://cloud.google.com/sql/docs/db-versions)\nincludes an up-to-date reference of supported versions.",
+        'databaseVersion',
+        'The MySQL, PostgreSQL or\nSQL Server version to use. Supported values include `MYSQL_5_6`,\n`MYSQL_5_7`, `MYSQL_8_0`, `POSTGRES_9_6`,`POSTGRES_10`, `POSTGRES_11`,\n`POSTGRES_12`, `POSTGRES_13`, `POSTGRES_14`, `POSTGRES_15`, `SQLSERVER_2017_STANDARD`,\n`SQLSERVER_2017_ENTERPRISE`, `SQLSERVER_2017_EXPRESS`, `SQLSERVER_2017_WEB`.\n`SQLSERVER_2019_STANDARD`, `SQLSERVER_2019_ENTERPRISE`, `SQLSERVER_2019_EXPRESS`,\n`SQLSERVER_2019_WEB`.\n[Database Version Policies](https://cloud.google.com/sql/docs/db-versions)\nincludes an up-to-date reference of supported versions.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "maintenanceVersion",
-        "The current software version on the instance. This attribute can not be set during creation. Refer to `available_maintenance_versions` attribute to see what `maintenance_version` are available for upgrade. When this attribute gets updated, it will cause an instance restart. Setting a `maintenance_version` value that is older than the current one on the instance will be ignored.",
+        'maintenanceVersion',
+        'The current software version on the instance. This attribute can not be set during creation. Refer to `available_maintenance_versions` attribute to see what `maintenance_version` are available for upgrade. When this attribute gets updated, it will cause an instance restart. Setting a `maintenance_version` value that is older than the current one on the instance will be ignored.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceType",
-        "The type of the instance. The supported values are `SQL_INSTANCE_TYPE_UNSPECIFIED`, `CLOUD_SQL_INSTANCE`, `ON_PREMISES_INSTANCE` and `READ_REPLICA_INSTANCE`.",
+        'instanceType',
+        'The type of the instance. The supported values are `SQL_INSTANCE_TYPE_UNSPECIFIED`, `CLOUD_SQL_INSTANCE`, `ON_PREMISES_INSTANCE` and `READ_REPLICA_INSTANCE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "encryptionKeyName",
-        "The full path to the encryption key used for the CMEK disk encryption.  Setting\nup disk encryption currently requires manual steps outside of this provider.\nThe provided key must be in the same region as the SQL instance.  In order\nto use this feature, a special kind of service account must be created and\ngranted permission on this key.  This step can currently only be done\nmanually, please see [this step](https://cloud.google.com/sql/docs/mysql/configure-cmek#service-account).\nThat service account needs the `Cloud KMS > Cloud KMS CryptoKey Encrypter/Decrypter` role on your\nkey - please see [this step](https://cloud.google.com/sql/docs/mysql/configure-cmek#grantkey).",
+        'encryptionKeyName',
+        'The full path to the encryption key used for the CMEK disk encryption.  Setting\nup disk encryption currently requires manual steps outside of this provider.\nThe provided key must be in the same region as the SQL instance.  In order\nto use this feature, a special kind of service account must be created and\ngranted permission on this key.  This step can currently only be done\nmanually, please see [this step](https://cloud.google.com/sql/docs/mysql/configure-cmek#service-account).\nThat service account needs the `Cloud KMS > Cloud KMS CryptoKey Encrypter/Decrypter` role on your\nkey - please see [this step](https://cloud.google.com/sql/docs/mysql/configure-cmek#grantkey).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deletionProtection",
-        "Whether or not to allow the provider to destroy the instance. Unless this field is set to false\nin state, a `destroy` or `update` command that deletes the instance will fail. Defaults to `true`.",
+        'deletionProtection',
+        'Whether or not to allow the provider to destroy the instance. Unless this field is set to false\nin state, a `destroy` or `update` command that deletes the instance will fail. Defaults to `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "replicaConfiguration",
-        "The configuration for replication. The\nconfiguration is detailed below. Valid only for MySQL instances.",
+        'replicaConfiguration',
+        'The configuration for replication. The\nconfiguration is detailed below. Valid only for MySQL instances.',
         () => sql_DatabaseInstanceReplicaConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "rootPassword",
-        "Initial root password. Can be updated. Required for MS SQL Server.",
+        'rootPassword',
+        'Initial root password. Can be updated. Required for MS SQL Server.',
         () => [],
         false,
         false,

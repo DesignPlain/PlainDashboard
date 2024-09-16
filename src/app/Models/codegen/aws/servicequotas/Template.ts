@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TemplateArgs {
   // The new, increased value for the quota.
@@ -49,32 +49,32 @@ export class Template extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Number,
-        "value",
-        "The new, increased value for the quota.",
+        'value',
+        'The new, increased value for the quota.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "quotaCode",
-        "Quota identifier. To find the quota code for a specific quota, use the aws.servicequotas.ServiceQuota data source.",
+        'quotaCode',
+        'Quota identifier. To find the quota code for a specific quota, use the aws.servicequotas.ServiceQuota data source.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "AWS Region to which the template applies.",
+        'region',
+        'AWS Region to which the template applies.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceCode",
-        "Service identifier. To find the service code value for an AWS service, use the aws.servicequotas.getService data source.",
+        'serviceCode',
+        'Service identifier. To find the service code value for an AWS service, use the aws.servicequotas.getService data source.',
         () => [],
         true,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType,
   dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType_GetTypes,
-} from "./dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType";
+} from './dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType';
 
 export interface dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoType {
   /*
@@ -27,8 +27,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindings
   return [
     new DynamicUIProps(
       InputType.Object,
-      "infoType",
-      "Type of information the findings limit applies to. Only one limit per infoType should be provided. If InfoTypeLimit does\nnot have an infoType, the DLP API applies the limit against all infoTypes that are found but not\nspecified in another InfoTypeLimit.\nStructure is documented below.",
+      'infoType',
+      'Type of information the findings limit applies to. Only one limit per infoType should be provided. If InfoTypeLimit does\nnot have an infoType, the DLP API applies the limit against all infoTypes that are found but not\nspecified in another InfoTypeLimit.\nStructure is documented below.',
       () =>
         dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoType_GetTypes(),
       true,
@@ -36,8 +36,8 @@ export function dataloss_PreventionInspectTemplateInspectConfigLimitsMaxFindings
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxFindings",
-      "Max findings limit for the given infoType.",
+      'maxFindings',
+      'Max findings limit for the given infoType.',
       () => [],
       true,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade {
   // Name of the upgrade, e.g., "k8s_control_plane". It should be a valid upgrade name. It must not exceet 99 characters.
@@ -18,7 +18,7 @@ export function gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTyp
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
+      'name',
       'Name of the upgrade, e.g., "k8s_control_plane". It should be a valid upgrade name. It must not exceet 99 characters.',
       () => [],
       true,
@@ -26,7 +26,7 @@ export function gkehub_FeatureSpecClusterupgradeGkeUpgradeOverrideUpgrade_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "version",
+      'version',
       'Version of the upgrade, e.g., "1.22.1-gke.100". It should be a valid version. It must not exceet 99 characters.',
       () => [],
       true,

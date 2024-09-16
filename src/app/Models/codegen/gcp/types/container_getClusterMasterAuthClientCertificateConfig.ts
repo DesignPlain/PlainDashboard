@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterMasterAuthClientCertificateConfig {
   // Whether client certificate authorization is enabled for this cluster.
@@ -15,8 +15,8 @@ export function container_getClusterMasterAuthClientCertificateConfig_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "issueClientCertificate",
-      "Whether client certificate authorization is enabled for this cluster.",
+      'issueClientCertificate',
+      'Whether client certificate authorization is enabled for this cluster.',
       () => [],
       true,
       false,

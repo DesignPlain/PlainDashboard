@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   vmwareengine_ClusterNodeTypeConfig,
   vmwareengine_ClusterNodeTypeConfig_GetTypes,
-} from "../types/vmwareengine_ClusterNodeTypeConfig";
+} from '../types/vmwareengine_ClusterNodeTypeConfig';
 
 export interface ClusterArgs {
   /*
@@ -73,24 +73,24 @@ For example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The ID of the Cluster.\n\n\n- - -",
+        'name',
+        'The ID of the Cluster.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "nodeTypeConfigs",
-        "The map of cluster node types in this cluster,\nwhere the key is canonical identifier of the node type (corresponds to the NodeType).\nStructure is documented below.",
+        'nodeTypeConfigs',
+        'The map of cluster node types in this cluster,\nwhere the key is canonical identifier of the node type (corresponds to the NodeType).\nStructure is documented below.',
         () => vmwareengine_ClusterNodeTypeConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "The resource name of the private cloud to create a new cluster in.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud",
+        'parent',
+        'The resource name of the private cloud to create a new cluster in.\nResource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.\nFor example: projects/my-project/locations/us-west1-a/privateClouds/my-cloud',
         () => [],
         true,
         true,

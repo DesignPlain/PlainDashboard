@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dns_RecordSetRoutingPolicyGeo,
   dns_RecordSetRoutingPolicyGeo_GetTypes,
-} from "./dns_RecordSetRoutingPolicyGeo";
+} from './dns_RecordSetRoutingPolicyGeo';
 import {
   dns_RecordSetRoutingPolicyPrimaryBackup,
   dns_RecordSetRoutingPolicyPrimaryBackup_GetTypes,
-} from "./dns_RecordSetRoutingPolicyPrimaryBackup";
+} from './dns_RecordSetRoutingPolicyPrimaryBackup';
 import {
   dns_RecordSetRoutingPolicyWrr,
   dns_RecordSetRoutingPolicyWrr_GetTypes,
-} from "./dns_RecordSetRoutingPolicyWrr";
+} from './dns_RecordSetRoutingPolicyWrr';
 
 export interface dns_RecordSetRoutingPolicy {
   // Specifies whether to enable fencing for geo queries.
@@ -45,32 +45,32 @@ export function dns_RecordSetRoutingPolicy_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enableGeoFencing",
-      "Specifies whether to enable fencing for geo queries.",
+      'enableGeoFencing',
+      'Specifies whether to enable fencing for geo queries.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "geos",
-      "The configuration for Geolocation based routing policy.\nStructure is document below.",
+      'geos',
+      'The configuration for Geolocation based routing policy.\nStructure is document below.',
       () => dns_RecordSetRoutingPolicyGeo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "primaryBackup",
-      "The configuration for a primary-backup policy with global to regional failover. Queries are responded to with the global primary targets, but if none of the primary targets are healthy, then we fallback to a regional failover policy.\nStructure is document below.",
+      'primaryBackup',
+      'The configuration for a primary-backup policy with global to regional failover. Queries are responded to with the global primary targets, but if none of the primary targets are healthy, then we fallback to a regional failover policy.\nStructure is document below.',
       () => dns_RecordSetRoutingPolicyPrimaryBackup_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "wrrs",
-      "The configuration for Weighted Round Robin based routing policy.\nStructure is document below.",
+      'wrrs',
+      'The configuration for Weighted Round Robin based routing policy.\nStructure is document below.',
       () => dns_RecordSetRoutingPolicyWrr_GetTypes(),
       false,
       false,

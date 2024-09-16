@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   alloydb_BackupEncryptionConfig,
   alloydb_BackupEncryptionConfig_GetTypes,
-} from "../types/alloydb_BackupEncryptionConfig";
+} from '../types/alloydb_BackupEncryptionConfig';
 import {
   alloydb_BackupExpiryQuantity,
   alloydb_BackupExpiryQuantity_GetTypes,
-} from "../types/alloydb_BackupExpiryQuantity";
+} from '../types/alloydb_BackupExpiryQuantity';
 import {
   alloydb_BackupEncryptionInfo,
   alloydb_BackupEncryptionInfo_GetTypes,
-} from "../types/alloydb_BackupEncryptionInfo";
+} from '../types/alloydb_BackupEncryptionInfo';
 
 export interface BackupArgs {
   // The ID of the alloydb backup.
@@ -211,39 +211,39 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User-provided description of the backup.",
+        'description',
+        'User-provided description of the backup.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionConfig",
-        "EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).\nStructure is documented below.",
+        'encryptionConfig',
+        'EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).\nStructure is documented below.',
         () => alloydb_BackupEncryptionConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "User-settable and human-readable display name for the Backup.",
+        'displayName',
+        'User-settable and human-readable display name for the Backup.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'User-defined labels for the alloydb backup. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -251,31 +251,31 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location where the alloydb backup should reside.\n\n\n- - -",
+        'location',
+        'The location where the alloydb backup should reside.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The backup type, which suggests the trigger for the backup.\nPossible values are: `TYPE_UNSPECIFIED`, `ON_DEMAND`, `AUTOMATED`, `CONTINUOUS`.",
+        'type',
+        'The backup type, which suggests the trigger for the backup.\nPossible values are: `TYPE_UNSPECIFIED`, `ON_DEMAND`, `AUTOMATED`, `CONTINUOUS`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "backupId",
-        "The ID of the alloydb backup.",
+        'backupId',
+        'The ID of the alloydb backup.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
+        'annotations',
         'Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128\nAn object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -283,8 +283,8 @@ Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterName",
-        "The full resource name of the backup source cluster (e.g., projects/{project}/locations/{location}/clusters/{clusterId}).",
+        'clusterName',
+        'The full resource name of the backup source cluster (e.g., projects/{project}/locations/{location}/clusters/{clusterId}).',
         () => [],
         true,
         true,

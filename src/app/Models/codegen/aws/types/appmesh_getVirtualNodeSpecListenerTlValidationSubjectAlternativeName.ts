@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeNameMatch,
   appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeNameMatch_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeNameMatch";
+} from './appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeNameMatch';
 
 export interface appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeName {
   //
@@ -19,8 +19,8 @@ export function appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternative
   return [
     new DynamicUIProps(
       InputType.Array,
-      "matches",
-      "",
+      'matches',
+      '',
       () =>
         appmesh_getVirtualNodeSpecListenerTlValidationSubjectAlternativeNameMatch_GetTypes(),
       true,

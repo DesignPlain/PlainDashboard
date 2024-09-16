@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssm_ContactsRotationRecurrenceDailySetting,
   ssm_ContactsRotationRecurrenceDailySetting_GetTypes,
-} from "./ssm_ContactsRotationRecurrenceDailySetting";
+} from './ssm_ContactsRotationRecurrenceDailySetting';
 import {
   ssm_ContactsRotationRecurrenceMonthlySetting,
   ssm_ContactsRotationRecurrenceMonthlySetting_GetTypes,
-} from "./ssm_ContactsRotationRecurrenceMonthlySetting";
+} from './ssm_ContactsRotationRecurrenceMonthlySetting';
 import {
   ssm_ContactsRotationRecurrenceShiftCoverage,
   ssm_ContactsRotationRecurrenceShiftCoverage_GetTypes,
-} from "./ssm_ContactsRotationRecurrenceShiftCoverage";
+} from './ssm_ContactsRotationRecurrenceShiftCoverage';
 import {
   ssm_ContactsRotationRecurrenceWeeklySetting,
   ssm_ContactsRotationRecurrenceWeeklySetting_GetTypes,
-} from "./ssm_ContactsRotationRecurrenceWeeklySetting";
+} from './ssm_ContactsRotationRecurrenceWeeklySetting';
 
 export interface ssm_ContactsRotationRecurrence {
   //
@@ -46,48 +46,48 @@ export function ssm_ContactsRotationRecurrence_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "monthlySettings",
-      "(Optional) Information about on-call rotations that recur monthly. See Monthly Settings for more details.",
+      'monthlySettings',
+      '(Optional) Information about on-call rotations that recur monthly. See Monthly Settings for more details.',
       () => ssm_ContactsRotationRecurrenceMonthlySetting_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "numberOfOnCalls",
-      "(Required) The number of contacts, or shift team members designated to be on call concurrently during a shift.",
+      'numberOfOnCalls',
+      '(Required) The number of contacts, or shift team members designated to be on call concurrently during a shift.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "recurrenceMultiplier",
-      "(Required) The number of days, weeks, or months a single rotation lasts.",
+      'recurrenceMultiplier',
+      '(Required) The number of days, weeks, or months a single rotation lasts.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "shiftCoverages",
-      "(Optional) Information about the days of the week that the on-call rotation coverage includes. See Shift Coverages for more details.",
+      'shiftCoverages',
+      '(Optional) Information about the days of the week that the on-call rotation coverage includes. See Shift Coverages for more details.',
       () => ssm_ContactsRotationRecurrenceShiftCoverage_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "weeklySettings",
-      "(Optional) Information about on-call rotations that recur weekly. See Weekly Settings for more details.",
+      'weeklySettings',
+      '(Optional) Information about on-call rotations that recur weekly. See Weekly Settings for more details.',
       () => ssm_ContactsRotationRecurrenceWeeklySetting_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "dailySettings",
-      "",
+      'dailySettings',
+      '',
       () => ssm_ContactsRotationRecurrenceDailySetting_GetTypes(),
       false,
       false,

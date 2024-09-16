@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigatewayv2_StageRouteSetting,
   apigatewayv2_StageRouteSetting_GetTypes,
-} from "../types/apigatewayv2_StageRouteSetting";
+} from '../types/apigatewayv2_StageRouteSetting';
 import {
   apigatewayv2_StageAccessLogSettings,
   apigatewayv2_StageAccessLogSettings_GetTypes,
-} from "../types/apigatewayv2_StageAccessLogSettings";
+} from '../types/apigatewayv2_StageAccessLogSettings';
 import {
   apigatewayv2_StageDefaultRouteSettings,
   apigatewayv2_StageDefaultRouteSettings_GetTypes,
-} from "../types/apigatewayv2_StageDefaultRouteSettings";
+} from '../types/apigatewayv2_StageDefaultRouteSettings';
 
 export interface StageArgs {
   // API identifier.
@@ -130,88 +130,88 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "stageVariables",
-        "Map that defines the stage variables for the stage.",
+        'stageVariables',
+        'Map that defines the stage variables for the stage.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the stage. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the stage. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "accessLogSettings",
-        "Settings for logging access in this stage.\nUse the `aws.apigateway.Account` resource to configure [permissions for CloudWatch Logging](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-permissions).",
+        'accessLogSettings',
+        'Settings for logging access in this stage.\nUse the `aws.apigateway.Account` resource to configure [permissions for CloudWatch Logging](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-permissions).',
         () => apigatewayv2_StageAccessLogSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoDeploy",
-        "Whether updates to an API automatically trigger a new deployment. Defaults to `false`. Applicable for HTTP APIs.",
+        'autoDeploy',
+        'Whether updates to an API automatically trigger a new deployment. Defaults to `false`. Applicable for HTTP APIs.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "apiId",
-        "API identifier.",
+        'apiId',
+        'API identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the stage. Must be between 1 and 128 characters in length.\n\nThe following arguments are optional:",
+        'name',
+        'Name of the stage. Must be between 1 and 128 characters in length.\n\nThe following arguments are optional:',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description for the stage. Must be less than or equal to 1024 characters in length.",
+        'description',
+        'Description for the stage. Must be less than or equal to 1024 characters in length.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "defaultRouteSettings",
-        "Default route settings for the stage.",
+        'defaultRouteSettings',
+        'Default route settings for the stage.',
         () => apigatewayv2_StageDefaultRouteSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deploymentId",
-        "Deployment identifier of the stage. Use the `aws.apigatewayv2.Deployment` resource to configure a deployment.",
+        'deploymentId',
+        'Deployment identifier of the stage. Use the `aws.apigatewayv2.Deployment` resource to configure a deployment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "routeSettings",
-        "Route settings for the stage.",
+        'routeSettings',
+        'Route settings for the stage.',
         () => apigatewayv2_StageRouteSetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientCertificateId",
-        "Identifier of a client certificate for the stage. Use the `aws.apigateway.ClientCertificate` resource to configure a client certificate.\nSupported only for WebSocket APIs.",
+        'clientCertificateId',
+        'Identifier of a client certificate for the stage. Use the `aws.apigateway.ClientCertificate` resource to configure a client certificate.\nSupported only for WebSocket APIs.',
         () => [],
         false,
         false,

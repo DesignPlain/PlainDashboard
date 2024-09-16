@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_DistributionDefaultCacheBehaviorForwardedValuesCookies,
   cloudfront_DistributionDefaultCacheBehaviorForwardedValuesCookies_GetTypes,
-} from "./cloudfront_DistributionDefaultCacheBehaviorForwardedValuesCookies";
+} from './cloudfront_DistributionDefaultCacheBehaviorForwardedValuesCookies';
 
 export interface cloudfront_DistributionDefaultCacheBehaviorForwardedValues {
   // When specified, along with a value of `true` for `query_string`, all query strings are forwarded, however only the query string keys listed in this argument are cached. When omitted with a value of `true` for `query_string`, all query string keys are cached.
@@ -28,16 +28,16 @@ export function cloudfront_DistributionDefaultCacheBehaviorForwardedValues_GetTy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "queryStringCacheKeys",
-      "When specified, along with a value of `true` for `query_string`, all query strings are forwarded, however only the query string keys listed in this argument are cached. When omitted with a value of `true` for `query_string`, all query string keys are cached.",
+      'queryStringCacheKeys',
+      'When specified, along with a value of `true` for `query_string`, all query strings are forwarded, however only the query string keys listed in this argument are cached. When omitted with a value of `true` for `query_string`, all query string keys are cached.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cookies",
-      "The forwarded values cookies that specifies how CloudFront handles cookies (maximum one).",
+      'cookies',
+      'The forwarded values cookies that specifies how CloudFront handles cookies (maximum one).',
       () =>
         cloudfront_DistributionDefaultCacheBehaviorForwardedValuesCookies_GetTypes(),
       true,
@@ -45,16 +45,16 @@ export function cloudfront_DistributionDefaultCacheBehaviorForwardedValues_GetTy
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headers",
-      "Headers, if any, that you want CloudFront to vary upon for this cache behavior. Specify `*` to include all headers.",
+      'headers',
+      'Headers, if any, that you want CloudFront to vary upon for this cache behavior. Specify `*` to include all headers.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "queryString",
-      "Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior.",
+      'queryString',
+      'Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior.',
       () => [],
       true,
       false,

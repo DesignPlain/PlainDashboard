@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_SnapshotSourceDiskEncryptionKey,
   compute_SnapshotSourceDiskEncryptionKey_GetTypes,
-} from "../types/compute_SnapshotSourceDiskEncryptionKey";
+} from '../types/compute_SnapshotSourceDiskEncryptionKey';
 import {
   compute_SnapshotSnapshotEncryptionKey,
   compute_SnapshotSnapshotEncryptionKey_GetTypes,
-} from "../types/compute_SnapshotSnapshotEncryptionKey";
+} from '../types/compute_SnapshotSnapshotEncryptionKey';
 
 export interface SnapshotArgs {
   /*
@@ -211,80 +211,80 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "snapshotEncryptionKey",
-        "Encrypts the snapshot using a customer-supplied encryption key.\nAfter you encrypt a snapshot using a customer-supplied key, you must\nprovide the same key if you use the snapshot later. For example, you\nmust provide the encryption key when you create a disk from the\nencrypted snapshot in a future request.\nCustomer-supplied encryption keys do not protect access to metadata of\nthe snapshot.\nIf you do not provide an encryption key when creating the snapshot,\nthen the snapshot will be encrypted using an automatically generated\nkey and you do not need to provide a key to use the snapshot later.\nStructure is documented below.",
+        'snapshotEncryptionKey',
+        'Encrypts the snapshot using a customer-supplied encryption key.\nAfter you encrypt a snapshot using a customer-supplied key, you must\nprovide the same key if you use the snapshot later. For example, you\nmust provide the encryption key when you create a disk from the\nencrypted snapshot in a future request.\nCustomer-supplied encryption keys do not protect access to metadata of\nthe snapshot.\nIf you do not provide an encryption key when creating the snapshot,\nthen the snapshot will be encrypted using an automatically generated\nkey and you do not need to provide a key to use the snapshot later.\nStructure is documented below.',
         () => compute_SnapshotSnapshotEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceDisk",
-        "A reference to the disk used to create this snapshot.\n\n\n- - -",
+        'sourceDisk',
+        'A reference to the disk used to create this snapshot.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "chainName",
-        "Creates the new snapshot in the snapshot chain labeled with the\nspecified name. The chain name must be 1-63 characters long and\ncomply with RFC1035. This is an uncommon option only for advanced\nservice owners who needs to create separate snapshot chains, for\nexample, for chargeback tracking.  When you describe your snapshot\nresource, this field is visible only if it has a non-empty value.",
+        'chainName',
+        'Creates the new snapshot in the snapshot chain labeled with the\nspecified name. The chain name must be 1-63 characters long and\ncomply with RFC1035. This is an uncommon option only for advanced\nservice owners who needs to create separate snapshot chains, for\nexample, for chargeback tracking.  When you describe your snapshot\nresource, this field is visible only if it has a non-empty value.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sourceDiskEncryptionKey",
-        "The customer-supplied encryption key of the source snapshot. Required\nif the source snapshot is protected by a customer-supplied encryption\nkey.\nStructure is documented below.",
+        'sourceDiskEncryptionKey',
+        'The customer-supplied encryption key of the source snapshot. Required\nif the source snapshot is protected by a customer-supplied encryption\nkey.\nStructure is documented below.',
         () => compute_SnapshotSourceDiskEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zone",
-        "A reference to the zone where the disk is hosted.",
+        'zone',
+        'A reference to the zone where the disk is hosted.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels to apply to this Snapshot.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels to apply to this Snapshot.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource; provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
+        'name',
+        'Name of the resource; provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "storageLocations",
-        "Cloud Storage bucket storage location of the snapshot (regional or multi-regional).",
+        'storageLocations',
+        'Cloud Storage bucket storage location of the snapshot (regional or multi-regional).',
         () => InputType_String_GetTypes(),
         false,
         true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkmanager_SiteLocation,
   networkmanager_SiteLocation_GetTypes,
-} from "../types/networkmanager_SiteLocation";
+} from '../types/networkmanager_SiteLocation';
 
 export interface SiteArgs {
   // Description of the Site.
@@ -47,32 +47,32 @@ export class Site extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the Site.",
+        'description',
+        'Description of the Site.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "globalNetworkId",
-        "The ID of the Global Network to create the site in.",
+        'globalNetworkId',
+        'The ID of the Global Network to create the site in.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "location",
-        "The site location as documented below.",
+        'location',
+        'The site location as documented below.',
         () => networkmanager_SiteLocation_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value tags for the Site. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value tags for the Site. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

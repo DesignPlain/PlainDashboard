@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TargetPoolArgs {
   /*
@@ -136,23 +136,23 @@ affinity). "CLIENT\_IP" (hash of the source/dest addresses / ports), and
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A unique name for the resource, required by GCE. Changing\nthis forces a new resource to be created.\n\n- - -",
+        'name',
+        'A unique name for the resource, required by GCE. Changing\nthis forces a new resource to be created.\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securityPolicy",
-        "The resource URL for the security policy associated with this target pool.",
+        'securityPolicy',
+        'The resource URL for the security policy associated with this target pool.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sessionAffinity",
+        'sessionAffinity',
         'How to distribute load. Options are "NONE" (no\naffinity). "CLIENT\\_IP" (hash of the source/dest addresses / ports), and\n"CLIENT\\_IP\\_PROTO" also includes the protocol (default "NONE").',
         () => [],
         false,
@@ -160,39 +160,39 @@ affinity). "CLIENT\_IP" (hash of the source/dest addresses / ports), and
       ),
       new DynamicUIProps(
         InputType.String,
-        "backupPool",
-        "URL to the backup target pool. Must also set\nfailover\\_ratio.",
+        'backupPool',
+        'URL to the backup target pool. Must also set\nfailover\\_ratio.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "Where the target pool resides. Defaults to project\nregion.",
+        'region',
+        'Where the target pool resides. Defaults to project\nregion.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "failoverRatio",
-        "Ratio (0 to 1) of failed nodes before using the\nbackup pool (which must also be set).",
+        'failoverRatio',
+        'Ratio (0 to 1) of failed nodes before using the\nbackup pool (which must also be set).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "healthChecks",
-        "List of zero or one health check name or self_link. Only\nlegacy `gcp.compute.HttpHealthCheck` is supported.",
+        'healthChecks',
+        'List of zero or one health check name or self_link. Only\nlegacy `gcp.compute.HttpHealthCheck` is supported.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "instances",
+        'instances',
         'List of instances in the pool. They can be given as\nURLs, or in the form of "zone/name". Note that the instances need not exist\nat the time of target pool creation, so there is no need to use the\ninterpolation to create a dependency on the instances from the\ntarget pool.',
         () => InputType_String_GetTypes(),
         false,
@@ -200,16 +200,16 @@ affinity). "CLIENT\_IP" (hash of the source/dest addresses / ports), and
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Textual description field.",
+        'description',
+        'Textual description field.',
         () => [],
         false,
         true,

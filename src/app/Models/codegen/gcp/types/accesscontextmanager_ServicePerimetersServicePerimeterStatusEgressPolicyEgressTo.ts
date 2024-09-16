@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperation,
   accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperation_GetTypes,
-} from "./accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperation";
+} from './accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperation';
 
 export interface accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressTo {
   /*
@@ -39,7 +39,7 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterStatusEgre
   return [
     new DynamicUIProps(
       InputType.Array,
-      "externalResources",
+      'externalResources',
       "A list of external resources that are allowed to be accessed. A request\nmatches if it contains an external resource in this list (Example:\ns3://bucket/path). Currently '*' is not allowed.",
       () => InputType_String_GetTypes(),
       false,
@@ -47,8 +47,8 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterStatusEgre
     ),
     new DynamicUIProps(
       InputType.Array,
-      "operations",
-      "A list of `ApiOperations` that this egress rule applies to. A request matches\nif it contains an operation/service in this list.\nStructure is documented below.",
+      'operations',
+      'A list of `ApiOperations` that this egress rule applies to. A request matches\nif it contains an operation/service in this list.\nStructure is documented below.',
       () =>
         accesscontextmanager_ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperation_GetTypes(),
       false,
@@ -56,8 +56,8 @@ export function accesscontextmanager_ServicePerimetersServicePerimeterStatusEgre
     ),
     new DynamicUIProps(
       InputType.Array,
-      "resources",
-      "A list of resources, currently only projects in the form\n`projects/<projectnumber>`, that match this to stanza. A request matches\nif it contains a resource in this list. If * is specified for resources,\nthen this `EgressTo` rule will authorize access to all resources outside\nthe perimeter.",
+      'resources',
+      'A list of resources, currently only projects in the form\n`projects/<projectnumber>`, that match this to stanza. A request matches\nif it contains a resource in this list. If * is specified for resources,\nthen this `EgressTo` rule will authorize access to all resources outside\nthe perimeter.',
       () => InputType_String_GetTypes(),
       false,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkebackup_RestorePlanRestoreConfig,
   gkebackup_RestorePlanRestoreConfig_GetTypes,
-} from "../types/gkebackup_RestorePlanRestoreConfig";
+} from '../types/gkebackup_RestorePlanRestoreConfig';
 
 export interface RestorePlanArgs {
   // The region of the Restore Plan.
@@ -115,39 +115,39 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "restoreConfig",
-        "Defines the configuration of Restores created via this RestorePlan.\nStructure is documented below.",
+        'restoreConfig',
+        'Defines the configuration of Restores created via this RestorePlan.\nStructure is documented below.',
         () => gkebackup_RestorePlanRestoreConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "backupPlan",
-        "A reference to the BackupPlan from which Backups may be used\nas the source for Restores created via this RestorePlan.",
+        'backupPlan',
+        'A reference to the BackupPlan from which Backups may be used\nas the source for Restores created via this RestorePlan.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cluster",
-        "The source cluster from which Restores will be created via this RestorePlan.",
+        'cluster',
+        'The source cluster from which Restores will be created via this RestorePlan.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User specified descriptive string for this RestorePlan.",
+        'description',
+        'User specified descriptive string for this RestorePlan.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Description: A set of custom labels supplied by the user.\nA list of key->value pairs.\nExample: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -155,24 +155,24 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The region of the Restore Plan.",
+        'location',
+        'The region of the Restore Plan.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The full name of the BackupPlan Resource.",
+        'name',
+        'The full name of the BackupPlan Resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,

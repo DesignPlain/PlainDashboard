@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ssm_PatchBaselineApprovalRulePatchFilter {
   //
@@ -18,12 +18,12 @@ export function ssm_PatchBaselineApprovalRulePatchFilter_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Array,
-      "values",
-      "",
+      'values',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "key", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'key', '', () => [], true, false),
   ];
 }

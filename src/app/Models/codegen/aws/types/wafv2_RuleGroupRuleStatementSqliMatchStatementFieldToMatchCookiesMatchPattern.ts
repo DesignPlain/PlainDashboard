@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAll,
   wafv2_RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAll_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAll";
+} from './wafv2_RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAll';
 
 export interface wafv2_RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPattern {
   // An empty configuration block that is used for inspecting all headers.
@@ -25,8 +25,8 @@ export function wafv2_RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookie
   return [
     new DynamicUIProps(
       InputType.Object,
-      "all",
-      "An empty configuration block that is used for inspecting all headers.",
+      'all',
+      'An empty configuration block that is used for inspecting all headers.',
       () =>
         wafv2_RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAll_GetTypes(),
       false,
@@ -34,16 +34,16 @@ export function wafv2_RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookie
     ),
     new DynamicUIProps(
       InputType.Array,
-      "excludedCookies",
-      "",
+      'excludedCookies',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "includedCookies",
-      "",
+      'includedCookies',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,

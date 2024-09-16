@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig,
   certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig_GetTypes,
-} from "./certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig";
+} from './certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig';
 
 export interface certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfig {
   /*
@@ -22,8 +22,8 @@ export function certificatemanager_CertificateIssuanceConfigCertificateAuthority
   return [
     new DynamicUIProps(
       InputType.Object,
-      "certificateAuthorityServiceConfig",
-      "Defines a CertificateAuthorityServiceConfig.\nStructure is documented below.",
+      'certificateAuthorityServiceConfig',
+      'Defines a CertificateAuthorityServiceConfig.\nStructure is documented below.',
       () =>
         certificatemanager_CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfig_GetTypes(),
       false,

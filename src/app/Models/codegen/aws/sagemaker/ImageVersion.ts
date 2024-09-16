@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ImageVersionArgs {
   // The registry path of the container image on which this image version is based.
@@ -37,16 +37,16 @@ export class ImageVersion extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "baseImage",
-        "The registry path of the container image on which this image version is based.",
+        'baseImage',
+        'The registry path of the container image on which this image version is based.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "imageName",
-        "The name of the image. Must be unique to your account.",
+        'imageName',
+        'The name of the image. Must be unique to your account.',
         () => [],
         true,
         true,

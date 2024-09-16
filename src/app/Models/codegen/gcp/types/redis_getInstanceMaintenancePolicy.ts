@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindow,
   redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindow_GetTypes,
-} from "./redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindow";
+} from './redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindow';
 
 export interface redis_getInstanceMaintenancePolicy {
   /*
@@ -44,8 +44,8 @@ export function redis_getInstanceMaintenancePolicy_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "weeklyMaintenanceWindows",
-      "Optional. Maintenance window that is applied to resources covered by this policy.\nMinimum 1. For the current version, the maximum number\nof weekly_window is expected to be one.",
+      'weeklyMaintenanceWindows',
+      'Optional. Maintenance window that is applied to resources covered by this policy.\nMinimum 1. For the current version, the maximum number\nof weekly_window is expected to be one.',
       () =>
         redis_getInstanceMaintenancePolicyWeeklyMaintenanceWindow_GetTypes(),
       true,
@@ -53,7 +53,7 @@ export function redis_getInstanceMaintenancePolicy_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "createTime",
+      'createTime',
       'Output only. The time when the policy was created.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.',
       () => [],
       true,
@@ -61,15 +61,15 @@ export function redis_getInstanceMaintenancePolicy_GetTypes(): DynamicUIProps[] 
     ),
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "Optional. Description of what this policy is for.\nCreate/Update methods return INVALID_ARGUMENT if the\nlength is greater than 512.",
+      'description',
+      'Optional. Description of what this policy is for.\nCreate/Update methods return INVALID_ARGUMENT if the\nlength is greater than 512.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "updateTime",
+      'updateTime',
       'Output only. The time when the policy was last updated.\nA timestamp in RFC3339 UTC "Zulu" format, with nanosecond\nresolution and up to nine fractional digits.',
       () => [],
       true,

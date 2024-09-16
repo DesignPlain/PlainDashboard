@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_DataQualityJobDefinitionNetworkConfigVpcConfig,
   sagemaker_DataQualityJobDefinitionNetworkConfigVpcConfig_GetTypes,
-} from "./sagemaker_DataQualityJobDefinitionNetworkConfigVpcConfig";
+} from './sagemaker_DataQualityJobDefinitionNetworkConfigVpcConfig';
 
 export interface sagemaker_DataQualityJobDefinitionNetworkConfig {
   // Whether to encrypt all communications between the instances used for the monitoring jobs. Choose `true` to encrypt communications. Encryption provides greater security for distributed jobs, but the processing might take longer.
@@ -25,24 +25,24 @@ export function sagemaker_DataQualityJobDefinitionNetworkConfig_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enableInterContainerTrafficEncryption",
-      "Whether to encrypt all communications between the instances used for the monitoring jobs. Choose `true` to encrypt communications. Encryption provides greater security for distributed jobs, but the processing might take longer.",
+      'enableInterContainerTrafficEncryption',
+      'Whether to encrypt all communications between the instances used for the monitoring jobs. Choose `true` to encrypt communications. Encryption provides greater security for distributed jobs, but the processing might take longer.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enableNetworkIsolation",
-      "Whether to allow inbound and outbound network calls to and from the containers used for the monitoring job.",
+      'enableNetworkIsolation',
+      'Whether to allow inbound and outbound network calls to and from the containers used for the monitoring job.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "vpcConfig",
-      "Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. Fields are documented below.",
+      'vpcConfig',
+      'Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. Fields are documented below.',
       () => sagemaker_DataQualityJobDefinitionNetworkConfigVpcConfig_GetTypes(),
       false,
       true,

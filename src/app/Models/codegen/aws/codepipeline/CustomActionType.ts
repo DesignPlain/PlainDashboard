@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codepipeline_CustomActionTypeSettings,
   codepipeline_CustomActionTypeSettings_GetTypes,
-} from "../types/codepipeline_CustomActionTypeSettings";
+} from '../types/codepipeline_CustomActionTypeSettings';
 import {
   codepipeline_CustomActionTypeConfigurationProperty,
   codepipeline_CustomActionTypeConfigurationProperty_GetTypes,
-} from "../types/codepipeline_CustomActionTypeConfigurationProperty";
+} from '../types/codepipeline_CustomActionTypeConfigurationProperty';
 import {
   codepipeline_CustomActionTypeInputArtifactDetails,
   codepipeline_CustomActionTypeInputArtifactDetails_GetTypes,
-} from "../types/codepipeline_CustomActionTypeInputArtifactDetails";
+} from '../types/codepipeline_CustomActionTypeInputArtifactDetails';
 import {
   codepipeline_CustomActionTypeOutputArtifactDetails,
   codepipeline_CustomActionTypeOutputArtifactDetails_GetTypes,
-} from "../types/codepipeline_CustomActionTypeOutputArtifactDetails";
+} from '../types/codepipeline_CustomActionTypeOutputArtifactDetails';
 
 export interface CustomActionTypeArgs {
   //
@@ -86,57 +86,57 @@ export class CustomActionType extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "configurationProperties",
-        "The configuration properties for the custom action. Max 10 items.",
+        'configurationProperties',
+        'The configuration properties for the custom action. Max 10 items.',
         () => codepipeline_CustomActionTypeConfigurationProperty_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "inputArtifactDetails",
-        "",
+        'inputArtifactDetails',
+        '',
         () => codepipeline_CustomActionTypeInputArtifactDetails_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "outputArtifactDetails",
-        "",
+        'outputArtifactDetails',
+        '',
         () => codepipeline_CustomActionTypeOutputArtifactDetails_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "providerName",
-        "",
+        'providerName',
+        '',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "settings",
-        "",
+        'settings',
+        '',
         () => codepipeline_CustomActionTypeSettings_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
-      new DynamicUIProps(InputType.String, "version", "", () => [], true, true),
+      new DynamicUIProps(InputType.String, 'version', '', () => [], true, true),
       new DynamicUIProps(
         InputType.String,
-        "category",
-        "The category of the custom action. Valid values: `Source`, `Build`, `Deploy`, `Test`, `Invoke`, `Approval`",
+        'category',
+        'The category of the custom action. Valid values: `Source`, `Build`, `Deploy`, `Test`, `Invoke`, `Approval`',
         () => [],
         true,
         true,

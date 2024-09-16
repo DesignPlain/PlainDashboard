@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_NetworkInsightsAnalysisReturnPathComponentInboundHeaderDestinationPortRange {
   //
@@ -16,7 +16,7 @@ export interface ec2_NetworkInsightsAnalysisReturnPathComponentInboundHeaderDest
 
 export function ec2_NetworkInsightsAnalysisReturnPathComponentInboundHeaderDestinationPortRange_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Number, "to", "", () => [], false, false),
-    new DynamicUIProps(InputType.Number, "from", "", () => [], false, false),
+    new DynamicUIProps(InputType.Number, 'to', '', () => [], false, false),
+    new DynamicUIProps(InputType.Number, 'from', '', () => [], false, false),
   ];
 }

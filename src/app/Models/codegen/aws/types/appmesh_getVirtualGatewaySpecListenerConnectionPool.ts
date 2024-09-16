@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp,
   appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp";
+} from './appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp';
 import {
   appmesh_getVirtualGatewaySpecListenerConnectionPoolGrpc,
   appmesh_getVirtualGatewaySpecListenerConnectionPoolGrpc_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListenerConnectionPoolGrpc";
+} from './appmesh_getVirtualGatewaySpecListenerConnectionPoolGrpc';
 import {
   appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp2,
   appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp2_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp2";
+} from './appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp2';
 
 export interface appmesh_getVirtualGatewaySpecListenerConnectionPool {
   //
@@ -33,24 +33,24 @@ export function appmesh_getVirtualGatewaySpecListenerConnectionPool_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "http2s",
-      "",
+      'http2s',
+      '',
       () => appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp2_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "https",
-      "",
+      'https',
+      '',
       () => appmesh_getVirtualGatewaySpecListenerConnectionPoolHttp_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "grpcs",
-      "",
+      'grpcs',
+      '',
       () => appmesh_getVirtualGatewaySpecListenerConnectionPoolGrpc_GetTypes(),
       true,
       false,

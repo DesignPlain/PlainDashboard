@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EventThreatDetectionCustomModuleArgs {
   // Immutable. Type for the module. e.g. CONFIGURABLE_BAD_IP.
@@ -81,40 +81,40 @@ Possible values are: `ENABLED`, `DISABLED`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "enablementState",
-        "The state of enablement for the module at the given level of the hierarchy.\nPossible values are: `ENABLED`, `DISABLED`.",
+        'enablementState',
+        'The state of enablement for the module at the given level of the hierarchy.\nPossible values are: `ENABLED`, `DISABLED`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "organization",
-        "Numerical ID of the parent organization.\n\n\n- - -",
+        'organization',
+        'Numerical ID of the parent organization.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Immutable. Type for the module. e.g. CONFIGURABLE_BAD_IP.",
+        'type',
+        'Immutable. Type for the module. e.g. CONFIGURABLE_BAD_IP.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "config",
-        "Config for the module. For the resident module, its config value is defined at this level.\nFor the inherited module, its config value is inherited from the ancestor module.",
+        'config',
+        'Config for the module. For the resident module, its config value is defined at this level.\nFor the inherited module, its config value is inherited from the ancestor module.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The human readable name to be displayed for the module.",
+        'displayName',
+        'The human readable name to be displayed for the module.',
         () => [],
         false,
         false,

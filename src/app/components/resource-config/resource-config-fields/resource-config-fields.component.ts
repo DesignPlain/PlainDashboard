@@ -45,8 +45,11 @@ export class ResourceConfigFieldsComponent implements OnInit {
   };
   AssetType: string = '';
 
-  constructor(private el: ElementRef, private _stackService: StackService) { }
-  ngOnInit(): void { }
+  constructor(
+    private el: ElementRef,
+    private _stackService: StackService,
+  ) {}
+  ngOnInit(): void {}
   public faInfo: IconDefinition = faInfoCircle;
   public faRotate: IconDefinition = faRotate;
   public faRelated: IconDefinition = faPenToSquare;
@@ -79,7 +82,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
   onClick(event: Event) {
     if (
       !this.tooltipRefs.some((element) =>
-        element.nativeElement.contains(event.target)
+        element.nativeElement.contains(event.target),
       )
     ) {
       this.show = '';
@@ -88,7 +91,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
 
   customOrder = (
     akv: KeyValue<string, any>,
-    bkv: KeyValue<string, any>
+    bkv: KeyValue<string, any>,
   ): number => {
     let map = new Map<string, number>([
       ['name', 1],
@@ -279,7 +282,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
       this.configUpdateEvent.emit(resMap);
     } else {
       this.configUpdateEvent.emit(
-        new Map<string, any>([[this.parent, resMap]])
+        new Map<string, any>([[this.parent, resMap]]),
       );
     }
   }
@@ -296,7 +299,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
           new Map([
             ['Key', k],
             ['Value', v],
-          ])
+          ]),
         );
       }
     });
@@ -306,7 +309,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
 
   get_array_data(
     arr_data: Array<any>,
-    members: Map<string, DynamicUIPropState>
+    members: Map<string, DynamicUIPropState>,
   ) {
     if (members.get('Value')?.description == 'GenericType') {
       let arr: Map<string, any>[] = [];
@@ -337,7 +340,7 @@ export class ResourceConfigFieldsComponent implements OnInit {
       .uploadResourceFile(file, this.resId)
       .subscribe((resp) => {
         console.log(
-          resp?.toString() + ' Uploaded resource related file: ' + file.name
+          resp?.toString() + ' Uploaded resource related file: ' + file.name,
         );
       });
   }

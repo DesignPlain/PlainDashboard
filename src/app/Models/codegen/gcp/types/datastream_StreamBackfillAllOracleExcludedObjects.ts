@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema,
   datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema_GetTypes,
-} from "./datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema";
+} from './datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema';
 
 export interface datastream_StreamBackfillAllOracleExcludedObjects {
   /*
@@ -22,8 +22,8 @@ export function datastream_StreamBackfillAllOracleExcludedObjects_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "oracleSchemas",
-      "Oracle schemas/databases in the database server\nStructure is documented below.",
+      'oracleSchemas',
+      'Oracle schemas/databases in the database server\nStructure is documented below.',
       () =>
         datastream_StreamBackfillAllOracleExcludedObjectsOracleSchema_GetTypes(),
       true,

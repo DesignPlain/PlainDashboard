@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   beyondcorp_AppConnectionApplicationEndpoint,
   beyondcorp_AppConnectionApplicationEndpoint_GetTypes,
-} from "../types/beyondcorp_AppConnectionApplicationEndpoint";
+} from '../types/beyondcorp_AppConnectionApplicationEndpoint';
 import {
   beyondcorp_AppConnectionGateway,
   beyondcorp_AppConnectionGateway_GetTypes,
-} from "../types/beyondcorp_AppConnectionGateway";
+} from '../types/beyondcorp_AppConnectionGateway';
 
 export interface AppConnectionArgs {
   /*
@@ -120,72 +120,72 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "connectors",
-        "List of AppConnectors that are authorised to be associated with this AppConnection",
+        'connectors',
+        'List of AppConnectors that are authorised to be associated with this AppConnection',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "applicationEndpoint",
-        "Address of the remote application endpoint for the BeyondCorp AppConnection.\nStructure is documented below.",
+        'applicationEndpoint',
+        'Address of the remote application endpoint for the BeyondCorp AppConnection.\nStructure is documented below.',
         () => beyondcorp_AppConnectionApplicationEndpoint_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Resource labels to represent user provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Resource labels to represent user provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region of the AppConnection.",
+        'region',
+        'The region of the AppConnection.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of network connectivity used by the AppConnection. Refer to\nhttps://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#type\nfor a list of possible values.",
+        'type',
+        'The type of network connectivity used by the AppConnection. Refer to\nhttps://cloud.google.com/beyondcorp/docs/reference/rest/v1/projects.locations.appConnections#type\nfor a list of possible values.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "An arbitrary user-provided name for the AppConnection.",
+        'displayName',
+        'An arbitrary user-provided name for the AppConnection.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "ID of the AppConnection.",
+        'name',
+        'ID of the AppConnection.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "gateway",
-        "Gateway used by the AppConnection.\nStructure is documented below.",
+        'gateway',
+        'Gateway used by the AppConnection.\nStructure is documented below.',
         () => beyondcorp_AppConnectionGateway_GetTypes(),
         false,
         false,

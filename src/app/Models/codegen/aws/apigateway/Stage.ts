@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   apigateway_StageAccessLogSettings,
   apigateway_StageAccessLogSettings_GetTypes,
-} from "../types/apigateway_StageAccessLogSettings";
+} from '../types/apigateway_StageAccessLogSettings';
 import {
   apigateway_StageCanarySettings,
   apigateway_StageCanarySettings_GetTypes,
-} from "../types/apigateway_StageCanarySettings";
+} from '../types/apigateway_StageCanarySettings';
 
 export interface StageArgs {
   // Enables access logs for the API stage. See Access Log Settings below.
@@ -121,104 +121,104 @@ e.g., `https://z4675bid1j.execute-api.eu-west-2.amazonaws.com/prod`
     return [
       new DynamicUIProps(
         InputType.String,
-        "documentationVersion",
-        "Version of the associated API documentation",
+        'documentationVersion',
+        'Version of the associated API documentation',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "stageName",
-        "Name of the stage",
+        'stageName',
+        'Name of the stage',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "cacheClusterEnabled",
-        "Whether a cache cluster is enabled for the stage",
+        'cacheClusterEnabled',
+        'Whether a cache cluster is enabled for the stage',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "canarySettings",
-        "Configuration settings of a canary deployment. See Canary Settings below.",
+        'canarySettings',
+        'Configuration settings of a canary deployment. See Canary Settings below.',
         () => apigateway_StageCanarySettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientCertificateId",
-        "Identifier of a client certificate for the stage.",
+        'clientCertificateId',
+        'Identifier of a client certificate for the stage.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "accessLogSettings",
-        "Enables access logs for the API stage. See Access Log Settings below.",
+        'accessLogSettings',
+        'Enables access logs for the API stage. See Access Log Settings below.',
         () => apigateway_StageAccessLogSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deployment",
-        "ID of the deployment that the stage points to",
+        'deployment',
+        'ID of the deployment that the stage points to',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the stage.",
+        'description',
+        'Description of the stage.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "variables",
-        "Map that defines the stage variables",
+        'variables',
+        'Map that defines the stage variables',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "xrayTracingEnabled",
-        "Whether active tracing with X-ray is enabled. Defaults to `false`.",
+        'xrayTracingEnabled',
+        'Whether active tracing with X-ray is enabled. Defaults to `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cacheClusterSize",
-        "Size of the cache cluster for the stage, if enabled. Allowed values include `0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118` and `237`.",
+        'cacheClusterSize',
+        'Size of the cache cluster for the stage, if enabled. Allowed values include `0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118` and `237`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "restApi",
-        "ID of the associated REST API",
+        'restApi',
+        'ID of the associated REST API',
         () => [],
         true,
         true,

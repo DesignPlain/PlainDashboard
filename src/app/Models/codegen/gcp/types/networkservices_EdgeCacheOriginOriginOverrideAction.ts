@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite,
   networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite_GetTypes,
-} from "./networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite";
+} from './networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite';
 import {
   networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction,
   networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_GetTypes,
-} from "./networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction";
+} from './networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction';
 
 export interface networkservices_EdgeCacheOriginOriginOverrideAction {
   /*
@@ -34,8 +34,8 @@ export function networkservices_EdgeCacheOriginOriginOverrideAction_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Object,
-      "urlRewrite",
-      "The URL rewrite configuration for request that are\nhandled by this origin.\nStructure is documented below.",
+      'urlRewrite',
+      'The URL rewrite configuration for request that are\nhandled by this origin.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheOriginOriginOverrideActionUrlRewrite_GetTypes(),
       false,
@@ -43,8 +43,8 @@ export function networkservices_EdgeCacheOriginOriginOverrideAction_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Object,
-      "headerAction",
-      "The header actions, including adding and removing\nheaders, for request handled by this origin.\nStructure is documented below.",
+      'headerAction',
+      'The header actions, including adding and removing\nheaders, for request handled by this origin.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_GetTypes(),
       false,

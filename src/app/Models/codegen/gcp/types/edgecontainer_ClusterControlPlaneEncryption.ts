@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   edgecontainer_ClusterControlPlaneEncryptionKmsStatus,
   edgecontainer_ClusterControlPlaneEncryptionKmsStatus_GetTypes,
-} from "./edgecontainer_ClusterControlPlaneEncryptionKmsStatus";
+} from './edgecontainer_ClusterControlPlaneEncryptionKmsStatus';
 
 export interface edgecontainer_ClusterControlPlaneEncryption {
   /*
@@ -52,23 +52,23 @@ export function edgecontainer_ClusterControlPlaneEncryption_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyActiveVersion",
-      "(Output)\nThe Cloud KMS CryptoKeyVersion currently in use for protecting control\nplane disks. Only applicable if kms_key is set.",
+      'kmsKeyActiveVersion',
+      '(Output)\nThe Cloud KMS CryptoKeyVersion currently in use for protecting control\nplane disks. Only applicable if kms_key is set.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "kmsKeyState",
-      "(Output)\nAvailability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then\nnodes may go offline as they cannot access their local data. This can be\ncaused by a lack of permissions to use the key, or if the key is disabled\nor deleted.",
+      'kmsKeyState',
+      '(Output)\nAvailability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then\nnodes may go offline as they cannot access their local data. This can be\ncaused by a lack of permissions to use the key, or if the key is disabled\nor deleted.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "kmsStatuses",
+      'kmsStatuses',
       '(Output)\nError status returned by Cloud KMS when using this key. This field may be\npopulated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.\nIf populated, this field contains the error status reported by Cloud KMS.\nStructure is documented below.\n\n\n<a name="nested_kms_status"></a>The `kms_status` block contains:',
       () => edgecontainer_ClusterControlPlaneEncryptionKmsStatus_GetTypes(),
       false,
@@ -76,8 +76,8 @@ export function edgecontainer_ClusterControlPlaneEncryption_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "kmsKey",
-      "The Cloud KMS CryptoKey e.g.\nprojects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}\nto use for protecting control plane disks. If not specified, a\nGoogle-managed key will be used instead.",
+      'kmsKey',
+      'The Cloud KMS CryptoKey e.g.\nprojects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}\nto use for protecting control plane disks. If not specified, a\nGoogle-managed key will be used instead.',
       () => [],
       false,
       true,

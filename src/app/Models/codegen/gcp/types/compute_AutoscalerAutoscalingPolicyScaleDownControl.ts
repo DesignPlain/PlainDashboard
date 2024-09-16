@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas,
   compute_AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas_GetTypes,
-} from "./compute_AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas";
+} from './compute_AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas';
 
 export interface compute_AutoscalerAutoscalingPolicyScaleDownControl {
   /*
@@ -28,8 +28,8 @@ export function compute_AutoscalerAutoscalingPolicyScaleDownControl_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Object,
-      "maxScaledDownReplicas",
-      "A nested object resource\nStructure is documented below.",
+      'maxScaledDownReplicas',
+      'A nested object resource\nStructure is documented below.',
       () =>
         compute_AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicas_GetTypes(),
       false,
@@ -37,8 +37,8 @@ export function compute_AutoscalerAutoscalingPolicyScaleDownControl_GetTypes(): 
     ),
     new DynamicUIProps(
       InputType.Number,
-      "timeWindowSec",
-      "How long back autoscaling should look when computing recommendations\nto include directives regarding slower scale down, as described above.",
+      'timeWindowSec',
+      'How long back autoscaling should look when computing recommendations\nto include directives regarding slower scale down, as described above.',
       () => [],
       false,
       false,

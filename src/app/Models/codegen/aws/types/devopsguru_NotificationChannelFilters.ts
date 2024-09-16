@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface devopsguru_NotificationChannelFilters {
   // Events to receive notifications for. Valid values are `NEW_INSIGHT`, `CLOSED_INSIGHT`, `NEW_ASSOCIATION`, `SEVERITY_UPGRADED`, and `NEW_RECOMMENDATION`.
@@ -18,16 +18,16 @@ export function devopsguru_NotificationChannelFilters_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.Array,
-      "severities",
-      "Severity levels to receive notifications for. Valid values are `LOW`, `MEDIUM`, and `HIGH`.",
+      'severities',
+      'Severity levels to receive notifications for. Valid values are `LOW`, `MEDIUM`, and `HIGH`.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "messageTypes",
-      "Events to receive notifications for. Valid values are `NEW_INSIGHT`, `CLOSED_INSIGHT`, `NEW_ASSOCIATION`, `SEVERITY_UPGRADED`, and `NEW_RECOMMENDATION`.",
+      'messageTypes',
+      'Events to receive notifications for. Valid values are `NEW_INSIGHT`, `CLOSED_INSIGHT`, `NEW_ASSOCIATION`, `SEVERITY_UPGRADED`, and `NEW_RECOMMENDATION`.',
       () => InputType_String_GetTypes(),
       false,
       false,

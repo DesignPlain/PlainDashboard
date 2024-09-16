@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SslCertArgs {
   /*
@@ -76,24 +76,24 @@ forces a new resource to be created.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "commonName",
-        "The common name to be used in the certificate to identify the\nclient. Constrained to [a-zA-Z.-_ ]+. Changing this forces a new resource to be created.",
+        'commonName',
+        'The common name to be used in the certificate to identify the\nclient. Constrained to [a-zA-Z.-_ ]+. Changing this forces a new resource to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instance",
-        "The name of the Cloud SQL instance. Changing this\nforces a new resource to be created.",
+        'instance',
+        'The name of the Cloud SQL instance. Changing this\nforces a new resource to be created.',
         () => [],
         true,
         true,

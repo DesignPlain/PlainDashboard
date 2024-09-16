@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kendra_QuerySuggestionsBlockListSourceS3Path,
   kendra_QuerySuggestionsBlockListSourceS3Path_GetTypes,
-} from "../types/kendra_QuerySuggestionsBlockListSourceS3Path";
+} from '../types/kendra_QuerySuggestionsBlockListSourceS3Path';
 
 export interface QuerySuggestionsBlockListArgs {
   // S3 path where your block list text file is located. See details below.
@@ -65,48 +65,48 @@ export class QuerySuggestionsBlockList extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "sourceS3Path",
-        "S3 path where your block list text file is located. See details below.",
+        'sourceS3Path',
+        'S3 path where your block list text file is located. See details below.',
         () => kendra_QuerySuggestionsBlockListSourceS3Path_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "",
+        'description',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "indexId",
-        "Identifier of the index for a block list.",
+        'indexId',
+        'Identifier of the index for a block list.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name for the block list.",
+        'name',
+        'Name for the block list.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "IAM (Identity and Access Management) role used to access the block list text file in S3.",
+        'roleArn',
+        'IAM (Identity and Access Management) role used to access the block list text file in S3.',
         () => [],
         true,
         false,

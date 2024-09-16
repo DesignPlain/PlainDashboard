@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_FeatureGroupFeatureDefinition,
   sagemaker_FeatureGroupFeatureDefinition_GetTypes,
-} from "../types/sagemaker_FeatureGroupFeatureDefinition";
+} from '../types/sagemaker_FeatureGroupFeatureDefinition';
 import {
   sagemaker_FeatureGroupOnlineStoreConfig,
   sagemaker_FeatureGroupOnlineStoreConfig_GetTypes,
-} from "../types/sagemaker_FeatureGroupOnlineStoreConfig";
+} from '../types/sagemaker_FeatureGroupOnlineStoreConfig';
 import {
   sagemaker_FeatureGroupOfflineStoreConfig,
   sagemaker_FeatureGroupOfflineStoreConfig_GetTypes,
-} from "../types/sagemaker_FeatureGroupOfflineStoreConfig";
+} from '../types/sagemaker_FeatureGroupOfflineStoreConfig';
 
 export interface FeatureGroupArgs {
   // A list of Feature names and types. See Feature Definition Below.
@@ -85,72 +85,72 @@ export class FeatureGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "featureDefinitions",
-        "A list of Feature names and types. See Feature Definition Below.",
+        'featureDefinitions',
+        'A list of Feature names and types. See Feature Definition Below.',
         () => sagemaker_FeatureGroupFeatureDefinition_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "onlineStoreConfig",
-        "The Online Feature Store Configuration. See Online Store Config Below.",
+        'onlineStoreConfig',
+        'The Online Feature Store Configuration. See Online Store Config Below.',
         () => sagemaker_FeatureGroupOnlineStoreConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of resource tags for the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of resource tags for the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "featureGroupName",
-        "The name of the Feature Group. The name must be unique within an AWS Region in an AWS account.",
+        'featureGroupName',
+        'The name of the Feature Group. The name must be unique within an AWS Region in an AWS account.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the Offline Store if an `offline_store_config` is provided.",
+        'roleArn',
+        'The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the Offline Store if an `offline_store_config` is provided.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "recordIdentifierFeatureName",
-        "The name of the Feature whose value uniquely identifies a Record defined in the Feature Store. Only the latest record per identifier value will be stored in the Online Store.",
+        'recordIdentifierFeatureName',
+        'The name of the Feature whose value uniquely identifies a Record defined in the Feature Store. Only the latest record per identifier value will be stored in the Online Store.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A free-form description of a Feature Group.",
+        'description',
+        'A free-form description of a Feature Group.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "eventTimeFeatureName",
-        "The name of the feature that stores the EventTime of a Record in a Feature Group.",
+        'eventTimeFeatureName',
+        'The name of the feature that stores the EventTime of a Record in a Feature Group.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "offlineStoreConfig",
-        "The Offline Feature Store Configuration. See Offline Store Config Below.",
+        'offlineStoreConfig',
+        'The Offline Feature Store Configuration. See Offline Store Config Below.',
         () => sagemaker_FeatureGroupOfflineStoreConfig_GetTypes(),
         false,
         true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sfn_AliasRoutingConfiguration,
   sfn_AliasRoutingConfiguration_GetTypes,
-} from "../types/sfn_AliasRoutingConfiguration";
+} from '../types/sfn_AliasRoutingConfiguration';
 
 export interface AliasArgs {
   // Description of the alias.
@@ -41,23 +41,23 @@ export class Alias extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the alias.",
+        'description',
+        'Description of the alias.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name for the alias you are creating.",
+        'name',
+        'Name for the alias you are creating.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "routingConfigurations",
+        'routingConfigurations',
         "The StateMachine alias' route configuration settings. Fields documented below",
         () => sfn_AliasRoutingConfiguration_GetTypes(),
         true,

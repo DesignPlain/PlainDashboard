@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   chime_SdkvoiceSipRuleTargetApplication,
   chime_SdkvoiceSipRuleTargetApplication_GetTypes,
-} from "../types/chime_SdkvoiceSipRuleTargetApplication";
+} from '../types/chime_SdkvoiceSipRuleTargetApplication';
 
 export interface SdkvoiceSipRuleArgs {
   // The name of the SIP rule.
@@ -55,31 +55,31 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the SIP rule.",
+        'name',
+        'The name of the SIP rule.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targetApplications",
-        "List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used. See `target_applications`.",
+        'targetApplications',
+        'List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used. See `target_applications`.',
         () => chime_SdkvoiceSipRuleTargetApplication_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "triggerType",
-        "The type of trigger assigned to the SIP rule in `trigger_value`. Valid values are `RequestUriHostname` or `ToPhoneNumber`.",
+        'triggerType',
+        'The type of trigger assigned to the SIP rule in `trigger_value`. Valid values are `RequestUriHostname` or `ToPhoneNumber`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "triggerValue",
+        'triggerValue',
         'If `trigger_type` is `RequestUriHostname`, the value can be the outbound host name of an Amazon Chime Voice Connector. If `trigger_type` is `ToPhoneNumber`, the value can be a customer-owned phone number in the E164 format. The Sip Media Application specified in the Sip Rule is triggered if the request URI in an incoming SIP request matches the `RequestUriHostname`, or if the "To" header in the incoming SIP request matches the `ToPhoneNumber` value.\n\nThe following arguments are optional:',
         () => [],
         true,
@@ -87,8 +87,8 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disabled",
-        "Enables or disables a rule. You must disable rules before you can delete them.",
+        'disabled',
+        'Enables or disables a rule. You must disable rules before you can delete them.',
         () => [],
         false,
         false,

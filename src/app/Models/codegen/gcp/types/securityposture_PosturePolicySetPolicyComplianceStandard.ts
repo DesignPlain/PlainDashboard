@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface securityposture_PosturePolicySetPolicyComplianceStandard {
   // Mapping of compliance standards for the policy.
@@ -18,16 +18,16 @@ export function securityposture_PosturePolicySetPolicyComplianceStandard_GetType
   return [
     new DynamicUIProps(
       InputType.String,
-      "standard",
-      "Mapping of compliance standards for the policy.",
+      'standard',
+      'Mapping of compliance standards for the policy.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "control",
-      "Mapping of security controls for the policy.",
+      'control',
+      'Mapping of security controls for the policy.',
       () => [],
       false,
       false,

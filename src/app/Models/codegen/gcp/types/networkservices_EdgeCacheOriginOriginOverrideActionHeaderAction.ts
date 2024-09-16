@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd,
   networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd_GetTypes,
-} from "./networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd";
+} from './networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd';
 
 export interface networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction {
   /*
@@ -23,8 +23,8 @@ export function networkservices_EdgeCacheOriginOriginOverrideActionHeaderAction_
   return [
     new DynamicUIProps(
       InputType.Array,
-      "requestHeadersToAdds",
-      "Describes a header to add.\nYou may add a maximum of 25 request headers.\nStructure is documented below.",
+      'requestHeadersToAdds',
+      'Describes a header to add.\nYou may add a maximum of 25 request headers.\nStructure is documented below.',
       () =>
         networkservices_EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAdd_GetTypes(),
       false,

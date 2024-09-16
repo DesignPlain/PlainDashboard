@@ -1,6 +1,6 @@
 <div *ngIf="edit || currentOutput == null || currentOutput.length == 0">
   <div
-    *ngFor="let item of config | keyvalue : customOrder"
+    *ngFor="let item of config | keyvalue: customOrder"
     [ngSwitch]="item.value.type"
   >
     <div *ngSwitchCase="inputType.String" class="in">

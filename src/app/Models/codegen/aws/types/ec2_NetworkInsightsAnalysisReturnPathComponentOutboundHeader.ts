@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderDestinationPortRange,
   ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderDestinationPortRange_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderDestinationPortRange";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderDestinationPortRange';
 import {
   ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderSourcePortRange,
   ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderSourcePortRange_GetTypes,
-} from "./ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderSourcePortRange";
+} from './ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderSourcePortRange';
 
 export interface ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeader {
   //
@@ -35,24 +35,24 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeader_Get
   return [
     new DynamicUIProps(
       InputType.String,
-      "protocol",
-      "",
+      'protocol',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sourceAddresses",
-      "",
+      'sourceAddresses',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sourcePortRanges",
-      "",
+      'sourcePortRanges',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderSourcePortRange_GetTypes(),
       false,
@@ -60,16 +60,16 @@ export function ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeader_Get
     ),
     new DynamicUIProps(
       InputType.Array,
-      "destinationAddresses",
-      "",
+      'destinationAddresses',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "destinationPortRanges",
-      "",
+      'destinationPortRanges',
+      '',
       () =>
         ec2_NetworkInsightsAnalysisReturnPathComponentOutboundHeaderDestinationPortRange_GetTypes(),
       false,

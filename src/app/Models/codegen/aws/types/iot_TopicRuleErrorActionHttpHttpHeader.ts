@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface iot_TopicRuleErrorActionHttpHttpHeader {
   // The name of the HTTP header.
@@ -18,16 +18,16 @@ export function iot_TopicRuleErrorActionHttpHttpHeader_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "The name of the HTTP header.",
+      'key',
+      'The name of the HTTP header.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value of the HTTP header.",
+      'value',
+      'The value of the HTTP header.',
       () => [],
       true,
       false,

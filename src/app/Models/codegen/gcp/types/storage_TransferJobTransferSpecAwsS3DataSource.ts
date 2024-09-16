@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey,
   storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey_GetTypes,
-} from "./storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey";
+} from './storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey';
 
 export interface storage_TransferJobTransferSpecAwsS3DataSource {
   // AWS credentials block.
@@ -28,7 +28,7 @@ export function storage_TransferJobTransferSpecAwsS3DataSource_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
+      'roleArn',
       "The Amazon Resource Name (ARN) of the role to support temporary credentials via 'AssumeRoleWithWebIdentity'. For more information about ARNs, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns). When a role ARN is provided, Transfer Service fetches temporary credentials for the session using a 'AssumeRoleWithWebIdentity' call for the provided role using the [GoogleServiceAccount][] for this project.",
       () => [],
       false,
@@ -36,8 +36,8 @@ export function storage_TransferJobTransferSpecAwsS3DataSource_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Object,
-      "awsAccessKey",
-      "AWS credentials block.",
+      'awsAccessKey',
+      'AWS credentials block.',
       () =>
         storage_TransferJobTransferSpecAwsS3DataSourceAwsAccessKey_GetTypes(),
       false,
@@ -45,15 +45,15 @@ export function storage_TransferJobTransferSpecAwsS3DataSource_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketName",
-      "Google Cloud Storage bucket name.",
+      'bucketName',
+      'Google Cloud Storage bucket name.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
+      'path',
       "Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.",
       () => [],
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DataStoreArgs {
   /*
@@ -129,31 +129,31 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "dataStoreId",
-        "The unique id of the data store.\n\n\n- - -",
+        'dataStoreId',
+        'The unique id of the data store.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name of the data store. This field must be a UTF-8 encoded\nstring with a length limit of 128 characters.",
+        'displayName',
+        'The display name of the data store. This field must be a UTF-8 encoded\nstring with a length limit of 128 characters.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "industryVertical",
-        "The industry vertical that the data store registers.\nPossible values are: `GENERIC`, `MEDIA`.",
+        'industryVertical',
+        'The industry vertical that the data store registers.\nPossible values are: `GENERIC`, `MEDIA`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
+        'location',
         'The geographic location where the data store should reside. The value can\nonly be one of "global", "us" and "eu".',
         () => [],
         true,
@@ -161,32 +161,32 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "solutionTypes",
-        "The solutions that the data store enrolls.\nEach value may be one of: `SOLUTION_TYPE_RECOMMENDATION`, `SOLUTION_TYPE_SEARCH`, `SOLUTION_TYPE_CHAT`.",
+        'solutionTypes',
+        'The solutions that the data store enrolls.\nEach value may be one of: `SOLUTION_TYPE_RECOMMENDATION`, `SOLUTION_TYPE_SEARCH`, `SOLUTION_TYPE_CHAT`.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "contentConfig",
-        "The content config of the data store.\nPossible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.",
+        'contentConfig',
+        'The content config of the data store.\nPossible values are: `NO_CONTENT`, `CONTENT_REQUIRED`, `PUBLIC_WEBSITE`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "createAdvancedSiteSearch",
-        "If true, an advanced data store for site search will be created. If the\ndata store is not configured as site search (GENERIC vertical and\nPUBLIC_WEBSITE contentConfig), this flag will be ignored.",
+        'createAdvancedSiteSearch',
+        'If true, an advanced data store for site search will be created. If the\ndata store is not configured as site search (GENERIC vertical and\nPUBLIC_WEBSITE contentConfig), this flag will be ignored.',
         () => [],
         false,
         false,

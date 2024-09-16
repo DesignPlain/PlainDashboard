@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   redshiftserverless_getWorkgroupEndpointVpcEndpointNetworkInterface,
   redshiftserverless_getWorkgroupEndpointVpcEndpointNetworkInterface_GetTypes,
-} from "./redshiftserverless_getWorkgroupEndpointVpcEndpointNetworkInterface";
+} from './redshiftserverless_getWorkgroupEndpointVpcEndpointNetworkInterface';
 
 export interface redshiftserverless_getWorkgroupEndpointVpcEndpoint {
   // The network interfaces of the endpoint.. See `Network Interface` below.
@@ -25,8 +25,8 @@ export function redshiftserverless_getWorkgroupEndpointVpcEndpoint_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Array,
-      "networkInterfaces",
-      "The network interfaces of the endpoint.. See `Network Interface` below.",
+      'networkInterfaces',
+      'The network interfaces of the endpoint.. See `Network Interface` below.',
       () =>
         redshiftserverless_getWorkgroupEndpointVpcEndpointNetworkInterface_GetTypes(),
       true,
@@ -34,16 +34,16 @@ export function redshiftserverless_getWorkgroupEndpointVpcEndpoint_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.String,
-      "vpcEndpointId",
-      "The DNS address of the VPC endpoint.",
+      'vpcEndpointId',
+      'The DNS address of the VPC endpoint.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "vpcId",
-      "The port that Amazon Redshift Serverless listens on.",
+      'vpcId',
+      'The port that Amazon Redshift Serverless listens on.',
       () => [],
       true,
       false,

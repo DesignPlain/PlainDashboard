@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation,
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation_GetTypes,
-} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation";
+} from './dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation';
 import {
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression,
   dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression_GetTypes,
-} from "./dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression";
+} from './dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression';
 
 export interface dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformations {
   /*
@@ -32,8 +32,8 @@ export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
   return [
     new DynamicUIProps(
       InputType.Array,
-      "fieldTransformations",
-      "Transform the record by applying various field transformations.\nStructure is documented below.",
+      'fieldTransformations',
+      'Transform the record by applying various field transformations.\nStructure is documented below.',
       () =>
         dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformation_GetTypes(),
       false,
@@ -41,8 +41,8 @@ export function dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTrans
     ),
     new DynamicUIProps(
       InputType.Array,
-      "recordSuppressions",
-      "Configuration defining which records get suppressed entirely. Records that match any suppression rule are omitted from the output.\nStructure is documented below.",
+      'recordSuppressions',
+      'Configuration defining which records get suppressed entirely. Records that match any suppression rule are omitted from the output.\nStructure is documented below.',
       () =>
         dataloss_PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppression_GetTypes(),
       false,

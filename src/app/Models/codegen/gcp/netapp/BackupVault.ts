@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface BackupVaultArgs {
   // Location (region) of the backup vault.
@@ -84,7 +84,7 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -92,32 +92,32 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location (region) of the backup vault.",
+        'location',
+        'Location (region) of the backup vault.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The resource name of the backup vault. Needs to be unique per location.\n\n\n- - -",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'name',
+        'The resource name of the backup vault. Needs to be unique per location.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gamelift_GameServerGroupInstanceDefinition {
   // An EC2 instance type.
@@ -23,15 +23,15 @@ export function gamelift_GameServerGroupInstanceDefinition_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.String,
-      "instanceType",
-      "An EC2 instance type.",
+      'instanceType',
+      'An EC2 instance type.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "weightedCapacity",
+      'weightedCapacity',
       "Instance weighting that indicates how much this instance type contributes\nto the total capacity of a game server group.\nInstance weights are used by GameLift FleetIQ to calculate the instance type's cost per unit hour and better identify\nthe most cost-effective options.",
       () => [],
       false,

@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   pubsub_SubscriptionPushConfigNoWrapper,
   pubsub_SubscriptionPushConfigNoWrapper_GetTypes,
-} from "./pubsub_SubscriptionPushConfigNoWrapper";
+} from './pubsub_SubscriptionPushConfigNoWrapper';
 import {
   pubsub_SubscriptionPushConfigOidcToken,
   pubsub_SubscriptionPushConfigOidcToken_GetTypes,
-} from "./pubsub_SubscriptionPushConfigOidcToken";
+} from './pubsub_SubscriptionPushConfigOidcToken';
 
 export interface pubsub_SubscriptionPushConfig {
   /*
@@ -63,23 +63,23 @@ export function pubsub_SubscriptionPushConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "noWrapper",
-      "When set, the payload to the push endpoint is not wrapped.Sets the\n`data` field as the HTTP body for delivery.\nStructure is documented below.",
+      'noWrapper',
+      'When set, the payload to the push endpoint is not wrapped.Sets the\n`data` field as the HTTP body for delivery.\nStructure is documented below.',
       () => pubsub_SubscriptionPushConfigNoWrapper_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "oidcToken",
-      "If specified, Pub/Sub will generate and attach an OIDC JWT token as\nan Authorization header in the HTTP request for every pushed message.\nStructure is documented below.",
+      'oidcToken',
+      'If specified, Pub/Sub will generate and attach an OIDC JWT token as\nan Authorization header in the HTTP request for every pushed message.\nStructure is documented below.',
       () => pubsub_SubscriptionPushConfigOidcToken_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "pushEndpoint",
+      'pushEndpoint',
       'A URL locating the endpoint to which messages should be pushed.\nFor example, a Webhook endpoint might use\n"https://example.com/push".',
       () => [],
       true,
@@ -87,8 +87,8 @@ export function pubsub_SubscriptionPushConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Map,
-      "attributes",
-      "Endpoint configuration attributes.\nEvery endpoint has a set of API supported attributes that can\nbe used to control different aspects of the message delivery.\nThe currently supported attribute is x-goog-version, which you\ncan use to change the format of the pushed message. This\nattribute indicates the version of the data expected by\nthe endpoint. This controls the shape of the pushed message\n(i.e., its fields and metadata). The endpoint version is\nbased on the version of the Pub/Sub API.\nIf not present during the subscriptions.create call,\nit will default to the version of the API used to make\nsuch call. If not present during a subscriptions.modifyPushConfig\ncall, its value will not be changed. subscriptions.get\ncalls will always return a valid version, even if the\nsubscription was created without this attribute.\nThe possible values for this attribute are:\n- v1beta1: uses the push format defined in the v1beta1 Pub/Sub API.\n- v1 or v1beta2: uses the push format defined in the v1 Pub/Sub API.",
+      'attributes',
+      'Endpoint configuration attributes.\nEvery endpoint has a set of API supported attributes that can\nbe used to control different aspects of the message delivery.\nThe currently supported attribute is x-goog-version, which you\ncan use to change the format of the pushed message. This\nattribute indicates the version of the data expected by\nthe endpoint. This controls the shape of the pushed message\n(i.e., its fields and metadata). The endpoint version is\nbased on the version of the Pub/Sub API.\nIf not present during the subscriptions.create call,\nit will default to the version of the API used to make\nsuch call. If not present during a subscriptions.modifyPushConfig\ncall, its value will not be changed. subscriptions.get\ncalls will always return a valid version, even if the\nsubscription was created without this attribute.\nThe possible values for this attribute are:\n- v1beta1: uses the push format defined in the v1beta1 Pub/Sub API.\n- v1 or v1beta2: uses the push format defined in the v1 Pub/Sub API.',
       () => InputType_Map_GetTypes(),
       false,
       false,

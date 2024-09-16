@@ -3,53 +3,53 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   integrationconnectors_ConnectionSslConfig,
   integrationconnectors_ConnectionSslConfig_GetTypes,
-} from "../types/integrationconnectors_ConnectionSslConfig";
+} from '../types/integrationconnectors_ConnectionSslConfig';
 import {
   integrationconnectors_ConnectionDestinationConfig,
   integrationconnectors_ConnectionDestinationConfig_GetTypes,
-} from "../types/integrationconnectors_ConnectionDestinationConfig";
+} from '../types/integrationconnectors_ConnectionDestinationConfig';
 import {
   integrationconnectors_ConnectionLockConfig,
   integrationconnectors_ConnectionLockConfig_GetTypes,
-} from "../types/integrationconnectors_ConnectionLockConfig";
+} from '../types/integrationconnectors_ConnectionLockConfig';
 import {
   integrationconnectors_ConnectionLogConfig,
   integrationconnectors_ConnectionLogConfig_GetTypes,
-} from "../types/integrationconnectors_ConnectionLogConfig";
+} from '../types/integrationconnectors_ConnectionLogConfig';
 import {
   integrationconnectors_ConnectionAuthConfig,
   integrationconnectors_ConnectionAuthConfig_GetTypes,
-} from "../types/integrationconnectors_ConnectionAuthConfig";
+} from '../types/integrationconnectors_ConnectionAuthConfig';
 import {
   integrationconnectors_ConnectionNodeConfig,
   integrationconnectors_ConnectionNodeConfig_GetTypes,
-} from "../types/integrationconnectors_ConnectionNodeConfig";
+} from '../types/integrationconnectors_ConnectionNodeConfig';
 import {
   integrationconnectors_ConnectionEventingConfig,
   integrationconnectors_ConnectionEventingConfig_GetTypes,
-} from "../types/integrationconnectors_ConnectionEventingConfig";
+} from '../types/integrationconnectors_ConnectionEventingConfig';
 import {
   integrationconnectors_ConnectionEventingRuntimeData,
   integrationconnectors_ConnectionEventingRuntimeData_GetTypes,
-} from "../types/integrationconnectors_ConnectionEventingRuntimeData";
+} from '../types/integrationconnectors_ConnectionEventingRuntimeData';
 import {
   integrationconnectors_ConnectionConnectorVersionInfraConfig,
   integrationconnectors_ConnectionConnectorVersionInfraConfig_GetTypes,
-} from "../types/integrationconnectors_ConnectionConnectorVersionInfraConfig";
+} from '../types/integrationconnectors_ConnectionConnectorVersionInfraConfig';
 import {
   integrationconnectors_ConnectionStatus,
   integrationconnectors_ConnectionStatus_GetTypes,
-} from "../types/integrationconnectors_ConnectionStatus";
+} from '../types/integrationconnectors_ConnectionStatus';
 import {
   integrationconnectors_ConnectionConfigVariable,
   integrationconnectors_ConnectionConfigVariable_GetTypes,
-} from "../types/integrationconnectors_ConnectionConfigVariable";
+} from '../types/integrationconnectors_ConnectionConfigVariable';
 
 export interface ConnectionArgs {
   /*
@@ -288,136 +288,136 @@ Name of Connection needs to be created.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of Connection needs to be created.\n\n\n- - -",
+        'name',
+        'Name of Connection needs to be created.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Resource labels to represent user provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Resource labels to represent user provided metadata.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "configVariables",
-        "Config Variables for the connection.\nStructure is documented below.",
+        'configVariables',
+        'Config Variables for the connection.\nStructure is documented below.',
         () => integrationconnectors_ConnectionConfigVariable_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "connectorVersion",
-        "connectorVersion of the Connector.",
+        'connectorVersion',
+        'connectorVersion of the Connector.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "destinationConfigs",
-        "Define the Connectors target endpoint.\nStructure is documented below.",
+        'destinationConfigs',
+        'Define the Connectors target endpoint.\nStructure is documented below.',
         () => integrationconnectors_ConnectionDestinationConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "lockConfig",
-        "Determines whether or no a connection is locked. If locked, a reason must be specified.\nStructure is documented below.",
+        'lockConfig',
+        'Determines whether or no a connection is locked. If locked, a reason must be specified.\nStructure is documented below.',
         () => integrationconnectors_ConnectionLockConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "suspended",
-        "Suspended indicates if a user has suspended a connection or not.",
+        'suspended',
+        'Suspended indicates if a user has suspended a connection or not.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "eventingEnablementType",
-        "Eventing enablement type. Will be nil if eventing is not enabled.\nPossible values are: `EVENTING_AND_CONNECTION`, `ONLY_EVENTING`.",
+        'eventingEnablementType',
+        'Eventing enablement type. Will be nil if eventing is not enabled.\nPossible values are: `EVENTING_AND_CONNECTION`, `ONLY_EVENTING`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location in which Connection needs to be created.",
+        'location',
+        'Location in which Connection needs to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "authConfig",
-        "authConfig for the connection.\nStructure is documented below.",
+        'authConfig',
+        'authConfig for the connection.\nStructure is documented below.',
         () => integrationconnectors_ConnectionAuthConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodeConfig",
-        "Node configuration for the connection.\nStructure is documented below.",
+        'nodeConfig',
+        'Node configuration for the connection.\nStructure is documented below.',
         () => integrationconnectors_ConnectionNodeConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceAccount",
-        "Service account needed for runtime plane to access Google Cloud resources.",
+        'serviceAccount',
+        'Service account needed for runtime plane to access Google Cloud resources.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An arbitrary description for the Conection.",
+        'description',
+        'An arbitrary description for the Conection.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sslConfig",
-        "SSL Configuration of a connection\nStructure is documented below.",
+        'sslConfig',
+        'SSL Configuration of a connection\nStructure is documented below.',
         () => integrationconnectors_ConnectionSslConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "logConfig",
-        "Log configuration for the connection.\nStructure is documented below.",
+        'logConfig',
+        'Log configuration for the connection.\nStructure is documented below.',
         () => integrationconnectors_ConnectionLogConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "eventingConfig",
-        "Eventing Configuration of a connection\nStructure is documented below.",
+        'eventingConfig',
+        'Eventing Configuration of a connection\nStructure is documented below.',
         () => integrationconnectors_ConnectionEventingConfig_GetTypes(),
         false,
         false,

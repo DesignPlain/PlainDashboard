@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface mwaa_EnvironmentLoggingConfigurationSchedulerLogs {
   // Enabling or disabling the collection of logs
@@ -21,24 +21,24 @@ export function mwaa_EnvironmentLoggingConfigurationSchedulerLogs_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Enabling or disabling the collection of logs",
+      'enabled',
+      'Enabling or disabling the collection of logs',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "logLevel",
-      "Logging level. Valid values: `CRITICAL`, `ERROR`, `WARNING`, `INFO`, `DEBUG`. Will be `INFO` by default.",
+      'logLevel',
+      'Logging level. Valid values: `CRITICAL`, `ERROR`, `WARNING`, `INFO`, `DEBUG`. Will be `INFO` by default.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "cloudWatchLogGroupArn",
-      "",
+      'cloudWatchLogGroupArn',
+      '',
       () => [],
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SecurityGroupRuleArgs {
   // Protocol. If not icmp, icmpv6, tcp, udp, or all use the [protocol number](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)
@@ -96,55 +96,55 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "protocol",
-        "Protocol. If not icmp, icmpv6, tcp, udp, or all use the [protocol number](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)",
+        'protocol',
+        'Protocol. If not icmp, icmpv6, tcp, udp, or all use the [protocol number](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "cidrBlocks",
-        "List of CIDR blocks. Cannot be specified with `source_security_group_id` or `self`.",
+        'cidrBlocks',
+        'List of CIDR blocks. Cannot be specified with `source_security_group_id` or `self`.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "prefixListIds",
-        "List of Prefix List IDs.",
+        'prefixListIds',
+        'List of Prefix List IDs.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "self",
-        "Whether the security group itself will be added as a source to this ingress rule. Cannot be specified with `cidr_blocks`, `ipv6_cidr_blocks`, or `source_security_group_id`.",
+        'self',
+        'Whether the security group itself will be added as a source to this ingress rule. Cannot be specified with `cidr_blocks`, `ipv6_cidr_blocks`, or `source_security_group_id`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the rule.",
+        'description',
+        'Description of the rule.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ipv6CidrBlocks",
-        "List of IPv6 CIDR blocks. Cannot be specified with `source_security_group_id` or `self`.",
+        'ipv6CidrBlocks',
+        'List of IPv6 CIDR blocks. Cannot be specified with `source_security_group_id` or `self`.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "toPort",
+        'toPort',
         'End port (or ICMP code if protocol is "icmp").',
         () => [],
         true,
@@ -152,15 +152,15 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Type of rule being created. Valid options are `ingress` (inbound)\nor `egress` (outbound).\n\nThe following arguments are optional:\n\n> **Note** Although `cidr_blocks`, `ipv6_cidr_blocks`, `prefix_list_ids`, and `source_security_group_id` are all marked as optional, you _must_ provide one of them in order to configure the source of the traffic.",
+        'type',
+        'Type of rule being created. Valid options are `ingress` (inbound)\nor `egress` (outbound).\n\nThe following arguments are optional:\n\n> **Note** Although `cidr_blocks`, `ipv6_cidr_blocks`, `prefix_list_ids`, and `source_security_group_id` are all marked as optional, you _must_ provide one of them in order to configure the source of the traffic.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "fromPort",
+        'fromPort',
         'Start port (or ICMP type number if protocol is "icmp" or "icmpv6").',
         () => [],
         true,
@@ -168,16 +168,16 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "securityGroupId",
-        "Security group to apply this rule to.",
+        'securityGroupId',
+        'Security group to apply this rule to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceSecurityGroupId",
-        "Security group id to allow access to/from, depending on the `type`. Cannot be specified with `cidr_blocks`, `ipv6_cidr_blocks`, or `self`.",
+        'sourceSecurityGroupId',
+        'Security group id to allow access to/from, depending on the `type`. Cannot be specified with `cidr_blocks`, `ipv6_cidr_blocks`, or `self`.',
         () => [],
         false,
         true,

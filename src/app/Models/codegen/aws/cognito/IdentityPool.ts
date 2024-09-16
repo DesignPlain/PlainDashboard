@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cognito_IdentityPoolCognitoIdentityProvider,
   cognito_IdentityPoolCognitoIdentityProvider_GetTypes,
-} from "../types/cognito_IdentityPoolCognitoIdentityProvider";
+} from '../types/cognito_IdentityPoolCognitoIdentityProvider';
 
 export interface IdentityPoolArgs {
   // A map of tags to assign to the Identity Pool. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -83,63 +83,63 @@ backend and the Cognito service to communicate about the developer provider.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "samlProviderArns",
-        "An array of Amazon Resource Names (ARNs) of the SAML provider for your identity.",
+        'samlProviderArns',
+        'An array of Amazon Resource Names (ARNs) of the SAML provider for your identity.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "allowUnauthenticatedIdentities",
-        "Whether the identity pool supports unauthenticated logins or not.",
+        'allowUnauthenticatedIdentities',
+        'Whether the identity pool supports unauthenticated logins or not.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "allowClassicFlow",
-        "Enables or disables the classic / basic authentication flow. Default is `false`.",
+        'allowClassicFlow',
+        'Enables or disables the classic / basic authentication flow. Default is `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "cognitoIdentityProviders",
-        "An array of Amazon Cognito Identity user pools and their client IDs.",
+        'cognitoIdentityProviders',
+        'An array of Amazon Cognito Identity user pools and their client IDs.',
         () => cognito_IdentityPoolCognitoIdentityProvider_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "supportedLoginProviders",
-        "Key-Value pairs mapping provider names to provider app IDs.",
+        'supportedLoginProviders',
+        'Key-Value pairs mapping provider names to provider app IDs.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "openidConnectProviderArns",
-        "Set of OpendID Connect provider ARNs.",
+        'openidConnectProviderArns',
+        'Set of OpendID Connect provider ARNs.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the Identity Pool. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the Identity Pool. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "developerProviderName",
+        'developerProviderName',
         'The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your\nbackend and the Cognito service to communicate about the developer provider.',
         () => [],
         false,
@@ -147,8 +147,8 @@ backend and the Cognito service to communicate about the developer provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "identityPoolName",
-        "The Cognito Identity Pool name.",
+        'identityPoolName',
+        'The Cognito Identity Pool name.',
         () => [],
         true,
         true,

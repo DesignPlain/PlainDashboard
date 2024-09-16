@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig,
   dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig";
+} from './dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig';
 
 export interface dataloss_PreventionJobTriggerInspectJobActionSaveFindings {
   /*
@@ -22,8 +22,8 @@ export function dataloss_PreventionJobTriggerInspectJobActionSaveFindings_GetTyp
   return [
     new DynamicUIProps(
       InputType.Object,
-      "outputConfig",
-      "Information on where to store output\nStructure is documented below.",
+      'outputConfig',
+      'Information on where to store output\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobActionSaveFindingsOutputConfig_GetTypes(),
       true,

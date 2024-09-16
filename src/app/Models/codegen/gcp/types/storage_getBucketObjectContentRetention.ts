@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_getBucketObjectContentRetention {
   // The object retention mode. Supported values include: "Unlocked", "Locked".
@@ -18,7 +18,7 @@ export function storage_getBucketObjectContentRetention_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "mode",
+      'mode',
       'The object retention mode. Supported values include: "Unlocked", "Locked".',
       () => [],
       true,
@@ -26,8 +26,8 @@ export function storage_getBucketObjectContentRetention_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "retainUntilTime",
-      "Time in RFC 3339 (e.g. 2030-01-01T02:03:04Z) until which object retention protects this object.",
+      'retainUntilTime',
+      'Time in RFC 3339 (e.g. 2030-01-01T02:03:04Z) until which object retention protects this object.',
       () => [],
       true,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   diagflow_IntentFollowupIntentInfo,
   diagflow_IntentFollowupIntentInfo_GetTypes,
-} from "../types/diagflow_IntentFollowupIntentInfo";
+} from '../types/diagflow_IntentFollowupIntentInfo';
 
 export interface IntentArgs {
   /*
@@ -189,96 +189,96 @@ Format: projects/<Project ID>/agent/intents/<Intent ID>.
     return [
       new DynamicUIProps(
         InputType.Number,
-        "priority",
-        "The priority of this intent. Higher numbers represent higher priorities.\n- If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds\nto the Normal priority in the console.\n- If the supplied value is negative, the intent is ignored in runtime detect intent requests.",
+        'priority',
+        'The priority of this intent. Higher numbers represent higher priorities.\n- If the supplied value is unspecified or 0, the service translates the value to 500,000, which corresponds\nto the Normal priority in the console.\n- If the supplied value is negative, the intent is ignored in runtime detect intent requests.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "mlDisabled",
-        "Indicates whether Machine Learning is disabled for the intent.\nNote: If mlDisabled setting is set to true, then this intent is not taken into account during inference in ML\nONLY match mode. Also, auto-markup in the UI is turned off.",
+        'mlDisabled',
+        'Indicates whether Machine Learning is disabled for the intent.\nNote: If mlDisabled setting is set to true, then this intent is not taken into account during inference in ML\nONLY match mode. Also, auto-markup in the UI is turned off.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "webhookState",
-        "Indicates whether webhooks are enabled for the intent.\n* WEBHOOK_STATE_ENABLED: Webhook is enabled in the agent and in the intent.\n* WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING: Webhook is enabled in the agent and in the intent. Also, each slot\nfilling prompt is forwarded to the webhook.\nPossible values are: `WEBHOOK_STATE_ENABLED`, `WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING`.",
+        'webhookState',
+        'Indicates whether webhooks are enabled for the intent.\n* WEBHOOK_STATE_ENABLED: Webhook is enabled in the agent and in the intent.\n* WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING: Webhook is enabled in the agent and in the intent. Also, each slot\nfilling prompt is forwarded to the webhook.\nPossible values are: `WEBHOOK_STATE_ENABLED`, `WEBHOOK_STATE_ENABLED_FOR_SLOT_FILLING`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "isFallback",
-        "Indicates whether this is a fallback intent.",
+        'isFallback',
+        'Indicates whether this is a fallback intent.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "action",
-        "The name of the action associated with the intent.\nNote: The action name must not contain whitespaces.",
+        'action',
+        'The name of the action associated with the intent.\nNote: The action name must not contain whitespaces.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "defaultResponsePlatforms",
-        "The list of platforms for which the first responses will be copied from the messages in PLATFORM_UNSPECIFIED\n(i.e. default platform).\nEach value may be one of: `FACEBOOK`, `SLACK`, `TELEGRAM`, `KIK`, `SKYPE`, `LINE`, `VIBER`, `ACTIONS_ON_GOOGLE`, `GOOGLE_HANGOUTS`.",
+        'defaultResponsePlatforms',
+        'The list of platforms for which the first responses will be copied from the messages in PLATFORM_UNSPECIFIED\n(i.e. default platform).\nEach value may be one of: `FACEBOOK`, `SLACK`, `TELEGRAM`, `KIK`, `SKYPE`, `LINE`, `VIBER`, `ACTIONS_ON_GOOGLE`, `GOOGLE_HANGOUTS`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "events",
-        "The collection of event names that trigger the intent. If the collection of input contexts is not empty, all of\nthe contexts must be present in the active user session for an event to trigger this intent. See the\n[events reference](https://cloud.google.com/dialogflow/docs/events-overview) for more details.",
+        'events',
+        'The collection of event names that trigger the intent. If the collection of input contexts is not empty, all of\nthe contexts must be present in the active user session for an event to trigger this intent. See the\n[events reference](https://cloud.google.com/dialogflow/docs/events-overview) for more details.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parentFollowupIntentName",
-        "The unique identifier of the parent intent in the chain of followup intents.\nFormat: projects/<Project ID>/agent/intents/<Intent ID>.",
+        'parentFollowupIntentName',
+        'The unique identifier of the parent intent in the chain of followup intents.\nFormat: projects/<Project ID>/agent/intents/<Intent ID>.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "resetContexts",
-        "Indicates whether to delete all contexts in the current session when this intent is matched.",
+        'resetContexts',
+        'Indicates whether to delete all contexts in the current session when this intent is matched.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The name of this intent to be displayed on the console.\n\n\n- - -",
+        'displayName',
+        'The name of this intent to be displayed on the console.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "inputContextNames",
-        "The list of context names required for this intent to be triggered.\nFormat: projects/<Project ID>/agent/sessions/-/contexts/<Context ID>.",
+        'inputContextNames',
+        'The list of context names required for this intent to be triggered.\nFormat: projects/<Project ID>/agent/sessions/-/contexts/<Context ID>.',
         () => InputType_String_GetTypes(),
         false,
         false,

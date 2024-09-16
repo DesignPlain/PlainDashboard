@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dns_ResponsePolicyRuleLocalData,
   dns_ResponsePolicyRuleLocalData_GetTypes,
-} from "../types/dns_ResponsePolicyRuleLocalData";
+} from '../types/dns_ResponsePolicyRuleLocalData';
 
 export interface ResponsePolicyRuleArgs {
   /*
@@ -77,47 +77,47 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "dnsName",
-        "The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.",
+        'dnsName',
+        'The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "localData",
-        "Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name;\nin particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.\nStructure is documented below.",
+        'localData',
+        'Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name;\nin particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.\nStructure is documented below.',
         () => dns_ResponsePolicyRuleLocalData_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "responsePolicy",
-        "Identifies the response policy addressed by this request.\n\n\n- - -",
+        'responsePolicy',
+        'Identifies the response policy addressed by this request.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ruleName",
-        "An identifier for this rule. Must be unique with the ResponsePolicy.",
+        'ruleName',
+        'An identifier for this rule. Must be unique with the ResponsePolicy.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "behavior",
+        'behavior',
         "Answer this query with a behavior rather than DNS data. Acceptable values are 'behaviorUnspecified', and 'bypassResponsePolicy'",
         () => [],
         false,

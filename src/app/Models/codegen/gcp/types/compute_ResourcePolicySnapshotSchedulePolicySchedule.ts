@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_ResourcePolicySnapshotSchedulePolicyScheduleDailySchedule,
   compute_ResourcePolicySnapshotSchedulePolicyScheduleDailySchedule_GetTypes,
-} from "./compute_ResourcePolicySnapshotSchedulePolicyScheduleDailySchedule";
+} from './compute_ResourcePolicySnapshotSchedulePolicyScheduleDailySchedule';
 import {
   compute_ResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule,
   compute_ResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule_GetTypes,
-} from "./compute_ResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule";
+} from './compute_ResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule';
 import {
   compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule,
   compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule_GetTypes,
-} from "./compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule";
+} from './compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule';
 
 export interface compute_ResourcePolicySnapshotSchedulePolicySchedule {
   /*
@@ -42,8 +42,8 @@ export function compute_ResourcePolicySnapshotSchedulePolicySchedule_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Object,
-      "dailySchedule",
-      "The policy will execute every nth day at the specified time.\nStructure is documented below.",
+      'dailySchedule',
+      'The policy will execute every nth day at the specified time.\nStructure is documented below.',
       () =>
         compute_ResourcePolicySnapshotSchedulePolicyScheduleDailySchedule_GetTypes(),
       false,
@@ -51,8 +51,8 @@ export function compute_ResourcePolicySnapshotSchedulePolicySchedule_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hourlySchedule",
-      "The policy will execute every nth hour starting at the specified time.\nStructure is documented below.",
+      'hourlySchedule',
+      'The policy will execute every nth hour starting at the specified time.\nStructure is documented below.',
       () =>
         compute_ResourcePolicySnapshotSchedulePolicyScheduleHourlySchedule_GetTypes(),
       false,
@@ -60,8 +60,8 @@ export function compute_ResourcePolicySnapshotSchedulePolicySchedule_GetTypes():
     ),
     new DynamicUIProps(
       InputType.Object,
-      "weeklySchedule",
-      "Allows specifying a snapshot time for each day of the week.\nStructure is documented below.",
+      'weeklySchedule',
+      'Allows specifying a snapshot time for each day of the week.\nStructure is documented below.',
       () =>
         compute_ResourcePolicySnapshotSchedulePolicyScheduleWeeklySchedule_GetTypes(),
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   organizations_OrganizationalUnitAccount,
   organizations_OrganizationalUnitAccount_GetTypes,
-} from "../types/organizations_OrganizationalUnitAccount";
+} from '../types/organizations_OrganizationalUnitAccount';
 
 export interface OrganizationalUnitArgs {
   // The name for the organizational unit
@@ -44,24 +44,24 @@ export class OrganizationalUnit extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name for the organizational unit",
+        'name',
+        'The name for the organizational unit',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parentId",
-        "ID of the parent organizational unit, which may be the root",
+        'parentId',
+        'ID of the parent organizational unit, which may be the root',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel,
   networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel_GetTypes,
-} from "./networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel";
+} from './networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel';
 
 export interface networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcher {
   /*
@@ -28,16 +28,16 @@ export function networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatche
   return [
     new DynamicUIProps(
       InputType.String,
-      "metadataLabelMatchCriteria",
-      "Specifies how matching should be done.\nPossible values are: `MATCH_ANY`, `MATCH_ALL`.",
+      'metadataLabelMatchCriteria',
+      'Specifies how matching should be done.\nPossible values are: `MATCH_ANY`, `MATCH_ALL`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "metadataLabels",
-      "The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria\nStructure is documented below.",
+      'metadataLabels',
+      'The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria\nStructure is documented below.',
       () =>
         networkservices_EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabel_GetTypes(),
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LoggingArgs {
   // Name of an existing S3 bucket where the log files are to be stored. Required when `log_destination_type` is `s3`. Must be in the same region as the cluster and the cluster must have read bucket and put object permissions. For more information on the permissions required for the bucket, please read the AWS [documentation](http://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html#db-auditing-enable-logging)
@@ -51,40 +51,40 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "bucketName",
-        "Name of an existing S3 bucket where the log files are to be stored. Required when `log_destination_type` is `s3`. Must be in the same region as the cluster and the cluster must have read bucket and put object permissions. For more information on the permissions required for the bucket, please read the AWS [documentation](http://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html#db-auditing-enable-logging)",
+        'bucketName',
+        'Name of an existing S3 bucket where the log files are to be stored. Required when `log_destination_type` is `s3`. Must be in the same region as the cluster and the cluster must have read bucket and put object permissions. For more information on the permissions required for the bucket, please read the AWS [documentation](http://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html#db-auditing-enable-logging)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterIdentifier",
-        "Identifier of the source cluster.\n\nThe following arguments are optional:",
+        'clusterIdentifier',
+        'Identifier of the source cluster.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "logDestinationType",
-        "Log destination type. Valid values are `s3` and `cloudwatch`.",
+        'logDestinationType',
+        'Log destination type. Valid values are `s3` and `cloudwatch`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "logExports",
-        "Collection of exported log types. Required when `log_destination_type` is `cloudwatch`. Valid values are `connectionlog`, `useractivitylog`, and `userlog`.",
+        'logExports',
+        'Collection of exported log types. Required when `log_destination_type` is `cloudwatch`. Valid values are `connectionlog`, `useractivitylog`, and `userlog`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "s3KeyPrefix",
-        "Prefix applied to the log file names.",
+        's3KeyPrefix',
+        'Prefix applied to the log file names.',
         () => [],
         false,
         false,

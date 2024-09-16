@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ReceiptFilterArgs {
   // The IP address or address range to filter, in CIDR notation
@@ -34,24 +34,24 @@ export class ReceiptFilter extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "cidr",
-        "The IP address or address range to filter, in CIDR notation",
+        'cidr',
+        'The IP address or address range to filter, in CIDR notation',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the filter",
+        'name',
+        'The name of the filter',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "policy",
-        "Block or Allow",
+        'policy',
+        'Block or Allow',
         () => [],
         true,
         true,

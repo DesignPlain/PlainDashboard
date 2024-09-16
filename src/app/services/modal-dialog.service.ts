@@ -15,7 +15,10 @@ import { HelpModalComponent } from '../components/help-modal/help-modal.componen
   providedIn: 'root',
 })
 export class ModalDialogService {
-  constructor(private _overlay: Overlay, private _injector: Injector) { }
+  constructor(
+    private _overlay: Overlay,
+    private _injector: Injector,
+  ) {}
   public ActiveModal: any;
   public openConfigModal() {
     let positionStrategy = this._overlay.position().global();
@@ -27,7 +30,7 @@ export class ModalDialogService {
         positionStrategy,
         hasBackdrop: true,
         disposeOnNavigation: true,
-      })
+      }),
     );
     this.ActiveModal = overlayRef;
     const configModalComponent = new ComponentPortal(ConfigModalComponent);
@@ -45,7 +48,7 @@ export class ModalDialogService {
         positionStrategy,
         hasBackdrop: true,
         disposeOnNavigation: true,
-      })
+      }),
     );
     this.ActiveModal = overlayRef;
     const configModalComponent = new ComponentPortal(TemplateConfigComponent);
@@ -65,7 +68,7 @@ export class ModalDialogService {
         positionStrategy,
         hasBackdrop: true,
         disposeOnNavigation: true,
-      })
+      }),
     );
     this.ActiveModal = overlayRef;
     const configModalComponent = new ComponentPortal(HelpModalComponent);
@@ -82,7 +85,7 @@ export class ModalDialogService {
     yamlContent: string,
     resId: string,
     desc: string,
-    comp: PlaygroundComponent
+    comp: PlaygroundComponent,
   ) {
     let positionStrategy = this._overlay.position().global();
     positionStrategy = positionStrategy.centerHorizontally();
@@ -93,11 +96,11 @@ export class ModalDialogService {
         positionStrategy,
         hasBackdrop: true,
         disposeOnNavigation: true,
-      })
+      }),
     );
     this.ActiveModal = overlayRef;
     const resourceConfigComponent = new ComponentPortal(
-      ResourceConfigComponent
+      ResourceConfigComponent,
     );
 
     let cmpRef = overlayRef.attach(resourceConfigComponent);

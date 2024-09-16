@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_DiskGuestOsFeature,
   compute_DiskGuestOsFeature_GetTypes,
-} from "../types/compute_DiskGuestOsFeature";
+} from '../types/compute_DiskGuestOsFeature';
 import {
   compute_DiskAsyncPrimaryDisk,
   compute_DiskAsyncPrimaryDisk_GetTypes,
-} from "../types/compute_DiskAsyncPrimaryDisk";
+} from '../types/compute_DiskAsyncPrimaryDisk';
 import {
   compute_DiskDiskEncryptionKey,
   compute_DiskDiskEncryptionKey_GetTypes,
-} from "../types/compute_DiskDiskEncryptionKey";
+} from '../types/compute_DiskDiskEncryptionKey';
 import {
   compute_DiskSourceImageEncryptionKey,
   compute_DiskSourceImageEncryptionKey_GetTypes,
-} from "../types/compute_DiskSourceImageEncryptionKey";
+} from '../types/compute_DiskSourceImageEncryptionKey';
 import {
   compute_DiskSourceSnapshotEncryptionKey,
   compute_DiskSourceSnapshotEncryptionKey_GetTypes,
-} from "../types/compute_DiskSourceSnapshotEncryptionKey";
+} from '../types/compute_DiskSourceSnapshotEncryptionKey';
 
 export interface DiskArgs {
   /*
@@ -465,31 +465,31 @@ to allow for updating the resource policy attached to the disk.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "sourceImageEncryptionKey",
-        "The customer-supplied encryption key of the source image. Required if\nthe source image is protected by a customer-supplied encryption key.\nStructure is documented below.",
+        'sourceImageEncryptionKey',
+        'The customer-supplied encryption key of the source image. Required if\nthe source image is protected by a customer-supplied encryption key.\nStructure is documented below.',
         () => compute_DiskSourceImageEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels to apply to this disk.  A list of key->value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels to apply to this disk.  A list of key->value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "size",
-        "Size of the persistent disk, specified in GB. You can specify this\nfield when creating a persistent disk using the `image` or\n`snapshot` parameter, or specify it alone to create an empty\npersistent disk.\nIf you specify this field along with `image` or `snapshot`,\nthe value must not be less than the size of the image\nor the size of the snapshot.\n~>**NOTE** If you change the size, the provider updates the disk size\nif upsizing is detected but recreates the disk if downsizing is requested.\nYou can add `lifecycle.prevent_destroy` in the config to prevent destroying\nand recreating.",
+        'size',
+        'Size of the persistent disk, specified in GB. You can specify this\nfield when creating a persistent disk using the `image` or\n`snapshot` parameter, or specify it alone to create an empty\npersistent disk.\nIf you specify this field along with `image` or `snapshot`,\nthe value must not be less than the size of the image\nor the size of the snapshot.\n~>**NOTE** If you change the size, the provider updates the disk size\nif upsizing is detected but recreates the disk if downsizing is requested.\nYou can add `lifecycle.prevent_destroy` in the config to prevent destroying\nand recreating.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "snapshot",
+        'snapshot',
         "The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. If the\nsnapshot is in another project than this disk, you must supply a full URL. For example, the following are valid values:\n* 'https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot' *\n'projects/project/global/snapshots/snapshot' * 'global/snapshots/snapshot' * 'snapshot'",
         () => [],
         false,
@@ -497,63 +497,63 @@ to allow for updating the resource policy attached to the disk.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "resourcePolicies",
-        "Resource policies applied to this disk for automatic snapshot creations.\n~>**NOTE** This value does not support updating the\nresource policy, as resource policies can not be updated more than\none at a time. Use\n`gcp.compute.DiskResourcePolicyAttachment`\nto allow for updating the resource policy attached to the disk.",
+        'resourcePolicies',
+        'Resource policies applied to this disk for automatic snapshot creations.\n~>**NOTE** This value does not support updating the\nresource policy, as resource policies can not be updated more than\none at a time. Use\n`gcp.compute.DiskResourcePolicyAttachment`\nto allow for updating the resource policy attached to the disk.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. Provide this property when\nyou create the resource.",
+        'description',
+        'An optional description of this resource. Provide this property when\nyou create the resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "diskEncryptionKey",
-        "Encrypts the disk using a customer-supplied encryption key.\nAfter you encrypt a disk with a customer-supplied key, you must\nprovide the same key if you use the disk later (e.g. to create a disk\nsnapshot or an image, or to attach the disk to a virtual machine).\nCustomer-supplied encryption keys do not protect access to metadata of\nthe disk.\nIf you do not provide an encryption key when creating the disk, then\nthe disk will be encrypted using an automatically generated key and\nyou do not need to provide a key to use the disk later.\nStructure is documented below.",
+        'diskEncryptionKey',
+        'Encrypts the disk using a customer-supplied encryption key.\nAfter you encrypt a disk with a customer-supplied key, you must\nprovide the same key if you use the disk later (e.g. to create a disk\nsnapshot or an image, or to attach the disk to a virtual machine).\nCustomer-supplied encryption keys do not protect access to metadata of\nthe disk.\nIf you do not provide an encryption key when creating the disk, then\nthe disk will be encrypted using an automatically generated key and\nyou do not need to provide a key to use the disk later.\nStructure is documented below.',
         () => compute_DiskDiskEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "sourceSnapshotEncryptionKey",
-        "The customer-supplied encryption key of the source snapshot. Required\nif the source snapshot is protected by a customer-supplied encryption\nkey.\nStructure is documented below.",
+        'sourceSnapshotEncryptionKey',
+        'The customer-supplied encryption key of the source snapshot. Required\nif the source snapshot is protected by a customer-supplied encryption\nkey.\nStructure is documented below.',
         () => compute_DiskSourceSnapshotEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "URL of the disk type resource describing which disk type to use to\ncreate the disk. Provide this when creating the disk.",
+        'type',
+        'URL of the disk type resource describing which disk type to use to\ncreate the disk. Provide this when creating the disk.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceDisk",
-        "The source disk used to create this disk. You can provide this as a partial or full URL to the resource.\nFor example, the following are valid values:\n* https://www.googleapis.com/compute/v1/projects/{project}/zones/{zone}/disks/{disk}\n* https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/disks/{disk}\n* projects/{project}/zones/{zone}/disks/{disk}\n* projects/{project}/regions/{region}/disks/{disk}\n* zones/{zone}/disks/{disk}\n* regions/{region}/disks/{disk}",
+        'sourceDisk',
+        'The source disk used to create this disk. You can provide this as a partial or full URL to the resource.\nFor example, the following are valid values:\n* https://www.googleapis.com/compute/v1/projects/{project}/zones/{zone}/disks/{disk}\n* https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/disks/{disk}\n* projects/{project}/zones/{zone}/disks/{disk}\n* projects/{project}/regions/{region}/disks/{disk}\n* zones/{zone}/disks/{disk}\n* regions/{region}/disks/{disk}',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "interface",
-        "Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI.\n\n> **Warning:** `interface` is deprecated and will be removed in a future major release. This field is no longer used and can be safely removed from your configurations; disk interfaces are automatically determined on attachment.",
+        'interface',
+        'Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI.\n\n> **Warning:** `interface` is deprecated and will be removed in a future major release. This field is no longer used and can be safely removed from your configurations; disk interfaces are automatically determined on attachment.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "physicalBlockSizeBytes",
+        'physicalBlockSizeBytes',
         "Physical block size of the persistent disk, in bytes. If not present\nin a request, a default value is used. Currently supported sizes\nare 4096 and 16384, other sizes may be added in the future.\nIf an unsupported value is requested, the error message will list\nthe supported values for the caller's project.",
         () => [],
         false,
@@ -561,39 +561,39 @@ to allow for updating the resource policy attached to the disk.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "multiWriter",
-        "Indicates whether or not the disk can be read/write attached to more than one instance.",
+        'multiWriter',
+        'Indicates whether or not the disk can be read/write attached to more than one instance.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zone",
-        "A reference to the zone where the disk resides.",
+        'zone',
+        'A reference to the zone where the disk resides.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "licenses",
-        "Any applicable license URI.",
+        'licenses',
+        'Any applicable license URI.',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "provisionedIops",
+        'provisionedIops',
         "Indicates how many IOPS must be provisioned for the disk.\nNote: Updating currently is only supported by hyperdisk skus without the need to delete and recreate the disk, hyperdisk\nallows for an update of IOPS every 4 hours. To update your hyperdisk more frequently, you'll need to manually delete and recreate it",
         () => [],
         false,
@@ -601,15 +601,15 @@ to allow for updating the resource policy attached to the disk.
       ),
       new DynamicUIProps(
         InputType.Object,
-        "asyncPrimaryDisk",
-        "A nested object resource\nStructure is documented below.",
+        'asyncPrimaryDisk',
+        'A nested object resource\nStructure is documented below.',
         () => compute_DiskAsyncPrimaryDisk_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "image",
+        'image',
         "The image from which to initialize this disk. This can be\none of: the image's `self_link`, `projects/{project}/global/images/{image}`,\n`projects/{project}/global/images/family/{family}`, `global/images/{image}`,\n`global/images/family/{family}`, `family/{family}`, `{project}/{family}`,\n`{project}/{image}`, `{family}`, or `{image}`. If referred by family, the\nimages names must include the family name. If they don't, use the\n[gcp.compute.Image data source](https://www.terraform.io/docs/providers/google/d/compute_image.html).\nFor instance, the image `centos-6-v20180104` includes its family name `centos-6`.\nThese images can be referred by family name here.",
         () => [],
         false,
@@ -617,15 +617,15 @@ to allow for updating the resource policy attached to the disk.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "guestOsFeatures",
-        "A list of features to enable on the guest operating system.\nApplicable only for bootable disks.\nStructure is documented below.",
+        'guestOsFeatures',
+        'A list of features to enable on the guest operating system.\nApplicable only for bootable disks.\nStructure is documented below.',
         () => compute_DiskGuestOsFeature_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "provisionedThroughput",
+        'provisionedThroughput',
         "Indicates how much Throughput must be provisioned for the disk.\nNote: Updating currently is only supported by hyperdisk skus without the need to delete and recreate the disk, hyperdisk\nallows for an update of Throughput every 4 hours. To update your hyperdisk more frequently, you'll need to manually delete and recreate it",
         () => [],
         false,
@@ -633,16 +633,16 @@ to allow for updating the resource policy attached to the disk.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableConfidentialCompute",
-        "Whether this disk is using confidential compute mode.\nNote: Only supported on hyperdisk skus, disk_encryption_key is required when setting to true",
+        'enableConfidentialCompute',
+        'Whether this disk is using confidential compute mode.\nNote: Only supported on hyperdisk skus, disk_encryption_key is required when setting to true',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -",
+        'name',
+        'Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\n\n- - -',
         () => [],
         false,
         true,

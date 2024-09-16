@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lex_V2modelsSlotTypeValueSelectionSettingRegexFilter {
   /*
@@ -18,7 +18,7 @@ export function lex_V2modelsSlotTypeValueSelectionSettingRegexFilter_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "pattern",
+      'pattern',
       'Used to validate the value of a slot. Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: A-Z, a-z, 0-9, Unicode characters ("\\\u2060u").\nRepresent Unicode characters with four digits, for example "\\\u2060u0041" or "\\\u2060u005A". The following regular expression operators are not supported: Infinite repeaters: *, +, or {x,} with no upper bound, wild card (.)',
       () => [],
       true,

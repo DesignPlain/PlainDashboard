@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_getDataSetPhysicalTableMapCustomSqlColumn,
   quicksight_getDataSetPhysicalTableMapCustomSqlColumn_GetTypes,
-} from "./quicksight_getDataSetPhysicalTableMapCustomSqlColumn";
+} from './quicksight_getDataSetPhysicalTableMapCustomSqlColumn';
 
 export interface quicksight_getDataSetPhysicalTableMapCustomSql {
   //
@@ -28,21 +28,21 @@ export function quicksight_getDataSetPhysicalTableMapCustomSql_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Array,
-      "columns",
-      "",
+      'columns',
+      '',
       () => quicksight_getDataSetPhysicalTableMapCustomSqlColumn_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dataSourceArn",
-      "",
+      'dataSourceArn',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "name", "", () => [], true, false),
-    new DynamicUIProps(InputType.String, "sqlQuery", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'name', '', () => [], true, false),
+    new DynamicUIProps(InputType.String, 'sqlQuery', '', () => [], true, false),
   ];
 }

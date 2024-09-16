@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInfo {
   // The logical grouping to which the "reason" belongs.
@@ -21,7 +21,7 @@ export function networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInf
   return [
     new DynamicUIProps(
       InputType.String,
-      "domain",
+      'domain',
       'The logical grouping to which the "reason" belongs.',
       () => [],
       false,
@@ -29,16 +29,16 @@ export function networkconnectivity_ServiceConnectionPolicyPscConnectionErrorInf
     ),
     new DynamicUIProps(
       InputType.Map,
-      "metadata",
-      "Additional structured details about this error.",
+      'metadata',
+      'Additional structured details about this error.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "reason",
-      "The reason of the error.",
+      'reason',
+      'The reason of the error.',
       () => [],
       false,
       false,

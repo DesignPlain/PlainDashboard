@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderAction,
   compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderAction_GetTypes,
-} from "./compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderAction";
+} from './compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderAction';
 
 export interface compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendService {
   /*
@@ -42,16 +42,16 @@ export function compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendServ
   return [
     new DynamicUIProps(
       InputType.String,
-      "backendService",
-      "The full or partial URL to the default BackendService resource. Before forwarding the\nrequest to backendService, the loadbalancer applies any relevant headerActions\nspecified as part of this backendServiceWeight.",
+      'backendService',
+      'The full or partial URL to the default BackendService resource. Before forwarding the\nrequest to backendService, the loadbalancer applies any relevant headerActions\nspecified as part of this backendServiceWeight.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "headerAction",
-      "Specifies changes to request and response headers that need to take effect for\nthe selected backendService.\nheaderAction specified here take effect before headerAction in the enclosing\nHttpRouteRule, PathMatcher and UrlMap.\nStructure is documented below.",
+      'headerAction',
+      'Specifies changes to request and response headers that need to take effect for\nthe selected backendService.\nheaderAction specified here take effect before headerAction in the enclosing\nHttpRouteRule, PathMatcher and UrlMap.\nStructure is documented below.',
       () =>
         compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderAction_GetTypes(),
       false,
@@ -59,7 +59,7 @@ export function compute_URLMapPathMatcherRouteRuleRouteActionWeightedBackendServ
     ),
     new DynamicUIProps(
       InputType.Number,
-      "weight",
+      'weight',
       "Specifies the fraction of traffic sent to backendService, computed as\nweight / (sum of all weightedBackendService weights in routeAction) .\nThe selection of a backend service is determined only for new traffic. Once a user's request\nhas been directed to a backendService, subsequent requests will be sent to the same backendService\nas determined by the BackendService's session affinity policy.\nThe value must be between 0 and 1000",
       () => [],
       true,

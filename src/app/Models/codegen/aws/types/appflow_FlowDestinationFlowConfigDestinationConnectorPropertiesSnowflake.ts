@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig';
 
 export interface appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflake {
   //
@@ -28,16 +28,16 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesS
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucketPrefix",
-      "",
+      'bucketPrefix',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "errorHandlingConfig",
-      "",
+      'errorHandlingConfig',
+      '',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfig_GetTypes(),
       false,
@@ -45,12 +45,12 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesS
     ),
     new DynamicUIProps(
       InputType.String,
-      "intermediateBucketName",
-      "",
+      'intermediateBucketName',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "object", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'object', '', () => [], true, false),
   ];
 }

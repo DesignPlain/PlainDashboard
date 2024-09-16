@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_NodePoolNodeConfigLocalNvmeSsdBlockConfig {
   // Number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size.
@@ -15,8 +15,8 @@ export function container_NodePoolNodeConfigLocalNvmeSsdBlockConfig_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Number,
-      "localSsdCount",
-      "Number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size.",
+      'localSsdCount',
+      'Number of raw-block local NVMe SSD disks to be attached to the node. Each local SSD is 375 GB in size.',
       () => [],
       true,
       true,

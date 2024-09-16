@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elasticbeanstalk_EnvironmentAllSetting,
   elasticbeanstalk_EnvironmentAllSetting_GetTypes,
-} from "../types/elasticbeanstalk_EnvironmentAllSetting";
+} from '../types/elasticbeanstalk_EnvironmentAllSetting';
 import {
   elasticbeanstalk_EnvironmentSetting,
   elasticbeanstalk_EnvironmentSetting_GetTypes,
-} from "../types/elasticbeanstalk_EnvironmentSetting";
+} from '../types/elasticbeanstalk_EnvironmentSetting';
 
 export interface EnvironmentArgs {
   /*
@@ -212,104 +212,104 @@ to be deployed
     return [
       new DynamicUIProps(
         InputType.String,
-        "templateName",
-        "The name of the Elastic Beanstalk Configuration\ntemplate to use in deployment",
+        'templateName',
+        'The name of the Elastic Beanstalk Configuration\ntemplate to use in deployment',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pollInterval",
-        "The time between polling the AWS API to\ncheck if changes have been applied. Use this to adjust the rate of API calls\nfor any `create` or `update` action. Minimum `10s`, maximum `180s`. Omit this to\nuse the default behavior, which is an exponential backoff",
+        'pollInterval',
+        'The time between polling the AWS API to\ncheck if changes have been applied. Use this to adjust the rate of API calls\nfor any `create` or `update` action. Minimum `10s`, maximum `180s`. Omit this to\nuse the default behavior, which is an exponential backoff',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A unique name for this Environment. This name is used\nin the application URL",
+        'name',
+        'A unique name for this Environment. This name is used\nin the application URL',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "platformArn",
-        "The [ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the Elastic Beanstalk [Platform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-platformarn)\nto use in deployment",
+        'platformArn',
+        'The [ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the Elastic Beanstalk [Platform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-platformarn)\nto use in deployment',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "settings",
-        "Option settings to configure the new Environment. These\noverride specific values that are set as defaults. The format is detailed\nbelow in Option Settings",
+        'settings',
+        'Option settings to configure the new Environment. These\noverride specific values that are set as defaults. The format is detailed\nbelow in Option Settings',
         () => elasticbeanstalk_EnvironmentSetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "application",
-        "Name of the application that contains the version\nto be deployed",
+        'application',
+        'Name of the application that contains the version\nto be deployed',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Short description of the Environment",
+        'description',
+        'Short description of the Environment',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cnamePrefix",
-        "Prefix to use for the fully qualified DNS name of\nthe Environment.",
+        'cnamePrefix',
+        'Prefix to use for the fully qualified DNS name of\nthe Environment.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "solutionStackName",
-        "A solution stack to base your environment\noff of. Example stacks can be found in the [Amazon API documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html)",
+        'solutionStackName',
+        'A solution stack to base your environment\noff of. Example stacks can be found in the [Amazon API documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A set of tags to apply to the Environment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A set of tags to apply to the Environment. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tier",
-        "Elastic Beanstalk Environment tier. Valid values are `Worker`\nor `WebServer`. If tier is left blank `WebServer` will be used.",
+        'tier',
+        'Elastic Beanstalk Environment tier. Valid values are `Worker`\nor `WebServer`. If tier is left blank `WebServer` will be used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "waitForReadyTimeout",
-        "The maximum\n[duration](https://golang.org/pkg/time/#ParseDuration) that this provider should\nwait for an Elastic Beanstalk Environment to be in a ready state before timing\nout.",
+        'waitForReadyTimeout',
+        'The maximum\n[duration](https://golang.org/pkg/time/#ParseDuration) that this provider should\nwait for an Elastic Beanstalk Environment to be in a ready state before timing\nout.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "version",
-        "The name of the Elastic Beanstalk Application Version\nto use in deployment.",
+        'version',
+        'The name of the Elastic Beanstalk Application Version\nto use in deployment.',
         () => [],
         false,
         false,

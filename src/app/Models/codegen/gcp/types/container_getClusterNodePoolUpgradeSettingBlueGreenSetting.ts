@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy,
   container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes,
-} from "./container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy";
+} from './container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy';
 
 export interface container_getClusterNodePoolUpgradeSettingBlueGreenSetting {
   // Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.
@@ -22,8 +22,8 @@ export function container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "standardRolloutPolicies",
-      "Standard rollout policy is the default policy for blue-green.",
+      'standardRolloutPolicies',
+      'Standard rollout policy is the default policy for blue-green.',
       () =>
         container_getClusterNodePoolUpgradeSettingBlueGreenSettingStandardRolloutPolicy_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function container_getClusterNodePoolUpgradeSettingBlueGreenSetting_GetTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "nodePoolSoakDuration",
-      "Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.",
+      'nodePoolSoakDuration',
+      'Time needed after draining entire blue pool. After this period, blue pool will be cleaned up.',
       () => [],
       true,
       false,

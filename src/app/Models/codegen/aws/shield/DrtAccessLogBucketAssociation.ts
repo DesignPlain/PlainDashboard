@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   shield_DrtAccessLogBucketAssociationTimeouts,
   shield_DrtAccessLogBucketAssociationTimeouts_GetTypes,
-} from "../types/shield_DrtAccessLogBucketAssociationTimeouts";
+} from '../types/shield_DrtAccessLogBucketAssociationTimeouts';
 
 export interface DrtAccessLogBucketAssociationArgs {
   // The Amazon S3 bucket that contains the logs that you want to share.
@@ -35,24 +35,24 @@ export class DrtAccessLogBucketAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "logBucket",
-        "The Amazon S3 bucket that contains the logs that you want to share.",
+        'logBucket',
+        'The Amazon S3 bucket that contains the logs that you want to share.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArnAssociationId",
-        "The ID of the Role Arn association used for allowing Shield DRT Access.",
+        'roleArnAssociationId',
+        'The ID of the Role Arn association used for allowing Shield DRT Access.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => shield_DrtAccessLogBucketAssociationTimeouts_GetTypes(),
         false,
         false,

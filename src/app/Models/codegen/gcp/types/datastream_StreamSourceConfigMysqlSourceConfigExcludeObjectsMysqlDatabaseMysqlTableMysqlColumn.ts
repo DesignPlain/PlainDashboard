@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumn {
   // The ordinal position of the column in the table.
@@ -39,56 +39,56 @@ export function datastream_StreamSourceConfigMysqlSourceConfigExcludeObjectsMysq
   return [
     new DynamicUIProps(
       InputType.Number,
-      "length",
-      "(Output)\nColumn length.",
+      'length',
+      '(Output)\nColumn length.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "nullable",
-      "Whether or not the column can accept a null value.",
+      'nullable',
+      'Whether or not the column can accept a null value.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "ordinalPosition",
-      "The ordinal position of the column in the table.",
+      'ordinalPosition',
+      'The ordinal position of the column in the table.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "primaryKey",
-      "Whether or not the column represents a primary key.",
+      'primaryKey',
+      'Whether or not the column represents a primary key.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "collation",
-      "Column collation.",
+      'collation',
+      'Column collation.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "column",
-      "Column name.",
+      'column',
+      'Column name.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dataType",
-      "The MySQL data type. Full data types list can be found here:\nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html",
+      'dataType',
+      'The MySQL data type. Full data types list can be found here:\nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html',
       () => [],
       false,
       false,

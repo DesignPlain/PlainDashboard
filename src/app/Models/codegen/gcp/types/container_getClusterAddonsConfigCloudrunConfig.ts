@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterAddonsConfigCloudrunConfig {
   //
@@ -18,12 +18,12 @@ export function container_getClusterAddonsConfigCloudrunConfig_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.String,
-      "loadBalancerType",
-      "",
+      'loadBalancerType',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "disabled", "", () => [], true, false),
+    new DynamicUIProps(InputType.Bool, 'disabled', '', () => [], true, false),
   ];
 }

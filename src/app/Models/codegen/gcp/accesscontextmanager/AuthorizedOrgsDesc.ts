@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface AuthorizedOrgsDescArgs {
   /*
@@ -129,7 +129,7 @@ Example: `organizations/123456`
     return [
       new DynamicUIProps(
         InputType.String,
-        "authorizationType",
+        'authorizationType',
         'A granular control type for authorization levels. Valid value is "AUTHORIZATION_TYPE_TRUST".\nPossible values are: `AUTHORIZATION_TYPE_TRUST`.',
         () => [],
         false,
@@ -137,31 +137,31 @@ Example: `organizations/123456`
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Resource name for the `AuthorizedOrgsDesc`. Format:\n`accessPolicies/{access_policy}/authorizedOrgsDescs/{authorized_orgs_desc}`.\nThe `authorized_orgs_desc` component must begin with a letter, followed by\nalphanumeric characters or `_`.\nAfter you create an `AuthorizedOrgsDesc`, you cannot change its `name`.\n\n\n- - -",
+        'name',
+        'Resource name for the `AuthorizedOrgsDesc`. Format:\n`accessPolicies/{access_policy}/authorizedOrgsDescs/{authorized_orgs_desc}`.\nThe `authorized_orgs_desc` component must begin with a letter, followed by\nalphanumeric characters or `_`.\nAfter you create an `AuthorizedOrgsDesc`, you cannot change its `name`.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "orgs",
-        "The list of organization ids in this AuthorizedOrgsDesc.\nFormat: `organizations/<org_number>`\nExample: `organizations/123456`",
+        'orgs',
+        'The list of organization ids in this AuthorizedOrgsDesc.\nFormat: `organizations/<org_number>`\nExample: `organizations/123456`',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parent",
-        "Required. Resource name for the access policy which owns this `AuthorizedOrgsDesc`.",
+        'parent',
+        'Required. Resource name for the access policy which owns this `AuthorizedOrgsDesc`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "assetType",
+        'assetType',
         'The type of entities that need to use the authorization relationship during\nevaluation, such as a device. Valid values are "ASSET_TYPE_DEVICE" and\n"ASSET_TYPE_CREDENTIAL_STRENGTH".\nPossible values are: `ASSET_TYPE_DEVICE`, `ASSET_TYPE_CREDENTIAL_STRENGTH`.',
         () => [],
         false,
@@ -169,7 +169,7 @@ Example: `organizations/123456`
       ),
       new DynamicUIProps(
         InputType.String,
-        "authorizationDirection",
+        'authorizationDirection',
         'The direction of the authorization relationship between this organization\nand the organizations listed in the "orgs" field. The valid values for this\nfield include the following:\nAUTHORIZATION_DIRECTION_FROM: Allows this organization to evaluate traffic\nin the organizations listed in the `orgs` field.\nAUTHORIZATION_DIRECTION_TO: Allows the organizations listed in the `orgs`\nfield to evaluate the traffic in this organization.\nFor the authorization relationship to take effect, all of the organizations\nmust authorize and specify the appropriate relationship direction. For\nexample, if organization A authorized organization B and C to evaluate its\ntraffic, by specifying "AUTHORIZATION_DIRECTION_TO" as the authorization\ndirection, organizations B and C must specify\n"AUTHORIZATION_DIRECTION_FROM" as the authorization direction in their\n"AuthorizedOrgsDesc" resource.\nPossible values are: `AUTHORIZATION_DIRECTION_TO`, `AUTHORIZATION_DIRECTION_FROM`.',
         () => [],
         false,

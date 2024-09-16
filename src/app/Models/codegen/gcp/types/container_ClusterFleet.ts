@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_ClusterFleet {
   // Full resource name of the registered fleet membership of the cluster.
@@ -27,15 +27,15 @@ export function container_ClusterFleet_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "membership",
-      "Full resource name of the registered fleet membership of the cluster.",
+      'membership',
+      'Full resource name of the registered fleet membership of the cluster.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "membershipId",
+      'membershipId',
       'Short name of the fleet membership, for example "member-1".',
       () => [],
       false,
@@ -43,7 +43,7 @@ export function container_ClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "membershipLocation",
+      'membershipLocation',
       'Location of the fleet membership, for example "us-central1".',
       () => [],
       false,
@@ -51,16 +51,16 @@ export function container_ClusterFleet_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "preRegistered",
-      "Whether the cluster has been registered via the fleet API.",
+      'preRegistered',
+      'Whether the cluster has been registered via the fleet API.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "project",
-      "The name of the Fleet host project where this cluster will be registered.",
+      'project',
+      'The name of the Fleet host project where this cluster will be registered.',
       () => [],
       false,
       false,

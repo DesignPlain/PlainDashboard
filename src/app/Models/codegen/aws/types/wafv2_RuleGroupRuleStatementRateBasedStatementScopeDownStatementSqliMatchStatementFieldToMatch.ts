@@ -3,56 +3,56 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArguments,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArguments_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArguments";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArguments';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeader,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeader_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeader";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeader';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryString,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryString_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryString";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryString';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeader,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeader_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeader";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeader';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPath,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPath_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPath";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPath';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBody,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBody_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBody";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBody';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookies,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookies_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookies";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookies';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBody,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBody_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBody";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBody';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgument,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgument_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgument";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgument';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrder,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrder_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrder";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrder';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3Fingerprint,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3Fingerprint_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3Fingerprint";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3Fingerprint';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethod,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethod_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethod";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethod';
 
 export interface wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatch {
   // Inspect a single query argument. See Single Query Argument below for details.
@@ -96,8 +96,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
   return [
     new DynamicUIProps(
       InputType.Object,
-      "jsonBody",
-      "Inspect the request body as JSON. See JSON Body for details.",
+      'jsonBody',
+      'Inspect the request body as JSON. See JSON Body for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBody_GetTypes(),
       false,
@@ -105,8 +105,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleQueryArgument",
-      "Inspect a single query argument. See Single Query Argument below for details.",
+      'singleQueryArgument',
+      'Inspect a single query argument. See Single Query Argument below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgument_GetTypes(),
       false,
@@ -114,8 +114,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headerOrders",
-      "Inspect the request headers. See Header Order below for details.",
+      'headerOrders',
+      'Inspect the request headers. See Header Order below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrder_GetTypes(),
       false,
@@ -123,8 +123,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headers",
-      "Inspect the request headers. See Headers below for details.",
+      'headers',
+      'Inspect the request headers. See Headers below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeader_GetTypes(),
       false,
@@ -132,8 +132,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "method",
-      "Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.",
+      'method',
+      'Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethod_GetTypes(),
       false,
@@ -141,8 +141,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleHeader",
-      "Inspect a single header. See Single Header below for details.",
+      'singleHeader',
+      'Inspect a single header. See Single Header below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeader_GetTypes(),
       false,
@@ -150,8 +150,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "uriPath",
-      "Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.",
+      'uriPath',
+      'Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPath_GetTypes(),
       false,
@@ -159,8 +159,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cookies",
-      "Inspect the cookies in the web request. See Cookies below for details.",
+      'cookies',
+      'Inspect the cookies in the web request. See Cookies below for details.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookies_GetTypes(),
       false,
@@ -168,8 +168,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ja3Fingerprint",
-      "",
+      'ja3Fingerprint',
+      '',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3Fingerprint_GetTypes(),
       false,
@@ -177,8 +177,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "queryString",
-      "Inspect the query string. This is the part of a URL that appears after a `?` character, if any.",
+      'queryString',
+      'Inspect the query string. This is the part of a URL that appears after a `?` character, if any.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryString_GetTypes(),
       false,
@@ -186,8 +186,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "allQueryArguments",
-      "Inspect all query arguments.",
+      'allQueryArguments',
+      'Inspect all query arguments.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArguments_GetTypes(),
       false,
@@ -195,8 +195,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Object,
-      "body",
-      "Inspect the request body, which immediately follows the request headers.",
+      'body',
+      'Inspect the request body, which immediately follows the request headers.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBody_GetTypes(),
       false,

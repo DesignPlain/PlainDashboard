@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   discoveryengine_ChatEngineChatEngineConfig,
   discoveryengine_ChatEngineChatEngineConfig_GetTypes,
-} from "../types/discoveryengine_ChatEngineChatEngineConfig";
+} from '../types/discoveryengine_ChatEngineChatEngineConfig';
 import {
   discoveryengine_ChatEngineCommonConfig,
   discoveryengine_ChatEngineCommonConfig_GetTypes,
-} from "../types/discoveryengine_ChatEngineCommonConfig";
+} from '../types/discoveryengine_ChatEngineCommonConfig';
 import {
   discoveryengine_ChatEngineChatEngineMetadata,
   discoveryengine_ChatEngineChatEngineMetadata_GetTypes,
-} from "../types/discoveryengine_ChatEngineChatEngineMetadata";
+} from '../types/discoveryengine_ChatEngineChatEngineMetadata';
 
 export interface ChatEngineArgs {
   /*
@@ -125,72 +125,72 @@ Possible values are: `GENERIC`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location.",
+        'location',
+        'Location.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "industryVertical",
-        "The industry vertical that the chat engine registers. Vertical on Engine has to match vertical of the DataStore linked to the engine.\nDefault value is `GENERIC`.\nPossible values are: `GENERIC`.",
+        'industryVertical',
+        'The industry vertical that the chat engine registers. Vertical on Engine has to match vertical of the DataStore linked to the engine.\nDefault value is `GENERIC`.\nPossible values are: `GENERIC`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "chatEngineConfig",
-        "Configurations for a chat Engine.\nStructure is documented below.",
+        'chatEngineConfig',
+        'Configurations for a chat Engine.\nStructure is documented below.',
         () => discoveryengine_ChatEngineChatEngineConfig_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "collectionId",
-        "The collection ID.",
+        'collectionId',
+        'The collection ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "dataStoreIds",
-        "The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.",
+        'dataStoreIds',
+        'The data stores associated with this engine. Multiple DataStores in the same Collection can be associated here. All listed DataStores must be `SOLUTION_TYPE_CHAT`. Adding or removing data stores will force recreation.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.",
+        'displayName',
+        'The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "engineId",
-        "The ID to use for chat engine.",
+        'engineId',
+        'The ID to use for chat engine.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "commonConfig",
-        "Common config spec that specifies the metadata of the engine.\nStructure is documented below.",
+        'commonConfig',
+        'Common config spec that specifies the metadata of the engine.\nStructure is documented below.',
         () => discoveryengine_ChatEngineCommonConfig_GetTypes(),
         false,
         true,

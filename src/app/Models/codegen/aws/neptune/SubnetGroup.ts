@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SubnetGroupArgs {
   // The name of the neptune subnet group. If omitted, this provider will assign a random, unique name.
@@ -49,7 +49,7 @@ export class SubnetGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
+        'description',
         'The description of the neptune subnet group. Defaults to "Managed by Pulumi".',
         () => [],
         false,
@@ -57,32 +57,32 @@ export class SubnetGroup extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the neptune subnet group. If omitted, this provider will assign a random, unique name.",
+        'name',
+        'The name of the neptune subnet group. If omitted, this provider will assign a random, unique name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "namePrefix",
-        "Creates a unique name beginning with the specified prefix. Conflicts with `name`.",
+        'namePrefix',
+        'Creates a unique name beginning with the specified prefix. Conflicts with `name`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnetIds",
-        "A list of VPC subnet IDs.",
+        'subnetIds',
+        'A list of VPC subnet IDs.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

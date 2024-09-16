@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EnvironmentEC2Args {
   // The description of the environment.
@@ -96,31 +96,31 @@ The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the environment.",
+        'description',
+        'The description of the environment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "connectionType",
-        "The connection type used for connecting to an Amazon EC2 environment. Valid values are `CONNECT_SSH` and `CONNECT_SSM`. For more information please refer [AWS documentation for Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html).",
+        'connectionType',
+        'The connection type used for connecting to an Amazon EC2 environment. Valid values are `CONNECT_SSH` and `CONNECT_SSM`. For more information please refer [AWS documentation for Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceType",
-        "The type of instance to connect to the environment, e.g., `t2.micro`.",
+        'instanceType',
+        'The type of instance to connect to the environment, e.g., `t2.micro`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ownerArn",
+        'ownerArn',
         "The ARN of the environment owner. This can be ARN of any AWS IAM principal. Defaults to the environment's creator.",
         () => [],
         false,
@@ -128,23 +128,23 @@ The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetId",
-        "The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.",
+        'subnetId',
+        'The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "automaticStopTimeMinutes",
-        "The number of minutes until the running instance is shut down after the environment has last been used.",
+        'automaticStopTimeMinutes',
+        'The number of minutes until the running instance is shut down after the environment has last been used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "imageId",
+        'imageId',
         "The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. Valid values are\n* `amazonlinux-2-x86_64`\n* `amazonlinux-2023-x86_64`\n* `ubuntu-18.04-x86_64`\n* `ubuntu-22.04-x86_64`\n* `resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64`\n* `resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64`\n* `resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64`\n* `resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64`",
         () => [],
         true,
@@ -152,16 +152,16 @@ The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the environment.",
+        'name',
+        'The name of the environment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

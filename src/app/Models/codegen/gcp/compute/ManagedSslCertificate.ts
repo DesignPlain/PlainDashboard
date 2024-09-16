@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_ManagedSslCertificateManaged,
   compute_ManagedSslCertificateManaged_GetTypes,
-} from "../types/compute_ManagedSslCertificateManaged";
+} from '../types/compute_ManagedSslCertificateManaged';
 
 export interface ManagedSslCertificateArgs {
   /*
@@ -109,48 +109,48 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "managed",
-        "Properties relevant to a managed certificate.  These will be used if the\ncertificate is managed (as indicated by a value of `MANAGED` in `type`).\nStructure is documented below.",
+        'managed',
+        'Properties relevant to a managed certificate.  These will be used if the\ncertificate is managed (as indicated by a value of `MANAGED` in `type`).\nStructure is documented below.',
         () => compute_ManagedSslCertificateManaged_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\nThese are in the same namespace as the managed SSL certificates.",
+        'name',
+        'Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.\n\nThese are in the same namespace as the managed SSL certificates.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Enum field whose value is always `MANAGED` - used to signal to the API\nwhich type this is.\nDefault value is `MANAGED`.\nPossible values are: `MANAGED`.",
+        'type',
+        'Enum field whose value is always `MANAGED` - used to signal to the API\nwhich type this is.\nDefault value is `MANAGED`.\nPossible values are: `MANAGED`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "certificateId",
-        "The unique identifier for the resource.",
+        'certificateId',
+        'The unique identifier for the resource.',
         () => [],
         false,
         false,

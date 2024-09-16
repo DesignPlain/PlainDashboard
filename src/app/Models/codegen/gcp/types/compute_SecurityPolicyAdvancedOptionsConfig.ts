@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig,
   compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig_GetTypes,
-} from "./compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig";
+} from './compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig';
 
 export interface compute_SecurityPolicyAdvancedOptionsConfig {
   // Whether or not to JSON parse the payload body. Defaults to `DISABLED`.
@@ -31,8 +31,8 @@ export function compute_SecurityPolicyAdvancedOptionsConfig_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Object,
-      "jsonCustomConfig",
-      "Custom configuration to apply the JSON parsing. Only applicable when\n`json_parsing` is set to `STANDARD`. Structure is documented below.",
+      'jsonCustomConfig',
+      'Custom configuration to apply the JSON parsing. Only applicable when\n`json_parsing` is set to `STANDARD`. Structure is documented below.',
       () =>
         compute_SecurityPolicyAdvancedOptionsConfigJsonCustomConfig_GetTypes(),
       false,
@@ -40,24 +40,24 @@ export function compute_SecurityPolicyAdvancedOptionsConfig_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.String,
-      "jsonParsing",
-      "Whether or not to JSON parse the payload body. Defaults to `DISABLED`.",
+      'jsonParsing',
+      'Whether or not to JSON parse the payload body. Defaults to `DISABLED`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "logLevel",
-      "Log level to use. Defaults to `NORMAL`.",
+      'logLevel',
+      'Log level to use. Defaults to `NORMAL`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "userIpRequestHeaders",
-      "An optional list of case-insensitive request header names to use for resolving the callers client IP address.",
+      'userIpRequestHeaders',
+      'An optional list of case-insensitive request header names to use for resolving the callers client IP address.',
       () => InputType_String_GetTypes(),
       false,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectId,
   certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectId_GetTypes,
-} from "./certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectId";
+} from './certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectId';
 
 export interface certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtension {
   /*
@@ -31,16 +31,16 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "critical",
-      "Indicates whether or not this extension is critical (i.e., if the client does not know how to\nhandle this extension, the client should consider this to be an error).",
+      'critical',
+      'Indicates whether or not this extension is critical (i.e., if the client does not know how to\nhandle this extension, the client should consider this to be an error).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "objectIds",
-      "Describes values that are relevant in a CA certificate.\nStructure is documented below.",
+      'objectIds',
+      'Describes values that are relevant in a CA certificate.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectId_GetTypes(),
       false,
@@ -48,8 +48,8 @@ export function certificateauthority_CertificateCertificateDescriptionX509Descri
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value of this X.509 extension. A base64-encoded string.",
+      'value',
+      'The value of this X.509 extension. A base64-encoded string.',
       () => [],
       false,
       false,

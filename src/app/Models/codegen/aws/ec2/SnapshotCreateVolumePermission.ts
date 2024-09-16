@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SnapshotCreateVolumePermissionArgs {
   // An AWS Account ID to add create volume permissions. The AWS Account cannot be the snapshot's owner
@@ -25,7 +25,7 @@ export class SnapshotCreateVolumePermission extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "accountId",
+        'accountId',
         "An AWS Account ID to add create volume permissions. The AWS Account cannot be the snapshot's owner",
         () => [],
         true,
@@ -33,8 +33,8 @@ export class SnapshotCreateVolumePermission extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "snapshotId",
-        "A snapshot ID",
+        'snapshotId',
+        'A snapshot ID',
         () => [],
         true,
         true,

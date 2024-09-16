@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ivschat_LoggingConfigurationDestinationConfiguration,
   ivschat_LoggingConfigurationDestinationConfiguration_GetTypes,
-} from "../types/ivschat_LoggingConfigurationDestinationConfiguration";
+} from '../types/ivschat_LoggingConfigurationDestinationConfiguration';
 
 export interface LoggingConfigurationArgs {
   // Object containing destination configuration for where chat activity will be logged. This object must contain exactly one of the following children arguments:
@@ -44,24 +44,24 @@ export class LoggingConfiguration extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "destinationConfiguration",
-        "Object containing destination configuration for where chat activity will be logged. This object must contain exactly one of the following children arguments:",
+        'destinationConfiguration',
+        'Object containing destination configuration for where chat activity will be logged. This object must contain exactly one of the following children arguments:',
         () => ivschat_LoggingConfigurationDestinationConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Logging Configuration name.",
+        'name',
+        'Logging Configuration name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

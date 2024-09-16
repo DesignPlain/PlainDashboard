@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServer,
   medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServer_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServer";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServer';
 
 export interface medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySetting {
   //
@@ -22,8 +22,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHl
   return [
     new DynamicUIProps(
       InputType.Object,
-      "keyProviderServer",
-      "",
+      'keyProviderServer',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServer_GetTypes(),
       false,
@@ -31,8 +31,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputGroupSettingsHl
     ),
     new DynamicUIProps(
       InputType.String,
-      "staticKeyValue",
-      "",
+      'staticKeyValue',
+      '',
       () => [],
       true,
       false,

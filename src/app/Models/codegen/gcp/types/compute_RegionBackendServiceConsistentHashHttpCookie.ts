@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionBackendServiceConsistentHashHttpCookieTtl,
   compute_RegionBackendServiceConsistentHashHttpCookieTtl_GetTypes,
-} from "./compute_RegionBackendServiceConsistentHashHttpCookieTtl";
+} from './compute_RegionBackendServiceConsistentHashHttpCookieTtl';
 
 export interface compute_RegionBackendServiceConsistentHashHttpCookie {
   // Name of the cookie.
@@ -28,24 +28,24 @@ export function compute_RegionBackendServiceConsistentHashHttpCookie_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the cookie.",
+      'name',
+      'Name of the cookie.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "Path to set for the cookie.",
+      'path',
+      'Path to set for the cookie.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ttl",
-      "Lifetime of the cookie.\nStructure is documented below.",
+      'ttl',
+      'Lifetime of the cookie.\nStructure is documented below.',
       () => compute_RegionBackendServiceConsistentHashHttpCookieTtl_GetTypes(),
       false,
       false,

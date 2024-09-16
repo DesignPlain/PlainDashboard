@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appmesh_RouteSpecHttp2RouteMatchHeaderMatchRange {
   // End of the range.
@@ -18,16 +18,16 @@ export function appmesh_RouteSpecHttp2RouteMatchHeaderMatchRange_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Number,
-      "end",
-      "End of the range.",
+      'end',
+      'End of the range.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "start",
-      "Start of the range.",
+      'start',
+      'Start of the range.',
       () => [],
       true,
       false,

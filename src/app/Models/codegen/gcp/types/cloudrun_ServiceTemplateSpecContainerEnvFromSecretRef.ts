@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference,
   cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference_GetTypes,
-} from "./cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference";
+} from './cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference';
 
 export interface cloudrun_ServiceTemplateSpecContainerEnvFromSecretRef {
   /*
@@ -25,8 +25,8 @@ export function cloudrun_ServiceTemplateSpecContainerEnvFromSecretRef_GetTypes()
   return [
     new DynamicUIProps(
       InputType.Object,
-      "localObjectReference",
-      "The Secret to select from.\nStructure is documented below.",
+      'localObjectReference',
+      'The Secret to select from.\nStructure is documented below.',
       () =>
         cloudrun_ServiceTemplateSpecContainerEnvFromSecretRefLocalObjectReference_GetTypes(),
       false,
@@ -34,8 +34,8 @@ export function cloudrun_ServiceTemplateSpecContainerEnvFromSecretRef_GetTypes()
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "optional",
-      "Specify whether the Secret must be defined",
+      'optional',
+      'Specify whether the Secret must be defined',
       () => [],
       false,
       false,

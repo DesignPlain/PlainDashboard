@@ -3,56 +3,56 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sql_DatabaseInstanceSettingsSqlServerAuditConfig,
   sql_DatabaseInstanceSettingsSqlServerAuditConfig_GetTypes,
-} from "./sql_DatabaseInstanceSettingsSqlServerAuditConfig";
+} from './sql_DatabaseInstanceSettingsSqlServerAuditConfig';
 import {
   sql_DatabaseInstanceSettingsIpConfiguration,
   sql_DatabaseInstanceSettingsIpConfiguration_GetTypes,
-} from "./sql_DatabaseInstanceSettingsIpConfiguration";
+} from './sql_DatabaseInstanceSettingsIpConfiguration';
 import {
   sql_DatabaseInstanceSettingsMaintenanceWindow,
   sql_DatabaseInstanceSettingsMaintenanceWindow_GetTypes,
-} from "./sql_DatabaseInstanceSettingsMaintenanceWindow";
+} from './sql_DatabaseInstanceSettingsMaintenanceWindow';
 import {
   sql_DatabaseInstanceSettingsLocationPreference,
   sql_DatabaseInstanceSettingsLocationPreference_GetTypes,
-} from "./sql_DatabaseInstanceSettingsLocationPreference";
+} from './sql_DatabaseInstanceSettingsLocationPreference';
 import {
   sql_DatabaseInstanceSettingsBackupConfiguration,
   sql_DatabaseInstanceSettingsBackupConfiguration_GetTypes,
-} from "./sql_DatabaseInstanceSettingsBackupConfiguration";
+} from './sql_DatabaseInstanceSettingsBackupConfiguration';
 import {
   sql_DatabaseInstanceSettingsDenyMaintenancePeriod,
   sql_DatabaseInstanceSettingsDenyMaintenancePeriod_GetTypes,
-} from "./sql_DatabaseInstanceSettingsDenyMaintenancePeriod";
+} from './sql_DatabaseInstanceSettingsDenyMaintenancePeriod';
 import {
   sql_DatabaseInstanceSettingsActiveDirectoryConfig,
   sql_DatabaseInstanceSettingsActiveDirectoryConfig_GetTypes,
-} from "./sql_DatabaseInstanceSettingsActiveDirectoryConfig";
+} from './sql_DatabaseInstanceSettingsActiveDirectoryConfig';
 import {
   sql_DatabaseInstanceSettingsAdvancedMachineFeatures,
   sql_DatabaseInstanceSettingsAdvancedMachineFeatures_GetTypes,
-} from "./sql_DatabaseInstanceSettingsAdvancedMachineFeatures";
+} from './sql_DatabaseInstanceSettingsAdvancedMachineFeatures';
 import {
   sql_DatabaseInstanceSettingsInsightsConfig,
   sql_DatabaseInstanceSettingsInsightsConfig_GetTypes,
-} from "./sql_DatabaseInstanceSettingsInsightsConfig";
+} from './sql_DatabaseInstanceSettingsInsightsConfig';
 import {
   sql_DatabaseInstanceSettingsDataCacheConfig,
   sql_DatabaseInstanceSettingsDataCacheConfig_GetTypes,
-} from "./sql_DatabaseInstanceSettingsDataCacheConfig";
+} from './sql_DatabaseInstanceSettingsDataCacheConfig';
 import {
   sql_DatabaseInstanceSettingsDatabaseFlag,
   sql_DatabaseInstanceSettingsDatabaseFlag_GetTypes,
-} from "./sql_DatabaseInstanceSettingsDatabaseFlag";
+} from './sql_DatabaseInstanceSettingsDatabaseFlag';
 import {
   sql_DatabaseInstanceSettingsPasswordValidationPolicy,
   sql_DatabaseInstanceSettingsPasswordValidationPolicy_GetTypes,
-} from "./sql_DatabaseInstanceSettingsPasswordValidationPolicy";
+} from './sql_DatabaseInstanceSettingsPasswordValidationPolicy';
 
 export interface sql_DatabaseInstanceSettings {
   // The name of server instance collation.
@@ -155,111 +155,111 @@ export function sql_DatabaseInstanceSettings_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "locationPreference",
-      "",
+      'locationPreference',
+      '',
       () => sql_DatabaseInstanceSettingsLocationPreference_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "deletionProtectionEnabled",
-      "Configuration to protect against accidental instance deletion.",
+      'deletionProtectionEnabled',
+      'Configuration to protect against accidental instance deletion.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "insightsConfig",
-      "Configuration of Query Insights.",
+      'insightsConfig',
+      'Configuration of Query Insights.',
       () => sql_DatabaseInstanceSettingsInsightsConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ipConfiguration",
-      "",
+      'ipConfiguration',
+      '',
       () => sql_DatabaseInstanceSettingsIpConfiguration_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "passwordValidationPolicy",
-      "",
+      'passwordValidationPolicy',
+      '',
       () => sql_DatabaseInstanceSettingsPasswordValidationPolicy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "denyMaintenancePeriod",
-      "",
+      'denyMaintenancePeriod',
+      '',
       () => sql_DatabaseInstanceSettingsDenyMaintenancePeriod_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "timeZone",
-      "The time_zone to be used by the database engine (supported only for SQL Server), in SQL Server timezone format.",
+      'timeZone',
+      'The time_zone to be used by the database engine (supported only for SQL Server), in SQL Server timezone format.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dataCacheConfig",
-      "Data cache configurations.",
+      'dataCacheConfig',
+      'Data cache configurations.',
       () => sql_DatabaseInstanceSettingsDataCacheConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "diskAutoresize",
-      "Enables auto-resizing of the storage size. Defaults to `true`.",
+      'diskAutoresize',
+      'Enables auto-resizing of the storage size. Defaults to `true`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "edition",
-      "The edition of the instance, can be `ENTERPRISE` or `ENTERPRISE_PLUS`.",
+      'edition',
+      'The edition of the instance, can be `ENTERPRISE` or `ENTERPRISE_PLUS`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "collation",
-      "The name of server instance collation.",
+      'collation',
+      'The name of server instance collation.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "backupConfiguration",
-      "",
+      'backupConfiguration',
+      '',
       () => sql_DatabaseInstanceSettingsBackupConfiguration_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "advancedMachineFeatures",
-      "",
+      'advancedMachineFeatures',
+      '',
       () => sql_DatabaseInstanceSettingsAdvancedMachineFeatures_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "availabilityType",
+      'availabilityType',
       "The availability type of the Cloud SQL\ninstance, high availability (`REGIONAL`) or single zone (`ZONAL`).' For all instances, ensure that\n`settings.backup_configuration.enabled` is set to `true`.\nFor MySQL instances, ensure that `settings.backup_configuration.binary_log_enabled` is set to `true`.\nFor Postgres and SQL Server instances, ensure that `settings.backup_configuration.point_in_time_recovery_enabled`\nis set to `true`. Defaults to `ZONAL`.",
       () => [],
       false,
@@ -267,104 +267,104 @@ export function sql_DatabaseInstanceSettings_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "connectorEnforcement",
-      "Specifies if connections must use Cloud SQL connectors.",
+      'connectorEnforcement',
+      'Specifies if connections must use Cloud SQL connectors.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "userLabels",
-      "A set of key/value user label pairs to assign to the instance.",
+      'userLabels',
+      'A set of key/value user label pairs to assign to the instance.',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "pricingPlan",
-      "Pricing plan for this instance, can only be `PER_USE`.",
+      'pricingPlan',
+      'Pricing plan for this instance, can only be `PER_USE`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "diskAutoresizeLimit",
-      "The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.",
+      'diskAutoresizeLimit',
+      'The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "activeDirectoryConfig",
-      "",
+      'activeDirectoryConfig',
+      '',
       () => sql_DatabaseInstanceSettingsActiveDirectoryConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "activationPolicy",
-      "This specifies when the instance should be\nactive. Can be either `ALWAYS`, `NEVER` or `ON_DEMAND`.",
+      'activationPolicy',
+      'This specifies when the instance should be\nactive. Can be either `ALWAYS`, `NEVER` or `ON_DEMAND`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "databaseFlags",
-      "",
+      'databaseFlags',
+      '',
       () => sql_DatabaseInstanceSettingsDatabaseFlag_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "diskType",
-      "The type of data disk: PD_SSD or PD_HDD. Defaults to `PD_SSD`.",
+      'diskType',
+      'The type of data disk: PD_SSD or PD_HDD. Defaults to `PD_SSD`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sqlServerAuditConfig",
-      "",
+      'sqlServerAuditConfig',
+      '',
       () => sql_DatabaseInstanceSettingsSqlServerAuditConfig_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tier",
-      "The machine type to use. See [tiers](https://cloud.google.com/sql/docs/admin-api/v1beta4/tiers)\nfor more details and supported versions. Postgres supports only shared-core machine types,\nand custom machine types such as `db-custom-2-13312`. See the [Custom Machine Type Documentation](https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type#create) to learn about specifying custom machine types.",
+      'tier',
+      'The machine type to use. See [tiers](https://cloud.google.com/sql/docs/admin-api/v1beta4/tiers)\nfor more details and supported versions. Postgres supports only shared-core machine types,\nand custom machine types such as `db-custom-2-13312`. See the [Custom Machine Type Documentation](https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type#create) to learn about specifying custom machine types.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "maintenanceWindow",
-      "Declares a one-hour maintenance window when an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time.",
+      'maintenanceWindow',
+      'Declares a one-hour maintenance window when an Instance can automatically restart to apply updates. The maintenance window is specified in UTC time.',
       () => sql_DatabaseInstanceSettingsMaintenanceWindow_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "diskSize",
-      "The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased. The minimum value is 10GB.",
+      'diskSize',
+      'The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased. The minimum value is 10GB.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "version",
-      "Used to make sure changes to the settings block are atomic.",
+      'version',
+      'Used to make sure changes to the settings block are atomic.',
       () => [],
       false,
       false,

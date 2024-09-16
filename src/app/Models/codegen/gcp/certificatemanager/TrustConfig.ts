@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificatemanager_TrustConfigTrustStore,
   certificatemanager_TrustConfigTrustStore_GetTypes,
-} from "../types/certificatemanager_TrustConfigTrustStore";
+} from '../types/certificatemanager_TrustConfigTrustStore';
 
 export interface TrustConfigArgs {
   /*
@@ -108,48 +108,48 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The trust config location.\n\n\n- - -",
+        'location',
+        'The trust config location.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A user-defined name of the trust config. Trust config names must be unique globally.",
+        'name',
+        'A user-defined name of the trust config. Trust config names must be unique globally.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "trustStores",
-        "Set of trust stores to perform validation against.\nThis field is supported when TrustConfig is configured with Load Balancers, currently not supported for SPIFFE certificate validation.\nStructure is documented below.",
+        'trustStores',
+        'Set of trust stores to perform validation against.\nThis field is supported when TrustConfig is configured with Load Balancers, currently not supported for SPIFFE certificate validation.\nStructure is documented below.',
         () => certificatemanager_TrustConfigTrustStore_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "One or more paragraphs of text description of a trust config.",
+        'description',
+        'One or more paragraphs of text description of a trust config.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Set of label tags associated with the trust config.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Set of label tags associated with the trust config.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,

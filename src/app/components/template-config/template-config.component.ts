@@ -15,7 +15,7 @@ export class TemplateConfigComponent {
   constructor(
     private _modalDialogService: ModalDialogService,
     // private _stackService: StackService,
-    private _applicationStateService: ApplicationStateService
+    private _applicationStateService: ApplicationStateService,
   ) {
     // this.get();
   }
@@ -44,7 +44,7 @@ export class TemplateConfigComponent {
     this._applicationStateService.addTemplate(
       this.t_name,
       this.t_desc,
-      this.t_details
+      this.t_details,
     );
 
     this.closeModal();

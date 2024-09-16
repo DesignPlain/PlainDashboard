@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAll,
   wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAll_GetTypes,
-} from "./wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAll";
+} from './wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAll';
 
 export interface wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPattern {
   // An empty configuration block that is used for inspecting all headers.
@@ -22,8 +22,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
   return [
     new DynamicUIProps(
       InputType.Object,
-      "all",
-      "An empty configuration block that is used for inspecting all headers.",
+      'all',
+      'An empty configuration block that is used for inspecting all headers.',
       () =>
         wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAll_GetTypes(),
       false,
@@ -31,8 +31,8 @@ export function wafv2_RuleGroupRuleStatementRateBasedStatementScopeDownStatement
     ),
     new DynamicUIProps(
       InputType.Array,
-      "includedPaths",
-      "",
+      'includedPaths',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,

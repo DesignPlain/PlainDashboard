@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   imagebuilder_ContainerRecipeComponent,
   imagebuilder_ContainerRecipeComponent_GetTypes,
-} from "../types/imagebuilder_ContainerRecipeComponent";
+} from '../types/imagebuilder_ContainerRecipeComponent';
 import {
   imagebuilder_ContainerRecipeInstanceConfiguration,
   imagebuilder_ContainerRecipeInstanceConfiguration_GetTypes,
-} from "../types/imagebuilder_ContainerRecipeInstanceConfiguration";
+} from '../types/imagebuilder_ContainerRecipeInstanceConfiguration';
 import {
   imagebuilder_ContainerRecipeTargetRepository,
   imagebuilder_ContainerRecipeTargetRepository_GetTypes,
-} from "../types/imagebuilder_ContainerRecipeTargetRepository";
+} from '../types/imagebuilder_ContainerRecipeTargetRepository';
 
 export interface ContainerRecipeArgs {
   // Ordered configuration block(s) with components for the container recipe. Detailed below.
@@ -135,112 +135,112 @@ The following attributes are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
-        "The KMS key used to encrypt the container image.",
+        'kmsKeyId',
+        'The KMS key used to encrypt the container image.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "instanceConfiguration",
-        "Configuration block used to configure an instance for building and testing container images. Detailed below.",
+        'instanceConfiguration',
+        'Configuration block used to configure an instance for building and testing container images. Detailed below.',
         () => imagebuilder_ContainerRecipeInstanceConfiguration_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dockerfileTemplateUri",
-        "The Amazon S3 URI for the Dockerfile that will be used to build the container image.",
+        'dockerfileTemplateUri',
+        'The Amazon S3 URI for the Dockerfile that will be used to build the container image.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "platformOverride",
-        "Specifies the operating system platform when you use a custom base image.",
+        'platformOverride',
+        'Specifies the operating system platform when you use a custom base image.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "targetRepository",
-        "The destination repository for the container image. Detailed below.",
+        'targetRepository',
+        'The destination repository for the container image. Detailed below.',
         () => imagebuilder_ContainerRecipeTargetRepository_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workingDirectory",
-        "The working directory to be used during build and test workflows.",
+        'workingDirectory',
+        'The working directory to be used during build and test workflows.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags for the container recipe. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags for the container recipe. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "version",
-        "Version of the container recipe.\n\nThe following attributes are optional:",
+        'version',
+        'Version of the container recipe.\n\nThe following attributes are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the container recipe.",
+        'description',
+        'The description of the container recipe.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parentImage",
-        "The base image for the container recipe.",
+        'parentImage',
+        'The base image for the container recipe.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "components",
-        "Ordered configuration block(s) with components for the container recipe. Detailed below.",
+        'components',
+        'Ordered configuration block(s) with components for the container recipe. Detailed below.',
         () => imagebuilder_ContainerRecipeComponent_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "containerType",
-        "The type of the container to create. Valid values: `DOCKER`.",
+        'containerType',
+        'The type of the container to create. Valid values: `DOCKER`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dockerfileTemplateData",
-        "The Dockerfile template used to build the image as an inline data blob.",
+        'dockerfileTemplateData',
+        'The Dockerfile template used to build the image as an inline data blob.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the container recipe.",
+        'name',
+        'The name of the container recipe.',
         () => [],
         false,
         true,

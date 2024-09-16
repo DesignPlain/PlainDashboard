@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface IdentityPoolProviderPrincipalTagArgs {
   // use default (username and clientID) attribute mappings.
@@ -37,32 +37,32 @@ export class IdentityPoolProviderPrincipalTag extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "useDefaults",
-        "use default (username and clientID) attribute mappings.",
+        'useDefaults',
+        'use default (username and clientID) attribute mappings.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identityPoolId",
-        "An identity pool ID.",
+        'identityPoolId',
+        'An identity pool ID.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identityProviderName",
-        "The name of the identity provider.",
+        'identityProviderName',
+        'The name of the identity provider.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "principalTags",
-        "String to string map of variables.",
+        'principalTags',
+        'String to string map of variables.',
         () => InputType_Map_GetTypes(),
         false,
         false,

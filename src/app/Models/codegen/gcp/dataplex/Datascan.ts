@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataplex_DatascanDataQualitySpec,
   dataplex_DatascanDataQualitySpec_GetTypes,
-} from "../types/dataplex_DatascanDataQualitySpec";
+} from '../types/dataplex_DatascanDataQualitySpec';
 import {
   dataplex_DatascanData,
   dataplex_DatascanData_GetTypes,
-} from "../types/dataplex_DatascanData";
+} from '../types/dataplex_DatascanData';
 import {
   dataplex_DatascanDataProfileSpec,
   dataplex_DatascanDataProfileSpec_GetTypes,
-} from "../types/dataplex_DatascanDataProfileSpec";
+} from '../types/dataplex_DatascanDataProfileSpec';
 import {
   dataplex_DatascanExecutionSpec,
   dataplex_DatascanExecutionSpec_GetTypes,
-} from "../types/dataplex_DatascanExecutionSpec";
+} from '../types/dataplex_DatascanExecutionSpec';
 import {
   dataplex_DatascanExecutionStatus,
   dataplex_DatascanExecutionStatus_GetTypes,
-} from "../types/dataplex_DatascanExecutionStatus";
+} from '../types/dataplex_DatascanExecutionStatus';
 
 export interface DatascanArgs {
   /*
@@ -178,80 +178,80 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "executionSpec",
-        "DataScan execution settings.\nStructure is documented below.",
+        'executionSpec',
+        'DataScan execution settings.\nStructure is documented below.',
         () => dataplex_DatascanExecutionSpec_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location where the data scan should reside.",
+        'location',
+        'The location where the data scan should reside.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the rule.\nThe maximum length is 1,024 characters.",
+        'description',
+        'Description of the rule.\nThe maximum length is 1,024 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "data",
-        "The data source for DataScan.\nStructure is documented below.",
+        'data',
+        'The data source for DataScan.\nStructure is documented below.',
         () => dataplex_DatascanData_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dataProfileSpec",
-        "DataProfileScan related setting.\nStructure is documented below.",
+        'dataProfileSpec',
+        'DataProfileScan related setting.\nStructure is documented below.',
         () => dataplex_DatascanDataProfileSpec_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataScanId",
-        "DataScan identifier. Must contain only lowercase letters, numbers and hyphens. Must start with a letter. Must end with a number or a letter.",
+        'dataScanId',
+        'DataScan identifier. Must contain only lowercase letters, numbers and hyphens. Must start with a letter. Must end with a number or a letter.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "User friendly display name.",
+        'displayName',
+        'User friendly display name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dataQualitySpec",
-        "DataQualityScan related setting.\nStructure is documented below.",
+        'dataQualitySpec',
+        'DataQualityScan related setting.\nStructure is documented below.',
         () => dataplex_DatascanDataQualitySpec_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-defined labels for the scan. A list of key->value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-defined labels for the scan. A list of key->value pairs.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,

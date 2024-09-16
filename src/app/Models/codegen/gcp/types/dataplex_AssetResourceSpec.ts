@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataplex_AssetResourceSpec {
   // Immutable. Relative name of the cloud resource that contains the data that is being managed within a lake. For example: `projects/{project_number}/buckets/{bucket_id}` `projects/{project_number}/datasets/{dataset_id}`
@@ -25,24 +25,24 @@ export function dataplex_AssetResourceSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Immutable. Relative name of the cloud resource that contains the data that is being managed within a lake. For example: `projects/{project_number}/buckets/{bucket_id}` `projects/{project_number}/datasets/{dataset_id}`",
+      'name',
+      'Immutable. Relative name of the cloud resource that contains the data that is being managed within a lake. For example: `projects/{project_number}/buckets/{bucket_id}` `projects/{project_number}/datasets/{dataset_id}`',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "readAccessMode",
-      "Optional. Determines how read permissions are handled for each asset and their associated tables. Only available to storage buckets assets. Possible values: DIRECT, MANAGED",
+      'readAccessMode',
+      'Optional. Determines how read permissions are handled for each asset and their associated tables. Only available to storage buckets assets. Possible values: DIRECT, MANAGED',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Required. Immutable. Type of resource. Possible values: STORAGE_BUCKET, BIGQUERY_DATASET\n\n- - -",
+      'type',
+      'Required. Immutable. Type of resource. Possible values: STORAGE_BUCKET, BIGQUERY_DATASET\n\n- - -',
       () => [],
       true,
       true,

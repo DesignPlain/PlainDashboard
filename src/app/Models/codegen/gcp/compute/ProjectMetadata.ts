@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ProjectMetadataArgs {
   /*
@@ -39,16 +39,16 @@ is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "metadata",
-        "A series of key value pairs.\n\n- - -",
+        'metadata',
+        'A series of key value pairs.\n\n- - -',
         () => InputType_Map_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used.',
         () => [],
         false,
         true,

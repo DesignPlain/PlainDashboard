@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   clouddomains_RegistrationContactSettings,
   clouddomains_RegistrationContactSettings_GetTypes,
-} from "../types/clouddomains_RegistrationContactSettings";
+} from '../types/clouddomains_RegistrationContactSettings';
 import {
   clouddomains_RegistrationDnsSettings,
   clouddomains_RegistrationDnsSettings_GetTypes,
-} from "../types/clouddomains_RegistrationDnsSettings";
+} from '../types/clouddomains_RegistrationDnsSettings';
 import {
   clouddomains_RegistrationManagementSettings,
   clouddomains_RegistrationManagementSettings_GetTypes,
-} from "../types/clouddomains_RegistrationManagementSettings";
+} from '../types/clouddomains_RegistrationManagementSettings';
 import {
   clouddomains_RegistrationYearlyPrice,
   clouddomains_RegistrationYearlyPrice_GetTypes,
-} from "../types/clouddomains_RegistrationYearlyPrice";
+} from '../types/clouddomains_RegistrationYearlyPrice';
 
 export interface RegistrationArgs {
   // The list of domain notices that you acknowledge. Possible value is HSTS_PRELOADED
@@ -159,80 +159,80 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Array,
-        "contactNotices",
-        "The list of contact notices that the caller acknowledges. Possible value is PUBLIC_CONTACT_DATA_ACKNOWLEDGEMENT",
+        'contactNotices',
+        'The list of contact notices that the caller acknowledges. Possible value is PUBLIC_CONTACT_DATA_ACKNOWLEDGEMENT',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "managementSettings",
-        "Settings for management of the Registration, including renewal, billing, and transfer\nStructure is documented below.",
+        'managementSettings',
+        'Settings for management of the Registration, including renewal, billing, and transfer\nStructure is documented below.',
         () => clouddomains_RegistrationManagementSettings_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "domainNotices",
-        "The list of domain notices that you acknowledge. Possible value is HSTS_PRELOADED",
+        'domainNotices',
+        'The list of domain notices that you acknowledge. Possible value is HSTS_PRELOADED',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Set of labels associated with the Registration.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Set of labels associated with the Registration.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "yearlyPrice",
-        "Required. Yearly price to register or renew the domain. The value that should be put here can be obtained from\nregistrations.retrieveRegisterParameters or registrations.searchDomains calls.\nStructure is documented below.",
+        'yearlyPrice',
+        'Required. Yearly price to register or renew the domain. The value that should be put here can be obtained from\nregistrations.retrieveRegisterParameters or registrations.searchDomains calls.\nStructure is documented below.',
         () => clouddomains_RegistrationYearlyPrice_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "contactSettings",
-        "Required. Settings for contact information linked to the Registration.\nStructure is documented below.",
+        'contactSettings',
+        'Required. Settings for contact information linked to the Registration.\nStructure is documented below.',
         () => clouddomains_RegistrationContactSettings_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "dnsSettings",
-        "Settings controlling the DNS configuration of the Registration.\nStructure is documented below.",
+        'dnsSettings',
+        'Settings controlling the DNS configuration of the Registration.\nStructure is documented below.',
         () => clouddomains_RegistrationDnsSettings_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "Required. The domain name. Unicode domain names must be expressed in Punycode format.",
+        'domainName',
+        'Required. The domain name. Unicode domain names must be expressed in Punycode format.',
         () => [],
         true,
         true,

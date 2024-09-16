@@ -3,41 +3,41 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   eks_ClusterEncryptionConfig,
   eks_ClusterEncryptionConfig_GetTypes,
-} from "../types/eks_ClusterEncryptionConfig";
+} from '../types/eks_ClusterEncryptionConfig';
 import {
   eks_ClusterKubernetesNetworkConfig,
   eks_ClusterKubernetesNetworkConfig_GetTypes,
-} from "../types/eks_ClusterKubernetesNetworkConfig";
+} from '../types/eks_ClusterKubernetesNetworkConfig';
 import {
   eks_ClusterCertificateAuthority,
   eks_ClusterCertificateAuthority_GetTypes,
-} from "../types/eks_ClusterCertificateAuthority";
+} from '../types/eks_ClusterCertificateAuthority';
 import {
   eks_ClusterIdentity,
   eks_ClusterIdentity_GetTypes,
-} from "../types/eks_ClusterIdentity";
+} from '../types/eks_ClusterIdentity';
 import {
   eks_ClusterVpcConfig,
   eks_ClusterVpcConfig_GetTypes,
-} from "../types/eks_ClusterVpcConfig";
+} from '../types/eks_ClusterVpcConfig';
 import {
   eks_ClusterOutpostConfig,
   eks_ClusterOutpostConfig_GetTypes,
-} from "../types/eks_ClusterOutpostConfig";
+} from '../types/eks_ClusterOutpostConfig';
 import {
   eks_ClusterUpgradePolicy,
   eks_ClusterUpgradePolicy_GetTypes,
-} from "../types/eks_ClusterUpgradePolicy";
+} from '../types/eks_ClusterUpgradePolicy';
 import {
   eks_ClusterAccessConfig,
   eks_ClusterAccessConfig_GetTypes,
-} from "../types/eks_ClusterAccessConfig";
+} from '../types/eks_ClusterAccessConfig';
 
 export interface ClusterArgs {
   /*
@@ -161,31 +161,31 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the cluster. Must be between 1-100 characters in length. Must begin with an alphanumeric character, and must only contain alphanumeric characters, dashes and underscores (`^[0-9A-Za-z][A-Za-z0-9\\-_]*$`).",
+        'name',
+        'Name of the cluster. Must be between 1-100 characters in length. Must begin with an alphanumeric character, and must only contain alphanumeric characters, dashes and underscores (`^[0-9A-Za-z][A-Za-z0-9\\-_]*$`).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "enabledClusterLogTypes",
-        "List of the desired control plane logging to enable. For more information, see [Amazon EKS Control Plane Logging](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).",
+        'enabledClusterLogTypes',
+        'List of the desired control plane logging to enable. For more information, see [Amazon EKS Control Plane Logging](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "outpostConfig",
+        'outpostConfig',
         "Configuration block representing the configuration of your local Amazon EKS cluster on an AWS Outpost. This block isn't available for creating Amazon EKS clusters on the AWS cloud.",
         () => eks_ClusterOutpostConfig_GetTypes(),
         false,
@@ -193,72 +193,72 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.Array,
-        "defaultAddonsToRemoves",
-        "",
+        'defaultAddonsToRemoves',
+        '',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "ARN of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf. Ensure the resource configuration includes explicit dependencies on the IAM Role permissions by adding `depends_on` if using the `aws.iam.RolePolicy` resource or `aws.iam.RolePolicyAttachment` resource, otherwise EKS cannot delete EKS managed EC2 infrastructure such as Security Groups on EKS Cluster deletion.",
+        'roleArn',
+        'ARN of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf. Ensure the resource configuration includes explicit dependencies on the IAM Role permissions by adding `depends_on` if using the `aws.iam.RolePolicy` resource or `aws.iam.RolePolicyAttachment` resource, otherwise EKS cannot delete EKS managed EC2 infrastructure such as Security Groups on EKS Cluster deletion.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "upgradePolicy",
-        "Configuration block for the support policy to use for the cluster.  See upgrade_policy for details.",
+        'upgradePolicy',
+        'Configuration block for the support policy to use for the cluster.  See upgrade_policy for details.',
         () => eks_ClusterUpgradePolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "version",
-        "Desired Kubernetes master version. If you do not specify a value, the latest available version at resource creation is used and no upgrades will occur except those automatically triggered by EKS. The value must be configured and increased to upgrade the version when desired. Downgrades are not supported by EKS.",
+        'version',
+        'Desired Kubernetes master version. If you do not specify a value, the latest available version at resource creation is used and no upgrades will occur except those automatically triggered by EKS. The value must be configured and increased to upgrade the version when desired. Downgrades are not supported by EKS.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "accessConfig",
-        "Configuration block for the access config associated with your cluster, see [Amazon EKS Access Entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html).",
+        'accessConfig',
+        'Configuration block for the access config associated with your cluster, see [Amazon EKS Access Entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html).',
         () => eks_ClusterAccessConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "bootstrapSelfManagedAddons",
-        "Install default unmanaged add-ons, such as `aws-cni`, `kube-proxy`, and CoreDNS during cluster creation. If `false`, you must manually install desired add-ons. Changing this value will force a new cluster to be created. Defaults to `true`.",
+        'bootstrapSelfManagedAddons',
+        'Install default unmanaged add-ons, such as `aws-cni`, `kube-proxy`, and CoreDNS during cluster creation. If `false`, you must manually install desired add-ons. Changing this value will force a new cluster to be created. Defaults to `true`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionConfig",
-        "Configuration block with encryption configuration for the cluster. Only available on Kubernetes 1.13 and above clusters created after March 6, 2020. Detailed below.",
+        'encryptionConfig',
+        'Configuration block with encryption configuration for the cluster. Only available on Kubernetes 1.13 and above clusters created after March 6, 2020. Detailed below.',
         () => eks_ClusterEncryptionConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcConfig",
-        "Configuration block for the VPC associated with your cluster. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see [Cluster VPC Considerations](https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html) and [Cluster Security Group Considerations](https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html) in the Amazon EKS User Guide. Detailed below. Also contains attributes detailed in the Attributes section.\n\nThe following arguments are optional:",
+        'vpcConfig',
+        'Configuration block for the VPC associated with your cluster. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see [Cluster VPC Considerations](https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html) and [Cluster Security Group Considerations](https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html) in the Amazon EKS User Guide. Detailed below. Also contains attributes detailed in the Attributes section.\n\nThe following arguments are optional:',
         () => eks_ClusterVpcConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "kubernetesNetworkConfig",
-        "Configuration block with kubernetes network configuration for the cluster. Detailed below. If removed, this provider will only perform drift detection if a configuration value is provided.",
+        'kubernetesNetworkConfig',
+        'Configuration block with kubernetes network configuration for the cluster. Detailed below. If removed, this provider will only perform drift detection if a configuration value is provided.',
         () => eks_ClusterKubernetesNetworkConfig_GetTypes(),
         false,
         false,

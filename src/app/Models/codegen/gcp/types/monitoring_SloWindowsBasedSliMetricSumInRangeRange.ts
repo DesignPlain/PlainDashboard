@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface monitoring_SloWindowsBasedSliMetricSumInRangeRange {
   /*
@@ -26,7 +26,7 @@ export function monitoring_SloWindowsBasedSliMetricSumInRangeRange_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Number,
-      "min",
+      'min',
       'Min value for the range (inclusive). If not given,\nwill be set to "-infinity", defining an open range\n"< range.max"',
       () => [],
       false,
@@ -34,7 +34,7 @@ export function monitoring_SloWindowsBasedSliMetricSumInRangeRange_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Number,
-      "max",
+      'max',
       'max value for the range (inclusive). If not given,\nwill be set to "infinity", defining an open range\n">= range.min"',
       () => [],
       false,

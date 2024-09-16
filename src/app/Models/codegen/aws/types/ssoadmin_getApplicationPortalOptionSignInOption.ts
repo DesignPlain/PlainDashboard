@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ssoadmin_getApplicationPortalOptionSignInOption {
   //
@@ -18,12 +18,12 @@ export function ssoadmin_getApplicationPortalOptionSignInOption_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.String,
-      "applicationUrl",
-      "",
+      'applicationUrl',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "origin", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'origin', '', () => [], true, false),
   ];
 }

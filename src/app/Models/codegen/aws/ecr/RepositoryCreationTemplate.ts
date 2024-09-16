@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ecr_RepositoryCreationTemplateEncryptionConfiguration,
   ecr_RepositoryCreationTemplateEncryptionConfiguration_GetTypes,
-} from "../types/ecr_RepositoryCreationTemplateEncryptionConfiguration";
+} from '../types/ecr_RepositoryCreationTemplateEncryptionConfiguration';
 
 export interface RepositoryCreationTemplateArgs {
   //
@@ -74,63 +74,63 @@ export class RepositoryCreationTemplate extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "resourceTags",
-        "A map of tags to assign to any created repositories.",
+        'resourceTags',
+        'A map of tags to assign to any created repositories.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description for this template.",
+        'description',
+        'The description for this template.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "imageTagMutability",
-        "The tag mutability setting for any created repositories. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `MUTABLE`.",
+        'imageTagMutability',
+        'The tag mutability setting for any created repositories. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `MUTABLE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "encryptionConfigurations",
-        "Encryption configuration for any created repositories. See below for schema.",
+        'encryptionConfigurations',
+        'Encryption configuration for any created repositories. See below for schema.',
         () => ecr_RepositoryCreationTemplateEncryptionConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "repositoryPolicy",
-        "",
+        'repositoryPolicy',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customRoleArn",
-        "A custom IAM role to use for repository creation. Required if using repository tags or KMS encryption.",
+        'customRoleArn',
+        'A custom IAM role to use for repository creation. Required if using repository tags or KMS encryption.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "lifecyclePolicy",
-        "The lifecycle policy document to apply to any created repositories. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs. Consider using the `aws.ecr.getLifecyclePolicyDocument` data_source to generate/manage the JSON document used for the `lifecycle_policy` argument.",
+        'lifecyclePolicy',
+        'The lifecycle policy document to apply to any created repositories. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs. Consider using the `aws.ecr.getLifecyclePolicyDocument` data_source to generate/manage the JSON document used for the `lifecycle_policy` argument.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "prefix",
+        'prefix',
         "The repository name prefix to match against. Use `ROOT` to match any prefix that doesn't explicitly match another template.",
         () => [],
         true,
@@ -138,8 +138,8 @@ export class RepositoryCreationTemplate extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "appliedFors",
-        "Which features this template applies to. Must contain one or more of `PULL_THROUGH_CACHE` or `REPLICATION`.",
+        'appliedFors',
+        'Which features this template applies to. Must contain one or more of `PULL_THROUGH_CACHE` or `REPLICATION`.',
         () => InputType_String_GetTypes(),
         true,
         false,

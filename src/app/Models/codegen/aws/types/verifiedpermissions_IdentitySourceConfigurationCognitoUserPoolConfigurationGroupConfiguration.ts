@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface verifiedpermissions_IdentitySourceConfigurationCognitoUserPoolConfigurationGroupConfiguration {
   // The name of the schema entity type that's mapped to the user pool group. Defaults to `AWS::CognitoGroup`.
@@ -15,7 +15,7 @@ export function verifiedpermissions_IdentitySourceConfigurationCognitoUserPoolCo
   return [
     new DynamicUIProps(
       InputType.String,
-      "groupEntityType",
+      'groupEntityType',
       "The name of the schema entity type that's mapped to the user pool group. Defaults to `AWS::CognitoGroup`.",
       () => [],
       true,

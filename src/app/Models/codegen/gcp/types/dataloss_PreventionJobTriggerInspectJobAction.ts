@@ -3,36 +3,36 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobActionSaveFindings,
   dataloss_PreventionJobTriggerInspectJobActionSaveFindings_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionSaveFindings";
+} from './dataloss_PreventionJobTriggerInspectJobActionSaveFindings';
 import {
   dataloss_PreventionJobTriggerInspectJobActionDeidentify,
   dataloss_PreventionJobTriggerInspectJobActionDeidentify_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionDeidentify";
+} from './dataloss_PreventionJobTriggerInspectJobActionDeidentify';
 import {
   dataloss_PreventionJobTriggerInspectJobActionJobNotificationEmails,
   dataloss_PreventionJobTriggerInspectJobActionJobNotificationEmails_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionJobNotificationEmails";
+} from './dataloss_PreventionJobTriggerInspectJobActionJobNotificationEmails';
 import {
   dataloss_PreventionJobTriggerInspectJobActionPubSub,
   dataloss_PreventionJobTriggerInspectJobActionPubSub_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionPubSub";
+} from './dataloss_PreventionJobTriggerInspectJobActionPubSub';
 import {
   dataloss_PreventionJobTriggerInspectJobActionPublishFindingsToCloudDataCatalog,
   dataloss_PreventionJobTriggerInspectJobActionPublishFindingsToCloudDataCatalog_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionPublishFindingsToCloudDataCatalog";
+} from './dataloss_PreventionJobTriggerInspectJobActionPublishFindingsToCloudDataCatalog';
 import {
   dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc,
   dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc";
+} from './dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc';
 import {
   dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver,
   dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver";
+} from './dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver';
 
 export interface dataloss_PreventionJobTriggerInspectJobAction {
   // Sends an email when the job completes. The email goes to IAM project owners and technical Essential Contacts.
@@ -70,8 +70,8 @@ export function dataloss_PreventionJobTriggerInspectJobAction_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Object,
-      "saveFindings",
-      "If set, the detailed findings will be persisted to the specified OutputStorageConfig. Only a single instance of this action can be specified. Compatible with: Inspect, Risk\nStructure is documented below.",
+      'saveFindings',
+      'If set, the detailed findings will be persisted to the specified OutputStorageConfig. Only a single instance of this action can be specified. Compatible with: Inspect, Risk\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobActionSaveFindings_GetTypes(),
       false,
@@ -79,16 +79,16 @@ export function dataloss_PreventionJobTriggerInspectJobAction_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Object,
-      "deidentify",
-      "Create a de-identified copy of the requested table or files.\nStructure is documented below.",
+      'deidentify',
+      'Create a de-identified copy of the requested table or files.\nStructure is documented below.',
       () => dataloss_PreventionJobTriggerInspectJobActionDeidentify_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "jobNotificationEmails",
-      "Sends an email when the job completes. The email goes to IAM project owners and technical Essential Contacts.",
+      'jobNotificationEmails',
+      'Sends an email when the job completes. The email goes to IAM project owners and technical Essential Contacts.',
       () =>
         dataloss_PreventionJobTriggerInspectJobActionJobNotificationEmails_GetTypes(),
       false,
@@ -96,16 +96,16 @@ export function dataloss_PreventionJobTriggerInspectJobAction_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Object,
-      "pubSub",
-      "Publish a message into a given Pub/Sub topic when the job completes.\nStructure is documented below.",
+      'pubSub',
+      'Publish a message into a given Pub/Sub topic when the job completes.\nStructure is documented below.',
       () => dataloss_PreventionJobTriggerInspectJobActionPubSub_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "publishFindingsToCloudDataCatalog",
-      "Publish findings of a DlpJob to Data Catalog.",
+      'publishFindingsToCloudDataCatalog',
+      'Publish findings of a DlpJob to Data Catalog.',
       () =>
         dataloss_PreventionJobTriggerInspectJobActionPublishFindingsToCloudDataCatalog_GetTypes(),
       false,
@@ -113,8 +113,8 @@ export function dataloss_PreventionJobTriggerInspectJobAction_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Object,
-      "publishSummaryToCscc",
-      "Publish the result summary of a DlpJob to the Cloud Security Command Center.",
+      'publishSummaryToCscc',
+      'Publish the result summary of a DlpJob to the Cloud Security Command Center.',
       () =>
         dataloss_PreventionJobTriggerInspectJobActionPublishSummaryToCscc_GetTypes(),
       false,
@@ -122,8 +122,8 @@ export function dataloss_PreventionJobTriggerInspectJobAction_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Object,
-      "publishToStackdriver",
-      "Enable Stackdriver metric dlp.googleapis.com/findingCount.",
+      'publishToStackdriver',
+      'Enable Stackdriver metric dlp.googleapis.com/findingCount.',
       () =>
         dataloss_PreventionJobTriggerInspectJobActionPublishToStackdriver_GetTypes(),
       false,

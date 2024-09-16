@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface customerprofiles_DomainMatchingAutoMergingConsolidation {
   // A list of matching criteria.
@@ -15,8 +15,8 @@ export function customerprofiles_DomainMatchingAutoMergingConsolidation_GetTypes
   return [
     new DynamicUIProps(
       InputType.Array,
-      "matchingAttributesLists",
-      "A list of matching criteria.",
+      'matchingAttributesLists',
+      'A list of matching criteria.',
       () => InputType_String_GetTypes(),
       true,
       false,

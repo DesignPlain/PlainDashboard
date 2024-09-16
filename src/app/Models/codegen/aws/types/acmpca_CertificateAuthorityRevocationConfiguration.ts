@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   acmpca_CertificateAuthorityRevocationConfigurationOcspConfiguration,
   acmpca_CertificateAuthorityRevocationConfigurationOcspConfiguration_GetTypes,
-} from "./acmpca_CertificateAuthorityRevocationConfigurationOcspConfiguration";
+} from './acmpca_CertificateAuthorityRevocationConfigurationOcspConfiguration';
 import {
   acmpca_CertificateAuthorityRevocationConfigurationCrlConfiguration,
   acmpca_CertificateAuthorityRevocationConfigurationCrlConfiguration_GetTypes,
-} from "./acmpca_CertificateAuthorityRevocationConfigurationCrlConfiguration";
+} from './acmpca_CertificateAuthorityRevocationConfigurationCrlConfiguration';
 
 export interface acmpca_CertificateAuthorityRevocationConfiguration {
   /*
@@ -29,8 +29,8 @@ export function acmpca_CertificateAuthorityRevocationConfiguration_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Object,
-      "crlConfiguration",
-      "Nested argument containing configuration of the certificate revocation list (CRL), if any, maintained by the certificate authority. Defined below.",
+      'crlConfiguration',
+      'Nested argument containing configuration of the certificate revocation list (CRL), if any, maintained by the certificate authority. Defined below.',
       () =>
         acmpca_CertificateAuthorityRevocationConfigurationCrlConfiguration_GetTypes(),
       false,
@@ -38,8 +38,8 @@ export function acmpca_CertificateAuthorityRevocationConfiguration_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ocspConfiguration",
-      "Nested argument containing configuration of\nthe custom OCSP responder endpoint. Defined below.",
+      'ocspConfiguration',
+      'Nested argument containing configuration of\nthe custom OCSP responder endpoint. Defined below.',
       () =>
         acmpca_CertificateAuthorityRevocationConfigurationOcspConfiguration_GetTypes(),
       false,

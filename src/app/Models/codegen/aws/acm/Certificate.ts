@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   acm_CertificateValidationOption,
   acm_CertificateValidationOption_GetTypes,
-} from "../types/acm_CertificateValidationOption";
+} from '../types/acm_CertificateValidationOption';
 import {
   acm_CertificateOptions,
   acm_CertificateOptions_GetTypes,
-} from "../types/acm_CertificateOptions";
+} from '../types/acm_CertificateOptions';
 import {
   acm_CertificateRenewalSummary,
   acm_CertificateRenewalSummary_GetTypes,
-} from "../types/acm_CertificateRenewalSummary";
+} from '../types/acm_CertificateRenewalSummary';
 import {
   acm_CertificateDomainValidationOption,
   acm_CertificateDomainValidationOption_GetTypes,
-} from "../types/acm_CertificateDomainValidationOption";
+} from '../types/acm_CertificateDomainValidationOption';
 
 export interface CertificateArgs {
   // Certificate's PEM-formatted public key
@@ -168,15 +168,15 @@ or a string such as `2160h`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "Fully qualified domain name (FQDN) in the certificate.",
+        'domainName',
+        'Fully qualified domain name (FQDN) in the certificate.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateBody",
+        'certificateBody',
         "Certificate's PEM-formatted public key",
         () => [],
         false,
@@ -184,47 +184,47 @@ or a string such as `2160h`.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subjectAlternativeNames",
-        "Set of domains that should be SANs in the issued certificate.\nTo remove all elements of a previously configured list, set this value equal to an empty list (`[]`)",
+        'subjectAlternativeNames',
+        'Set of domains that should be SANs in the issued certificate.\nTo remove all elements of a previously configured list, set this value equal to an empty list (`[]`)',
         () => InputType_String_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "validationOptions",
-        "Configuration block used to specify information about the initial validation of each domain name. Detailed below.\n* Importing an existing certificate",
+        'validationOptions',
+        'Configuration block used to specify information about the initial validation of each domain name. Detailed below.\n* Importing an existing certificate',
         () => acm_CertificateValidationOption_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateAuthorityArn",
-        "ARN of an ACM PCA",
+        'certificateAuthorityArn',
+        'ARN of an ACM PCA',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "options",
-        "Configuration block used to set certificate options. Detailed below.",
+        'options',
+        'Configuration block used to set certificate options. Detailed below.',
         () => acm_CertificateOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateChain",
+        'certificateChain',
         "Certificate's PEM-formatted chain\n* Creating a private CA issued certificate",
         () => [],
         false,
@@ -232,7 +232,7 @@ or a string such as `2160h`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "privateKey",
+        'privateKey',
         "Certificate's PEM-formatted private key",
         () => [],
         false,
@@ -240,24 +240,24 @@ or a string such as `2160h`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "validationMethod",
-        "Which method to use for validation. `DNS` or `EMAIL` are valid. This parameter must not be set for certificates that were imported into ACM and then into Pulumi.",
+        'validationMethod',
+        'Which method to use for validation. `DNS` or `EMAIL` are valid. This parameter must not be set for certificates that were imported into ACM and then into Pulumi.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "earlyRenewalDuration",
-        "Amount of time to start automatic renewal process before expiration.\nHas no effect if less than 60 days.\nRepresented by either\na subset of [RFC 3339 duration](https://www.rfc-editor.org/rfc/rfc3339) supporting years, months, and days (e.g., `P90D`),\nor a string such as `2160h`.",
+        'earlyRenewalDuration',
+        'Amount of time to start automatic renewal process before expiration.\nHas no effect if less than 60 days.\nRepresented by either\na subset of [RFC 3339 duration](https://www.rfc-editor.org/rfc/rfc3339) supporting years, months, and days (e.g., `P90D`),\nor a string such as `2160h`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyAlgorithm",
-        "Specifies the algorithm of the public and private key pair that your Amazon issued certificate uses to encrypt data. See [ACM Certificate characteristics](https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms) for more details.",
+        'keyAlgorithm',
+        'Specifies the algorithm of the public and private key pair that your Amazon issued certificate uses to encrypt data. See [ACM Certificate characteristics](https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms) for more details.',
         () => [],
         false,
         true,

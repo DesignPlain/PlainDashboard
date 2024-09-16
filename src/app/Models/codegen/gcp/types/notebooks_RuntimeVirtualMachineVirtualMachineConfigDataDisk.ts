@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams,
   notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams_GetTypes,
-} from "./notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams";
+} from './notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams';
 
 export interface notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDisk {
   /*
@@ -117,64 +117,64 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDisk_GetT
   return [
     new DynamicUIProps(
       InputType.String,
-      "kind",
-      "(Output)\nType of the resource. Always compute#attachedDisk for attached\ndisks.",
+      'kind',
+      '(Output)\nType of the resource. Always compute#attachedDisk for attached\ndisks.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "autoDelete",
-      "(Output)\nOptional. Specifies whether the disk will be auto-deleted\nwhen the instance is deleted (but not when the disk is\ndetached from the instance).",
+      'autoDelete',
+      '(Output)\nOptional. Specifies whether the disk will be auto-deleted\nwhen the instance is deleted (but not when the disk is\ndetached from the instance).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "boot",
-      "(Output)\nOptional. Indicates that this is a boot disk. The virtual\nmachine will use the first partition of the disk for its\nroot filesystem.",
+      'boot',
+      '(Output)\nOptional. Indicates that this is a boot disk. The virtual\nmachine will use the first partition of the disk for its\nroot filesystem.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "licenses",
-      "(Output)\nOutput only. Any valid publicly visible licenses.",
+      'licenses',
+      '(Output)\nOutput only. Any valid publicly visible licenses.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "source",
-      "Specifies a valid partial or full URL to an existing\nPersistent Disk resource.",
+      'source',
+      'Specifies a valid partial or full URL to an existing\nPersistent Disk resource.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceName",
-      "(Output)\nOptional. Specifies a unique device name of your choice\nthat is reflected into the /dev/disk/by-id/google-* tree\nof a Linux operating system running within the instance.\nThis name can be used to reference the device for mounting,\nresizing, and so on, from within the instance.\nIf not specified, the server chooses a default device name\nto apply to this disk, in the form persistent-disk-x, where\nx is a number assigned by Google Compute Engine. This field\nis only applicable for persistent disks.",
+      'deviceName',
+      '(Output)\nOptional. Specifies a unique device name of your choice\nthat is reflected into the /dev/disk/by-id/google-* tree\nof a Linux operating system running within the instance.\nThis name can be used to reference the device for mounting,\nresizing, and so on, from within the instance.\nIf not specified, the server chooses a default device name\nto apply to this disk, in the form persistent-disk-x, where\nx is a number assigned by Google Compute Engine. This field\nis only applicable for persistent disks.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "index",
-      "(Output)\nOutput only. A zero-based index to this disk, where 0 is\nreserved for the boot disk. If you have many disks attached\nto an instance, each disk would have a unique index number.",
+      'index',
+      '(Output)\nOutput only. A zero-based index to this disk, where 0 is\nreserved for the boot disk. If you have many disks attached\nto an instance, each disk would have a unique index number.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "initializeParams",
-      "Input only. Specifies the parameters for a new disk that will\nbe created alongside the new instance. Use initialization\nparameters to create boot disks or local SSDs attached to the\nnew instance. This property is mutually exclusive with the\nsource property; you can only define one or the other, but not\nboth.\nStructure is documented below.",
+      'initializeParams',
+      'Input only. Specifies the parameters for a new disk that will\nbe created alongside the new instance. Use initialization\nparameters to create boot disks or local SSDs attached to the\nnew instance. This property is mutually exclusive with the\nsource property; you can only define one or the other, but not\nboth.\nStructure is documented below.',
       () =>
         notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDiskInitializeParams_GetTypes(),
       false,
@@ -182,31 +182,31 @@ export function notebooks_RuntimeVirtualMachineVirtualMachineConfigDataDisk_GetT
     ),
     new DynamicUIProps(
       InputType.Array,
-      "guestOsFeatures",
-      "(Output)\nIndicates a list of features to enable on the guest operating\nsystem. Applicable only for bootable images. To see a list of\navailable features, read `https://cloud.google.com/compute/docs/\nimages/create-delete-deprecate-private-images#guest-os-features`\noptions. ``",
+      'guestOsFeatures',
+      '(Output)\nIndicates a list of features to enable on the guest operating\nsystem. Applicable only for bootable images. To see a list of\navailable features, read `https://cloud.google.com/compute/docs/\nimages/create-delete-deprecate-private-images#guest-os-features`\noptions. ``',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "mode",
-      "The mode in which to attach this disk, either READ_WRITE\nor READ_ONLY. If not specified, the default is to attach\nthe disk in READ_WRITE mode.",
+      'mode',
+      'The mode in which to attach this disk, either READ_WRITE\nor READ_ONLY. If not specified, the default is to attach\nthe disk in READ_WRITE mode.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Specifies the type of the disk, either SCRATCH or PERSISTENT.\nIf not specified, the default is PERSISTENT.",
+      'type',
+      'Specifies the type of the disk, either SCRATCH or PERSISTENT.\nIf not specified, the default is PERSISTENT.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "interface",
+      'interface',
       '"Specifies the disk interface to use for attaching this disk,\nwhich is either SCSI or NVME. The default is SCSI. Persistent\ndisks must always use SCSI and the request will fail if you attempt\nto attach a persistent disk in any other format than SCSI. Local SSDs\ncan use either NVME or SCSI. For performance characteristics of SCSI\nover NVMe, see Local SSD performance. Valid values: * NVME * SCSI".',
       () => [],
       false,

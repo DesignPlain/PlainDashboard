@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkeonprem_BareMetalClusterControlPlaneApiServerArg,
   gkeonprem_BareMetalClusterControlPlaneApiServerArg_GetTypes,
-} from "./gkeonprem_BareMetalClusterControlPlaneApiServerArg";
+} from './gkeonprem_BareMetalClusterControlPlaneApiServerArg';
 import {
   gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfig,
   gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfig_GetTypes,
-} from "./gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfig";
+} from './gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfig';
 
 export interface gkeonprem_BareMetalClusterControlPlane {
   /*
@@ -35,15 +35,15 @@ export function gkeonprem_BareMetalClusterControlPlane_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "apiServerArgs",
-      "Customizes the default API server args. Only a subset of\ncustomized flags are supported. Please refer to the API server\ndocumentation below to know the exact format:\nhttps://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/\nStructure is documented below.",
+      'apiServerArgs',
+      'Customizes the default API server args. Only a subset of\ncustomized flags are supported. Please refer to the API server\ndocumentation below to know the exact format:\nhttps://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/\nStructure is documented below.',
       () => gkeonprem_BareMetalClusterControlPlaneApiServerArg_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "controlPlaneNodePoolConfig",
+      'controlPlaneNodePoolConfig',
       "Configures the node pool running the control plane. If specified the corresponding NodePool will be created for the cluster's control plane. The NodePool will have the same name and namespace as the cluster.\nStructure is documented below.",
       () =>
         gkeonprem_BareMetalClusterControlPlaneControlPlaneNodePoolConfig_GetTypes(),

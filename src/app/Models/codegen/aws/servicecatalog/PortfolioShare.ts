@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PortfolioShareArgs {
   // Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.
@@ -66,56 +66,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "acceptLanguage",
-        "Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.",
+        'acceptLanguage',
+        'Language code. Valid values: `en` (English), `jp` (Japanese), `zh` (Chinese). Default value is `en`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "portfolioId",
-        "Portfolio identifier.",
+        'portfolioId',
+        'Portfolio identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "principalId",
-        "Identifier of the principal with whom you will share the portfolio. Valid values AWS account IDs and ARNs of AWS Organizations and organizational units.",
+        'principalId',
+        'Identifier of the principal with whom you will share the portfolio. Valid values AWS account IDs and ARNs of AWS Organizations and organizational units.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "sharePrincipals",
-        "Enables or disables Principal sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled.",
+        'sharePrincipals',
+        'Enables or disables Principal sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "shareTagOptions",
-        "Whether to enable sharing of `aws.servicecatalog.TagOption` resources when creating the portfolio share.",
+        'shareTagOptions',
+        'Whether to enable sharing of `aws.servicecatalog.TagOption` resources when creating the portfolio share.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Type of portfolio share. Valid values are `ACCOUNT` (an external account), `ORGANIZATION` (a share to every account in an organization), `ORGANIZATIONAL_UNIT`, `ORGANIZATION_MEMBER_ACCOUNT` (a share to an account in an organization).\n\nThe following arguments are optional:",
+        'type',
+        'Type of portfolio share. Valid values are `ACCOUNT` (an external account), `ORGANIZATION` (a share to every account in an organization), `ORGANIZATIONAL_UNIT`, `ORGANIZATION_MEMBER_ACCOUNT` (a share to an account in an organization).\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "waitForAcceptance",
-        "Whether to wait (up to the timeout) for the share to be accepted. Organizational shares are automatically accepted.",
+        'waitForAcceptance',
+        'Whether to wait (up to the timeout) for the share to be accepted. Organizational shares are automatically accepted.',
         () => [],
         false,
         false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VpnGatewayAttachmentArgs {
   // The ID of the VPC.
@@ -25,16 +25,16 @@ export class VpnGatewayAttachment extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "vpcId",
-        "The ID of the VPC.",
+        'vpcId',
+        'The ID of the VPC.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "vpnGatewayId",
-        "The ID of the Virtual Private Gateway.",
+        'vpnGatewayId',
+        'The ID of the Virtual Private Gateway.',
         () => [],
         true,
         true,

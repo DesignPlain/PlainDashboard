@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LbArgs {
   // The health check path of the load balancer. Default value "/".
@@ -64,7 +64,7 @@ export class Lb extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "healthCheckPath",
+        'healthCheckPath',
         'The health check path of the load balancer. Default value "/".',
         () => [],
         false,
@@ -72,32 +72,32 @@ export class Lb extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Number,
-        "instancePort",
-        "The instance port the load balancer will connect.",
+        'instancePort',
+        'The instance port the load balancer will connect.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipAddressType",
-        "",
+        'ipAddressType',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Lightsail load balancer.",
+        'name',
+        'The name of the Lightsail load balancer.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. To create a key-only tag, use an empty string as the value. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

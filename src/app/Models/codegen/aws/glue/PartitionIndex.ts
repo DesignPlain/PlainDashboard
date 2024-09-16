@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   glue_PartitionIndexPartitionIndex,
   glue_PartitionIndexPartitionIndex_GetTypes,
-} from "../types/glue_PartitionIndexPartitionIndex";
+} from '../types/glue_PartitionIndexPartitionIndex';
 
 export interface PartitionIndexArgs {
   // Name of the table. For Hive compatibility, this must be entirely lowercase.
@@ -41,32 +41,32 @@ export class PartitionIndex extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "catalogId",
-        "The catalog ID where the table resides.",
+        'catalogId',
+        'The catalog ID where the table resides.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "databaseName",
-        "Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.",
+        'databaseName',
+        'Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "partitionIndex",
-        "Configuration block for a partition index. See `partition_index` below.",
+        'partitionIndex',
+        'Configuration block for a partition index. See `partition_index` below.',
         () => glue_PartitionIndexPartitionIndex_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tableName",
-        "Name of the table. For Hive compatibility, this must be entirely lowercase.",
+        'tableName',
+        'Name of the table. For Hive compatibility, this must be entirely lowercase.',
         () => [],
         true,
         true,

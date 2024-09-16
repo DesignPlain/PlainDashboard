@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface looker_InstanceDenyMaintenancePeriodStartDate {
   /*
@@ -30,7 +30,7 @@ export function looker_InstanceDenyMaintenancePeriodStartDate_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.Number,
-      "day",
+      'day',
       "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0\nto specify a year by itself or a year and month where the day isn't significant.",
       () => [],
       false,
@@ -38,16 +38,16 @@ export function looker_InstanceDenyMaintenancePeriodStartDate_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Number,
-      "month",
-      "Month of a year. Must be from 1 to 12, or 0 to specify a year without a\nmonth and day.",
+      'month',
+      'Month of a year. Must be from 1 to 12, or 0 to specify a year without a\nmonth and day.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "year",
-      "Year of the date. Must be from 1 to 9999, or 0 to specify a date without\na year.",
+      'year',
+      'Year of the date. Must be from 1 to 9999, or 0 to specify a date without\na year.',
       () => [],
       false,
       false,

@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   finspace_KxVolumeNas1Configuration,
   finspace_KxVolumeNas1Configuration_GetTypes,
-} from "../types/finspace_KxVolumeNas1Configuration";
+} from '../types/finspace_KxVolumeNas1Configuration';
 import {
   finspace_KxVolumeAttachedCluster,
   finspace_KxVolumeAttachedCluster_GetTypes,
-} from "../types/finspace_KxVolumeAttachedCluster";
+} from '../types/finspace_KxVolumeAttachedCluster';
 
 export interface KxVolumeArgs {
   // The type of file system volume. Currently, FinSpace only supports the `NAS_1` volume type. When you select the `NAS_1` volume type, you must also provide `nas1_configuration`.
@@ -115,64 +115,64 @@ The status of volume creation.
     return [
       new DynamicUIProps(
         InputType.String,
-        "environmentId",
-        "A unique identifier for the kdb environment, whose clusters can attach to the volume.",
+        'environmentId',
+        'A unique identifier for the kdb environment, whose clusters can attach to the volume.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique name for the volumr that you want to create.",
+        'name',
+        'Unique name for the volumr that you want to create.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "nas1Configurations",
-        "Specifies the configuration for the Network attached storage (`NAS_1`) file system volume. This parameter is required when `volume_type` is `NAS_1`. See `nas1_configuration` Argument Reference below.",
+        'nas1Configurations',
+        'Specifies the configuration for the Network attached storage (`NAS_1`) file system volume. This parameter is required when `volume_type` is `NAS_1`. See `nas1_configuration` Argument Reference below.',
         () => finspace_KxVolumeNas1Configuration_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A list of key-value pairs to label the volume. You can add up to 50 tags to a volume",
+        'tags',
+        'A list of key-value pairs to label the volume. You can add up to 50 tags to a volume',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of file system volume. Currently, FinSpace only supports the `NAS_1` volume type. When you select the `NAS_1` volume type, you must also provide `nas1_configuration`.",
+        'type',
+        'The type of file system volume. Currently, FinSpace only supports the `NAS_1` volume type. When you select the `NAS_1` volume type, you must also provide `nas1_configuration`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "availabilityZones",
-        "The identifier of the AWS Availability Zone IDs.\n\nThe following arguments are optional:",
+        'availabilityZones',
+        'The identifier of the AWS Availability Zone IDs.\n\nThe following arguments are optional:',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "azMode",
-        "The number of availability zones you want to assign per volume. Currently, Finspace only support SINGLE for volumes.\n* `SINGLE` - Assigns one availability zone per volume.",
+        'azMode',
+        'The number of availability zones you want to assign per volume. Currently, Finspace only support SINGLE for volumes.\n* `SINGLE` - Assigns one availability zone per volume.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the volume.",
+        'description',
+        'Description of the volume.',
         () => [],
         false,
         true,

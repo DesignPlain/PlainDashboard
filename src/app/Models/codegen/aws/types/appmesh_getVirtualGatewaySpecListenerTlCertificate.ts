@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecListenerTlCertificateAcm,
   appmesh_getVirtualGatewaySpecListenerTlCertificateAcm_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListenerTlCertificateAcm";
+} from './appmesh_getVirtualGatewaySpecListenerTlCertificateAcm';
 import {
   appmesh_getVirtualGatewaySpecListenerTlCertificateFile,
   appmesh_getVirtualGatewaySpecListenerTlCertificateFile_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListenerTlCertificateFile";
+} from './appmesh_getVirtualGatewaySpecListenerTlCertificateFile';
 import {
   appmesh_getVirtualGatewaySpecListenerTlCertificateSd,
   appmesh_getVirtualGatewaySpecListenerTlCertificateSd_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecListenerTlCertificateSd";
+} from './appmesh_getVirtualGatewaySpecListenerTlCertificateSd';
 
 export interface appmesh_getVirtualGatewaySpecListenerTlCertificate {
   //
@@ -33,24 +33,24 @@ export function appmesh_getVirtualGatewaySpecListenerTlCertificate_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Array,
-      "sds",
-      "",
+      'sds',
+      '',
       () => appmesh_getVirtualGatewaySpecListenerTlCertificateSd_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "acms",
-      "",
+      'acms',
+      '',
       () => appmesh_getVirtualGatewaySpecListenerTlCertificateAcm_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "files",
-      "",
+      'files',
+      '',
       () => appmesh_getVirtualGatewaySpecListenerTlCertificateFile_GetTypes(),
       true,
       false,

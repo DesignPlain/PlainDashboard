@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ApplicationSnapshotArgs {
   // The name of an existing  Kinesis Analytics v2 Application. Note that the application must be running for a snapshot to be created.
@@ -31,16 +31,16 @@ export class ApplicationSnapshot extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "applicationName",
-        "The name of an existing  Kinesis Analytics v2 Application. Note that the application must be running for a snapshot to be created.",
+        'applicationName',
+        'The name of an existing  Kinesis Analytics v2 Application. Note that the application must be running for a snapshot to be created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "snapshotName",
-        "The name of the application snapshot.",
+        'snapshotName',
+        'The name of the application snapshot.',
         () => [],
         true,
         true,

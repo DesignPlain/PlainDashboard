@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface medialive_MultiplexProgramMultiplexProgramSettingsVideoSettingsStatmuxSettings {
   // Priority value.
@@ -21,24 +21,24 @@ export function medialive_MultiplexProgramMultiplexProgramSettingsVideoSettingsS
   return [
     new DynamicUIProps(
       InputType.Number,
-      "priority",
-      "Priority value.",
+      'priority',
+      'Priority value.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maximumBitrate",
-      "Maximum bitrate.",
+      'maximumBitrate',
+      'Maximum bitrate.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minimumBitrate",
-      "Minimum bitrate.",
+      'minimumBitrate',
+      'Minimum bitrate.',
       () => [],
       false,
       false,

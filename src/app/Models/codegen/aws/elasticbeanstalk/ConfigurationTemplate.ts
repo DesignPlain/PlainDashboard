@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   elasticbeanstalk_ConfigurationTemplateSetting,
   elasticbeanstalk_ConfigurationTemplateSetting_GetTypes,
-} from "../types/elasticbeanstalk_ConfigurationTemplateSetting";
+} from '../types/elasticbeanstalk_ConfigurationTemplateSetting';
 
 export interface ConfigurationTemplateArgs {
   // The ID of the environment used with this configuration template
@@ -67,48 +67,48 @@ off of. Example stacks can be found in the [Amazon API documentation][1]
     return [
       new DynamicUIProps(
         InputType.String,
-        "application",
-        "name of the application to associate with this configuration template",
+        'application',
+        'name of the application to associate with this configuration template',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Short description of the Template",
+        'description',
+        'Short description of the Template',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "environmentId",
-        "The ID of the environment used with this configuration template",
+        'environmentId',
+        'The ID of the environment used with this configuration template',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A unique name for this Template.",
+        'name',
+        'A unique name for this Template.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "settings",
-        "Option settings to configure the new Environment. These\noverride specific values that are set as defaults. The format is detailed\nbelow in Option Settings",
+        'settings',
+        'Option settings to configure the new Environment. These\noverride specific values that are set as defaults. The format is detailed\nbelow in Option Settings',
         () => elasticbeanstalk_ConfigurationTemplateSetting_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "solutionStackName",
-        "A solution stack to base your Template\noff of. Example stacks can be found in the [Amazon API documentation][1]",
+        'solutionStackName',
+        'A solution stack to base your Template\noff of. Example stacks can be found in the [Amazon API documentation][1]',
         () => [],
         false,
         true,

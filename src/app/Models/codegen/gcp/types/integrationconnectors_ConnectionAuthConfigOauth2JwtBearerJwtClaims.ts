@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClaims {
   /*
@@ -25,7 +25,7 @@ export function integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClai
   return [
     new DynamicUIProps(
       InputType.String,
-      "audience",
+      'audience',
       'Value for the "aud" claim.\n\n<a name="nested_oauth2_client_credentials"></a>The `oauth2_client_credentials` block supports:',
       () => [],
       false,
@@ -33,7 +33,7 @@ export function integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClai
     ),
     new DynamicUIProps(
       InputType.String,
-      "issuer",
+      'issuer',
       'Value for the "iss" claim.',
       () => [],
       false,
@@ -41,7 +41,7 @@ export function integrationconnectors_ConnectionAuthConfigOauth2JwtBearerJwtClai
     ),
     new DynamicUIProps(
       InputType.String,
-      "subject",
+      'subject',
       'Value for the "sub" claim.',
       () => [],
       false,

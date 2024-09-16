@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   recaptcha_EnterpriseKeyIosSettings,
   recaptcha_EnterpriseKeyIosSettings_GetTypes,
-} from "../types/recaptcha_EnterpriseKeyIosSettings";
+} from '../types/recaptcha_EnterpriseKeyIosSettings';
 import {
   recaptcha_EnterpriseKeyTestingOptions,
   recaptcha_EnterpriseKeyTestingOptions_GetTypes,
-} from "../types/recaptcha_EnterpriseKeyTestingOptions";
+} from '../types/recaptcha_EnterpriseKeyTestingOptions';
 import {
   recaptcha_EnterpriseKeyWafSettings,
   recaptcha_EnterpriseKeyWafSettings_GetTypes,
-} from "../types/recaptcha_EnterpriseKeyWafSettings";
+} from '../types/recaptcha_EnterpriseKeyWafSettings';
 import {
   recaptcha_EnterpriseKeyWebSettings,
   recaptcha_EnterpriseKeyWebSettings_GetTypes,
-} from "../types/recaptcha_EnterpriseKeyWebSettings";
+} from '../types/recaptcha_EnterpriseKeyWebSettings';
 import {
   recaptcha_EnterpriseKeyAndroidSettings,
   recaptcha_EnterpriseKeyAndroidSettings_GetTypes,
-} from "../types/recaptcha_EnterpriseKeyAndroidSettings";
+} from '../types/recaptcha_EnterpriseKeyAndroidSettings';
 
 export interface EnterpriseKeyArgs {
   /*
@@ -115,64 +115,64 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "See [Creating and managing labels](https://cloud.google.com/recaptcha-enterprise/docs/labels).\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'See [Creating and managing labels](https://cloud.google.com/recaptcha-enterprise/docs/labels).\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "testingOptions",
-        "Options for user acceptance testing.",
+        'testingOptions',
+        'Options for user acceptance testing.',
         () => recaptcha_EnterpriseKeyTestingOptions_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "wafSettings",
-        "Settings specific to keys that can be used for WAF (Web Application Firewall).",
+        'wafSettings',
+        'Settings specific to keys that can be used for WAF (Web Application Firewall).',
         () => recaptcha_EnterpriseKeyWafSettings_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "webSettings",
-        "Settings for keys that can be used by websites.",
+        'webSettings',
+        'Settings for keys that can be used by websites.',
         () => recaptcha_EnterpriseKeyWebSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "androidSettings",
-        "Settings for keys that can be used by Android apps.",
+        'androidSettings',
+        'Settings for keys that can be used by Android apps.',
         () => recaptcha_EnterpriseKeyAndroidSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Human-readable display name of this key. Modifiable by user.\n\n\n\n- - -",
+        'displayName',
+        'Human-readable display name of this key. Modifiable by user.\n\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "iosSettings",
-        "Settings for keys that can be used by iOS apps.",
+        'iosSettings',
+        'Settings for keys that can be used by iOS apps.',
         () => recaptcha_EnterpriseKeyIosSettings_GetTypes(),
         false,
         false,

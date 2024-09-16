@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EnvReferencesArgs {
   // Optional. A human-readable description of this reference.
@@ -55,39 +55,39 @@ in the format `organizations/{{org_name}}/environments/{{env_name}}`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Optional. A human-readable description of this reference.",
+        'description',
+        'Optional. A human-readable description of this reference.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "envId",
-        "The Apigee environment group associated with the Apigee environment,\nin the format `organizations/{{org_name}}/environments/{{env_name}}`.\n\n\n- - -",
+        'envId',
+        'The Apigee environment group associated with the Apigee environment,\nin the format `organizations/{{org_name}}/environments/{{env_name}}`.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Required. The resource id of this reference. Values must match the regular expression [\\w\\s-.]+.",
+        'name',
+        'Required. The resource id of this reference. Values must match the regular expression [\\w\\s-.]+.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "refers",
-        "Required. The id of the resource to which this reference refers. Must be the id of a resource that exists in the parent environment and is of the given resourceType.",
+        'refers',
+        'Required. The id of the resource to which this reference refers. Must be the id of a resource that exists in the parent environment and is of the given resourceType.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceType",
+        'resourceType',
         "The type of resource referred to by this reference. Valid values are 'KeyStore' or 'TrustStore'.",
         () => [],
         true,

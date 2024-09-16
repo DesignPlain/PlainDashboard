@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkconnectivity_PolicyBasedRouteFilter,
   networkconnectivity_PolicyBasedRouteFilter_GetTypes,
-} from "../types/networkconnectivity_PolicyBasedRouteFilter";
+} from '../types/networkconnectivity_PolicyBasedRouteFilter';
 import {
   networkconnectivity_PolicyBasedRouteInterconnectAttachment,
   networkconnectivity_PolicyBasedRouteInterconnectAttachment_GetTypes,
-} from "../types/networkconnectivity_PolicyBasedRouteInterconnectAttachment";
+} from '../types/networkconnectivity_PolicyBasedRouteInterconnectAttachment';
 import {
   networkconnectivity_PolicyBasedRouteVirtualMachine,
   networkconnectivity_PolicyBasedRouteVirtualMachine_GetTypes,
-} from "../types/networkconnectivity_PolicyBasedRouteVirtualMachine";
+} from '../types/networkconnectivity_PolicyBasedRouteVirtualMachine';
 import {
   networkconnectivity_PolicyBasedRouteWarning,
   networkconnectivity_PolicyBasedRouteWarning_GetTypes,
-} from "../types/networkconnectivity_PolicyBasedRouteWarning";
+} from '../types/networkconnectivity_PolicyBasedRouteWarning';
 
 export interface PolicyBasedRouteArgs {
   /*
@@ -159,48 +159,48 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "virtualMachine",
-        "VM instances to which this policy-based route applies to.\nStructure is documented below.",
+        'virtualMachine',
+        'VM instances to which this policy-based route applies to.\nStructure is documented below.',
         () => networkconnectivity_PolicyBasedRouteVirtualMachine_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-defined labels.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-defined labels.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "filter",
-        "The filter to match L4 traffic.\nStructure is documented below.",
+        'filter',
+        'The filter to match L4 traffic.\nStructure is documented below.',
         () => networkconnectivity_PolicyBasedRouteFilter_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "interconnectAttachment",
-        "The interconnect attachments that this policy-based route applies to.\nStructure is documented below.",
+        'interconnectAttachment',
+        'The interconnect attachments that this policy-based route applies to.\nStructure is documented below.',
         () =>
           networkconnectivity_PolicyBasedRouteInterconnectAttachment_GetTypes(),
         false,
@@ -208,40 +208,40 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "nextHopIlbIp",
-        "The IP address of a global-access-enabled L4 ILB that is the next hop for matching packets.",
+        'nextHopIlbIp',
+        'The IP address of a global-access-enabled L4 ILB that is the next hop for matching packets.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "nextHopOtherRoutes",
-        "Other routes that will be referenced to determine the next hop of the packet.\nPossible values are: `DEFAULT_ROUTING`.",
+        'nextHopOtherRoutes',
+        'Other routes that will be referenced to determine the next hop of the packet.\nPossible values are: `DEFAULT_ROUTING`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "network",
-        "Fully-qualified URL of the network that this route applies to, for example: projects/my-project/global/networks/my-network.",
+        'network',
+        'Fully-qualified URL of the network that this route applies to, for example: projects/my-project/global/networks/my-network.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "priority",
-        "The priority of this policy-based route. Priority is used to break ties in cases where there are more than one matching policy-based routes found. In cases where multiple policy-based routes are matched, the one with the lowest-numbered priority value wins. The default value is 1000. The priority value must be from 1 to 65535, inclusive.",
+        'priority',
+        'The priority of this policy-based route. Priority is used to break ties in cases where there are more than one matching policy-based routes found. In cases where multiple policy-based routes are matched, the one with the lowest-numbered priority value wins. The default value is 1000. The priority value must be from 1 to 65535, inclusive.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the policy based route.",
+        'name',
+        'The name of the policy based route.',
         () => [],
         false,
         true,

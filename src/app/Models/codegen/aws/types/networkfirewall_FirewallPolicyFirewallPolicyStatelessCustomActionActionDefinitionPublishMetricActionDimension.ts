@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkfirewall_FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionDimension {
   // The string value to use in the custom metric dimension.
@@ -15,8 +15,8 @@ export function networkfirewall_FirewallPolicyFirewallPolicyStatelessCustomActio
   return [
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The string value to use in the custom metric dimension.",
+      'value',
+      'The string value to use in the custom metric dimension.',
       () => [],
       true,
       false,

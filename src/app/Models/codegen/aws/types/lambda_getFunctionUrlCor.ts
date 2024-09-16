@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lambda_getFunctionUrlCor {
   //
@@ -28,43 +28,43 @@ export interface lambda_getFunctionUrlCor {
 
 export function lambda_getFunctionUrlCor_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Number, "maxAge", "", () => [], true, false),
+    new DynamicUIProps(InputType.Number, 'maxAge', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Bool,
-      "allowCredentials",
-      "",
+      'allowCredentials',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowHeaders",
-      "",
+      'allowHeaders',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowMethods",
-      "",
+      'allowMethods',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "allowOrigins",
-      "",
+      'allowOrigins',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "exposeHeaders",
-      "",
+      'exposeHeaders',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,

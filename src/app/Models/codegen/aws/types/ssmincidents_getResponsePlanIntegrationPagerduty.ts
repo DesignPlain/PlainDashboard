@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ssmincidents_getResponsePlanIntegrationPagerduty {
   // The ID of the PagerDuty service that the response plan associates with an incident when it launches.
@@ -21,24 +21,24 @@ export function ssmincidents_getResponsePlanIntegrationPagerduty_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.String,
-      "serviceId",
-      "The ID of the PagerDuty service that the response plan associates with an incident when it launches.",
+      'serviceId',
+      'The ID of the PagerDuty service that the response plan associates with an incident when it launches.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the PagerDuty configuration.",
+      'name',
+      'The name of the PagerDuty configuration.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "secretId",
-      "The ID of the AWS Secrets Manager secret that stores your PagerDuty key &mdash; either a General Access REST API Key or User Token REST API Key &mdash; and other user credentials.",
+      'secretId',
+      'The ID of the AWS Secrets Manager secret that stores your PagerDuty key &mdash; either a General Access REST API Key or User Token REST API Key &mdash; and other user credentials.',
       () => [],
       true,
       false,

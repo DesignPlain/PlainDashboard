@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface SnapshotArgs {
   // The name of the snapshot.
@@ -52,24 +52,24 @@ export class Snapshot extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "namespaceName",
-        "The namespace to create a snapshot for.",
+        'namespaceName',
+        'The namespace to create a snapshot for.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "retentionPeriod",
-        "How long to retain the created snapshot. Default value is `-1`.",
+        'retentionPeriod',
+        'How long to retain the created snapshot. Default value is `-1`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "snapshotName",
-        "The name of the snapshot.",
+        'snapshotName',
+        'The name of the snapshot.',
         () => [],
         true,
         true,

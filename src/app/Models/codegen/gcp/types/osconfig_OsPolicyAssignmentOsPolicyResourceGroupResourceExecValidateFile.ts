@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote,
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote_GetTypes,
-} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote";
+} from './osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote';
 import {
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs,
   osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs_GetTypes,
-} from "./osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs";
+} from './osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs';
 
 export interface osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFile {
   /*
@@ -42,16 +42,16 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecVali
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "allowInsecure",
-      "Defaults to false. When false, files are\nsubject to validations based on the file type: Remote: A checksum must be\nspecified. Cloud Storage: An object generation number must be specified.",
+      'allowInsecure',
+      'Defaults to false. When false, files are\nsubject to validations based on the file type: Remote: A checksum must be\nspecified. Cloud Storage: An object generation number must be specified.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "gcs",
-      "A Cloud Storage object. Structure is\ndocumented below.",
+      'gcs',
+      'A Cloud Storage object. Structure is\ndocumented below.',
       () =>
         osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileGcs_GetTypes(),
       false,
@@ -59,16 +59,16 @@ export function osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecVali
     ),
     new DynamicUIProps(
       InputType.String,
-      "localPath",
-      "A local path within the VM to use.",
+      'localPath',
+      'A local path within the VM to use.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "remote",
-      "A generic remote file. Structure is\ndocumented below.",
+      'remote',
+      'A generic remote file. Structure is\ndocumented below.',
       () =>
         osconfig_OsPolicyAssignmentOsPolicyResourceGroupResourceExecValidateFileRemote_GetTypes(),
       false,

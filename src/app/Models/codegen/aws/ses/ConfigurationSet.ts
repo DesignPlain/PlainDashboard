@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ses_ConfigurationSetTrackingOptions,
   ses_ConfigurationSetTrackingOptions_GetTypes,
-} from "../types/ses_ConfigurationSetTrackingOptions";
+} from '../types/ses_ConfigurationSetTrackingOptions';
 import {
   ses_ConfigurationSetDeliveryOptions,
   ses_ConfigurationSetDeliveryOptions_GetTypes,
-} from "../types/ses_ConfigurationSetDeliveryOptions";
+} from '../types/ses_ConfigurationSetDeliveryOptions';
 
 export interface ConfigurationSetArgs {
   // Whether email sending is enabled or disabled for the configuration set. The default value is `true`.
@@ -65,40 +65,40 @@ The following argument is optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the configuration set.\n\nThe following argument is optional:",
+        'name',
+        'Name of the configuration set.\n\nThe following argument is optional:',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "reputationMetricsEnabled",
-        "Whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch. The default value is `false`.",
+        'reputationMetricsEnabled',
+        'Whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch. The default value is `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "sendingEnabled",
-        "Whether email sending is enabled or disabled for the configuration set. The default value is `true`.",
+        'sendingEnabled',
+        'Whether email sending is enabled or disabled for the configuration set. The default value is `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "trackingOptions",
-        "Domain that is used to redirect email recipients to an Amazon SES-operated domain. See below. **NOTE:** This functionality is best effort.",
+        'trackingOptions',
+        'Domain that is used to redirect email recipients to an Amazon SES-operated domain. See below. **NOTE:** This functionality is best effort.',
         () => ses_ConfigurationSetTrackingOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "deliveryOptions",
-        "Whether messages that use the configuration set are required to use TLS. See below.",
+        'deliveryOptions',
+        'Whether messages that use the configuration set are required to use TLS. See below.',
         () => ses_ConfigurationSetDeliveryOptions_GetTypes(),
         false,
         false,

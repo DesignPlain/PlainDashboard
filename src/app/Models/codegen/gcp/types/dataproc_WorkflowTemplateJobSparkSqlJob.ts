@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig,
   dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig_GetTypes,
-} from "./dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig";
+} from './dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig';
 import {
   dataproc_WorkflowTemplateJobSparkSqlJobQueryList,
   dataproc_WorkflowTemplateJobSparkSqlJobQueryList_GetTypes,
-} from "./dataproc_WorkflowTemplateJobSparkSqlJobQueryList";
+} from './dataproc_WorkflowTemplateJobSparkSqlJobQueryList';
 
 export interface dataproc_WorkflowTemplateJobSparkSqlJob {
   // HCFS URIs of jar files to be added to the Spark CLASSPATH.
@@ -38,23 +38,23 @@ export function dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.Array,
-      "jarFileUris",
-      "HCFS URIs of jar files to be added to the Spark CLASSPATH.",
+      'jarFileUris',
+      'HCFS URIs of jar files to be added to the Spark CLASSPATH.',
       () => InputType_String_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "loggingConfig",
-      "The runtime log config for job execution.",
+      'loggingConfig',
+      'The runtime log config for job execution.',
       () => dataproc_WorkflowTemplateJobSparkSqlJobLoggingConfig_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "properties",
+      'properties',
       "A mapping of property names to values, used to configure Spark SQL's SparkConf. Properties that conflict with values set by the Dataproc API may be overwritten.",
       () => InputType_Map_GetTypes(),
       false,
@@ -62,23 +62,23 @@ export function dataproc_WorkflowTemplateJobSparkSqlJob_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.String,
-      "queryFileUri",
-      "The HCFS URI of the script that contains SQL queries.",
+      'queryFileUri',
+      'The HCFS URI of the script that contains SQL queries.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "queryList",
-      "A list of queries.",
+      'queryList',
+      'A list of queries.',
       () => dataproc_WorkflowTemplateJobSparkSqlJobQueryList_GetTypes(),
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "scriptVariables",
+      'scriptVariables',
       'Mapping of query variable names to values (equivalent to the Spark SQL command: SET `name="value";`).',
       () => InputType_Map_GetTypes(),
       false,

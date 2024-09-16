@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface NamespaceArgs {
   // The types of logs the namespace can export. Available export types are `userlog`, `connectionlog`, and `useractivitylog`.
@@ -103,31 +103,31 @@ Conflicts with `manage_admin_password`.
     return [
       new DynamicUIProps(
         InputType.String,
-        "adminUsername",
-        "The username of the administrator for the first database created in the namespace.",
+        'adminUsername',
+        'The username of the administrator for the first database created in the namespace.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "defaultIamRoleArn",
-        "The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. When specifying `default_iam_role_arn`, it also must be part of `iam_roles`.",
+        'defaultIamRoleArn',
+        'The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. When specifying `default_iam_role_arn`, it also must be part of `iam_roles`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
-        "The ARN of the Amazon Web Services Key Management Service key used to encrypt your data.",
+        'kmsKeyId',
+        'The ARN of the Amazon Web Services Key Management Service key used to encrypt your data.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "adminPasswordSecretKmsKeyId",
+        'adminPasswordSecretKmsKeyId',
         "ID of the KMS key used to encrypt the namespace's admin credentials secret.",
         () => [],
         false,
@@ -135,15 +135,15 @@ Conflicts with `manage_admin_password`.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "logExports",
-        "The types of logs the namespace can export. Available export types are `userlog`, `connectionlog`, and `useractivitylog`.",
+        'logExports',
+        'The types of logs the namespace can export. Available export types are `userlog`, `connectionlog`, and `useractivitylog`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "manageAdminPassword",
+        'manageAdminPassword',
         "Whether to use AWS SecretManager to manage namespace's admin credentials.\nConflicts with `admin_user_password`.",
         () => [],
         false,
@@ -151,40 +151,40 @@ Conflicts with `manage_admin_password`.
       ),
       new DynamicUIProps(
         InputType.String,
-        "namespaceName",
-        "The name of the namespace.",
+        'namespaceName',
+        'The name of the namespace.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "adminUserPassword",
-        "The password of the administrator for the first database created in the namespace.\nConflicts with `manage_admin_password`.",
+        'adminUserPassword',
+        'The password of the administrator for the first database created in the namespace.\nConflicts with `manage_admin_password`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dbName",
-        "The name of the first database created in the namespace.",
+        'dbName',
+        'The name of the first database created in the namespace.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "iamRoles",
-        "A list of IAM roles to associate with the namespace.",
+        'iamRoles',
+        'A list of IAM roles to associate with the namespace.',
         () => InputType_String_GetTypes(),
         false,
         false,

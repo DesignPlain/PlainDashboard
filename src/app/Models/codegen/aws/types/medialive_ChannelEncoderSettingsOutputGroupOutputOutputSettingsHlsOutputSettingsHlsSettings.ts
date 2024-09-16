@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFmp4HlsSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFmp4HlsSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFmp4HlsSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFmp4HlsSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFrameCaptureHlsSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFrameCaptureHlsSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFrameCaptureHlsSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFrameCaptureHlsSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettings';
 import {
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettings,
   medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettings";
+} from './medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettings';
 
 export interface medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettings {
   //
@@ -40,8 +40,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsH
   return [
     new DynamicUIProps(
       InputType.Object,
-      "fmp4HlsSettings",
-      "",
+      'fmp4HlsSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFmp4HlsSettings_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsH
     ),
     new DynamicUIProps(
       InputType.Object,
-      "frameCaptureHlsSettings",
-      "",
+      'frameCaptureHlsSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsFrameCaptureHlsSettings_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsH
     ),
     new DynamicUIProps(
       InputType.Object,
-      "standardHlsSettings",
-      "",
+      'standardHlsSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettings_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsH
     ),
     new DynamicUIProps(
       InputType.Object,
-      "audioOnlyHlsSettings",
-      "",
+      'audioOnlyHlsSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettings_GetTypes(),
       false,

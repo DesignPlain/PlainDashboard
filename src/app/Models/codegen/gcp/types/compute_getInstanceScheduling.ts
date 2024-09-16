@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_getInstanceSchedulingMaxRunDuration,
   compute_getInstanceSchedulingMaxRunDuration_GetTypes,
-} from "./compute_getInstanceSchedulingMaxRunDuration";
+} from './compute_getInstanceSchedulingMaxRunDuration';
 import {
   compute_getInstanceSchedulingNodeAffinity,
   compute_getInstanceSchedulingNodeAffinity_GetTypes,
-} from "./compute_getInstanceSchedulingNodeAffinity";
+} from './compute_getInstanceSchedulingNodeAffinity';
 import {
   compute_getInstanceSchedulingLocalSsdRecoveryTimeout,
   compute_getInstanceSchedulingLocalSsdRecoveryTimeout_GetTypes,
-} from "./compute_getInstanceSchedulingLocalSsdRecoveryTimeout";
+} from './compute_getInstanceSchedulingLocalSsdRecoveryTimeout';
 
 export interface compute_getInstanceScheduling {
   /*
@@ -66,80 +66,80 @@ export function compute_getInstanceScheduling_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "maintenanceInterval",
-      "Specifies the frequency of planned maintenance events. The accepted values are: PERIODIC",
+      'maintenanceInterval',
+      'Specifies the frequency of planned maintenance events. The accepted values are: PERIODIC',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "minNodeCpus",
-      "",
+      'minNodeCpus',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "onHostMaintenance",
-      "Describes maintenance behavior for the\ninstance. One of `MIGRATE` or `TERMINATE`, for more info, read\n[here](https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options)",
+      'onHostMaintenance',
+      'Describes maintenance behavior for the\ninstance. One of `MIGRATE` or `TERMINATE`, for more info, read\n[here](https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options)',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "preemptible",
-      "Whether the instance is preemptible.",
+      'preemptible',
+      'Whether the instance is preemptible.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "instanceTerminationAction",
-      "Describe the type of termination action for `SPOT` VM. Can be `STOP` or `DELETE`.  Read more on [here](https://cloud.google.com/compute/docs/instances/create-use-spot)",
+      'instanceTerminationAction',
+      'Describe the type of termination action for `SPOT` VM. Can be `STOP` or `DELETE`.  Read more on [here](https://cloud.google.com/compute/docs/instances/create-use-spot)',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "localSsdRecoveryTimeouts",
-      "Specifies the maximum amount of time a Local Ssd Vm should wait while\n  recovery of the Local Ssd state is attempted. Its value should be in\n  between 0 and 168 hours with hour granularity and the default value being 1\n  hour.",
+      'localSsdRecoveryTimeouts',
+      'Specifies the maximum amount of time a Local Ssd Vm should wait while\n  recovery of the Local Ssd state is attempted. Its value should be in\n  between 0 and 168 hours with hour granularity and the default value being 1\n  hour.',
       () => compute_getInstanceSchedulingLocalSsdRecoveryTimeout_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "automaticRestart",
-      "Specifies if the instance should be\nrestarted if it was terminated by Compute Engine (not a user).",
+      'automaticRestart',
+      'Specifies if the instance should be\nrestarted if it was terminated by Compute Engine (not a user).',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "nodeAffinities",
-      "Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems.",
+      'nodeAffinities',
+      'Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems.',
       () => compute_getInstanceSchedulingNodeAffinity_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "provisioningModel",
-      "Describe the type of preemptible VM.",
+      'provisioningModel',
+      'Describe the type of preemptible VM.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "maxRunDurations",
-      "The timeout for new network connections to hosts.",
+      'maxRunDurations',
+      'The timeout for new network connections to hosts.',
       () => compute_getInstanceSchedulingMaxRunDuration_GetTypes(),
       true,
       false,

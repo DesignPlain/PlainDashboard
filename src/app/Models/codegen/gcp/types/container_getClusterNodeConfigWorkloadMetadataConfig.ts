@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface container_getClusterNodeConfigWorkloadMetadataConfig {
   // Mode is the configuration for how to expose metadata to workloads running on the node.
@@ -15,8 +15,8 @@ export function container_getClusterNodeConfigWorkloadMetadataConfig_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "mode",
-      "Mode is the configuration for how to expose metadata to workloads running on the node.",
+      'mode',
+      'Mode is the configuration for how to expose metadata to workloads running on the node.',
       () => [],
       true,
       false,

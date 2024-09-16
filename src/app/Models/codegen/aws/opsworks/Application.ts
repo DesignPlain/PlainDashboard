@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_ApplicationAppSource,
   opsworks_ApplicationAppSource_GetTypes,
-} from "../types/opsworks_ApplicationAppSource";
+} from '../types/opsworks_ApplicationAppSource';
 import {
   opsworks_ApplicationSslConfiguration,
   opsworks_ApplicationSslConfiguration_GetTypes,
-} from "../types/opsworks_ApplicationSslConfiguration";
+} from '../types/opsworks_ApplicationSslConfiguration';
 import {
   opsworks_ApplicationEnvironment,
   opsworks_ApplicationEnvironment_GetTypes,
-} from "../types/opsworks_ApplicationEnvironment";
+} from '../types/opsworks_ApplicationEnvironment';
 
 export interface ApplicationArgs {
   // A short, machine-readable name for the application. This can only be defined on resource creation and ignored on resource update.
@@ -127,63 +127,63 @@ export class Application extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Opsworks application type. One of `aws-flow-ruby`, `java`, `rails`, `php`, `nodejs`, `static` or `other`.",
+        'type',
+        'Opsworks application type. One of `aws-flow-ruby`, `java`, `rails`, `php`, `nodejs`, `static` or `other`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataSourceDatabaseName",
-        "The database name.",
+        'dataSourceDatabaseName',
+        'The database name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "sslConfigurations",
-        "The SSL configuration of the app. Object is described below.",
+        'sslConfigurations',
+        'The SSL configuration of the app. Object is described below.',
         () => opsworks_ApplicationSslConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A human-readable name for the application.",
+        'name',
+        'A human-readable name for the application.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "railsEnv",
-        "The name of the Rails environment for application of type `rails`.",
+        'railsEnv',
+        'The name of the Rails environment for application of type `rails`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "domains",
-        "A list of virtual host alias.",
+        'domains',
+        'A list of virtual host alias.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "appSources",
-        "SCM configuration of the app as described below.",
+        'appSources',
+        'SCM configuration of the app as described below.',
         () => opsworks_ApplicationAppSource_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataSourceArn",
+        'dataSourceArn',
         "The data source's ARN.",
         () => [],
         false,
@@ -191,55 +191,55 @@ export class Application extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description of the app.",
+        'description',
+        'A description of the app.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "shortName",
-        "A short, machine-readable name for the application. This can only be defined on resource creation and ignored on resource update.",
+        'shortName',
+        'A short, machine-readable name for the application. This can only be defined on resource creation and ignored on resource update.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "autoBundleOnDeploy",
-        "Run bundle install when deploying for application of type `rails`.",
+        'autoBundleOnDeploy',
+        'Run bundle install when deploying for application of type `rails`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableSsl",
-        "Whether to enable SSL for the app. This must be set in order to let `ssl_configuration.private_key`, `ssl_configuration.certificate` and `ssl_configuration.chain` take effect.",
+        'enableSsl',
+        'Whether to enable SSL for the app. This must be set in order to let `ssl_configuration.private_key`, `ssl_configuration.certificate` and `ssl_configuration.chain` take effect.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "stackId",
-        "ID of the stack the application will belong to.",
+        'stackId',
+        'ID of the stack the application will belong to.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "awsFlowRubySettings",
-        "Specify activity and workflow workers for your app using the aws-flow gem.",
+        'awsFlowRubySettings',
+        'Specify activity and workflow workers for your app using the aws-flow gem.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataSourceType",
+        'dataSourceType',
         "The data source's type one of `AutoSelectOpsworksMysqlInstance`, `OpsworksMysqlInstance`, or `RdsDbInstance`.",
         () => [],
         false,
@@ -247,16 +247,16 @@ export class Application extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "documentRoot",
-        "Subfolder for the document root for application of type `rails`.",
+        'documentRoot',
+        'Subfolder for the document root for application of type `rails`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "environments",
-        "Object to define environment variables.  Object is described below.",
+        'environments',
+        'Object to define environment variables.  Object is described below.',
         () => opsworks_ApplicationEnvironment_GetTypes(),
         false,
         false,

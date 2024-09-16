@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   rds_ReservedInstanceRecurringCharge,
   rds_ReservedInstanceRecurringCharge_GetTypes,
-} from "../types/rds_ReservedInstanceRecurringCharge";
+} from '../types/rds_ReservedInstanceRecurringCharge';
 
 export interface ReservedInstanceArgs {
   /*
@@ -91,32 +91,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Number,
-        "instanceCount",
-        "Number of instances to reserve. Default value is `1`.",
+        'instanceCount',
+        'Number of instances to reserve. Default value is `1`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "offeringId",
-        "ID of the Reserved DB instance offering to purchase. To determine an `offering_id`, see the `aws.rds.getReservedInstanceOffering` data source.\n\nThe following arguments are optional:",
+        'offeringId',
+        'ID of the Reserved DB instance offering to purchase. To determine an `offering_id`, see the `aws.rds.getReservedInstanceOffering` data source.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "reservationId",
-        "Customer-specified identifier to track this reservation.",
+        'reservationId',
+        'Customer-specified identifier to track this reservation.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the DB reservation. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the DB reservation. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

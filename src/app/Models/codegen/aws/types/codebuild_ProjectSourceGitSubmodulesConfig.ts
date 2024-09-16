@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface codebuild_ProjectSourceGitSubmodulesConfig {
   // Whether to fetch Git submodules for the AWS CodeBuild build project.
@@ -15,8 +15,8 @@ export function codebuild_ProjectSourceGitSubmodulesConfig_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "fetchSubmodules",
-      "Whether to fetch Git submodules for the AWS CodeBuild build project.",
+      'fetchSubmodules',
+      'Whether to fetch Git submodules for the AWS CodeBuild build project.',
       () => [],
       true,
       false,

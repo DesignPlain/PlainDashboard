@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkehub_FeatureMembershipConfigmanagementBinauthz,
   gkehub_FeatureMembershipConfigmanagementBinauthz_GetTypes,
-} from "./gkehub_FeatureMembershipConfigmanagementBinauthz";
+} from './gkehub_FeatureMembershipConfigmanagementBinauthz';
 import {
   gkehub_FeatureMembershipConfigmanagementConfigSync,
   gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes,
-} from "./gkehub_FeatureMembershipConfigmanagementConfigSync";
+} from './gkehub_FeatureMembershipConfigmanagementConfigSync';
 import {
   gkehub_FeatureMembershipConfigmanagementHierarchyController,
   gkehub_FeatureMembershipConfigmanagementHierarchyController_GetTypes,
-} from "./gkehub_FeatureMembershipConfigmanagementHierarchyController";
+} from './gkehub_FeatureMembershipConfigmanagementHierarchyController';
 import {
   gkehub_FeatureMembershipConfigmanagementPolicyController,
   gkehub_FeatureMembershipConfigmanagementPolicyController_GetTypes,
-} from "./gkehub_FeatureMembershipConfigmanagementPolicyController";
+} from './gkehub_FeatureMembershipConfigmanagementPolicyController';
 
 export interface gkehub_FeatureMembershipConfigmanagement {
   // Binauthz configuration for the cluster. Structure is documented below.
@@ -43,16 +43,16 @@ export function gkehub_FeatureMembershipConfigmanagement_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Object,
-      "configSync",
-      "Config Sync configuration for the cluster. Structure is documented below.",
+      'configSync',
+      'Config Sync configuration for the cluster. Structure is documented below.',
       () => gkehub_FeatureMembershipConfigmanagementConfigSync_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "hierarchyController",
-      "Hierarchy Controller configuration for the cluster. Structure is documented below.",
+      'hierarchyController',
+      'Hierarchy Controller configuration for the cluster. Structure is documented below.',
       () =>
         gkehub_FeatureMembershipConfigmanagementHierarchyController_GetTypes(),
       false,
@@ -60,24 +60,24 @@ export function gkehub_FeatureMembershipConfigmanagement_GetTypes(): DynamicUIPr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "policyController",
-      "Policy Controller configuration for the cluster. Structure is documented below.",
+      'policyController',
+      'Policy Controller configuration for the cluster. Structure is documented below.',
       () => gkehub_FeatureMembershipConfigmanagementPolicyController_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "version",
-      "Version of ACM installed.",
+      'version',
+      'Version of ACM installed.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "binauthz",
-      "Binauthz configuration for the cluster. Structure is documented below.",
+      'binauthz',
+      'Binauthz configuration for the cluster. Structure is documented below.',
       () => gkehub_FeatureMembershipConfigmanagementBinauthz_GetTypes(),
       false,
       false,

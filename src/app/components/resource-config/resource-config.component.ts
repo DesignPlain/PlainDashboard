@@ -49,8 +49,8 @@ import { DS_Resource } from 'src/app/Models/codegen/ds_base/Resource';
 export class ResourceConfigComponent implements OnInit {
   constructor(
     private _addComponentService: AddComponentService,
-    private _modalDialogService: ModalDialogService
-  ) { }
+    private _modalDialogService: ModalDialogService,
+  ) {}
 
   static RESOURCE_ID_ARRAY: number[] = [
     ...GCP_ResourceProperties.ResourceFactoryMap1.keys(),
@@ -135,9 +135,9 @@ export class ResourceConfigComponent implements OnInit {
 
     let result = [
       str.charAt(0).toUpperCase() +
-      str.slice(1, sp_index + 1) +
-      str.charAt(sp_index + 1).toUpperCase() +
-      str.slice(sp_index + 2),
+        str.slice(1, sp_index + 1) +
+        str.charAt(sp_index + 1).toUpperCase() +
+        str.slice(sp_index + 2),
       logo_path,
     ];
 
@@ -151,14 +151,14 @@ export class ResourceConfigComponent implements OnInit {
         GCP_ResourceType[res_index],
         ProviderType.GCP,
         res_index,
-        '/assets/GCPIcons/gcp-logo.png'
+        '/assets/GCPIcons/gcp-logo.png',
       );
     } else {
       res = new VisualResource(
         AWS_ResourceType[res_index],
         ProviderType.AWS,
         res_index,
-        '/assets/aws-logo.png'
+        '/assets/aws-logo.png',
       );
     }
 
@@ -180,7 +180,7 @@ export class ResourceConfigComponent implements OnInit {
       let resource_ids = new Map<number, undefined>();
 
       let related = ResourceConfigComponent.RESOURCE_ID_ARRAY.slice(
-        GCP_ResourceProperties.ResourceFactoryMap1.size
+        GCP_ResourceProperties.ResourceFactoryMap1.size,
       ).filter((id) => {
         let resource_name_lower = AWS_ResourceType[id].toLowerCase();
 
@@ -196,7 +196,7 @@ export class ResourceConfigComponent implements OnInit {
         return (
           resource_name_lower != current_res &&
           [current_res_family[0]].every((element: string) =>
-            resource_name_lower.includes(element)
+            resource_name_lower.includes(element),
           )
         );
       });
@@ -216,7 +216,7 @@ export class ResourceConfigComponent implements OnInit {
 
       let related = ResourceConfigComponent.RESOURCE_ID_ARRAY.slice(
         0,
-        GCP_ResourceProperties.ResourceFactoryMap1.size
+        GCP_ResourceProperties.ResourceFactoryMap1.size,
       ).filter((id) => {
         let resource_name_lower = GCP_ResourceType[id]?.toLowerCase();
 
@@ -232,7 +232,7 @@ export class ResourceConfigComponent implements OnInit {
         return (
           resource_name_lower != current_res &&
           [current_res_family[0]].every((element: string) =>
-            resource_name_lower?.includes(element)
+            resource_name_lower?.includes(element),
           )
         );
       });

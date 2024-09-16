@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datastream_PrivateConnectionVpcPeeringConfig,
   datastream_PrivateConnectionVpcPeeringConfig_GetTypes,
-} from "../types/datastream_PrivateConnectionVpcPeeringConfig";
+} from '../types/datastream_PrivateConnectionVpcPeeringConfig';
 import {
   datastream_PrivateConnectionError,
   datastream_PrivateConnectionError_GetTypes,
-} from "../types/datastream_PrivateConnectionError";
+} from '../types/datastream_PrivateConnectionError';
 
 export interface PrivateConnectionArgs {
   /*
@@ -100,47 +100,47 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Display name.",
+        'displayName',
+        'Display name.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The name of the location this private connection is located in.",
+        'location',
+        'The name of the location this private connection is located in.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "privateConnectionId",
-        "The private connectivity identifier.",
+        'privateConnectionId',
+        'The private connectivity identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "vpcPeeringConfig",
+        'vpcPeeringConfig',
         "The VPC Peering configuration is used to create VPC peering\nbetween Datastream and the consumer's VPC.\nStructure is documented below.",
         () => datastream_PrivateConnectionVpcPeeringConfig_GetTypes(),
         true,

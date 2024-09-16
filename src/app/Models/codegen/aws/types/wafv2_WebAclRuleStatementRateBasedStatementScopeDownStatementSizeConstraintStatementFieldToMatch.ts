@@ -3,56 +3,56 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint';
 import {
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString,
   wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString_GetTypes,
-} from "./wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString";
+} from './wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString';
 
 export interface wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatch {
   // Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
@@ -96,8 +96,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
   return [
     new DynamicUIProps(
       InputType.Object,
-      "ja3Fingerprint",
-      "Inspect the JA3 fingerprint. See `ja3_fingerprint` below for details.",
+      'ja3Fingerprint',
+      'Inspect the JA3 fingerprint. See `ja3_fingerprint` below for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3Fingerprint_GetTypes(),
       false,
@@ -105,8 +105,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "queryString",
-      "Inspect the query string. This is the part of a URL that appears after a `?` character, if any.",
+      'queryString',
+      'Inspect the query string. This is the part of a URL that appears after a `?` character, if any.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryString_GetTypes(),
       false,
@@ -114,8 +114,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "cookies",
-      "Inspect the cookies in the web request. See `cookies` below for details.",
+      'cookies',
+      'Inspect the cookies in the web request. See `cookies` below for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookies_GetTypes(),
       false,
@@ -123,7 +123,7 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headerOrders",
+      'headerOrders',
       "Inspect a string containing the list of the request's header names, ordered as they appear in the web request that AWS WAF receives for inspection. See `header_order` below for details.",
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrder_GetTypes(),
@@ -132,8 +132,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Array,
-      "headers",
-      "Inspect the request headers. See `headers` below for details.",
+      'headers',
+      'Inspect the request headers. See `headers` below for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeader_GetTypes(),
       false,
@@ -141,8 +141,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "method",
-      "Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.",
+      'method',
+      'Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethod_GetTypes(),
       false,
@@ -150,8 +150,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "allQueryArguments",
-      "Inspect all query arguments.",
+      'allQueryArguments',
+      'Inspect all query arguments.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArguments_GetTypes(),
       false,
@@ -159,8 +159,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "body",
-      "Inspect the request body, which immediately follows the request headers. See `body` below for details.",
+      'body',
+      'Inspect the request body, which immediately follows the request headers. See `body` below for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBody_GetTypes(),
       false,
@@ -168,8 +168,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "uriPath",
-      "Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.",
+      'uriPath',
+      'Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPath_GetTypes(),
       false,
@@ -177,8 +177,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "jsonBody",
-      "Inspect the request body as JSON. See `json_body` for details.",
+      'jsonBody',
+      'Inspect the request body as JSON. See `json_body` for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBody_GetTypes(),
       false,
@@ -186,8 +186,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleQueryArgument",
-      "Inspect a single query argument. See `single_query_argument` below for details.",
+      'singleQueryArgument',
+      'Inspect a single query argument. See `single_query_argument` below for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgument_GetTypes(),
       false,
@@ -195,8 +195,8 @@ export function wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSiz
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singleHeader",
-      "Inspect a single header. See `single_header` below for details.",
+      'singleHeader',
+      'Inspect a single header. See `single_header` below for details.',
       () =>
         wafv2_WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeader_GetTypes(),
       false,

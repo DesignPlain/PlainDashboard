@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface BackupPolicyArgs {
   /*
@@ -117,39 +117,39 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "If enabled, make backups automatically according to the schedules.\nThis will be applied to all volumes that have this policy attached and enforced on volume level.",
+        'enabled',
+        'If enabled, make backups automatically according to the schedules.\nThis will be applied to all volumes that have this policy attached and enforced on volume level.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Name of the region for the policy to apply to.",
+        'location',
+        'Name of the region for the policy to apply to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         'Labels as key value pairs. Example: `{ "owner": "Bob", "department": "finance", "purpose": "testing" }`.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
@@ -157,32 +157,32 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Number,
-        "monthlyBackupLimit",
-        "Number of monthly backups to keep. Note that the sum of daily, weekly and monthly backups should be greater than 1.",
+        'monthlyBackupLimit',
+        'Number of monthly backups to keep. Note that the sum of daily, weekly and monthly backups should be greater than 1.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the backup policy. Needs to be unique per location.\n\n\n- - -",
+        'name',
+        'The name of the backup policy. Needs to be unique per location.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "weeklyBackupLimit",
-        "Number of weekly backups to keep. Note that the sum of daily, weekly and monthly backups should be greater than 1.",
+        'weeklyBackupLimit',
+        'Number of weekly backups to keep. Note that the sum of daily, weekly and monthly backups should be greater than 1.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "dailyBackupLimit",
-        "Number of daily backups to keep. Note that the minimum daily backup limit is 2.",
+        'dailyBackupLimit',
+        'Number of daily backups to keep. Note that the minimum daily backup limit is 2.',
         () => [],
         true,
         false,

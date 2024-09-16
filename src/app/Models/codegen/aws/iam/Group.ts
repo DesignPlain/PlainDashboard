@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface GroupArgs {
   // The group's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: `=,.@-_.`. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
@@ -31,7 +31,7 @@ export class Group extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
+        'name',
         'The group\'s name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: `=,.@-_.`. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".',
         () => [],
         false,
@@ -39,8 +39,8 @@ export class Group extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "path",
-        "Path in which to create the group.",
+        'path',
+        'Path in which to create the group.',
         () => [],
         false,
         false,

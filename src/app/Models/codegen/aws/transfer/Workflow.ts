@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   transfer_WorkflowOnExceptionStep,
   transfer_WorkflowOnExceptionStep_GetTypes,
-} from "../types/transfer_WorkflowOnExceptionStep";
+} from '../types/transfer_WorkflowOnExceptionStep';
 import {
   transfer_WorkflowStep,
   transfer_WorkflowStep_GetTypes,
-} from "../types/transfer_WorkflowStep";
+} from '../types/transfer_WorkflowStep';
 
 export interface WorkflowArgs {
   // A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
@@ -51,32 +51,32 @@ export class Workflow extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A textual description for the workflow.",
+        'description',
+        'A textual description for the workflow.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "onExceptionSteps",
-        "Specifies the steps (actions) to take if errors are encountered during execution of the workflow. See Workflow Steps below.",
+        'onExceptionSteps',
+        'Specifies the steps (actions) to take if errors are encountered during execution of the workflow. See Workflow Steps below.',
         () => transfer_WorkflowOnExceptionStep_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "steps",
-        "Specifies the details for the steps that are in the specified workflow. See Workflow Steps below.",
+        'steps',
+        'Specifies the details for the steps that are in the specified workflow. See Workflow Steps below.',
         () => transfer_WorkflowStep_GetTypes(),
         true,
         true,

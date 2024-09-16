@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface beyondcorp_AppConnectionApplicationEndpoint {
   // Hostname or IP address of the remote application endpoint.
@@ -22,16 +22,16 @@ export function beyondcorp_AppConnectionApplicationEndpoint_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.String,
-      "host",
-      "Hostname or IP address of the remote application endpoint.",
+      'host',
+      'Hostname or IP address of the remote application endpoint.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "port",
-      "Port of the remote application endpoint.\n\n- - -",
+      'port',
+      'Port of the remote application endpoint.\n\n- - -',
       () => [],
       true,
       false,

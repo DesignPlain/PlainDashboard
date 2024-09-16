@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataplex_LakeMetastore,
   dataplex_LakeMetastore_GetTypes,
-} from "../types/dataplex_LakeMetastore";
+} from '../types/dataplex_LakeMetastore';
 import {
   dataplex_LakeMetastoreStatus,
   dataplex_LakeMetastoreStatus_GetTypes,
-} from "../types/dataplex_LakeMetastoreStatus";
+} from '../types/dataplex_LakeMetastoreStatus';
 import {
   dataplex_LakeAssetStatus,
   dataplex_LakeAssetStatus_GetTypes,
-} from "../types/dataplex_LakeAssetStatus";
+} from '../types/dataplex_LakeAssetStatus';
 
 export interface LakeArgs {
   /*
@@ -116,56 +116,56 @@ The name of the lake.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Optional. Description of the lake.",
+        'description',
+        'Optional. Description of the lake.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Optional. User friendly display name.",
+        'displayName',
+        'Optional. User friendly display name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Optional. User-defined labels for the lake.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Optional. User-defined labels for the lake.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "metastore",
-        "Optional. Settings to manage lake and Dataproc Metastore service instance association.",
+        'metastore',
+        'Optional. Settings to manage lake and Dataproc Metastore service instance association.',
         () => dataplex_LakeMetastore_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the lake.\n\n\n\n- - -",
+        'name',
+        'The name of the lake.\n\n\n\n- - -',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,

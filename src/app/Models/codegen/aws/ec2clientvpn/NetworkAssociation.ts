@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface NetworkAssociationArgs {
   // The ID of the Client VPN endpoint.
@@ -31,16 +31,16 @@ export class NetworkAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "clientVpnEndpointId",
-        "The ID of the Client VPN endpoint.",
+        'clientVpnEndpointId',
+        'The ID of the Client VPN endpoint.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetId",
-        "The ID of the subnet to associate with the Client VPN endpoint.",
+        'subnetId',
+        'The ID of the subnet to associate with the Client VPN endpoint.',
         () => [],
         true,
         true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   biglake_TableHiveOptions,
   biglake_TableHiveOptions_GetTypes,
-} from "../types/biglake_TableHiveOptions";
+} from '../types/biglake_TableHiveOptions';
 
 export interface TableArgs {
   /*
@@ -105,32 +105,32 @@ with nanosecond resolution and up to nine fractional digits. Examples:
     return [
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The database type.\nPossible values are: `HIVE`.",
+        'type',
+        'The database type.\nPossible values are: `HIVE`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "database",
-        "The id of the parent database.",
+        'database',
+        'The id of the parent database.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "hiveOptions",
-        "Options of a Hive table.\nStructure is documented below.",
+        'hiveOptions',
+        'Options of a Hive table.\nStructure is documented below.',
         () => biglake_TableHiveOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Output only. The name of the Table. Format:\nprojects/{project_id_or_number}/locations/{locationId}/catalogs/{catalogId}/databases/{databaseId}/tables/{tableId}\n\n\n- - -",
+        'name',
+        'Output only. The name of the Table. Format:\nprojects/{project_id_or_number}/locations/{locationId}/catalogs/{catalogId}/databases/{databaseId}/tables/{tableId}\n\n\n- - -',
         () => [],
         false,
         true,

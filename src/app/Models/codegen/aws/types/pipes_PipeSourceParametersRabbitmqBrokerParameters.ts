@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   pipes_PipeSourceParametersRabbitmqBrokerParametersCredentials,
   pipes_PipeSourceParametersRabbitmqBrokerParametersCredentials_GetTypes,
-} from "./pipes_PipeSourceParametersRabbitmqBrokerParametersCredentials";
+} from './pipes_PipeSourceParametersRabbitmqBrokerParametersCredentials';
 
 export interface pipes_PipeSourceParametersRabbitmqBrokerParameters {
   // The maximum number of records to include in each batch. Maximum value of 10000.
@@ -31,24 +31,24 @@ export function pipes_PipeSourceParametersRabbitmqBrokerParameters_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "virtualHost",
-      "The name of the virtual host associated with the source broker. Maximum length of 200.",
+      'virtualHost',
+      'The name of the virtual host associated with the source broker. Maximum length of 200.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "batchSize",
-      "The maximum number of records to include in each batch. Maximum value of 10000.",
+      'batchSize',
+      'The maximum number of records to include in each batch. Maximum value of 10000.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "credentials",
-      "The credentials needed to access the resource. Detailed below.",
+      'credentials',
+      'The credentials needed to access the resource. Detailed below.',
       () =>
         pipes_PipeSourceParametersRabbitmqBrokerParametersCredentials_GetTypes(),
       true,
@@ -56,16 +56,16 @@ export function pipes_PipeSourceParametersRabbitmqBrokerParameters_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maximumBatchingWindowInSeconds",
-      "The maximum length of a time to wait for events. Maximum value of 300.",
+      'maximumBatchingWindowInSeconds',
+      'The maximum length of a time to wait for events. Maximum value of 300.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "queueName",
-      "The name of the destination queue to consume. Maximum length of 1000.",
+      'queueName',
+      'The name of the destination queue to consume. Maximum length of 1000.',
       () => [],
       true,
       true,

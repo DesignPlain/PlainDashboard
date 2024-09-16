@@ -3,28 +3,28 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   composer_getEnvironmentConfigWorkloadsConfigDagProcessor,
   composer_getEnvironmentConfigWorkloadsConfigDagProcessor_GetTypes,
-} from "./composer_getEnvironmentConfigWorkloadsConfigDagProcessor";
+} from './composer_getEnvironmentConfigWorkloadsConfigDagProcessor';
 import {
   composer_getEnvironmentConfigWorkloadsConfigScheduler,
   composer_getEnvironmentConfigWorkloadsConfigScheduler_GetTypes,
-} from "./composer_getEnvironmentConfigWorkloadsConfigScheduler";
+} from './composer_getEnvironmentConfigWorkloadsConfigScheduler';
 import {
   composer_getEnvironmentConfigWorkloadsConfigTriggerer,
   composer_getEnvironmentConfigWorkloadsConfigTriggerer_GetTypes,
-} from "./composer_getEnvironmentConfigWorkloadsConfigTriggerer";
+} from './composer_getEnvironmentConfigWorkloadsConfigTriggerer';
 import {
   composer_getEnvironmentConfigWorkloadsConfigWebServer,
   composer_getEnvironmentConfigWorkloadsConfigWebServer_GetTypes,
-} from "./composer_getEnvironmentConfigWorkloadsConfigWebServer";
+} from './composer_getEnvironmentConfigWorkloadsConfigWebServer';
 import {
   composer_getEnvironmentConfigWorkloadsConfigWorker,
   composer_getEnvironmentConfigWorkloadsConfigWorker_GetTypes,
-} from "./composer_getEnvironmentConfigWorkloadsConfigWorker";
+} from './composer_getEnvironmentConfigWorkloadsConfigWorker';
 
 export interface composer_getEnvironmentConfigWorkloadsConfig {
   // Configuration for resources used by DAG processor.
@@ -47,40 +47,40 @@ export function composer_getEnvironmentConfigWorkloadsConfig_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.Array,
-      "schedulers",
-      "Configuration for resources used by Airflow schedulers.",
+      'schedulers',
+      'Configuration for resources used by Airflow schedulers.',
       () => composer_getEnvironmentConfigWorkloadsConfigScheduler_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "triggerers",
-      "Configuration for resources used by Airflow triggerers.",
+      'triggerers',
+      'Configuration for resources used by Airflow triggerers.',
       () => composer_getEnvironmentConfigWorkloadsConfigTriggerer_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "webServers",
-      "Configuration for resources used by Airflow web server.",
+      'webServers',
+      'Configuration for resources used by Airflow web server.',
       () => composer_getEnvironmentConfigWorkloadsConfigWebServer_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "workers",
-      "Configuration for resources used by Airflow workers.",
+      'workers',
+      'Configuration for resources used by Airflow workers.',
       () => composer_getEnvironmentConfigWorkloadsConfigWorker_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "dagProcessors",
-      "Configuration for resources used by DAG processor.",
+      'dagProcessors',
+      'Configuration for resources used by DAG processor.',
       () => composer_getEnvironmentConfigWorkloadsConfigDagProcessor_GetTypes(),
       true,
       false,

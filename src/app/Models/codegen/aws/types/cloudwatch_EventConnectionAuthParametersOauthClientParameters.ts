@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudwatch_EventConnectionAuthParametersOauthClientParameters {
   // The client ID for the credentials to use for authorization. Created and stored in AWS Secrets Manager.
@@ -18,16 +18,16 @@ export function cloudwatch_EventConnectionAuthParametersOauthClientParameters_Ge
   return [
     new DynamicUIProps(
       InputType.String,
-      "clientSecret",
-      "The client secret for the credentials to use for authorization. Created and stored in AWS Secrets Manager.",
+      'clientSecret',
+      'The client secret for the credentials to use for authorization. Created and stored in AWS Secrets Manager.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "clientId",
-      "The client ID for the credentials to use for authorization. Created and stored in AWS Secrets Manager.",
+      'clientId',
+      'The client ID for the credentials to use for authorization. Created and stored in AWS Secrets Manager.',
       () => [],
       true,
       false,

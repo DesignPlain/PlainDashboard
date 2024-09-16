@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroup {
   // Identifier of the feature group.
@@ -18,16 +18,16 @@ export function vertex_AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatu
   return [
     new DynamicUIProps(
       InputType.String,
-      "featureGroupId",
-      "Identifier of the feature group.",
+      'featureGroupId',
+      'Identifier of the feature group.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "featureIds",
-      "Identifiers of features under the feature group.",
+      'featureIds',
+      'Identifiers of features under the feature group.',
       () => InputType_String_GetTypes(),
       true,
       false,

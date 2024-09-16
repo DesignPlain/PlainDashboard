@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   storage_InsightsReportConfigCsvOptions,
   storage_InsightsReportConfigCsvOptions_GetTypes,
-} from "../types/storage_InsightsReportConfigCsvOptions";
+} from '../types/storage_InsightsReportConfigCsvOptions';
 import {
   storage_InsightsReportConfigFrequencyOptions,
   storage_InsightsReportConfigFrequencyOptions_GetTypes,
-} from "../types/storage_InsightsReportConfigFrequencyOptions";
+} from '../types/storage_InsightsReportConfigFrequencyOptions';
 import {
   storage_InsightsReportConfigObjectMetadataReportOptions,
   storage_InsightsReportConfigObjectMetadataReportOptions_GetTypes,
-} from "../types/storage_InsightsReportConfigObjectMetadataReportOptions";
+} from '../types/storage_InsightsReportConfigObjectMetadataReportOptions';
 
 export interface InsightsReportConfigArgs {
   // The editable display name of the inventory report configuration. Has a limit of 256 characters. Can be empty.
@@ -94,48 +94,48 @@ must be in the same location.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "csvOptions",
-        "Options for configuring the format of the inventory report CSV file.\nStructure is documented below.",
+        'csvOptions',
+        'Options for configuring the format of the inventory report CSV file.\nStructure is documented below.',
         () => storage_InsightsReportConfigCsvOptions_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The editable display name of the inventory report configuration. Has a limit of 256 characters. Can be empty.",
+        'displayName',
+        'The editable display name of the inventory report configuration. Has a limit of 256 characters. Can be empty.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "frequencyOptions",
-        "Options for configuring how inventory reports are generated.\nStructure is documented below.",
+        'frequencyOptions',
+        'Options for configuring how inventory reports are generated.\nStructure is documented below.',
         () => storage_InsightsReportConfigFrequencyOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the ReportConfig. The source and destination buckets specified in the ReportConfig\nmust be in the same location.",
+        'location',
+        'The location of the ReportConfig. The source and destination buckets specified in the ReportConfig\nmust be in the same location.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "objectMetadataReportOptions",
-        "Options for including metadata in an inventory report.\nStructure is documented below.",
+        'objectMetadataReportOptions',
+        'Options for including metadata in an inventory report.\nStructure is documented below.',
         () =>
           storage_InsightsReportConfigObjectMetadataReportOptions_GetTypes(),
         false,

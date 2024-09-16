@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface PullThroughCacheRuleArgs {
   // The registry URL of the upstream public registry to use as the source.
@@ -34,24 +34,24 @@ export class PullThroughCacheRule extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "upstreamRegistryUrl",
-        "The registry URL of the upstream public registry to use as the source.",
+        'upstreamRegistryUrl',
+        'The registry URL of the upstream public registry to use as the source.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "credentialArn",
-        "ARN of the Secret which will be used to authenticate against the registry.",
+        'credentialArn',
+        'ARN of the Secret which will be used to authenticate against the registry.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ecrRepositoryPrefix",
-        "The repository name prefix to use when caching images from the source registry.",
+        'ecrRepositoryPrefix',
+        'The repository name prefix to use when caching images from the source registry.',
         () => [],
         true,
         true,

@@ -3,33 +3,33 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   workstations_WorkstationConfigHost,
   workstations_WorkstationConfigHost_GetTypes,
-} from "../types/workstations_WorkstationConfigHost";
+} from '../types/workstations_WorkstationConfigHost';
 import {
   workstations_WorkstationConfigContainer,
   workstations_WorkstationConfigContainer_GetTypes,
-} from "../types/workstations_WorkstationConfigContainer";
+} from '../types/workstations_WorkstationConfigContainer';
 import {
   workstations_WorkstationConfigEncryptionKey,
   workstations_WorkstationConfigEncryptionKey_GetTypes,
-} from "../types/workstations_WorkstationConfigEncryptionKey";
+} from '../types/workstations_WorkstationConfigEncryptionKey';
 import {
   workstations_WorkstationConfigPersistentDirectory,
   workstations_WorkstationConfigPersistentDirectory_GetTypes,
-} from "../types/workstations_WorkstationConfigPersistentDirectory";
+} from '../types/workstations_WorkstationConfigPersistentDirectory';
 import {
   workstations_WorkstationConfigCondition,
   workstations_WorkstationConfigCondition_GetTypes,
-} from "../types/workstations_WorkstationConfigCondition";
+} from '../types/workstations_WorkstationConfigCondition';
 import {
   workstations_WorkstationConfigReadinessCheck,
   workstations_WorkstationConfigReadinessCheck_GetTypes,
-} from "../types/workstations_WorkstationConfigReadinessCheck";
+} from '../types/workstations_WorkstationConfigReadinessCheck';
 
 export interface WorkstationConfigArgs {
   /*
@@ -264,23 +264,23 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "workstationClusterId",
-        "The ID of the parent workstation cluster.",
+        'workstationClusterId',
+        'The ID of the parent workstation cluster.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "container",
-        "Container that will be run for each workstation using this configuration when that workstation is started.\nStructure is documented below.",
+        'container',
+        'Container that will be run for each workstation using this configuration when that workstation is started.\nStructure is documented below.',
         () => workstations_WorkstationConfigContainer_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "replicaZones",
+        'replicaZones',
         "Specifies the zones used to replicate the VM and disk resources within the region. If set, exactly two zones within the workstation cluster's region must be specified—for example, `['us-central1-a', 'us-central1-f']`.\nIf this field is empty, two default zones within the region are used. Immutable after the workstation configuration is created.",
         () => InputType_String_GetTypes(),
         false,
@@ -288,71 +288,71 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Client-specified labels that are applied to the resource and that are also propagated to the underlying Compute Engine resources.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionKey",
-        "Encrypts resources of this workstation configuration using a customer-managed encryption key.\nIf specified, the boot disk of the Compute Engine instance and the persistent disk are encrypted using this encryption key. If this field is not set, the disks are encrypted using a generated key. Customer-managed encryption keys do not protect disk metadata.\nIf the customer-managed encryption key is rotated, when the workstation instance is stopped, the system attempts to recreate the persistent disk with the new version of the key. Be sure to keep older versions of the key until the persistent disk is recreated. Otherwise, data on the persistent disk will be lost.\nIf the encryption key is revoked, the workstation session will automatically be stopped within 7 hours.\nStructure is documented below.",
+        'encryptionKey',
+        'Encrypts resources of this workstation configuration using a customer-managed encryption key.\nIf specified, the boot disk of the Compute Engine instance and the persistent disk are encrypted using this encryption key. If this field is not set, the disks are encrypted using a generated key. Customer-managed encryption keys do not protect disk metadata.\nIf the customer-managed encryption key is rotated, when the workstation instance is stopped, the system attempts to recreate the persistent disk with the new version of the key. Be sure to keep older versions of the key until the persistent disk is recreated. Otherwise, data on the persistent disk will be lost.\nIf the encryption key is revoked, the workstation session will automatically be stopped within 7 hours.\nStructure is documented below.',
         () => workstations_WorkstationConfigEncryptionKey_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "readinessChecks",
-        "Readiness checks to be performed on a workstation.\nStructure is documented below.",
+        'readinessChecks',
+        'Readiness checks to be performed on a workstation.\nStructure is documented below.',
         () => workstations_WorkstationConfigReadinessCheck_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "workstationConfigId",
-        "The ID to be assigned to the workstation cluster config.",
+        'workstationConfigId',
+        'The ID to be assigned to the workstation cluster config.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Client-specified annotations. This is distinct from labels.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Client-specified annotations. This is distinct from labels.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Human-readable name for this resource.",
+        'displayName',
+        'Human-readable name for this resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location where the workstation cluster config should reside.\n\n\n- - -",
+        'location',
+        'The location where the workstation cluster config should reside.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "idleTimeout",
+        'idleTimeout',
         "How long to wait before automatically stopping an instance that hasn't recently received any user traffic. A value of 0 indicates that this instance should never time out from idleness. Defaults to 20 minutes.\nA duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
         () => [],
         false,
@@ -360,40 +360,40 @@ and default labels configured on the provider.
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "disableTcpConnections",
-        "Disables support for plain TCP connections in the workstation. By default the service supports TCP connections via a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain tcp connections, such as ssh. When enabled, all communication must occur over https or wss.",
+        'disableTcpConnections',
+        'Disables support for plain TCP connections in the workstation. By default the service supports TCP connections via a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain tcp connections, such as ssh. When enabled, all communication must occur over https or wss.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "host",
-        "Runtime host for a workstation.\nStructure is documented below.",
+        'host',
+        'Runtime host for a workstation.\nStructure is documented below.',
         () => workstations_WorkstationConfigHost_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "persistentDirectories",
-        "Directories to persist across workstation sessions.\nStructure is documented below.",
+        'persistentDirectories',
+        'Directories to persist across workstation sessions.\nStructure is documented below.',
         () => workstations_WorkstationConfigPersistentDirectory_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enableAuditAgent",
-        "Whether to enable Linux `auditd` logging on the workstation. When enabled, a service account must also be specified that has `logging.buckets.write` permission on the project. Operating system audit logging is distinct from Cloud Audit Logs.",
+        'enableAuditAgent',
+        'Whether to enable Linux `auditd` logging on the workstation. When enabled, a service account must also be specified that has `logging.buckets.write` permission on the project. Operating system audit logging is distinct from Cloud Audit Logs.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "runningTimeout",
-        "How long to wait before automatically stopping a workstation after it was started. A value of 0 indicates that workstations using this configuration should never time out from running duration. Must be greater than 0 and less than 24 hours if `encryption_key` is set. Defaults to 12 hours.\nA duration in seconds with up to nine fractional digits, ending with 's'. Example: \"3.5s\".",
+        'runningTimeout',
+        'How long to wait before automatically stopping a workstation after it was started. A value of 0 indicates that workstations using this configuration should never time out from running duration. Must be greater than 0 and less than 24 hours if `encryption_key` is set. Defaults to 12 hours.\nA duration in seconds with up to nine fractional digits, ending with \'s\'. Example: "3.5s".',
         () => [],
         false,
         false,

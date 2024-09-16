@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   blockchainnodeengine_BlockchainNodesEthereumDetails,
   blockchainnodeengine_BlockchainNodesEthereumDetails_GetTypes,
-} from "../types/blockchainnodeengine_BlockchainNodesEthereumDetails";
+} from '../types/blockchainnodeengine_BlockchainNodesEthereumDetails';
 import {
   blockchainnodeengine_BlockchainNodesConnectionInfo,
   blockchainnodeengine_BlockchainNodesConnectionInfo_GetTypes,
-} from "../types/blockchainnodeengine_BlockchainNodesConnectionInfo";
+} from '../types/blockchainnodeengine_BlockchainNodesConnectionInfo';
 
 export interface BlockchainNodesArgs {
   /*
@@ -119,48 +119,48 @@ and default labels configured on the provider.
     return [
       new DynamicUIProps(
         InputType.String,
-        "blockchainType",
-        "User-provided key-value pairs\nPossible values are: `ETHEREUM`.",
+        'blockchainType',
+        'User-provided key-value pairs\nPossible values are: `ETHEREUM`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ethereumDetails",
-        "User-provided key-value pairs\nStructure is documented below.",
+        'ethereumDetails',
+        'User-provided key-value pairs\nStructure is documented below.',
         () => blockchainnodeengine_BlockchainNodesEthereumDetails_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "User-provided key-value pairs\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'User-provided key-value pairs\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of Blockchain Node being created.",
+        'location',
+        'Location of Blockchain Node being created.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "blockchainNodeId",
-        "ID of the requesting object.\n\n\n- - -",
+        'blockchainNodeId',
+        'ID of the requesting object.\n\n\n- - -',
         () => [],
         true,
         false,

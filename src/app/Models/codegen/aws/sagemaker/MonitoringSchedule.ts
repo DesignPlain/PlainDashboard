@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_MonitoringScheduleMonitoringScheduleConfig,
   sagemaker_MonitoringScheduleMonitoringScheduleConfig_GetTypes,
-} from "../types/sagemaker_MonitoringScheduleMonitoringScheduleConfig";
+} from '../types/sagemaker_MonitoringScheduleMonitoringScheduleConfig';
 
 export interface MonitoringScheduleArgs {
   // The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.
@@ -41,24 +41,24 @@ export class MonitoringSchedule extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "monitoringScheduleConfig",
-        "The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.",
+        'monitoringScheduleConfig',
+        'The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.',
         () => sagemaker_MonitoringScheduleMonitoringScheduleConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account. If omitted, the provider will assign a random, unique name.",
+        'name',
+        'The name of the monitoring schedule. The name must be unique within an AWS Region within an AWS account. If omitted, the provider will assign a random, unique name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A mapping of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

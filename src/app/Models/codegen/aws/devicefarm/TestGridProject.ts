@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   devicefarm_TestGridProjectVpcConfig,
   devicefarm_TestGridProjectVpcConfig_GetTypes,
-} from "../types/devicefarm_TestGridProjectVpcConfig";
+} from '../types/devicefarm_TestGridProjectVpcConfig';
 
 export interface TestGridProjectArgs {
   // Human-readable description of the project.
@@ -47,32 +47,32 @@ export class TestGridProject extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "vpcConfig",
-        "The VPC security groups and subnets that are attached to a project. See VPC Config below.",
+        'vpcConfig',
+        'The VPC security groups and subnets that are attached to a project. See VPC Config below.',
         () => devicefarm_TestGridProjectVpcConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Human-readable description of the project.",
+        'description',
+        'Human-readable description of the project.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Selenium testing project.",
+        'name',
+        'The name of the Selenium testing project.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

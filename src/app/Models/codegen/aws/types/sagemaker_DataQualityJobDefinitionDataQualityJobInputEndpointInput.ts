@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sagemaker_DataQualityJobDefinitionDataQualityJobInputEndpointInput {
   // An endpoint in customer's account which has `data_capture_config` enabled.
@@ -24,7 +24,7 @@ export function sagemaker_DataQualityJobDefinitionDataQualityJobInputEndpointInp
   return [
     new DynamicUIProps(
       InputType.String,
-      "endpointName",
+      'endpointName',
       "An endpoint in customer's account which has `data_capture_config` enabled.",
       () => [],
       true,
@@ -32,24 +32,24 @@ export function sagemaker_DataQualityJobDefinitionDataQualityJobInputEndpointInp
     ),
     new DynamicUIProps(
       InputType.String,
-      "localPath",
-      "Path to the filesystem where the endpoint data is available to the container. Defaults to `/opt/ml/processing/input`.",
+      'localPath',
+      'Path to the filesystem where the endpoint data is available to the container. Defaults to `/opt/ml/processing/input`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "s3DataDistributionType",
-      "Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to `FullyReplicated`. Valid values are `FullyReplicated` or `ShardedByS3Key`",
+      's3DataDistributionType',
+      'Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to `FullyReplicated`. Valid values are `FullyReplicated` or `ShardedByS3Key`',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "s3InputMode",
-      "Whether the `Pipe` or `File` is used as the input mode for transferring data for the monitoring job. `Pipe` mode is recommended for large datasets. `File` mode is useful for small files that fit in memory. Defaults to `File`.  Valid values are `Pipe` or `File`",
+      's3InputMode',
+      'Whether the `Pipe` or `File` is used as the input mode for transferring data for the monitoring job. `Pipe` mode is recommended for large datasets. `File` mode is useful for small files that fit in memory. Defaults to `File`.  Valid values are `Pipe` or `File`',
       () => [],
       false,
       true,

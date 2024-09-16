@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface networkservices_GrpcRouteRuleActionRetryPolicy {
   /*
@@ -25,16 +25,16 @@ export function networkservices_GrpcRouteRuleActionRetryPolicy_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Number,
-      "numRetries",
-      "Specifies the allowed number of retries.\n\n- - -",
+      'numRetries',
+      'Specifies the allowed number of retries.\n\n- - -',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "retryConditions",
-      "Specifies one or more conditions when this retry policy applies.\nEach value may be one of: `connect-failure`, `refused-stream`, `cancelled`, `deadline-exceeded`, `resource-exhausted`, `unavailable`.",
+      'retryConditions',
+      'Specifies one or more conditions when this retry policy applies.\nEach value may be one of: `connect-failure`, `refused-stream`, `cancelled`, `deadline-exceeded`, `resource-exhausted`, `unavailable`.',
       () => InputType_String_GetTypes(),
       false,
       false,

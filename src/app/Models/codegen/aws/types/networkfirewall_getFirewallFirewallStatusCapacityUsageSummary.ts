@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidr,
   networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidr_GetTypes,
-} from "./networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidr";
+} from './networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidr';
 
 export interface networkfirewall_getFirewallFirewallStatusCapacityUsageSummary {
   // Capacity usage of CIDR blocks used by IP set references in a firewall.
@@ -19,8 +19,8 @@ export function networkfirewall_getFirewallFirewallStatusCapacityUsageSummary_Ge
   return [
     new DynamicUIProps(
       InputType.Array,
-      "cidrs",
-      "Capacity usage of CIDR blocks used by IP set references in a firewall.",
+      'cidrs',
+      'Capacity usage of CIDR blocks used by IP set references in a firewall.',
       () =>
         networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidr_GetTypes(),
       true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingDefaultValueSpecificationDefaultValueList,
   lex_V2modelsSlotValueElicitationSettingDefaultValueSpecificationDefaultValueList_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingDefaultValueSpecificationDefaultValueList";
+} from './lex_V2modelsSlotValueElicitationSettingDefaultValueSpecificationDefaultValueList';
 
 export interface lex_V2modelsSlotValueElicitationSettingDefaultValueSpecification {
   //
@@ -19,8 +19,8 @@ export function lex_V2modelsSlotValueElicitationSettingDefaultValueSpecification
   return [
     new DynamicUIProps(
       InputType.Array,
-      "defaultValueLists",
-      "",
+      'defaultValueLists',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingDefaultValueSpecificationDefaultValueList_GetTypes(),
       false,

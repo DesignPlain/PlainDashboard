@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudbuild_getTriggerBuildStepVolume {
   /*
@@ -28,16 +28,16 @@ export function cloudbuild_getTriggerBuildStepVolume_GetTypes(): DynamicUIProps[
   return [
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the volume to mount.\n\nVolume names must be unique per build step and must be valid names for\nDocker volumes. Each named volume must be used by at least two build steps.",
+      'name',
+      'Name of the volume to mount.\n\nVolume names must be unique per build step and must be valid names for\nDocker volumes. Each named volume must be used by at least two build steps.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "Path at which to mount the volume.\n\nPaths must be absolute and cannot conflict with other volume paths on\nthe same build step or with certain reserved volume paths.",
+      'path',
+      'Path at which to mount the volume.\n\nPaths must be absolute and cannot conflict with other volume paths on\nthe same build step or with certain reserved volume paths.',
       () => [],
       true,
       false,

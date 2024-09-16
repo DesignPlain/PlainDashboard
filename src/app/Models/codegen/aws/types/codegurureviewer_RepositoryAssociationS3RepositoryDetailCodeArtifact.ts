@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface codegurureviewer_RepositoryAssociationS3RepositoryDetailCodeArtifact {
   //
@@ -18,16 +18,16 @@ export function codegurureviewer_RepositoryAssociationS3RepositoryDetailCodeArti
   return [
     new DynamicUIProps(
       InputType.String,
-      "buildArtifactsObjectKey",
-      "",
+      'buildArtifactsObjectKey',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sourceCodeArtifactsObjectKey",
-      "",
+      'sourceCodeArtifactsObjectKey',
+      '',
       () => [],
       false,
       false,

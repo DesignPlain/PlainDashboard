@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appengine_FlexibleAppVersionLivenessCheck {
   /*
@@ -37,7 +37,7 @@ export function appengine_FlexibleAppVersionLivenessCheck_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.String,
-      "host",
+      'host',
       'Host header to send when performing a HTTP Readiness check. Example: "myapp.appspot.com"',
       () => [],
       false,
@@ -45,7 +45,7 @@ export function appengine_FlexibleAppVersionLivenessCheck_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "initialDelay",
+      'initialDelay',
       'The initial delay before starting to execute the checks. Default: "300s"\n\n- - -',
       () => [],
       false,
@@ -53,23 +53,23 @@ export function appengine_FlexibleAppVersionLivenessCheck_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "path",
-      "The request path.",
+      'path',
+      'The request path.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "successThreshold",
-      "Number of consecutive successful checks required before considering the VM healthy. Default: 2.",
+      'successThreshold',
+      'Number of consecutive successful checks required before considering the VM healthy. Default: 2.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "timeout",
+      'timeout',
       'Time before the check is considered failed. Default: "4s"',
       () => [],
       false,
@@ -77,16 +77,16 @@ export function appengine_FlexibleAppVersionLivenessCheck_GetTypes(): DynamicUIP
     ),
     new DynamicUIProps(
       InputType.String,
-      "checkInterval",
-      "Interval between health checks.",
+      'checkInterval',
+      'Interval between health checks.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "failureThreshold",
-      "Number of consecutive failed checks required before considering the VM unhealthy. Default: 4.",
+      'failureThreshold',
+      'Number of consecutive failed checks required before considering the VM unhealthy. Default: 4.',
       () => [],
       false,
       false,

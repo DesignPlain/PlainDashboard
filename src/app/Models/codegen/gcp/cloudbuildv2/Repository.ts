@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface RepositoryArgs {
   /*
@@ -88,48 +88,48 @@ Please refer to the field `effective_annotations` for all of the annotations pre
     return [
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
-        "Allows clients to store small amounts of arbitrary data.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
+        'annotations',
+        'Allows clients to store small amounts of arbitrary data.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the repository.",
+        'name',
+        'Name of the repository.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "parentConnection",
-        "The connection for the resource\n\n\n- - -",
+        'parentConnection',
+        'The connection for the resource\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "remoteUri",
-        "Required. Git Clone HTTPS URI.",
+        'remoteUri',
+        'Required. Git Clone HTTPS URI.',
         () => [],
         true,
         true,

@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_NodeGroupMaintenanceWindow,
   compute_NodeGroupMaintenanceWindow_GetTypes,
-} from "../types/compute_NodeGroupMaintenanceWindow";
+} from '../types/compute_NodeGroupMaintenanceWindow';
 import {
   compute_NodeGroupShareSettings,
   compute_NodeGroupShareSettings_GetTypes,
-} from "../types/compute_NodeGroupShareSettings";
+} from '../types/compute_NodeGroupShareSettings';
 import {
   compute_NodeGroupAutoscalingPolicy,
   compute_NodeGroupAutoscalingPolicy_GetTypes,
-} from "../types/compute_NodeGroupAutoscalingPolicy";
+} from '../types/compute_NodeGroupAutoscalingPolicy';
 
 export interface NodeGroupArgs {
   /*
@@ -148,88 +148,88 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "maintenanceInterval",
-        "Specifies the frequency of planned maintenance events. Set to one of the following:\n- AS_NEEDED: Hosts are eligible to receive infrastructure and hypervisor updates as they become available.\n- RECURRENT: Hosts receive planned infrastructure and hypervisor updates on a periodic basis, but not more frequently than every 28 days. This minimizes the number of planned maintenance operations on individual hosts and reduces the frequency of disruptions, both live migrations and terminations, on individual VMs.\nPossible values are: `AS_NEEDED`, `RECURRENT`.",
+        'maintenanceInterval',
+        'Specifies the frequency of planned maintenance events. Set to one of the following:\n- AS_NEEDED: Hosts are eligible to receive infrastructure and hypervisor updates as they become available.\n- RECURRENT: Hosts receive planned infrastructure and hypervisor updates on a periodic basis, but not more frequently than every 28 days. This minimizes the number of planned maintenance operations on individual hosts and reduces the frequency of disruptions, both live migrations and terminations, on individual VMs.\nPossible values are: `AS_NEEDED`, `RECURRENT`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource.",
+        'name',
+        'Name of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "nodeTemplate",
-        "The URL of the node template to which this node group belongs.\n\n\n- - -",
+        'nodeTemplate',
+        'The URL of the node template to which this node group belongs.\n\n\n- - -',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zone",
-        "Zone where this node group is located",
+        'zone',
+        'Zone where this node group is located',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional textual description of the resource.",
+        'description',
+        'An optional textual description of the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "maintenanceWindow",
-        "contains properties for the timeframe of maintenance\nStructure is documented below.",
+        'maintenanceWindow',
+        'contains properties for the timeframe of maintenance\nStructure is documented below.',
         () => compute_NodeGroupMaintenanceWindow_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "shareSettings",
-        "Share settings for the node group.\nStructure is documented below.",
+        'shareSettings',
+        'Share settings for the node group.\nStructure is documented below.',
         () => compute_NodeGroupShareSettings_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "autoscalingPolicy",
-        "If you use sole-tenant nodes for your workloads, you can use the node\ngroup autoscaler to automatically manage the sizes of your node groups.\nOne of `initial_size` or `autoscaling_policy` must be configured on resource creation.\nStructure is documented below.",
+        'autoscalingPolicy',
+        'If you use sole-tenant nodes for your workloads, you can use the node\ngroup autoscaler to automatically manage the sizes of your node groups.\nOne of `initial_size` or `autoscaling_policy` must be configured on resource creation.\nStructure is documented below.',
         () => compute_NodeGroupAutoscalingPolicy_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "initialSize",
-        "The initial number of nodes in the node group. One of `initial_size` or `autoscaling_policy` must be configured on resource creation.",
+        'initialSize',
+        'The initial number of nodes in the node group. One of `initial_size` or `autoscaling_policy` must be configured on resource creation.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "maintenancePolicy",
-        "Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT.",
+        'maintenancePolicy',
+        'Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT.',
         () => [],
         false,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_getLaunchTemplateInstanceMarketOptionSpotOption,
   ec2_getLaunchTemplateInstanceMarketOptionSpotOption_GetTypes,
-} from "./ec2_getLaunchTemplateInstanceMarketOptionSpotOption";
+} from './ec2_getLaunchTemplateInstanceMarketOptionSpotOption';
 
 export interface ec2_getLaunchTemplateInstanceMarketOption {
   //
@@ -22,16 +22,16 @@ export function ec2_getLaunchTemplateInstanceMarketOption_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Array,
-      "spotOptions",
-      "",
+      'spotOptions',
+      '',
       () => ec2_getLaunchTemplateInstanceMarketOptionSpotOption_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "marketType",
-      "",
+      'marketType',
+      '',
       () => [],
       true,
       false,

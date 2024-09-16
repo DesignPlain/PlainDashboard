@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface comprehend_DocumentClassifierInputDataConfigAugmentedManifest {
   // Location of annotation files.
@@ -36,48 +36,48 @@ export function comprehend_DocumentClassifierInputDataConfigAugmentedManifest_Ge
   return [
     new DynamicUIProps(
       InputType.String,
-      "documentType",
-      "Type of augmented manifest.\nOne of `PLAIN_TEXT_DOCUMENT` or `SEMI_STRUCTURED_DOCUMENT`.",
+      'documentType',
+      'Type of augmented manifest.\nOne of `PLAIN_TEXT_DOCUMENT` or `SEMI_STRUCTURED_DOCUMENT`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "s3Uri",
-      "Location of augmented manifest file.",
+      's3Uri',
+      'Location of augmented manifest file.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "sourceDocumentsS3Uri",
-      "Location of source PDF files.",
+      'sourceDocumentsS3Uri',
+      'Location of source PDF files.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "split",
-      "Purpose of data in augmented manifest.\nOne of `TRAIN` or `TEST`.",
+      'split',
+      'Purpose of data in augmented manifest.\nOne of `TRAIN` or `TEST`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "annotationDataS3Uri",
-      "Location of annotation files.",
+      'annotationDataS3Uri',
+      'Location of annotation files.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "attributeNames",
-      "The JSON attribute that contains the annotations for the training documents.",
+      'attributeNames',
+      'The JSON attribute that contains the annotations for the training documents.',
       () => InputType_String_GetTypes(),
       true,
       false,

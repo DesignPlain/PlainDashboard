@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig {
   // If set to true, enables CAAP for L7 DDoS detection.
@@ -18,16 +18,16 @@ export function compute_SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseC
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enable",
-      "If set to true, enables CAAP for L7 DDoS detection.",
+      'enable',
+      'If set to true, enables CAAP for L7 DDoS detection.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ruleVisibility",
-      "Rule visibility can be one of the following:",
+      'ruleVisibility',
+      'Rule visibility can be one of the following:',
       () => [],
       false,
       false,

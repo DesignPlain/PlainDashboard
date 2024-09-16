@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment,
   dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment_GetTypes,
-} from "./dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment";
+} from './dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment';
 
 export interface dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameter {
   /*
@@ -50,16 +50,16 @@ export function dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParame
   return [
     new DynamicUIProps(
       InputType.String,
-      "containerSpecGcsPath",
-      "Cloud Storage path to a file with a JSON-serialized ContainerSpec as content.",
+      'containerSpecGcsPath',
+      'Cloud Storage path to a file with a JSON-serialized ContainerSpec as content.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "environment",
-      "The runtime environment for the Flex Template job.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#FlexTemplateRuntimeEnvironment\nStructure is documented below.",
+      'environment',
+      'The runtime environment for the Flex Template job.\nhttps://cloud.google.com/dataflow/docs/reference/data-pipelines/rest/v1/projects.locations.pipelines#FlexTemplateRuntimeEnvironment\nStructure is documented below.',
       () =>
         dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironment_GetTypes(),
       false,
@@ -67,15 +67,15 @@ export function dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParame
     ),
     new DynamicUIProps(
       InputType.String,
-      "jobName",
-      "The job name to use for the created job. For an update job request, the job name should be the same as the existing running job.",
+      'jobName',
+      'The job name to use for the created job. For an update job request, the job name should be the same as the existing running job.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Map,
-      "launchOptions",
+      'launchOptions',
       'Launch options for this Flex Template job. This is a common set of options across languages and templates. This should not be used to pass job parameters.\n\'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\'',
       () => InputType_Map_GetTypes(),
       false,
@@ -83,7 +83,7 @@ export function dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParame
     ),
     new DynamicUIProps(
       InputType.Map,
-      "parameters",
+      'parameters',
       '\'The parameters for the Flex Template. Example: {"numWorkers":"5"}\'\n\'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\'',
       () => InputType_Map_GetTypes(),
       false,
@@ -91,7 +91,7 @@ export function dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParame
     ),
     new DynamicUIProps(
       InputType.Map,
-      "transformNameMappings",
+      'transformNameMappings',
       '\'Use this to pass transform name mappings for streaming update jobs. Example: {"oldTransformName":"newTransformName",...}\'\n\'An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.\'',
       () => InputType_Map_GetTypes(),
       false,
@@ -99,8 +99,8 @@ export function dataflow_PipelineWorkloadDataflowFlexTemplateRequestLaunchParame
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "update",
-      "Set this to true if you are sending a request to update a running streaming job. When set, the job name should be the same as the running job.",
+      'update',
+      'Set this to true if you are sending a request to update a running streaming job. When set, the job name should be the same as the running job.',
       () => [],
       false,
       false,

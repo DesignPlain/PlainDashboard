@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3_BucketLifecycleConfigurationV2RuleFilterTag,
   s3_BucketLifecycleConfigurationV2RuleFilterTag_GetTypes,
-} from "./s3_BucketLifecycleConfigurationV2RuleFilterTag";
+} from './s3_BucketLifecycleConfigurationV2RuleFilterTag';
 import {
   s3_BucketLifecycleConfigurationV2RuleFilterAnd,
   s3_BucketLifecycleConfigurationV2RuleFilterAnd_GetTypes,
-} from "./s3_BucketLifecycleConfigurationV2RuleFilterAnd";
+} from './s3_BucketLifecycleConfigurationV2RuleFilterAnd';
 
 export interface s3_BucketLifecycleConfigurationV2RuleFilter {
   // Configuration block for specifying a tag key and value. See below.
@@ -35,31 +35,31 @@ export function s3_BucketLifecycleConfigurationV2RuleFilter_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Object,
-      "and",
-      "Configuration block used to apply a logical `AND` to two or more predicates. See below. The Lifecycle Rule will apply to any object matching all the predicates configured inside the `and` block.",
+      'and',
+      'Configuration block used to apply a logical `AND` to two or more predicates. See below. The Lifecycle Rule will apply to any object matching all the predicates configured inside the `and` block.',
       () => s3_BucketLifecycleConfigurationV2RuleFilterAnd_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "objectSizeGreaterThan",
-      "Minimum object size (in bytes) to which the rule applies.",
+      'objectSizeGreaterThan',
+      'Minimum object size (in bytes) to which the rule applies.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "objectSizeLessThan",
-      "Maximum object size (in bytes) to which the rule applies.",
+      'objectSizeLessThan',
+      'Maximum object size (in bytes) to which the rule applies.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "prefix",
+      'prefix',
       'Prefix identifying one or more objects to which the rule applies. Defaults to an empty string (`""`) if not specified.',
       () => [],
       false,
@@ -67,8 +67,8 @@ export function s3_BucketLifecycleConfigurationV2RuleFilter_GetTypes(): DynamicU
     ),
     new DynamicUIProps(
       InputType.Object,
-      "tag",
-      "Configuration block for specifying a tag key and value. See below.",
+      'tag',
+      'Configuration block for specifying a tag key and value. See below.',
       () => s3_BucketLifecycleConfigurationV2RuleFilterTag_GetTypes(),
       false,
       false,

@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CertificateConfig,
   certificateauthority_CertificateConfig_GetTypes,
-} from "../types/certificateauthority_CertificateConfig";
+} from '../types/certificateauthority_CertificateConfig';
 import {
   certificateauthority_CertificateCertificateDescription,
   certificateauthority_CertificateCertificateDescription_GetTypes,
-} from "../types/certificateauthority_CertificateCertificateDescription";
+} from '../types/certificateauthority_CertificateCertificateDescription';
 import {
   certificateauthority_CertificateRevocationDetail,
   certificateauthority_CertificateRevocationDetail_GetTypes,
-} from "../types/certificateauthority_CertificateRevocationDetail";
+} from '../types/certificateauthority_CertificateRevocationDetail';
 
 export interface CertificateArgs {
   /*
@@ -192,47 +192,47 @@ fractional digits, terminated by 's'. Example: "3.5s".
     return [
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Labels with user-defined metadata to apply to this resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Labels with user-defined metadata to apply to this resource.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "Location of the Certificate. A full list of valid locations can be found by\nrunning `gcloud privateca locations list`.\n\n\n- - -",
+        'location',
+        'Location of the Certificate. A full list of valid locations can be found by\nrunning `gcloud privateca locations list`.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "pool",
-        "The name of the CaPool this Certificate belongs to.",
+        'pool',
+        'The name of the CaPool this Certificate belongs to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "certificateAuthority",
-        "The Certificate Authority ID that should issue the certificate. For example, to issue a Certificate from\na Certificate Authority with resource name `projects/my-project/locations/us-central1/caPools/my-pool/certificateAuthorities/my-ca`,\nargument `pool` should be set to `projects/my-project/locations/us-central1/caPools/my-pool`, argument `certificate_authority`\nshould be set to `my-ca`.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "lifetime",
+        'certificateAuthority',
+        'The Certificate Authority ID that should issue the certificate. For example, to issue a Certificate from\na Certificate Authority with resource name `projects/my-project/locations/us-central1/caPools/my-pool/certificateAuthorities/my-ca`,\nargument `pool` should be set to `projects/my-project/locations/us-central1/caPools/my-pool`, argument `certificate_authority`\nshould be set to `my-ca`.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'lifetime',
         'The desired lifetime of the CA certificate. Used to create the "notBeforeTime" and\n"notAfterTime" fields inside an X.509 certificate. A duration in seconds with up to nine\nfractional digits, terminated by \'s\'. Example: "3.5s".',
         () => [],
         false,
@@ -240,32 +240,32 @@ fractional digits, terminated by 's'. Example: "3.5s".
       ),
       new DynamicUIProps(
         InputType.String,
-        "pemCsr",
-        "Immutable. A pem-encoded X.509 certificate signing request (CSR).",
+        'pemCsr',
+        'Immutable. A pem-encoded X.509 certificate signing request (CSR).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateTemplate",
-        "The resource name for a CertificateTemplate used to issue this certificate,\nin the format `projects/*/locations/*/certificateTemplates/*`. If this is specified,\nthe caller must have the necessary permission to use this template. If this is\nomitted, no template will be used. This template must be in the same location\nas the Certificate.",
+        'certificateTemplate',
+        'The resource name for a CertificateTemplate used to issue this certificate,\nin the format `projects/*/locations/*/certificateTemplates/*`. If this is specified,\nthe caller must have the necessary permission to use this template. If this is\nomitted, no template will be used. This template must be in the same location\nas the Certificate.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "config",
-        "The config used to create a self-signed X.509 certificate or CSR.\nStructure is documented below.",
+        'config',
+        'The config used to create a self-signed X.509 certificate or CSR.\nStructure is documented below.',
         () => certificateauthority_CertificateConfig_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name for this Certificate.",
+        'name',
+        'The name for this Certificate.',
         () => [],
         false,
         true,

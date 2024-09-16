@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface identityplatform_ConfigBlockingFunctionsForwardInboundCredentials {
   // Whether to pass the user's OAuth identity provider's refresh token.
@@ -21,7 +21,7 @@ export function identityplatform_ConfigBlockingFunctionsForwardInboundCredential
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "refreshToken",
+      'refreshToken',
       "Whether to pass the user's OAuth identity provider's refresh token.",
       () => [],
       false,
@@ -29,7 +29,7 @@ export function identityplatform_ConfigBlockingFunctionsForwardInboundCredential
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "accessToken",
+      'accessToken',
       "Whether to pass the user's OAuth identity provider's access token.",
       () => [],
       false,
@@ -37,7 +37,7 @@ export function identityplatform_ConfigBlockingFunctionsForwardInboundCredential
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "idToken",
+      'idToken',
       "Whether to pass the user's OIDC identity provider's ID token.",
       () => [],
       false,

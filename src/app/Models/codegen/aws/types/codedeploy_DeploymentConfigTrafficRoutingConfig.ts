@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedCanary,
   codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedCanary_GetTypes,
-} from "./codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedCanary";
+} from './codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedCanary';
 import {
   codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedLinear,
   codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedLinear_GetTypes,
-} from "./codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedLinear";
+} from './codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedLinear';
 
 export interface codedeploy_DeploymentConfigTrafficRoutingConfig {
   // The time based canary configuration information. If `type` is `TimeBasedLinear`, use `time_based_linear` instead.
@@ -29,8 +29,8 @@ export function codedeploy_DeploymentConfigTrafficRoutingConfig_GetTypes(): Dyna
   return [
     new DynamicUIProps(
       InputType.Object,
-      "timeBasedCanary",
-      "The time based canary configuration information. If `type` is `TimeBasedLinear`, use `time_based_linear` instead.",
+      'timeBasedCanary',
+      'The time based canary configuration information. If `type` is `TimeBasedLinear`, use `time_based_linear` instead.',
       () =>
         codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedCanary_GetTypes(),
       false,
@@ -38,8 +38,8 @@ export function codedeploy_DeploymentConfigTrafficRoutingConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.Object,
-      "timeBasedLinear",
-      "The time based linear configuration information. If `type` is `TimeBasedCanary`, use `time_based_canary` instead.",
+      'timeBasedLinear',
+      'The time based linear configuration information. If `type` is `TimeBasedCanary`, use `time_based_canary` instead.',
       () =>
         codedeploy_DeploymentConfigTrafficRoutingConfigTimeBasedLinear_GetTypes(),
       false,
@@ -47,8 +47,8 @@ export function codedeploy_DeploymentConfigTrafficRoutingConfig_GetTypes(): Dyna
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "Type of traffic routing config. One of `TimeBasedCanary`, `TimeBasedLinear`, `AllAtOnce`.",
+      'type',
+      'Type of traffic routing config. One of `TimeBasedCanary`, `TimeBasedLinear`, `AllAtOnce`.',
       () => [],
       false,
       true,

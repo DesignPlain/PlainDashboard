@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface FunctionArgs {
   // Source code of the function
@@ -69,23 +69,23 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique name for your CloudFront Function.",
+        'name',
+        'Unique name for your CloudFront Function.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "publish",
-        "Whether to publish creation/change as Live CloudFront Function Version. Defaults to `true`.",
+        'publish',
+        'Whether to publish creation/change as Live CloudFront Function Version. Defaults to `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "runtime",
+        'runtime',
         "Identifier of the function's runtime. Valid values are `cloudfront-js-1.0` and `cloudfront-js-2.0`.\n\nThe following arguments are optional:",
         () => [],
         true,
@@ -93,24 +93,24 @@ The following arguments are optional:
       ),
       new DynamicUIProps(
         InputType.String,
-        "code",
-        "Source code of the function",
+        'code',
+        'Source code of the function',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "Comment.",
+        'comment',
+        'Comment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "keyValueStoreAssociations",
-        "List of `aws.cloudfront.KeyValueStore` ARNs to be associated to the function. AWS limits associations to on key value store per function.",
+        'keyValueStoreAssociations',
+        'List of `aws.cloudfront.KeyValueStore` ARNs to be associated to the function. AWS limits associations to on key value store per function.',
         () => InputType_String_GetTypes(),
         false,
         false,

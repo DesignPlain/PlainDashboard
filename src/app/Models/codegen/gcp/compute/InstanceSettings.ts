@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_InstanceSettingsMetadata,
   compute_InstanceSettingsMetadata_GetTypes,
-} from "../types/compute_InstanceSettingsMetadata";
+} from '../types/compute_InstanceSettingsMetadata';
 
 export interface InstanceSettingsArgs {
   /*
@@ -63,24 +63,24 @@ A reference to the zone where the machine resides.
     return [
       new DynamicUIProps(
         InputType.Object,
-        "metadata",
-        "The metadata key/value pairs assigned to all the instances in the corresponding scope.\nStructure is documented below.",
+        'metadata',
+        'The metadata key/value pairs assigned to all the instances in the corresponding scope.\nStructure is documented below.',
         () => compute_InstanceSettingsMetadata_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "zone",
-        "A reference to the zone where the machine resides.\n\n\n- - -",
+        'zone',
+        'A reference to the zone where the machine resides.\n\n\n- - -',
         () => [],
         true,
         false,

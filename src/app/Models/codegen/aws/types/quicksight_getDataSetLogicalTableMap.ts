@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_getDataSetLogicalTableMapSource,
   quicksight_getDataSetLogicalTableMapSource_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapSource";
+} from './quicksight_getDataSetLogicalTableMapSource';
 import {
   quicksight_getDataSetLogicalTableMapDataTransform,
   quicksight_getDataSetLogicalTableMapDataTransform_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransform";
+} from './quicksight_getDataSetLogicalTableMapDataTransform';
 
 export interface quicksight_getDataSetLogicalTableMap {
   //
@@ -30,27 +30,27 @@ export interface quicksight_getDataSetLogicalTableMap {
 
 export function quicksight_getDataSetLogicalTableMap_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "alias", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'alias', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "dataTransforms",
-      "",
+      'dataTransforms',
+      '',
       () => quicksight_getDataSetLogicalTableMapDataTransform_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "logicalTableMapId",
-      "",
+      'logicalTableMapId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "sources",
-      "",
+      'sources',
+      '',
       () => quicksight_getDataSetLogicalTableMapSource_GetTypes(),
       true,
       false,

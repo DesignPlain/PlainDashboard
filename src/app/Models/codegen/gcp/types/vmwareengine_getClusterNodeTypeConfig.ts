@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface vmwareengine_getClusterNodeTypeConfig {
   /*
@@ -26,7 +26,7 @@ export function vmwareengine_getClusterNodeTypeConfig_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.Number,
-      "customCoreCount",
+      'customCoreCount',
       "Customized number of cores available to each node of the type.\nThis number must always be one of 'nodeType.availableCustomCoreCounts'.\nIf zero is provided max value from 'nodeType.availableCustomCoreCounts' will be used.\nOnce the customer is created then corecount cannot be changed.",
       () => [],
       true,
@@ -34,16 +34,16 @@ export function vmwareengine_getClusterNodeTypeConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Number,
-      "nodeCount",
-      "The number of nodes of this type in the cluster.",
+      'nodeCount',
+      'The number of nodes of this type in the cluster.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "nodeTypeId",
-      "",
+      'nodeTypeId',
+      '',
       () => [],
       true,
       false,

@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   worklink_FleetIdentityProvider,
   worklink_FleetIdentityProvider_GetTypes,
-} from "../types/worklink_FleetIdentityProvider";
+} from '../types/worklink_FleetIdentityProvider';
 import {
   worklink_FleetNetwork,
   worklink_FleetNetwork_GetTypes,
-} from "../types/worklink_FleetNetwork";
+} from '../types/worklink_FleetNetwork';
 
 export interface FleetArgs {
   /*
@@ -87,15 +87,15 @@ The option to optimize for better performance by routing traffic through the clo
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "optimizeForEndUserLocation",
-        "The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. Defaults to `true`.\n\n**network** requires the following:\n\n> **NOTE:** `network` is cannot removed without force recreating.",
+        'optimizeForEndUserLocation',
+        'The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. Defaults to `true`.\n\n**network** requires the following:\n\n> **NOTE:** `network` is cannot removed without force recreating.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "auditStreamArn",
+        'auditStreamArn',
         'The ARN of the Amazon Kinesis data stream that receives the audit events. Kinesis data stream name must begin with `"AmazonWorkLink-"`.',
         () => [],
         false,
@@ -103,40 +103,40 @@ The option to optimize for better performance by routing traffic through the clo
       ),
       new DynamicUIProps(
         InputType.String,
-        "deviceCaCertificate",
-        "The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.",
+        'deviceCaCertificate',
+        'The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The name of the fleet.",
+        'displayName',
+        'The name of the fleet.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "identityProvider",
-        "Provide this to allow manage the identity provider configuration for the fleet. Fields documented below.",
+        'identityProvider',
+        'Provide this to allow manage the identity provider configuration for the fleet. Fields documented below.',
         () => worklink_FleetIdentityProvider_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A region-unique name for the AMI.",
+        'name',
+        'A region-unique name for the AMI.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "network",
-        "Provide this to allow manage the company network configuration for the fleet. Fields documented below.",
+        'network',
+        'Provide this to allow manage the company network configuration for the fleet. Fields documented below.',
         () => worklink_FleetNetwork_GetTypes(),
         false,
         false,

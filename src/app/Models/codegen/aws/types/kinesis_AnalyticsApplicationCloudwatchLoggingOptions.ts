@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesis_AnalyticsApplicationCloudwatchLoggingOptions {
   // The ARN of the Kinesis Analytics Application.
@@ -21,24 +21,24 @@ export function kinesis_AnalyticsApplicationCloudwatchLoggingOptions_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
-      "The ARN of the Kinesis Analytics Application.",
+      'id',
+      'The ARN of the Kinesis Analytics Application.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "logStreamArn",
-      "The ARN of the CloudWatch Log Stream.",
+      'logStreamArn',
+      'The ARN of the CloudWatch Log Stream.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "The ARN of the IAM Role used to send application messages.",
+      'roleArn',
+      'The ARN of the IAM Role used to send application messages.',
       () => [],
       true,
       false,

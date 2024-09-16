@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_NodeTemplateServerBinding,
   compute_NodeTemplateServerBinding_GetTypes,
-} from "../types/compute_NodeTemplateServerBinding";
+} from '../types/compute_NodeTemplateServerBinding';
 import {
   compute_NodeTemplateNodeTypeFlexibility,
   compute_NodeTemplateNodeTypeFlexibility_GetTypes,
-} from "../types/compute_NodeTemplateNodeTypeFlexibility";
+} from '../types/compute_NodeTemplateNodeTypeFlexibility';
 
 export interface NodeTemplateArgs {
   /*
@@ -133,72 +133,72 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.Map,
-        "nodeAffinityLabels",
-        "Labels to use for node affinity, which will be used in\ninstance scheduling.",
+        'nodeAffinityLabels',
+        'Labels to use for node affinity, which will be used in\ninstance scheduling.',
         () => InputType_Map_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "nodeTypeFlexibility",
-        "Flexible properties for the desired node type. Node groups that\nuse this node template will create nodes of a type that matches\nthese properties. Only one of nodeTypeFlexibility and nodeType can\nbe specified.\nStructure is documented below.",
+        'nodeTypeFlexibility',
+        'Flexible properties for the desired node type. Node groups that\nuse this node template will create nodes of a type that matches\nthese properties. Only one of nodeTypeFlexibility and nodeType can\nbe specified.\nStructure is documented below.',
         () => compute_NodeTemplateNodeTypeFlexibility_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource.",
+        'name',
+        'Name of the resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "nodeType",
-        "Node type to use for nodes group that are created from this template.\nOnly one of nodeTypeFlexibility and nodeType can be specified.",
+        'nodeType',
+        'Node type to use for nodes group that are created from this template.\nOnly one of nodeTypeFlexibility and nodeType can be specified.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "cpuOvercommitType",
-        "CPU overcommit.\nDefault value is `NONE`.\nPossible values are: `ENABLED`, `NONE`.",
+        'cpuOvercommitType',
+        'CPU overcommit.\nDefault value is `NONE`.\nPossible values are: `ENABLED`, `NONE`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional textual description of the resource.",
+        'description',
+        'An optional textual description of the resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "serverBinding",
-        "The server binding policy for nodes using this template. Determines\nwhere the nodes should restart following a maintenance event.\nStructure is documented below.",
+        'serverBinding',
+        'The server binding policy for nodes using this template. Determines\nwhere the nodes should restart following a maintenance event.\nStructure is documented below.',
         () => compute_NodeTemplateServerBinding_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "Region where nodes using the node template will be created.\nIf it is not provided, the provider region is used.",
+        'region',
+        'Region where nodes using the node template will be created.\nIf it is not provided, the provider region is used.',
         () => [],
         false,
         true,

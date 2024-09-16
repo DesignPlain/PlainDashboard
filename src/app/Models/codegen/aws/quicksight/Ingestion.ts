@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface IngestionArgs {
   // AWS account ID.
@@ -51,32 +51,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "awsAccountId",
-        "AWS account ID.",
+        'awsAccountId',
+        'AWS account ID.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "dataSetId",
-        "ID of the dataset used in the ingestion.",
-        () => [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "ingestionId",
-        "ID for the ingestion.",
+        'dataSetId',
+        'ID of the dataset used in the ingestion.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ingestionType",
-        "Type of ingestion to be created. Valid values are `INCREMENTAL_REFRESH` and `FULL_REFRESH`.\n\nThe following arguments are optional:",
+        'ingestionId',
+        'ID for the ingestion.',
+        () => [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'ingestionType',
+        'Type of ingestion to be created. Valid values are `INCREMENTAL_REFRESH` and `FULL_REFRESH`.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,

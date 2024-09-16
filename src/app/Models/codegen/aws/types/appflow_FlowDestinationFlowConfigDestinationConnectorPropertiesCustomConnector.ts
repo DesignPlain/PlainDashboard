@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig,
   appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig_GetTypes,
-} from "./appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig";
+} from './appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig';
 
 export interface appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnector {
   //
@@ -31,24 +31,24 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesC
   return [
     new DynamicUIProps(
       InputType.Map,
-      "customProperties",
-      "",
+      'customProperties',
+      '',
       () => InputType_Map_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "entityName",
-      "",
+      'entityName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "errorHandlingConfig",
-      "",
+      'errorHandlingConfig',
+      '',
       () =>
         appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfig_GetTypes(),
       false,
@@ -56,16 +56,16 @@ export function appflow_FlowDestinationFlowConfigDestinationConnectorPropertiesC
     ),
     new DynamicUIProps(
       InputType.Array,
-      "idFieldNames",
-      "",
+      'idFieldNames',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "writeOperationType",
-      "",
+      'writeOperationType',
+      '',
       () => [],
       false,
       false,

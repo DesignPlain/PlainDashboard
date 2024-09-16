@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   m2_DeploymentTimeouts,
   m2_DeploymentTimeouts_GetTypes,
-} from "../types/m2_DeploymentTimeouts";
+} from '../types/m2_DeploymentTimeouts';
 
 export interface DeploymentArgs {
   // Start the application once deployed.
@@ -56,48 +56,48 @@ export class Deployment extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Number,
-        "applicationVersion",
-        "Version to application to deploy",
+        'applicationVersion',
+        'Version to application to deploy',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "environmentId",
-        "Environment to deploy application to.",
+        'environmentId',
+        'Environment to deploy application to.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceStop",
-        "",
+        'forceStop',
+        '',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "start",
-        "Start the application once deployed.",
+        'start',
+        'Start the application once deployed.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => m2_DeploymentTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "applicationId",
-        "Application to deploy.",
+        'applicationId',
+        'Application to deploy.',
         () => [],
         true,
         false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface securitylake_SubscriberSourceCustomLogSourceResourceAttribute {
   // The ARN of the AWS Glue crawler.
@@ -21,24 +21,24 @@ export function securitylake_SubscriberSourceCustomLogSourceResourceAttribute_Ge
   return [
     new DynamicUIProps(
       InputType.String,
-      "crawlerArn",
-      "The ARN of the AWS Glue crawler.",
+      'crawlerArn',
+      'The ARN of the AWS Glue crawler.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "databaseArn",
-      "The ARN of the AWS Glue database where results are written.",
+      'databaseArn',
+      'The ARN of the AWS Glue database where results are written.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tableArn",
-      "The ARN of the AWS Glue table.",
+      'tableArn',
+      'The ARN of the AWS Glue table.',
       () => [],
       true,
       false,

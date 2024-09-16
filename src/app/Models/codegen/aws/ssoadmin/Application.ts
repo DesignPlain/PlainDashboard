@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssoadmin_ApplicationPortalOptions,
   ssoadmin_ApplicationPortalOptions_GetTypes,
-} from "../types/ssoadmin_ApplicationPortalOptions";
+} from '../types/ssoadmin_ApplicationPortalOptions';
 
 export interface ApplicationArgs {
   // Description of the application.
@@ -82,64 +82,64 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "clientToken",
-        "A unique, case-sensitive ID that you provide to ensure the idempotency of the request. AWS generates a random value when not provided.",
+        'clientToken',
+        'A unique, case-sensitive ID that you provide to ensure the idempotency of the request. AWS generates a random value when not provided.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the application.",
+        'description',
+        'Description of the application.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "instanceArn",
-        "ARN of the instance of IAM Identity Center.",
+        'instanceArn',
+        'ARN of the instance of IAM Identity Center.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the application.\n\nThe following arguments are optional:",
+        'name',
+        'Name of the application.\n\nThe following arguments are optional:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "portalOptions",
-        "Options for the portal associated with an application. See `portal_options` below.",
+        'portalOptions',
+        'Options for the portal associated with an application. See `portal_options` below.',
         () => ssoadmin_ApplicationPortalOptions_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "Status of the application. Valid values are `ENABLED` and `DISABLED`.",
+        'status',
+        'Status of the application. Valid values are `ENABLED` and `DISABLED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "applicationProviderArn",
-        "ARN of the application provider.",
+        'applicationProviderArn',
+        'ARN of the application provider.',
         () => [],
         true,
         false,

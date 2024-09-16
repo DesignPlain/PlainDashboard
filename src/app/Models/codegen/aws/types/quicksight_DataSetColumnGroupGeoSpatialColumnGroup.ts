@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface quicksight_DataSetColumnGroupGeoSpatialColumnGroup {
   // Columns in this hierarchy.
@@ -21,24 +21,24 @@ export function quicksight_DataSetColumnGroupGeoSpatialColumnGroup_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "countryCode",
-      "Country code. Valid values are `US`.",
+      'countryCode',
+      'Country code. Valid values are `US`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "A display name for the hierarchy.",
+      'name',
+      'A display name for the hierarchy.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "columns",
-      "Columns in this hierarchy.",
+      'columns',
+      'Columns in this hierarchy.',
       () => InputType_String_GetTypes(),
       true,
       false,

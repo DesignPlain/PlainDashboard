@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudbuildv2_ConnectionInstallationState {
   /*
@@ -30,24 +30,24 @@ export function cloudbuildv2_ConnectionInstallationState_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.String,
-      "actionUri",
-      "(Output)\nOutput only. Link to follow for next action. Empty string if the installation is already complete.",
+      'actionUri',
+      '(Output)\nOutput only. Link to follow for next action. Empty string if the installation is already complete.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "message",
-      "(Output)\nOutput only. Message of what the user should do next to continue the installation. Empty string if the installation is already complete.",
+      'message',
+      '(Output)\nOutput only. Message of what the user should do next to continue the installation. Empty string if the installation is already complete.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "stage",
-      "(Output)\nOutput only. Current step of the installation process.",
+      'stage',
+      '(Output)\nOutput only. Current step of the installation process.',
       () => [],
       false,
       false,

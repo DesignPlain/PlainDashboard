@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gamelift_GameServerGroupAutoScalingPolicyTargetTrackingConfiguration,
   gamelift_GameServerGroupAutoScalingPolicyTargetTrackingConfiguration_GetTypes,
-} from "./gamelift_GameServerGroupAutoScalingPolicyTargetTrackingConfiguration";
+} from './gamelift_GameServerGroupAutoScalingPolicyTargetTrackingConfiguration';
 
 export interface gamelift_GameServerGroupAutoScalingPolicy {
   /*
@@ -27,16 +27,16 @@ export function gamelift_GameServerGroupAutoScalingPolicy_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Number,
-      "estimatedInstanceWarmup",
-      "Length of time, in seconds, it takes for a new instance to start\nnew game server processes and register with GameLift FleetIQ.\nSpecifying a warm-up time can be useful, particularly with game servers that take a long time to start up,\nbecause it avoids prematurely starting new instances. Defaults to `60`.",
+      'estimatedInstanceWarmup',
+      'Length of time, in seconds, it takes for a new instance to start\nnew game server processes and register with GameLift FleetIQ.\nSpecifying a warm-up time can be useful, particularly with game servers that take a long time to start up,\nbecause it avoids prematurely starting new instances. Defaults to `60`.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "targetTrackingConfiguration",
-      "",
+      'targetTrackingConfiguration',
+      '',
       () =>
         gamelift_GameServerGroupAutoScalingPolicyTargetTrackingConfiguration_GetTypes(),
       true,

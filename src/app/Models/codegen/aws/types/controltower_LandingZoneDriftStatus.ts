@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface controltower_LandingZoneDriftStatus {
   // The drift status of the landing zone.
@@ -15,8 +15,8 @@ export function controltower_LandingZoneDriftStatus_GetTypes(): DynamicUIProps[]
   return [
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "The drift status of the landing zone.",
+      'status',
+      'The drift status of the landing zone.',
       () => [],
       false,
       false,

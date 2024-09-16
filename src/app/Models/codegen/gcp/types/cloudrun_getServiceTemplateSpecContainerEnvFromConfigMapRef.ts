@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference,
   cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference";
+} from './cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference';
 
 export interface cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef {
   // The ConfigMap to select from.
@@ -22,8 +22,8 @@ export function cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetT
   return [
     new DynamicUIProps(
       InputType.Array,
-      "localObjectReferences",
-      "The ConfigMap to select from.",
+      'localObjectReferences',
+      'The ConfigMap to select from.',
       () =>
         cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRefLocalObjectReference_GetTypes(),
       true,
@@ -31,8 +31,8 @@ export function cloudrun_getServiceTemplateSpecContainerEnvFromConfigMapRef_GetT
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "optional",
-      "Specify whether the ConfigMap must be defined",
+      'optional',
+      'Specify whether the ConfigMap must be defined',
       () => [],
       true,
       false,

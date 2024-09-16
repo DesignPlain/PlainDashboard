@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface CertificateAuthorityCertificateArgs {
   // PEM-encoded certificate for the Certificate Authority.
@@ -31,24 +31,24 @@ export class CertificateAuthorityCertificate extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "certificate",
-        "PEM-encoded certificate for the Certificate Authority.",
+        'certificate',
+        'PEM-encoded certificate for the Certificate Authority.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateAuthorityArn",
-        "ARN of the Certificate Authority.",
+        'certificateAuthorityArn',
+        'ARN of the Certificate Authority.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "certificateChain",
-        "PEM-encoded certificate chain that includes any intermediate certificates and chains up to root CA. Required for subordinate Certificate Authorities. Not allowed for root Certificate Authorities.",
+        'certificateChain',
+        'PEM-encoded certificate chain that includes any intermediate certificates and chains up to root CA. Required for subordinate Certificate Authorities. Not allowed for root Certificate Authorities.',
         () => [],
         false,
         true,

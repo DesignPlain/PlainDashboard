@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_AmiFromInstanceEphemeralBlockDevice,
   ec2_AmiFromInstanceEphemeralBlockDevice_GetTypes,
-} from "../types/ec2_AmiFromInstanceEphemeralBlockDevice";
+} from '../types/ec2_AmiFromInstanceEphemeralBlockDevice';
 import {
   ec2_AmiFromInstanceEbsBlockDevice,
   ec2_AmiFromInstanceEbsBlockDevice_GetTypes,
-} from "../types/ec2_AmiFromInstanceEbsBlockDevice";
+} from '../types/ec2_AmiFromInstanceEbsBlockDevice';
 
 export interface AmiFromInstanceArgs {
   // Date and time to deprecate the AMI. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)
@@ -176,64 +176,64 @@ attached to created instances. The structure of this block is described below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Region-unique name for the AMI.",
+        'name',
+        'Region-unique name for the AMI.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "snapshotWithoutReboot",
-        "Boolean that overrides the behavior of stopping\nthe instance before snapshotting. This is risky since it may cause a snapshot of an\ninconsistent filesystem state, but can be used to avoid downtime if the user otherwise\nguarantees that no filesystem writes will be underway at the time of snapshot.",
+        'snapshotWithoutReboot',
+        'Boolean that overrides the behavior of stopping\nthe instance before snapshotting. This is risky since it may cause a snapshot of an\ninconsistent filesystem state, but can be used to avoid downtime if the user otherwise\nguarantees that no filesystem writes will be underway at the time of snapshot.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceInstanceId",
-        "ID of the instance to use as the basis of the AMI.",
+        'sourceInstanceId',
+        'ID of the instance to use as the basis of the AMI.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "deprecationTime",
-        "Date and time to deprecate the AMI. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)",
+        'deprecationTime',
+        'Date and time to deprecate the AMI. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Longer, human-readable description for the AMI.",
+        'description',
+        'Longer, human-readable description for the AMI.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ebsBlockDevices",
-        "Nested block describing an EBS block device that should be\nattached to created instances. The structure of this block is described below.",
+        'ebsBlockDevices',
+        'Nested block describing an EBS block device that should be\nattached to created instances. The structure of this block is described below.',
         () => ec2_AmiFromInstanceEbsBlockDevice_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "ephemeralBlockDevices",
-        "Nested block describing an ephemeral block device that\nshould be attached to created instances. The structure of this block is described below.",
+        'ephemeralBlockDevices',
+        'Nested block describing an ephemeral block device that\nshould be attached to created instances. The structure of this block is described below.',
         () => ec2_AmiFromInstanceEphemeralBlockDevice_GetTypes(),
         false,
         true,

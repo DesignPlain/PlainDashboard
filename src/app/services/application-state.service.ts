@@ -19,7 +19,7 @@ export class Template {
 export class ApplicationStateService {
   public templateUpdates: Subject<boolean> = new Subject<boolean>();
   public templates: Template[] = [];
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {}
 
   public getState(): Observable<object> {
     this.getTemplate();
@@ -32,7 +32,7 @@ export class ApplicationStateService {
       JSON.stringify(items, replacer),
       {
         responseType: 'text',
-      }
+      },
     );
   }
 
@@ -48,7 +48,7 @@ export class ApplicationStateService {
             this.templateUpdates.next(true);
           }
         },
-        error: (_) => { },
+        error: (_) => {},
         complete: () => console.info('GetTemplate completed'),
       });
   }
@@ -71,11 +71,11 @@ export class ApplicationStateService {
         JSON.stringify(this.templates, replacer),
         {
           responseType: 'text',
-        }
+        },
       )
       .subscribe({
-        next: (data) => { },
-        error: (_) => { },
+        next: (data) => {},
+        error: (_) => {},
         complete: () => console.info('SaveTemplate Completed'),
       });
   }
@@ -93,11 +93,11 @@ export class ApplicationStateService {
         JSON.stringify(this.templates, replacer),
         {
           responseType: 'text',
-        }
+        },
       )
       .subscribe({
-        next: (data) => { },
-        error: (_) => { },
+        next: (data) => {},
+        error: (_) => {},
         complete: () => console.info('SaveTemplate Completed'),
       });
   }

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ssoadmin_getApplicationProvidersApplicationProviderDisplayData {
   // Description of the application provider.
@@ -21,24 +21,24 @@ export function ssoadmin_getApplicationProvidersApplicationProviderDisplayData_G
   return [
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "Description of the application provider.",
+      'description',
+      'Description of the application provider.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "displayName",
-      "Name of the application provider.",
+      'displayName',
+      'Name of the application provider.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "iconUrl",
-      "URL that points to an icon that represents the application provider.",
+      'iconUrl',
+      'URL that points to an icon that represents the application provider.',
       () => [],
       true,
       false,

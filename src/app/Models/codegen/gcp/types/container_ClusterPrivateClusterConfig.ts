@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_ClusterPrivateClusterConfigMasterGlobalAccessConfig,
   container_ClusterPrivateClusterConfigMasterGlobalAccessConfig_GetTypes,
-} from "./container_ClusterPrivateClusterConfigMasterGlobalAccessConfig";
+} from './container_ClusterPrivateClusterConfigMasterGlobalAccessConfig';
 
 export interface container_ClusterPrivateClusterConfig {
   /*
@@ -68,7 +68,7 @@ export function container_ClusterPrivateClusterConfig_GetTypes(): DynamicUIProps
   return [
     new DynamicUIProps(
       InputType.String,
-      "masterIpv4CidrBlock",
+      'masterIpv4CidrBlock',
       "The IP range in CIDR notation to use for\nthe hosted master network. This range will be used for assigning private IP\naddresses to the cluster master(s) and the ILB VIP. This range must not overlap\nwith any other ranges in use within the cluster's network, and it must be a /28\nsubnet. See [Private Cluster Limitations](https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#req_res_lim)\nfor more details. This field only applies to private clusters, when\n`enable_private_nodes` is `true`.",
       () => [],
       false,
@@ -76,15 +76,15 @@ export function container_ClusterPrivateClusterConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "peeringName",
-      "The name of the peering between this cluster and the Google owned VPC.",
+      'peeringName',
+      'The name of the peering between this cluster and the Google owned VPC.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "privateEndpoint",
+      'privateEndpoint',
       "The internal IP address of this cluster's master endpoint.",
       () => [],
       false,
@@ -92,7 +92,7 @@ export function container_ClusterPrivateClusterConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "privateEndpointSubnetwork",
+      'privateEndpointSubnetwork',
       "Subnetwork in cluster's network where master's endpoint will be provisioned.",
       () => [],
       false,
@@ -100,7 +100,7 @@ export function container_ClusterPrivateClusterConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.String,
-      "publicEndpoint",
+      'publicEndpoint',
       "The external IP address of this cluster's master endpoint.\n\n!> The Google provider is unable to validate certain configurations of\n`private_cluster_config` when `enable_private_nodes` is `false`. It's\nrecommended that you omit the block entirely if the field is not set to `true`.",
       () => [],
       false,
@@ -108,7 +108,7 @@ export function container_ClusterPrivateClusterConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enablePrivateEndpoint",
+      'enablePrivateEndpoint',
       "When `true`, the cluster's private\nendpoint is used as the cluster endpoint and access through the public endpoint\nis disabled. When `false`, either endpoint can be used. This field only applies\nto private clusters, when `enable_private_nodes` is `true`.",
       () => [],
       false,
@@ -116,7 +116,7 @@ export function container_ClusterPrivateClusterConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "enablePrivateNodes",
+      'enablePrivateNodes',
       "Enables the private cluster feature,\ncreating a private endpoint on the cluster. In a private cluster, nodes only\nhave RFC 1918 private addresses and communicate with the master's private\nendpoint via private networking.",
       () => [],
       false,
@@ -124,8 +124,8 @@ export function container_ClusterPrivateClusterConfig_GetTypes(): DynamicUIProps
     ),
     new DynamicUIProps(
       InputType.Object,
-      "masterGlobalAccessConfig",
-      "Controls cluster master global\naccess settings. If unset, the provider will no longer manage this field and will\nnot modify the previously-set value. Structure is documented below.",
+      'masterGlobalAccessConfig',
+      'Controls cluster master global\naccess settings. If unset, the provider will no longer manage this field and will\nnot modify the previously-set value. Structure is documented below.',
       () =>
         container_ClusterPrivateClusterConfigMasterGlobalAccessConfig_GetTypes(),
       false,

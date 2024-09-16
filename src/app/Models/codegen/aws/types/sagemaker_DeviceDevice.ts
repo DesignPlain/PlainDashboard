@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sagemaker_DeviceDevice {
   // A description for the device.
@@ -21,24 +21,24 @@ export function sagemaker_DeviceDevice_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "description",
-      "A description for the device.",
+      'description',
+      'A description for the device.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deviceName",
-      "The name of the device.",
+      'deviceName',
+      'The name of the device.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "iotThingName",
-      "Amazon Web Services Internet of Things (IoT) object name.",
+      'iotThingName',
+      'Amazon Web Services Internet of Things (IoT) object name.',
       () => [],
       false,
       false,

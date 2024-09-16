@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface MemberArgs {
   // The email address for the account.
@@ -76,56 +76,56 @@ export class Member extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "email",
-        "The email address for the account.",
+        'email',
+        'The email address for the account.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "invitationDisableEmailNotification",
-        "Specifies whether to send an email notification to the root user of each account that the invitation will be sent to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To send an email notification to the root user of each account, set this value to `true`.",
+        'invitationDisableEmailNotification',
+        'Specifies whether to send an email notification to the root user of each account that the invitation will be sent to. This notification is in addition to an alert that the root user receives in AWS Personal Health Dashboard. To send an email notification to the root user of each account, set this value to `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "invitationMessage",
-        "A custom message to include in the invitation. Amazon Macie adds this message to the standard content that it sends for an invitation.",
+        'invitationMessage',
+        'A custom message to include in the invitation. Amazon Macie adds this message to the standard content that it sends for an invitation.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "invite",
-        "Send an invitation to a member",
+        'invite',
+        'Send an invitation to a member',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to `ENABLED`. Valid values are `ENABLED` or `PAUSED`.",
+        'status',
+        'Specifies the status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to `ENABLED`. Valid values are `ENABLED` or `PAUSED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.",
+        'tags',
+        'A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.',
         () => InputType_Map_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accountId",
-        "The AWS account ID for the account.",
+        'accountId',
+        'The AWS account ID for the account.',
         () => [],
         true,
         true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface sql_getDatabaseInstanceSettingBackupConfigurationBackupRetentionSetting {
   // Number of backups to retain.
@@ -18,15 +18,15 @@ export function sql_getDatabaseInstanceSettingBackupConfigurationBackupRetention
   return [
     new DynamicUIProps(
       InputType.Number,
-      "retainedBackups",
-      "Number of backups to retain.",
+      'retainedBackups',
+      'Number of backups to retain.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "retentionUnit",
+      'retentionUnit',
       "The unit that 'retainedBackups' represents. Defaults to COUNT",
       () => [],
       true,

@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   imagebuilder_DistributionConfigurationDistributionAmiDistributionConfiguration,
   imagebuilder_DistributionConfigurationDistributionAmiDistributionConfiguration_GetTypes,
-} from "./imagebuilder_DistributionConfigurationDistributionAmiDistributionConfiguration";
+} from './imagebuilder_DistributionConfigurationDistributionAmiDistributionConfiguration';
 import {
   imagebuilder_DistributionConfigurationDistributionContainerDistributionConfiguration,
   imagebuilder_DistributionConfigurationDistributionContainerDistributionConfiguration_GetTypes,
-} from "./imagebuilder_DistributionConfigurationDistributionContainerDistributionConfiguration";
+} from './imagebuilder_DistributionConfigurationDistributionContainerDistributionConfiguration';
 import {
   imagebuilder_DistributionConfigurationDistributionFastLaunchConfiguration,
   imagebuilder_DistributionConfigurationDistributionFastLaunchConfiguration_GetTypes,
-} from "./imagebuilder_DistributionConfigurationDistributionFastLaunchConfiguration";
+} from './imagebuilder_DistributionConfigurationDistributionFastLaunchConfiguration';
 import {
   imagebuilder_DistributionConfigurationDistributionLaunchTemplateConfiguration,
   imagebuilder_DistributionConfigurationDistributionLaunchTemplateConfiguration_GetTypes,
-} from "./imagebuilder_DistributionConfigurationDistributionLaunchTemplateConfiguration";
+} from './imagebuilder_DistributionConfigurationDistributionLaunchTemplateConfiguration';
 
 export interface imagebuilder_DistributionConfigurationDistribution {
   // Set of Amazon Resource Names (ARNs) of License Manager License Configurations.
@@ -50,16 +50,16 @@ export function imagebuilder_DistributionConfigurationDistribution_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "region",
-      "AWS Region for the distribution.\n\nThe following arguments are optional:",
+      'region',
+      'AWS Region for the distribution.\n\nThe following arguments are optional:',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "amiDistributionConfiguration",
-      "Configuration block with Amazon Machine Image (AMI) distribution settings. Detailed below.",
+      'amiDistributionConfiguration',
+      'Configuration block with Amazon Machine Image (AMI) distribution settings. Detailed below.',
       () =>
         imagebuilder_DistributionConfigurationDistributionAmiDistributionConfiguration_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function imagebuilder_DistributionConfigurationDistribution_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Object,
-      "containerDistributionConfiguration",
-      "Configuration block with container distribution settings. Detailed below.",
+      'containerDistributionConfiguration',
+      'Configuration block with container distribution settings. Detailed below.',
       () =>
         imagebuilder_DistributionConfigurationDistributionContainerDistributionConfiguration_GetTypes(),
       false,
@@ -76,8 +76,8 @@ export function imagebuilder_DistributionConfigurationDistribution_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Array,
-      "fastLaunchConfigurations",
-      "Set of Windows faster-launching configurations to use for AMI distribution. Detailed below.",
+      'fastLaunchConfigurations',
+      'Set of Windows faster-launching configurations to use for AMI distribution. Detailed below.',
       () =>
         imagebuilder_DistributionConfigurationDistributionFastLaunchConfiguration_GetTypes(),
       false,
@@ -85,8 +85,8 @@ export function imagebuilder_DistributionConfigurationDistribution_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Array,
-      "launchTemplateConfigurations",
-      "Set of launch template configuration settings that apply to image distribution. Detailed below.",
+      'launchTemplateConfigurations',
+      'Set of launch template configuration settings that apply to image distribution. Detailed below.',
       () =>
         imagebuilder_DistributionConfigurationDistributionLaunchTemplateConfiguration_GetTypes(),
       false,
@@ -94,8 +94,8 @@ export function imagebuilder_DistributionConfigurationDistribution_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Array,
-      "licenseConfigurationArns",
-      "Set of Amazon Resource Names (ARNs) of License Manager License Configurations.",
+      'licenseConfigurationArns',
+      'Set of Amazon Resource Names (ARNs) of License Manager License Configurations.',
       () => InputType_String_GetTypes(),
       false,
       false,

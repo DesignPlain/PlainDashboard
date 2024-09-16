@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2clientvpn_getEndpointAuthenticationOption {
   //
@@ -27,36 +27,36 @@ export function ec2clientvpn_getEndpointAuthenticationOption_GetTypes(): Dynamic
   return [
     new DynamicUIProps(
       InputType.String,
-      "activeDirectoryId",
-      "",
+      'activeDirectoryId',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "rootCertificateChainArn",
-      "",
+      'rootCertificateChainArn',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "samlProviderArn",
-      "",
+      'samlProviderArn',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "selfServiceSamlProviderArn",
-      "",
+      'selfServiceSamlProviderArn',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.String, "type", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'type', '', () => [], true, false),
   ];
 }

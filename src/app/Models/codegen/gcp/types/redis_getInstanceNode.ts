@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface redis_getInstanceNode {
   // Node identifying string. e.g. 'node-0', 'node-1'
@@ -18,7 +18,7 @@ export function redis_getInstanceNode_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "id",
+      'id',
       "Node identifying string. e.g. 'node-0', 'node-1'",
       () => [],
       true,
@@ -26,8 +26,8 @@ export function redis_getInstanceNode_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "zone",
-      "Location of the node.",
+      'zone',
+      'Location of the node.',
       () => [],
       true,
       false,

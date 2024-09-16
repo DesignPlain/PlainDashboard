@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   fms_ResourceSetResourceSet,
   fms_ResourceSetResourceSet_GetTypes,
-} from "../types/fms_ResourceSetResourceSet";
+} from '../types/fms_ResourceSetResourceSet';
 import {
   fms_ResourceSetTimeouts,
   fms_ResourceSetTimeouts_GetTypes,
-} from "../types/fms_ResourceSetTimeouts";
+} from '../types/fms_ResourceSetTimeouts';
 
 export interface ResourceSetArgs {
   // Details about the resource set to be created or updated. See `resource_set` Attribute Reference below.
@@ -45,24 +45,24 @@ export class ResourceSet extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => fms_ResourceSetTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "resourceSets",
-        "Details about the resource set to be created or updated. See `resource_set` Attribute Reference below.",
+        'resourceSets',
+        'Details about the resource set to be created or updated. See `resource_set` Attribute Reference below.',
         () => fms_ResourceSetResourceSet_GetTypes(),
         false,
         false,

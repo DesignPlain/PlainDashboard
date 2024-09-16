@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface LocationFsxWindowsArgs {
   // Subdirectory to perform actions as source or destination.
@@ -67,56 +67,56 @@ export class LocationFsxWindows extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "domain",
-        "The name of the Windows domain that the FSx for Windows server belongs to.",
+        'domain',
+        'The name of the Windows domain that the FSx for Windows server belongs to.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fsxFilesystemArn",
-        "The Amazon Resource Name (ARN) for the FSx for Windows file system.",
+        'fsxFilesystemArn',
+        'The Amazon Resource Name (ARN) for the FSx for Windows file system.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "password",
-        "The password of the user who has the permissions to access files and folders in the FSx for Windows file system.",
+        'password',
+        'The password of the user who has the permissions to access files and folders in the FSx for Windows file system.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "securityGroupArns",
-        "The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows file system.",
+        'securityGroupArns',
+        'The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows file system.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subdirectory",
-        "Subdirectory to perform actions as source or destination.",
+        'subdirectory',
+        'Subdirectory to perform actions as source or destination.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value pairs of resource tags to assign to the DataSync Location. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value pairs of resource tags to assign to the DataSync Location. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "user",
-        "The user who has the permissions to access files and folders in the FSx for Windows file system.",
+        'user',
+        'The user who has the permissions to access files and folders in the FSx for Windows file system.',
         () => [],
         true,
         true,

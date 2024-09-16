@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidation,
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidation_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidation";
+} from './appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidation';
 import {
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate,
   appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate_GetTypes,
-} from "./appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate";
+} from './appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate';
 
 export interface appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTl {
   //
@@ -30,19 +30,19 @@ export interface appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTl {
 
 export function appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTl_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Bool, "enforce", "", () => [], true, false),
+    new DynamicUIProps(InputType.Bool, 'enforce', '', () => [], true, false),
     new DynamicUIProps(
       InputType.Array,
-      "ports",
-      "",
+      'ports',
+      '',
       () => InputType_Number_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "validations",
-      "",
+      'validations',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlValidation_GetTypes(),
       true,
@@ -50,8 +50,8 @@ export function appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTl_GetTyp
     ),
     new DynamicUIProps(
       InputType.Array,
-      "certificates",
-      "",
+      'certificates',
+      '',
       () =>
         appmesh_getVirtualGatewaySpecBackendDefaultClientPolicyTlCertificate_GetTypes(),
       true,

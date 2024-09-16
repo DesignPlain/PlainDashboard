@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2clientvpn_EndpointClientConnectOptions {
   // Indicates whether client connect options are enabled. The default is `false` (not enabled).
@@ -18,16 +18,16 @@ export function ec2clientvpn_EndpointClientConnectOptions_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
-      "Indicates whether client connect options are enabled. The default is `false` (not enabled).",
+      'enabled',
+      'Indicates whether client connect options are enabled. The default is `false` (not enabled).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "lambdaFunctionArn",
-      "The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.",
+      'lambdaFunctionArn',
+      'The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.',
       () => [],
       false,
       false,

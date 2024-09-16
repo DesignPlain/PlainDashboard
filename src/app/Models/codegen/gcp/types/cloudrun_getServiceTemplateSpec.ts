@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrun_getServiceTemplateSpecVolume,
   cloudrun_getServiceTemplateSpecVolume_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecVolume";
+} from './cloudrun_getServiceTemplateSpecVolume';
 import {
   cloudrun_getServiceTemplateSpecContainer,
   cloudrun_getServiceTemplateSpecContainer_GetTypes,
-} from "./cloudrun_getServiceTemplateSpecContainer";
+} from './cloudrun_getServiceTemplateSpecContainer';
 
 export interface cloudrun_getServiceTemplateSpec {
   // Volume represents a named volume in a container.
@@ -55,15 +55,15 @@ export function cloudrun_getServiceTemplateSpec_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "volumes",
-      "Volume represents a named volume in a container.",
+      'volumes',
+      'Volume represents a named volume in a container.',
       () => cloudrun_getServiceTemplateSpecVolume_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "containerConcurrency",
+      'containerConcurrency',
       "ContainerConcurrency specifies the maximum allowed in-flight (concurrent)\nrequests per container of the Revision. Values are:\n- '0' thread-safe, the system should manage the max concurrency. This is\n    the default value.\n- '1' not-thread-safe. Single concurrency\n- '2-N' thread-safe, max concurrency of N",
       () => [],
       true,
@@ -71,15 +71,15 @@ export function cloudrun_getServiceTemplateSpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Array,
-      "containers",
-      "Containers defines the unit of execution for this Revision.",
+      'containers',
+      'Containers defines the unit of execution for this Revision.',
       () => cloudrun_getServiceTemplateSpecContainer_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "serviceAccountName",
+      'serviceAccountName',
       "Email address of the IAM service account associated with the revision of the\nservice. The service account represents the identity of the running revision,\nand determines what permissions the revision has. If not provided, the revision\nwill use the project's default service account.",
       () => [],
       true,
@@ -87,16 +87,16 @@ export function cloudrun_getServiceTemplateSpec_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "servingState",
-      "ServingState holds a value describing the state the resources\nare in for this Revision.\nIt is expected\nthat the system will manipulate this based on routability and load.",
+      'servingState',
+      'ServingState holds a value describing the state the resources\nare in for this Revision.\nIt is expected\nthat the system will manipulate this based on routability and load.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "timeoutSeconds",
-      "TimeoutSeconds holds the max duration the instance is allowed for responding to a request.",
+      'timeoutSeconds',
+      'TimeoutSeconds holds the max duration the instance is allowed for responding to a request.',
       () => [],
       true,
       false,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   s3outposts_EndpointNetworkInterface,
   s3outposts_EndpointNetworkInterface_GetTypes,
-} from "../types/s3outposts_EndpointNetworkInterface";
+} from '../types/s3outposts_EndpointNetworkInterface';
 
 export interface EndpointArgs {
   // Identifier of the Outpost to contain this endpoint.
@@ -59,40 +59,40 @@ export class Endpoint extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "customerOwnedIpv4Pool",
-        "The ID of a Customer Owned IP Pool. For more on customer owned IP addresses see the [User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/local-rack.html#local-gateway-subnet).",
+        'customerOwnedIpv4Pool',
+        'The ID of a Customer Owned IP Pool. For more on customer owned IP addresses see the [User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/local-rack.html#local-gateway-subnet).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "outpostId",
-        "Identifier of the Outpost to contain this endpoint.",
+        'outpostId',
+        'Identifier of the Outpost to contain this endpoint.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "securityGroupId",
-        "Identifier of the EC2 Security Group.",
+        'securityGroupId',
+        'Identifier of the EC2 Security Group.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "subnetId",
-        "Identifier of the EC2 Subnet.",
+        'subnetId',
+        'Identifier of the EC2 Subnet.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "accessType",
-        "Type of access for the network connectivity. Valid values are `Private` or `CustomerOwnedIp`.",
+        'accessType',
+        'Type of access for the network connectivity. Valid values are `Private` or `CustomerOwnedIp`.',
         () => [],
         false,
         true,

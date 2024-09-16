@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkeonprem_BareMetalClusterBinaryAuthorization {
   /*
@@ -19,8 +19,8 @@ export function gkeonprem_BareMetalClusterBinaryAuthorization_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "evaluationMode",
-      "Mode of operation for binauthz policy evaluation. If unspecified,\ndefaults to DISABLED.\nPossible values are: `DISABLED`, `PROJECT_SINGLETON_POLICY_ENFORCE`.",
+      'evaluationMode',
+      'Mode of operation for binauthz policy evaluation. If unspecified,\ndefaults to DISABLED.\nPossible values are: `DISABLED`, `PROJECT_SINGLETON_POLICY_ENFORCE`.',
       () => [],
       false,
       false,

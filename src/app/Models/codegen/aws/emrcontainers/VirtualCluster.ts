@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   emrcontainers_VirtualClusterContainerProvider,
   emrcontainers_VirtualClusterContainerProvider_GetTypes,
-} from "../types/emrcontainers_VirtualClusterContainerProvider";
+} from '../types/emrcontainers_VirtualClusterContainerProvider';
 
 export interface VirtualClusterArgs {
   // Configuration block for the container provider associated with your cluster.
@@ -41,24 +41,24 @@ export class VirtualCluster extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "containerProvider",
-        "Configuration block for the container provider associated with your cluster.",
+        'containerProvider',
+        'Configuration block for the container provider associated with your cluster.',
         () => emrcontainers_VirtualClusterContainerProvider_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the virtual cluster.",
+        'name',
+        'Name of the virtual cluster.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

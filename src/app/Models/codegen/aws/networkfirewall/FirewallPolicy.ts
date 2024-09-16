@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_FirewallPolicyFirewallPolicy,
   networkfirewall_FirewallPolicyFirewallPolicy_GetTypes,
-} from "../types/networkfirewall_FirewallPolicyFirewallPolicy";
+} from '../types/networkfirewall_FirewallPolicyFirewallPolicy';
 import {
   networkfirewall_FirewallPolicyEncryptionConfiguration,
   networkfirewall_FirewallPolicyEncryptionConfiguration_GetTypes,
-} from "../types/networkfirewall_FirewallPolicyEncryptionConfiguration";
+} from '../types/networkfirewall_FirewallPolicyEncryptionConfiguration';
 
 export interface FirewallPolicyArgs {
   // KMS encryption configuration settings. See Encryption Configuration below for details.
@@ -60,40 +60,40 @@ export class FirewallPolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Object,
-        "encryptionConfiguration",
-        "KMS encryption configuration settings. See Encryption Configuration below for details.",
+        'encryptionConfiguration',
+        'KMS encryption configuration settings. See Encryption Configuration below for details.',
         () => networkfirewall_FirewallPolicyEncryptionConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "firewallPolicy",
-        "A configuration block describing the rule groups and policy actions to use in the firewall policy. See Firewall Policy below for details.",
+        'firewallPolicy',
+        'A configuration block describing the rule groups and policy actions to use in the firewall policy. See Firewall Policy below for details.',
         () => networkfirewall_FirewallPolicyFirewallPolicy_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A friendly name of the firewall policy.",
+        'name',
+        'A friendly name of the firewall policy.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of resource tags to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of resource tags to associate with the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A friendly description of the firewall policy.",
+        'description',
+        'A friendly description of the firewall policy.',
         () => [],
         false,
         false,

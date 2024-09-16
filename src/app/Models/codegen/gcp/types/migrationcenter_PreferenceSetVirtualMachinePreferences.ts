@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   migrationcenter_PreferenceSetVirtualMachinePreferencesComputeEnginePreferences,
   migrationcenter_PreferenceSetVirtualMachinePreferencesComputeEnginePreferences_GetTypes,
-} from "./migrationcenter_PreferenceSetVirtualMachinePreferencesComputeEnginePreferences";
+} from './migrationcenter_PreferenceSetVirtualMachinePreferencesComputeEnginePreferences';
 import {
   migrationcenter_PreferenceSetVirtualMachinePreferencesRegionPreferences,
   migrationcenter_PreferenceSetVirtualMachinePreferencesRegionPreferences_GetTypes,
-} from "./migrationcenter_PreferenceSetVirtualMachinePreferencesRegionPreferences";
+} from './migrationcenter_PreferenceSetVirtualMachinePreferencesRegionPreferences';
 import {
   migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferences,
   migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferences_GetTypes,
-} from "./migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferences";
+} from './migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferences';
 import {
   migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences,
   migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences_GetTypes,
-} from "./migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences";
+} from './migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences';
 
 export interface migrationcenter_PreferenceSetVirtualMachinePreferences {
   /*
@@ -82,8 +82,8 @@ export function migrationcenter_PreferenceSetVirtualMachinePreferences_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Object,
-      "regionPreferences",
-      "The user preferences relating to target regions.\nStructure is documented below.",
+      'regionPreferences',
+      'The user preferences relating to target regions.\nStructure is documented below.',
       () =>
         migrationcenter_PreferenceSetVirtualMachinePreferencesRegionPreferences_GetTypes(),
       false,
@@ -91,16 +91,16 @@ export function migrationcenter_PreferenceSetVirtualMachinePreferences_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "sizingOptimizationStrategy",
-      "Sizing optimization strategy specifies the preferred strategy used when extrapolating usage data to calculate insights and recommendations for a virtual machine. If you are unsure which value to set, a moderate sizing optimization strategy is often a good value to start with.\nPossible values:\nSIZING_OPTIMIZATION_STRATEGY_UNSPECIFIED\nSIZING_OPTIMIZATION_STRATEGY_SAME_AS_SOURCE\nSIZING_OPTIMIZATION_STRATEGY_MODERATE\nSIZING_OPTIMIZATION_STRATEGY_AGGRESSIVE",
+      'sizingOptimizationStrategy',
+      'Sizing optimization strategy specifies the preferred strategy used when extrapolating usage data to calculate insights and recommendations for a virtual machine. If you are unsure which value to set, a moderate sizing optimization strategy is often a good value to start with.\nPossible values:\nSIZING_OPTIMIZATION_STRATEGY_UNSPECIFIED\nSIZING_OPTIMIZATION_STRATEGY_SAME_AS_SOURCE\nSIZING_OPTIMIZATION_STRATEGY_MODERATE\nSIZING_OPTIMIZATION_STRATEGY_AGGRESSIVE',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "soleTenancyPreferences",
-      "Preferences concerning Sole Tenancy nodes and VMs.\nStructure is documented below.",
+      'soleTenancyPreferences',
+      'Preferences concerning Sole Tenancy nodes and VMs.\nStructure is documented below.',
       () =>
         migrationcenter_PreferenceSetVirtualMachinePreferencesSoleTenancyPreferences_GetTypes(),
       false,
@@ -108,16 +108,16 @@ export function migrationcenter_PreferenceSetVirtualMachinePreferences_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "targetProduct",
-      "Target product for assets using this preference set. Specify either target product or business goal, but not both.\nPossible values:\nCOMPUTE_MIGRATION_TARGET_PRODUCT_UNSPECIFIED\nCOMPUTE_MIGRATION_TARGET_PRODUCT_COMPUTE_ENGINE\nCOMPUTE_MIGRATION_TARGET_PRODUCT_VMWARE_ENGINE\nCOMPUTE_MIGRATION_TARGET_PRODUCT_SOLE_TENANCY",
+      'targetProduct',
+      'Target product for assets using this preference set. Specify either target product or business goal, but not both.\nPossible values:\nCOMPUTE_MIGRATION_TARGET_PRODUCT_UNSPECIFIED\nCOMPUTE_MIGRATION_TARGET_PRODUCT_COMPUTE_ENGINE\nCOMPUTE_MIGRATION_TARGET_PRODUCT_VMWARE_ENGINE\nCOMPUTE_MIGRATION_TARGET_PRODUCT_SOLE_TENANCY',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "vmwareEnginePreferences",
-      "The user preferences relating to Google Cloud VMware Engine target platform.\nStructure is documented below.",
+      'vmwareEnginePreferences',
+      'The user preferences relating to Google Cloud VMware Engine target platform.\nStructure is documented below.',
       () =>
         migrationcenter_PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences_GetTypes(),
       false,
@@ -125,16 +125,16 @@ export function migrationcenter_PreferenceSetVirtualMachinePreferences_GetTypes(
     ),
     new DynamicUIProps(
       InputType.String,
-      "commitmentPlan",
-      "Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with.\nPossible values:\nCOMMITMENT_PLAN_UNSPECIFIED\nCOMMITMENT_PLAN_NONE\nCOMMITMENT_PLAN_ONE_YEAR\nCOMMITMENT_PLAN_THREE_YEARS",
+      'commitmentPlan',
+      'Commitment plan to consider when calculating costs for virtual machine insights and recommendations. If you are unsure which value to set, a 3 year commitment plan is often a good value to start with.\nPossible values:\nCOMMITMENT_PLAN_UNSPECIFIED\nCOMMITMENT_PLAN_NONE\nCOMMITMENT_PLAN_ONE_YEAR\nCOMMITMENT_PLAN_THREE_YEARS',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "computeEnginePreferences",
-      "The user preferences relating to Compute Engine target platform.\nStructure is documented below.",
+      'computeEnginePreferences',
+      'The user preferences relating to Compute Engine target platform.\nStructure is documented below.',
       () =>
         migrationcenter_PreferenceSetVirtualMachinePreferencesComputeEnginePreferences_GetTypes(),
       false,

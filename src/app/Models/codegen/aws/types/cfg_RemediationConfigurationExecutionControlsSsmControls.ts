@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cfg_RemediationConfigurationExecutionControlsSsmControls {
   // Maximum percentage of remediation actions allowed to run in parallel on the non-compliant resources for that specific rule. The default value is 10%!.(MISSING)
@@ -18,16 +18,16 @@ export function cfg_RemediationConfigurationExecutionControlsSsmControls_GetType
   return [
     new DynamicUIProps(
       InputType.Number,
-      "concurrentExecutionRatePercentage",
-      "Maximum percentage of remediation actions allowed to run in parallel on the non-compliant resources for that specific rule. The default value is 10%.",
+      'concurrentExecutionRatePercentage',
+      'Maximum percentage of remediation actions allowed to run in parallel on the non-compliant resources for that specific rule. The default value is 10%.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "errorPercentage",
-      "Percentage of errors that are allowed before SSM stops running automations on non-compliant resources for that specific rule. The default is 50%.",
+      'errorPercentage',
+      'Percentage of errors that are allowed before SSM stops running automations on non-compliant resources for that specific rule. The default is 50%.',
       () => [],
       false,
       false,

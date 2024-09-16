@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_ClusterClusterConfigDataprocMetricConfigMetric,
   dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes,
-} from "./dataproc_ClusterClusterConfigDataprocMetricConfigMetric";
+} from './dataproc_ClusterClusterConfigDataprocMetricConfigMetric';
 
 export interface dataproc_ClusterClusterConfigDataprocMetricConfig {
   // Metrics sources to enable.
@@ -19,8 +19,8 @@ export function dataproc_ClusterClusterConfigDataprocMetricConfig_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "metrics",
-      "Metrics sources to enable.",
+      'metrics',
+      'Metrics sources to enable.',
       () => dataproc_ClusterClusterConfigDataprocMetricConfigMetric_GetTypes(),
       true,
       false,

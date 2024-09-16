@@ -3,20 +3,20 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codedeploy_DeploymentGroupLoadBalancerInfoElbInfo,
   codedeploy_DeploymentGroupLoadBalancerInfoElbInfo_GetTypes,
-} from "./codedeploy_DeploymentGroupLoadBalancerInfoElbInfo";
+} from './codedeploy_DeploymentGroupLoadBalancerInfoElbInfo';
 import {
   codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupInfo,
   codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupInfo_GetTypes,
-} from "./codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupInfo";
+} from './codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupInfo';
 import {
   codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupPairInfo,
   codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupPairInfo_GetTypes,
-} from "./codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupPairInfo";
+} from './codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupPairInfo';
 
 export interface codedeploy_DeploymentGroupLoadBalancerInfo {
   // The (Application/Network Load Balancer) target group pair to use in a deployment. Conflicts with `elb_info` and `target_group_info`.
@@ -33,8 +33,8 @@ export function codedeploy_DeploymentGroupLoadBalancerInfo_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Object,
-      "targetGroupPairInfo",
-      "The (Application/Network Load Balancer) target group pair to use in a deployment. Conflicts with `elb_info` and `target_group_info`.",
+      'targetGroupPairInfo',
+      'The (Application/Network Load Balancer) target group pair to use in a deployment. Conflicts with `elb_info` and `target_group_info`.',
       () =>
         codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupPairInfo_GetTypes(),
       false,
@@ -42,16 +42,16 @@ export function codedeploy_DeploymentGroupLoadBalancerInfo_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Array,
-      "elbInfos",
-      "The Classic Elastic Load Balancer to use in a deployment. Conflicts with `target_group_info` and `target_group_pair_info`.",
+      'elbInfos',
+      'The Classic Elastic Load Balancer to use in a deployment. Conflicts with `target_group_info` and `target_group_pair_info`.',
       () => codedeploy_DeploymentGroupLoadBalancerInfoElbInfo_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "targetGroupInfos",
-      "The (Application/Network Load Balancer) target group to use in a deployment. Conflicts with `elb_info` and `target_group_pair_info`.",
+      'targetGroupInfos',
+      'The (Application/Network Load Balancer) target group to use in a deployment. Conflicts with `elb_info` and `target_group_pair_info`.',
       () =>
         codedeploy_DeploymentGroupLoadBalancerInfoTargetGroupInfo_GetTypes(),
       false,

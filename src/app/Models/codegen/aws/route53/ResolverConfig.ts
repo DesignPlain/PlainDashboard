@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ResolverConfigArgs {
   // Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. Valid values: `ENABLE`, `DISABLE`.
@@ -28,16 +28,16 @@ export class ResolverConfig extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "autodefinedReverseFlag",
-        "Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. Valid values: `ENABLE`, `DISABLE`.",
+        'autodefinedReverseFlag',
+        'Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. Valid values: `ENABLE`, `DISABLE`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceId",
-        "The ID of the VPC that the configuration is for.",
+        'resourceId',
+        'The ID of the VPC that the configuration is for.',
         () => [],
         true,
         true,

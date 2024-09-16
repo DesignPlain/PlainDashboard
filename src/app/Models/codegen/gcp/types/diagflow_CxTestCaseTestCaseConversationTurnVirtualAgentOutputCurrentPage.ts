@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPage {
   /*
@@ -24,16 +24,16 @@ export function diagflow_CxTestCaseTestCaseConversationTurnVirtualAgentOutputCur
   return [
     new DynamicUIProps(
       InputType.String,
-      "displayName",
-      "(Output)\nThe human-readable name of the page, unique within the flow.",
+      'displayName',
+      '(Output)\nThe human-readable name of the page, unique within the flow.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The unique identifier of the page.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.",
+      'name',
+      'The unique identifier of the page.\nFormat: projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>.',
       () => [],
       false,
       false,

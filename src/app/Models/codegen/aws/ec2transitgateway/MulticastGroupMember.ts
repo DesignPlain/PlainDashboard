@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface MulticastGroupMemberArgs {
   // The IP address assigned to the transit gateway multicast group.
@@ -31,15 +31,15 @@ export class MulticastGroupMember extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "groupIpAddress",
-        "The IP address assigned to the transit gateway multicast group.",
+        'groupIpAddress',
+        'The IP address assigned to the transit gateway multicast group.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkInterfaceId",
+        'networkInterfaceId',
         "The group members' network interface ID to register with the transit gateway multicast group.",
         () => [],
         true,
@@ -47,8 +47,8 @@ export class MulticastGroupMember extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "transitGatewayMulticastDomainId",
-        "The ID of the transit gateway multicast domain.",
+        'transitGatewayMulticastDomainId',
+        'The ID of the transit gateway multicast domain.',
         () => [],
         true,
         true,

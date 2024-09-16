@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EipArgs {
   // ID  of a customer-owned address pool. For more on customer owned IP addressed check out [Customer-owned IP addresses guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing).
@@ -128,7 +128,7 @@ This option is only available for VPC EIPs.
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "vpc",
+        'vpc',
         "Boolean if the EIP is in a VPC or not. Use `domain` instead.\nDefaults to `true` unless the region supports EC2-Classic.\n\n> **NOTE:** You can specify either the `instance` ID or the `network_interface` ID, but not both. Including both will **not** return an error from the AWS API, but will have undefined behavior. See the relevant [AssociateAddress API Call][1] for more information.\n\n> **NOTE:** Specifying both `public_ipv4_pool` and `address` won't cause an error but `address` will be used in the\ncase both options are defined as the api only requires one or the other.",
         () => [],
         false,
@@ -136,72 +136,72 @@ This option is only available for VPC EIPs.
       ),
       new DynamicUIProps(
         InputType.String,
-        "instance",
-        "EC2 instance ID.",
+        'instance',
+        'EC2 instance ID.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. Tags can only be applied to EIPs in a VPC. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. Tags can only be applied to EIPs in a VPC. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domain",
-        "Indicates if this EIP is for use in VPC (`vpc`).",
+        'domain',
+        'Indicates if this EIP is for use in VPC (`vpc`).',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customerOwnedIpv4Pool",
-        "ID  of a customer-owned address pool. For more on customer owned IP addressed check out [Customer-owned IP addresses guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing).",
+        'customerOwnedIpv4Pool',
+        'ID  of a customer-owned address pool. For more on customer owned IP addressed check out [Customer-owned IP addresses guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkInterface",
-        "Network interface ID to associate with.",
+        'networkInterface',
+        'Network interface ID to associate with.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "publicIpv4Pool",
-        "EC2 IPv4 address pool identifier or `amazon`.\nThis option is only available for VPC EIPs.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "address",
-        "IP address from an EC2 BYOIP pool. This option is only available for VPC EIPs.",
+        'publicIpv4Pool',
+        'EC2 IPv4 address pool identifier or `amazon`.\nThis option is only available for VPC EIPs.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "associateWithPrivateIp",
-        "User-specified primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.",
+        'address',
+        'IP address from an EC2 BYOIP pool. This option is only available for VPC EIPs.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'associateWithPrivateIp',
+        'User-specified primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "networkBorderGroup",
-        "Location from which the IP address is advertised. Use this parameter to limit the address to this location.",
+        'networkBorderGroup',
+        'Location from which the IP address is advertised. Use this parameter to limit the address to this location.',
         () => [],
         false,
         true,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VaultArgs {
   // A boolean that indicates that all recovery points stored in the vault are deleted so that the vault can be destroyed without error.
@@ -46,32 +46,32 @@ export class Vault extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the backup vault to create.",
+        'name',
+        'Name of the backup vault to create.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Metadata that you can assign to help organize the resources that you create. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Metadata that you can assign to help organize the resources that you create. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "forceDestroy",
-        "A boolean that indicates that all recovery points stored in the vault are deleted so that the vault can be destroyed without error.",
+        'forceDestroy',
+        'A boolean that indicates that all recovery points stored in the vault are deleted so that the vault can be destroyed without error.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyArn",
-        "The server-side encryption key that is used to protect your backups.",
+        'kmsKeyArn',
+        'The server-side encryption key that is used to protect your backups.',
         () => [],
         false,
         true,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan,
   certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan_GetTypes,
-} from "./certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan";
+} from './certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan';
 
 export interface certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltName {
   /*
@@ -35,8 +35,8 @@ export function certificateauthority_CertificateCertificateDescriptionSubjectDes
   return [
     new DynamicUIProps(
       InputType.Array,
-      "customSans",
-      "(Output)\nContains additional subject alternative name values.\nStructure is documented below.",
+      'customSans',
+      '(Output)\nContains additional subject alternative name values.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSan_GetTypes(),
       false,
@@ -44,32 +44,32 @@ export function certificateauthority_CertificateCertificateDescriptionSubjectDes
     ),
     new DynamicUIProps(
       InputType.Array,
-      "dnsNames",
-      "Contains only valid, fully-qualified host names.",
+      'dnsNames',
+      'Contains only valid, fully-qualified host names.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "emailAddresses",
-      "Contains only valid RFC 2822 E-mail addresses.",
+      'emailAddresses',
+      'Contains only valid RFC 2822 E-mail addresses.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ipAddresses",
-      "Contains only valid 32-bit IPv4 addresses or RFC 4291 IPv6 addresses.",
+      'ipAddresses',
+      'Contains only valid 32-bit IPv4 addresses or RFC 4291 IPv6 addresses.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "uris",
-      "Contains only valid RFC 3986 URIs.",
+      'uris',
+      'Contains only valid RFC 3986 URIs.',
       () => InputType_String_GetTypes(),
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface VpcLinkArgs {
   // Name of the VPC Link. Must be between 1 and 128 characters in length.
@@ -43,32 +43,32 @@ export class VpcLink extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "securityGroupIds",
-        "Security group IDs for the VPC Link.",
+        'securityGroupIds',
+        'Security group IDs for the VPC Link.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "subnetIds",
-        "Subnet IDs for the VPC Link.",
+        'subnetIds',
+        'Subnet IDs for the VPC Link.',
         () => InputType_String_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the VPC Link. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the VPC Link. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the VPC Link. Must be between 1 and 128 characters in length.",
+        'name',
+        'Name of the VPC Link. Must be between 1 and 128 characters in length.',
         () => [],
         false,
         false,

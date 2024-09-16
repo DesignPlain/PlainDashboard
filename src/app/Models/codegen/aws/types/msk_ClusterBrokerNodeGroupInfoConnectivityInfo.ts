@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess,
   msk_ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess_GetTypes,
-} from "./msk_ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess";
+} from './msk_ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess';
 import {
   msk_ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity,
   msk_ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity_GetTypes,
-} from "./msk_ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity";
+} from './msk_ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity';
 
 export interface msk_ClusterBrokerNodeGroupInfoConnectivityInfo {
   // Access control settings for brokers. See below.
@@ -26,8 +26,8 @@ export function msk_ClusterBrokerNodeGroupInfoConnectivityInfo_GetTypes(): Dynam
   return [
     new DynamicUIProps(
       InputType.Object,
-      "publicAccess",
-      "Access control settings for brokers. See below.",
+      'publicAccess',
+      'Access control settings for brokers. See below.',
       () =>
         msk_ClusterBrokerNodeGroupInfoConnectivityInfoPublicAccess_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function msk_ClusterBrokerNodeGroupInfoConnectivityInfo_GetTypes(): Dynam
     ),
     new DynamicUIProps(
       InputType.Object,
-      "vpcConnectivity",
-      "VPC connectivity access control for brokers. See below.",
+      'vpcConnectivity',
+      'VPC connectivity access control for brokers. See below.',
       () =>
         msk_ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivity_GetTypes(),
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface certificateauthority_AuthorityAccessUrl {
   /*
@@ -26,7 +26,7 @@ export function certificateauthority_AuthorityAccessUrl_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "caCertificateAccessUrl",
+      'caCertificateAccessUrl',
       "(Output)\nThe URL where this CertificateAuthority's CA certificate is published. This will only be\nset for CAs that have been activated.",
       () => [],
       false,
@@ -34,7 +34,7 @@ export function certificateauthority_AuthorityAccessUrl_GetTypes(): DynamicUIPro
     ),
     new DynamicUIProps(
       InputType.Array,
-      "crlAccessUrls",
+      'crlAccessUrls',
       "(Output)\nThe URL where this CertificateAuthority's CRLs are published. This will only be set for\nCAs that have been activated.",
       () => InputType_String_GetTypes(),
       false,

@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataplex_ZoneAssetStatus,
   dataplex_ZoneAssetStatus_GetTypes,
-} from "../types/dataplex_ZoneAssetStatus";
+} from '../types/dataplex_ZoneAssetStatus';
 import {
   dataplex_ZoneDiscoverySpec,
   dataplex_ZoneDiscoverySpec_GetTypes,
-} from "../types/dataplex_ZoneDiscoverySpec";
+} from '../types/dataplex_ZoneDiscoverySpec';
 import {
   dataplex_ZoneResourceSpec,
   dataplex_ZoneResourceSpec_GetTypes,
-} from "../types/dataplex_ZoneResourceSpec";
+} from '../types/dataplex_ZoneResourceSpec';
 
 export interface ZoneArgs {
   // Optional. User friendly display name.
@@ -116,80 +116,80 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Map,
-        "labels",
-        "Optional. User defined labels for the zone.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
+        'labels',
+        'Optional. User defined labels for the zone.\n\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "lake",
-        "The lake for the resource",
+        'lake',
+        'The lake for the resource',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "resourceSpec",
-        "Required. Immutable. Specification of the resources that are referenced by the assets within this zone.",
+        'resourceSpec',
+        'Required. Immutable. Specification of the resources that are referenced by the assets within this zone.',
         () => dataplex_ZoneResourceSpec_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "Optional. User friendly display name.",
+        'displayName',
+        'Optional. User friendly display name.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the zone.",
+        'name',
+        'The name of the zone.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The project for the resource",
+        'project',
+        'The project for the resource',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "discoverySpec",
-        "Required. Specification of the discovery feature applied to data in this zone.",
+        'discoverySpec',
+        'Required. Specification of the discovery feature applied to data in this zone.',
         () => dataplex_ZoneDiscoverySpec_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Required. Immutable. The type of the zone. Possible values: TYPE_UNSPECIFIED, RAW, CURATED",
+        'type',
+        'Required. Immutable. The type of the zone. Possible values: TYPE_UNSPECIFIED, RAW, CURATED',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Optional. Description of the zone.",
+        'description',
+        'Optional. Description of the zone.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location for the resource",
+        'location',
+        'The location for the resource',
         () => [],
         true,
         true,

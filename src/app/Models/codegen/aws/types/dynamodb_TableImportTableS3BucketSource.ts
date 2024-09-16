@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dynamodb_TableImportTableS3BucketSource {
   // The S3 bucket that is being imported from.
@@ -21,24 +21,24 @@ export function dynamodb_TableImportTableS3BucketSource_GetTypes(): DynamicUIPro
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucket",
-      "The S3 bucket that is being imported from.",
+      'bucket',
+      'The S3 bucket that is being imported from.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketOwner",
-      "The account number of the S3 bucket that is being imported from.",
+      'bucketOwner',
+      'The account number of the S3 bucket that is being imported from.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "keyPrefix",
-      "The key prefix shared by all S3 Objects that are being imported.",
+      'keyPrefix',
+      'The key prefix shared by all S3 Objects that are being imported.',
       () => [],
       false,
       false,

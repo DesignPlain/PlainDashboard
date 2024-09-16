@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_RegionSecurityPolicyUserDefinedField,
   compute_RegionSecurityPolicyUserDefinedField_GetTypes,
-} from "../types/compute_RegionSecurityPolicyUserDefinedField";
+} from '../types/compute_RegionSecurityPolicyUserDefinedField';
 import {
   compute_RegionSecurityPolicyDdosProtectionConfig,
   compute_RegionSecurityPolicyDdosProtectionConfig_GetTypes,
-} from "../types/compute_RegionSecurityPolicyDdosProtectionConfig";
+} from '../types/compute_RegionSecurityPolicyDdosProtectionConfig';
 
 export interface RegionSecurityPolicyArgs {
   /*
@@ -132,23 +132,23 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The Region in which the created Region Security Policy should reside.\nIf it is not provided, the provider region is used.",
+        'region',
+        'The Region in which the created Region Security Policy should reside.\nIf it is not provided, the provider region is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
+        'type',
         "The type indicates the intended use of the security policy.\n- CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers.\n- CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache.\n- CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application.\nThis field can be set only at resource creation time.\nPossible values are: `CLOUD_ARMOR`, `CLOUD_ARMOR_EDGE`, `CLOUD_ARMOR_NETWORK`.",
         () => [],
         false,
@@ -156,32 +156,32 @@ Structure is documented below.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "userDefinedFields",
-        "Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies.\nA user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits.\nRules may then specify matching values for these fields.\nStructure is documented below.",
+        'userDefinedFields',
+        'Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies.\nA user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits.\nRules may then specify matching values for these fields.\nStructure is documented below.',
         () => compute_RegionSecurityPolicyUserDefinedField_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "ddosProtectionConfig",
-        "Configuration for Google Cloud Armor DDOS Proctection Config.\nStructure is documented below.",
+        'ddosProtectionConfig',
+        'Configuration for Google Cloud Armor DDOS Proctection Config.\nStructure is documented below.',
         () => compute_RegionSecurityPolicyDdosProtectionConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource. Provide this property when you create the resource.",
+        'description',
+        'An optional description of this resource. Provide this property when you create the resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.\nSpecifically, the name must be 1-63 characters long and match the regular expression a-z? which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.\n\n\n- - -",
+        'name',
+        'Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.\nSpecifically, the name must be 1-63 characters long and match the regular expression a-z? which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.\n\n\n- - -',
         () => [],
         false,
         true,

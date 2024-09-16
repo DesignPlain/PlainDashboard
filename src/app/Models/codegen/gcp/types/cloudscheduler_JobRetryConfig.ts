@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudscheduler_JobRetryConfig {
   /*
@@ -46,7 +46,7 @@ export function cloudscheduler_JobRetryConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "maxBackoffDuration",
+      'maxBackoffDuration',
       "The maximum amount of time to wait before retrying a job after it fails.\nA duration in seconds with up to nine fractional digits, terminated by 's'.",
       () => [],
       false,
@@ -54,7 +54,7 @@ export function cloudscheduler_JobRetryConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxDoublings",
+      'maxDoublings',
       "The time between retries will double maxDoublings times.\nA job's retry interval starts at minBackoffDuration,\nthen doubles maxDoublings times, then increases linearly,\nand finally retries retries at intervals of maxBackoffDuration up to retryCount times.",
       () => [],
       false,
@@ -62,7 +62,7 @@ export function cloudscheduler_JobRetryConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "maxRetryDuration",
+      'maxRetryDuration',
       "The time limit for retrying a failed job, measured from time when an execution was first attempted.\nIf specified with retryCount, the job will be retried until both limits are reached.\nA duration in seconds with up to nine fractional digits, terminated by 's'.",
       () => [],
       false,
@@ -70,7 +70,7 @@ export function cloudscheduler_JobRetryConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "minBackoffDuration",
+      'minBackoffDuration',
       "The minimum amount of time to wait before retrying a job after it fails.\nA duration in seconds with up to nine fractional digits, terminated by 's'.",
       () => [],
       false,
@@ -78,8 +78,8 @@ export function cloudscheduler_JobRetryConfig_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.Number,
-      "retryCount",
-      "The number of attempts that the system will make to run a\njob using the exponential backoff procedure described by maxDoublings.\nValues greater than 5 and negative values are not allowed.",
+      'retryCount',
+      'The number of attempts that the system will make to run a\njob using the exponential backoff procedure described by maxDoublings.\nValues greater than 5 and negative values are not allowed.',
       () => [],
       false,
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gamelift_BuildStorageLocation {
   // Name of your S3 bucket.
@@ -24,32 +24,32 @@ export function gamelift_BuildStorageLocation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucket",
-      "Name of your S3 bucket.",
+      'bucket',
+      'Name of your S3 bucket.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "key",
-      "Name of the zip file containing your build files.",
+      'key',
+      'Name of the zip file containing your build files.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "objectVersion",
-      "A specific version of the file. If not set, the latest version of the file is retrieved.",
+      'objectVersion',
+      'A specific version of the file. If not set, the latest version of the file is retrieved.',
       () => [],
       false,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "roleArn",
-      "ARN of the access role that allows Amazon GameLift to access your S3 bucket.",
+      'roleArn',
+      'ARN of the access role that allows Amazon GameLift to access your S3 bucket.',
       () => [],
       true,
       true,

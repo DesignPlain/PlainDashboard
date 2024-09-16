@@ -3,36 +3,36 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationCodeConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationCodeConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationCodeConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationCodeConfiguration';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationSnapshotConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationSnapshotConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationSnapshotConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationSnapshotConfiguration';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationEnvironmentProperties,
   kinesisanalyticsv2_ApplicationApplicationConfigurationEnvironmentProperties_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationEnvironmentProperties";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationEnvironmentProperties';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfiguration';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationRunConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationRunConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationRunConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationRunConfiguration';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfiguration';
 import {
   kinesisanalyticsv2_ApplicationApplicationConfigurationVpcConfiguration,
   kinesisanalyticsv2_ApplicationApplicationConfigurationVpcConfiguration_GetTypes,
-} from "./kinesisanalyticsv2_ApplicationApplicationConfigurationVpcConfiguration";
+} from './kinesisanalyticsv2_ApplicationApplicationConfigurationVpcConfiguration';
 
 export interface kinesisanalyticsv2_ApplicationApplicationConfiguration {
   // The configuration of a SQL-based application.
@@ -61,8 +61,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes(
   return [
     new DynamicUIProps(
       InputType.Object,
-      "applicationCodeConfiguration",
-      "The code location and type parameters for the application.",
+      'applicationCodeConfiguration',
+      'The code location and type parameters for the application.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationCodeConfiguration_GetTypes(),
       true,
@@ -70,8 +70,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "applicationSnapshotConfiguration",
-      "Describes whether snapshots are enabled for a Flink-based application.",
+      'applicationSnapshotConfiguration',
+      'Describes whether snapshots are enabled for a Flink-based application.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationApplicationSnapshotConfiguration_GetTypes(),
       false,
@@ -79,8 +79,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "environmentProperties",
-      "Describes execution properties for a Flink-based application.",
+      'environmentProperties',
+      'Describes execution properties for a Flink-based application.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationEnvironmentProperties_GetTypes(),
       false,
@@ -88,8 +88,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "flinkApplicationConfiguration",
-      "The configuration of a Flink-based application.",
+      'flinkApplicationConfiguration',
+      'The configuration of a Flink-based application.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationFlinkApplicationConfiguration_GetTypes(),
       false,
@@ -97,8 +97,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "runConfiguration",
-      "Describes the starting properties for a Flink-based application.",
+      'runConfiguration',
+      'Describes the starting properties for a Flink-based application.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationRunConfiguration_GetTypes(),
       false,
@@ -106,8 +106,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sqlApplicationConfiguration",
-      "The configuration of a SQL-based application.",
+      'sqlApplicationConfiguration',
+      'The configuration of a SQL-based application.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationSqlApplicationConfiguration_GetTypes(),
       false,
@@ -115,8 +115,8 @@ export function kinesisanalyticsv2_ApplicationApplicationConfiguration_GetTypes(
     ),
     new DynamicUIProps(
       InputType.Object,
-      "vpcConfiguration",
-      "The VPC configuration of a Flink-based application.",
+      'vpcConfiguration',
+      'The VPC configuration of a Flink-based application.',
       () =>
         kinesisanalyticsv2_ApplicationApplicationConfigurationVpcConfiguration_GetTypes(),
       false,

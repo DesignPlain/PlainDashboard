@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface certificatemanager_DnsAuthorizationDnsResourceRecord {
   /*
@@ -34,24 +34,24 @@ export function certificatemanager_DnsAuthorizationDnsResourceRecord_GetTypes():
   return [
     new DynamicUIProps(
       InputType.String,
-      "data",
-      "(Output)\nData of the DNS Resource Record.",
+      'data',
+      '(Output)\nData of the DNS Resource Record.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the resource; provided by the client when the resource is created.\nThe name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]* which means the first character must be a letter,\nand all following characters must be a dash, underscore, letter or digit.\n\n\n- - -",
+      'name',
+      'Name of the resource; provided by the client when the resource is created.\nThe name must be 1-64 characters long, and match the regular expression [a-zA-Z][a-zA-Z0-9_-]* which means the first character must be a letter,\nand all following characters must be a dash, underscore, letter or digit.\n\n\n- - -',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "type",
-      "(Output)\nType of the DNS Resource Record.",
+      'type',
+      '(Output)\nType of the DNS Resource Record.',
       () => [],
       false,
       false,

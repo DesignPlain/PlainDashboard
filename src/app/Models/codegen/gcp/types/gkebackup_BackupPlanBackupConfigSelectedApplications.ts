@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName,
   gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName_GetTypes,
-} from "./gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName";
+} from './gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName';
 
 export interface gkebackup_BackupPlanBackupConfigSelectedApplications {
   /*
@@ -22,8 +22,8 @@ export function gkebackup_BackupPlanBackupConfigSelectedApplications_GetTypes():
   return [
     new DynamicUIProps(
       InputType.Array,
-      "namespacedNames",
-      "A list of namespaced Kubernetes resources.\nStructure is documented below.",
+      'namespacedNames',
+      'A list of namespaced Kubernetes resources.\nStructure is documented below.',
       () =>
         gkebackup_BackupPlanBackupConfigSelectedApplicationsNamespacedName_GetTypes(),
       true,

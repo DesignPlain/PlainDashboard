@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kendra_getIndexIndexStatisticFaqStatistic,
   kendra_getIndexIndexStatisticFaqStatistic_GetTypes,
-} from "./kendra_getIndexIndexStatisticFaqStatistic";
+} from './kendra_getIndexIndexStatisticFaqStatistic';
 import {
   kendra_getIndexIndexStatisticTextDocumentStatistic,
   kendra_getIndexIndexStatisticTextDocumentStatistic_GetTypes,
-} from "./kendra_getIndexIndexStatisticTextDocumentStatistic";
+} from './kendra_getIndexIndexStatisticTextDocumentStatistic';
 
 export interface kendra_getIndexIndexStatistic {
   // Block that specifies the number of question and answer topics in the index. Documented below.
@@ -26,16 +26,16 @@ export function kendra_getIndexIndexStatistic_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "faqStatistics",
-      "Block that specifies the number of question and answer topics in the index. Documented below.",
+      'faqStatistics',
+      'Block that specifies the number of question and answer topics in the index. Documented below.',
       () => kendra_getIndexIndexStatisticFaqStatistic_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "textDocumentStatistics",
-      "A block that specifies the number of text documents indexed.",
+      'textDocumentStatistics',
+      'A block that specifies the number of text documents indexed.',
       () => kendra_getIndexIndexStatisticTextDocumentStatistic_GetTypes(),
       true,
       false,

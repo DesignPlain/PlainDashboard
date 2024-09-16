@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfiguration,
   securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfiguration_GetTypes,
-} from "./securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfiguration";
+} from './securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfiguration';
 
 export interface securityhub_ConfigurationPolicyConfigurationPolicy {
   // A list that defines which security standards are enabled in the configuration policy. It must be defined if `service_enabled` is set to true.
@@ -25,16 +25,16 @@ export function securityhub_ConfigurationPolicyConfigurationPolicy_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.Array,
-      "enabledStandardArns",
-      "A list that defines which security standards are enabled in the configuration policy. It must be defined if `service_enabled` is set to true.",
+      'enabledStandardArns',
+      'A list that defines which security standards are enabled in the configuration policy. It must be defined if `service_enabled` is set to true.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "securityControlsConfiguration",
-      "Defines which security controls are enabled in the configuration policy and any customizations to parameters affecting them. See below.",
+      'securityControlsConfiguration',
+      'Defines which security controls are enabled in the configuration policy and any customizations to parameters affecting them. See below.',
       () =>
         securityhub_ConfigurationPolicyConfigurationPolicySecurityControlsConfiguration_GetTypes(),
       false,
@@ -42,8 +42,8 @@ export function securityhub_ConfigurationPolicyConfigurationPolicy_GetTypes(): D
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "serviceEnabled",
-      "Indicates whether Security Hub is enabled in the policy.",
+      'serviceEnabled',
+      'Indicates whether Security Hub is enabled in the policy.',
       () => [],
       true,
       false,

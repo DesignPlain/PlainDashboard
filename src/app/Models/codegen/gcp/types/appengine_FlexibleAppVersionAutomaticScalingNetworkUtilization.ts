@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization {
   // Target bytes received per second.
@@ -24,32 +24,32 @@ export function appengine_FlexibleAppVersionAutomaticScalingNetworkUtilization_G
   return [
     new DynamicUIProps(
       InputType.Number,
-      "targetReceivedBytesPerSecond",
-      "Target bytes received per second.",
+      'targetReceivedBytesPerSecond',
+      'Target bytes received per second.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "targetReceivedPacketsPerSecond",
-      "Target packets received per second.",
+      'targetReceivedPacketsPerSecond',
+      'Target packets received per second.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "targetSentBytesPerSecond",
-      "Target bytes sent per second.",
+      'targetSentBytesPerSecond',
+      'Target bytes sent per second.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "targetSentPacketsPerSecond",
-      "Target packets sent per second.",
+      'targetSentPacketsPerSecond',
+      'Target packets sent per second.',
       () => [],
       false,
       false,

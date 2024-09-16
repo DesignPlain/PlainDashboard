@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appautoscaling_PolicyStepScalingPolicyConfiguration,
   appautoscaling_PolicyStepScalingPolicyConfiguration_GetTypes,
-} from "../types/appautoscaling_PolicyStepScalingPolicyConfiguration";
+} from '../types/appautoscaling_PolicyStepScalingPolicyConfiguration';
 import {
   appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration,
   appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration_GetTypes,
-} from "../types/appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration";
+} from '../types/appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration';
 
 export interface PolicyArgs {
   // Policy type. Valid values are `StepScaling` and `TargetTrackingScaling`. Defaults to `StepScaling`. Certain services only support only one policy type. For more information see the [Target Tracking Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html) and [Step Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html) documentation.
@@ -69,39 +69,39 @@ export class Policy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "policyType",
-        "Policy type. Valid values are `StepScaling` and `TargetTrackingScaling`. Defaults to `StepScaling`. Certain services only support only one policy type. For more information see the [Target Tracking Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html) and [Step Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html) documentation.",
+        'policyType',
+        'Policy type. Valid values are `StepScaling` and `TargetTrackingScaling`. Defaults to `StepScaling`. Certain services only support only one policy type. For more information see the [Target Tracking Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html) and [Step Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html) documentation.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceId",
-        "Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the `ResourceId` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)",
+        'resourceId',
+        'Resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the `ResourceId` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "scalableDimension",
-        "Scalable dimension of the scalable target. Documentation can be found in the `ScalableDimension` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)",
+        'scalableDimension',
+        'Scalable dimension of the scalable target. Documentation can be found in the `ScalableDimension` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "serviceNamespace",
-        "AWS service namespace of the scalable target. Documentation can be found in the `ServiceNamespace` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)",
+        'serviceNamespace',
+        'AWS service namespace of the scalable target. Documentation can be found in the `ServiceNamespace` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html)',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "stepScalingPolicyConfiguration",
+        'stepScalingPolicyConfiguration',
         'Step scaling policy configuration, requires `policy_type = "StepScaling"` (default). See supported fields below.',
         () => appautoscaling_PolicyStepScalingPolicyConfiguration_GetTypes(),
         false,
@@ -109,7 +109,7 @@ export class Policy extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Object,
-        "targetTrackingScalingPolicyConfiguration",
+        'targetTrackingScalingPolicyConfiguration',
         'Target tracking policy, requires `policy_type = "TargetTrackingScaling"`. See supported fields below.',
         () =>
           appautoscaling_PolicyTargetTrackingScalingPolicyConfiguration_GetTypes(),
@@ -118,8 +118,8 @@ export class Policy extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the policy. Must be between 1 and 255 characters in length.",
+        'name',
+        'Name of the policy. Must be between 1 and 255 characters in length.',
         () => [],
         false,
         true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface monitoring_AlertPolicyConditionConditionThresholdTrigger {
   /*
@@ -26,16 +26,16 @@ export function monitoring_AlertPolicyConditionConditionThresholdTrigger_GetType
   return [
     new DynamicUIProps(
       InputType.Number,
-      "count",
-      "The absolute number of time series\nthat must fail the predicate for the\ncondition to be triggered.",
+      'count',
+      'The absolute number of time series\nthat must fail the predicate for the\ncondition to be triggered.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "percent",
-      "The percentage of time series that\nmust fail the predicate for the\ncondition to be triggered.",
+      'percent',
+      'The percentage of time series that\nmust fail the predicate for the\ncondition to be triggered.',
       () => [],
       false,
       false,

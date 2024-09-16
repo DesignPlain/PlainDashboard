@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ebs_SnapshotImportClientData,
   ebs_SnapshotImportClientData_GetTypes,
-} from "../types/ebs_SnapshotImportClientData";
+} from '../types/ebs_SnapshotImportClientData';
 import {
   ebs_SnapshotImportDiskContainer,
   ebs_SnapshotImportDiskContainer_GetTypes,
-} from "../types/ebs_SnapshotImportDiskContainer";
+} from '../types/ebs_SnapshotImportDiskContainer';
 
 export interface SnapshotImportArgs {
   // The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.
@@ -105,80 +105,80 @@ export class SnapshotImport extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the snapshot.",
+        'tags',
+        'A map of tags to assign to the snapshot.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "permanentRestore",
-        "Indicates whether to permanently restore an archived snapshot.",
+        'permanentRestore',
+        'Indicates whether to permanently restore an archived snapshot.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleName",
-        "The name of the IAM Role the VM Import/Export service will assume. This role needs certain permissions. See https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-role. Default: `vmimport`",
+        'roleName',
+        'The name of the IAM Role the VM Import/Export service will assume. This role needs certain permissions. See https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-role. Default: `vmimport`',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description string for the import snapshot task.",
+        'description',
+        'The description string for the import snapshot task.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "diskContainer",
-        "Information about the disk container. Detailed below.",
+        'diskContainer',
+        'Information about the disk container. Detailed below.',
         () => ebs_SnapshotImportDiskContainer_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "storageTier",
-        "The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.",
+        'storageTier',
+        'The name of the storage tier. Valid values are `archive` and `standard`. Default value is `standard`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "temporaryRestoreDays",
-        "Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.",
+        'temporaryRestoreDays',
+        'Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "clientData",
-        "The client-specific data. Detailed below.",
+        'clientData',
+        'The client-specific data. Detailed below.',
         () => ebs_SnapshotImportClientData_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "encrypted",
-        "Specifies whether the destination snapshot of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using KmsKeyId.",
+        'encrypted',
+        'Specifies whether the destination snapshot of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using KmsKeyId.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyId",
-        "An identifier for the symmetric KMS key to use when creating the encrypted snapshot. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a KmsKeyId is specified, the Encrypted flag must also be set.",
+        'kmsKeyId',
+        'An identifier for the symmetric KMS key to use when creating the encrypted snapshot. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a KmsKeyId is specified, the Encrypted flag must also be set.',
         () => [],
         false,
         true,

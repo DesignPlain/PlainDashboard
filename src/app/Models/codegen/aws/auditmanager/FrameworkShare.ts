@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface FrameworkShareArgs {
   // Comment from the sender about the share request.
@@ -48,32 +48,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "Comment from the sender about the share request.",
+        'comment',
+        'Comment from the sender about the share request.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "destinationAccount",
-        "Amazon Web Services account of the recipient.",
-        () => [],
-        true,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "destinationRegion",
-        "Amazon Web Services region of the recipient.",
+        'destinationAccount',
+        'Amazon Web Services account of the recipient.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "frameworkId",
-        "Unique identifier for the shared custom framework.\n\nThe following arguments are optional:",
+        'destinationRegion',
+        'Amazon Web Services region of the recipient.',
+        () => [],
+        true,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'frameworkId',
+        'Unique identifier for the shared custom framework.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,

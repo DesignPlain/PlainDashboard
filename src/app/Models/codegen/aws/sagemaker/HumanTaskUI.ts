@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   sagemaker_HumanTaskUIUiTemplate,
   sagemaker_HumanTaskUIUiTemplate_GetTypes,
-} from "../types/sagemaker_HumanTaskUIUiTemplate";
+} from '../types/sagemaker_HumanTaskUIUiTemplate';
 
 export interface HumanTaskUIArgs {
   // The name of the Human Task UI.
@@ -41,24 +41,24 @@ export class HumanTaskUI extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "uiTemplate",
-        "The Liquid template for the worker user interface. See UI Template below.",
+        'uiTemplate',
+        'The Liquid template for the worker user interface. See UI Template below.',
         () => sagemaker_HumanTaskUIUiTemplate_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "humanTaskUiName",
-        "The name of the Human Task UI.",
+        'humanTaskUiName',
+        'The name of the Human Task UI.',
         () => [],
         true,
         true,

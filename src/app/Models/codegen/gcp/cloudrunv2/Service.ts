@@ -3,33 +3,33 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudrunv2_ServiceTemplate,
   cloudrunv2_ServiceTemplate_GetTypes,
-} from "../types/cloudrunv2_ServiceTemplate";
+} from '../types/cloudrunv2_ServiceTemplate';
 import {
   cloudrunv2_ServiceTraffic,
   cloudrunv2_ServiceTraffic_GetTypes,
-} from "../types/cloudrunv2_ServiceTraffic";
+} from '../types/cloudrunv2_ServiceTraffic';
 import {
   cloudrunv2_ServiceTerminalCondition,
   cloudrunv2_ServiceTerminalCondition_GetTypes,
-} from "../types/cloudrunv2_ServiceTerminalCondition";
+} from '../types/cloudrunv2_ServiceTerminalCondition';
 import {
   cloudrunv2_ServiceTrafficStatus,
   cloudrunv2_ServiceTrafficStatus_GetTypes,
-} from "../types/cloudrunv2_ServiceTrafficStatus";
+} from '../types/cloudrunv2_ServiceTrafficStatus';
 import {
   cloudrunv2_ServiceCondition,
   cloudrunv2_ServiceCondition_GetTypes,
-} from "../types/cloudrunv2_ServiceCondition";
+} from '../types/cloudrunv2_ServiceCondition';
 import {
   cloudrunv2_ServiceBinaryAuthorization,
   cloudrunv2_ServiceBinaryAuthorization_GetTypes,
-} from "../types/cloudrunv2_ServiceBinaryAuthorization";
+} from '../types/cloudrunv2_ServiceBinaryAuthorization';
 
 export interface ServiceArgs {
   /*
@@ -278,31 +278,31 @@ Please refer to the field `effective_labels` for all of the labels present on th
     return [
       new DynamicUIProps(
         InputType.Object,
-        "template",
-        "The template used to create revisions for this Service.\nStructure is documented below.",
+        'template',
+        'The template used to create revisions for this Service.\nStructure is documented below.',
         () => cloudrunv2_ServiceTemplate_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "location",
-        "The location of the cloud run service",
+        'location',
+        'The location of the cloud run service',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "annotations",
+        'annotations',
         "Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.\nCloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected in new resources.\nAll system annotations in v1 now have a corresponding field in v2 Service.\nThis field follows Kubernetes annotations' namespacing, limits, and rules.\n**Note**: This field is non-authoritative, and will only manage the annotations present in your configuration.\nPlease refer to the field `effective_annotations` for all of the annotations present on the resource.",
         () => InputType_Map_GetTypes(),
         false,
@@ -310,63 +310,63 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "clientVersion",
-        "Arbitrary version identifier for the API client.",
+        'clientVersion',
+        'Arbitrary version identifier for the API client.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "client",
-        "Arbitrary identifier for the API client.",
+        'client',
+        'Arbitrary identifier for the API client.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "launchStage",
-        "The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/products#product-launch-stages). Cloud Run supports ALPHA, BETA, and GA.\nIf no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features.\nFor example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.\nPossible values are: `UNIMPLEMENTED`, `PRELAUNCH`, `EARLY_ACCESS`, `ALPHA`, `BETA`, `GA`, `DEPRECATED`.",
+        'launchStage',
+        'The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/products#product-launch-stages). Cloud Run supports ALPHA, BETA, and GA.\nIf no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features.\nFor example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.\nPossible values are: `UNIMPLEMENTED`, `PRELAUNCH`, `EARLY_ACCESS`, `ALPHA`, `BETA`, `GA`, `DEPRECATED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "traffics",
-        "Specifies how to distribute traffic over a collection of Revisions belonging to the Service. If traffic is empty or not provided, defaults to 100%!t(MISSING)raffic to the latest Ready Revision.\nStructure is documented below.",
+        'traffics',
+        'Specifies how to distribute traffic over a collection of Revisions belonging to the Service. If traffic is empty or not provided, defaults to 100%!t(MISSING)raffic to the latest Ready Revision.\nStructure is documented below.',
         () => cloudrunv2_ServiceTraffic_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customAudiences",
-        "One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a string. The custom audiences are encoded in the token and used to authenticate requests.\nFor more information, see https://cloud.google.com/run/docs/configuring/custom-audiences.",
+        'customAudiences',
+        'One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a string. The custom audiences are encoded in the token and used to authenticate requests.\nFor more information, see https://cloud.google.com/run/docs/configuring/custom-audiences.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ingress",
-        "Provides the ingress settings for this Service. On output, returns the currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.\nPossible values are: `INGRESS_TRAFFIC_ALL`, `INGRESS_TRAFFIC_INTERNAL_ONLY`, `INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER`.",
+        'ingress',
+        'Provides the ingress settings for this Service. On output, returns the currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.\nPossible values are: `INGRESS_TRAFFIC_ALL`, `INGRESS_TRAFFIC_INTERNAL_ONLY`, `INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "binaryAuthorization",
-        "Settings for the Binary Authorization feature.\nStructure is documented below.",
+        'binaryAuthorization',
+        'Settings for the Binary Authorization feature.\nStructure is documented below.',
         () => cloudrunv2_ServiceBinaryAuthorization_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "labels",
+        'labels',
         "Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component,\nenvironment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels.\nCloud Run API v2 does not support labels with  `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected.\nAll system labels in v1 now have a corresponding field in v2 Service.\n**Note**: This field is non-authoritative, and will only manage the labels present in your configuration.\nPlease refer to the field `effective_labels` for all of the labels present on the resource.",
         () => InputType_Map_GetTypes(),
         false,
@@ -374,16 +374,16 @@ Please refer to the field `effective_labels` for all of the labels present on th
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the Service.",
+        'name',
+        'Name of the Service.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "User-provided description of the Service. This field currently has a 512-character limit.",
+        'description',
+        'User-provided description of the Service. This field currently has a 512-character limit.',
         () => [],
         false,
         false,

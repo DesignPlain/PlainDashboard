@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable,
   dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable_GetTypes,
-} from "./dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable";
+} from './dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable';
 
 export interface dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfig {
   /*
@@ -22,8 +22,8 @@ export function dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransform
   return [
     new DynamicUIProps(
       InputType.Object,
-      "table",
-      "The BigQuery table in which to store the output.\nStructure is documented below.",
+      'table',
+      'The BigQuery table in which to store the output.\nStructure is documented below.',
       () =>
         dataloss_PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTable_GetTypes(),
       true,

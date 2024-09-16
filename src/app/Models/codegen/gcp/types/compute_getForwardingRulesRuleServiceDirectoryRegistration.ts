@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface compute_getForwardingRulesRuleServiceDirectoryRegistration {
   // Service Directory namespace to register the forwarding rule under.
@@ -18,16 +18,16 @@ export function compute_getForwardingRulesRuleServiceDirectoryRegistration_GetTy
   return [
     new DynamicUIProps(
       InputType.String,
-      "namespace",
-      "Service Directory namespace to register the forwarding rule under.",
+      'namespace',
+      'Service Directory namespace to register the forwarding rule under.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "service",
-      "Service Directory service to register the forwarding rule under.",
+      'service',
+      'Service Directory service to register the forwarding rule under.',
       () => [],
       true,
       false,

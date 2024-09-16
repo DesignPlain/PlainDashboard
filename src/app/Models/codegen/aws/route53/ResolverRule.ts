@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   route53_ResolverRuleTargetIp,
   route53_ResolverRuleTargetIp_GetTypes,
-} from "../types/route53_ResolverRuleTargetIp";
+} from '../types/route53_ResolverRuleTargetIp';
 
 export interface ResolverRuleArgs {
   // DNS queries for this domain name are forwarded to the IP addresses that are specified using `target_ip`.
@@ -80,48 +80,48 @@ This argument should only be specified for `FORWARD` type rules.
     return [
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "DNS queries for this domain name are forwarded to the IP addresses that are specified using `target_ip`.",
+        'domainName',
+        'DNS queries for this domain name are forwarded to the IP addresses that are specified using `target_ip`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.",
+        'name',
+        'A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resolverEndpointId",
-        "The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify using `target_ip`.\nThis argument should only be specified for `FORWARD` type rules.",
+        'resolverEndpointId',
+        'The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify using `target_ip`.\nThis argument should only be specified for `FORWARD` type rules.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ruleType",
-        "The rule type. Valid values are `FORWARD`, `SYSTEM` and `RECURSIVE`.",
+        'ruleType',
+        'The rule type. Valid values are `FORWARD`, `SYSTEM` and `RECURSIVE`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targetIps",
-        "Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).\nThis argument should only be specified for `FORWARD` type rules.",
+        'targetIps',
+        'Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).\nThis argument should only be specified for `FORWARD` type rules.',
         () => route53_ResolverRuleTargetIp_GetTypes(),
         false,
         false,

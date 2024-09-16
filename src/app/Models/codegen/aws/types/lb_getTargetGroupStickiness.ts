@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lb_getTargetGroupStickiness {
   //
@@ -24,21 +24,21 @@ export function lb_getTargetGroupStickiness_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Number,
-      "cookieDuration",
-      "",
+      'cookieDuration',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "cookieName",
-      "",
+      'cookieName',
+      '',
       () => [],
       true,
       false,
     ),
-    new DynamicUIProps(InputType.Bool, "enabled", "", () => [], true, false),
-    new DynamicUIProps(InputType.String, "type", "", () => [], true, false),
+    new DynamicUIProps(InputType.Bool, 'enabled', '', () => [], true, false),
+    new DynamicUIProps(InputType.String, 'type', '', () => [], true, false),
   ];
 }

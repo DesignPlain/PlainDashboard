@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface opensearch_DomainAdvancedSecurityOptionsMasterUserOptions {
   // ARN for the main user. Only specify if `internal_user_database_enabled` is not set or set to `false`.
@@ -21,15 +21,15 @@ export function opensearch_DomainAdvancedSecurityOptionsMasterUserOptions_GetTyp
   return [
     new DynamicUIProps(
       InputType.String,
-      "masterUserArn",
-      "ARN for the main user. Only specify if `internal_user_database_enabled` is not set or set to `false`.",
+      'masterUserArn',
+      'ARN for the main user. Only specify if `internal_user_database_enabled` is not set or set to `false`.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "masterUserName",
+      'masterUserName',
       "Main user's username, which is stored in the Amazon OpenSearch Service domain's internal database. Only specify if `internal_user_database_enabled` is set to `true`.",
       () => [],
       false,
@@ -37,7 +37,7 @@ export function opensearch_DomainAdvancedSecurityOptionsMasterUserOptions_GetTyp
     ),
     new DynamicUIProps(
       InputType.String,
-      "masterUserPassword",
+      'masterUserPassword',
       "Main user's password, which is stored in the Amazon OpenSearch Service domain's internal database. Only specify if `internal_user_database_enabled` is set to `true`.",
       () => [],
       false,

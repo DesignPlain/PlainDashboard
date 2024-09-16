@@ -8,10 +8,9 @@ describe('KeyValueArrayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KeyValueArrayComponent]
-    })
-    .compileComponents();
-    
+      imports: [KeyValueArrayComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(KeyValueArrayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

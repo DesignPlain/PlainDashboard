@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   compute_SecurityScanConfigAuthenticationCustomAccount,
   compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes,
-} from "./compute_SecurityScanConfigAuthenticationCustomAccount";
+} from './compute_SecurityScanConfigAuthenticationCustomAccount';
 import {
   compute_SecurityScanConfigAuthenticationGoogleAccount,
   compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes,
-} from "./compute_SecurityScanConfigAuthenticationGoogleAccount";
+} from './compute_SecurityScanConfigAuthenticationGoogleAccount';
 
 export interface compute_SecurityScanConfigAuthentication {
   /*
@@ -32,16 +32,16 @@ export function compute_SecurityScanConfigAuthentication_GetTypes(): DynamicUIPr
   return [
     new DynamicUIProps(
       InputType.Object,
-      "customAccount",
-      "Describes authentication configuration that uses a custom account.\nStructure is documented below.",
+      'customAccount',
+      'Describes authentication configuration that uses a custom account.\nStructure is documented below.',
       () => compute_SecurityScanConfigAuthenticationCustomAccount_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "googleAccount",
-      "Describes authentication configuration that uses a Google account.\nStructure is documented below.",
+      'googleAccount',
+      'Describes authentication configuration that uses a Google account.\nStructure is documented below.',
       () => compute_SecurityScanConfigAuthenticationGoogleAccount_GetTypes(),
       false,
       false,

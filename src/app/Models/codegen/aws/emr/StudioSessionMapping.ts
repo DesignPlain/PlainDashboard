@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface StudioSessionMappingArgs {
   // The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.
@@ -43,40 +43,40 @@ export class StudioSessionMapping extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "sessionPolicyArn",
-        "The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role.",
+        'sessionPolicyArn',
+        'The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "studioId",
-        "The ID of the Amazon EMR Studio to which the user or group will be mapped.",
+        'studioId',
+        'The ID of the Amazon EMR Studio to which the user or group will be mapped.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identityId",
-        "The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "identityName",
-        "The name of the user or group from the Amazon Web Services SSO Identity Store.",
+        'identityId',
+        'The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity Store.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "identityType",
-        "Specifies whether the identity to map to the Amazon EMR Studio is a `USER` or a `GROUP`.",
+        'identityName',
+        'The name of the user or group from the Amazon Web Services SSO Identity Store.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'identityType',
+        'Specifies whether the identity to map to the Amazon EMR Studio is a `USER` or a `GROUP`.',
         () => [],
         true,
         true,

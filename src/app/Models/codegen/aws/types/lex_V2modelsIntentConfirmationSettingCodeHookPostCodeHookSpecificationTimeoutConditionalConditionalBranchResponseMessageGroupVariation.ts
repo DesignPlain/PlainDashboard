@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationCustomPayload,
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationCustomPayload_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationCustomPayload";
+} from './lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationCustomPayload';
 import {
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCard,
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCard_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCard";
+} from './lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCard';
 import {
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationPlainTextMessage,
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationPlainTextMessage_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationPlainTextMessage";
+} from './lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationPlainTextMessage';
 import {
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationSsmlMessage,
   lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationSsmlMessage_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationSsmlMessage";
+} from './lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationSsmlMessage';
 
 export interface lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariation {
   // Configuration block for a message in a custom format defined by the client application. See `custom_payload`.
@@ -40,8 +40,8 @@ export function lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecifi
   return [
     new DynamicUIProps(
       InputType.Object,
-      "customPayload",
-      "Configuration block for a message in a custom format defined by the client application. See `custom_payload`.",
+      'customPayload',
+      'Configuration block for a message in a custom format defined by the client application. See `custom_payload`.',
       () =>
         lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationCustomPayload_GetTypes(),
       false,
@@ -49,8 +49,8 @@ export function lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecifi
     ),
     new DynamicUIProps(
       InputType.Object,
-      "imageResponseCard",
-      "Configuration block for a message that defines a response card that the client application can show to the user. See `image_response_card`.",
+      'imageResponseCard',
+      'Configuration block for a message that defines a response card that the client application can show to the user. See `image_response_card`.',
       () =>
         lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCard_GetTypes(),
       false,
@@ -58,8 +58,8 @@ export function lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecifi
     ),
     new DynamicUIProps(
       InputType.Object,
-      "plainTextMessage",
-      "Configuration block for a message in plain text format. See `plain_text_message`.",
+      'plainTextMessage',
+      'Configuration block for a message in plain text format. See `plain_text_message`.',
       () =>
         lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationPlainTextMessage_GetTypes(),
       false,
@@ -67,8 +67,8 @@ export function lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecifi
     ),
     new DynamicUIProps(
       InputType.Object,
-      "ssmlMessage",
-      "Configuration block for a message in Speech Synthesis Markup Language (SSML). See `ssml_message`.",
+      'ssmlMessage',
+      'Configuration block for a message in Speech Synthesis Markup Language (SSML). See `ssml_message`.',
       () =>
         lex_V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationSsmlMessage_GetTypes(),
       false,

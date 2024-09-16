@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow,
   edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow_GetTypes,
-} from "./edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow";
+} from './edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow';
 
 export interface edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow {
   /*
@@ -29,16 +29,16 @@ export function edgecontainer_ClusterMaintenancePolicyWindowRecurringWindow_GetT
   return [
     new DynamicUIProps(
       InputType.String,
-      "recurrence",
-      "An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how\nthis window recurs. They go on for the span of time between the start and\nend time.",
+      'recurrence',
+      'An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how\nthis window recurs. They go on for the span of time between the start and\nend time.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "window",
-      "Represents an arbitrary window of time.\nStructure is documented below.",
+      'window',
+      'Represents an arbitrary window of time.\nStructure is documented below.',
       () =>
         edgecontainer_ClusterMaintenancePolicyWindowRecurringWindowWindow_GetTypes(),
       false,

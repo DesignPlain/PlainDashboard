@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomAction,
   networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomAction_GetTypes,
-} from "./networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomAction";
+} from './networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomAction';
 import {
   networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRule,
   networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRule_GetTypes,
-} from "./networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRule";
+} from './networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRule';
 
 export interface networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActions {
   // Set of configuration blocks containing custom action definitions that are available for use by the set of `stateless rule`. See Custom Action below for details.
@@ -26,8 +26,8 @@ export function networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCu
   return [
     new DynamicUIProps(
       InputType.Array,
-      "customActions",
-      "Set of configuration blocks containing custom action definitions that are available for use by the set of `stateless rule`. See Custom Action below for details.",
+      'customActions',
+      'Set of configuration blocks containing custom action definitions that are available for use by the set of `stateless rule`. See Custom Action below for details.',
       () =>
         networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomAction_GetTypes(),
       false,
@@ -35,8 +35,8 @@ export function networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCu
     ),
     new DynamicUIProps(
       InputType.Array,
-      "statelessRules",
-      "Set of configuration blocks containing the stateless rules for use in the stateless rule group. See Stateless Rule below for details.",
+      'statelessRules',
+      'Set of configuration blocks containing the stateless rules for use in the stateless rule group. See Stateless Rule below for details.',
       () =>
         networkfirewall_RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRule_GetTypes(),
       true,

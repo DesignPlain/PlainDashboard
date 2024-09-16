@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface s3_BucketLifecycleRuleNoncurrentVersionExpiration {
   // Specifies the number of days noncurrent object versions expire.
@@ -15,8 +15,8 @@ export function s3_BucketLifecycleRuleNoncurrentVersionExpiration_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Number,
-      "days",
-      "Specifies the number of days noncurrent object versions expire.",
+      'days',
+      'Specifies the number of days noncurrent object versions expire.',
       () => [],
       false,
       false,

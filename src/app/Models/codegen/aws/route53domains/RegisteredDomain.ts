@@ -3,29 +3,29 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   route53domains_RegisteredDomainBillingContact,
   route53domains_RegisteredDomainBillingContact_GetTypes,
-} from "../types/route53domains_RegisteredDomainBillingContact";
+} from '../types/route53domains_RegisteredDomainBillingContact';
 import {
   route53domains_RegisteredDomainAdminContact,
   route53domains_RegisteredDomainAdminContact_GetTypes,
-} from "../types/route53domains_RegisteredDomainAdminContact";
+} from '../types/route53domains_RegisteredDomainAdminContact';
 import {
   route53domains_RegisteredDomainNameServer,
   route53domains_RegisteredDomainNameServer_GetTypes,
-} from "../types/route53domains_RegisteredDomainNameServer";
+} from '../types/route53domains_RegisteredDomainNameServer';
 import {
   route53domains_RegisteredDomainRegistrantContact,
   route53domains_RegisteredDomainRegistrantContact_GetTypes,
-} from "../types/route53domains_RegisteredDomainRegistrantContact";
+} from '../types/route53domains_RegisteredDomainRegistrantContact';
 import {
   route53domains_RegisteredDomainTechContact,
   route53domains_RegisteredDomainTechContact_GetTypes,
-} from "../types/route53domains_RegisteredDomainTechContact";
+} from '../types/route53domains_RegisteredDomainTechContact';
 
 export interface RegisteredDomainArgs {
   // Whether domain administrative contact information is concealed from WHOIS queries. Default: `true`.
@@ -144,104 +144,104 @@ export class RegisteredDomain extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "registrantPrivacy",
-        "Whether domain registrant contact information is concealed from WHOIS queries. Default: `true`.",
+        'registrantPrivacy',
+        'Whether domain registrant contact information is concealed from WHOIS queries. Default: `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "nameServers",
-        "The list of nameservers for the domain. See `name_server` Blocks for more details.",
+        'nameServers',
+        'The list of nameservers for the domain. See `name_server` Blocks for more details.',
         () => route53domains_RegisteredDomainNameServer_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "registrantContact",
-        "Details about the domain registrant. See Contact Blocks for more details.",
+        'registrantContact',
+        'Details about the domain registrant. See Contact Blocks for more details.',
         () => route53domains_RegisteredDomainRegistrantContact_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "The name of the registered domain.",
+        'domainName',
+        'The name of the registered domain.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "billingContact",
-        "Details about the domain billing contact. See Contact Blocks for more details.",
+        'billingContact',
+        'Details about the domain billing contact. See Contact Blocks for more details.',
         () => route53domains_RegisteredDomainBillingContact_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "billingPrivacy",
-        "Whether domain billing contact information is concealed from WHOIS queries. Default: `true`.",
+        'billingPrivacy',
+        'Whether domain billing contact information is concealed from WHOIS queries. Default: `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "adminContact",
-        "Details about the domain administrative contact. See Contact Blocks for more details.",
+        'adminContact',
+        'Details about the domain administrative contact. See Contact Blocks for more details.',
         () => route53domains_RegisteredDomainAdminContact_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "techContact",
-        "Details about the domain technical contact. See Contact Blocks for more details.",
+        'techContact',
+        'Details about the domain technical contact. See Contact Blocks for more details.',
         () => route53domains_RegisteredDomainTechContact_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "techPrivacy",
-        "Whether domain technical contact information is concealed from WHOIS queries. Default: `true`.",
+        'techPrivacy',
+        'Whether domain technical contact information is concealed from WHOIS queries. Default: `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "transferLock",
-        "Whether the domain is locked for transfer. Default: `true`.",
+        'transferLock',
+        'Whether the domain is locked for transfer. Default: `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "autoRenew",
-        "Whether the domain registration is set to renew automatically. Default: `true`.",
+        'autoRenew',
+        'Whether the domain registration is set to renew automatically. Default: `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "adminPrivacy",
-        "Whether domain administrative contact information is concealed from WHOIS queries. Default: `true`.",
+        'adminPrivacy',
+        'Whether domain administrative contact information is concealed from WHOIS queries. Default: `true`.',
         () => [],
         false,
         false,

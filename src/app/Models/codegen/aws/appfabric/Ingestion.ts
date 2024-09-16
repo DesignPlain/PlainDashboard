@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface IngestionArgs {
   /*
@@ -55,40 +55,40 @@ Refer to the AWS Documentation for the [list of valid values](https://docs.aws.a
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "tenantId",
-        "ID of the application tenant.",
+        'tenantId',
+        'ID of the application tenant.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "app",
-        "Name of the application.\nRefer to the AWS Documentation for the [list of valid values](https://docs.aws.amazon.com/appfabric/latest/api/API_CreateIngestion.html#appfabric-CreateIngestion-request-app)",
+        'app',
+        'Name of the application.\nRefer to the AWS Documentation for the [list of valid values](https://docs.aws.amazon.com/appfabric/latest/api/API_CreateIngestion.html#appfabric-CreateIngestion-request-app)',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "appBundleArn",
-        "Amazon Resource Name (ARN) of the app bundle to use for the request.",
+        'appBundleArn',
+        'Amazon Resource Name (ARN) of the app bundle to use for the request.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ingestionType",
-        "Ingestion type. Valid values are `auditLog`.",
+        'ingestionType',
+        'Ingestion type. Valid values are `auditLog`.',
         () => [],
         true,
         false,

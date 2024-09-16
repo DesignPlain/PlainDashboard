@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancer {
   // The fully qualified url of the network in which the load balancer belongs. This should be formatted like `projects/{project}/global/networks/{network}` or `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`.
@@ -33,47 +33,47 @@ export function dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBal
   return [
     new DynamicUIProps(
       InputType.String,
-      "networkUrl",
-      "The fully qualified url of the network in which the load balancer belongs. This should be formatted like `projects/{project}/global/networks/{network}` or `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`.",
+      'networkUrl',
+      'The fully qualified url of the network in which the load balancer belongs. This should be formatted like `projects/{project}/global/networks/{network}` or `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "port",
-      "The configured port of the load balancer.",
+      'port',
+      'The configured port of the load balancer.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "project",
-      "The ID of the project in which the load balancer belongs.",
+      'project',
+      'The ID of the project in which the load balancer belongs.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "region",
-      "The region of the load balancer. Only needed for regional load balancers.",
+      'region',
+      'The region of the load balancer. Only needed for regional load balancers.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ipAddress",
-      "The frontend IP address of the load balancer.",
+      'ipAddress',
+      'The frontend IP address of the load balancer.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "ipProtocol",
+      'ipProtocol',
       'The configured IP protocol of the load balancer. This value is case-sensitive. Possible values: ["tcp", "udp"]',
       () => [],
       true,
@@ -81,7 +81,7 @@ export function dns_RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBal
     ),
     new DynamicUIProps(
       InputType.String,
-      "loadBalancerType",
+      'loadBalancerType',
       'The type of load balancer. This value is case-sensitive. Possible values: ["regionalL4ilb", "regionalL7ilb", "globalL7ilb"]',
       () => [],
       true,

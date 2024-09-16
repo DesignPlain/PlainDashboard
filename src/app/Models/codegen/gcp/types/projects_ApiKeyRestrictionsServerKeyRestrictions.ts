@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface projects_ApiKeyRestrictionsServerKeyRestrictions {
   // A list of the caller IP addresses that are allowed to make API calls with this key.
@@ -15,8 +15,8 @@ export function projects_ApiKeyRestrictionsServerKeyRestrictions_GetTypes(): Dyn
   return [
     new DynamicUIProps(
       InputType.Array,
-      "allowedIps",
-      "A list of the caller IP addresses that are allowed to make API calls with this key.",
+      'allowedIps',
+      'A list of the caller IP addresses that are allowed to make API calls with this key.',
       () => InputType_String_GetTypes(),
       true,
       false,

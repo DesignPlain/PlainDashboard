@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ResourceArgs {
   /*
@@ -36,16 +36,16 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "groupArn",
-        "The name or the ARN of the resource group to add resources to.\n\nThe following arguments are optional:",
+        'groupArn',
+        'The name or the ARN of the resource group to add resources to.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceArn",
-        "The ARN of the resource to be added to the group.",
+        'resourceArn',
+        'The ARN of the resource to be added to the group.',
         () => [],
         true,
         true,

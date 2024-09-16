@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface DomainPolicyArgs {
   // IAM policy document specifying the access policies for the domain
@@ -25,16 +25,16 @@ export class DomainPolicy extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "accessPolicies",
-        "IAM policy document specifying the access policies for the domain",
+        'accessPolicies',
+        'IAM policy document specifying the access policies for the domain',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainName",
-        "Name of the domain.",
+        'domainName',
+        'Name of the domain.',
         () => [],
         true,
         false,

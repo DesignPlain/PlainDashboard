@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataproc_MetastoreServiceNetworkConfigConsumer,
   dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes,
-} from "./dataproc_MetastoreServiceNetworkConfigConsumer";
+} from './dataproc_MetastoreServiceNetworkConfigConsumer';
 
 export interface dataproc_MetastoreServiceNetworkConfig {
   /*
@@ -25,15 +25,15 @@ export function dataproc_MetastoreServiceNetworkConfig_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Array,
-      "consumers",
-      "The consumer-side network configuration for the Dataproc Metastore instance.\nStructure is documented below.",
+      'consumers',
+      'The consumer-side network configuration for the Dataproc Metastore instance.\nStructure is documented below.',
       () => dataproc_MetastoreServiceNetworkConfigConsumer_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "customRoutesEnabled",
+      'customRoutesEnabled',
       "Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.",
       () => [],
       false,

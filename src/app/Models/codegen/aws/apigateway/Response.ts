@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ResponseArgs {
   // Map of parameters (paths, query strings and headers) of the Gateway Response.
@@ -43,40 +43,40 @@ export class Response extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "responseTemplates",
-        "Map of templates used to transform the response body.",
+        'responseTemplates',
+        'Map of templates used to transform the response body.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "responseType",
-        "Response type of the associated GatewayResponse.",
+        'responseType',
+        'Response type of the associated GatewayResponse.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "restApiId",
-        "String identifier of the associated REST API.",
+        'restApiId',
+        'String identifier of the associated REST API.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "statusCode",
-        "HTTP status code of the Gateway Response.",
+        'statusCode',
+        'HTTP status code of the Gateway Response.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "responseParameters",
-        "Map of parameters (paths, query strings and headers) of the Gateway Response.",
+        'responseParameters',
+        'Map of parameters (paths, query strings and headers) of the Gateway Response.',
         () => InputType_Map_GetTypes(),
         false,
         false,

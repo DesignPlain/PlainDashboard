@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface mq_getBrokerMaintenanceWindowStartTime {
   //
@@ -19,19 +19,19 @@ export interface mq_getBrokerMaintenanceWindowStartTime {
 
 export function mq_getBrokerMaintenanceWindowStartTime_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.String, "timeZone", "", () => [], true, false),
+    new DynamicUIProps(InputType.String, 'timeZone', '', () => [], true, false),
     new DynamicUIProps(
       InputType.String,
-      "dayOfWeek",
-      "",
+      'dayOfWeek',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "timeOfDay",
-      "",
+      'timeOfDay',
+      '',
       () => [],
       true,
       false,

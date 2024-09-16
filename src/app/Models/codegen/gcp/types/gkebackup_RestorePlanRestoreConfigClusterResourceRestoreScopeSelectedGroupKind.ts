@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKind {
   /*
@@ -25,7 +25,7 @@ export function gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeSel
   return [
     new DynamicUIProps(
       InputType.String,
-      "resourceGroup",
+      'resourceGroup',
       'API Group string of a Kubernetes resource, e.g.\n"apiextensions.k8s.io", "storage.k8s.io", etc.\nUse empty string for core group.',
       () => [],
       false,
@@ -33,7 +33,7 @@ export function gkebackup_RestorePlanRestoreConfigClusterResourceRestoreScopeSel
     ),
     new DynamicUIProps(
       InputType.String,
-      "resourceKind",
+      'resourceKind',
       'Kind of a Kubernetes resource, e.g.\n"CustomResourceDefinition", "StorageClass", etc.',
       () => [],
       false,

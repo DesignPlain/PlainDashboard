@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface dataproc_getMetastoreServiceMaintenanceWindow {
   // The day of week, when the window starts. Possible values: ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
@@ -18,7 +18,7 @@ export function dataproc_getMetastoreServiceMaintenanceWindow_GetTypes(): Dynami
   return [
     new DynamicUIProps(
       InputType.String,
-      "dayOfWeek",
+      'dayOfWeek',
       'The day of week, when the window starts. Possible values: ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]',
       () => [],
       true,
@@ -26,8 +26,8 @@ export function dataproc_getMetastoreServiceMaintenanceWindow_GetTypes(): Dynami
     ),
     new DynamicUIProps(
       InputType.Number,
-      "hourOfDay",
-      "The hour of day (0-23) when the window starts.",
+      'hourOfDay',
+      'The hour of day (0-23) when the window starts.',
       () => [],
       true,
       false,

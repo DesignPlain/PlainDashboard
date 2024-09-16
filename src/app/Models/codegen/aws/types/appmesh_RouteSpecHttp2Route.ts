@@ -3,24 +3,24 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_RouteSpecHttp2RouteAction,
   appmesh_RouteSpecHttp2RouteAction_GetTypes,
-} from "./appmesh_RouteSpecHttp2RouteAction";
+} from './appmesh_RouteSpecHttp2RouteAction';
 import {
   appmesh_RouteSpecHttp2RouteMatch,
   appmesh_RouteSpecHttp2RouteMatch_GetTypes,
-} from "./appmesh_RouteSpecHttp2RouteMatch";
+} from './appmesh_RouteSpecHttp2RouteMatch';
 import {
   appmesh_RouteSpecHttp2RouteRetryPolicy,
   appmesh_RouteSpecHttp2RouteRetryPolicy_GetTypes,
-} from "./appmesh_RouteSpecHttp2RouteRetryPolicy";
+} from './appmesh_RouteSpecHttp2RouteRetryPolicy';
 import {
   appmesh_RouteSpecHttp2RouteTimeout,
   appmesh_RouteSpecHttp2RouteTimeout_GetTypes,
-} from "./appmesh_RouteSpecHttp2RouteTimeout";
+} from './appmesh_RouteSpecHttp2RouteTimeout';
 
 export interface appmesh_RouteSpecHttp2Route {
   // Action to take if a match is determined.
@@ -40,32 +40,32 @@ export function appmesh_RouteSpecHttp2Route_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "action",
-      "Action to take if a match is determined.",
+      'action',
+      'Action to take if a match is determined.',
       () => appmesh_RouteSpecHttp2RouteAction_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "match",
-      "Criteria for determining an HTTP request match.",
+      'match',
+      'Criteria for determining an HTTP request match.',
       () => appmesh_RouteSpecHttp2RouteMatch_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "retryPolicy",
-      "Retry policy.",
+      'retryPolicy',
+      'Retry policy.',
       () => appmesh_RouteSpecHttp2RouteRetryPolicy_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "timeout",
-      "Types of timeouts.",
+      'timeout',
+      'Types of timeouts.',
       () => appmesh_RouteSpecHttp2RouteTimeout_GetTypes(),
       false,
       false,

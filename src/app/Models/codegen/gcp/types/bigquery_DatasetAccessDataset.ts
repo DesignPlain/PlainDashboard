@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   bigquery_DatasetAccessDatasetDataset,
   bigquery_DatasetAccessDatasetDataset_GetTypes,
-} from "./bigquery_DatasetAccessDatasetDataset";
+} from './bigquery_DatasetAccessDatasetDataset';
 
 export interface bigquery_DatasetAccessDataset {
   /*
@@ -28,16 +28,16 @@ export function bigquery_DatasetAccessDataset_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Object,
-      "dataset",
-      "The dataset this entry applies to\nStructure is documented below.",
+      'dataset',
+      'The dataset this entry applies to\nStructure is documented below.',
       () => bigquery_DatasetAccessDatasetDataset_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "targetTypes",
-      "Which resources in the dataset this entry applies to. Currently, only views are supported,\nbut additional target types may be added in the future. Possible values: VIEWS",
+      'targetTypes',
+      'Which resources in the dataset this entry applies to. Currently, only views are supported,\nbut additional target types may be added in the future. Possible values: VIEWS',
       () => InputType_String_GetTypes(),
       true,
       false,

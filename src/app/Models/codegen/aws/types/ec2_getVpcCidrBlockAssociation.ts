@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ec2_getVpcCidrBlockAssociation {
   // Association ID for the IPv4 CIDR block.
@@ -24,7 +24,7 @@ export function ec2_getVpcCidrBlockAssociation_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "state",
+      'state',
       'Current state of the desired VPC.\nCan be either `"pending"` or `"available"`.',
       () => [],
       true,
@@ -32,16 +32,16 @@ export function ec2_getVpcCidrBlockAssociation_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "associationId",
-      "Association ID for the IPv4 CIDR block.",
+      'associationId',
+      'Association ID for the IPv4 CIDR block.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "cidrBlock",
-      "Cidr block of the desired VPC.",
+      'cidrBlock',
+      'Cidr block of the desired VPC.',
       () => [],
       true,
       false,

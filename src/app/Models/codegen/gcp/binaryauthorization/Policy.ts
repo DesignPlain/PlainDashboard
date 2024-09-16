@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   binaryauthorization_PolicyAdmissionWhitelistPattern,
   binaryauthorization_PolicyAdmissionWhitelistPattern_GetTypes,
-} from "../types/binaryauthorization_PolicyAdmissionWhitelistPattern";
+} from '../types/binaryauthorization_PolicyAdmissionWhitelistPattern';
 import {
   binaryauthorization_PolicyClusterAdmissionRule,
   binaryauthorization_PolicyClusterAdmissionRule_GetTypes,
-} from "../types/binaryauthorization_PolicyClusterAdmissionRule";
+} from '../types/binaryauthorization_PolicyClusterAdmissionRule';
 import {
   binaryauthorization_PolicyDefaultAdmissionRule,
   binaryauthorization_PolicyDefaultAdmissionRule_GetTypes,
-} from "../types/binaryauthorization_PolicyDefaultAdmissionRule";
+} from '../types/binaryauthorization_PolicyDefaultAdmissionRule';
 
 export interface PolicyArgs {
   // A descriptive comment.
@@ -117,15 +117,15 @@ If it is not provided, the provider project is used.
     return [
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "admissionWhitelistPatterns",
+        'admissionWhitelistPatterns',
         "A whitelist of image patterns to exclude from admission rules. If an\nimage's name matches a whitelist pattern, the image's admission\nrequests will always be permitted regardless of your admission rules.\nStructure is documented below.",
         () => binaryauthorization_PolicyAdmissionWhitelistPattern_GetTypes(),
         false,
@@ -133,32 +133,32 @@ If it is not provided, the provider project is used.
       ),
       new DynamicUIProps(
         InputType.Array,
-        "clusterAdmissionRules",
-        "Per-cluster admission rules. An admission rule specifies either that\nall container images used in a pod creation request must be attested\nto by one or more attestors, that all pod creations will be allowed,\nor that all pod creations will be denied. There can be at most one\nadmission rule per cluster spec.\n\nIdentifier format: `{{location}}.{{clusterId}}`.\nA location is either a compute zone (e.g. `us-central1-a`) or a region\n(e.g. `us-central1`).\nStructure is documented below.",
+        'clusterAdmissionRules',
+        'Per-cluster admission rules. An admission rule specifies either that\nall container images used in a pod creation request must be attested\nto by one or more attestors, that all pod creations will be allowed,\nor that all pod creations will be denied. There can be at most one\nadmission rule per cluster spec.\n\nIdentifier format: `{{location}}.{{clusterId}}`.\nA location is either a compute zone (e.g. `us-central1-a`) or a region\n(e.g. `us-central1`).\nStructure is documented below.',
         () => binaryauthorization_PolicyClusterAdmissionRule_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "defaultAdmissionRule",
-        "Default admission rule for a cluster without a per-cluster admission\nrule.\nStructure is documented below.",
+        'defaultAdmissionRule',
+        'Default admission rule for a cluster without a per-cluster admission\nrule.\nStructure is documented below.',
         () => binaryauthorization_PolicyDefaultAdmissionRule_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A descriptive comment.",
+        'description',
+        'A descriptive comment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "globalPolicyEvaluationMode",
-        "Controls the evaluation of a Google-maintained global admission policy\nfor common system-level images. Images not covered by the global\npolicy will be subject to the project admission policy.\nPossible values are: `ENABLE`, `DISABLE`.",
+        'globalPolicyEvaluationMode',
+        'Controls the evaluation of a Google-maintained global admission policy\nfor common system-level images. Images not covered by the global\npolicy will be subject to the project admission policy.\nPossible values are: `ENABLE`, `DISABLE`.',
         () => [],
         false,
         false,

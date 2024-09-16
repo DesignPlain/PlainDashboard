@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ssmcontacts_ContactChannelDeliveryAddress,
   ssmcontacts_ContactChannelDeliveryAddress_GetTypes,
-} from "../types/ssmcontacts_ContactChannelDeliveryAddress";
+} from '../types/ssmcontacts_ContactChannelDeliveryAddress';
 
 export interface ContactChannelArgs {
   // Type of the contact channel. One of `SMS`, `VOICE` or `EMAIL`.
@@ -47,32 +47,32 @@ export class ContactChannel extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "Type of the contact channel. One of `SMS`, `VOICE` or `EMAIL`.",
+        'type',
+        'Type of the contact channel. One of `SMS`, `VOICE` or `EMAIL`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "contactId",
-        "Amazon Resource Name (ARN) of the AWS SSM Contact that the contact channel belongs to.",
+        'contactId',
+        'Amazon Resource Name (ARN) of the AWS SSM Contact that the contact channel belongs to.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "deliveryAddress",
-        "Block that contains contact engagement details. See details below.",
+        'deliveryAddress',
+        'Block that contains contact engagement details. See details below.',
         () => ssmcontacts_ContactChannelDeliveryAddress_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the contact channel. Must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), hyphens (`-`), periods (`.`), and spaces.",
+        'name',
+        'Name of the contact channel. Must be between 1 and 255 characters, and may contain alphanumerics, underscores (`_`), hyphens (`-`), periods (`.`), and spaces.',
         () => [],
         false,
         false,

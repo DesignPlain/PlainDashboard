@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface RegionSslPolicyArgs {
   /*
@@ -148,56 +148,56 @@ character, which cannot be a dash.
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description of this resource.",
+        'description',
+        'An optional description of this resource.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "minTlsVersion",
-        "The minimum version of SSL protocol that can be used by the clients\nto establish a connection with the load balancer.\nDefault value is `TLS_1_0`.\nPossible values are: `TLS_1_0`, `TLS_1_1`, `TLS_1_2`.",
+        'minTlsVersion',
+        'The minimum version of SSL protocol that can be used by the clients\nto establish a connection with the load balancer.\nDefault value is `TLS_1_0`.\nPossible values are: `TLS_1_0`, `TLS_1_1`, `TLS_1_2`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.",
-        () => [],
-        false,
-        true,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "profile",
-        "Profile specifies the set of SSL features that can be used by the\nload balancer when negotiating SSL with clients. If using `CUSTOM`,\nthe set of SSL features to enable must be specified in the\n`customFeatures` field.\nSee the [official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies#profilefeaturesupport)\nfor information on what cipher suites each profile provides. If\n`CUSTOM` is used, the `custom_features` attribute **must be set**.\nDefault value is `COMPATIBLE`.\nPossible values are: `COMPATIBLE`, `MODERN`, `RESTRICTED`, `CUSTOM`.",
-        () => [],
-        false,
-        false,
-      ),
-      new DynamicUIProps(
-        InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'name',
+        'Name of the resource. Provided by the client when the resource is\ncreated. The name must be 1-63 characters long, and comply with\nRFC1035. Specifically, the name must be 1-63 characters long and match\nthe regular expression `a-z?` which means the\nfirst character must be a lowercase letter, and all following\ncharacters must be a dash, lowercase letter, or digit, except the last\ncharacter, which cannot be a dash.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "The region where the regional SSL policy resides.\n\n\n- - -",
+        'profile',
+        'Profile specifies the set of SSL features that can be used by the\nload balancer when negotiating SSL with clients. If using `CUSTOM`,\nthe set of SSL features to enable must be specified in the\n`customFeatures` field.\nSee the [official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies#profilefeaturesupport)\nfor information on what cipher suites each profile provides. If\n`CUSTOM` is used, the `custom_features` attribute **must be set**.\nDefault value is `COMPATIBLE`.\nPossible values are: `COMPATIBLE`, `MODERN`, `RESTRICTED`, `CUSTOM`.',
+        () => [],
+        false,
+        false,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
+        () => [],
+        false,
+        true,
+      ),
+      new DynamicUIProps(
+        InputType.String,
+        'region',
+        'The region where the regional SSL policy resides.\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "customFeatures",
-        "A list of features enabled when the selected profile is CUSTOM. The\nmethod returns the set of features that can be specified in this\nlist. This field must be empty if the profile is not CUSTOM.\nSee the [official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies#profilefeaturesupport)\nfor which ciphers are available to use. **Note**: this argument\n*must* be present when using the `CUSTOM` profile. This argument\n*must not* be present when using any other profile.",
+        'customFeatures',
+        'A list of features enabled when the selected profile is CUSTOM. The\nmethod returns the set of features that can be specified in this\nlist. This field must be empty if the profile is not CUSTOM.\nSee the [official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies#profilefeaturesupport)\nfor which ciphers are available to use. **Note**: this argument\n*must* be present when using the `CUSTOM` profile. This argument\n*must not* be present when using any other profile.',
         () => InputType_String_GetTypes(),
         false,
         false,

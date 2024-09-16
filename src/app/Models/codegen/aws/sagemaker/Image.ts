@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ImageArgs {
   // The description of the image.
@@ -49,40 +49,40 @@ export class Image extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The description of the image.",
+        'description',
+        'The description of the image.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The display name of the image. When the image is added to a domain (must be unique to the domain).",
+        'displayName',
+        'The display name of the image. When the image is added to a domain (must be unique to the domain).',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "imageName",
-        "The name of the image. Must be unique to your account.",
+        'imageName',
+        'The name of the image. Must be unique to your account.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "roleArn",
-        "The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.",
+        'roleArn',
+        'The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.',
         () => [],
         true,
         true,

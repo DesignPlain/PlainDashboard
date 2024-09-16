@@ -3,80 +3,80 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycode,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycode_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycode";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycode';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsServiceNow,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsServiceNow_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsServiceNow";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsServiceNow';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSingular,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSingular_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSingular";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSingular';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsTrendmicro,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsTrendmicro_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsTrendmicro";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsTrendmicro';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDatadog,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDatadog_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDatadog";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDatadog';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsRedshift,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsRedshift_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsRedshift";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsRedshift';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsVeeva,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsVeeva_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsVeeva";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsVeeva';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsAmplitude,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsAmplitude_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsAmplitude";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsAmplitude';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnector,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnector_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnector";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnector';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSnowflake,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSnowflake_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSnowflake";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSnowflake';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsInforNexus,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsInforNexus_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsInforNexus";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsInforNexus';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendesk,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendesk_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendesk";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendesk';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforce,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforce_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforce";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforce';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlack,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlack_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlack";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlack';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalytics,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalytics_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalytics";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalytics';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDynatrace,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDynatrace_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDynatrace";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDynatrace';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketo,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketo_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketo";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketo';
 import {
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoData,
   appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoData_GetTypes,
-} from "./appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoData";
+} from './appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoData';
 
 export interface appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentials {
   // The connector-specific credentials required when using Google Analytics. See Google Analytics Connector Profile Credentials for more details.
@@ -138,8 +138,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
   return [
     new DynamicUIProps(
       InputType.Object,
-      "honeycode",
-      "The connector-specific credentials required when using Amazon Honeycode. See Honeycode Connector Profile Credentials for more details.",
+      'honeycode',
+      'The connector-specific credentials required when using Amazon Honeycode. See Honeycode Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycode_GetTypes(),
       false,
@@ -147,8 +147,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "googleAnalytics",
-      "The connector-specific credentials required when using Google Analytics. See Google Analytics Connector Profile Credentials for more details.",
+      'googleAnalytics',
+      'The connector-specific credentials required when using Google Analytics. See Google Analytics Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalytics_GetTypes(),
       false,
@@ -156,8 +156,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "amplitude",
-      "The connector-specific credentials required when using Amplitude. See Amplitude Connector Profile Credentials for more details.",
+      'amplitude',
+      'The connector-specific credentials required when using Amplitude. See Amplitude Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsAmplitude_GetTypes(),
       false,
@@ -165,8 +165,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "dynatrace",
-      "The connector-specific credentials required when using Dynatrace. See Dynatrace Connector Profile Credentials for more details.",
+      'dynatrace',
+      'The connector-specific credentials required when using Dynatrace. See Dynatrace Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDynatrace_GetTypes(),
       false,
@@ -174,8 +174,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "redshift",
-      "Connector-specific credentials required when using Amazon Redshift. See Redshift Connector Profile Credentials for more details.",
+      'redshift',
+      'Connector-specific credentials required when using Amazon Redshift. See Redshift Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsRedshift_GetTypes(),
       false,
@@ -183,8 +183,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "serviceNow",
-      "The connector-specific credentials required when using ServiceNow. See ServiceNow Connector Profile Credentials for more details.",
+      'serviceNow',
+      'The connector-specific credentials required when using ServiceNow. See ServiceNow Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsServiceNow_GetTypes(),
       false,
@@ -192,8 +192,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "trendmicro",
-      "The connector-specific credentials required when using Trend Micro. See Trend Micro Connector Profile Credentials for more details.",
+      'trendmicro',
+      'The connector-specific credentials required when using Trend Micro. See Trend Micro Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsTrendmicro_GetTypes(),
       false,
@@ -201,8 +201,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "datadog",
-      "Connector-specific credentials required when using Datadog. See Datadog Connector Profile Credentials for more details.",
+      'datadog',
+      'Connector-specific credentials required when using Datadog. See Datadog Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsDatadog_GetTypes(),
       false,
@@ -210,8 +210,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "slack",
-      "Connector-specific credentials required when using Slack. See Slack Connector Profile Credentials for more details.",
+      'slack',
+      'Connector-specific credentials required when using Slack. See Slack Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlack_GetTypes(),
       false,
@@ -219,8 +219,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "snowflake",
-      "The connector-specific credentials required when using Snowflake. See Snowflake Connector Profile Credentials for more details.",
+      'snowflake',
+      'The connector-specific credentials required when using Snowflake. See Snowflake Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSnowflake_GetTypes(),
       false,
@@ -228,8 +228,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "inforNexus",
-      "The connector-specific credentials required when using Infor Nexus. See Infor Nexus Connector Profile Credentials for more details.",
+      'inforNexus',
+      'The connector-specific credentials required when using Infor Nexus. See Infor Nexus Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsInforNexus_GetTypes(),
       false,
@@ -237,8 +237,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "singular",
-      "Connector-specific credentials required when using Singular. See Singular Connector Profile Credentials for more details.",
+      'singular',
+      'Connector-specific credentials required when using Singular. See Singular Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSingular_GetTypes(),
       false,
@@ -246,8 +246,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "customConnector",
-      "The connector-specific profile credentials required when using the custom connector. See Custom Connector Profile Credentials for more details.",
+      'customConnector',
+      'The connector-specific profile credentials required when using the custom connector. See Custom Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnector_GetTypes(),
       false,
@@ -255,8 +255,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "marketo",
-      "Connector-specific credentials required when using Marketo. See Marketo Connector Profile Credentials for more details.",
+      'marketo',
+      'Connector-specific credentials required when using Marketo. See Marketo Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketo_GetTypes(),
       false,
@@ -264,8 +264,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "veeva",
-      "Connector-specific credentials required when using Veeva. See Veeva Connector Profile Credentials for more details.",
+      'veeva',
+      'Connector-specific credentials required when using Veeva. See Veeva Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsVeeva_GetTypes(),
       false,
@@ -273,8 +273,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "zendesk",
-      "Connector-specific credentials required when using Zendesk. See Zendesk Connector Profile Credentials for more details.",
+      'zendesk',
+      'Connector-specific credentials required when using Zendesk. See Zendesk Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendesk_GetTypes(),
       false,
@@ -282,8 +282,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "salesforce",
-      "The connector-specific credentials required when using Salesforce. See Salesforce Connector Profile Credentials for more details.",
+      'salesforce',
+      'The connector-specific credentials required when using Salesforce. See Salesforce Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforce_GetTypes(),
       false,
@@ -291,8 +291,8 @@ export function appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCr
     ),
     new DynamicUIProps(
       InputType.Object,
-      "sapoData",
-      "The connector-specific credentials required when using SAPOData. See SAPOData Connector Profile Credentials for more details.",
+      'sapoData',
+      'The connector-specific credentials required when using SAPOData. See SAPOData Connector Profile Credentials for more details.',
       () =>
         appflow_ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoData_GetTypes(),
       false,

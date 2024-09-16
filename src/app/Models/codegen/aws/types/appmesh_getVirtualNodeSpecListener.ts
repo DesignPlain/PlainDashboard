@@ -3,32 +3,32 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_getVirtualNodeSpecListenerTl,
   appmesh_getVirtualNodeSpecListenerTl_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTl";
+} from './appmesh_getVirtualNodeSpecListenerTl';
 import {
   appmesh_getVirtualNodeSpecListenerConnectionPool,
   appmesh_getVirtualNodeSpecListenerConnectionPool_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerConnectionPool";
+} from './appmesh_getVirtualNodeSpecListenerConnectionPool';
 import {
   appmesh_getVirtualNodeSpecListenerHealthCheck,
   appmesh_getVirtualNodeSpecListenerHealthCheck_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerHealthCheck";
+} from './appmesh_getVirtualNodeSpecListenerHealthCheck';
 import {
   appmesh_getVirtualNodeSpecListenerOutlierDetection,
   appmesh_getVirtualNodeSpecListenerOutlierDetection_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerOutlierDetection";
+} from './appmesh_getVirtualNodeSpecListenerOutlierDetection';
 import {
   appmesh_getVirtualNodeSpecListenerPortMapping,
   appmesh_getVirtualNodeSpecListenerPortMapping_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerPortMapping";
+} from './appmesh_getVirtualNodeSpecListenerPortMapping';
 import {
   appmesh_getVirtualNodeSpecListenerTimeout,
   appmesh_getVirtualNodeSpecListenerTimeout_GetTypes,
-} from "./appmesh_getVirtualNodeSpecListenerTimeout";
+} from './appmesh_getVirtualNodeSpecListenerTimeout';
 
 export interface appmesh_getVirtualNodeSpecListener {
   //
@@ -54,48 +54,48 @@ export function appmesh_getVirtualNodeSpecListener_GetTypes(): DynamicUIProps[] 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "healthChecks",
-      "",
+      'healthChecks',
+      '',
       () => appmesh_getVirtualNodeSpecListenerHealthCheck_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "outlierDetections",
-      "",
+      'outlierDetections',
+      '',
       () => appmesh_getVirtualNodeSpecListenerOutlierDetection_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "portMappings",
-      "",
+      'portMappings',
+      '',
       () => appmesh_getVirtualNodeSpecListenerPortMapping_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "timeouts",
-      "",
+      'timeouts',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTimeout_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tls",
-      "",
+      'tls',
+      '',
       () => appmesh_getVirtualNodeSpecListenerTl_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "connectionPools",
-      "",
+      'connectionPools',
+      '',
       () => appmesh_getVirtualNodeSpecListenerConnectionPool_GetTypes(),
       true,
       false,

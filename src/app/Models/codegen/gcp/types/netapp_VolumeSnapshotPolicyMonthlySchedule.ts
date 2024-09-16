@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface netapp_VolumeSnapshotPolicyMonthlySchedule {
   // Set the minute of the hour to create the snapshot (0-59), defaults to the top of the hour (0).
@@ -24,23 +24,23 @@ export function netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes(): DynamicUI
   return [
     new DynamicUIProps(
       InputType.Number,
-      "minute",
-      "Set the minute of the hour to create the snapshot (0-59), defaults to the top of the hour (0).",
+      'minute',
+      'Set the minute of the hour to create the snapshot (0-59), defaults to the top of the hour (0).',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "snapshotsToKeep",
-      "The maximum number of snapshots to keep for the monthly schedule",
+      'snapshotsToKeep',
+      'The maximum number of snapshots to keep for the monthly schedule',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "daysOfMonth",
+      'daysOfMonth',
       "Set the day or days of the month to make a snapshot (1-31). Accepts a comma separated number of days. Defaults to '1'.",
       () => [],
       false,
@@ -48,8 +48,8 @@ export function netapp_VolumeSnapshotPolicyMonthlySchedule_GetTypes(): DynamicUI
     ),
     new DynamicUIProps(
       InputType.Number,
-      "hour",
-      "Set the hour to create the snapshot (0-23), defaults to midnight (0).",
+      'hour',
+      'Set the hour to create the snapshot (0-23), defaults to midnight (0).',
       () => [],
       false,
       false,

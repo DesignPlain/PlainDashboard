@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   msk_getClusterBrokerNodeGroupInfoConnectivityInfo,
   msk_getClusterBrokerNodeGroupInfoConnectivityInfo_GetTypes,
-} from "./msk_getClusterBrokerNodeGroupInfoConnectivityInfo";
+} from './msk_getClusterBrokerNodeGroupInfoConnectivityInfo';
 import {
   msk_getClusterBrokerNodeGroupInfoStorageInfo,
   msk_getClusterBrokerNodeGroupInfoStorageInfo_GetTypes,
-} from "./msk_getClusterBrokerNodeGroupInfoStorageInfo";
+} from './msk_getClusterBrokerNodeGroupInfoStorageInfo';
 
 export interface msk_getClusterBrokerNodeGroupInfo {
   //
@@ -38,48 +38,48 @@ export function msk_getClusterBrokerNodeGroupInfo_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Array,
-      "clientSubnets",
-      "",
+      'clientSubnets',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "connectivityInfos",
-      "",
+      'connectivityInfos',
+      '',
       () => msk_getClusterBrokerNodeGroupInfoConnectivityInfo_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "instanceType",
-      "",
+      'instanceType',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "securityGroups",
-      "",
+      'securityGroups',
+      '',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "storageInfos",
-      "",
+      'storageInfos',
+      '',
       () => msk_getClusterBrokerNodeGroupInfoStorageInfo_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "azDistribution",
-      "",
+      'azDistribution',
+      '',
       () => [],
       true,
       false,

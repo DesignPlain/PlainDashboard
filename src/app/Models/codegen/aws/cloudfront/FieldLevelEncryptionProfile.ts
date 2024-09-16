@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_FieldLevelEncryptionProfileEncryptionEntities,
   cloudfront_FieldLevelEncryptionProfileEncryptionEntities_GetTypes,
-} from "../types/cloudfront_FieldLevelEncryptionProfileEncryptionEntities";
+} from '../types/cloudfront_FieldLevelEncryptionProfileEncryptionEntities';
 
 export interface FieldLevelEncryptionProfileArgs {
   // An optional comment about the Field Level Encryption Profile.
@@ -41,16 +41,16 @@ export class FieldLevelEncryptionProfile extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "An optional comment about the Field Level Encryption Profile.",
+        'comment',
+        'An optional comment about the Field Level Encryption Profile.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "encryptionEntities",
-        "The encryption entities config block for field-level encryption profiles that contains an attribute `items` which includes the encryption key and field pattern specifications.",
+        'encryptionEntities',
+        'The encryption entities config block for field-level encryption profiles that contains an attribute `items` which includes the encryption key and field pattern specifications.',
         () =>
           cloudfront_FieldLevelEncryptionProfileEncryptionEntities_GetTypes(),
         true,
@@ -58,8 +58,8 @@ export class FieldLevelEncryptionProfile extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the Field Level Encryption Profile.",
+        'name',
+        'The name of the Field Level Encryption Profile.',
         () => [],
         false,
         false,

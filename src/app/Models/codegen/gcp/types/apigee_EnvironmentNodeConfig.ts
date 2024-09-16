@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface apigee_EnvironmentNodeConfig {
   /*
@@ -33,24 +33,24 @@ export function apigee_EnvironmentNodeConfig_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "maxNodeCount",
-      "The maximum total number of gateway nodes that the is reserved for all instances that\nhas the specified environment. If not specified, the default is determined by the\nrecommended maximum number of nodes for that gateway.",
+      'maxNodeCount',
+      'The maximum total number of gateway nodes that the is reserved for all instances that\nhas the specified environment. If not specified, the default is determined by the\nrecommended maximum number of nodes for that gateway.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "minNodeCount",
-      "The minimum total number of gateway nodes that the is reserved for all instances that\nhas the specified environment. If not specified, the default is determined by the\nrecommended minimum number of nodes for that gateway.",
+      'minNodeCount',
+      'The minimum total number of gateway nodes that the is reserved for all instances that\nhas the specified environment. If not specified, the default is determined by the\nrecommended minimum number of nodes for that gateway.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "currentAggregateNodeCount",
-      "(Output)\nThe current total number of gateway nodes that each environment currently has across\nall instances.",
+      'currentAggregateNodeCount',
+      '(Output)\nThe current total number of gateway nodes that each environment currently has across\nall instances.',
       () => [],
       false,
       false,

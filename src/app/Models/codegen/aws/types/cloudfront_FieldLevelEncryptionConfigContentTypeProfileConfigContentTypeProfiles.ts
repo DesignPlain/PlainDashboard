@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItem,
   cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItem_GetTypes,
-} from "./cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItem";
+} from './cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItem';
 
 export interface cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfiles {
   //
@@ -19,8 +19,8 @@ export function cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfigCon
   return [
     new DynamicUIProps(
       InputType.Array,
-      "items",
-      "",
+      'items',
+      '',
       () =>
         cloudfront_FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItem_GetTypes(),
       true,

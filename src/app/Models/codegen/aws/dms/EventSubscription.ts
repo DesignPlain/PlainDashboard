@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface EventSubscriptionArgs {
   // SNS topic arn to send events on.
@@ -61,31 +61,31 @@ export class EventSubscription extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "eventCategories",
-        "List of event categories to listen for, see `DescribeEventCategories` for a canonical list.",
+        'eventCategories',
+        'List of event categories to listen for, see `DescribeEventCategories` for a canonical list.',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of event subscription.",
+        'name',
+        'Name of event subscription.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "snsTopicArn",
-        "SNS topic arn to send events on.",
+        'snsTopicArn',
+        'SNS topic arn to send events on.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "sourceIds",
+        'sourceIds',
         "Ids of sources to listen to. If you don't specify a value, notifications are provided for all sources.",
         () => InputType_String_GetTypes(),
         false,
@@ -93,24 +93,24 @@ export class EventSubscription extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "sourceType",
-        "Type of source for events. Valid values: `replication-instance` or `replication-task`",
+        'sourceType',
+        'Type of source for events. Valid values: `replication-instance` or `replication-task`',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of resource tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of resource tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "enabled",
-        "Whether the event subscription should be enabled.",
+        'enabled',
+        'Whether the event subscription should be enabled.',
         () => [],
         false,
         false,

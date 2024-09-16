@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appconfig_ExtensionActionPoint,
   appconfig_ExtensionActionPoint_GetTypes,
-} from "../types/appconfig_ExtensionActionPoint";
+} from '../types/appconfig_ExtensionActionPoint';
 import {
   appconfig_ExtensionParameter,
   appconfig_ExtensionParameter_GetTypes,
-} from "../types/appconfig_ExtensionParameter";
+} from '../types/appconfig_ExtensionParameter';
 
 export interface ExtensionArgs {
   // The action points defined in the extension. Detailed below.
@@ -60,40 +60,40 @@ export class Extension extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "actionPoints",
-        "The action points defined in the extension. Detailed below.",
+        'actionPoints',
+        'The action points defined in the extension. Detailed below.',
         () => appconfig_ExtensionActionPoint_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Information about the extension.",
+        'description',
+        'Information about the extension.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.",
+        'name',
+        'A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "parameters",
-        "The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the CreateExtensionAssociation API action. For Lambda extension actions, these parameters are included in the Lambda request object. Detailed below.",
+        'parameters',
+        'The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the CreateExtensionAssociation API action. For Lambda extension actions, these parameters are included in the Lambda request object. Detailed below.',
         () => appconfig_ExtensionParameter_GetTypes(),
         false,
         false,

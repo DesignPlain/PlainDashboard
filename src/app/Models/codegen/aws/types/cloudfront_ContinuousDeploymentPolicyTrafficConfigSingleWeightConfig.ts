@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigSessionStickinessConfig,
   cloudfront_ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigSessionStickinessConfig_GetTypes,
-} from "./cloudfront_ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigSessionStickinessConfig";
+} from './cloudfront_ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigSessionStickinessConfig';
 
 export interface cloudfront_ContinuousDeploymentPolicyTrafficConfigSingleWeightConfig {
   // Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to the staging distribution, while others are sent to the primary distribution. Define the session duration using TTL values. See `session_stickiness_config`.
@@ -22,7 +22,7 @@ export function cloudfront_ContinuousDeploymentPolicyTrafficConfigSingleWeightCo
   return [
     new DynamicUIProps(
       InputType.Object,
-      "sessionStickinessConfig",
+      'sessionStickinessConfig',
       "Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to the staging distribution, while others are sent to the primary distribution. Define the session duration using TTL values. See `session_stickiness_config`.",
       () =>
         cloudfront_ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigSessionStickinessConfig_GetTypes(),
@@ -31,8 +31,8 @@ export function cloudfront_ContinuousDeploymentPolicyTrafficConfigSingleWeightCo
     ),
     new DynamicUIProps(
       InputType.Number,
-      "weight",
-      "The percentage of traffic to send to a staging distribution, expressed as a decimal number between `0` and `.15`.",
+      'weight',
+      'The percentage of traffic to send to a staging distribution, expressed as a decimal number between `0` and `.15`.',
       () => [],
       true,
       false,

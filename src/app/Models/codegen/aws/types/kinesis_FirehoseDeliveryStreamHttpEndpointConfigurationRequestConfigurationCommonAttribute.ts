@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kinesis_FirehoseDeliveryStreamHttpEndpointConfigurationRequestConfigurationCommonAttribute {
   // The name of the HTTP endpoint common attribute.
@@ -18,16 +18,16 @@ export function kinesis_FirehoseDeliveryStreamHttpEndpointConfigurationRequestCo
   return [
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value of the HTTP endpoint common attribute.",
+      'value',
+      'The value of the HTTP endpoint common attribute.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "The name of the HTTP endpoint common attribute.",
+      'name',
+      'The name of the HTTP endpoint common attribute.',
       () => [],
       true,
       false,

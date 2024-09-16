@@ -3,21 +3,21 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   rbin_RuleResourceTag,
   rbin_RuleResourceTag_GetTypes,
-} from "../types/rbin_RuleResourceTag";
+} from '../types/rbin_RuleResourceTag';
 import {
   rbin_RuleRetentionPeriod,
   rbin_RuleRetentionPeriod_GetTypes,
-} from "../types/rbin_RuleRetentionPeriod";
+} from '../types/rbin_RuleRetentionPeriod';
 import {
   rbin_RuleLockConfiguration,
   rbin_RuleLockConfiguration_GetTypes,
-} from "../types/rbin_RuleLockConfiguration";
+} from '../types/rbin_RuleLockConfiguration';
 
 export interface RuleArgs {
   // Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. See `resource_tags` below.
@@ -84,48 +84,48 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "The retention rule description.",
+        'description',
+        'The retention rule description.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "lockConfiguration",
-        "Information about the retention rule lock configuration. See `lock_configuration` below.",
+        'lockConfiguration',
+        'Information about the retention rule lock configuration. See `lock_configuration` below.',
         () => rbin_RuleLockConfiguration_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "resourceTags",
-        "Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. See `resource_tags` below.",
+        'resourceTags',
+        'Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. See `resource_tags` below.',
         () => rbin_RuleResourceTag_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceType",
-        "The resource type to be retained by the retention rule. Valid values are `EBS_SNAPSHOT` and `EC2_IMAGE`.",
+        'resourceType',
+        'The resource type to be retained by the retention rule. Valid values are `EBS_SNAPSHOT` and `EC2_IMAGE`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "retentionPeriod",
-        "Information about the retention period for which the retention rule is to retain resources. See `retention_period` below.\n\nThe following arguments are optional:",
+        'retentionPeriod',
+        'Information about the retention period for which the retention rule is to retain resources. See `retention_period` below.\n\nThe following arguments are optional:',
         () => rbin_RuleRetentionPeriod_GetTypes(),
         true,
         false,

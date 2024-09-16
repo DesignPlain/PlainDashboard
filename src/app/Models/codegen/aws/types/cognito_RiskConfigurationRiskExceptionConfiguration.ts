@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cognito_RiskConfigurationRiskExceptionConfiguration {
   /*
@@ -26,15 +26,15 @@ export function cognito_RiskConfigurationRiskExceptionConfiguration_GetTypes(): 
   return [
     new DynamicUIProps(
       InputType.Array,
-      "blockedIpRangeLists",
-      "Overrides the risk decision to always block the pre-authentication requests.\nThe IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.\nCan contain a maximum of 200 items.",
+      'blockedIpRangeLists',
+      'Overrides the risk decision to always block the pre-authentication requests.\nThe IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.\nCan contain a maximum of 200 items.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "skippedIpRangeLists",
+      'skippedIpRangeLists',
       "Risk detection isn't performed on the IP addresses in this range list.\nThe IP range is in CIDR notation.\nCan contain a maximum of 200 items.",
       () => InputType_String_GetTypes(),
       false,

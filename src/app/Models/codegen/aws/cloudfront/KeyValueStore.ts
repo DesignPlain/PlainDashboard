@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudfront_KeyValueStoreTimeouts,
   cloudfront_KeyValueStoreTimeouts_GetTypes,
-} from "../types/cloudfront_KeyValueStoreTimeouts";
+} from '../types/cloudfront_KeyValueStoreTimeouts';
 
 export interface KeyValueStoreArgs {
   // Comment.
@@ -52,24 +52,24 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "comment",
-        "Comment.",
+        'comment',
+        'Comment.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Unique name for your CloudFront KeyValueStore.\n\nThe following arguments are optional:",
+        'name',
+        'Unique name for your CloudFront KeyValueStore.\n\nThe following arguments are optional:',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => cloudfront_KeyValueStoreTimeouts_GetTypes(),
         false,
         false,

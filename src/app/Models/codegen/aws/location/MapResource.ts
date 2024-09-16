@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   location_MapConfiguration,
   location_MapConfiguration_GetTypes,
-} from "../types/location_MapConfiguration";
+} from '../types/location_MapConfiguration';
 
 export interface MapResourceArgs {
   /*
@@ -61,32 +61,32 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.String,
-        "mapName",
-        "The name for the map resource.\n\nThe following arguments are optional:",
+        'mapName',
+        'The name for the map resource.\n\nThe following arguments are optional:',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value tags for the map. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value tags for the map. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "configuration",
-        "Configuration block with the map style selected from an available data provider. Detailed below.",
+        'configuration',
+        'Configuration block with the map style selected from an available data provider. Detailed below.',
         () => location_MapConfiguration_GetTypes(),
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "An optional description for the map resource.",
+        'description',
+        'An optional description for the map resource.',
         () => [],
         false,
         false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appmesh_GatewayRouteSpecHttp2RouteMatchHeaderMatchRange,
   appmesh_GatewayRouteSpecHttp2RouteMatchHeaderMatchRange_GetTypes,
-} from "./appmesh_GatewayRouteSpecHttp2RouteMatchHeaderMatchRange";
+} from './appmesh_GatewayRouteSpecHttp2RouteMatchHeaderMatchRange';
 
 export interface appmesh_GatewayRouteSpecHttp2RouteMatchHeaderMatch {
   // Header value sent by the client must begin with the specified characters.
@@ -31,40 +31,40 @@ export function appmesh_GatewayRouteSpecHttp2RouteMatchHeaderMatch_GetTypes(): D
   return [
     new DynamicUIProps(
       InputType.String,
-      "prefix",
-      "Header value sent by the client must begin with the specified characters.",
+      'prefix',
+      'Header value sent by the client must begin with the specified characters.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "range",
-      "Object that specifies the range of numbers that the header value sent by the client must be included in.",
+      'range',
+      'Object that specifies the range of numbers that the header value sent by the client must be included in.',
       () => appmesh_GatewayRouteSpecHttp2RouteMatchHeaderMatchRange_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "regex",
-      "Header value sent by the client must include the specified characters.",
+      'regex',
+      'Header value sent by the client must include the specified characters.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "suffix",
-      "Header value sent by the client must end with the specified characters.",
+      'suffix',
+      'Header value sent by the client must end with the specified characters.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "exact",
-      "Header value sent by the client must match the specified value exactly.",
+      'exact',
+      'Header value sent by the client must match the specified value exactly.',
       () => [],
       false,
       false,

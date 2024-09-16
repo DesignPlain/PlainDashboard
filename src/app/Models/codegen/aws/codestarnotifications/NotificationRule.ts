@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codestarnotifications_NotificationRuleTarget,
   codestarnotifications_NotificationRuleTarget_GetTypes,
-} from "../types/codestarnotifications_NotificationRuleTarget";
+} from '../types/codestarnotifications_NotificationRuleTarget';
 
 export interface NotificationRuleArgs {
   // The level of detail to include in the notifications for this resource. Possible values are `BASIC` and `FULL`.
@@ -71,56 +71,56 @@ For list of allowed events see [here](https://docs.aws.amazon.com/codestar-notif
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of notification rule.",
+        'name',
+        'The name of notification rule.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resource",
-        "The ARN of the resource to associate with the notification rule.",
+        'resource',
+        'The ARN of the resource to associate with the notification rule.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "status",
-        "The status of the notification rule. Possible values are `ENABLED` and `DISABLED`, default is `ENABLED`.",
+        'status',
+        'The status of the notification rule. Possible values are `ENABLED` and `DISABLED`, default is `ENABLED`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'A map of tags to assign to the resource. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "targets",
-        "Configuration blocks containing notification target information. Can be specified multiple times. At least one target must be specified on creation.",
+        'targets',
+        'Configuration blocks containing notification target information. Can be specified multiple times. At least one target must be specified on creation.',
         () => codestarnotifications_NotificationRuleTarget_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "detailType",
-        "The level of detail to include in the notifications for this resource. Possible values are `BASIC` and `FULL`.",
+        'detailType',
+        'The level of detail to include in the notifications for this resource. Possible values are `BASIC` and `FULL`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "eventTypeIds",
-        "A list of event types associated with this notification rule.\nFor list of allowed events see [here](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api).",
+        'eventTypeIds',
+        'A list of event types associated with this notification rule.\nFor list of allowed events see [here](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api).',
         () => InputType_String_GetTypes(),
         true,
         false,

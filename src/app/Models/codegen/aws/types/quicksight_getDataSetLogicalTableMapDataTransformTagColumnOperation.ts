@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperationTag,
   quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperationTag_GetTypes,
-} from "./quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperationTag";
+} from './quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperationTag';
 
 export interface quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperation {
   //
@@ -22,16 +22,16 @@ export function quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperat
   return [
     new DynamicUIProps(
       InputType.String,
-      "columnName",
-      "",
+      'columnName',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "tags",
-      "",
+      'tags',
+      '',
       () =>
         quicksight_getDataSetLogicalTableMapDataTransformTagColumnOperationTag_GetTypes(),
       true,

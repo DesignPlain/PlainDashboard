@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface WebsiteCertificateAuthorityAssociationArgs {
   // The root certificate of the Certificate Authority.
@@ -34,24 +34,24 @@ export class WebsiteCertificateAuthorityAssociation extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "certificate",
-        "The root certificate of the Certificate Authority.",
+        'certificate',
+        'The root certificate of the Certificate Authority.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "displayName",
-        "The certificate name to display.",
+        'displayName',
+        'The certificate name to display.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "fleetArn",
-        "The ARN of the fleet.",
+        'fleetArn',
+        'The ARN of the fleet.',
         () => [],
         true,
         true,

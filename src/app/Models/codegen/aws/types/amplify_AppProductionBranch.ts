@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface amplify_AppProductionBranch {
   // Branch name for the production branch.
@@ -24,32 +24,32 @@ export function amplify_AppProductionBranch_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "branchName",
-      "Branch name for the production branch.",
+      'branchName',
+      'Branch name for the production branch.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "lastDeployTime",
-      "Last deploy time of the production branch.",
+      'lastDeployTime',
+      'Last deploy time of the production branch.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "status",
-      "Status of the production branch.",
+      'status',
+      'Status of the production branch.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "thumbnailUrl",
-      "Thumbnail URL for the production branch.",
+      'thumbnailUrl',
+      'Thumbnail URL for the production branch.',
       () => [],
       false,
       false,

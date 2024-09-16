@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   codebuild_ReportGroupExportConfig,
   codebuild_ReportGroupExportConfig_GetTypes,
-} from "../types/codebuild_ReportGroupExportConfig";
+} from '../types/codebuild_ReportGroupExportConfig';
 
 export interface ReportGroupArgs {
   // If `true`, deletes any reports that belong to a report group before deleting the report group. If `false`, you must delete any reports in the report group before deleting it. Default value is `false`.
@@ -56,40 +56,40 @@ export class ReportGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "type",
-        "The type of the Report Group. Valid value are `TEST` and `CODE_COVERAGE`.",
+        'type',
+        'The type of the Report Group. Valid value are `TEST` and `CODE_COVERAGE`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "deleteReports",
-        "If `true`, deletes any reports that belong to a report group before deleting the report group. If `false`, you must delete any reports in the report group before deleting it. Default value is `false`.",
+        'deleteReports',
+        'If `true`, deletes any reports that belong to a report group before deleting the report group. If `false`, you must delete any reports in the report group before deleting it. Default value is `false`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "exportConfig",
-        "Information about the destination where the raw data of this Report Group is exported. see Export Config documented below.",
+        'exportConfig',
+        'Information about the destination where the raw data of this Report Group is exported. see Export Config documented below.',
         () => codebuild_ReportGroupExportConfig_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of a Report Group.",
+        'name',
+        'The name of a Report Group.',
         () => [],
         false,
         true,

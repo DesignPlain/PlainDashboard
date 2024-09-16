@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface directoryservice_DirectoryConnectSettings {
   // The DNS IP addresses of the domain to connect to.
@@ -30,48 +30,48 @@ export function directoryservice_DirectoryConnectSettings_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Array,
-      "connectIps",
-      "The IP addresses of the AD Connector servers.",
+      'connectIps',
+      'The IP addresses of the AD Connector servers.',
       () => InputType_String_GetTypes(),
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "customerDnsIps",
-      "The DNS IP addresses of the domain to connect to.",
+      'customerDnsIps',
+      'The DNS IP addresses of the domain to connect to.',
       () => InputType_String_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "customerUsername",
-      "The username corresponding to the password provided.",
+      'customerUsername',
+      'The username corresponding to the password provided.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "subnetIds",
-      "The identifiers of the subnets for the directory servers (2 subnets in 2 different AZs).",
+      'subnetIds',
+      'The identifiers of the subnets for the directory servers (2 subnets in 2 different AZs).',
       () => InputType_String_GetTypes(),
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "vpcId",
-      "The identifier of the VPC that the directory is in.",
+      'vpcId',
+      'The identifier of the VPC that the directory is in.',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "availabilityZones",
-      "",
+      'availabilityZones',
+      '',
       () => InputType_String_GetTypes(),
       false,
       false,

@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface StreamConsumerArgs {
   // Name of the stream consumer.
@@ -31,16 +31,16 @@ export class StreamConsumer extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the stream consumer.",
+        'name',
+        'Name of the stream consumer.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "streamArn",
-        "Amazon Resource Name (ARN) of the data stream the consumer is registered with.",
+        'streamArn',
+        'Amazon Resource Name (ARN) of the data stream the consumer is registered with.',
         () => [],
         true,
         true,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface gkeonprem_VMwareClusterAntiAffinityGroups {
   /*
@@ -19,8 +19,8 @@ export function gkeonprem_VMwareClusterAntiAffinityGroups_GetTypes(): DynamicUIP
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "aagConfigDisabled",
-      "Spread nodes across at least three physical hosts (requires at least three\nhosts).\nEnabled by default.",
+      'aagConfigDisabled',
+      'Spread nodes across at least three physical hosts (requires at least three\nhosts).\nEnabled by default.',
       () => [],
       true,
       false,

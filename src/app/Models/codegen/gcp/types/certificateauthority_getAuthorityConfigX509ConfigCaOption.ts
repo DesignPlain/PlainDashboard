@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface certificateauthority_getAuthorityConfigX509ConfigCaOption {
   /*
@@ -35,7 +35,7 @@ export function certificateauthority_getAuthorityConfigX509ConfigCaOption_GetTyp
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "nonCa",
+      'nonCa',
       "When true, the \"CA\" in Basic Constraints extension will be set to false.\nIf both 'is_ca' and 'non_ca' are unset, the extension will be omitted from the CA certificate.",
       () => [],
       true,
@@ -43,7 +43,7 @@ export function certificateauthority_getAuthorityConfigX509ConfigCaOption_GetTyp
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "zeroMaxIssuerPathLength",
+      'zeroMaxIssuerPathLength',
       "When true, the \"path length constraint\" in Basic Constraints extension will be set to 0.\nIf both 'max_issuer_path_length' and 'zero_max_issuer_path_length' are unset,\nthe max path length will be omitted from the CA certificate.",
       () => [],
       true,
@@ -51,7 +51,7 @@ export function certificateauthority_getAuthorityConfigX509ConfigCaOption_GetTyp
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "isCa",
+      'isCa',
       'When true, the "CA" in Basic Constraints extension will be set to true.',
       () => [],
       true,
@@ -59,8 +59,8 @@ export function certificateauthority_getAuthorityConfigX509ConfigCaOption_GetTyp
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxIssuerPathLength",
-      "Refers to the \"path length constraint\" in Basic Constraints extension. For a CA certificate, this value describes the depth of\nsubordinate CA certificates that are allowed. If this value is less than 0, the request will fail. Setting the value to 0\nrequires setting 'zero_max_issuer_path_length = true'.",
+      'maxIssuerPathLength',
+      'Refers to the "path length constraint" in Basic Constraints extension. For a CA certificate, this value describes the depth of\nsubordinate CA certificates that are allowed. If this value is less than 0, the request will fail. Setting the value to 0\nrequires setting \'zero_max_issuer_path_length = true\'.',
       () => [],
       true,
       false,

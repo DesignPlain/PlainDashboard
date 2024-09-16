@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cfg_RemediationConfigurationExecutionControls,
   cfg_RemediationConfigurationExecutionControls_GetTypes,
-} from "../types/cfg_RemediationConfigurationExecutionControls";
+} from '../types/cfg_RemediationConfigurationExecutionControls';
 import {
   cfg_RemediationConfigurationParameter,
   cfg_RemediationConfigurationParameter_GetTypes,
-} from "../types/cfg_RemediationConfigurationParameter";
+} from '../types/cfg_RemediationConfigurationParameter';
 
 export interface RemediationConfigurationArgs {
   // Remediation is triggered automatically if `true`.
@@ -92,80 +92,80 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Bool,
-        "automatic",
-        "Remediation is triggered automatically if `true`.",
+        'automatic',
+        'Remediation is triggered automatically if `true`.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "resourceType",
-        "Type of resource.",
+        'resourceType',
+        'Type of resource.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetVersion",
-        "Version of the target. For example, version of the SSM document",
+        'targetVersion',
+        'Version of the target. For example, version of the SSM document',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "parameters",
-        "Can be specified multiple times for each parameter. Each parameter block supports arguments below.",
+        'parameters',
+        'Can be specified multiple times for each parameter. Each parameter block supports arguments below.',
         () => cfg_RemediationConfigurationParameter_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetType",
-        "Type of the target. Target executes remediation. For example, SSM document.\n\nThe following arguments are optional:",
+        'targetType',
+        'Type of the target. Target executes remediation. For example, SSM document.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "executionControls",
-        "Configuration block for execution controls. See below.",
+        'executionControls',
+        'Configuration block for execution controls. See below.',
         () => cfg_RemediationConfigurationExecutionControls_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "maximumAutomaticAttempts",
-        "Maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.",
+        'maximumAutomaticAttempts',
+        'Maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "retryAttemptSeconds",
-        "Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60 seconds.",
+        'retryAttemptSeconds',
+        'Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60 seconds.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "configRuleName",
-        "Name of the AWS Config rule.",
+        'configRuleName',
+        'Name of the AWS Config rule.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "targetId",
-        "Target ID is the name of the public document.",
+        'targetId',
+        'Target ID is the name of the public document.',
         () => [],
         true,
         false,

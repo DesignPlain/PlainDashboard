@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   quicksight_DataSetPhysicalTableMapRelationalTableInputColumn,
   quicksight_DataSetPhysicalTableMapRelationalTableInputColumn_GetTypes,
-} from "./quicksight_DataSetPhysicalTableMapRelationalTableInputColumn";
+} from './quicksight_DataSetPhysicalTableMapRelationalTableInputColumn';
 
 export interface quicksight_DataSetPhysicalTableMapRelationalTable {
   // Catalog associated with the table.
@@ -31,8 +31,8 @@ export function quicksight_DataSetPhysicalTableMapRelationalTable_GetTypes(): Dy
   return [
     new DynamicUIProps(
       InputType.Array,
-      "inputColumns",
-      "Column schema of the table. See input_columns.",
+      'inputColumns',
+      'Column schema of the table. See input_columns.',
       () =>
         quicksight_DataSetPhysicalTableMapRelationalTableInputColumn_GetTypes(),
       true,
@@ -40,32 +40,32 @@ export function quicksight_DataSetPhysicalTableMapRelationalTable_GetTypes(): Dy
     ),
     new DynamicUIProps(
       InputType.String,
-      "name",
-      "Name of the relational table.",
+      'name',
+      'Name of the relational table.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "schema",
-      "Schema name. This name applies to certain relational database engines.",
+      'schema',
+      'Schema name. This name applies to certain relational database engines.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "catalog",
-      "Catalog associated with the table.",
+      'catalog',
+      'Catalog associated with the table.',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dataSourceArn",
-      "ARN of the data source.",
+      'dataSourceArn',
+      'ARN of the data source.',
       () => [],
       true,
       false,

@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   opsworks_MemcachedLayerCloudwatchConfigurationLogStream,
   opsworks_MemcachedLayerCloudwatchConfigurationLogStream_GetTypes,
-} from "./opsworks_MemcachedLayerCloudwatchConfigurationLogStream";
+} from './opsworks_MemcachedLayerCloudwatchConfigurationLogStream';
 
 export interface opsworks_MemcachedLayerCloudwatchConfiguration {
   //
@@ -20,11 +20,11 @@ export interface opsworks_MemcachedLayerCloudwatchConfiguration {
 
 export function opsworks_MemcachedLayerCloudwatchConfiguration_GetTypes(): DynamicUIProps[] {
   return [
-    new DynamicUIProps(InputType.Bool, "enabled", "", () => [], false, false),
+    new DynamicUIProps(InputType.Bool, 'enabled', '', () => [], false, false),
     new DynamicUIProps(
       InputType.Array,
-      "logStreams",
-      "",
+      'logStreams',
+      '',
       () => opsworks_MemcachedLayerCloudwatchConfigurationLogStream_GetTypes(),
       false,
       false,

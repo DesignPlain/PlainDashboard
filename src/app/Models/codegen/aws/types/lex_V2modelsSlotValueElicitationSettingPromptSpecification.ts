@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroup,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroup_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroup";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroup';
 import {
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecification,
   lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecification_GetTypes,
-} from "./lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecification";
+} from './lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecification';
 
 export interface lex_V2modelsSlotValueElicitationSettingPromptSpecification {
   //
@@ -35,24 +35,24 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecification_GetTy
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "allowInterrupt",
-      "",
+      'allowInterrupt',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "maxRetries",
-      "",
+      'maxRetries',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "messageGroups",
-      "",
+      'messageGroups',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroup_GetTypes(),
       false,
@@ -60,16 +60,16 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecification_GetTy
     ),
     new DynamicUIProps(
       InputType.String,
-      "messageSelectionStrategy",
-      "",
+      'messageSelectionStrategy',
+      '',
       () => [],
       false,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "promptAttemptsSpecifications",
-      "",
+      'promptAttemptsSpecifications',
+      '',
       () =>
         lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecification_GetTypes(),
       false,

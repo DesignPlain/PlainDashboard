@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   verifiedaccess_InstanceVerifiedAccessTrustProvider,
   verifiedaccess_InstanceVerifiedAccessTrustProvider_GetTypes,
-} from "../types/verifiedaccess_InstanceVerifiedAccessTrustProvider";
+} from '../types/verifiedaccess_InstanceVerifiedAccessTrustProvider';
 
 export interface InstanceArgs {
   // A description for the AWS Verified Access Instance.
@@ -47,24 +47,24 @@ export class Instance extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A description for the AWS Verified Access Instance.",
+        'description',
+        'A description for the AWS Verified Access Instance.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "fipsEnabled",
-        "Enable or disable support for Federal Information Processing Standards (FIPS) on the AWS Verified Access Instance.",
+        'fipsEnabled',
+        'Enable or disable support for Federal Information Processing Standards (FIPS) on the AWS Verified Access Instance.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value mapping of resource tags. If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

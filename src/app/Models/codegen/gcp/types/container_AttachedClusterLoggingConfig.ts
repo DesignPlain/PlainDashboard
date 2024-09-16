@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   container_AttachedClusterLoggingConfigComponentConfig,
   container_AttachedClusterLoggingConfigComponentConfig_GetTypes,
-} from "./container_AttachedClusterLoggingConfigComponentConfig";
+} from './container_AttachedClusterLoggingConfigComponentConfig';
 
 export interface container_AttachedClusterLoggingConfig {
   /*
@@ -22,8 +22,8 @@ export function container_AttachedClusterLoggingConfig_GetTypes(): DynamicUIProp
   return [
     new DynamicUIProps(
       InputType.Object,
-      "componentConfig",
-      "The configuration of the logging components\nStructure is documented below.",
+      'componentConfig',
+      'The configuration of the logging components\nStructure is documented below.',
       () => container_AttachedClusterLoggingConfigComponentConfig_GetTypes(),
       false,
       false,

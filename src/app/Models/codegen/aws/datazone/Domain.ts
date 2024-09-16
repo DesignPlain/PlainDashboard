@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   datazone_DomainTimeouts,
   datazone_DomainTimeouts_GetTypes,
-} from "../types/datazone_DomainTimeouts";
+} from '../types/datazone_DomainTimeouts';
 import {
   datazone_DomainSingleSignOn,
   datazone_DomainSingleSignOn_GetTypes,
-} from "../types/datazone_DomainSingleSignOn";
+} from '../types/datazone_DomainSingleSignOn';
 
 export interface DomainArgs {
   //
@@ -80,56 +80,56 @@ The following arguments are optional:
     return [
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "",
+        'tags',
+        '',
         () => InputType_Map_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "timeouts",
-        "",
+        'timeouts',
+        '',
         () => datazone_DomainTimeouts_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "Description of the Domain.",
+        'description',
+        'Description of the Domain.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "domainExecutionRole",
-        "ARN of the role used by DataZone to configure the Domain.\n\nThe following arguments are optional:",
+        'domainExecutionRole',
+        'ARN of the role used by DataZone to configure the Domain.\n\nThe following arguments are optional:',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "kmsKeyIdentifier",
-        "ARN of the KMS key used to encrypt the Amazon DataZone domain, metadata and reporting data.",
+        'kmsKeyIdentifier',
+        'ARN of the KMS key used to encrypt the Amazon DataZone domain, metadata and reporting data.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "Name of the Domain.",
+        'name',
+        'Name of the Domain.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "singleSignOn",
-        "Single sign on options, used to [enable AWS IAM Identity Center](https://docs.aws.amazon.com/datazone/latest/userguide/enable-IAM-identity-center-for-datazone.html) for DataZone.",
+        'singleSignOn',
+        'Single sign on options, used to [enable AWS IAM Identity Center](https://docs.aws.amazon.com/datazone/latest/userguide/enable-IAM-identity-center-for-datazone.html) for DataZone.',
         () => datazone_DomainSingleSignOn_GetTypes(),
         false,
         false,

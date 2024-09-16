@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lex_BotIntent {
   // The name of the intent. Must be less than or equal to 100 characters in length.
@@ -18,16 +18,16 @@ export function lex_BotIntent_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.String,
-      "intentName",
-      "The name of the intent. Must be less than or equal to 100 characters in length.",
+      'intentName',
+      'The name of the intent. Must be less than or equal to 100 characters in length.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "intentVersion",
-      "The version of the intent. Must be less than or equal to 64 characters in length.",
+      'intentVersion',
+      'The version of the intent. Must be less than or equal to 64 characters in length.',
       () => [],
       true,
       false,

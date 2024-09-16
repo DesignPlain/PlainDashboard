@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface databasemigrationservice_ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfig {
   // The number of CPU's in the VM instance.
@@ -15,7 +15,7 @@ export function databasemigrationservice_ConnectionProfileAlloydbSettingsPrimary
   return [
     new DynamicUIProps(
       InputType.Number,
-      "cpuCount",
+      'cpuCount',
       "The number of CPU's in the VM instance.",
       () => [],
       true,

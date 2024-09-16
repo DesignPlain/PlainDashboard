@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   globalaccelerator_CustomRoutingEndpointGroupDestinationConfiguration,
   globalaccelerator_CustomRoutingEndpointGroupDestinationConfiguration_GetTypes,
-} from "../types/globalaccelerator_CustomRoutingEndpointGroupDestinationConfiguration";
+} from '../types/globalaccelerator_CustomRoutingEndpointGroupDestinationConfiguration';
 import {
   globalaccelerator_CustomRoutingEndpointGroupEndpointConfiguration,
   globalaccelerator_CustomRoutingEndpointGroupEndpointConfiguration_GetTypes,
-} from "../types/globalaccelerator_CustomRoutingEndpointGroupEndpointConfiguration";
+} from '../types/globalaccelerator_CustomRoutingEndpointGroupEndpointConfiguration';
 
 export interface CustomRoutingEndpointGroupArgs {
   // The port ranges and protocols for all endpoints in a custom routing endpoint group to accept client traffic on. Fields documented below.
@@ -48,8 +48,8 @@ export class CustomRoutingEndpointGroup extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.Array,
-        "destinationConfigurations",
-        "The port ranges and protocols for all endpoints in a custom routing endpoint group to accept client traffic on. Fields documented below.",
+        'destinationConfigurations',
+        'The port ranges and protocols for all endpoints in a custom routing endpoint group to accept client traffic on. Fields documented below.',
         () =>
           globalaccelerator_CustomRoutingEndpointGroupDestinationConfiguration_GetTypes(),
         true,
@@ -57,8 +57,8 @@ export class CustomRoutingEndpointGroup extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "endpointConfigurations",
-        "The list of endpoint objects. Fields documented below.",
+        'endpointConfigurations',
+        'The list of endpoint objects. Fields documented below.',
         () =>
           globalaccelerator_CustomRoutingEndpointGroupEndpointConfiguration_GetTypes(),
         false,
@@ -66,16 +66,16 @@ export class CustomRoutingEndpointGroup extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.String,
-        "endpointGroupRegion",
-        "The name of the AWS Region where the custom routing endpoint group is located.",
+        'endpointGroupRegion',
+        'The name of the AWS Region where the custom routing endpoint group is located.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "listenerArn",
-        "The Amazon Resource Name (ARN) of the custom routing listener.",
+        'listenerArn',
+        'The Amazon Resource Name (ARN) of the custom routing listener.',
         () => [],
         true,
         true,

@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   ec2_VpcIpamPoolCidrCidrAuthorizationContext,
   ec2_VpcIpamPoolCidrCidrAuthorizationContext_GetTypes,
-} from "../types/ec2_VpcIpamPoolCidrCidrAuthorizationContext";
+} from '../types/ec2_VpcIpamPoolCidrCidrAuthorizationContext';
 
 export interface VpcIpamPoolCidrArgs {
   // The CIDR you want to assign to the pool. Conflicts with `netmask_length`.
@@ -44,32 +44,32 @@ export class VpcIpamPoolCidr extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "cidr",
-        "The CIDR you want to assign to the pool. Conflicts with `netmask_length`.",
+        'cidr',
+        'The CIDR you want to assign to the pool. Conflicts with `netmask_length`.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "cidrAuthorizationContext",
-        "A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidr_authorization_context for more information.",
+        'cidrAuthorizationContext',
+        'A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidr_authorization_context for more information.',
         () => ec2_VpcIpamPoolCidrCidrAuthorizationContext_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "ipamPoolId",
-        "The ID of the pool to which you want to assign a CIDR.",
+        'ipamPoolId',
+        'The ID of the pool to which you want to assign a CIDR.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.Number,
-        "netmaskLength",
-        "If provided, the cidr provisioned into the specified pool will be the next available cidr given this declared netmask length. Conflicts with `cidr`.",
+        'netmaskLength',
+        'If provided, the cidr provisioned into the specified pool will be the next available cidr given this declared netmask length. Conflicts with `cidr`.',
         () => [],
         false,
         true,

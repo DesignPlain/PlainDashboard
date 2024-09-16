@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ClusterEndpointArgs {
   // List of DB instance identifiers that are part of the custom endpoint group. Conflicts with `excluded_members`.
@@ -58,31 +58,31 @@ export class ClusterEndpoint extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "clusterEndpointIdentifier",
-        "The identifier to use for the new endpoint. This parameter is stored as a lowercase string.",
+        'clusterEndpointIdentifier',
+        'The identifier to use for the new endpoint. This parameter is stored as a lowercase string.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "clusterIdentifier",
-        "The cluster identifier.",
+        'clusterIdentifier',
+        'The cluster identifier.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "customEndpointType",
-        "The type of the endpoint. One of: READER , ANY .",
+        'customEndpointType',
+        'The type of the endpoint. One of: READER , ANY .',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "excludedMembers",
+        'excludedMembers',
         "List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty. Conflicts with `static_members`.",
         () => InputType_String_GetTypes(),
         false,
@@ -90,16 +90,16 @@ export class ClusterEndpoint extends DS_Resource {
       ),
       new DynamicUIProps(
         InputType.Array,
-        "staticMembers",
-        "List of DB instance identifiers that are part of the custom endpoint group. Conflicts with `excluded_members`.",
+        'staticMembers',
+        'List of DB instance identifiers that are part of the custom endpoint group. Conflicts with `excluded_members`.',
         () => InputType_String_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Map,
-        "tags",
-        "Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.",
+        'tags',
+        'Key-value map of resource tags. .If configured with a provider `default_tags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.',
         () => InputType_Map_GetTypes(),
         false,
         false,

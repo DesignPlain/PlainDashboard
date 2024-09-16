@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface kendra_getExperienceConfigurationContentSourceConfiguration {
   // Identifier of the FAQs that you want to use for your Amazon Kendra Experience.
@@ -21,24 +21,24 @@ export function kendra_getExperienceConfigurationContentSourceConfiguration_GetT
   return [
     new DynamicUIProps(
       InputType.Array,
-      "faqIds",
-      "Identifier of the FAQs that you want to use for your Amazon Kendra Experience.",
+      'faqIds',
+      'Identifier of the FAQs that you want to use for your Amazon Kendra Experience.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "dataSourceIds",
-      "Identifiers of the data sources you want to use for your Amazon Kendra Experience.",
+      'dataSourceIds',
+      'Identifiers of the data sources you want to use for your Amazon Kendra Experience.',
       () => InputType_String_GetTypes(),
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "directPutContent",
-      "Whether to use documents you indexed directly using the `BatchPutDocument API`.",
+      'directPutContent',
+      'Whether to use documents you indexed directly using the `BatchPutDocument API`.',
       () => [],
       true,
       false,

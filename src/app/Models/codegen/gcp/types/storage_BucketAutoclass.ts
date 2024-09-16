@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface storage_BucketAutoclass {
   // While set to `true`, autoclass automatically transitions objects in your bucket to appropriate storage classes based on each object's access pattern.
@@ -18,7 +18,7 @@ export function storage_BucketAutoclass_GetTypes(): DynamicUIProps[] {
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "enabled",
+      'enabled',
       "While set to `true`, autoclass automatically transitions objects in your bucket to appropriate storage classes based on each object's access pattern.",
       () => [],
       true,
@@ -26,8 +26,8 @@ export function storage_BucketAutoclass_GetTypes(): DynamicUIProps[] {
     ),
     new DynamicUIProps(
       InputType.String,
-      "terminalStorageClass",
-      "The storage class that objects in the bucket eventually transition to if they are not read for a certain length of time. Supported values include: `NEARLINE`, `ARCHIVE`.",
+      'terminalStorageClass',
+      'The storage class that objects in the bucket eventually transition to if they are not read for a certain length of time. Supported values include: `NEARLINE`, `ARCHIVE`.',
       () => [],
       false,
       false,

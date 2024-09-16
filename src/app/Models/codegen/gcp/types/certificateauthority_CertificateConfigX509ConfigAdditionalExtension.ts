@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   certificateauthority_CertificateConfigX509ConfigAdditionalExtensionObjectId,
   certificateauthority_CertificateConfigX509ConfigAdditionalExtensionObjectId_GetTypes,
-} from "./certificateauthority_CertificateConfigX509ConfigAdditionalExtensionObjectId";
+} from './certificateauthority_CertificateConfigX509ConfigAdditionalExtensionObjectId';
 
 export interface certificateauthority_CertificateConfigX509ConfigAdditionalExtension {
   /*
@@ -31,16 +31,16 @@ export function certificateauthority_CertificateConfigX509ConfigAdditionalExtens
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "critical",
-      "Indicates whether or not this extension is critical (i.e., if the client does not know how to\nhandle this extension, the client should consider this to be an error).",
+      'critical',
+      'Indicates whether or not this extension is critical (i.e., if the client does not know how to\nhandle this extension, the client should consider this to be an error).',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "objectId",
-      "Describes values that are relevant in a CA certificate.\nStructure is documented below.",
+      'objectId',
+      'Describes values that are relevant in a CA certificate.\nStructure is documented below.',
       () =>
         certificateauthority_CertificateConfigX509ConfigAdditionalExtensionObjectId_GetTypes(),
       true,
@@ -48,8 +48,8 @@ export function certificateauthority_CertificateConfigX509ConfigAdditionalExtens
     ),
     new DynamicUIProps(
       InputType.String,
-      "value",
-      "The value of this X.509 extension. A base64-encoded string.",
+      'value',
+      'The value of this X.509 extension. A base64-encoded string.',
       () => [],
       true,
       true,

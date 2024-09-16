@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfig,
   appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfig_GetTypes,
-} from "./appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfig";
+} from './appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfig';
 
 export interface appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3 {
   //
@@ -25,24 +25,24 @@ export function appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3_GetTypes
   return [
     new DynamicUIProps(
       InputType.String,
-      "bucketName",
-      "",
+      'bucketName',
+      '',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.String,
-      "bucketPrefix",
-      "",
+      'bucketPrefix',
+      '',
       () => [],
       true,
       true,
     ),
     new DynamicUIProps(
       InputType.Object,
-      "s3InputFormatConfig",
-      "When you use Amazon S3 as the source, the configuration format that you provide the flow input data. See S3 Input Format Config for details.",
+      's3InputFormatConfig',
+      'When you use Amazon S3 as the source, the configuration format that you provide the flow input data. See S3 Input Format Config for details.',
       () =>
         appflow_FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfig_GetTypes(),
       false,

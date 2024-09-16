@@ -3,25 +3,25 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   cloudscheduler_JobRetryConfig,
   cloudscheduler_JobRetryConfig_GetTypes,
-} from "../types/cloudscheduler_JobRetryConfig";
+} from '../types/cloudscheduler_JobRetryConfig';
 import {
   cloudscheduler_JobPubsubTarget,
   cloudscheduler_JobPubsubTarget_GetTypes,
-} from "../types/cloudscheduler_JobPubsubTarget";
+} from '../types/cloudscheduler_JobPubsubTarget';
 import {
   cloudscheduler_JobAppEngineHttpTarget,
   cloudscheduler_JobAppEngineHttpTarget_GetTypes,
-} from "../types/cloudscheduler_JobAppEngineHttpTarget";
+} from '../types/cloudscheduler_JobAppEngineHttpTarget';
 import {
   cloudscheduler_JobHttpTarget,
   cloudscheduler_JobHttpTarget_GetTypes,
-} from "../types/cloudscheduler_JobHttpTarget";
+} from '../types/cloudscheduler_JobHttpTarget';
 
 export interface JobArgs {
   /*
@@ -190,96 +190,96 @@ The name of the job.
     return [
       new DynamicUIProps(
         InputType.String,
-        "schedule",
-        "Describes the schedule on which the job will be executed.",
+        'schedule',
+        'Describes the schedule on which the job will be executed.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "attemptDeadline",
-        "The deadline for job attempts. If the request handler does not respond by this deadline then the request is\ncancelled and the attempt is marked as a DEADLINE_EXCEEDED failure. The failed attempt can be viewed in\nexecution logs. Cloud Scheduler will retry the job according to the RetryConfig.\nThe allowed duration for this deadline is:\n* For HTTP targets, between 15 seconds and 30 minutes.\n* For App Engine HTTP targets, between 15 seconds and 24 hours.\n* **Note**: For PubSub targets, this field is ignored - setting it will introduce an unresolvable diff.\nA duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\"",
+        'attemptDeadline',
+        'The deadline for job attempts. If the request handler does not respond by this deadline then the request is\ncancelled and the attempt is marked as a DEADLINE_EXCEEDED failure. The failed attempt can be viewed in\nexecution logs. Cloud Scheduler will retry the job according to the RetryConfig.\nThe allowed duration for this deadline is:\n* For HTTP targets, between 15 seconds and 30 minutes.\n* For App Engine HTTP targets, between 15 seconds and 24 hours.\n* **Note**: For PubSub targets, this field is ignored - setting it will introduce an unresolvable diff.\nA duration in seconds with up to nine fractional digits, terminated by \'s\'. Example: "3.5s"',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "httpTarget",
-        "HTTP target.\nIf the job providers a http_target the cron will\nsend a request to the targeted url\nStructure is documented below.",
+        'httpTarget',
+        'HTTP target.\nIf the job providers a http_target the cron will\nsend a request to the targeted url\nStructure is documented below.',
         () => cloudscheduler_JobHttpTarget_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Bool,
-        "paused",
-        "Sets the job to a paused state. Jobs default to being enabled when this property is not set.",
+        'paused',
+        'Sets the job to a paused state. Jobs default to being enabled when this property is not set.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "timeZone",
-        "Specifies the time zone to be used in interpreting schedule.\nThe value of this field must be a time zone name from the tz database.",
+        'timeZone',
+        'Specifies the time zone to be used in interpreting schedule.\nThe value of this field must be a time zone name from the tz database.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "name",
-        "The name of the job.\n\n\n- - -",
+        'name',
+        'The name of the job.\n\n\n- - -',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "retryConfig",
-        "By default, if a job does not complete successfully,\nmeaning that an acknowledgement is not received from the handler,\nthen it will be retried with exponential backoff according to the settings\nStructure is documented below.",
+        'retryConfig',
+        'By default, if a job does not complete successfully,\nmeaning that an acknowledgement is not received from the handler,\nthen it will be retried with exponential backoff according to the settings\nStructure is documented below.',
         () => cloudscheduler_JobRetryConfig_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "pubsubTarget",
-        "Pub/Sub target\nIf the job providers a Pub/Sub target the cron will publish\na message to the provided topic\nStructure is documented below.",
+        'pubsubTarget',
+        'Pub/Sub target\nIf the job providers a Pub/Sub target the cron will publish\na message to the provided topic\nStructure is documented below.',
         () => cloudscheduler_JobPubsubTarget_GetTypes(),
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.",
+        'project',
+        'The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "description",
-        "A human-readable description for the job.\nThis string must not contain more than 500 characters.",
+        'description',
+        'A human-readable description for the job.\nThis string must not contain more than 500 characters.',
         () => [],
         false,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "region",
-        "Region where the scheduler job resides. If it is not provided, this provider will use the provider default.",
+        'region',
+        'Region where the scheduler job resides. If it is not provided, this provider will use the provider default.',
         () => [],
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Object,
-        "appEngineHttpTarget",
-        "App Engine HTTP target.\nIf the job providers a App Engine HTTP target the cron will\nsend a request to the service instance\nStructure is documented below.",
+        'appEngineHttpTarget',
+        'App Engine HTTP target.\nIf the job providers a App Engine HTTP target the cron will\nsend a request to the service instance\nStructure is documented below.',
         () => cloudscheduler_JobAppEngineHttpTarget_GetTypes(),
         false,
         false,

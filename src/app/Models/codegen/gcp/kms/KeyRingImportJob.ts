@@ -3,17 +3,17 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   kms_KeyRingImportJobAttestation,
   kms_KeyRingImportJobAttestation_GetTypes,
-} from "../types/kms_KeyRingImportJobAttestation";
+} from '../types/kms_KeyRingImportJobAttestation';
 import {
   kms_KeyRingImportJobPublicKey,
   kms_KeyRingImportJobPublicKey_GetTypes,
-} from "../types/kms_KeyRingImportJobPublicKey";
+} from '../types/kms_KeyRingImportJobPublicKey';
 
 export interface KeyRingImportJobArgs {
   /*
@@ -101,31 +101,31 @@ Structure is documented below.
     return [
       new DynamicUIProps(
         InputType.String,
-        "protectionLevel",
-        "The protection level of the ImportJob. This must match the protectionLevel of the\nversionTemplate on the CryptoKey you attempt to import into.\nPossible values are: `SOFTWARE`, `HSM`, `EXTERNAL`.",
+        'protectionLevel',
+        'The protection level of the ImportJob. This must match the protectionLevel of the\nversionTemplate on the CryptoKey you attempt to import into.\nPossible values are: `SOFTWARE`, `HSM`, `EXTERNAL`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "importJobId",
-        "It must be unique within a KeyRing and match the regular expression [a-zA-Z0-9_-]{1,63}\n\n\n- - -",
+        'importJobId',
+        'It must be unique within a KeyRing and match the regular expression [a-zA-Z0-9_-]{1,63}\n\n\n- - -',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "importMethod",
-        "The wrapping method to be used for incoming key material.\nPossible values are: `RSA_OAEP_3072_SHA1_AES_256`, `RSA_OAEP_4096_SHA1_AES_256`.",
+        'importMethod',
+        'The wrapping method to be used for incoming key material.\nPossible values are: `RSA_OAEP_3072_SHA1_AES_256`, `RSA_OAEP_4096_SHA1_AES_256`.',
         () => [],
         true,
         true,
       ),
       new DynamicUIProps(
         InputType.String,
-        "keyRing",
+        'keyRing',
         "The KeyRing that this import job belongs to.\nFormat: `'projects/{{project}}/locations/{{location}}/keyRings/{{keyRing}}'`.",
         () => [],
         true,

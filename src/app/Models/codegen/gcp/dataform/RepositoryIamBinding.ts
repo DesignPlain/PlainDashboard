@@ -3,13 +3,13 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   dataform_RepositoryIamBindingCondition,
   dataform_RepositoryIamBindingCondition_GetTypes,
-} from "../types/dataform_RepositoryIamBindingCondition";
+} from '../types/dataform_RepositoryIamBindingCondition';
 
 export interface RepositoryIamBindingArgs {
   //
@@ -54,36 +54,36 @@ export class RepositoryIamBinding extends DS_Resource {
 
   public static GetTypes(): DynamicUIProps[] {
     return [
-      new DynamicUIProps(InputType.String, "region", "", () => [], false, true),
+      new DynamicUIProps(InputType.String, 'region', '', () => [], false, true),
       new DynamicUIProps(
         InputType.String,
-        "repository",
-        "",
+        'repository',
+        '',
         () => [],
         true,
         true,
       ),
-      new DynamicUIProps(InputType.String, "role", "", () => [], true, true),
+      new DynamicUIProps(InputType.String, 'role', '', () => [], true, true),
       new DynamicUIProps(
         InputType.Object,
-        "condition",
-        "",
+        'condition',
+        '',
         () => dataform_RepositoryIamBindingCondition_GetTypes(),
         false,
         true,
       ),
       new DynamicUIProps(
         InputType.Array,
-        "members",
-        "",
+        'members',
+        '',
         () => InputType_String_GetTypes(),
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "project",
-        "",
+        'project',
+        '',
         () => [],
         false,
         true,

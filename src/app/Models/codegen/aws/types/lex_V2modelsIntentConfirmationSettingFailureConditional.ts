@@ -3,16 +3,16 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   lex_V2modelsIntentConfirmationSettingFailureConditionalConditionalBranch,
   lex_V2modelsIntentConfirmationSettingFailureConditionalConditionalBranch_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingFailureConditionalConditionalBranch";
+} from './lex_V2modelsIntentConfirmationSettingFailureConditionalConditionalBranch';
 import {
   lex_V2modelsIntentConfirmationSettingFailureConditionalDefaultBranch,
   lex_V2modelsIntentConfirmationSettingFailureConditionalDefaultBranch_GetTypes,
-} from "./lex_V2modelsIntentConfirmationSettingFailureConditionalDefaultBranch";
+} from './lex_V2modelsIntentConfirmationSettingFailureConditionalDefaultBranch';
 
 export interface lex_V2modelsIntentConfirmationSettingFailureConditional {
   // Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditional_branch`.
@@ -29,8 +29,8 @@ export function lex_V2modelsIntentConfirmationSettingFailureConditional_GetTypes
   return [
     new DynamicUIProps(
       InputType.Array,
-      "conditionalBranches",
-      "Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditional_branch`.",
+      'conditionalBranches',
+      'Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditional_branch`.',
       () =>
         lex_V2modelsIntentConfirmationSettingFailureConditionalConditionalBranch_GetTypes(),
       false,
@@ -38,8 +38,8 @@ export function lex_V2modelsIntentConfirmationSettingFailureConditional_GetTypes
     ),
     new DynamicUIProps(
       InputType.Object,
-      "defaultBranch",
-      "Configuration block for the conditional branch that should be followed when the conditions for other branches are not satisfied. A branch is made up of a condition, a response and a next step. See `default_branch`.",
+      'defaultBranch',
+      'Configuration block for the conditional branch that should be followed when the conditions for other branches are not satisfied. A branch is made up of a condition, a response and a next step. See `default_branch`.',
       () =>
         lex_V2modelsIntentConfirmationSettingFailureConditionalDefaultBranch_GetTypes(),
       true,
@@ -47,8 +47,8 @@ export function lex_V2modelsIntentConfirmationSettingFailureConditional_GetTypes
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "active",
-      "Whether a conditional branch is active. When active is false, the conditions are not evaluated.",
+      'active',
+      'Whether a conditional branch is active. When active is false, the conditions are not evaluated.',
       () => [],
       true,
       false,

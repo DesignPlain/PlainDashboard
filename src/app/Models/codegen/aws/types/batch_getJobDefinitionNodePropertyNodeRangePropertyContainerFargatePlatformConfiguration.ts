@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface batch_getJobDefinitionNodePropertyNodeRangePropertyContainerFargatePlatformConfiguration {
   // The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources.
@@ -15,8 +15,8 @@ export function batch_getJobDefinitionNodePropertyNodeRangePropertyContainerFarg
   return [
     new DynamicUIProps(
       InputType.String,
-      "platformVersion",
-      "The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources.",
+      'platformVersion',
+      'The AWS Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources.',
       () => [],
       true,
       false,

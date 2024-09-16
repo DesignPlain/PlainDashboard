@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidrIpSetReference,
   networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidrIpSetReference_GetTypes,
-} from "./networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidrIpSetReference";
+} from './networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidrIpSetReference';
 
 export interface networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidr {
   // Available number of CIDR blocks available for use by the IP set references in a firewall.
@@ -25,16 +25,16 @@ export function networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCid
   return [
     new DynamicUIProps(
       InputType.Number,
-      "availableCidrCount",
-      "Available number of CIDR blocks available for use by the IP set references in a firewall.",
+      'availableCidrCount',
+      'Available number of CIDR blocks available for use by the IP set references in a firewall.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Array,
-      "ipSetReferences",
-      "The list of IP set references used by a firewall.",
+      'ipSetReferences',
+      'The list of IP set references used by a firewall.',
       () =>
         networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCidrIpSetReference_GetTypes(),
       true,
@@ -42,8 +42,8 @@ export function networkfirewall_getFirewallFirewallStatusCapacityUsageSummaryCid
     ),
     new DynamicUIProps(
       InputType.Number,
-      "utilizedCidrCount",
-      "Number of CIDR blocks used by the IP set references in a firewall.",
+      'utilizedCidrCount',
+      'Number of CIDR blocks used by the IP set references in a firewall.',
       () => [],
       true,
       false,

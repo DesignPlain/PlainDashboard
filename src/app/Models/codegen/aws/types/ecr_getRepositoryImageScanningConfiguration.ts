@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface ecr_getRepositoryImageScanningConfiguration {
   // Whether images are scanned after being pushed to the repository.
@@ -15,8 +15,8 @@ export function ecr_getRepositoryImageScanningConfiguration_GetTypes(): DynamicU
   return [
     new DynamicUIProps(
       InputType.Bool,
-      "scanOnPush",
-      "Whether images are scanned after being pushed to the repository.",
+      'scanOnPush',
+      'Whether images are scanned after being pushed to the repository.',
       () => [],
       true,
       false,

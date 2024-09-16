@@ -3,9 +3,9 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DS_Resource } from "../../ds_base/Resource";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DS_Resource } from '../../ds_base/Resource';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface TypeArgs {
   // GraphQL API ID.
@@ -40,24 +40,24 @@ export class Type extends DS_Resource {
     return [
       new DynamicUIProps(
         InputType.String,
-        "definition",
-        "The type definition.",
+        'definition',
+        'The type definition.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "format",
-        "The type format: `SDL` or `JSON`.",
+        'format',
+        'The type format: `SDL` or `JSON`.',
         () => [],
         true,
         false,
       ),
       new DynamicUIProps(
         InputType.String,
-        "apiId",
-        "GraphQL API ID.",
+        'apiId',
+        'GraphQL API ID.',
         () => [],
         true,
         true,

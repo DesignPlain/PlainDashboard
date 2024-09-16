@@ -3,12 +3,12 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 import {
   medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings,
   medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings_GetTypes,
-} from "./medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings";
+} from './medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings';
 
 export interface medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettings {
   //
@@ -19,8 +19,8 @@ export function medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSe
   return [
     new DynamicUIProps(
       InputType.Object,
-      "nielsenWatermarksSettings",
-      "",
+      'nielsenWatermarksSettings',
+      '',
       () =>
         medialive_ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettings_GetTypes(),
       false,

@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource {
   // Regex matching branches to build.
@@ -39,56 +39,56 @@ export function cloudfunctionsv2_getFunctionBuildConfigSourceRepoSource_GetTypes
   return [
     new DynamicUIProps(
       InputType.String,
-      "branchName",
-      "Regex matching branches to build.",
+      'branchName',
+      'Regex matching branches to build.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "commitSha",
-      "Regex matching tags to build.",
+      'commitSha',
+      'Regex matching tags to build.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "dir",
-      "Directory, relative to the source root, in which to run the build.",
+      'dir',
+      'Directory, relative to the source root, in which to run the build.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Bool,
-      "invertRegex",
-      "Only trigger a build if the revision regex does\nNOT match the revision regex.",
+      'invertRegex',
+      'Only trigger a build if the revision regex does\nNOT match the revision regex.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "projectId",
-      "ID of the project that owns the Cloud Source Repository. If omitted, the\nproject ID requesting the build is assumed.",
+      'projectId',
+      'ID of the project that owns the Cloud Source Repository. If omitted, the\nproject ID requesting the build is assumed.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "repoName",
-      "Name of the Cloud Source Repository.",
+      'repoName',
+      'Name of the Cloud Source Repository.',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "tagName",
-      "Regex matching tags to build.",
+      'tagName',
+      'Regex matching tags to build.',
       () => [],
       true,
       false,

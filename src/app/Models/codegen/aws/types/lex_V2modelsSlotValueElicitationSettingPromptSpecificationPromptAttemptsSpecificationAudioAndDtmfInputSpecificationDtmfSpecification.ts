@@ -3,8 +3,8 @@ import {
   InputType_String_GetTypes,
   InputType_Number_GetTypes,
   InputType_Map_GetTypes,
-} from "../../ds_base/InputType";
-import { DynamicUIProps } from "../../ds_base/DynamicUIProps";
+} from '../../ds_base/InputType';
+import { DynamicUIProps } from '../../ds_base/DynamicUIProps';
 
 export interface lex_V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecification {
   //
@@ -24,32 +24,32 @@ export function lex_V2modelsSlotValueElicitationSettingPromptSpecificationPrompt
   return [
     new DynamicUIProps(
       InputType.Number,
-      "maxLength",
-      "",
+      'maxLength',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "deletionCharacter",
-      "",
+      'deletionCharacter',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.String,
-      "endCharacter",
-      "",
+      'endCharacter',
+      '',
       () => [],
       true,
       false,
     ),
     new DynamicUIProps(
       InputType.Number,
-      "endTimeoutMs",
-      "",
+      'endTimeoutMs',
+      '',
       () => [],
       true,
       false,
